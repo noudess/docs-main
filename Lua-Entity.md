@@ -1,4 +1,4 @@
-Lua entities are classes exported to Lua that represent the Entity object from EQEmu.
+Lua_Entity is a class exported to Lua that represent the Entity object from EQEmu.
 
 ### Properties
 ```
