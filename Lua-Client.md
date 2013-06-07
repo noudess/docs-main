@@ -1,4 +1,4 @@
-Lua_Client is a class exported to Lua that represent the Client object from EQEmu. All Lua_Client are also Lua_Entity.
+Lua_Client is a class exported to Lua that represent the Client object from EQEmu. All Lua_Client are also [Lua_Mob](Lua-Mob).
 
 ### Properties
 ```
