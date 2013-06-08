@@ -9,7 +9,11 @@ We use Lua 5.1 so the [Lua 5.1 Manual](http://www.lua.org/manual/5.1/manual.html
 * [Item Scripts](#item-scripts)
 * [Spell Scripts](#spell-scripts)
 * [Encounter Scripts](#encounter-scripts)
-* [Events](#events)
+* [NPC Events](#npc-events)
+* [Player Events](#player-events)
+* [Item Events](#item-events)
+* [Spell Events](#spell-events)
+* [Encounter Events](#encounter-events)
 * [API](#api)
 
 <a name="wiki-init-scripts"></a>
@@ -86,33 +90,11 @@ void register_spell_event(std::string name, int evt, int spell_id, luafunction  
 
 Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unless an existing quest is already listening for them.
 
-<a name="wiki-events"></a>
-### Events
-
-Quest scripts are event based, the following events are currently responded to by the Lua parser:
-
-All event functions are passed one argument: an event table.
-For NPCs the table will always have 'self' as the npc.
-For Players the table will always have 'self' as the client.
-For Items the table will always have 'self' as the item and 'owner' as the owner of the item.
-For Spells the table will always have 'self' as the spell.
+<a name="wiki-npc-events"></a>
+### NPC Events
 
 * event_say
-
-Triggered when either a client says something (Player) or when a client says something with a npc targeted that is not in combat (NPC).
-The event table has:
-'other' as the triggering client. (NPC only)
-'message' as the triggering message
-'language' as the language of the triggering message
-
 * event_trade
-
-Triggered when a client trades with a npc
-The event table has:
-'other' as the triggering client
-'trade' as a table within the event that includes the following fields:
-item1, item2, item3, item4, copper, silver, gold, platinum
-
 * event_death
 * event_spawn
 * event_attack
@@ -127,6 +109,22 @@ item1, item2, item3, item4, copper, silver, gold, platinum
 * event_hp
 * event_enter
 * event_exit
+* event_cast_on
+* event_aggro_say
+* event_proximity_say
+* event_cast
+* event_cast_begin
+* event_target_change
+* event_hate_list
+* event_feign_death
+
+<a name="wiki-player-events"></a>
+### Player Events
+
+* event_say
+* event_death
+* event_timer
+* event_signal
 * event_enter_zone
 * event_click_door
 * event_loot
@@ -139,24 +137,14 @@ item1, item2, item3, item4, copper, silver, gold, platinum
 * event_task_update
 * event_task_complete
 * event_task_fail
-* event_aggro_say
 * event_player_pickup
 * event_popup_response
-* event_proximity_say
 * event_cast
 * event_cast_begin
-* event_scale_calc
-* event_item_enter_zone
 * event_target_change
 * event_hate_list
-* event_spell_effect
-* event_spell_buff_tic
-* event_spell_fade
-* event_spell_effect_translocate_complete
 * event_combine_success
 * event_combine_failure
-* event_item_click
-* event_item_click_cast
 * event_group_change
 * event_forage_success
 * event_forage_failure
@@ -167,15 +155,36 @@ item1, item2, item3, item4, copper, silver, gold, platinum
 * event_discover_item
 * event_disconnect
 * event_connect
-* event_item_tick
 * event_duel_win
 * event_duel_lose
-* event_encounter_load
-* event_encounter_unload
 * event_command
+* event_feign_death
+
+<a name="wiki-item-events"></a>
+### Item Events
+
+* event_timer
+* event_scale_calc
+* event_item_enter_zone
+* event_item_click
+* event_item_click_cast
+* event_item_tick
 * event_drop_item
 * event_destroy_item
-* event_feign_death
+
+<a name="wiki-spell-events"></a>
+### Spell Events
+
+* event_spell_effect
+* event_spell_buff_tic
+* event_spell_fade
+* event_spell_effect_translocate_complete
+
+<a name="wiki-encounter-events"></a>
+### Encounter Events
+
+* event_encounter_load
+* event_encounter_unload
 
 <a name="wiki-api"></a>
 ### API
