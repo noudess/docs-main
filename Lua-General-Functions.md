@@ -3,8 +3,6 @@ All Lua General Functions are in the global table 'eq'.
 ```
 void load_encounter(std::string name);
 void unload_encounter(std::string name);
-void register_event(std::string package_name, std::string name, int evt, luabind::object func);
-void unregister_event(std::string package_name, std::string name, int evt);
 void register_npc_event(std::string name, int evt, int npc_id, luabind::object func);
 void unregister_npc_event(std::string name, int evt, int npc_id);
 void register_player_event(std::string name, int evt, luabind::object func);
