@@ -15,7 +15,6 @@ We use Lua 5.1 so the [Lua 5.1 Manual](http://www.lua.org/manual/5.1/manual.html
 <a name="wiki-init-scripts"></a>
 ### Init Scripts
 On Lua Parser reload it will attempt to load two scripts with no function env.
-* 
 * ./quests/zone/script_init.lua
 * ./quests/global/script_init.lua
 
