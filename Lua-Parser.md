@@ -94,10 +94,73 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 ### NPC Events
 
 * event_say
+> Triggered when a client has a npc targeted, the npc is not in combat and they /say something.
+> Passes an event table as an argument:
+> ```
+> {
+> 	NPC self;
+> 	Client other;
+> 	String message;
+> 	Integer language;
+> }
+> ```
+
 * event_trade
+> Triggered when a client trades money or items to a npc.
+> Passes an event table as an argument:
+> ```
+> {
+> 	NPC self;
+> 	Client other;
+> 	Trade trade;
+> }
+> ```
+> The Trade table has the following structure:
+> ```
+> {
+> 	ItemInst item1;
+> 	ItemInst item2;
+> 	ItemInst item3;
+> 	ItemInst item4;
+> 	Integer copper;
+> 	Integer silver;
+> 	Integer gold;
+> 	Integer platinum;
+> }
+> ```
+
 * event_death
+> Triggered when the npc dies.
+> Passes an event table as an argument:
+> ```
+> {
+> 	NPC self;
+> 	Mob other;
+> 	Integer damage;
+> 	Spell spell;
+> 	Integer skill_id;
+> }
+> ```
+
 * event_spawn
+> Triggered when the npc spawns for the first time.
+> Passes an event table as an argument:
+> ```
+> {
+> 	NPC self;
+> }
+> ```
+
 * event_attack
+> Triggered when the npc has been attacked after being out of combat for at least 12 seconds.
+> Passes an event table as an argument:
+> ```
+> {
+> 	NPC self;
+> 	Mob other;
+> }
+> ```
+
 * event_combat
 * event_aggro
 * event_slay
