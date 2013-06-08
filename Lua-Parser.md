@@ -98,6 +98,10 @@ For Items the table will always have 'self' as the item and 'owner' as the owner
 For Spells the table will always have 'self' as the spell.
 
 * event_say
+'other' as the triggering client. (NPC only)
+'message' as the triggering message
+'language' as the language of the triggering message
+
 * event_trade
 * event_death
 * event_spawn
