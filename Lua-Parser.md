@@ -42,7 +42,7 @@ Players will load a script on the first event that triggers them and they will l
 * ./quests/zone/player.lua
 * ./quests/global/player.lua
 
-Players will also attempt ot load a global Player script that is attached to all Players from the following location:
+Players will also attempt to load a global Player script that is attached to all Players from the following location:
 * ./quests/global/player.lua
 
 <a name="wiki-item-scripts"></a>
