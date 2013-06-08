@@ -90,6 +90,13 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 ### Events
 
 Quest scripts are event based, the following events are currently responded to by the Lua parser:
+
+All event functions are passed one argument: an event table.
+For NPCs the table will always have 'self' as the npc.
+For Players the table will always have 'self' as the client.
+For Items the table will always have 'self' as the item and 'owner' as the owner of the item.
+For Spells the table will always have 'self' as the spell.
+
 * event_say
 * event_trade
 * event_death
