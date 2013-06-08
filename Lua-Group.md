@@ -8,6 +8,7 @@ group.valid -- Returns true if this object is not null
 
 ### Member Functions
 ```
+Group() -- Creates a null Group
 void DisbandGroup();
 bool IsGroupMember(Lua_Mob mob);
 void CastGroupSpell(Lua_Mob caster, int spell_id);
