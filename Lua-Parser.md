@@ -98,11 +98,19 @@ For Items the table will always have 'self' as the item and 'owner' as the owner
 For Spells the table will always have 'self' as the spell.
 
 * event_say
+Triggered when either a client says something (Player) or when a client says something with a npc targeted that is not in combat (NPC).
+The event table has:
 'other' as the triggering client. (NPC only)
 'message' as the triggering message
 'language' as the language of the triggering message
 
 * event_trade
+Triggered when a client trades with a npc
+The event table has:
+'other' as the triggering client
+'trade' as a table within the event that includes the following fields:
+item1, item2, item3, item4, copper, silver, gold, platinum
+
 * event_death
 * event_spawn
 * event_attack
