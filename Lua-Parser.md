@@ -141,6 +141,7 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 > 	Integer skill_id;
 > }
 > ```
+> Returning a non-zero value from this function will cancel the death
 
 * event_spawn
 > Triggered when the npc spawns for the first time.
@@ -157,7 +158,7 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 > ```
 > {
 > 	NPC self;
-> 	bool joined;
+> 	Bool joined;
 > }
 > ```
 
@@ -243,13 +244,89 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 > ```
 
 * event_cast_on
+> Triggered when a spell is cast on this npc.
+> Passes an event table as an argument:
+> ```
+> {
+> 	NPC self;
+> 	Spell spell;
+> }
+> ```
+
 * event_aggro_say
+> Triggered when a client has a npc targeted and they /say something.
+> Passes an event table as an argument:
+> ```
+> {
+> 	NPC self;
+> 	Client other;
+> 	String message;
+> 	Integer language;
+> }
+> ```
+
 * event_proximity_say
+> Triggered when a client has a npc targeted, the npc is not in combat and they /say something.
+> Passes an event table as an argument:
+> ```
+> {
+> 	NPC self;
+> 	Client other;
+> 	String message;
+> 	Integer language;
+> }
+> ```
+
 * event_cast
+> Triggered when this npc finishes casting a spell
+> Passes an event table as an argument:
+> ```
+> {
+> 	NPC self;
+> 	Spell spell;
+> }
+> ```
+
 * event_cast_begin
+> Triggered when this npc begins casting a spell
+> Passes an event table as an argument:
+> ```
+> {
+> 	NPC self;
+> 	Spell spell;
+> }
+> ```
+
 * event_target_change
+> Triggered when this npc has its' target change
+> Passes an event table as an argument:
+> ```
+> {
+> 	NPC self;
+> 	Mob other;
+> }
+> ```
+
 * event_hate_list
+> Triggered when a target is added/removed to/from this npc's hatelist
+> Passes an event table as an argument:
+> ```
+> {
+> 	NPC self;
+> 	Bool joined;
+> }
+> ```
+
 * event_feign_death
+> Triggered when a client attempts to feign death against this npc
+> Passes an event table as an argument:
+> ```
+> {
+> 	NPC self;
+> 	Client other;
+> }
+> ```
+> Returning a non-zero value will cancel the feign death
 
 <a name="wiki-player-events"></a>
 ### Player Events
