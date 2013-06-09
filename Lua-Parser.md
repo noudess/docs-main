@@ -162,7 +162,7 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 > ```
 
 * event_slay
-> Triggered when a slain by an enemy
+> Triggered when this npc slays an enemy
 > Passes an event table as an argument:
 > ```
 > {
