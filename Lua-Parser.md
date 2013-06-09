@@ -223,7 +223,25 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 > ```
 
 * event_enter
+> Triggered when a client enters our set proximity
+> Passes an event table as an argument:
+> ```
+> {
+> 	NPC self;
+> 	Client other;
+> }
+> ```
+
 * event_exit
+> Triggered when a client exits our set proximity
+> Passes an event table as an argument:
+> ```
+> {
+> 	NPC self;
+> 	Client other;
+> }
+> ```
+
 * event_cast_on
 * event_aggro_say
 * event_proximity_say
