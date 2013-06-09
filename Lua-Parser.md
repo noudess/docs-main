@@ -172,9 +172,45 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 > ```
 
 * event_waypoint_arrive
+> Triggered when this npc arrives at a grid waypoint
+> Passes an event table as an argument:
+> ```
+> {
+> 	NPC self;
+> 	Integer wp;
+> }
+> ```
+
 * event_waypoint_depart
+> Triggered when this npc departs from a grid waypoint
+> Passes an event table as an argument:
+> ```
+> {
+> 	NPC self;
+> 	Integer wp;
+> }
+> ```
+
 * event_timer
+> Triggered when a timer attached to this npc is triggered
+> Passes an event table as an argument:
+> ```
+> {
+> 	NPC self;
+> 	String timer;
+> }
+> ```
+
 * event_signal
+> Triggered when this npc receives a signal
+> Passes an event table as an argument:
+> ```
+> {
+> 	NPC self;
+> 	Integer signal_id;
+> }
+> ```
+
 * event_hp
 * event_enter
 * event_exit
