@@ -151,8 +151,18 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 > }
 > ```
 
-* event_attack
-> Triggered when the npc has been attacked after being out of combat for at least 12 seconds.
+* event_combat
+> Triggered when the the combat state of a npc changes
+> Passes an event table as an argument:
+> ```
+> {
+> 	NPC self;
+> 	bool joined;
+> }
+> ```
+
+* event_slay
+> Triggered when a npc slays a target
 > Passes an event table as an argument:
 > ```
 > {
@@ -161,10 +171,6 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 > }
 > ```
 
-* event_combat
-* event_aggro
-* event_slay
-* event_npc_slay
 * event_waypoint_arrive
 * event_waypoint_depart
 * event_timer
