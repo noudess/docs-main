@@ -207,11 +207,21 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 > ```
 > {
 > 	NPC self;
-> 	Integer signal_id;
+> 	Integer signal;
 > }
 > ```
 
 * event_hp
+> Triggered when this npc falls below the last hp event or rises above the last inc hp event.
+> Passes an event table as an argument:
+> ```
+> {
+> 	NPC self;
+> 	Integer hp_event;
+> 	Integer inc_hp_event;
+> }
+> ```
+
 * event_enter
 * event_exit
 * event_cast_on
