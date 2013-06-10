@@ -9,4 +9,4 @@ The wiki is the only good source of documentation about EQEmu. Anybody can edit 
 * Information for Server Admins
 * Information About Packet Collecting
 * Content Development Information
-* [Quest Development Information](QuestDevelopment)
+* [Quest Development Information](wiki-QuestDevelopment)
