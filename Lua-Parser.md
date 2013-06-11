@@ -224,7 +224,7 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 > ```
 
 * event_enter
-> Triggered when a client enters our set proximity
+> Triggered when a client enters our set proximity.
 > Passes an event table as an argument:
 > ```
 > {
@@ -234,7 +234,7 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 > ```
 
 * event_exit
-> Triggered when a client exits our set proximity
+> Triggered when a client exits our set proximity.
 > Passes an event table as an argument:
 > ```
 > {
@@ -278,7 +278,7 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 > ```
 
 * event_cast
-> Triggered when this npc finishes casting a spell
+> Triggered when this npc finishes casting a spell.
 > Passes an event table as an argument:
 > ```
 > {
@@ -288,7 +288,7 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 > ```
 
 * event_cast_begin
-> Triggered when this npc begins casting a spell
+> Triggered when this npc begins casting a spell.
 > Passes an event table as an argument:
 > ```
 > {
@@ -298,7 +298,7 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 > ```
 
 * event_target_change
-> Triggered when this npc has its' target change
+> Triggered when this npc has its' target change.
 > Passes an event table as an argument:
 > ```
 > {
@@ -308,7 +308,7 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 > ```
 
 * event_hate_list
-> Triggered when a target is added/removed to/from this npc's hatelist
+> Triggered when a target is added/removed to/from this npc's hatelist.
 > Passes an event table as an argument:
 > ```
 > {
@@ -318,7 +318,7 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 > ```
 
 * event_feign_death
-> Triggered when a client attempts to feign death against this npc
+> Triggered when a client attempts to feign death against this npc.
 > Passes an event table as an argument:
 > ```
 > {
