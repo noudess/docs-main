@@ -83,9 +83,9 @@ Encounter scripts listen for specific events from other script types with the fo
 
 ```
 void register_npc_event(std::string name, int evt, int npc_id, luafunction func);
-void register_player_event(std::string name, int evt, luafunction  func);
-void register_item_event(std::string name, int evt, Lua_Item item, luafunction  func);
-void register_spell_event(std::string name, int evt, int spell_id, luafunction  func);
+void register_player_event(std::string name, int evt, luafunction func);
+void register_item_event(std::string name, int evt, Lua_Item item, luafunction func);
+void register_spell_event(std::string name, int evt, int spell_id, luafunction func);
 ```
 
 Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unless an existing quest is already listening for them.
