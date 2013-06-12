@@ -332,7 +332,7 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 ### Player Events
 
 * event_say
-> Triggered when a client /says something
+> Triggered when a client /says something.
 > Passes an event table as an argument:
 > ```
 > {
@@ -343,7 +343,7 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 > ```
 
 * event_death
-> Triggered when a client dies
+> Triggered when a client dies.
 > Passes an event table as an argument:
 > ```
 > {
@@ -357,6 +357,15 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 > Returning a non-zero value will cancel the death.
 
 * event_timer
+> Triggered when a a timer attached to this client expires.
+> Passes an event table as an argument:
+> ```
+> {
+> 	Client self;
+> 	String timer;
+> }
+> ```
+
 * event_signal
 * event_enter_zone
 * event_click_door
