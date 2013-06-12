@@ -332,7 +332,29 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 ### Player Events
 
 * event_say
+> Triggered when a client /says something
+> Passes an event table as an argument:
+> ```
+> {
+> 	Client self;
+> 	String message;
+> 	Integer language;
+> }
+> ```
+
 * event_death
+> Triggered when a client dies
+> Passes an event table as an argument:
+> ```
+> {
+> 	Client self;
+> 	Mob other;
+> 	Integer damage;
+> 	Spell spell;
+> 	Integer skill_id;
+> }
+> ```
+
 * event_timer
 * event_signal
 * event_enter_zone
