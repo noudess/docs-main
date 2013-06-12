@@ -351,7 +351,7 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 > 	Mob other;
 > 	Integer damage;
 > 	Spell spell;
-> 	Integer skill_id;
+> 	Integer skill;
 > }
 > ```
 > Returning a non-zero value will cancel the death.
