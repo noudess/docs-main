@@ -354,6 +354,7 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 > 	Integer skill_id;
 > }
 > ```
+> Returning a non-zero value will cancel the death.
 
 * event_timer
 * event_signal
@@ -390,6 +391,17 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 * event_duel_win
 * event_duel_lose
 * event_command
+> Triggered when a client enters a #command
+> Passes an event table as an argument:
+> ```
+> {
+> 	Client self;
+> 	String command;
+> 	IntegerArray args;
+> }
+> ```
+> Returning a non-zero value will suppress the command not found message
+
 * event_feign_death
 
 <a name="wiki-item-events"></a>
