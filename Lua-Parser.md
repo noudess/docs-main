@@ -386,7 +386,25 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 > ```
 
 * event_click_door
+> Triggered when a client clicks on a door.
+> Passes an event table as an argument:
+> ```
+> {
+> 	Client self;
+> 	Lua_Door door;
+> }
+> ```
+
 * event_loot
+> Triggered when a client loots an item.
+> Passes an event table as an argument:
+> ```
+> {
+> 	Client self;
+> 	Lua_ItemInst item;
+> }
+> ```
+
 * event_zone
 * event_level_up
 * event_killed_merit
