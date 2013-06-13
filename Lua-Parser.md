@@ -357,7 +357,7 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 > Returning a non-zero value will cancel the death.
 
 * event_timer
-> Triggered when a a timer attached to this client expires.
+> Triggered when a timer attached to this client expires.
 > Passes an event table as an argument:
 > ```
 > {
@@ -367,7 +367,24 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 > ```
 
 * event_signal
+> Triggered when a client is signaled.
+> Passes an event table as an argument:
+> ```
+> {
+> 	Client self;
+> 	Integer signal;
+> }
+> ```
+
 * event_enter_zone
+> Triggered when a client enters the zone.
+> Passes an event table as an argument:
+> ```
+> {
+> 	Client self;
+> }
+> ```
+
 * event_click_door
 * event_loot
 * event_zone
