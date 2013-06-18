@@ -406,9 +406,25 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 > ```
 
 * event_zone
+> Triggered when a client attempts to zone to a new zone.
+> Passes an event table as an argument:
+> ```
+> {
+> 	Client self;
+> 	Integer zone_id;
+> }
+> ```
+> Returning a non-zero value will cancel the zone request.
+
 * event_level_up
-* event_killed_merit
-* event_cast_on
+> Triggered when a client levels up.
+> Passes an event table as an argument:
+> ```
+> {
+> 	Client self;
+> }
+> ```
+
 * event_task_accepted
 * event_task_stage_complete
 * event_task_update
