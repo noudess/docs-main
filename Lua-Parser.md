@@ -414,7 +414,6 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 > 	Integer zone_id;
 > }
 > ```
-> Returning a non-zero value will cancel the zone request.
 
 * event_level_up
 > Triggered when a client levels up.
