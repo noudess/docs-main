@@ -530,7 +530,27 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 > ```
 
 * event_combine_success
+> Triggered when a client successfully combines a tradeskill recipe.
+> Passes an event table as an argument:
+> ```
+> {
+> 	Client self;
+> 	Integer recipe_id;
+> 	String recipe_name;
+> }
+> ```
+
 * event_combine_failure
+> Triggered when a client fails to combine a tradeskill recipe.
+> Passes an event table as an argument:
+> ```
+> {
+> 	Client self;
+> 	Integer recipe_id;
+> 	String recipe_name;
+> }
+> ```
+
 * event_group_change
 * event_forage_success
 * event_forage_failure
