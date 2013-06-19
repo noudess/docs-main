@@ -328,6 +328,17 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 > ```
 > Returning a non-zero value will cancel the feign death
 
+* event_task_accepted
+> Triggered when a client accepts a task offered by this npc.
+> Passes an event table as an argument:
+> ```
+> {
+> 	NPC self;
+> 	Client other;
+> 	Integer task_id;
+> }
+> ```
+
 <a name="wiki-player-events"></a>
 ### Player Events
 
@@ -424,11 +435,51 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 > }
 > ```
 
-* event_task_accepted
 * event_task_stage_complete
+> Triggered when a client completes a task stage.
+> Passes an event table as an argument:
+> ```
+> {
+> 	Client self;
+> 	Integer task_id;
+> 	Integer activity_id;
+> }
+> ```
+
 * event_task_update
+> Triggered when a client has a task update progress.
+> Passes an event table as an argument:
+> ```
+> {
+> 	Client self;
+> 	Integer task_id;
+> 	Integer activity_id;
+> 	Integer count;
+> }
+> ```
+
 * event_task_complete
+> Triggered when a client has a task complete.
+> Passes an event table as an argument:
+> ```
+> {
+> 	Client self;
+> 	Integer task_id;
+> 	Integer activity_id;
+> 	Integer count;
+> }
+> ```
+
 * event_task_fail
+> Triggered when a client has a task fail.
+> Passes an event table as an argument:
+> ```
+> {
+> 	Client self;
+> 	Integer task_id;
+> }
+> ```
+
 * event_player_pickup
 * event_popup_response
 * event_cast
