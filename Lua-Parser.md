@@ -521,7 +521,14 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 > ```
 
 * event_target_change
-* event_hate_list
+> Triggered when a client changes their target.
+> Passes an event table as an argument:
+> ```
+> {
+> 	Client self;
+> }
+> ```
+
 * event_combine_success
 * event_combine_failure
 * event_group_change
