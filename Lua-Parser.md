@@ -402,7 +402,7 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 > ```
 > {
 > 	Client self;
-> 	Lua_Door door;
+> 	Door door;
 > }
 > ```
 
@@ -412,7 +412,7 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 > ```
 > {
 > 	Client self;
-> 	Lua_ItemInst item;
+> 	ItemInst item;
 > }
 > ```
 
@@ -481,9 +481,45 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 > ```
 
 * event_player_pickup
+> Triggered when a client picks an item up.
+> Passes an event table as an argument:
+> ```
+> {
+> 	Client self;
+> 	ItemInst item;
+> }
+> ```
+
 * event_popup_response
+> Triggered when a client picks an item up.
+> Passes an event table as an argument:
+> ```
+> {
+> 	Client self;
+> 	Integer popup_id;
+> }
+> ```
+
 * event_cast
+> Triggered when a client finishes casting a spell.
+> Passes an event table as an argument:
+> ```
+> {
+> 	Client self;
+> 	Spell spell;
+> }
+> ```
+
 * event_cast_begin
+> Triggered when a client starts casting a spell.
+> Passes an event table as an argument:
+> ```
+> {
+> 	Client self;
+> 	Spell spell;
+> }
+> ```
+
 * event_target_change
 * event_hate_list
 * event_combine_success
