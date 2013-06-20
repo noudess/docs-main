@@ -552,11 +552,61 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 > ```
 
 * event_group_change
+> Triggered when a client changes their group.
+> Passes an event table as an argument:
+> ```
+> {
+> 	Client self;
+> }
+> ```
+
 * event_forage_success
+> Triggered when a client forages an item.
+> Passes an event table as an argument:
+> ```
+> {
+> 	Client self;
+> 	ItemInst item;
+> }
+> ```
+
 * event_forage_failure
+> Triggered when a client fails to forage an item.
+> Passes an event table as an argument:
+> ```
+> {
+> 	Client self;
+> }
+> ```
+
 * event_fish_start
+> Triggered when a client starts to fish.
+> Passes an event table as an argument:
+> ```
+> {
+> 	Client self;
+> }
+> ```
+
 * event_fish_success
+> Triggered when a client catches something while fishing.
+> Passes an event table as an argument:
+> ```
+> {
+> 	Client self;
+> 	ItemInst item;
+> }
+> ```
+
 * event_fish_failure
+> Triggered when a client fails to catch something while fishing.
+> Passes an event table as an argument:
+> ```
+> {
+> 	Client self;
+> }
+> ```
+
 * event_click_object
 * event_discover_item
 * event_disconnect
