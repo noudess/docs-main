@@ -693,12 +693,77 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 
 * event_timer
 * event_scale_calc
+> Triggered on a timer every 10 seconds for a scaling item.
+> Passes an event table as an argument:
+> ```
+> {
+> 	ItemInst self;
+> 	Client owner;
+> }
+> ```
+
 * event_item_enter_zone
+> Triggered when a client enters the zone with this item.
+> Passes an event table as an argument:
+> ```
+> {
+> 	ItemInst self;
+> 	Client owner;
+> }
+> ```
+
 * event_item_click
+> Triggered when a client right clicks an item. Only works on SoF+ clients.
+> Passes an event table as an argument:
+> ```
+> {
+> 	ItemInst self;
+> 	Client owner;
+> 	Integer slot_id;
+> }
+> ```
+
 * event_item_click_cast
+> Triggered when a client right clicks an item to cast a spell with it.
+> Passes an event table as an argument:
+> ```
+> {
+> 	ItemInst self;
+> 	Client owner;
+> 	Integer slot_id;
+> }
+> ```
+
 * event_item_tick
+> Triggered by a timer every 10 seconds randomly (driven by a db table).
+> Passes an event table as an argument:
+> ```
+> {
+> 	ItemInst self;
+> 	Client owner;
+> }
+> ```
+
 * event_drop_item
+> Triggered when a client attempts to drop an item on the ground.
+> Passes an event table as an argument:
+> ```
+> {
+> 	ItemInst self;
+> 	Client owner;
+> }
+> ```
+> Returning a non-zero value will make the item not actually be dropped on the ground.
+
 * event_destroy_item
+> Triggered when a client attempts to destroy an item on the ground.
+> Passes an event table as an argument:
+> ```
+> {
+> 	ItemInst self;
+> 	Client owner;
+> }
+> ```
 
 <a name="wiki-spell-events"></a>
 ### Spell Events
