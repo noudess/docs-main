@@ -779,15 +779,71 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 ### Spell Events
 
 * event_spell_effect
+> Triggered when a spell affects a target.
+> Passes an event table as an argument:
+> ```
+> {
+> 	Spell self;
+> 	Mob target;
+> 	Integer buff_slot;
+> 	Integer caster_id;
+> }
+> ```
+
 * event_spell_buff_tic
+> Triggered when a spell tics on a target.
+> Passes an event table as an argument:
+> ```
+> {
+> 	Spell self;
+> 	Mob target;
+> 	Integer tics_remaining;
+> 	Integer caster_level;
+> 	Integer caster_id;
+> }
+> ```
+
 * event_spell_fade
+> Triggered when a spell fades from a target.
+> Passes an event table as an argument:
+> ```
+> {
+> 	Spell self;
+> 	Mob target;
+> 	Integer buff_slot;
+> }
+> ```
+
 * event_spell_effect_translocate_complete
+> Triggered when a translocate spell completes.
+> Passes an event table as an argument:
+> ```
+> {
+> 	Spell self;
+> 	Mob target;
+> }
+> ```
 
 <a name="wiki-encounter-events"></a>
 ### Encounter Events
 
 * event_encounter_load
+> Triggered when an encounter is set to load.
+> Passes an event table as an argument:
+> ```
+> {
+> 	String name;
+> }
+> ```
+
 * event_encounter_unload
+> Triggered when an encounter is set to unload.
+> Passes an event table as an argument:
+> ```
+> {
+> 	String name;
+> }
+> ```
 
 <a name="wiki-api"></a>
 ### API
