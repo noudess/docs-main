@@ -182,7 +182,6 @@ int GetLDoNWins();
 int GetLDoNLosses();
 int GetLDoNWinsTheme(int theme);
 int GetLDoNLossesTheme(int theme);
-Lua_ItemInst GetItemAt(int slot);
 int GetStartZone();
 void SetStartZone(int zone_id);
 void SetStartZone(int zone_id, float x);
@@ -240,4 +239,5 @@ Lua_Group GetGroup();
 Lua_Raid GetRaid();
 bool PutItemInInventory(int slot_id, Lua_ItemInst inst);
 bool PushItemOnCursor(Lua_ItemInst inst);
+Lua_Inventory GetInventory();
 ```
