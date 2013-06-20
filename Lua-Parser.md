@@ -782,6 +782,7 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 > {
 > 	ItemInst self;
 > 	Client owner;
+> 	Mob target;
 > 	Spell spell;
 > }
 > ```
