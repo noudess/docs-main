@@ -692,6 +692,16 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 ### Item Events
 
 * event_timer
+> Triggered when a timer attached to this item expires.
+> Passes an event table as an argument:
+> ```
+> {
+> 	ItemInst self;
+> 	Client owner;
+> 	String timer;
+> }
+> ```
+
 * event_scale_calc
 > Triggered on a timer every 10 seconds for a scaling item.
 > Passes an event table as an argument:
