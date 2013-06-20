@@ -775,6 +775,29 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 > }
 > ```
 
+* event_weapon_proc
+> Triggered when a client procs when using this item.
+> Passes an event table as an argument:
+> ```
+> {
+> 	ItemInst self;
+> 	Client owner;
+> 	Spell spell;
+> }
+> ```
+> Returning a non-zero value from this function will cause the proc spell to not cast at all.
+
+* event_loot
+> Triggered when a client loots this item from a corpse
+> Passes an event table as an argument:
+> ```
+> {
+> 	ItemInst self;
+> 	Client owner;
+> 	Corpse corpse;
+> }
+> ```
+
 <a name="wiki-spell-events"></a>
 ### Spell Events
 
