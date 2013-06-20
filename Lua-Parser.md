@@ -608,6 +608,15 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 > ```
 
 * event_click_object
+> Triggered when a client clicks on an object.
+> Passes an event table as an argument:
+> ```
+> {
+> 	Client self;
+> 	Object object;
+> }
+> ```
+
 * event_discover_item
 * event_disconnect
 * event_connect
