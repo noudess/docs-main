@@ -618,12 +618,55 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 > ```
 
 * event_discover_item
+> Triggered when a client discovers an item (eg: the item is first seen on the server by this player).
+> Passes an event table as an argument:
+> ```
+> {
+> 	Client self;
+> 	Item item;
+> }
+> ```
+
 * event_disconnect
+> Triggered when a client disconnects from the server.
+> Passes an event table as an argument:
+> ```
+> {
+> 	Client self;
+> }
+> ```
+
 * event_connect
+> Triggered when a client zones in for the first time from world.
+> Passes an event table as an argument:
+> ```
+> {
+> 	Client self;
+> }
+> ```
+
 * event_duel_win
+> Triggered when a client wins a duel.
+> Passes an event table as an argument:
+> ```
+> {
+> 	Client self;
+> 	Client other;
+> }
+> ```
+
 * event_duel_lose
+> Triggered when a client loses a duel.
+> Passes an event table as an argument:
+> ```
+> {
+> 	Client self;
+> 	Client other;
+> }
+> ```
+
 * event_command
-> Triggered when a client enters a #command
+> Triggered when a client enters a #command.
 > Passes an event table as an argument:
 > ```
 > {
@@ -635,6 +678,15 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 > Returning a non-zero value will suppress the command not found message
 
 * event_feign_death
+> Triggered when a client feigns death.
+> Passes an event table as an argument:
+> ```
+> {
+> 	Client self;
+> 	Mob other;
+> }
+> ```
+> If a non-zero value is returned from this function then the feign death is canceled in the same way it is on the NPC version of event_feign_death.
 
 <a name="wiki-item-events"></a>
 ### Item Events
