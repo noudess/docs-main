@@ -672,7 +672,7 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 > {
 > 	Client self;
 > 	String command;
-> 	IntegerArray args;
+> 	StringArray args;
 > }
 > ```
 > Returning a non-zero value will suppress the command not found message
