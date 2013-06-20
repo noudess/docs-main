@@ -800,6 +800,7 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 > 	Integer tics_remaining;
 > 	Integer caster_level;
 > 	Integer caster_id;
+> 	Integer buff_slot;
 > }
 > ```
 
