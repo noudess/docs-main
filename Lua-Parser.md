@@ -799,8 +799,8 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 > 	Mob target;
 > 	Integer tics_remaining;
 > 	Integer caster_level;
-> 	Integer caster_id;
 > 	Integer buff_slot;
+> 	Integer caster_id;
 > }
 > ```
 
@@ -812,6 +812,7 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 > 	Spell self;
 > 	Mob target;
 > 	Integer buff_slot;
+> 	Integer caster_id;
 > }
 > ```
 
