@@ -46,6 +46,7 @@ void SetCustomData(std::string identifier, float value);
 void SetCustomData(std::string identifier, bool value);
 std::string GetCustomData(std::string identifier);
 void DeleteCustomData(std::string identifier);
+void SetScaling(bool val);
 void SetScale(double scale_factor);
 uint32 GetExp();
 void SetExp(uint32 exp);
