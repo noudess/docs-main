@@ -240,4 +240,5 @@ Lua_Raid GetRaid();
 bool PutItemInInventory(int slot_id, Lua_ItemInst inst);
 bool PushItemOnCursor(Lua_ItemInst inst);
 Lua_Inventory GetInventory();
+void SendItemScale(Lua_ItemInst inst);
 ```
