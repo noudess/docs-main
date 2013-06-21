@@ -926,6 +926,7 @@ The Lua API consisted of many exported classes and some general functions.
 * [Lua_Entity](Lua-EntityList)
 * [Lua_Group](Lua-Group)
 * [Lua_HateList](Lua-Hate-List)
+* [Lua_Inventory](Lua-Inventory)
 * [Lua_Item](Lua-Item)
 * [Lua_ItemInst](Lua-ItemInst)
 * [Lua_Mob](Lua-Mob)
