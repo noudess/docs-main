@@ -743,6 +743,7 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 > 	Integer slot_id;
 > }
 > ```
+> Returning a non-zero value from this function will cause the spell effect attached to the clicky item to not trigger.
 
 * event_item_tick
 > Triggered by a timer every 10 seconds randomly (driven by a db table).
@@ -796,6 +797,50 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 > 	ItemInst self;
 > 	Client owner;
 > 	Corpse corpse;
+> }
+> ```
+
+* event_augment_item
+> Triggered when a client augments this item.
+> Passes an event table as an argument:
+> ```
+> {
+> 	ItemInst self;
+> 	Client owner;
+> 	ItemInst aug;
+> }
+> ```
+
+* event_unaugment_item
+> Triggered when a client unaugments this item.
+> Passes an event table as an argument:
+> ```
+> {
+> 	ItemInst self;
+> 	Client owner;
+> 	ItemInst aug;
+> }
+> ```
+
+* event_augment_insert
+> Triggered when a client inserts this item into another as an augment.
+> Passes an event table as an argument:
+> ```
+> {
+> 	ItemInst self;
+> 	Client owner;
+> 	ItemInst item;
+> }
+> ```
+
+* event_augment_remove
+> Triggered when a client inserts this item into another as an augment.
+> Passes an event table as an argument:
+> ```
+> {
+> 	ItemInst self;
+> 	Client owner;
+> 	ItemInst item;
 > }
 > ```
 
