@@ -54,9 +54,9 @@ Players will also attempt to load a global Player script that is attached to all
 Item Scripts are quest scripts attached to Items.
 Items will load a script on the first event that triggers them and will load one and only one from the following location. Which ever it finds first in the following order:
 * ./quests/zone/items/item_script.lua
-* ./quests/items/item_script.lua
+* ./quests/global/items/item_script.lua
 * ./quests/zone/items/default.lua
-* ./quests/items/default.lua
+* ./quests/global/items/default.lua
 
 The format of the item_script is as follows:
 ```
@@ -73,9 +73,9 @@ Else
 Spell Scripts are quest scripts attached to Spells.
 Spells will load a script on the first event that triggers them and will load one and only one from the following location. Which ever it finds first in the following order:
 * ./quests/zone/spells/spell_id.lua
-* ./quests/spells/spell_id.lua
+* ./quests/global/spells/spell_id.lua
 * ./quests/zone/spells/default.lua
-* ./quests/spells/default.lua
+* ./quests/global/spells/default.lua
 
 <a name="wiki-encounter-scripts"></a>
 ### Encounter Scripts
