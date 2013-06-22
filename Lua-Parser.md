@@ -83,6 +83,10 @@ Encounter scripts are quest scripts that are only loaded after explicitly called
 
 `eq.load_encounter("encounter_name")`
 
+They will load one and only one from the following location. Which ever it finds first in the following order:
+* ./quests/zone/encounters/name.lua
+* ./quests/global/encounters/name.lua
+
 Encounter scripts listen for specific events from other script types with the following functions:
 
 ```
