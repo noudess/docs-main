@@ -812,6 +812,7 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 > 	ItemInst self;
 > 	Client owner;
 > 	ItemInst aug;
+> 	Integer slot_id;
 > }
 > ```
 
@@ -823,6 +824,7 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 > 	ItemInst self;
 > 	Client owner;
 > 	ItemInst aug;
+> 	Integer slot_id;
 > }
 > ```
 
@@ -834,6 +836,7 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 > 	ItemInst self;
 > 	Client owner;
 > 	ItemInst item;
+> 	Integer slot_id;
 > }
 > ```
 
@@ -845,6 +848,8 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 > 	ItemInst self;
 > 	Client owner;
 > 	ItemInst item;
+> 	Integer slot_id;
+> 	Boolean destroyed;
 > }
 > ```
 
