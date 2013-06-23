@@ -993,4 +993,5 @@ The Lua API consisted of many exported classes and some general functions.
 * [Lua_Object](Lua-Object)
 * [Lua_Raid](Lua-Raid)
 * [Lua_Spell](Lua-Spell)
+* [Lua_Spawn](Lua-Spawn)
 * [Lua General Functions](Lua-General-Functions)
