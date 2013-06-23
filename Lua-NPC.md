@@ -1,5 +1,7 @@
 Lua_NPC is a class exported to Lua that represent the NPC object from EQEmu. All Lua_NPC are also [Lua_Mob](Lua-Mob).
 
+[Return to the Lua API](Lua-API)
+
 ### Properties
 ```
 npc.null -- Returns true if this object is null
