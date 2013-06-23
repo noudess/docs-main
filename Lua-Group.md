@@ -1,5 +1,7 @@
 Lua_Group is a class exported to Lua that represent the Group object from EQEmu.
 
+[Return to the Lua API](Lua-API)
+
 ### Properties
 ```
 group.null -- Returns true if this object is null
