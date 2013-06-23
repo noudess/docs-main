@@ -1,4 +1,4 @@
-Lua_Inventory is a class exported to Lua that represent the Inventory object from EQEmu.
+Inventory is a class exported to Lua that represent the Inventory object from EQEmu.
 
 [Return to the Lua API](Lua-API)
 
@@ -11,33 +11,33 @@ inventory.valid -- Returns true if this object is not null
 ### Member Functions
 ```
 Inventory() -- Creates a null Inventory
-Lua_ItemInst GetItem(int slot_id);
-Lua_ItemInst GetItem(int slot_id, int bag_slot);
-int PutItem(int slot_id, Lua_ItemInst item);
-int PushCursor(Lua_ItemInst item);
-bool SwapItem(int slot_a, int slot_b);
-bool DeleteItem(int slot_id);
-bool DeleteItem(int slot_id, int quantity);
-bool CheckNoDrop(int slot_id);
-Lua_ItemInst PopItem(int slot_id);
-int HasItem(int item_id);
-int HasItem(int item_id, int quantity);
-int HasItem(int item_id, int quantity, int where);
-bool HasSpaceForItem(Lua_Item item, int quantity);
-int HasItemByUse(int use);
-int HasItemByUse(int use, uint8 quantity);
-int HasItemByUse(int use, uint8 quantity, uint8 where);
-int HasItemByLoreGroup(uint32 loregroup);
-int HasItemByLoreGroup(uint32 loregroup, int where);
-int FindFreeSlot(bool for_bag, bool try_cursor);
-int FindFreeSlot(bool for_bag, bool try_cursor, int min_size);
-int FindFreeSlot(bool for_bag, bool try_cursor, int min_size, bool is_arrow);
-int CalcSlotId(int slot_id);
-int CalcSlotId(int slot_id, int bag_slot);
-int CalcBagIdx(int slot_id);
-int CalcSlotFromMaterial(int material);
-int CalcMaterialFromSlot(int equipslot);
-bool CanItemFitInContainer(Lua_Item item, Lua_Item container);
-bool SupportsContainers(int slot_id);
-int GetSlotByItemInst(Lua_ItemInst inst);
+ItemInst GetItem(Integer slot_id);
+ItemInst GetItem(Integer slot_id, Integer bag_slot);
+Integer PutItem(Integer slot_id, ItemInst item);
+Integer PushCursor(ItemInst item);
+Boolean SwapItem(Integer slot_a, Integer slot_b);
+Boolean DeleteItem(Integer slot_id);
+Boolean DeleteItem(Integer slot_id, Integer quantity);
+Boolean CheckNoDrop(Integer slot_id);
+ItemInst PopItem(Integer slot_id);
+Integer HasItem(Integer item_id);
+Integer HasItem(Integer item_id, Integer quantity);
+Integer HasItem(Integer item_id, Integer quantity, Integer where);
+Boolean HasSpaceForItem(Item item, Integer quantity);
+Integer HasItemByUse(Integer use);
+Integer HasItemByUse(Integer use, uInteger8 quantity);
+Integer HasItemByUse(Integer use, uInteger8 quantity, uInteger8 where);
+Integer HasItemByLoreGroup(Integer loregroup);
+Integer HasItemByLoreGroup(Integer loregroup, Integer where);
+Integer FindFreeSlot(Boolean for_bag, Boolean try_cursor);
+Integer FindFreeSlot(Boolean for_bag, Boolean try_cursor, Integer min_size);
+Integer FindFreeSlot(Boolean for_bag, Boolean try_cursor, Integer min_size, Boolean is_arrow);
+Integer CalcSlotId(Integer slot_id);
+Integer CalcSlotId(Integer slot_id, Integer bag_slot);
+Integer CalcBagIdx(Integer slot_id);
+Integer CalcSlotFromMaterial(Integer material);
+Integer CalcMaterialFromSlot(Integer equipslot);
+Boolean CanItemFitInContainer(Item item, Item container);
+Boolean SupportsContainers(Integer slot_id);
+Integer GetSlotByItemInst(ItemInst inst);
 ```

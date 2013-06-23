@@ -1,4 +1,4 @@
-Lua_ItemInst is a class exported to Lua that represent the ItemInst object from EQEmu.
+ItemInst is a class exported to Lua that represent the ItemInst object from EQEmu.
 
 [Return to the Lua API](Lua-API)
 
@@ -11,49 +11,49 @@ item.valid -- Returns true if this object is not null
 ### Member Functions
 ```
 ItemInst() -- Creates a null ItemInst
-ItemInst(int item_id) -- Creates a new ItemInst of item_id
-ItemInst(int item_id, int charges) -- Creates a new ItemInst of item_id with charges
-bool IsType(int item_class);
-bool IsStackable();
-bool IsEquipable(int race, int class_);
-bool IsEquipable(int slot_id);
-bool IsAugmentable();
-int GetAugmentType();
-bool IsExpendable();
-Lua_ItemInst GetItem(int slot);
-Lua_Item GetItem();
-void SetItem(Lua_Item item);
-Lua_Item GetUnscaledItem(int slot);
-uint32 GetItemID(int slot);
-int GetTotalItemCount();
-Lua_ItemInst GetAugment(int slot);
-uint32 GetAugmentItemID(int slot);
-bool IsAugmented();
-bool IsWeapon();
-bool IsAmmo();
-uint32 GetID();
-uint32 GetItemScriptID();
-int GetCharges();
-void SetCharges(int charges);
-uint32 GetPrice();
-void SetPrice(uint32 price);
-void SetColor(uint32 color);
-uint32 GetColor();
-bool IsInstNoDrop();
-void SetInstNoDrop(bool flag);
-std::string GetCustomDataString();
-void SetCustomData(std::string identifier, std::string value);
-void SetCustomData(std::string identifier, int value);
-void SetCustomData(std::string identifier, float value);
-void SetCustomData(std::string identifier, bool value);
-std::string GetCustomData(std::string identifier);
-void DeleteCustomData(std::string identifier);
-void SetScaling(bool val);
-void SetScale(double scale_factor);
-uint32 GetExp();
-void SetExp(uint32 exp);
-void AddExp(uint32 exp);
-int GetMaxEvolveLvl();
-uint32 GetKillsNeeded(int current_level);
-Lua_ItemInst Clone();
+ItemInst(Integer item_id) -- Creates a new ItemInst of item_id
+ItemInst(Integer item_id, Integer charges) -- Creates a new ItemInst of item_id with charges
+Boolean IsType(Integer item_class);
+Boolean IsStackable();
+Boolean IsEquipable(Integer race, Integer class_);
+Boolean IsEquipable(Integer slot_id);
+Boolean IsAugmentable();
+Integer GetAugmentType();
+Boolean IsExpendable();
+ItemInst GetItem(Integer slot);
+Item GetItem();
+Void SetItem(Item item);
+Item GetUnscaledItem(Integer slot);
+Integer GetItemID(Integer slot);
+Integer GetTotalItemCount();
+ItemInst GetAugment(Integer slot);
+Integer GetAugmentItemID(Integer slot);
+Boolean IsAugmented();
+Boolean IsWeapon();
+Boolean IsAmmo();
+Integer GetID();
+Integer GetItemScriptID();
+Integer GetCharges();
+Void SetCharges(Integer charges);
+Integer GetPrice();
+Void SetPrice(Integer price);
+Void SetColor(Integer color);
+Integer GetColor();
+Boolean IsInstNoDrop();
+Void SetInstNoDrop(Boolean flag);
+String GetCustomDataString();
+Void SetCustomData(String identifier, String value);
+Void SetCustomData(String identifier, Integer value);
+Void SetCustomData(String identifier, Real value);
+Void SetCustomData(String identifier, Boolean value);
+String GetCustomData(String identifier);
+Void DeleteCustomData(String identifier);
+Void SetScaling(Boolean val);
+Void SetScale(Real scale_factor);
+Integer GetExp();
+Void SetExp(Integer exp);
+Void AddExp(Integer exp);
+Integer GetMaxEvolveLvl();
+Integer GetKillsNeeded(Integer current_level);
+ItemInst Clone();
 ```

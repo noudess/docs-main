@@ -1,4 +1,4 @@
-Lua_Entity is a class exported to Lua that represent the Entity object from EQEmu.
+Entity is a class exported to Lua that represent the Entity object from EQEmu.
 
 [Return to the Lua API](Lua-API)
 
@@ -11,23 +11,23 @@ entity.valid -- Returns true if this object is not null
 ### Member Functions
 ```
 Entity(); -- Creates a null entity
-bool IsClient();
-bool IsNPC();
-bool IsMob();
-bool IsMerc();
-bool IsCorpse();
-bool IsPlayerCorpse();
-bool IsNPCCorpse();
-bool IsObject();
-bool IsDoor();
-bool IsTrap();
-bool IsBeacon();
-int GetID();
+Boolean IsClient();
+Boolean IsNPC();
+Boolean IsMob();
+Boolean IsMerc();
+Boolean IsCorpse();
+Boolean IsPlayerCorpse();
+Boolean IsNPCCorpse();
+Boolean IsObject();
+Boolean IsDoor();
+Boolean IsTrap();
+Boolean IsBeacon();
+Integer GetID();
 
-Lua_Client CastToClient();
-Lua_NPC CastToNPC();
-Lua_Mob CastToMob();
-Lua_Corpse CastToCorpse();
-Lua_Object CastToObject();
-Lua_Door CastToDoor();
+Client CastToClient();
+NPC CastToNPC();
+Mob CastToMob();
+Corpse CastToCorpse();
+Object CastToObject();
+Door CastToDoor();
 ```

@@ -1,6 +1,6 @@
 The Lua Parser is a quest parser for EQEmu that uses the Lua embedded programming language.
 
-We use Lua 5.1 so the [Lua 5.1 Manual](http://www.lua.org/manual/5.1/manual.html) applies. Section 2 is a bit of a dense read but may be of particular interest to those just getting started with Lua.
+We use Lua 5.1 so the [Lua 5.1 Manual](http://www.lua.org/manual/5.1/manual.html) applies. Section 2 is a bit of a dense read but may be of particular Integererest to those just getting started with Lua.
 
 ## Table of Contents
 * [Init Scripts](#init-scripts)
@@ -90,10 +90,10 @@ They will load one and only one from the following location. Which ever it finds
 Encounter scripts listen for specific events from other script types with the following functions:
 
 ```
-void register_npc_event(std::string name, int evt, int npc_id, luafunction func);
-void register_player_event(std::string name, int evt, luafunction func);
-void register_item_event(std::string name, int evt, int item_id, luafunction func);
-void register_spell_event(std::string name, int evt, int spell_id, luafunction func);
+Void register_npc_event(String name, Integer evt, Integer npc_id, luafunction func);
+Void register_player_event(String name, Integer evt, luafunction func);
+Void register_item_event(String name, Integer evt, Integer item_id, luafunction func);
+Void register_spell_event(String name, Integer evt, Integer spell_id, luafunction func);
 
 Note: Passing a value of -1 for npc, item or spell id to watch will watch every npc, item or spell for those events.
 ```
@@ -168,7 +168,7 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 > ```
 > {
 > 	NPC self;
-> 	Bool joined;
+> 	Boolean joined;
 > }
 > ```
 
@@ -323,7 +323,7 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 > ```
 > {
 > 	NPC self;
-> 	Bool joined;
+> 	Boolean joined;
 > }
 > ```
 
@@ -899,7 +899,7 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 > 	Client owner;
 > 	ItemInst item;
 > 	Integer slot_id;
-> 	Boolean destroyed;
+> 	Booleanean destroyed;
 > }
 > ```
 

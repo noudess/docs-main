@@ -1,4 +1,4 @@
-Lua_Corpse is a class exported to Lua that represent the Corpse object from EQEmu. All Lua_Corpse are also [Lua_Mob](Lua-Mob).
+Corpse is a class exported to Lua that represent the Corpse object from EQEmu. All Corpse are also [Mob](Lua-Mob).
 
 [Return to the Lua API](Lua-API)
 
@@ -11,33 +11,33 @@ corpse.valid -- Returns true if this object is not null
 ### Member Functions
 ```
 Corpse() -- Creates a null Corpse
-uint32 GetCharID();
-uint32 GetDecayTime();
-void Lock();
-void UnLock();
-bool IsLocked();
-void ResetLooter();
-uint32 GetDBID();
-bool IsRezzed();
-const char *GetOwnerName();
-bool Save();
-void Delete();
-void Bury();
-void Depop();
-uint32 CountItems();
-void AddItem(uint32 itemnum, uint16 charges, int16 slot, uint32 aug1, uint32 aug2, uint32 aug3, uint32 aug4, uint32 aug5);
-uint32 GetWornItem(int16 equipSlot);
-void RemoveItem(uint16 lootslot);
-void SetCash(uint32 copper, uint32 silver, uint32 gold, uint32 platinum);
-void RemoveCash();
-bool IsEmpty();
-void SetDecayTimer(uint32 decaytime);
-bool CanMobLoot(int charid);
-void AllowMobLoot(Lua_Mob them, uint8 slot);
-bool Summon(Lua_Client client, bool spell, bool checkdistance);
-uint32 GetCopper();
-uint32 GetSilver();
-uint32 GetGold();
-uint32 GetPlatinum();
-void AddLooter(Lua_Mob who);
+Integer GetCharID();
+Integer GetDecayTime();
+Void Lock();
+Void UnLock();
+Boolean IsLocked();
+Void ResetLooter();
+Integer GetDBID();
+Boolean IsRezzed();
+String GetOwnerName();
+Boolean Save();
+Void Delete();
+Void Bury();
+Void Depop();
+Integer CountItems();
+Void AddItem(Integer itemnum, uInteger charges, Integer slot, Integer aug1, Integer aug2, Integer aug3, Integer aug4, Integer aug5);
+Integer GetWornItem(Integer equipSlot);
+Void RemoveItem(Integer lootslot);
+Void SetCash(Integer copper, Integer silver, Integer gold, Integer platinum);
+Void RemoveCash();
+Boolean IsEmpty();
+Void SetDecayTimer(Integer decaytime);
+Boolean CanMobLoot(Integer charid);
+Void AllowMobLoot(Mob them, uInteger8 slot);
+Boolean Summon(Client client, Boolean spell, Boolean checkdistance);
+Integer GetCopper();
+Integer GetSilver();
+Integer GetGold();
+Integer GetPlatinum();
+Void AddLooter(Mob who);
 ```

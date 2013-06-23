@@ -4,9 +4,9 @@ The wiki is the only good source of documentation about EQEmu. Anybody can edit 
 
 ***
 
-* Information For Players
-* Guide For New Players
-* Information for Server Admins
-* Information About Packet Collecting
-* Content Development
+* [[Information For Players|Player-Information]]
+* [[Guide For New Players|New-Players]]
+* [[Information for Server Admins|Server-Admin]]
+* [[Information About Packet Collecting|Packet-Collecting]]
+* [[Content Development|Content-Development]]
 * [[Quest Development|Quest-Development]]

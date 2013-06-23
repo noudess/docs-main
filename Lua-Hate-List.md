@@ -10,14 +10,14 @@ hate.valid -- Returns true if this object is not null
 
 ### Member Functions
 ```
-Lua_Mob GetEnt();
-void SetEnt(Lua_Mob e);
-int GetDamage();
-void SetDamage(int value);
-int GetHate();
-void SetHate(int value);
-int GetFrenzy();
-void SetFrenzy(bool value);
+Mob GetEnt();
+Void SetEnt(Mob e);
+Integer GetDamage();
+Void SetDamage(Integer value);
+Integer GetHate();
+Void SetHate(Integer value);
+Integer GetFrenzy();
+Void SetFrenzy(Boolean value);
 ```
 
-Lua_HateList is a table exported to Lua that contains a field 'entries' that contains hate entries of the hate list.
+HateList is a table exported to Lua that contains a field 'entries' that contains hate entries of the hate list.

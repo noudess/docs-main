@@ -1,4 +1,4 @@
-Lua_EntityList is a class exported to Lua that represent the EntityList object from EQEmu.
+EntityList is a class exported to Lua that represent the EntityList object from EQEmu.
 
 [Return to the Lua API](Lua-API)
 
@@ -11,63 +11,63 @@ entity_list.valid -- Returns true if this object is not null
 ### Member Functions
 ```
 EntityList() -- Creates a null EntityList
-Lua_Mob GetMobID(int id);
-Lua_Mob GetMob(const char *name);
-Lua_Mob GetMob(int id);
-Lua_Mob GetMobByNpcTypeID(int npc_type);
-Lua_NPC GetNPCByID(int id);
-Lua_NPC GetNPCByNPCTypeID(int npc_type);
-Lua_Client GetClientByName(const char *name);
-Lua_Client GetClientByAccID(uint32 acct_id);
-Lua_Client GetClientByID(int id);
-Lua_Client GetClientByCharID(uint32 char_id);
-Lua_Client GetClientByWID(uint32 wid);
-Lua_Object GetObjectByID(int id);
-Lua_Object GetObjectByDBID(uint32 db_id);
-Lua_Door GetDoorsByID(int id);
-Lua_Door GetDoorsByDBID(uint32 db_id);
-Lua_Door GetDoorsByDoorID(uint32 door_id);
-Lua_Door FindDoor(uint32 id);
-Lua_Group GetGroupByMob(Lua_Mob mob);
-Lua_Group GetGroupByClient(Lua_Client client);
-Lua_Group GetGroupByID(int id);
-Lua_Group GetGroupByLeaderName(const char *name);
-Lua_Raid GetRaidByID(int id);
-Lua_Raid GetRaidByClient(Lua_Client client);
-Lua_Corpse GetCorpseByOwner(Lua_Client client);
-Lua_Corpse GetCorpseByID(int id);
-Lua_Corpse GetCorpseByName(const char *name);
-Lua_Spawn GetSpawnByID(uint32 id);
-void ClearClientPetitionQueue();
-bool CanAddHateForMob(Lua_Mob p);
-void Message(uint32 guild_dbid, uint32 type, const char *message);
-void MessageStatus(uint32 guild_dbid, int min_status, uint32 type, const char *message);
-void MessageClose(Lua_Mob sender, bool skip_sender, float dist, uint32 type, const char *message);
-void RemoveFromTargets(Lua_Mob mob);
-void ReplaceWithTarget(Lua_Mob target, Lua_Mob new_target);
-void OpenDoorsNear(Lua_NPC opener);
-std::string MakeNameUnique(const char *name);
-std::string RemoveNumbers(const char *name);
-void SignalMobsByNPCID(uint32 npc_id, int signal);
-int DeleteNPCCorpses();
-int DeletePlayerCorpses();
-void HalveAggro(Lua_Mob who);
-void DoubleAggro(Lua_Mob who);
-void ClearFeignAggro(Lua_Mob who);
-bool Fighting(Lua_Mob who);
-void RemoveFromHateLists(Lua_Mob who);
-void RemoveFromHateLists(Lua_Mob who, bool set_to_one);
-void MessageGroup(Lua_Mob who, bool skip_close, uint32 type, const char *message);
-Lua_Client GetRandomClient(float x, float y, float z, float dist);
-Lua_Client GetRandomClient(float x, float y, float z, float dist, Lua_Client exclude);
-Lua_Mob_List GetMobList();
-Lua_Client_List GetClientList();
-Lua_NPC_List GetNPCList();
-Lua_Corpse_List GetCorpseList();
-Lua_Object_List GetObjectList();
-Lua_Doors_List GetDoorsList();
-Lua_Spawn_List GetSpawnList();
-void SignalAllClients(int signal);
+Mob GetMobID(Integer id);
+Mob GetMob(String name);
+Mob GetMob(Integer id);
+Mob GetMobByNpcTypeID(Integer npc_type);
+NPC GetNPCByID(Integer id);
+NPC GetNPCByNPCTypeID(Integer npc_type);
+Client GetClientByName(String name);
+Client GetClientByAccID(Integer acct_id);
+Client GetClientByID(Integer id);
+Client GetClientByCharID(Integer char_id);
+Client GetClientByWID(Integer wid);
+Object GetObjectByID(Integer id);
+Object GetObjectByDBID(Integer db_id);
+Door GetDoorsByID(Integer id);
+Door GetDoorsByDBID(Integer db_id);
+Door GetDoorsByDoorID(Integer door_id);
+Door FindDoor(Integer id);
+Group GetGroupByMob(Mob mob);
+Group GetGroupByClient(Client client);
+Group GetGroupByID(Integer id);
+Group GetGroupByLeaderName(String name);
+Raid GetRaidByID(Integer id);
+Raid GetRaidByClient(Client client);
+Corpse GetCorpseByOwner(Client client);
+Corpse GetCorpseByID(Integer id);
+Corpse GetCorpseByName(String name);
+Spawn GetSpawnByID(Integer id);
+Void ClearClientPetitionQueue();
+Boolean CanAddHateForMob(Mob p);
+Void Message(Integer guild_dbid, Integer type, String message);
+Void MessageStatus(Integer guild_dbid, Integer min_status, Integer type, String message);
+Void MessageClose(Mob sender, Boolean skip_sender, Real dist, Integer type, String message);
+Void RemoveFromTargets(Mob mob);
+Void ReplaceWithTarget(Mob target, Mob new_target);
+Void OpenDoorsNear(NPC opener);
+String MakeNameUnique(String name);
+String RemoveNumbers(String name);
+Void SignalMobsByNPCID(Integer npc_id, Integer signal);
+Integer DeleteNPCCorpses();
+Integer DeletePlayerCorpses();
+Void HalveAggro(Mob who);
+Void DoubleAggro(Mob who);
+Void ClearFeignAggro(Mob who);
+Boolean Fighting(Mob who);
+Void RemoveFromHateLists(Mob who);
+Void RemoveFromHateLists(Mob who, Boolean set_to_one);
+Void MessageGroup(Mob who, Boolean skip_close, Integer type, String message);
+Client GetRandomClient(Real x, Real y, Real z, Real dist);
+Client GetRandomClient(Real x, Real y, Real z, Real dist, Client exclude);
+Mob_List GetMobList();
+Client_List GetClientList();
+NPC_List GetNPCList();
+Corpse_List GetCorpseList();
+Object_List GetObjectList();
+Doors_List GetDoorsList();
+Spawn_List GetSpawnList();
+Void SignalAllClients(Integer signal);
 ```
 
-Lua_Mob_List, Lua_Client_List, Lua_NPC_List, Lua_Corpse_List, Lua_Object_List and Lua_Doors_List are Lua tables that have an entries field that is a table that contains the entity list of all those types.
+Mob_List, Client_List, NPC_List, Corpse_List, Object_List and Doors_List are Lua tables that have an entries field that is a table that contains the entity list of all those types.

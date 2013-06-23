@@ -1,4 +1,4 @@
-Lua_Raid is a class exported to Lua that represent the Raid object from EQEmu.
+Raid is a class exported to Lua that represent the Raid object from EQEmu.
 
 [Return to the Lua API](Lua-API)
 
@@ -11,25 +11,25 @@ raid.valid -- Returns true if this object is not null
 ### Member Functions
 ```
 Raid() -- Creates a null Raid
-bool IsRaidMember(const char *name);
-void CastGroupSpell(Lua_Mob caster, int spell_id, uint32 group_id);
-int GroupCount(uint32 group_id);
-int RaidCount();
-uint32 GetGroup(const char *c);
-uint32 GetGroup(Lua_Client c);
-void SplitExp(uint32 exp, Lua_Mob other);
-uint32 GetTotalRaidDamage(Lua_Mob other);
-void SplitMoney(uint32 copper, uint32 silver, uint32 gold, uint32 platinum);
-void SplitMoney(uint32 copper, uint32 silver, uint32 gold, uint32 platinum, Lua_Client splitter);
-void BalanceHP(int penalty, uint32 group_id);
-bool IsLeader(const char *c);
-bool IsLeader(Lua_Client c);
-bool IsGroupLeader(const char *name);
-int GetHighestLevel();
-int GetLowestLevel();
-Lua_Client GetClientByIndex(int index);
-void TeleportGroup(Lua_Mob sender, uint32 zone_id, uint32 instance_id, float x, float y, float z, float h, uint32 group_id);
-void TeleportRaid(Lua_Mob sender, uint32 zone_id, uint32 instance_id, float x, float y, float z, float h);
-int GetID();
-Lua_Client GetMember(int index);
+Boolean IsRaidMember(String name);
+Void CastGroupSpell(Mob caster, Integer spell_id, Integer group_id);
+Integer GroupCount(Integer group_id);
+Integer RaidCount();
+Integer GetGroup(String c);
+Integer GetGroup(Client c);
+Void SplitExp(Integer exp, Mob other);
+Integer GetTotalRaidDamage(Mob other);
+Void SplitMoney(Integer copper, Integer silver, Integer gold, Integer platinum);
+Void SplitMoney(Integer copper, Integer silver, Integer gold, Integer platinum, Client splitter);
+Void BalanceHP(Integer penalty, Integer group_id);
+Boolean IsLeader(String c);
+Boolean IsLeader(Client c);
+Boolean IsGroupLeader(String name);
+Integer GetHighestLevel();
+Integer GetLowestLevel();
+Client GetClientByIndex(Integer index);
+Void TeleportGroup(Mob sender, Integer zone_id, Integer instance_id, Real x, Real y, Real z, Real h, Integer group_id);
+Void TeleportRaid(Mob sender, Integer zone_id, Integer instance_id, Real x, Real y, Real z, Real h);
+Integer GetID();
+Client GetMember(Integer index);
 ```
