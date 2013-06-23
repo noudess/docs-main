@@ -1,5 +1,7 @@
 Lua_Client is a class exported to Lua that represent the Client object from EQEmu. All Lua_Client are also [Lua_Mob](Lua-Mob).
 
+[Return to the Lua API](Lua-API)
+
 ### Properties
 ```
 client.null -- Returns true if this object is null
