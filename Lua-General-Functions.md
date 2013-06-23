@@ -1,5 +1,7 @@
 All Lua General Functions are in the global table 'eq'.
 
+[Return to the Lua API](Lua-API)
+
 ```
 void load_encounter(std::string name);
 void unload_encounter(std::string name);
