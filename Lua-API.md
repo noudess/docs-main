@@ -17,3 +17,4 @@ The Lua API consisted of many exported classes and some general functions.
 * [Lua_Spell](Lua-Spell)
 * [Lua_Spawn](Lua-Spawn)
 * [Lua General Functions](Lua-General-Functions)
+* [Lua Constants](Lua-Constants)
