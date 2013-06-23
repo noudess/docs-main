@@ -1,5 +1,7 @@
 Lua_ItemInst is a class exported to Lua that represent the ItemInst object from EQEmu.
 
+[Return to the Lua API](Lua-API)
+
 ### Properties
 ```
 item.null -- Returns true if this object is null
