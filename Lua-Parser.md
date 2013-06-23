@@ -15,6 +15,7 @@ We use Lua 5.1 so the [Lua 5.1 Manual](http://www.lua.org/manual/5.1/manual.html
 * [Spell Events](#spell-events)
 * [Encounter Events](#encounter-events)
 * [API](#api)
+* [Examples](#examples)
 
 <a name="wiki-init-scripts"></a>
 ### Init Scripts
@@ -977,4 +978,8 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 
 <a name="wiki-api"></a>
 ### API
-* [Lua_API](Lua-API)
+* [Lua API](Lua-API)
+
+<a name="wiki-examples"></a>
+### Examples
+* [Lua Examples](Lua-Examples)
