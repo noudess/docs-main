@@ -146,4 +146,6 @@ luabind::object get_zone_time();
 void add_area(int id, int type, float min_x, float max_x, float min_y, float max_y, float min_z, float max_z);
 void remove_area(int id);
 void clear_areas();
+void remove_spawn_point(uint32 spawn2_id);
+void add_spawn_point(luabind::object table);
 ```
