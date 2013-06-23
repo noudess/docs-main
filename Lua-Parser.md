@@ -977,22 +977,4 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 
 <a name="wiki-api"></a>
 ### API
-The Lua API consisted of many exported classes and some general functions.
-* [Lua_Client](Lua-Client)
-* [Lua_Corpse](Lua-Corpse)
-* [Lua_Door](Lua-Door)
-* [Lua_Client](Lua-Client)
-* [Lua_Entity](Lua-Entity)
-* [Lua_EntityList](Lua-Entity-List)
-* [Lua_Group](Lua-Group)
-* [Lua_HateList](Lua-Hate-List)
-* [Lua_Inventory](Lua-Inventory)
-* [Lua_Item](Lua-Item)
-* [Lua_ItemInst](Lua-ItemInst)
-* [Lua_Mob](Lua-Mob)
-* [Lua_NPC](Lua-NPC)
-* [Lua_Object](Lua-Object)
-* [Lua_Raid](Lua-Raid)
-* [Lua_Spell](Lua-Spell)
-* [Lua_Spawn](Lua-Spawn)
-* [Lua General Functions](Lua-General-Functions)
+* [Lua_API](Lua-API)
