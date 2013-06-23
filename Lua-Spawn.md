@@ -13,7 +13,6 @@ void LoadGrid();
 void Enable();
 void Disable();
 bool Enabled();
-bool Process();
 void Reset();
 void Depop();
 void Repop();
