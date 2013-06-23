@@ -691,7 +691,7 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 > ```
 > {
 > 	Client self;
-> 	Mob other;
+> 	NPC other;
 > }
 > ```
 > If a non-zero value is returned from this function then the feign death is canceled in the same way it is on the NPC version of event_feign_death.
