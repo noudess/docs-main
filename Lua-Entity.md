@@ -1,5 +1,7 @@
 Lua_Entity is a class exported to Lua that represent the Entity object from EQEmu.
 
+[Return to the Lua API](Lua-API)
+
 ### Properties
 ```
 entity.null -- Returns true if this object is null
