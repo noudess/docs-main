@@ -1,5 +1,7 @@
 Lua_Raid is a class exported to Lua that represent the Raid object from EQEmu.
 
+[Return to the Lua API](Lua-API)
+
 ### Properties
 ```
 raid.null -- Returns true if this object is null
