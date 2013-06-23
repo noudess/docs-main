@@ -1,5 +1,7 @@
 Lua_Spawn is a class exported to Lua that represents the spawn2 object from EQEmu.
 
+[Return to the Lua API](Lua-API)
+
 ### Properties
 ```
 spawn.null -- Returns true if this object is null
