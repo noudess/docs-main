@@ -92,8 +92,10 @@ Encounter scripts listen for specific events from other script types with the fo
 ```
 void register_npc_event(std::string name, int evt, int npc_id, luafunction func);
 void register_player_event(std::string name, int evt, luafunction func);
-void register_item_event(std::string name, int evt, Lua_Item item, luafunction func);
+void register_item_event(std::string name, int evt, int item_id, luafunction func);
 void register_spell_event(std::string name, int evt, int spell_id, luafunction func);
+
+Note: Passing a value of -1 for npc, item or spell id to watch will watch every npc, item or spell for those events.
 ```
 
 Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unless an existing quest is already listening for them.
@@ -344,6 +346,28 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 > 	NPC self;
 > 	Client other;
 > 	Integer task_id;
+> }
+> ```
+
+* event_enter_area
+> Triggered when a npc enters an area defined by the quest system.
+> Passes an event table as an argument:
+> ```
+> {
+> 	NPC self;
+> 	Integer area_id;
+> 	Integer area_type;
+> }
+> ```
+
+* event_leave_area
+> Triggered when a npc leaves an area defined by the quest system.
+> Passes an event table as an argument:
+> ```
+> {
+> 	NPC self;
+> 	Integer area_id;
+> 	Integer area_type;
 > }
 > ```
 
@@ -695,6 +719,28 @@ Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unles
 > }
 > ```
 > If a non-zero value is returned from this function then the feign death is canceled in the same way it is on the NPC version of event_feign_death.
+
+* event_enter_area
+> Triggered when a client enters an area defined by the quest system.
+> Passes an event table as an argument:
+> ```
+> {
+> 	Client self;
+> 	Integer area_id;
+> 	Integer area_type;
+> }
+> ```
+
+* event_leave_area
+> Triggered when a client leaves an area defined by the quest system.
+> Passes an event table as an argument:
+> ```
+> {
+> 	Client self;
+> 	Integer area_id;
+> 	Integer area_type;
+> }
+> ```
 
 <a name="wiki-item-events"></a>
 ### Item Events
