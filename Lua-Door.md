@@ -1,5 +1,7 @@
 Lua_Door is a class exported to Lua that represent the Door object from EQEmu. All Lua_Door are also [Lua_Entity](Lua-Entity).
 
+[Return to the Lua API](Lua-API)
+
 ### Properties
 ```
 door.null -- Returns true if this object is null
