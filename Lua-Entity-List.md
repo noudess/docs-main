@@ -1,5 +1,7 @@
 Lua_EntityList is a class exported to Lua that represent the EntityList object from EQEmu.
 
+[Return to the Lua API](Lua-API)
+
 ### Properties
 ```
 entity_list.null -- Returns true if this object is null
