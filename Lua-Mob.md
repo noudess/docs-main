@@ -1,5 +1,7 @@
 Lua_Mob is a class exported to Lua that represent the Mob object from EQEmu. All Lua_Mob are also [Lua_Entity](Lua-Entity).
 
+[Return to the Lua API](Lua-API)
+
 ### Properties
 ```
 client.null -- Returns true if this object is null
