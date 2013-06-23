@@ -7,8 +7,8 @@ void register_npc_event(std::string name, int evt, int npc_id, luabind::object f
 void unregister_npc_event(std::string name, int evt, int npc_id);
 void register_player_event(std::string name, int evt, luabind::object func);
 void unregister_player_event(std::string name, int evt);
-void register_item_event(std::string name, int evt, Lua_Item item, luabind::object func);
-void unregister_item_event(std::string name, int evt, Lua_Item item);
+void register_item_event(std::string name, int evt, int item_id, luabind::object func);
+void unregister_item_event(std::string name, int evt, int item_id);
 void register_spell_event(std::string name, int evt, int spell_id, luabind::object func);
 void unregister_spell_event(std::string name, int evt, int spell_id);
 Lua_Mob spawn2(int npc_type, int grid, int unused, double x, double y, double z, double heading);
@@ -141,4 +141,7 @@ int get_zone_instance_id();
 int get_zone_instance_version();
 int get_zone_weather();
 luabind::object get_zone_time();
+void add_area(int id, int type, float min_x, float max_x, float min_y, float max_y, float min_z, float max_z);
+void remove_area(int id);
+void clear_areas();
 ```
