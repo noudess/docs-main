@@ -1,5 +1,7 @@
 Lua_HateEntry is a class exported to Lua that represent the HateEntry object from EQEmu.
 
+[Return to the Lua API](Lua-API)
+
 ### Properties
 ```
 hate.null -- Returns true if this object is null
