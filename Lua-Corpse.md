@@ -1,5 +1,7 @@
 Lua_Corpse is a class exported to Lua that represent the Corpse object from EQEmu. All Lua_Corpse are also [Lua_Mob](Lua-Mob).
 
+[Return to the Lua API](Lua-API)
+
 ### Properties
 ```
 corpse.null -- Returns true if this object is null
