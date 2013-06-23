@@ -63,6 +63,7 @@ Lua_NPC_List GetNPCList();
 Lua_Corpse_List GetCorpseList();
 Lua_Object_List GetObjectList();
 Lua_Doors_List GetDoorsList();
+Lua_Spawn_List GetSpawnList();
 void SignalAllClients(int signal);
 ```
 
