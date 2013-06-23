@@ -1,5 +1,7 @@
 Lua_Object is a class exported to Lua that represent the Object object from EQEmu. All Lua_Object are also [Lua_Entity](Lua-Entity).
 
+[Return to the Lua API](Lua-API)
+
 ### Properties
 ```
 object.null -- Returns true if this object is null
