@@ -1,5 +1,7 @@
 Lua_Spell is a class exported to Lua that represents the spdat object from EQEmu.
 
+[Return to the Lua API](Lua-API)
+
 ### Properties
 ```
 spell.null -- Returns true if this object is null
