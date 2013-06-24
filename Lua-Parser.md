@@ -102,6 +102,7 @@ Note: Passing a value of -1 for npc, item or spell id to watch will watch every 
 ```
 
 Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unless an existing quest is already listening for them.
+Encounter scripts also run before any normal script, it's also not a good idea to nukeitems from encounter scripts listening on Item Events as the Item Event dispatch will still need that item intact. 
 
 <a name="wiki-npc-events"></a>
 ### NPC Events
