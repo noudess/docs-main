@@ -1,4 +1,4 @@
-Lua_HateEntry is a class exported to Lua that represent the HateEntry object from EQEmu.
+HateEntry is a class exported to Lua that represent the HateEntry object from EQEmu.
 
 [Return to the Lua API](Lua-API)
 
