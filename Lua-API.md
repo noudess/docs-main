@@ -1,3 +1,5 @@
+[Return to the Lua Parser](Lua-Parser)
+
 The Lua API consisted of many exported classes and some general functions.
 * [Client](Lua-Client)
 * [Corpse](Lua-Corpse)
