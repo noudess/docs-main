@@ -131,7 +131,7 @@ Boolean AutoSplitEnabled();
 Void SetHorseId(Integer id);
 Integer GetHorseId();
 Void NukeItem(Integer item_num, Integer where_to_check);
-Void SetTInteger(Integer slot_id, Integer color);
+Void SetTint(Integer slot_id, Integer color);
 Void SetMaterial(Integer slot_id, Integer item_id);
 Void Undye();
 Integer GetItemIDAt(Integer slot_id);
