@@ -130,6 +130,7 @@ Boolean GetFeigned();
 Boolean AutoSplitEnabled();
 Void SetHorseId(Integer id);
 Integer GetHorseId();
+Void NukeItem(Integer item_num);
 Void NukeItem(Integer item_num, Integer where_to_check);
 Void SetTint(Integer slot_id, Integer color);
 Void SetMaterial(Integer slot_id, Integer item_id);
