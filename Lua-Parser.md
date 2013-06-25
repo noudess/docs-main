@@ -101,8 +101,10 @@ Void register_spell_event(String name, Integer evt, Integer spell_id, luafunctio
 Note: Passing a value of -1 for npc, item or spell id to watch will watch every npc, item or spell for those events.
 ```
 
-Note: Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unless an existing quest is already listening for them.
-Encounter scripts also run before any normal script.
+Note: 
+* Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unless an existing quest is already listening for them.
+* Encounter scripts also run before any normal script.
+* Encounter scripts can not currently return a non-zero value back to the server for the events that use them (I would like to change this at some point but it requires more planning).
 
 <a name="wiki-npc-events"></a>
 ### NPC Events
