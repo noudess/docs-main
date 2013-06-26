@@ -6,6 +6,7 @@ The rest of this guide assumes you know Lua 5.1, if you don't then it wont make 
 
 ## Table of Contents
 * [Init Scripts](#init-scripts)
+* [Modules](#modules)
 * [NPC Scripts](#npc-scripts)
 * [Player Scripts](#player-scripts)
 * [Item Scripts](#item-scripts)
@@ -26,6 +27,12 @@ On Lua Parser reload it will attempt to load two scripts with no function env.
 * ./quests/global/script_init.lua
 
 These are useful for setting up modules to load automatically or for loading encounters.
+
+<a name="wiki-modules"></a>
+### Modules
+Modules are bits of code or compiled libraries that lua can load with require("module_name").
+They are akin to the perl plugin system and can be loaded from:
+* ./lua_modules/module_name.lua
 
 <a name="wiki-npc-scripts"></a>
 ### NPC Scripts
