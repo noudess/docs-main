@@ -747,6 +747,17 @@ Note:
 > }
 > ```
 
+* event_respawn
+> Triggered when a client clicks respawn on the respawn window.
+> Passes an event table as an argument:
+> ```
+> {
+> 	Client self;
+> 	Integer option;
+> 	Boolean resurrect;
+> }
+> ```
+
 <a name="wiki-item-events"></a>
 ### Item Events
 
