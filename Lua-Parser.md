@@ -104,7 +104,6 @@ Note: Passing a value of -1 for npc, item or spell id to watch will watch every 
 Note: 
 * Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unless an existing quest is already listening for them.
 * Encounter scripts also run before any normal script.
-* Encounter scripts can not currently return a non-zero value back to the server for the events that use them (I would like to change this at some point but it requires more planning).
 
 <a name="wiki-npc-events"></a>
 ### NPC Events
@@ -923,6 +922,7 @@ Note:
 > 	Integer caster_id;
 > }
 > ```
+> Returning a non-zero value from this function will cancel the spell effect.
 
 * event_spell_buff_tic
 > Triggered when a spell tics on a target.
@@ -937,6 +937,7 @@ Note:
 > 	Integer caster_id;
 > }
 > ```
+> Returning a non-zero value from this function will cancel the buff tic.
 
 * event_spell_fade
 > Triggered when a spell fades from a target.
@@ -959,6 +960,7 @@ Note:
 > 	Mob target;
 > }
 > ```
+> Returning a non-zero value from this function will cancel the translocate.
 
 <a name="wiki-encounter-events"></a>
 ### Encounter Events
