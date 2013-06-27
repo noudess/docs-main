@@ -3,7 +3,7 @@ Various Lua Quest examples to give a feel for how the code works:
 ### NPC
 ```
 -- Nerissa_Clothspinner
--- Makes use of the item_turnin module, and client_ext module for Client:GiveCash() and Client:Faction()
+-- Makes use of the item_turnin module, string_ext module for findi and client_ext module for Client:GiveCash() and Client:Faction()
 function event_waypoint_arrive(e)
 	if(e.wp == 17) then
 		e.self:Say("When will my sister show up? I need her!");
