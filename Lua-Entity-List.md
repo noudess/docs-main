@@ -70,4 +70,4 @@ Spawn_List GetSpawnList();
 Void SignalAllClients(Integer signal);
 ```
 
-Mob_List, Client_List, NPC_List, Corpse_List, Object_List and Doors_List are Lua tables that have an entries field that is a table that contains the entity list of all those types.
+Mob_List, Client_List, NPC_List, Corpse_List, Object_List, Doors_List and Spawn_List are Lua tables that have an entries field that is a table that contains the entity list of all those types.
