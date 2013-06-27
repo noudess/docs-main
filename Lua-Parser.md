@@ -165,6 +165,19 @@ Note:
 > ```
 > Returning a non-zero value from this function will cancel the death
 
+* event_death_complete
+> Triggered when the npc dies and the death is complete.
+> Passes an event table as an argument:
+> ```
+> {
+> 	NPC self;
+> 	Mob other;
+> 	Integer damage;
+> 	Spell spell;
+> 	Integer skill_id;
+> }
+> ```
+
 * event_spawn
 > Triggered when the npc spawns for the first time.
 > Passes an event table as an argument:
@@ -410,6 +423,19 @@ Note:
 > }
 > ```
 > Returning a non-zero value will cancel the death.
+
+* event_death_complete
+> Triggered when a client dies and the death is complete.
+> Passes an event table as an argument:
+> ```
+> {
+> 	Client self;
+> 	Mob other;
+> 	Integer damage;
+> 	Spell spell;
+> 	Integer skill;
+> }
+> ```
 
 * event_timer
 > Triggered when a timer attached to this client expires.
