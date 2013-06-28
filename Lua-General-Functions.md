@@ -149,6 +149,8 @@ Void clear_areas();
 Void remove_spawn_point(Integer spawn2_id);
 Void add_spawn_point(SpawnPointOptions table);
 Void attack(String client_name);
+void attack_npc(Integer npc_entity_id);
+void attack_npc_type(Integer npc_type);
 ```
 
 SpawnPointOptions is a lua table that accepts the following values:
