@@ -142,7 +142,7 @@ String get_zone_short_name();
 Integer get_zone_instance_id();
 Integer get_zone_instance_version();
 Integer get_zone_weather();
-HashTable get_zone_time();
+HashTable get_zone_time(); -- three fields in the table returned: zone_hour, zone_minute, zone_time
 Void add_area(Integer id, Integer type, Real min_x, Real max_x, Real min_y, Real max_y, Real min_z, Real max_z);
 Void remove_area(Integer id);
 Void clear_areas();
