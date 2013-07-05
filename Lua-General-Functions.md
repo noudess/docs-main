@@ -49,6 +49,8 @@ Void delete_global(String name);
 Void start(Integer wp);
 Void stop();
 Void pause(Integer duration);
+Void move_to(Real x, Real y, Real z);
+Void move_to(Real x, Real y, Real z, Real h);
 Void move_to(Real x, Real y, Real z, Real h, Boolean save_guard_spot);
 Void resume();
 Void set_next_hp_event(Integer hp);
@@ -154,6 +156,9 @@ Void attack_npc_type(Integer npc_type);
 Void follow(Integer entity_id);
 Void follow(Integer entity_id, Integer distance);
 Void stop_follow();
+Client get_initiator(); -- These three are mostly for writing modules that extend the eq namespace
+Mob get_owner();
+ItemInst get_quest_item();
 ```
 
 SpawnPointOptions is a lua table that accepts the following values:
