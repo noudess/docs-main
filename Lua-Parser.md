@@ -19,6 +19,7 @@ The rest of this guide assumes you know Lua 5.1, if you don't then it wont make 
 * [Encounter Events](#encounter-events)
 * [API](#api)
 * [Examples](#examples)
+* [Template](#template)
 
 <a name="wiki-init-scripts"></a>
 ### Init Scripts
@@ -1034,3 +1035,7 @@ Note:
 <a name="wiki-examples"></a>
 ### Examples
 * [Lua Examples](Lua-Examples)
+
+<a name="wiki-template"></a>
+### Template
+* [Lua Template](Lua-Template)
