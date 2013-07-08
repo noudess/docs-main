@@ -1,3 +1,4 @@
+<pre><code>
 e.self:Say(string.format(" %s ",e.other:GetName())); -- to use player name in place of %s in the text.
 
 local fac = e.other:GetFaction(e.self); -- to use for faction condition in an if statement.
@@ -42,3 +43,4 @@ function event_waypoint_arrive(e)
 		e.self:Say("");
 	end
 end
+</code></pre>
