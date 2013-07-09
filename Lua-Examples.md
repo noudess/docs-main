@@ -56,6 +56,27 @@ function event_trade(e)
 end
 ```
 
+```
+-- this is an example of how to track time on an NPC.
+function event_spawn(e)
+	-- time_a is declared global to be available later.
+	time_a = os.time();
+	-- os.time(); returns an integer value in seconds.
+	e.self:Shout("The time is now: "..time_a);
+end
+
+function event_say(e)
+	-- time_b is local because we have no need for it to be global, though the script would work both ways
+	local time_b = os.time();
+	if(e.message:findi("hail")) then
+		e.self:Say("The time is now: "..time_b);
+		-- os.difftime(t2,t1) returns an integer value in seconds t2-t1
+		local time_diff = os.difftime(time_b,time_a);
+		e.self:Say("It has been "..time_diff.." seconds since I spawned");
+	end
+end
+```
+
 ### Player
 ```
 -- player.lua example of access and changing the lockpick value of a door.
