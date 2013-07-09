@@ -81,10 +81,10 @@ end
 ```
 -- player.lua example of access and changing the lockpick value of a door.
 function event_click_door(e)
-	local DoorID = e.door:GetDoorID();
+	local door_id = e.door:GetDoorID();
 	local entity_list = eq.get_entity_list();
-	e.self:Message(15,"You clicked on DoorID: "..DoorID);
-	local door = entity_list:FindDoor(DoorID);
+	e.self:Message(15,"You clicked on door: "..door_id);
+	local door = entity_list:FindDoor(door_id);
 	e.self:Message(15,"GetLockPick was: "..door:GetLockPick());
 	if (entity_list:FindDoor(DoorID):GetLockPick() == 0) then
 		door:SetLockPick(-1);
