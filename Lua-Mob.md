@@ -264,6 +264,8 @@ Void SendTo(Real x, Real y, Real z);
 Void SendToFixZ(Real x, Real y, Real z);
 Void SendWearChange(Integer material_slot);
 Void SetAllowBeneficial(Boolean value);
+Void SetAppearance(Integer app);
+Void SetAppearance(Integer app, Boolean ignore_self);
 Void SetBodyType(Integer new_body, Boolean overwrite_orig);
 Void SetCurrentWP(Integer wp);
 Void SetDisableMelee(Boolean disable);
@@ -310,7 +312,12 @@ Void ThrowingAttack(Mob other);
 Void UnStun();
 Void WearChange(Integer material_slot, Integer texture, Integer color);
 Void WipeHateList();
-
+Integer GetSpecialAbility(Integer ability);
+Integer GetSpecialAbilityParam(Integer ability, Integer param);
+Void SetSpecialAbility(Integer ability, Integer level);
+Void SetSpecialAbilityParam(Integer ability, Integer param, Integer value);
+Void ClearSpecialAbilities();
+Void ProcessSpecialAbilities(String str);
 ```
 
 IllusionOptions is a lua table that accepts the following values:
