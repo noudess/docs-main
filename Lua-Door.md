@@ -37,4 +37,8 @@ Integer GetKeyItem();
 Void SetNoKeyring(Integer type);
 Integer GetNoKeyring();
 Void CreateDatabaseEntry();
+Void ForceOpen(Mob sender);
+Void ForceOpen(Mob sender, bool alt_mode);
+Void ForceClose(Mob sender);
+Void ForceClose(Mob sender, bool alt_mode);
 ```
