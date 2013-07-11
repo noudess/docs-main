@@ -180,3 +180,44 @@ Appearance
 	Integer Looting;
 }
 ```
+
+SpecialAbility
+```
+{
+	Integer summon;
+	Integer enrage;
+	Integer rampage;
+	Integer area_rampage;
+	Integer flurry;
+	Integer triple_attack;
+	Integer quad_attack;
+	Integer innate_dual_wield;
+	Integer bane_attack;
+	Integer magical_attack;
+	Integer ranged_attack;
+	Integer unslowable;
+	Integer unmezable;
+	Integer uncharmable;
+	Integer unstunable;
+	Integer unsnareable;
+	Integer unfearable;
+	Integer undispellable;
+	Integer immune_melee;
+	Integer immune_magic;
+	Integer immune_fleeing;
+	Integer immune_melee_except_bane;
+	Integer immune_melee_except_magical;
+	Integer immune_aggro;
+	Integer immune_aggro_on;
+	Integer immune_casting_from_range;
+	Integer immune_feign_death;
+	Integer immune_taunt;
+	Integer tunnelvision;
+	Integer dont_buff_friends;
+	Integer immune_pacify;
+	Integer leash;
+	Integer tether;
+	Integer destructible_object;
+	Integer no_harm_from_client;
+}
+```
