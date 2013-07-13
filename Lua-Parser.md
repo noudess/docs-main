@@ -792,6 +792,17 @@ Note:
 > }
 > ```
 
+* event_unhandled_opcode
+> Triggered when a client sends/receives an unhandled opcode.
+> Passes an event table as an argument:
+> ```
+> {
+> 	Client self;
+> 	Packet packet;
+> 	Boolean connecting;
+> }
+> ```
+
 <a name="wiki-item-events"></a>
 ### Item Events
 
