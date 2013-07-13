@@ -14,15 +14,15 @@ Packet() -- Creates a null spell
 Packet(Integer opcode, Integer size)
 Integer GetSize();
 Integer GetOpcode();
-void SetOpcode(Integer op);
-void WriteInteger8(Integer offset, Integer value);
-void WriteInteger16(Integer offset, Integer value);
-void WriteInteger32(Integer offset, Integer value);
-void WriteInteger64(Integer offset, Integer value);
-void WriteFloat(Integer offset, Real value);
-void WriteDouble(Integer offset, Real value);
-void WriteString(Integer offset, String value);
-void WriteFixedLengthString(Integer offset, String value, Integer string_length);
+Void SetOpcode(Integer op);
+Void WriteInteger8(Integer offset, Integer value);
+Void WriteInteger16(Integer offset, Integer value);
+Void WriteInteger32(Integer offset, Integer value);
+Void WriteInteger64(Integer offset, Integer value);
+Void WriteFloat(Integer offset, Real value);
+Void WriteDouble(Integer offset, Real value);
+Void WriteString(Integer offset, String value);
+Void WriteFixedLengthString(Integer offset, String value, Integer string_length);
 Integer ReadInteger8(Integer offset);
 Integer ReadInteger16(Integer offset);
 Integer ReadInteger32(Integer offset);
