@@ -159,6 +159,8 @@ Void stop_follow();
 Client get_initiator(); -- These three are mostly for writing modules that extend the eq namespace
 Mob get_owner();
 ItemInst get_quest_item();
+Void map_opcodes(); -- will refresh the internal opcode dispatch
+Void clear_opcode(Integer opcode); -- removes the internal opcode handler for the following opcode
 ```
 
 SpawnPointOptions is a lua table that accepts the following values:
