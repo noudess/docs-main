@@ -14,6 +14,7 @@ The Lua API consisted of many exported classes and some general functions.
 * [Mob](Lua-Mob)
 * [NPC](Lua-NPC)
 * [Object](Lua-Object)
+* [Packet](Lua-Packet)
 * [Raid](Lua-Raid)
 * [Spell](Lua-Spell)
 * [Spawn](Lua-Spawn)
