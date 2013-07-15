@@ -77,6 +77,74 @@ function event_say(e)
 end
 ```
 
+```
+--An example of using PEQ's thread_manager to make scripts with lots of timers easier to write
+local ThreadManager = require("thread_manager");
+local evt;
+
+function ability_one()
+	evt.self:Emote("begins to cast something electrical");
+	ThreadManager:Wait(2.5);
+	evt.self:Shout("Feel the thunder!");
+end
+
+function ability_two()
+	evt.self:Emote("begins to cast something fiery");
+	ThreadManager:Wait(2.5);
+	evt.self:Shout("Feel the fire!");
+end
+
+function ability_three()
+	evt.self:Emote("begins to cast something cold");
+	ThreadManager:Wait(2.5);
+	evt.self:Shout("Feel the freeze!");
+end
+
+function swapped_abilities()
+	local i = 0;
+	while true do
+		if(i == 0) then
+			ability_one();
+			i = 1;
+		elseif(i == 1)
+			ability_two();
+			i = 2;
+		else
+			ability_three();
+			i = 0;
+		end
+		ThreadManager:Wait(15.0);
+	end
+end
+
+function predictable()
+	while true do
+		ThreadManager:Wait(10.0);
+		evt.self:Emote("begins to cast something predictable");
+		ThreadManager:Wait(2.5);
+		evt.self:Shout("Feel the Predictableness!");
+	end
+end
+
+function event_combat(e)
+	if(e.joined) then
+		eq.set_timer("heartbeat", 1000);
+		ThreadManager:Clear();
+		ThreadManager:Create("Predictable", predictable);
+		ThreadManager:Create("Swapping", swapped_abilities);
+	else
+		eq.stop_timer("heartbeat");
+		ThreadManager:Clear();
+	end
+end
+
+function event_timer(e)
+	evt = e;
+	ThreadManager:Resume("Predictable");
+	ThreadManager:Resume("Swapping");
+end
+```
+
 ### Player
 ```
 -- player.lua example of access and changing the lockpick value of a door.
