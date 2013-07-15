@@ -244,4 +244,8 @@ Boolean PutItemInInventory(Integer slot_id, ItemInst inst);
 Boolean PushItemOnCursor(ItemInst inst);
 Inventory GetInventory();
 Void SendItemScale(ItemInst inst);
+Void QueuePacket(Packet app);
+Void QueuePacket(Packet app, Boolean ack_req);
+Void QueuePacket(Packet app, Boolean ack_req, Integer client_connection_status);
+Void QueuePacket(Packet app, Boolean ack_req, Integer client_connection_status, Integer filter);
 ```
