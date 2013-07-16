@@ -128,7 +128,7 @@ end
 
 function event_combat(e)
 	if(e.joined) then
-		eq.set_timer("heartbeat", 1000);
+		eq.set_timer("heartbeat", 500);
 		ThreadManager:Clear();
 		ThreadManager:Create("Predictable", predictable);
 		ThreadManager:Create("Swapping", swapped_abilities);
