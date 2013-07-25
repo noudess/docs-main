@@ -58,9 +58,10 @@ end
 
 ```
 -- this is an example of how to track time on an NPC.
+-- time_a is declared local outside of a function to be available later.
+local time_a = os.time();
+
 function event_spawn(e)
-	-- time_a is declared global to be available later.
-	time_a = os.time();
 	-- os.time(); returns an integer value in seconds.
 	e.self:Shout("The time is now: "..time_a);
 end
