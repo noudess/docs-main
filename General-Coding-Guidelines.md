@@ -1,6 +1,6 @@
 We don't have strict coding standards, but these few guild lines will help. First a few of the more strict guidelines.
 * Indentation is done in tabs not spaces. You can always change your editors tab stop to make it easier for you.
-* `using namespace std;` is forbidden. The std namespace is large and can cause problems blindingly including everything.
+* `using namespace std;` is forbidden at file scope and strongly discouraged to be used at all. The std namespace is large and can cause problems blindingly including everything.
 
 And for the less strict guidelines.
 * You should break up your if they are getting too long, we don't have strict limits of 80 characters per line like some projects, but you need to remember not everyone has the same screen resolution as you.
