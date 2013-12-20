@@ -1,5 +1,5 @@
 ##### Guide Information
-This guide was created to help you set up a basic PEQ server with the current database and quests. My system is Windows 7 x64 with XAMPP. I use XAMPP because it is a good all-in-one package which includes MySQL, Apache, PHP, and Perl. This was compiled as 32-bit using Microsoft Visual Studio Express 2013 for Windows Desktop. In addition to the server, we will also set up the PEQ Database Editor. The guide is generic enough so you can tweak the steps to fit your specific requirements/system.
+This guide was created to help you set up a basic PEQ server with the current database and quests. My system is Windows 7 x64 with XAMPP. I use XAMPP because it is a good all-in-one package which includes MySQL, Apache, PHP, and Perl. This was compiled as 32-bit using Microsoft Visual Studio Express 2013 for Windows Desktop. In addition to the server, we will also set up the PEQ Database Editor. The guide should be broad enough so you can tweak the steps to fit your specific requirements/system.
 
 ##### Required Programs, Libraries, and Dependencies
 * [[XAMPP|XAMPP-for-Windows]]
@@ -18,7 +18,7 @@ This guide was created to help you set up a basic PEQ server with the current da
 * [[WinRAR|winrar]]
 
 ##### The Walk-Thru
-1. Get the server source.
+1. **Get the server source.** In your XAMPP directory, create folder to store your EQEmu files. I've selected c:\xampp\eqemu. Within that folder, create a source folder. Using TortoiseGit, sync your source folder with https://github.com/EQEmu/Server.git
 2. Configure the source with CMake.
 3. Build the source.
 4. Get the database.
