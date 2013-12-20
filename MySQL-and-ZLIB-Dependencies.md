@@ -1,4 +1,4 @@
-These dependencies are required for compiling in Visual Studio.
+These dependencies are required for compiling in Visual Studio. You will need to match this version with the type of server you are compiling.
 
 **32-bit:** [x86] (http://eqemu.github.io/downloads/WindowsDependencies_x86.zip)
 
