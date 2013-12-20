@@ -1,5 +1,7 @@
 Lua is a light-weight scripting language needed to run certain quests written in Lua. This will need to be installed in conjunction with the Boost C++ libraries in order to run Lua quests.
 
+***
+
 **Homepage:** [Lua] (http://www.lua.org)
 
 **Current Version:** [5.1.4-46] (http://luaforwindows.googlecode.com/files/LuaForWindows_v5.1.4-46.exe)
