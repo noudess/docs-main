@@ -9,7 +9,7 @@ This guide was created to help you set up a basic PEQ server with the current da
 * [[TortoiseGit|TortoiseGit]]
 * [[TortoiseSVN|TortoiseSVN]]
 * [[Boost 1.55|Boost]]
-* [[Lua 5.1|lua-windows]]
+* [[Lua 5.1|Lua-for-Windows]]
 * [[CMake 2.8|cmake-windows]]
 
 ##### Recommended Programs
