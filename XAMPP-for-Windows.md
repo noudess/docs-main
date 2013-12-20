@@ -12,5 +12,5 @@ XAMPP is an all-in-one package with many programs. The important ones are MySQL,
 
 ***
 
-1. Select the appropriate installer package for your system. It is recommended to install in your root directory (i.e. C:\xampp) to alleviate problems with permissions and folders with spaces in the name.
+1. Select the appropriate installer package for your system. It is recommended to install in your root directory (i.e. c:\xampp) to alleviate problems with permissions and folders with spaces in the name.
 2. Install the program with the following at a minimum: MySQL, Apache, PHP, and Perl.
