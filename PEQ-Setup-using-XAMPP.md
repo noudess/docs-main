@@ -1,5 +1,5 @@
 ##### Guide Information
-This guide was created to help you set up a basic PEQ server with the current database and quests. My system is Windows 7 x64 with XAMPP. I use XAMPP because it is a good all-in-one package which includes MySQL, Apache, PHP, and Perl. This was compiled as 32-bit using Microsoft Visual Studio 2013 Express for Desktop. In addition to the server, we will also set up the PEQ Database Editor. The guide is generic enough so you can tweak the steps to fit your specific requirements/system.
+This guide was created to help you set up a basic PEQ server with the current database and quests. My system is Windows 7 x64 with XAMPP. I use XAMPP because it is a good all-in-one package which includes MySQL, Apache, PHP, and Perl. This was compiled as 32-bit using Microsoft Visual Studio Express 2013 for Desktop. In addition to the server, we will also set up the PEQ Database Editor. The guide is generic enough so you can tweak the steps to fit your specific requirements/system.
 
 ##### Required Programs, Libraries, and Dependencies
 * [[XAMPP|XAMPP-for-Windows]]
