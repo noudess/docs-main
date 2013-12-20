@@ -18,10 +18,11 @@ This guide was created to help you set up a basic PEQ server with the current da
 * [[WinRAR|winrar]]
 
 ##### The Walk-Thru
-1. **Get the server source.** In your XAMPP directory, create folder to store your EQEmu files. I've selected c:\xampp\eqemu. Within that folder, create a source folder. Using TortoiseGit, clone the source files from https://github.com/EQEmu/Server.git into c:\xampp\eqemu\source\Server.
+1. **Get the server source.** In your XAMPP directory, create folder to store your EQEmu files. I've selected c:\xampp\eqemu. Within that folder, create a source folder. Using TortoiseGit, clone the source files from https://github.com/EQEmu/Server.git into c:\xampp\eqemu\source\Server. To do this, you can right-click inside your source folder and select "Git Clone...".
 2. Configure the source with CMake.
 3. Build the source.
 4. Get the database.
-5. Get the database editor.
-6. Configure the server settings.
-7. Take it for a test run.
+5. Get the quests.
+6. Get the database editor.
+7. Configure the server settings.
+8. Take it for a test run.
