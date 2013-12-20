@@ -8,7 +8,7 @@ This guide was created to help you set up a basic PEQ server with the current da
 * [[Visual Studio Express 2013 for Windows Desktop|Visual-Studio-Express-2013-for-Windows-Desktop]]
 * [[TortoiseGit|TortoiseGit]]
 * [[TortoiseSVN|TortoiseSVN]]
-* [[Boost 1.55|boost]]
+* [[Boost 1.55|Boost]]
 * [[Lua 5.1|lua-windows]]
 * [[CMake 2.8|cmake-windows]]
 
