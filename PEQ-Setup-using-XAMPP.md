@@ -27,6 +27,7 @@ This guide was created to help you set up a basic PEQ server with the current da
 3. Build the source.
 4. **Get the database.** PEQ conducts a backup every day. The most up-to-date version can be found at http://peqtgc.com/releases. The file you need is peqbeta_(date/time).tar.gz. This database is usually synced with the most current EQEmu source.
 5. Get the quests.
-6. Get the database editor.
-7. Configure the server settings.
-8. Take it for a test run.
+6. Get the maps.
+7. Get the database editor.
+8. Configure the server settings.
+9. Take it for a test run.
