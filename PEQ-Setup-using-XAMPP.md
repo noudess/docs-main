@@ -13,7 +13,7 @@ This guide was created to help you set up a basic PEQ server with the current da
 * [[CMake 2.8|CMake-for-Windows]]
 
 ##### Recommended Programs
-* [[Notepad++|notepad-plusplus]]
+* [[Notepad++|Notepad--]]
 * [[WinRAR|winrar]]
 
 ##### The Walk-Thru
