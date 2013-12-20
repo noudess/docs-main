@@ -1,0 +1,1 @@
+XAMPP is an all-in-one package with many programs. The important ones are MySQL, Apache, PHP, and Perl.
