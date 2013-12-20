@@ -1,1 +1,0 @@
-Runtime libraries are needed to run installers compiled with that specific version. XAMPP installer package uses these libraries. Most likely you already have them installed, but not everyone does. If you don't wish to install these libraries, you can use the zipped version of XAMPP.
