@@ -4,7 +4,7 @@ This guide was created to help you set up a basic PEQ server with the current da
 ##### Required Programs
 * [[XAMPP|XAMPP-for-Windows]]
 * [[Microsoft VC++ Runtime Libraries|Microsoft-Visual-C---Runtime-Libraries]]
-* [[ActivePerl 5.12|perl-512]]
+* [[Perl 5.12|ActivePerl-5.12]]
 * [[Visual Studio Express 2013 for Desktop|vcexpress-2013]]
 * [[TortoiseGit|tortoise-git]]
 * [[TortoiseSVN|tortoise-svn]]
