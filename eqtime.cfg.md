@@ -1,11 +1,11 @@
-This file is used to establish the current World date and time. It is a text file located in your \eqemu root folder.
+This file is used to establish the current World date and time and synchronize your conditions, spawn timers, etc. It is a text file located in your \eqemu root folder.
 
 ***
 
 File contents:
 
 `
-    1000
+    1000\n
     20
     1
     0
