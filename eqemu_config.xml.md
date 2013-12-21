@@ -4,7 +4,7 @@ This file has the configuration setup for your server. It is a text file located
 
 Sample file contents:
 ```
-<?xml version="1.0">
+<?xml version="1.0"?>
 <server>
 	<world>
 		<shortname>MyPEQ</shortname>
