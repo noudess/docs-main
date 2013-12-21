@@ -26,8 +26,8 @@ This guide was created to help you set up a basic PEQ server with the current da
 2. **Configure the source with CMake.**
 3. **Build the source.**
 4. **Get the database.** PEQ conducts a backup every day. The most up-to-date version can be found at http://peqtgc.com/releases. The file you need is peqbeta_(date/time).tar.gz. This database is usually synced with the most current EQEmu source.
-5. **Get the quests.** PEQ uses [Google Code] (http://code.google.com/p/projecteqquests) to store their quests. Currently, there is a mix and match of Perl and Lua quests. Using an SVN program, checkout the quests folder into your \eqemu folder.
-6. **Get the maps.**
+5. **Get the quests.** PEQ uses [Google Code] (http://code.google.com/p/projecteqquests) to store their quests. Currently, there is a mix and match of Perl and Lua quests. Using an SVN program, checkout the quests folder into your \eqemu\quests folder. Copy the plugins and lua_modules folders into your \eqemu folder. 
+6. **Get the maps.** Your server will use the map files from EQ for in-game calculations. Currently, maps are stored at [Google Code] (http://code.google.com/p/eqemumaps). Using an SVN program, checkout the maps folder to your \eqemu\Maps folder (yes, capital "M").
 7. **Get the database editor.**
 8. **Configure the server settings.**
 9. **Take it for a test run.**
