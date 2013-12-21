@@ -2,12 +2,12 @@ This file is used to establish the current World date and time and synchronize y
 
 ***
 
-File contents:
+Sample file contents (PEQ 2013-12-21):
 
 1000
-20
+8
 1
 0
-9
-3512
-1387188078
+1
+3513
+1387620078
