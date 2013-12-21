@@ -13,3 +13,5 @@ The wiki is the only good source of documentation about EQEmu. Anybody can edit 
 * [[Information About Packet Collecting|Packet-Collecting]]
 * [[Content Development|Content-Development]]
 * [[Quest Development|Quest-Development]]
+  * [[Perl]]
+  * [[Lua|Lua-Parser]]
