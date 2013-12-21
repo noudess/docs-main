@@ -24,4 +24,8 @@ Steps
 14. Create a database named `eq` and load the .sql files from the peqbeta_ archive into it. 
 15. Create a user with privileges on `eq` and add the credentials to `eqemu_config.xml`.
 16. Copy `eqtime.cfg` from the peqbeta_ archive into the eqemu root directory.
+17. Copy `spells_us.txt` from your Everquest installation into the eqemu root directory.
 14. Create the logs directory: `mkdir logs`.
+19. Create the shared memory directory: `mkdir shared`.
+20. Run `Bin/world` and wait for it to finish initializing.
+21. Once the world server is running, open a new terminal window and run `Bin/eqlaunch <name of your server>`.
