@@ -65,13 +65,13 @@ Sample file contents:
 	</database>
 
 	<!-- Queryserv Database configuration -->
-    <qsdatabase>
-      <host>localhost</host>
-      <port>3306</port>
-      <username>db_username</username>
-      <password>db_password</password>
-      <db>peq_qs</db>
-    </qsdatabase>
+	<qsdatabase>
+		<host>localhost</host>
+		<port>3306</port>
+		<username>db_username</username>
+		<password>db_password</password>
+		<db>peq_qs</db>
+	</qsdatabase>
  
 	<!-- Launcher Configuration -->
 	<launcher>
