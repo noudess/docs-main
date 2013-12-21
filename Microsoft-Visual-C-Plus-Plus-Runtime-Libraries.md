@@ -1,4 +1,4 @@
-Runtime libraries are needed to run PHP compiled with that specific version. XAMPP installer package uses these libraries. Most likely you already have them installed, but not everyone does.
+Runtime libraries are needed to run PHP compiled with that specific version. XAMPP installer package uses these libraries. Most likely you already have them installed, but not everyone does. Not all libraries are required, so select whichever you need.
 
 ***
 
