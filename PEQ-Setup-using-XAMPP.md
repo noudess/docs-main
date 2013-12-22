@@ -77,7 +77,7 @@ Configuring done
 
 * **Get the maps.** Your server will use the map files from EQ for in-game calculations. Currently, maps are stored at [Google Code] (http://code.google.com/p/eqemumaps). Using TortoiseSVN, checkout the maps into your \eqemu\Maps folder.
 
-* **Get the database editor.** PEQ uses [Google Code] (http://code.google.com/p/peqphpeditor/) to store the PEQ Database Editor. Using TortoiseSVN, checkout the editor into your \xampp\htdocs\peqedit folder (or whatever you wish to call it).
+* **Get the database editor.** PEQ uses [Google Code] (http://code.google.com/p/peqphpeditor/) to store the PEQ Database Editor. Using TortoiseSVN, checkout the editor into your \xampp\htdocs\ folder as peqedit or whatever you wish to call it. Open the readme file for instructions setting the configuration for your editor.
 
 * **Move the .conf files.** In your source, you need to copy/move the .conf files to your eqemu root folder. They are located at \source\Server\utils\patches. These files contain specific OPCODES your server needs to communicate with the clients.
 
