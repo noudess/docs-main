@@ -38,10 +38,10 @@ Detecting CXX compiler ABI info
 Detecting CXX compiler ABI info - done
 Looking for include file stdint.h
 Looking for include file stdint.h - found
-Found ZLIB: C:/xampp/eqemu/source/Server/dependencies/zlib_x86/lib/zdll.lib (found version "1.2.3") 
-Found MySQL: c:/xampp/eqemu/source/Server/dependencies/mysql_x86/lib/mysqlclient.lib  
-Found Perl: C:/xampp/perl/bin/perl.exe (found version "5.12.3") 
-Found PerlLibs: C:/xampp/perl/lib/CORE/perl512.lib (found version "5.12.3") 
+Found ZLIB: C:/xampp/eqemu/source/Server/dependencies/zlib_x86/lib/zdll.lib (found version "1.2.3")
+Found MySQL: c:/xampp/eqemu/source/Server/dependencies/mysql_x86/lib/mysqlclient.lib
+Found Perl: C:/xampp/perl/bin/perl.exe (found version "5.12.3")
+Found PerlLibs: C:/xampp/perl/lib/CORE/perl512.lib (found version "5.12.3")
 Configuring done
 ```
 **Note:** If it identifies your MySQL dependencies in \xampp\mysql folder, you will need to manually change the location. To do this, select the Advanced checkbox to expand the configuration options in CMake. Scroll to the bottom and find the 3 entries for MySQL_INCLUDE_DIR, MySQL_LIBRARY_DEBUG, and MySQL_LIBRARY_RELEASE. Change the INCLUDE line to C:/xampp/eqemu/source/Server/dependencies/mysql_x86/include/ and the two LIBRARY lines to C:/xampp/eqemu/source/Server/dependencies/mysql_x86/lib/mysqlclient.lib. Uncheck the Advanced checkbox to finish configuring CMake.
@@ -55,7 +55,7 @@ Configuring done
 
   The rest should default to the appropriate settings. Now you can select "Configure" to let it finish finding the appropriate dependencies which should result in something like this:
 ```
-Found Lua51: C:/Program Files (x86)/Lua/5.1/lib/lua51.lib (found version "5.1.4") 
+Found Lua51: C:/Program Files (x86)/Lua/5.1/lib/lua51.lib (found version "5.1.4")
 Boost version: 1.55.0
 Configuring done
 ```
