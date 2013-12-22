@@ -1,4 +1,4 @@
-This file has the configuration setup for your server. It is a text file located in your \eqemu root folder.
+This file has the configuration setup for your server. It is a text file located in your server root folder.
 
 ***
 
