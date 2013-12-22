@@ -8,4 +8,4 @@ Lua is a light-weight scripting language needed to run certain quests written in
 
 ***
 
-After installation, copy your lua51.dll into your eqemu root folder.
+After installation, copy your lua51.dll into your server root folder.
