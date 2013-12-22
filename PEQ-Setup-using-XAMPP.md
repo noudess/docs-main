@@ -51,11 +51,11 @@ Configuring done
 **Note:** If it identifies your MySQL dependencies in \xampp\mysql folder, you will need to manually change the location. To do this, select the Advanced checkbox to expand the configuration options in CMake. Scroll to the bottom and find the 3 entries for MySQL_INCLUDE_DIR, MySQL_LIBRARY_DEBUG, and MySQL_LIBRARY_RELEASE. Change the INCLUDE line to C:/xampp/eqemu/source/Server/dependencies/mysql_x86/include/ and the two LIBRARY lines to C:/xampp/eqemu/source/Server/dependencies/mysql_x86/lib/mysqlclient.lib. Uncheck the Advanced checkbox to finish configuring CMake.
 
   Now that CMake has done the initial check, you will need to configure a few more options so it can generate your build files. You should change/update these options:
-  * CMAKE_BUILD_TYPE -> RelWithDebInfo
-  * CMAKE_INSTALL_PREFIX -> C:/xampp/eqemu
-  * EQEMU_BUILD_LUA -> Checked
-  * EQEMU_BUILD_PERL -> Checked
-  * EQEMU_BUILD_LOGIN -> Checked
+  * CMAKE_BUILD_TYPE: RelWithDebInfo
+  * CMAKE_INSTALL_PREFIX: C:/xampp/eqemu
+  * EQEMU_BUILD_LUA: Checked
+  * EQEMU_BUILD_PERL: Checked
+  * EQEMU_BUILD_LOGIN: Checked
 
   The rest should default to the appropriate settings. Now you can select "Configure" to let it finish finding the appropriate dependencies which should result in something like this:
 ```
