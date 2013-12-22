@@ -1,4 +1,4 @@
-This file is used to configure your login server.
+This file is used to configure your login server. It is located in your server root folder.
 
 ***
 
