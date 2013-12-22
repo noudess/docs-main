@@ -81,6 +81,6 @@ Configuring done
 
 * **Move the .conf files.** In your source, you need to copy/move the .conf files to your eqemu root folder. They are located at \source\Server\utils\patches. These files contain specific OPCODES your server needs to communicate with the clients.
 
-* **Configure the server settings.** You will need to have the [[eqemu_config.xml]] file in your eqemu root folder. Also, you can edit your server variables using the database editor.
+* **Configure the server settings.** You will need to have the [[eqemu_config.xml]], [[login.ini]], and EQEmuAuthCrypto.dll files in your eqemu root folder. Also, you can edit your server variables using the database editor.
 
 * **Take it for a test run.** It is a good idea to run each command one at a time the first time you launch your server to ensure you don't have any errors. Once you are sure everything works correctly, you can use [[start.bat]] to automate your server startup.
