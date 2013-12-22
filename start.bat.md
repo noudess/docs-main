@@ -1,4 +1,4 @@
-This file is not required, but highly recommended. It will help you automate the startup of your server on Windows.
+This file is not required, but highly recommended. It will help you automate the startup of your server on Windows. It will go in your server root folder.
 
 ***
 
