@@ -1,5 +1,5 @@
 ##### Guide Information
-This guide was created to help you set up a basic PEQ server with the current database and quests. My system is Windows 7 x64 with XAMPP. I use XAMPP because it is a good all-in-one package which includes MySQL, Apache, PHP, and Perl. This was compiled as 32-bit using Microsoft Visual Studio Express 2013 for Windows Desktop. In addition to the server, we will also set up the PEQ Database Editor. The guide should be broad enough so you can tweak the steps to fit your specific requirements/system.
+This guide (still in progress) was created to help you set up a basic PEQ server with the current database and quests. My system is Windows 7 x64 with XAMPP. I use XAMPP because it is a good all-in-one package which includes MySQL, Apache, PHP, and Perl. This was compiled as 32-bit using Microsoft Visual Studio Express 2013 for Windows Desktop. In addition to the server, we will also set up the PEQ Database Editor. The guide should be broad enough so you can tweak the steps to fit your specific requirements/system.
 
 ***
 
@@ -28,6 +28,7 @@ This guide was created to help you set up a basic PEQ server with the current da
 4. **Get the database.** PEQ conducts a backup every day. The most up-to-date version can be found at http://peqtgc.com/releases. The file you need is peqbeta_(date-time).tar.gz. This database is usually synced with the most current EQEmu source.
 5. **Get the quests.** PEQ uses [Google Code] (http://code.google.com/p/projecteqquests) to store their quests. Currently, there is a mix and match of Perl and Lua quests. Using TortosieSVN, checkout the quests folder into your \eqemu\quests folder. Copy the plugins and lua_modules folders into your \eqemu folder. If you do not want to keep an SVN, you can download the daily quest dump from PEQ at http://peqtgc.com/releases.
 6. **Get the maps.** Your server will use the map files from EQ for in-game calculations. Currently, maps are stored at [Google Code] (http://code.google.com/p/eqemumaps). Using TortoiseSVN, checkout the maps folder to your \eqemu\Maps folder (yes, capital "M").
-7. **Get the database editor.** PEQ uses [Google Code] () to store the PEQ Database Editor. Using TortoiseSVN, checkout the editor into your xampp\htdocs\peqedit folder (or whatever you wish to call it). 
-8. **Configure the server settings.**
-9. **Take it for a test run.**
+7. **Get the database editor.** PEQ uses [Google Code] () to store the PEQ Database Editor. Using TortoiseSVN, checkout the editor into your xampp\htdocs\peqedit folder (or whatever you wish to call it).
+8. **Get the .conf files.** In your source, you need to copy/move the .conf files to your \eqemu root folder. They are located at \source\Server\utils\patches. These files contain specific OPCODES your server needs to communicate with the clients.
+9. **Configure the server settings.**
+10. **Take it for a test run.**
