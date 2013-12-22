@@ -14,3 +14,6 @@ XAMPP is an all-in-one package with many programs. The important ones are MySQL,
 
 1. Select the appropriate installer package for your system. It is recommended to install in your root directory (i.e. c:\xampp) to alleviate problems with permissions and folders with spaces in the name.
 2. Install the program with the following at a minimum: MySQL, Apache, PHP, and Perl.
+3. Start Apache and MySQL.
+4. Open http://localhost and establish the appropriate security for your configuration.
+5. Open http://localhost/phpmyadmin and create the `peq` and `peq_qs` databases. Also, you should create a user/password specifically for your peq databases. Don't forget to GRANT the appropriate permissions!
