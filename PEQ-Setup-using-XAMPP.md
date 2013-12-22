@@ -44,15 +44,28 @@ Found Perl: C:/xampp/perl/bin/perl.exe (found version "5.12.3")
 Found PerlLibs: C:/xampp/perl/lib/CORE/perl512.lib (found version "5.12.3") 
 Configuring done
 ```
-**Note:** If it identifies your MySQL dependencies in \xampp\mysql folder, you will need to manually change the location. To do this, select the Advanced checkbox to expand the configuration options in CMake. Scroll to the bottom and find the 3 entries for MySQL_INCLUDE_DIR, MySQL_LIBRARY_DEBUG, and MySQL_LIBRARY_RELEASE. Change the INCLUDE line to **C:/xampp/eqemu/source/Server/dependencies/mysql_x86/include/** and the two LIBRARY lines to **C:/xampp/eqemu/source/Server/dependencies/mysql_x86/lib/mysqlclient.lib**. Uncheck the Advanced checkbox to finish configuring CMake.
+**Note:** If it identifies your MySQL dependencies in \xampp\mysql folder, you will need to manually change the location. To do this, select the Advanced checkbox to expand the configuration options in CMake. Scroll to the bottom and find the 3 entries for MySQL_INCLUDE_DIR, MySQL_LIBRARY_DEBUG, and MySQL_LIBRARY_RELEASE. Change the INCLUDE line to C:/xampp/eqemu/source/Server/dependencies/mysql_x86/include/ and the two LIBRARY lines to C:/xampp/eqemu/source/Server/dependencies/mysql_x86/lib/mysqlclient.lib. Uncheck the Advanced checkbox to finish configuring CMake.
 
   Now that CMake has done the initial check, you will need to configure a few more options so it can generate your build files. You should change/update these options:
-  * CMAKE_BUILD_TYPE - RelWithDebInfo
-  * CMAKE_INSTALL_PREFIX - C:/xampp/eqemu
-  * EQEMU_BUILD_LUA - Checked
-  * EQEMU_BUILD_PERL - Checked
+  * CMAKE_BUILD_TYPE -> RelWithDebInfo
+  * CMAKE_INSTALL_PREFIX -> C:/xampp/eqemu
+  * EQEMU_BUILD_LUA -> Checked
+  * EQEMU_BUILD_PERL -> Checked
+  * EQEMU_BUILD_LOGIN -> Checked
 
-* **Build the source.**
+  The rest should default to the appropriate settings. Now you can select "Configure" to let it finish finding the appropriate dependencies which should result in something like this:
+```
+Found Lua51: C:/Program Files (x86)/Lua/5.1/lib/lua51.lib (found version "5.1.4") 
+Boost version: 1.55.0
+Configuring done
+```
+  There should be a new red-colored line, EQEMU_SANITIZE_LUA_LIBS. Select configure once again to let it finish configuration.
+
+  **Note:** If there are any red-colored lines, correct any errors before moving to the next step!
+
+  Now you can select "Generate" to create the build files. If there are no errors, you will get a "Generating done" message.
+
+* **Build the source.** CMake should have created your \eqemu\source\Build folder. Inside, you can open your EQEmu.sln file to open VC 2013.
 * **Get the database.** PEQ conducts a backup every day. The most up-to-date version can be found at http://peqtgc.com/releases. The file you need is peqbeta_(date-time).tar.gz. This database is usually synced with the most current EQEmu source.
 * **Get the quests.** PEQ uses [Google Code] (http://code.google.com/p/projecteqquests) to store their quests. Currently, there is a mix and match of Perl and Lua quests. Using TortosieSVN, checkout the quests folder into your \eqemu\quests folder. Copy the plugins and lua_modules folders into your \eqemu folder. If you do not want to keep an SVN, you can download the daily quest dump from PEQ at http://peqtgc.com/releases.
 * **Get the maps.** Your server will use the map files from EQ for in-game calculations. Currently, maps are stored at [Google Code] (http://code.google.com/p/eqemumaps). Using TortoiseSVN, checkout the maps folder to your \eqemu\Maps folder (yes, capital "M").
