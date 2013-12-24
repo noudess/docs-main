@@ -318,6 +318,8 @@ Void SetSpecialAbility(Integer ability, Integer level);
 Void SetSpecialAbilityParam(Integer ability, Integer param, Integer value);
 Void ClearSpecialAbilities();
 Void ProcessSpecialAbilities(String str);
+Void SetAppearance(Integer app);
+Void SetAppearance(Integer app, Boolean ignore_self);
 ```
 
 IllusionOptions is a lua table that accepts the following values:
