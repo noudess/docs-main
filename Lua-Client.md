@@ -248,4 +248,10 @@ Void QueuePacket(Packet app);
 Void QueuePacket(Packet app, Boolean ack_req);
 Void QueuePacket(Packet app, Boolean ack_req, Integer client_connection_status);
 Void QueuePacket(Packet app, Boolean ack_req, Integer client_connection_status, Integer filter);
+Integer GetHunger();
+Integer GetThirst();
+Void SetHunger(Integer in_hunger);
+Void SetThirst(Integer in_thirst);
+Void SetConsumption(Integer in_hunger, Integer in_thirst);
+Void SendMarqueeMessage(Integer type, Integer priority, Integer fade_in, Integer fade_out, Integer duration, String msg);
 ```
