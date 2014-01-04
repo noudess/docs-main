@@ -44,6 +44,7 @@ Void Message(Integer guild_dbid, Integer type, String message);
 Void MessageStatus(Integer guild_dbid, Integer min_status, Integer type, String message);
 Void MessageClose(Mob sender, Boolean skip_sender, Real dist, Integer type, String message);
 Void RemoveFromTargets(Mob mob);
+Void RemoveFromTargets(Mob mob, bool RemoveFromXTargets);
 Void ReplaceWithTarget(Mob target, Mob new_target);
 Void OpenDoorsNear(NPC opener);
 String MakeNameUnique(String name);
