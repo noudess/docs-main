@@ -40,18 +40,16 @@ The current version as of January 11, 2014 is 5.1.73. DO NOT download the essent
 
 Download [Visual Studio Express 2013 For Windows Desktop](http://www.visualstudio.com/downloads/download-visual-studio-vs) and put it in the `C:\EQ\Installs` directory. Download the installer by clicking on 'Install Now'. Note this one is only a simple web installer package. It will download more when you run it.
 
-Download the current version of HeidiSQL∞ and save it in the Installs directory.
+Download the current version of [TortoiseSVN](http://tortoisesvn.net/downloads). If you have a 64-bit OS, download the 64-bit version. Be careful that you don't click the Download button that is in an advertisement, as that will try and force you to install a crapware toolbar that you probably don't want. The correct download button should download an .msi file which you should place in your `C:\EQ\Installs` directory.
 
-Note that HeidiSQL is not required for this guide, however you may find it useful for editing the SQL database once you have the server up and running. If you are already comfortable using MySQL you can use HeidiSQL in place of the command line MySQL tool that is used throughout this guide
+Download the current version of [GIT for Windows](http://git-scm.com/downloads). In the upper right of the download page there should be a picture of a monitor showing the latest stable release and a 'Download for Windows' button. Save it in your `C:\EQ\Installs` directory.
 
-Download the current version of TortoiseSVN∞. If you have a 64-bit OS, download the 64-bit version. Be careful that you don't click the Download button that is in an advert, as that will try and force you to install a crapware toolbar that you probably don't want. The correct download button should download an .msi file which you should place in your C:\EQ\Installs directory.
+Download the current version of [Notepad++](http://notepad-plus-plus.org/download/) and save it in your `C:\EQ\Installs` directory.
 
-Download the current version of GIT for Windows∞. In the upper right of the download page there should be a picture of a monitor showing the latest stable release and a 'Download for Windows' button.
+Download the Windows (Win32 Installer) version of [CMake](http://www.cmake.org/cmake/resources/software.html) and place it in your `C:\EQ\Installs` directory.
 
-Download the current version of Notepad++∞
-
-Download the Windows (Win32 Installer) version of CMake∞ and copy it to your C:\EQ\Installs directory.
-
+**Optional Download** Get the current version of [HeidiSQL](http://www.heidisql.com/download.php) and save it in the `C:\EQ\Installs` directory.
+_HeidiSQL is not required for this guide, however you may find it useful for editing the SQL database once you have the server up and running. If you are already comfortable using MySQL you can use HeidiSQL in place of the command line MySQL tool that is used throughout this guide_
 
 Step 2: Install the programs you will need to compile and run the server
 
