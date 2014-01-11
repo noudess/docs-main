@@ -91,10 +91,9 @@ These next steps will walk you through downloading the C++ source code and then 
 1. From the menu that pops up, select 'GIT Bash'.
 1. A command window should pop up (similar but not the same as the standard Windows command prompt).
 1. Type: `git clone git://github.com/EQEmu/Server.git .`<br />Note the . at the end of the command, i.e. there is a space after Server.git and then a period/full-stop. This is important. It tells GIT to clone the source code into the current folder , i.e. C:\EQ\Source If you omitted the . it would create a new folder called C:\EQ\Source\Server and download the source into that.<br />The output of the git clone command should look similar to this:<br />
-`Cloning into '.'... >a few lines of stuff of stuff< ... Checking out files: 100% (1181/1181), done.`<br />
+`Cloning into '.'... >a few lines of stuff< ... Checking out files: 100% (1181/1181), done.`
 1. Go to C:\EQ\Source in Windows Explorer, you should see a bunch of files and sub-folders have appeared, namely `CMakeLists.txt LICENSE.md cmake eqlaunch ucs zone shared_memory README.md common loginserver utils GPL.txt changelog.txt dependencies queryserv world`<br />Note that if you want to update your source code in the future to the latest version, follow the process above, but instead of typing `git clone ...` you would just type: `git pull` and that would check for updates to the source code and download the latest version if there have been any changes since you last did a git clone or git pull.
-
-**Install some other required files**
+1. unzip the dependencies
 
 Download the ""MySQL"" and zlib headers/libraries∞ and unzip them into C:\EQ\Source\dependencies
 If you do it correctly, you should have two folders underneath C:\EQ\Source\dependencies, one called mysql_x86 and one called zlib_x86.
