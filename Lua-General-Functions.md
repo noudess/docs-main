@@ -111,6 +111,8 @@ Void merchant_set_item(Integer npc_id, Integer item_id);
 Void merchant_set_item(Integer npc_id, Integer item_id, Integer quantity);
 Integer merchant_count_item(Integer npc_id, Integer item_id);
 String item_link(Integer item_id);
+Void say_link(String phrase);
+Void say_link(String phrase, Boolean silent);
 Void say_link(String phrase, Boolean silent, String link_name);
 String get_guild_name_by_id(Integer guild_id);
 Integer create_instance(String zone, Integer version, Integer duration);
