@@ -5,9 +5,6 @@ This guide details how to setup a public Windows server using 32-bit versions of
 
 > One of the biggest reasons some people end up with problems is because they missed something in the guide they are following, we have all done it at one time or another. _Please make sure you're not just skimming over the text written here._ If you read each and every single line in the following steps before moving on to the next one, you will end up with a working server. If you get an error in your setup, you missed something or changed something you weren't supposed to. Go back and retrace your steps. One single mis-typed character can cause your server not to start, run, or connect to the public server list.
 
-
-***
-
 ### Step 1: Gather the programs you will need to compile and run the server
 
 There are specific instructions to installing and configuring Perl, MySQL and Visual Studio Express 2013 in this guide. Read each section completely prior to installing everything.
@@ -54,6 +51,7 @@ The following steps install the programs that you downloaded and copied to your 
 1. Install Notepad++ using defaults (click yes, next, or allow to all prompts).
 1. Install GIT for Windows using defaults (click yes, next, or allow to all prompts).
 1. Install CMake using defaults (click yes, next, or allow to all prompts).
+1. Install Visual Studio Express 2013 For Windows Desktop using defaults (click yes, next, or allow to all prompts).
 1. If you downloaded HeidiSQL, install HeidiSQL using defaults (click yes, next, or allow to all prompts).
 1. Install TortoiseSVN using defaults (click yes, next, or allow to all prompts).<br />_The TortoiseSVN installation may say you need to reboot. **If it does then reboot before continuing.**_
 
