@@ -6,3 +6,4 @@ Remember that guides are just that: guides. That being said, don't expect your r
 
 ##### Current Setup Guides
 * [[Basic PEQ Setup (using XAMPP)|PEQ-Setup-using-XAMPP]]
+* [[Public EQEmulator Server Setup Guide (Windows 32 bit, No Webserver)]]
