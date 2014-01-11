@@ -90,22 +90,14 @@ These next steps will walk you through downloading the C++ source code and then 
 1. Open the `C:\EQ` folder and then right click on the folder called Source.
 1. From the menu that pops up, select 'GIT Bash'.
 1. A command window should pop up (similar but not the same as the standard Windows command prompt).
-1. Type: `git clone git://github.com/EQEmu/Server.git .`<br />Note the . at the end of the command, i.e. there is a space after Server.git and then a period/full-stop. This is important. It tells GIT to clone the source code into the current folder , i.e. C:\EQ\Source If you omitted the . it would create a new folder called C:\EQ\Source\Server and download the source into that.<br />The output of the git clone command should look similar to this:`
-
-Cloning into '.'...
-remote: Counting objects: 1288, done.
-remote: Compressing objects: 100% (1070/1070), done.
-remote: Total 1288 (delta 225), reused 1262 (delta 199)
-Receiving objects: 100% (1288/1288), 3.17 MiB | 856 KiB/s, done.
-Resolving deltas: 100% (225/225), done.
-Checking out files: 100% (1181/1181), done.`
-
-If you go to C:\EQ\Source in Windows Explorer, you should see a bunch of files and sub-folders have appeared, namely
-
-CMakeLists.txt LICENSE.md cmake eqlaunch ucs zone shared_memory README.md common loginserver utils GPL.txt changelog.txt dependencies queryserv world
-
-Note that if you want to update your source code in the future to the latest version, follow the process above, but instead of typing 'git clone ...' you would just type:
-git pull
+1. Type: `git clone git://github.com/EQEmu/Server.git .`<br />Note the . at the end of the command, i.e. there is a space after Server.git and then a period/full-stop. This is important. It tells GIT to clone the source code into the current folder , i.e. C:\EQ\Source If you omitted the . it would create a new folder called C:\EQ\Source\Server and download the source into that.<br />The output of the git clone command should look similar to this:<br />`Cloning into '.'...<br />
+remote: Counting objects: 1288, done.<br />
+remote: Compressing objects: 100% (1070/1070), done.<br />
+remote: Total 1288 (delta 225), reused 1262 (delta 199)<br />
+Receiving objects: 100% (1288/1288), 3.17 MiB | 856 KiB/s, done.<br />
+Resolving deltas: 100% (225/225), done.<br />
+Checking out files: 100% (1181/1181), done.`<br />
+1. Go to C:\EQ\Source in Windows Explorer, you should see a bunch of files and sub-folders have appeared, namely `CMakeLists.txt LICENSE.md cmake eqlaunch ucs zone shared_memory README.md common loginserver utils GPL.txt changelog.txt dependencies queryserv world`<br />Note that if you want to update your source code in the future to the latest version, follow the process above, but instead of typing `git clone ...` you would just type: `git pull`
 
 
 and that would check for updates to the source code and download the latest version if there have been any changes since you last did a git clone or git pull.
