@@ -5,6 +5,8 @@ Prerequisites
 * Some knowledge of mysql
 * A compatible installation of the Everquest client.
 
+Note:  If you are using CentOS Enterprise or any other *nix package with a GCC version lower than 4.6, you should read this article: [[GCC below 4.6]]
+
 Steps
 -----
 
