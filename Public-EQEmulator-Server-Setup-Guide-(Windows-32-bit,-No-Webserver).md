@@ -8,7 +8,7 @@ This guide details how to setup a public Windows server using 32-bit versions of
 
 ***
 
-**Step 1: Gather the programs you will need to compile and run the server**
+### Step 1: Gather the programs you will need to compile and run the server
 
 There are specific instructions to installing and configuring Perl, MySQL and Visual Studio Express 2013 in this guide. Read each section completely prior to installing everything.
 
@@ -17,18 +17,12 @@ Some parts of this process require you to open tar/gzip files. Windows can not e
 
 **Make the necessary folders**
 
-1. Make a folder on your C drive called EQ.<br />
-`C:\EQ`
-2. Make a folder inside the EQ Folder called Installs, this folder will have all the files you need to install to compile and run the server.<br />
-`C:\EQ\Installs`
-3. Make a folder inside the EQ Folder called EQEmuServer, this folder will be where the actual game server runs from.<br />
-`C:\EQ\EQEmuServer`
-4. Make a folder inside the EQ\EQEmuServer Folder called shared, this folder is required for "shared memory"<br />
-`C:\EQ\EQEmuServer\shared`
-5. Make a folder inside the EQ Folder called SQL, this folder will be where you save database files and scripts to be sourced in to the database.<br />
-`C:\EQ\SQL`
-6. Make a folder inside the EQ Folder called Source, this folder will be where you clone/download the C++ source code to.<br />
-`C:\EQ\Source`
+1. Make a folder on your C drive called EQ.<br />`C:\EQ`
+1. Make a folder inside the EQ Folder called Installs, this folder will have all the files you need to install to compile and run the server.<br />`C:\EQ\Installs`
+1. Make a folder inside the EQ Folder called EQEmuServer, this folder will be where the actual game server runs from.<br />`C:\EQ\EQEmuServer`
+1. Make a folder inside the EQ\EQEmuServer Folder called shared, this folder is required for "shared memory"<br />`C:\EQ\EQEmuServer\shared`
+1. Make a folder inside the EQ Folder called SQL, this folder will be where you save database files and scripts to be sourced in to the database.<br />`C:\EQ\SQL`
+1. Make a folder inside the EQ Folder called Source, this folder will be where you clone/download the C++ source code to.<br />`C:\EQ\Source`
 
 **Download the required third-party applications**
 
@@ -48,16 +42,22 @@ Download the current version of [Notepad++](http://notepad-plus-plus.org/downloa
 
 Download the Windows (Win32 Installer) version of [CMake](http://www.cmake.org/cmake/resources/software.html) and place it in your `C:\EQ\Installs` directory.
 
-**Optional Download** Get the current version of [HeidiSQL](http://www.heidisql.com/download.php) and save it in the `C:\EQ\Installs` directory.
-_HeidiSQL is not required for this guide, however you may find it useful for editing the SQL database once you have the server up and running. If you are already comfortable using MySQL you can use HeidiSQL in place of the command line MySQL tool that is used throughout this guide_
+Download a third party zip program such as [7-Zip](http://www.7-zip.org/download.html) because you will need to open .tar.gz files and the Windows compressed file utility does not know what to do with that file type.
 
-Step 2: Install the programs you will need to compile and run the server
+**Optional Download** Get the current version of [HeidiSQL](http://www.heidisql.com/download.php) and save it in the `C:\EQ\Installs` directory.<br />_HeidiSQL is not required for this guide, however you may find it useful for editing the SQL database once you have the server up and running. If you are already comfortable using MySQL you can use HeidiSQL in place of the command line MySQL tool that is used throughout this guide_
 
-Install whatever 3rd party zip program you prefer if needed.
+### Step 2: Install the programs you will need to compile and run the server
 
 The following steps install the programs that you downloaded and copied to your C:\EQ\Installs directory in the previous steps.
 
+1. Install 7-Zip or your preferred file compression program using defaults (click yes, next, or allow to all prompts).
+1. Install Notepad++ using defaults (click yes, next, or allow to all prompts).
+1. Install GIT for Windows using defaults (click yes, next, or allow to all prompts).
+1. Install CMake using defaults (click yes, next, or allow to all prompts).
+1. If you downloaded HeidiSQL, install HeidiSQL using defaults (click yes, next, or allow to all prompts).
+1. Install TortoiseSVN using defaults (click yes, next, or allow to all prompts).<br />_The TortoiseSVN installation may say you need to reboot. **If it does then reboot before continuing.**_
 
+**Now install the applications that require a specific configuration**
 Install ActiveState Perl
 
 During the installation of Perl, change the installation path to C:\Perl if it is not already set to that. Otherwise, accept all the defaults.
