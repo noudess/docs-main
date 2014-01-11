@@ -60,6 +60,7 @@ The following steps install the programs that you downloaded and copied to your 
 **Install ActiveState Perl** ensuring that the installation path shows as `C:\Perl` and if not, then change it to that.  Otherwise for all other prompts use the defaults (click yes, next, or allow to all prompts).<br />_When Perl is finished installing, you should either logoff/logon or reboot your PC to ensure the changes to the Windows PATH variable are updated **before proceeding further**_.
 
 **Install MySQL 5.1** using the following instructions. If you miss a step you will have to completely uninstall MySQL and start this part all over again.
+
 1. When you first start up the install, make sure you choose CUSTOM install.
 1. On that same menu, make sure ALL options are installed. The developer components will probably have an X against it. Click it and select `This feature will be installed on local hard drive`. This is important, you will not be able to compile the EQEmu source code without the MySQL developer components.
 1. After clicking "next", on that menu, click Install
@@ -70,7 +71,10 @@ The following steps install the programs that you downloaded and copied to your 
 1. Choose `Multifunctional Database` and click Next.
 1. When the InnoDB settings dialogue appears, click Next.
 1. Select `Online Transaction Processing (OLTP)` and click Next.
-1. On the next screen, ensure `Enable TCP/IP Networking` is ticked, the port number should be `3306` and **untick** `Enable Strict Mode`. Then click Next.
+1. On the next screen,<br />
+ ensure `Enable TCP/IP Networking` is ticked,<br />
+the port number should be `3306`,<br />
+and **untick** `Enable Strict Mode`. Then click Next.
 1. On the next sceen, select `Best Support For Multilingualism` and click Next.
 1. On the next screen, ensure `Install as a Windows Service` is ticked and, very important, tick the box to `Include Bin Directory in Windows PATH`. Then click Next.
 1. You will be prompted for a root password (root is the default username). This will be known as your MySQL password. Make sure you remember it. Click Next.
@@ -79,21 +83,14 @@ The following steps install the programs that you downloaded and copied to your 
 
 _When MySQL is finished installing, you should either logoff/logon or reboot your PC to ensure the changes to the Windows PATH variable are updated **before proceeding further**_.
 
-### Step 3: Getting and compiling the C source code
+### Step 3: Getting and compiling the C++ source code
 
-Now on your main C-Drive, expand the EQ folder and then right click on the folder called Source.
+These next steps will walk you through downloading the C++ source code and then compiling it into executable files.
 
-From the menu that pops up, select 'GIT Bash'.
-
-A command window should pop up (similar but not the same as the standard Windows command prompt).
-
-Type:
-git clone git://github.com/EQEmu/Server.git .
-
-
-Note the . at the end of the command, i.e. there is a space after Server.git and then a period/full-stop. This is important. It tells GIT to clone the source code into the current folder , i.e. C:\EQ\Source If you omitted the . it would create a new folder called C:\EQ\Source\Server and download the source into that. 
-
-The output of the git clone command should look similar to this:
+1. Open the `C:\EQ` folder and then right click on the folder called Source.
+1. From the menu that pops up, select 'GIT Bash'.
+1. A command window should pop up (similar but not the same as the standard Windows command prompt).
+1. Type: `git clone git://github.com/EQEmu/Server.git .`<br />Note the . at the end of the command, i.e. there is a space after Server.git and then a period/full-stop. This is important. It tells GIT to clone the source code into the current folder , i.e. C:\EQ\Source If you omitted the . it would create a new folder called C:\EQ\Source\Server and download the source into that.<br />The output of the git clone command should look similar to this:`
 
 Cloning into '.'...
 remote: Counting objects: 1288, done.
@@ -101,7 +98,7 @@ remote: Compressing objects: 100% (1070/1070), done.
 remote: Total 1288 (delta 225), reused 1262 (delta 199)
 Receiving objects: 100% (1288/1288), 3.17 MiB | 856 KiB/s, done.
 Resolving deltas: 100% (225/225), done.
-Checking out files: 100% (1181/1181), done.
+Checking out files: 100% (1181/1181), done.`
 
 If you go to C:\EQ\Source in Windows Explorer, you should see a bunch of files and sub-folders have appeared, namely
 
