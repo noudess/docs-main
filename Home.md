@@ -9,6 +9,7 @@ The wiki is the only good source of documentation about EQEmu. Anybody can edit 
 * [[Information for Server Admins|Server-Admin]]
   * [[Windows Server Setup Guides|Windows-Server-Setup]]
     * [[Basic PEQ Setup (using XAMPP)|PEQ-Setup-using-XAMPP]]
+    * [[Public EQEmulator Server Setup Guide (Windows 32 bit, No Webserver)]]
   * [[Linux Server Setup Guides|Linux-Server-Setup]]
 * [[Information About Packet Collecting|Packet-Collecting]]
 * [[Content Development|Content-Development]]
