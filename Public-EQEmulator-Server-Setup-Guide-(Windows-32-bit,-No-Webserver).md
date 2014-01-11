@@ -56,68 +56,30 @@ The following steps install the programs that you downloaded and copied to your 
 1. Install TortoiseSVN using defaults (click yes, next, or allow to all prompts).<br />_The TortoiseSVN installation may say you need to reboot. **If it does then reboot before continuing.**_
 
 **Now install the applications that require a specific configuration**
-Install ActiveState Perl
 
-During the installation of Perl, change the installation path to C:\Perl if it is not already set to that. Otherwise, accept all the defaults.
+**Install ActiveState Perl** ensuring that the installation path shows as `C:\Perl` and if not, then change it to that.  Otherwise for all other prompts use the defaults (click yes, next, or allow to all prompts).<br />_When Perl is finished installing, you should either logoff/logon or reboot your PC to ensure the changes to the Windows PATH variable are updated **before proceeding further**_.
 
-When Perl is finished installing, you should either logoff/logon or reboot your PC to ensure the changes to the Windows PATH variable are updated before proceeding further.
+**Install MySQL 5.1** using the following instructions. If you miss a step you will have to completely uninstall MySQL and start this part all over again.
+1. When you first start up the install, make sure you choose CUSTOM install.
+1. On that same menu, make sure ALL options are installed. The developer components will probably have an X against it. Click it and select `This feature will be installed on local hard drive`. This is important, you will not be able to compile the EQEmu source code without the MySQL developer components.
+1. After clicking "next", on that menu, click Install
+1. If a Nag screen appears about MySQL Enterprise, click Next until a dialog appears with a box that says `Configure the MySQL Server now`. Ensure the box is ticked and click Finish.
+1. The MySQL Server Instance Configuration Wizard should start. If you don't see it, make sure it is not hidden behind another window. Click Next.
+1. Select `Detailed Configuration` and click Next.
+1. Choose `Server Machine` and click Next.
+1. Choose `Multifunctional Database` and click Next.
+1. When the InnoDB settings dialogue appears, click Next.
+1. Select `Online Transaction Processing (OLTP)` and click Next.
+1. On the next screen, ensure `Enable TCP/IP Networking` is ticked, the port number should be `3306` and **untick** `Enable Strict Mode`. Then click Next.
+1. On the next sceen, select `Best Support For Multilingualism` and click Next.
+1. On the next screen, ensure `Install as a Windows Service` is ticked and, very important, tick the box to `Include Bin Directory in Windows PATH`. Then click Next.
+1. You will be prompted for a root password (root is the default username). This will be known as your MySQL password. Make sure you remember it. Click Next.
+1. Click Execute.
+1. When the wizard has done it's thing, click Finish.
 
-After logging off/on or rebooting you will need to open Command Prompt with Administrative privileges (instructions here∞).
+_When MySQL is finished installing, you should either logoff/logon or reboot your PC to ensure the changes to the Windows PATH variable are updated **before proceeding further**_.
 
-Type the following command in the elevated Command Prompt. 
-
-    ppm install DBI
-
-
-
-Install MySQL 5.1
-
-When you first start up the install, make sure you choose CUSTOM install.
-
-On that same menu, make sure ALL options are installed. The developer components will probably have an X against it. Click it and select 'This feature will be installed on local hard drive'. This is important, you will not be able to compile the EQEmu source code without the MySQL developer components.
-
-After clicking "next", on that menu, click Install
-
-If a Nag screen appears about MySQL Enterprise, click Next until a dialog appears with a box that says 'Configure the MySQL Server now'. Ensure the box is ticked and click Finish.
-
-The MySQL Server Instance Configuration Wizard should start. If you don't see it, make sure it is not hidden behind another window. Click Next.
-
-Select Detailed Configuration and click Next.
-
-Choose 'Server Machine' and click Next.
-
-Choose 'Multifunctional Database' and click Next.
-
-When the InnoDB settings dialogue appears, click Next.
-
-Select 'Online Transaction Processing (OLTP)' and click Next.
-
-On the next screen, ensure 'Enable TCP/IP Networking' is ticked, the port number should be 3306 and UNTICK 'Enable Strict Mode'. Then click Next.
-
-On the next sceen, select 'Best Support For Multilingualism' and click Next.
-
-On the next screen, ensure 'Install as a Windows Service' is ticked and, very important, tick the box to 'Include Bin Directory in Windows PATH'. Then click Next.
-
-You will be prompted for a root password (root is the default username). This will be known as your MySQL password. Make sure you remember it. Click Next.
-
-Click Execute.
-
-When the wizard has done it's thing, click Finish.
-
-You should either logoff/logon or reboot your PC to ensure the changes to the Windows PATH variable are updated before proceeding further.
-
-
-Install Microsoft Visual Studio Express 2012 for Windows Desktop.
-
-You can just install this with all the default installation. Nothing to do until after installation is complete. 
-
-
-Now you can install GIT, TortoiseSVN, CMake, HeidiSQL and Notepad++ using defaults (click yes or next to everything)
-
-The TortoiseSVN installation may say you need to reboot. If it does then reboot before continuing.
-
-
-Step 3: Getting and compiling the C source code
+### Step 3: Getting and compiling the C source code
 
 Now on your main C-Drive, expand the EQ folder and then right click on the folder called Source.
 
