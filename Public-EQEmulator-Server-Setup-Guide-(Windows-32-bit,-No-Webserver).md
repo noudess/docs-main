@@ -245,7 +245,7 @@ Launch a command prompt window and navigate to your C:\EQ\SQL folder by typing:
 cd c:\EQ\SQL
 
 
-Then enter mysql -uroot -ppassword where password is the password you chose when installing MySQL.
+Then enter mysql -uroot -p and press enter. Enter your password which you chose when installing MySQL.
 
 You should be presented with a mysql> prompt.
 
@@ -253,8 +253,8 @@ Type: create database peq; and press enter.
 
 Type: use peq; and press enter.
 
-Note: Now that the database is created anytime you need to login to MySQL in the future, you can do it with a single line command.
-mysql -uroot -pyourpassword peq
+Note: Now that the database is created anytime you need to login to MySQL in the future, you can do it with a single line command. It will ask you for your root password.
+mysql -uroot -p peq
 
 
 Type source peqdb_revNNNN.sql (replacing NNNN with the four digits depending on the latest version of the database that you downloads).
@@ -334,14 +334,14 @@ Optional - Backup your database
 Once you have your database updated fully, BACK IT UP !!!
 That is easily done without even logging in to your mysql.
 Create a folder on your C-Drive (or wherever), called backup
-Then in a command window, simply type the following:
-mysqldump -uroot -ppassword peq > c:\EQ\peq_backup.sql
+Then in a command window, simply type the following (which will ask you for your root password):
+mysqldump -uroot -p peq > c:\EQ\peq_backup.sql
 
 
 Then if you ever have to re-install everything, you can easily source your whole database
-back in by typing the following: (make sure your in that same backup folder)
+back in by typing the following (it will ask for your root password): (make sure your in that same backup folder)
 
-mysql -uroot -ppassword
+mysql -uroot -p
 drop database peq;
 create database peq;
 use peq
