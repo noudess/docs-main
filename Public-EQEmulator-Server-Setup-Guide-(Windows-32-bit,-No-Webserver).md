@@ -1,4 +1,4 @@
-# As of 01/11/2014, this document is still being edited after being copy/pasted from the original wiki entry.
+## As of 01/11/2014, this document is still being edited for formatting after being copy/pasted from the original wiki entry, but it is still a valid document. It is being updated slightly in the process.
 
 This guide details how to setup a public Windows server using 32-bit versions of MySQL and Perl. If you feel you are special and want to use 64-bit MySQL and Perl, then this guide is NOT for you. If you want to setup a private server, using a Private login server, you are strongly advised to follow this guide to setup a public server first before attempting to setup a private login server (see the post linked at the bottom of this article for extra steps required to setup a private login server)
 
