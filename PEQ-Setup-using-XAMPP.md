@@ -75,7 +75,7 @@ Configuring done
 
 * **Get the quests.** PEQ uses [Google Code] (http://code.google.com/p/projecteqquests) to store their quests. Currently, there is a mix and match of Perl and Lua quests. Using TortosieSVN, checkout the quests into your \eqemu\quests folder (make sure it isn't \eqemu\quests\quests). Copy the plugins and lua_modules folders into your eqemu root folder. If you do not want to keep an SVN, you can download the daily quest dump from PEQ at http://peqtgc.com/releases.
 
-* **Get the maps.** Your server will use the map files from EQ for in-game calculations. Currently, maps are stored at [Google Code] (http://code.google.com/p/eqemumaps). Using TortoiseSVN, checkout the maps into your \eqemu\Maps folder (make sure it isn't \eqemu\Maps\Maps). This may take a while.
+* **Get the maps.** Your server will use the map files from EQ for in-game calculations. Currently, maps are stored at [PEQ's Google Code] (http://code.google.com/p/eqemu-maps) page or you can use [AX Classic's Google Code] (http://code.google.com/p/eqemumaps) page. Using TortoiseSVN, checkout the maps into your \eqemu\Maps folder (make sure it isn't \eqemu\Maps\Maps). This may take a while.
 
 * **Get the database editor.** PEQ uses [Google Code] (http://code.google.com/p/peqphpeditor/) to store the PEQ Database Editor. Using TortoiseSVN, checkout the editor into your \xampp\htdocs\ folder as peqedit or whatever you wish to call it. If you do not want to keep an SVN, you can download the daily editor dump from PEQ at http://peqtgc.com/releases. Open the readme file for instructions on setting the configuration for your editor.
 
