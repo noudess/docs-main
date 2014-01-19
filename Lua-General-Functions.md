@@ -118,6 +118,7 @@ String get_guild_name_by_id(Integer guild_id);
 Integer create_instance(String zone, Integer version, Integer duration);
 Void destroy_instance(Integer instance_id);
 Integer get_instance_id(String zone, Integer version);
+HashTable get_characters_in_instance(Integer instance_id);
 Void assign_to_instance(Integer instance_id);
 Void assign_group_to_instance(Integer instance_id);
 Void assign_raid_to_instance(Integer instance_id);
@@ -163,6 +164,23 @@ Mob get_owner();
 ItemInst get_quest_item();
 Void map_opcodes(); -- will refresh the internal opcode dispatch
 Void clear_opcode(Integer opcode); -- removes the internal opcode handler for the following opcode
+```
+This is an example of how to use get_characters_in_instance
+
+```
+
+function event_death_complete(e)
+	-- get the zone instance id
+	local instance_id = eq.get_zone_instance_id();
+	local charid_list = eq.get_characters_in_instance(instance_id);
+	-- Lua loop basics:
+	-- k = key which is generally the current index of the array, not used in this example
+	-- v = value for the current key, in this example it would be the character ID
+	for k,v in pairs(charid_list) do
+		eq.target_global("lockout_ikky_g1", "1", "H17", 0,v, 0);
+	end
+end
+
 ```
 
 SpawnPointOptions is a lua table that accepts the following values:
