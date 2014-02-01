@@ -146,7 +146,6 @@ function event_timer(e)
 end
 ```
 
-```
 ### Player
 ```
 -- player.lua example of access and changing the lockpick value of a door.
@@ -178,6 +177,8 @@ function event_death_complete(e)
 		eq.target_global("lockout_ikky_g1", "1", "H17", 0,v, 0);
 	end
 end
+```
+
 ### Item
 
 ### Spell
