@@ -1,6 +1,6 @@
 The Lua Parser is a quest parser for EQEmu that uses the Lua embedded programming language.
 
-We use Lua 5.1 so the [Lua 5.1 Manual](http://www.lua.org/manual/5.1/manual.html) applies. Section 2 is a bit of a dense read but may be of particular Integererest to those just getting started with Lua.
+We use Lua 5.1 so the [Lua 5.1 Manual](http://www.lua.org/manual/5.1/manual.html) applies. Section 2 is a bit of a dense read but may be of particular Interest to those just getting started with Lua.
 
 The rest of this guide assumes you know Lua 5.1, if you don't then it wont make sense at parts and you'll end up asking stupid questions so please learn it before you go further.
 
