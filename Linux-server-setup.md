@@ -19,7 +19,7 @@ Steps
 7. `cmake .`
 8. `make`
 9. If you get errors about CMake Error: your CXX compiler: "CMAKE_CXX_COMPILER-NOTFOUND" was not found, then try  `sudo apt-get install build-essential`
-10 If you get errors about Could NOT find PerlLibs (missing: PERL_LIBRARY), then try running ``cmake . -DPERL_LIBRARY=`locate -n 1 libperl.so` ``
+10. If you get errors about Could NOT find PerlLibs (missing: PERL_LIBRARY), then try running ``cmake . -DPERL_LIBRARY=`locate -n 1 libperl.so` ``
 11. Go to http://peqtgc.com/releases and download the peqbeta_ and quests_ files.
 12. The peqbeta archive contains SQL data that needs to be loaded into your database.
 13. The quests archive contains a quests folder that should be copied to your eqemu directory.
