@@ -15,7 +15,7 @@ Steps
 3. Additional optional dependencies: `sudo apt-get install phpmyadmin`
 4. Clone the repository from github: `git clone git@github.com:EQEmu/Server.git eqemu`
 5. `cd eqemu`
-6. If you do not have cmake installed already, `sudo apt-get install cmake`
+6. If you do not have make or cmake installed already, `sudo apt-get install cmake make`
 7. `cmake .`
 8. `make`
 9. Go to http://peqtgc.com/releases and download the peqbeta_ and quests_ files.
