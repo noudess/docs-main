@@ -33,4 +33,7 @@ Steps
 21. Create the logs directory: `mkdir logs`.
 22. Create the shared memory directory: `mkdir shared`.
 23. Run `Bin/world` and wait for it to finish initializing.
-24. Once the world server is running, open a new terminal window and run `Bin/eqlaunch <name of your server>`.
+24. Once the world server is running, open a new terminal window and run `Bin/eqlaunch zone`. If Bin/zone is not in your path, you can edit your eqemu_config.xml to include:
+<launcher>
+	<exe>Bin/zone</exe>
+</launcher>
