@@ -17,7 +17,7 @@ Steps
    OR if behind a firewall/proxy `git https://://github.com/EQEmu/Server.git eqemu`
 5. `cd eqemu`
 6. If you do not have make or cmake installed already, `sudo apt-get install cmake make`
-7. `cmake .`
+7. `cmake -G "Unix Makefiles" -Wno-dev -i .`  build types are "Debug Release RelWithDebInfo MinSizeRel"
 8. `make`
 9. If you get errors about CMake Error: your CXX compiler: "CMAKE_CXX_COMPILER-NOTFOUND" was not found, then try  `sudo apt-get install build-essential`
 10. If you get errors about Could NOT find PerlLibs (missing: PERL_LIBRARY), then try running ``cmake . -DPERL_LIBRARY=`locate -n 1 libperl.so` ``
