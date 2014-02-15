@@ -8,7 +8,6 @@ Optionally can use subversion to pull down the whole "EQEmuLoginServer"
 `svn checkout http://projecteqemu.googlecode.com/svn/trunk/EQEmuServer/EQEmuLoginServer`
 but so far I just need the zip file with the two *.a files
 
-~~~
 Now prep the database
 `mysql -u eq -p -D eq < loginserver/login_util/EQEmuLoginServerDBInstall.sql`
 `mysql -u eq -p -D eq < loginserver/login_util/tblLoginServerAccounts.sql`
