@@ -13,7 +13,8 @@ Steps
 1. Open a terminal window.
 2. First make sure you have dependencies installed. On Ubuntu this is done with: `sudo apt-get install subversion mysql-server libmysqlclient-dev`.
 3. Additional optional dependencies: `sudo apt-get install phpmyadmin`
-4. Clone the repository from github: `git clone git@github.com:EQEmu/Server.git eqemu`
+4. Clone the repository from github: `git clone git://github.com/EQEmu/Server.git eqemu` 
+   OR if behind a firewall/proxy `git https://://github.com/EQEmu/Server.git eqemu`
 5. `cd eqemu`
 6. If you do not have make or cmake installed already, `sudo apt-get install cmake make`
 7. `cmake .`
