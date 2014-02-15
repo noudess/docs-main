@@ -40,6 +40,7 @@ Steps
 27. Run `ln -s utils/patches/patch_SoF.conf patch_SoF.conf` in the eqemu root directory
 28. Run `ln -s utils/patches/patch_Titanium.conf patch_Titanium.conf` in the eqemu root directory
 29. Run `ln -s utils/patches/patch_Underfoot.conf patch_Underfoot.conf` in the eqemu root directory
+30. Run `ln -s utils/defaults/mime.types mime.types` in the eqemu root directory
 30. Run `Bin/world` and wait for it to finish initializing.
 31. Once the world server is running, open a new terminal window and run `Bin/eqlaunch zone`. If Bin/zone is not in your path, you can edit your eqemu_config.xml to include:<br />
 \<launcher><br />
