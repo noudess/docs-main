@@ -8,3 +8,21 @@ Optionally can use subversion to pull down the whole "EQEmuLoginServer"
 `svn checkout http://projecteqemu.googlecode.com/svn/trunk/EQEmuServer/EQEmuLoginServer`
 but so far I just need the zip file with the two *.a files
 
+~~~
+Now prep the database
+`mysql -u eq -p -D eq < loginserver/login_util/EQEmuLoginServerDBInstall.sql`
+`mysql -u eq -p -D eq < loginserver/login_util/tblLoginServerAccounts.sql`
+`mysql -u eq -p -D eq < loginserver/login_util/tblServerAdminRegistration.sql`
+`mysql -u eq -p -D eq < loginserver/login_util/tblServerListType.sql`
+`mysql -u eq -p -D eq < loginserver/login_util/tblWorldServerRegistration.sql`
+
+copy the login.ini to the eqemu root directory
+`cp loginserver/login_util/login.ini ./`
+Edit login.ini, set the database info(user,passwd, etc)
+not sure what "local_network" under [options] is used for
+
+symlink the opcodes to the eqemu root directory
+`ln -s loginserver/login_util/login_opcodes.conf login_opcodes.conf`
+`ln -s loginserver/login_util/login_opcodes_sod.conf login_opcodes_sod.conf`
+
+And now should be able to start the loginserver via `Bin/loginserver`
