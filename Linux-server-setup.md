@@ -32,8 +32,15 @@ Steps
 20. Copy `spells_us.txt` from your Everquest installation into the eqemu root directory.
 21. Create the logs directory: `mkdir logs`.
 22. Create the shared memory directory: `mkdir shared`.
-23. Run `Bin/world` and wait for it to finish initializing.
-24. Once the world server is running, open a new terminal window and run `Bin/eqlaunch zone`. If Bin/zone is not in your path, you can edit your eqemu_config.xml to include:<br />
+23. Run `Bin/shared_memory` to populate the shared directory
+24. Run `ln -s utils/patches/patch_6.2.conf patch_6.2.conf` in the eqemu root directory
+25. Run `ln -s utils/patches/patch_RoF.conf patch_RoF.conf` in the eqemu root directory
+26. Run `ln -s utils/patches/patch_SoD.conf patch_SoD.conf` in the eqemu root directory
+27. Run `ln -s utils/patches/patch_SoF.conf patch_SoF.conf` in the eqemu root directory
+28. Run `ln -s utils/patches/patch_Titanium.conf patch_Titanium.conf` in the eqemu root directory
+29. Run `ln -s utils/patches/patch_Underfoot.conf patch_Underfoot.conf` in the eqemu root directory
+30. Run `Bin/world` and wait for it to finish initializing.
+31. Once the world server is running, open a new terminal window and run `Bin/eqlaunch zone`. If Bin/zone is not in your path, you can edit your eqemu_config.xml to include:<br />
 \<launcher><br />
 \<exe>Bin/zone\</exe><br />
 \</launcher><br />
