@@ -279,6 +279,8 @@ Void SetGlobal(String varname, String newvalue, Integer options, String duration
 Void SetHate(Mob other);
 Void SetHate(Mob other, Integer hate);
 Void SetHate(Mob other, Integer hate, Integer damage);
+Void HalveAggro(Mob other);
+Void DoubleAggro(Mob other);
 Void SetHeading(Real in);
 Void SetHP(Integer hp);
 Void SetInvisible(Integer state);
