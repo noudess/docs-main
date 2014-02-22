@@ -167,6 +167,7 @@ Void clear_opcode(Integer opcode); -- removes the internal opcode handler for th
 Bool enable_recipe(Integer recipe_id);
 Bool disable_recipe(Integer recipe_id);
 Void clear_npctype_cache(Integer npctype_id);
+Real clock();
 ```
 
 SpawnPointOptions is a lua table that accepts the following values:
