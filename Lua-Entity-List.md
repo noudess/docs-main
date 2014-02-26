@@ -17,6 +17,7 @@ Mob GetMob(Integer id);
 Mob GetMobByNpcTypeID(Integer npc_type);
 NPC GetNPCByID(Integer id);
 NPC GetNPCByNPCTypeID(Integer npc_type);
+Bool IsMobSpawnedByNpcTypeID(Interger npc_type);
 Client GetClientByName(String name);
 Client GetClientByAccID(Integer acct_id);
 Client GetClientByID(Integer id);
