@@ -87,6 +87,8 @@ Event
 	Integer augment_remove;
 	Integer enter_area;
 	Integer leave_area;
+	Integer death_complete;
+	Integer unhandled_opcode;
 }
 ```
 
