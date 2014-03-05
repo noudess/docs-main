@@ -122,6 +122,8 @@ HashTable get_characters_in_instance(Integer instance_id);
 Void assign_to_instance(Integer instance_id);
 Void assign_group_to_instance(Integer instance_id);
 Void assign_raid_to_instance(Integer instance_id);
+Void remove_from_instance(Integer instance_id);
+Void remove_all_from_instance(Integer instance_id);
 Void flag_instance_by_group_leader(Integer zone, Integer version);
 Void flag_instance_by_raid_leader(Integer zone, Integer version);
 Void fly_mode(Integer flymode);
