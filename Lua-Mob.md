@@ -323,6 +323,15 @@ Void ProcessSpecialAbilities(String str);
 Void SetAppearance(Integer app);
 Void SetAppearance(Integer app, Boolean ignore_self);
 Void SetDestructibleObject(Boolean set);
+Boolean IsImmuneToSpell(Integer spell_id, Mob caster);
+Void BuffFadeBySpellID(Integer spell_id);
+Void BuffFadeByEffect(Integer effect_id);
+Void BuffFadeByEffect(Integer effect_id, Integer skipslot);
+Void BuffFadeAll();
+Void BuffFadeBySlot(Integer slot);
+Void  BuffFadeBySlot(Integer slot, Boolean recalc_bonuses);
+Integer CanBuffStack(Integer spell_id, Integer caster_level);
+Integer CanBuffStack(Integer spell_id, Integer caster_level, Boolean fail_if_overwrite);
 ```
 
 IllusionOptions is a lua table that accepts the following values:
