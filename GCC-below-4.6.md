@@ -16,7 +16,7 @@ gcc -v
 
 ***
 
-The wonderful thing about CMake is that now you can configure only EQEmu to use the new GCC while the rest of your system still recognizes the original GCC files. Run CMake in interactive mode and change the locations (i.e. /usr/bin/gcc changes to /opt/centos/devtoolset-1.1/root/usr/bin/gcc). When CMake goes finishes configure, it will recognize the change and go back through configuration to ensure all locations are correct.
+The wonderful thing about CMake is that now you can configure only EQEmu to use the new GCC while the rest of your system still recognizes the original GCC files. Run CMake in interactive mode and change the locations (i.e. /usr/bin/gcc changes to /opt/centos/devtoolset-1.1/root/usr/bin/gcc). When CMake finishes configuring, it will recognize the change and go back through configuration to ensure all locations are correct.
 
 Enjoy!
 
