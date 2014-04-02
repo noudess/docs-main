@@ -96,4 +96,6 @@ Real GetAttackSpeed();
 Integer GetAccuracyRating();
 Integer GetSpawnKillCount();
 Integer GetScore();
+Void MerchantOpenShop();
+Void MerchantCloseShop();
 ```
