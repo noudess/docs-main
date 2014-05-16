@@ -27,7 +27,7 @@ Steps
 14. Inside the quest folder are two folders called `lua_modules` and `plugins`. Move these to the root of your eqemu directory.
 15. Download the maps from Google Code. From your eqemu directory: `svn checkout http://eqemumaps.googlecode.com/svn/trunk/ .`
 16. Copy the default config file: `cp utils/defaults/eqemu_config.xml.full ./eqemu_config.xml`
-17. Create a database named `eq` and load the .sql files from the peqbeta_ archive into it. 
+17. Create a database named `eq` and load the .sql files from the peqbeta_ archive into it. Also copy the eqtime.cfg file to the eqemu root directory
 18. Create a user with privileges on `eq` and add the credentials to `eqemu_config.xml`.
 19. Copy `eqtime.cfg` from the peqbeta_ archive into the eqemu root directory.
 20. Copy `spells_us.txt` from your Everquest installation into the eqemu root directory.
