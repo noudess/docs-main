@@ -31,7 +31,8 @@ Steps
 18. Create a user with privileges on `eq` and add the credentials to `eqemu_config.xml`.
 19. Copy `eqtime.cfg` from the peqbeta_ archive into the eqemu root directory.
 20. Copy `spells_us.txt` from your Everquest installation into the eqemu root directory.
-21. Create the logs directory: `mkdir logs`.
+21. Create the logs directory: `mkdir logs`. 
+    Copy default log.ini to eqemu root `cp utils/defaults/log.ini ./`
 22. Create the shared memory directory: `mkdir shared`.
 23. Run `Bin/shared_memory` to populate the shared directory
 24. Run `ln -s utils/patches/patch_6.2.conf patch_6.2.conf` in the eqemu root directory
