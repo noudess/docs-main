@@ -144,7 +144,6 @@ Void cross_zone_signal_client_by_char_id(Integer player_id, Integer signal);
 Void cross_zone_signal_client_by_name(String player, Integer signal);
 Void cross_zone_message_player_by_name(Integer type, String player, String message);
 HashTable get_qglobals(NPC npc, Client client);
-HashTable get_qglobals(Client client, NPC npc);
 HashTable get_qglobals(Client client);
 HashTable get_qglobals(NPC npc);
 HashTable get_qglobals();
