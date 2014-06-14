@@ -12,7 +12,7 @@ This guide was created to help you set up a basic PEQ server with the current da
 * [[TortoiseSVN|TortoiseSVN]]
 * [[Boost 1.55|Boost]]
 * [[Lua 5.1|Lua-for-Windows]]
-* [[CMake 2.8|CMake-for-Windows]]
+* [[CMake 3.0|CMake-for-Windows]]
 * [[MySQL and ZLIB Dependencies|MySQL-and-ZLIB-Dependencies]]
 
 ##### Recommended Programs
