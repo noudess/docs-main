@@ -16,3 +16,4 @@ The wiki is the only good source of documentation about EQEmu. Anybody can edit 
 * [[Quest Development|Quest-Development]]
   * [[Perl]]
   * [[Lua|Lua-Parser]]
+* [[Pre-compiled Binaries|EQEmu-Binaries]]
