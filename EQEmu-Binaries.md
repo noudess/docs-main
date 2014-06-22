@@ -10,5 +10,5 @@ For users posting links, use standard format zipped files without password prote
 * loginserver.exe
 
 ***
-**JJ's Binaries:** Windows 32-bit, Perl 5.12, RelWithDebugInfo, synched with GIT on 22 June 2014, no modifications. Compiled on Win7-64 bit with VS Express 2013.
-* [x86](http://jjo.zapto.org/eqemubinaries/x86.rar)
+**JJ's Binaries:** 
+* [x86](http://jjo.zapto.org/eqemubinaries/x86.rar) - Windows 32-bit, Perl 5.12, RelWithDebugInfo, synched with GIT on 22 June 2014, no modifications. Compiled on Win7-64 bit with VS Express 2013.
