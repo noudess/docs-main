@@ -336,7 +336,8 @@ Once you have your database updated fully, BACK IT UP !!!
 That is easily done without even logging in to your mysql.
 Create a folder on your C-Drive (or wherever), called backup
 Then in a command window, simply type the following (which will ask you for your root password):
-mysqldump -uroot -p peq > c:\EQ\peq_backup.sql
+
+`mysqldump -uroot -p peq > c:\EQ\peq_backup.sql`
 
 
 Then if you ever have to re-install everything, you can easily source your whole database
