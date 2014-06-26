@@ -138,7 +138,7 @@ This will take a while. When it is finished you should see a message saying:
 If the build was successful, (9 succeeded), you DO NOT have to re-do that just because you have future problems. The rest of the setup is copying files, sourcing your database and configuring your server. The database and the server are two separate things. Your config files will help connect the two when your server is finally up and running.
 
 
-Copying the executables to your server directory
+**Copying the executables to your server directory**
 
 First go into the C:\EQ\Source\Build\Bin\Debug folder and copy the following files:
 
@@ -154,14 +154,14 @@ Next, go to your C:\EQ\Source\utils\patches folder and copy all the files from t
 Next, go to your C:\EQ\Source\utils\defaults folder and copy all the files and sub-folders from there to your C:\EQ\EQEmuServer folder.
 
 
-Download maps and quests
+**Download maps and quests**
 
 In your C:\EQ\EQEMuServer server folder, right click on the quests folder and choose "SVN Checkout"
 
 In the "URL of repository" line copy and paste the following:
 
 
-http://projecteqquests.googlecode.com/svn/trunk/quests∞
+http://projecteqquests.googlecode.com/svn/trunk/quests
 
 
 Change the Checkout Directory to:
@@ -191,7 +191,7 @@ Ignore the warning that pops up saying the Maps folder is not empty (click Yes).
 
 This will take a while, have a coffee.
 
-Copying quest plugins
+**Copying quest plugins**
 
 Go to the C:\EQ\EQEmuServer\quests\plugins folder and copy all the files in there to the C:\EQ\EQEmuServer\plugins folder.
 
@@ -218,13 +218,13 @@ In your eqemu (server folder) there should be 7 folders.
 Aside from those 7 folders, you should have 21 other files in your server folder.
 
 
-Step 4: Downloading, installing and updating the PEQ database
+### Step 4: Downloading, installing and updating the PEQ database
 
 First, go to your C:\EQ folder and right click on the folder you made called SQL and choose "SVN Checkout"
 
 In the "URL of repository" line copy and paste the following:
 
-http://projecteqdb.googlecode.com/svn/trunk/peqdatabase∞ (then click OK)
+http://projecteqdb.googlecode.com/svn/trunk/peqdatabase (then click OK)
 
 
 It will finish with "At Revision XX"
@@ -242,19 +242,20 @@ Now it is time to create the database.
 
 Launch a command prompt window and navigate to your C:\EQ\SQL folder by typing:
 
-cd c:\EQ\SQL
+`cd c:\EQ\SQL`
 
 
-Then enter mysql -uroot -p and press enter. Enter your password which you chose when installing MySQL.
+Then enter `mysql -uroot -p` and press enter. Enter your password which you chose when installing MySQL.
 
 You should be presented with a mysql> prompt.
 
-Type: create database peq; and press enter.
+Type: `create database peq;` and press enter.
 
-Type: use peq; and press enter.
+Type: `use peq;` and press enter.
 
 Note: Now that the database is created anytime you need to login to MySQL in the future, you can do it with a single line command. It will ask you for your root password.
-mysql -uroot -p peq
+
+`mysql -uroot -p peq`
 
 
 Type source peqdb_revNNNN.sql (replacing NNNN with the four digits depending on the latest version of the database that you downloads).
@@ -263,11 +264,11 @@ This may take a while to complete, depending on how powerful your PC is.
 
 When the mysql> prompt returns:
 
-Type: source load_player.sql and press enter.
+Type: `source load_player.sql` and press enter.
 
 If you plan on using Bots, also do the following:
 
-Type: source load_bots.sql and press enter.
+Type: `source load_bots.sql` and press enter.
 
 Type exit to return to the command prompt.
 
@@ -286,33 +287,33 @@ As of the time of writing, the EQEmu source is at Revision 2501, so we need to s
 
 Back in your command window, navigate to the C:\EQ\Source\utils\sql\svn folder, i.e. cd C:\EQ\Source\utils\sql\svn folder.
 
-type mysql -uroot -p
+type `mysql -uroot -p`  
 Enter your MySQL password
 
 When the mysql prompt appears:
 
-type use peq; and press enter
+type `use peq;` and press enter
 
 Then, for each of the .sql files you made a note of, starting with the lowest numbered one and proceeding in sequence, enter:
 
-source <filename> and press enter.
+`source <filename>` and press enter.
 
 Eg. in the example I gave, i.e. using PEQ database rev 2294 and EQEmu Source rev 2501, you would type:
 
-source 2299_required_inspectmessage_fields.sql
-source 2300_optional_loot_changes.sql
-source 2340_required_maxbuffslotspet.sql
-source 2361_required_qs_rule_values.sql
-source 2370_required_aa_updates.sql
-source 2376_required_aa_updates.sql
-source 2380_optional_merc_data.sql
-source 2380_optional_merc_merchant_npctypes_update.sql
-source 2380_optional_merc_rules.sql
-source 2383_required_group_ismerc.sql
-source 2428_optional_levelbasedexpmods.sql
-source 2448_optional_stun_proc_aggro_rule.sql
-source 2471_required_aa_updates.sql
-source 2482_required_start_zones.sql (and press enter)
+    source 2299_required_inspectmessage_fields.sql
+    source 2300_optional_loot_changes.sql
+    source 2340_required_maxbuffslotspet.sql
+    source 2361_required_qs_rule_values.sql
+    source 2370_required_aa_updates.sql
+    source 2376_required_aa_updates.sql
+    source 2380_optional_merc_data.sql
+    source 2380_optional_merc_merchant_npctypes_update.sql
+    source 2380_optional_merc_rules.sql
+    source 2383_required_group_ismerc.sql
+    source 2428_optional_levelbasedexpmods.sql
+    source 2448_optional_stun_proc_aggro_rule.sql
+    source 2471_required_aa_updates.sql
+    source 2482_required_start_zones.sql
 
 
 There may be further updates to apply in the following folder:
@@ -329,7 +330,7 @@ Source these .sql files in in ascending date order in the same way you did with 
 
 When you are done you can type exit to exit mysql and then close the command window.
 
-Optional - Backup your database
+**Optional - Backup your database**
 
 Once you have your database updated fully, BACK IT UP !!!
 That is easily done without even logging in to your mysql.
@@ -341,23 +342,23 @@ mysqldump -uroot -p peq > c:\EQ\peq_backup.sql
 Then if you ever have to re-install everything, you can easily source your whole database
 back in by typing the following (it will ask for your root password): (make sure your in that same backup folder)
 
-mysql -uroot -p
-drop database peq;
-create database peq;
-use peq
-source C:\EQ\peq_backup.sql
+    mysql -uroot -p
+    drop database peq;
+    create database peq;
+    use peq
+    source C:\EQ\peq_backup.sql
 
 
 
-Step 5: Editing your server configuration and launching your server
+### Step 5: Editing your server configuration and launching your server
 
-PORT FORWARDING ON YOUR ROUTER (if you're using one)
+**PORT FORWARDING ON YOUR ROUTER (if you're using one)**
 
 Port forwarding is required if you want to allow other people out on the Internet to play on your server. If you are only intending for yourself or other people on your local LAN to connect, then this step is not necessary.
 
 Log in to your router and you need to forward the following ports to the internal ip of your server computer.
 
-UDP 7000 to 7100 (Port Range Forwarding is essential for this)
+UDP 7000 to 7100 (Port Range Forwarding is essential for this)  
 UDP 9000
 
 
@@ -367,7 +368,7 @@ Every router is different, so if you don't know how to log in to it, then you wi
 Most commonly, a web browser is used, typing in an address like 192.168.1.1
 
 
-Editing your server configuration - eqemu_config.xml
+**Editing your server configuration - eqemu_config.xml**
 
 In your C:\EQ\EQEmuServer folder, you will have two xml files in there, one called eqemu_config.xml and another called eqemu_config.xml.full
 You don't need both of these. DELETE the eqemu_config.xml and keep the other one.
@@ -375,132 +376,132 @@ Rename eqemu_config.xml.full to eqemu_config.xml by REMOVING, the .full at the e
 
 *WARNING*WARNING*WARNING*
 
-Editing this xml file is where a lot of people don't understand when someone trys to advise them NOT TO EDIT LINES, they don't listen and then get frustrated.
+Editing this xml file is where a lot of people don't understand when someone tries to advise them NOT TO EDIT LINES, they don't listen and then get frustrated.
 
-First of all when a line has these characters in front of it: <!--
+First of all when a line has these characters in front of it: &lt;!--
 That means it is commented out FOR A REASON. DO NOT REMOVE these characters from any of the lines that have them. Most of the configuration in this file and your server is already set to connect to the public eqemulator.net server list. The only changes you need to make are the shortname, longname and database info. NOTHING ELSE.
 
 A sample of a eqemu_config.xml file is given below. Copy and and paste it in to Notepad++, then edit the items highlighted in red
 
 Ensure you save it as C:\EQ\EQEmuServer\eqemu_config.xml
 
-Note that the <defaultstatus> is currently set to 20 by default which means that anyone logging into your server will be given an admin status of 20 which will possibly allow them to use GM commands that you would rather they didn't. This is why it is set to 0 in the example below.
+Note that the &lt;defaultstatus&gt; is currently set to 20 by default which means that anyone logging into your server will be given an admin status of 20 which will possibly allow them to use GM commands that you would rather they didn't. This is why it is set to 0 in the example below.
 
 
-<?xml version="1.0">
-<server>
-<world>
-<!-- Set the shortname to ONE word. The longname is what shows up on server list -->
-<shortname>shortname</shortname> 
-<longname>My Long Name</longname>
+	<?xml version="1.0">
+		<server>
+			<world>
+				<!-- Set the shortname to ONE word. The longname is what shows up on server list -->
+				<shortname>shortname</shortname> 
+				<longname>My Long Name</longname>
 
-<!-- DO NOT EDIT ANY LINES BETWEEN HERE AND THE DATABASE SECTION -->
-<!-- <address>do.not.edit</address> -->
-<!-- <localaddress>do.not.edit</localaddress> -->
+				<!-- DO NOT EDIT ANY LINES BETWEEN HERE AND THE DATABASE SECTION -->
+				<!-- <address>do.not.edit</address> -->
+				<!-- <localaddress>do.not.edit</localaddress> -->
 
-<!-- Loginserver information. DO NOT EDIT -->
-<loginserver>
-<host>eqemulator.net</host>
-<port>5998</port>
-<account></account>
-<password></password>
-</loginserver>
+				<!-- Loginserver information. DO NOT EDIT -->
+				<loginserver>
+				<host>eqemulator.net</host>
+				<port>5998</port>
+				<account></account>
+				<password></password>
+				</loginserver>
 
-<!-- Server status. Default is unlocked DO NOT EDIT RIGHT NOW -->
-<!--<locked/>-->
-<!-- <unlocked/> -->
+				<!-- Server status. Default is unlocked DO NOT EDIT RIGHT NOW -->
+				<!--<locked/>-->
+				<!-- <unlocked/> -->
 
-<!-- Sets the ip/port for the tcp connections. DO NOT EDIT -->
-<tcp ip="127.0.0.1" port="9000" telnet="disable"/>
+				<!-- Sets the ip/port for the tcp connections. DO NOT EDIT -->
+				<tcp ip="127.0.0.1" port="9000" telnet="disable"/>
 
-<!-- Sets the shared key used by zone/launcher to connect to world -->
-<key>somelongrandomstring12345</key>
+				<!-- Sets the shared key used by zone/launcher to connect to world -->
+				<key>somelongrandomstring12345</key>
 
-<!-- Enable and set the port for the HTTP service. Defaults are shown -->
-<http port="9080" enabled="false" mimefile="mime.types" />
-</world>
+				<!-- Enable and set the port for the HTTP service. Defaults are shown -->
+				<http port="9080" enabled="false" mimefile="mime.types" />
+			</world>
 
-<!-- Chatserver (channels) information. DO NOT EDIT -->
-<chatserver>
-<host>192.168.1.x</host>
-<port>7778</port>
-</chatserver>
+			<!-- Chatserver (channels) information. DO NOT EDIT -->
+			<chatserver>
+				<host>192.168.1.x</host>
+				<port>7778</port>
+			</chatserver>
 
-<!-- Mailserver (in-game mail) information. DO NOT EDIT -->
-<mailserver>
-<host>192.168.1.x</host>
-<port>7778</port>
-</mailserver>
+			<!-- Mailserver (in-game mail) information. DO NOT EDIT -->
+			<mailserver>
+				<host>192.168.1.x</host>
+				<port>7778</port>
+			</mailserver>
 
-<zones>
-<!-- The defaultstatus is what status the new toons will have on your server -->
-<defaultstatus>0</defaultstatus>
+			<zones>
+				<!-- The defaultstatus is what status the new toons will have on your server -->
+				<defaultstatus>0</defaultstatus>
 
-<!-- Sets port range for world to use to auto configure zones DO NOT EDIT RIGHT NOW-->
-<ports low="7000" high="7100"/>
-</zones>
+				<!-- Sets port range for world to use to auto configure zones DO NOT EDIT RIGHT NOW-->
+				<ports low="7000" high="7100"/>
+			</zones>
 
-<!-- Set username to root and password is your MySQL password and db to peq -->
-<database>
-<host>127.0.0.1</host>
-<port>3306</port>
-<username>root</username>
-<password>xxxxx</password>
-<db>peq</db>
-</database>
-<qsdatabase>
-<host>127.0.0.1</host>
-<port>3306</port>
-<username>root</username>
-<password>xxxxx</password>
-<db>peq</db>
-</qsdatabase>
+			<!-- Set username to root and password is your MySQL password and db to peq -->
+			<database>
+				<host>127.0.0.1</host>
+				<port>3306</port>
+				<username>root</username>
+				<password>xxxxx</password>
+				<db>peq</db>
+			</database>
+			<qsdatabase>
+				<host>127.0.0.1</host>
+				<port>3306</port>
+				<username>root</username>
+				<password>xxxxx</password>
+				<db>peq</db>
+			</qsdatabase>
 
-<!-- Launcher Configuration DO NOT EDIT-->
-<launcher>
-<!-- <logprefix>logs/zone-</logprefix> -->
-<!-- <logsuffix>.log</logsuffix> -->
-<!-- <exe>zone.exe</exe> -->
-<!-- <timers restart="10000" reterminate="10000"> -->
-</launcher>
+			<!-- Launcher Configuration DO NOT EDIT-->
+			<launcher>
+				<!-- <logprefix>logs/zone-</logprefix> -->
+				<!-- <logsuffix>.log</logsuffix> -->
+				<!-- <exe>zone.exe</exe> -->
+				<!-- <timers restart="10000" reterminate="10000"> -->
+			</launcher>
 
-<!-- File locations. DO NOT EDIT -->
-<files>
-<!-- <spells>spells_us.txt</spells> -->
-<!-- <opcodes>opcodes.conf</opcodes> -->
-<!-- <logsettings>log.ini</logsettings> -->
-<!-- <eqtime>eqtime.cfg</eqtime> -->
-</files>
-<!-- Directory locations. DO NOT EDIT -->
-<directories>
-<!-- <maps>Maps</maps> -->
-<!-- <quests>quests</quests> -->
-<!-- <plugins>plugins</plugins> -->
-</directories>
-</server>
-
-
-Note that in this example, we are using the internal IP address of your server for the chatserver/mailserver (aka Universal Chat Server or UCS). This will allow PCs on your local LAN to connect to the UCS and use chat channels and in-game mail, but for people on the Internet to connect to your UCS, you will need to replace the IP address in the <chatserver> and <mailserver> blocks with a DNS name. If you are hosting the server on a residential broadband/cable connection you will typically need to use a service such as dyndns to get a DNS name. This is not within the scope of this guide and is not something you should worry about until you have your server running sucessfully.
+			<!-- File locations. DO NOT EDIT -->
+			<files>
+				<!-- <spells>spells_us.txt</spells> -->
+				<!-- <opcodes>opcodes.conf</opcodes> -->
+				<!-- <logsettings>log.ini</logsettings> -->
+				<!-- <eqtime>eqtime.cfg</eqtime> -->
+			</files>
+			<!-- Directory locations. DO NOT EDIT -->
+			<directories>
+				<!-- <maps>Maps</maps> -->
+				<!-- <quests>quests</quests> -->
+				<!-- <plugins>plugins</plugins> -->
+			</directories>
+		</server>
 
 
-Creating a batch file to launch the server
+Note that in this example, we are using the internal IP address of your server for the chatserver/mailserver (aka Universal Chat Server or UCS). This will allow PCs on your local LAN to connect to the UCS and use chat channels and in-game mail, but for people on the Internet to connect to your UCS, you will need to replace the IP address in the &lt;chatserver&gt; and &lt;mailserver&gt; blocks with a DNS name. If you are hosting the server on a residential broadband/cable connection you will typically need to use a service such as dyndns to get a DNS name. This is not within the scope of this guide and is not something you should worry about until you have your server running successfully.
+
+
+**Creating a batch file to launch the server**
 
 Now you can make a start.bat file to put in your server folder with the following lines:
 
-@echo off
-shared_memory.exe
-start world.exe
-echo waiting for the world to finish before starting zone...
-ping -n 10 127.0.0.1 > nul
-start queryserv.exe
-start ucs.exe
-start eqlaunch.exe zone
-exit
+	@echo off
+	shared_memory.exe
+	start world.exe
+	echo waiting for the world to finish before starting zone...
+	ping -n 10 127.0.0.1 > nul
+	start queryserv.exe
+	start ucs.exe
+	start eqlaunch.exe zone
+	exit
 
 Then create a shortcut on your desktop to run this file.
 
 
-Launching your server for the first time
+**Launching your server for the first time**
 
 OK, If you've done all that, been there and back again, and your 300% sure that you followed these steps exactly, crossed all t's and dotted all i's - Your done.
 
@@ -523,25 +524,25 @@ This will display any error messages that is causing the program to fail to star
 After you have run start.bat and you have the four windows displayed you can now log in the EQEmu public logon server, find your server in the list and login to it.
 
 
-Giving yourself GM power
+**Giving yourself GM power**
 
 Assuming you are able to log in to your server successfully, you probably want to give yourself GM powers. The easiest way to do this is to open a command prompt, navigate to C:\EQ\EQEmuServer and then type:
 
-world flag <your EQEmu loginserver account name> 250
+`world flag <your EQEmu loginserver account name> 250`
 
-e.g.
-world flag Derision 250
+e.g.  
+`world flag Derision 250`
 
 
 This will flag your account with status 250.
 
 At this point you can now lock your server so that nobody else can login to it. To do this, edit your eqemu_config.xml and change this line:
 
-<!--<locked/>-->
+&lt;!--&lt;locked/&gt;--&gt;
 
 to
-<locked/>
 
+&lt;locked/&gt;
 
 This is removing the XML comments around that line.
 
@@ -549,32 +550,32 @@ Then restart your server, i.e. Ctrl-C all the running command windows and then r
 
 When you login next, your server should have a status of 'Locked', but since you have GM status, it will let you login anyway.
 
-Restricting Access to GM Commands
+**Restricting Access to GM Commands**
 
 Besides the usual commands available in everquest that begin with a '/', e.g. /say, there are additional commands available in EQEmu that begin with a '#'.
 These are mostly commands for GMs, e.g. #zone, #repop etc. although some are available to normal players, e.g. #undyeme
 
 The access to these # commands is determined by 'account status' which is set as described above using the
-world flag <Account> <Status>
+world flag &lt;Account&gt; &lt;Status&gt;
 command.
 
-Each # command has a 'default' status that is required to use it which is set in the source code. This required status is overridden by the value assigned to the command in the commands table in the MySQL database. If you want to prevent normal players (who usually have a status of 0) from using a command, set the status for that command to > 0 in the commands table. Likewise, to give a player access to a command that they can't usually access (e.g. #zone), set the status for that command to 0 in the commands table.
+Each # command has a 'default' status that is required to use it which is set in the source code. This required status is overridden by the value assigned to the command in the commands table in the MySQL database. If you want to prevent normal players (who usually have a status of 0) from using a command, set the status for that command to &gt; 0 in the commands table. Likewise, to give a player access to a command that they can't usually access (e.g. #zone), set the status for that command to 0 in the commands table.
 
-Common Problems
+### Common Problems
 
-Quest Problems
+**Quest Problems**
 
 If quests don't work at all in game, make sure your quest files are in C:\EQ\EQEmuServer\quests and not C:\EQ\EQEmuServer\quests\quests
 
 If hailing an NPC works but when you hand them an item they do nothing, then you missed the step where you must copy the contents of C:\EQ\EQEmuServer\quests\plugins into C:\EQ\EQEmuServer\plugins
 
-Bot Problems
+**Bot Problems**
 
 If bots don't work, ensure you ticked EQEMU_ENABLE_BOTS in the CMake step. If you forgot to do that, go back and run CMake again, followed by the step to compile the executables and copy the executables from the Build/Bin/Debug folder to your C:\EQ\EQEmuServer folder.
 
 If you enabled bots in CMake but they still don't work, you may have missed the step to source load_bots.sql during the database setup.
 
-shared_memory startup problems
+**shared_memory startup problems**
 
 If you click on your start.bat and receive a message along the lines that a shared memory file cannot be created, make sure you have a folder called shared in your C:\EQ\EQEmuServer folder, i.e. a folder called C:\EQ\EQEmuServer\shared
 
@@ -586,13 +587,13 @@ http://www.eqemulator.org/forums/showthread.php?t=36481∞
 
 If not, make a new post on that thread.
 
-Using a Private Login Server
+**Using a Private Login Server**
 
 For tips on setting up a Private Login Server, refer to this post: 
 
 http://www.eqemulator.org/forums/showpost.php?p=220659&postcount=14∞
 
 
-Credits
+**Credits**
 
 This guide is an updated one based on previous work by Huppy and Sorvani.
