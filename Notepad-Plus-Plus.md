@@ -4,4 +4,4 @@ Notepad++ is an enhanced text editing program which will aid in editing configur
 
 **Homepage:** [Notepad++] (http://notepad-plus-plus.org)
 
-**Current Version:** [6.6.6] (http://download.tuxfamily.org/notepadplus/6.6.6/npp.6.6.6.Installer.exe)
+**Current Version:** [6.6.7] (http://download.tuxfamily.org/notepadplus/6.6.7/npp.6.6.7.Installer.exe)
