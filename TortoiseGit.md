@@ -4,6 +4,6 @@ TortoiseGit is a version control program which will allow you to pull the EQEmu 
 
 **Homepage:** [TortoiseGit] (http://code.google.com/p/tortoisegit/)
 
-**Current Version (x86):** [1.89] (http://download.tortoisegit.org/tgit/1.8.9.0/TortoiseGit-1.8.9.0-32bit.msi)
+**Current Version (x86):** [1.8.10] (http://download.tortoisegit.org/tgit/1.8.10.0/TortoiseGit-1.8.10.0-32bit.msi)
 
-**Current Version (x64):** [1.89] (http://download.tortoisegit.org/tgit/1.8.9.0/TortoiseGit-1.8.9.0-64bit.msi)
+**Current Version (x64):** [1.8.10] (http://download.tortoisegit.org/tgit/1.8.10.0/TortoiseGit-1.8.10.0-64bit.msi)
