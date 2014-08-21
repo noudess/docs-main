@@ -98,4 +98,6 @@ Integer GetSpawnKillCount();
 Integer GetScore();
 Void MerchantOpenShop();
 Void MerchantCloseShop();
+Integer GetMerchantProbability();
+Void SetMerchantProbability(Integer new_item_spawn_probability);
 ```
