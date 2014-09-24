@@ -12,9 +12,12 @@ packet.valid -- Returns true if this object is not null
 ```
 Packet() -- Creates a null spell
 Packet(Integer opcode, Integer size)
+Packet(Integer opcode, Integer size, Boolean use_raw_opcode)
 Integer GetSize();
 Integer GetOpcode();
 Void SetOpcode(Integer op);
+Integer GetRawOpcode();
+Void SetRawOpcode(Integer op);
 Void WriteInteger8(Integer offset, Integer value);
 Void WriteInteger16(Integer offset, Integer value);
 Void WriteInteger32(Integer offset, Integer value);
