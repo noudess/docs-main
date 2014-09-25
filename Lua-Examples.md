@@ -179,6 +179,27 @@ function event_death_complete(e)
 end
 ```
 
+```
+--- using event command and lua packets to send both a static and raw opcode packet to the client
+function event_command(e)
+	if(e.command:findi("test_raw_packet")) then
+		local pack = Packet(0x624c, 8, true);
+		pack:WriteInt32(0, 1);
+		pack:WriteInt32(4, 125);
+		e.self:QueuePacket(pack);
+		return 1;
+	end
+	
+	if(e.command:findi("test_packet")) then
+		local pack = Packet(Opcode.AdventureFinish, 8);
+		pack:WriteInt32(0, 1);
+		pack:WriteInt32(4, 125);
+		e.self:QueuePacket(pack);
+		return 1;
+	end
+end
+```
+
 ### Item
 
 ### Spell
