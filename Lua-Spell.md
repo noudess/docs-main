@@ -83,5 +83,15 @@ Integer SpellGroup();
 Integer PowerfulFlag();
 Integer CastRestriction();
 Boolean AllowRest();
+Boolean InCombat();
+Boolean OutOfCombat();
+Integer AEMaxTargets();
+Integer MaxTargets();
+Boolean PersistDeath();
+Real MinDist();
+Real MinDistMod();
+Real MaxDist();
+Real MaxDistMod();
+Real MinRange();
 Integer DamageShieldType();
 ```
