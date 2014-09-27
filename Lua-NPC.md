@@ -91,6 +91,8 @@ Void AddAISpell(Integer priority, Integer spell_id, Integer type, Integer mana_c
 Void RemoveAISpell(Integer spell_id);
 Void SetSpellFocusDMG(Integer focus);
 Void SetSpellFocusHeal(Integer focus);
+Integer GetSpellFocusDMG();
+Integer GetSpellFocusHeal();
 Real GetSlowMitigation();
 Real GetAttackSpeed();
 Integer GetAccuracyRating();
