@@ -254,5 +254,6 @@ Void SetHunger(Integer in_hunger);
 Void SetThirst(Integer in_thirst);
 Void SetConsumption(Integer in_hunger, Integer in_thirst);
 Void SendMarqueeMessage(Integer type, Integer priority, Integer fade_in, Integer fade_out, Integer duration, String msg);
+Void SendColoredText(Integer type, String msg);
 Void PlayMP3(String filename);
 ```
