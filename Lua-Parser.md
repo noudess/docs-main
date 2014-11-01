@@ -90,9 +90,12 @@ Spells will load a script on the first event that triggers them and will load on
 
 <a name="wiki-encounter-scripts"></a>
 ### Encounter Scripts
-Encounter scripts are quest scripts that are only loaded after explicitly called with:
+Encounter scripts are quest scripts that are only loaded after explicitly called with one of the following:
 
-`eq.load_encounter("encounter_name")`
+```
+eq.load_encounter("encounter_name");
+eq.load_encounter_with_data("encounter_name", "some data string");
+```
 
 They will load one and only one from the following location. Which ever it finds first in the following order:
 * ./quests/zone/encounters/name.lua
@@ -109,9 +112,18 @@ Void register_spell_event(String name, Integer evt, Integer spell_id, luafunctio
 Note: Passing a value of -1 for npc, item or spell id to watch will watch every npc, item or spell for those events.
 ```
 
+Encounters can be unloaded with the following in the same way they are loaded:
+
+```
+eq.unload_encounter("encounter_name");
+eq.unload_encounter_with_data("encounter_name", "some data string");
+```
+
+Unloading the encounter will automatically unhook all functions that are currently hooked to that named encounter.
+
 Note: 
 * Encounter scripts cannot properly catch EVENT_COMMAND or EVENT_TRADE unless an existing quest is already listening for them.
-* Encounter scripts also run before any normal script.
+* Encounter scripts also run before any normal script and will catch return values.
 
 <a name="wiki-npc-events"></a>
 ### NPC Events
