@@ -4,7 +4,9 @@ All Lua General Functions are in the global table 'eq'.
 
 ```
 Void load_encounter(String name);
+Void load_encounter_with_data(String name, String data);
 Void unload_encounter(String name);
+Void unload_encounter_with_data(String name, String data);
 Void register_npc_event(String name, Integer evt, Integer npc_id, LuaFunction func);
 Void unregister_npc_event(String name, Integer evt, Integer npc_id);
 Void register_player_event(String name, Integer evt, LuaFunction func);
