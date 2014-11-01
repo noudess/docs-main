@@ -1039,6 +1039,7 @@ Note:
 > ```
 > {
 > 	String name;
+> 	String data;
 > }
 > ```
 
@@ -1048,8 +1049,11 @@ Note:
 > ```
 > {
 > 	String name;
+> 	String data;
 > }
 > ```
+
+Note: data may be nil in both the previous encounter event objects based on which functions were used to load or unload the encounter.
 
 <a name="wiki-api"></a>
 ### API
