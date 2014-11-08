@@ -8,13 +8,21 @@ Void load_encounter_with_data(String name, String data);
 Void unload_encounter(String name);
 Void unload_encounter_with_data(String name, String data);
 Void register_npc_event(String name, Integer evt, Integer npc_id, LuaFunction func);
+Void register_npc_event(Integer evt, Integer npc_id, LuaFunction func);
 Void unregister_npc_event(String name, Integer evt, Integer npc_id);
+Void unregister_npc_event(Integer evt, Integer npc_id);
 Void register_player_event(String name, Integer evt, LuaFunction func);
+Void register_player_event(Integer evt, LuaFunction func);
 Void unregister_player_event(String name, Integer evt);
+Void unregister_player_event(Integer evt);
 Void register_item_event(String name, Integer evt, Integer item_id, LuaFunction func);
+Void register_item_event(Integer evt, Integer item_id, LuaFunction func);
 Void unregister_item_event(String name, Integer evt, Integer item_id);
+Void unregister_item_event(Integer evt, Integer item_id);
 Void register_spell_event(String name, Integer evt, Integer spell_id, LuaFunction func);
+Void register_spell_event( Integer evt, Integer spell_id, LuaFunction func);
 Void unregister_spell_event(String name, Integer evt, Integer spell_id);
+Void unregister_spell_event(SInteger evt, Integer spell_id);
 Mob spawn2(Integer npc_type, Integer grid, Integer unused, Real x, Real y, Real z, Real heading);
 Mob unique_spawn(Integer npc_type, Integer grid, Integer unused, Real x, Real y, Real z, Real heading = 0.0);
 Mob spawn_from_spawn2(Integer spawn2_id);
@@ -168,9 +176,10 @@ Void attack_npc_type(Integer npc_type);
 Void follow(Integer entity_id);
 Void follow(Integer entity_id, Integer distance);
 Void stop_follow();
-Client get_initiator(); -- These three are mostly for writing modules that extend the eq namespace
+Client get_initiator(); -- These four are mostly for writing modules that extend the eq namespace
 Mob get_owner();
 ItemInst get_quest_item();
+String get_encounter();
 Void map_opcodes(); -- will refresh the internal opcode dispatch
 Void clear_opcode(Integer opcode); -- removes the internal opcode handler for the following opcode
 Bool enable_recipe(Integer recipe_id);
