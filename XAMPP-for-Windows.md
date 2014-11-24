@@ -4,9 +4,9 @@ XAMPP is an all-in-one package with many programs. The important ones are MySQL,
 
 **Home Page:** [XAMPP for Windows] (http://www.apachefriends.org/en/xampp-windows.html)
 
-**Current Version (WinXP & 2K3):** [5.5.19] (http://downloads.sourceforge.net/project/xampp/XAMPP%20Windows/5.5.19/xampp-win32-5.5.19-0-VC11-installer.exe)
+**Current Version (WinXP & 2K3):** [1.8.2-6] (http://downloads.sourceforge.net/projects/xampp/XAMPP%20Windows/1.8.2/xampp-win32-1.8.2-6-VC9-installer.exe)
 
-**Current Version (WinVista+ & 2008+):** [5.6.3](http://downloads.sourceforge.net/project/xampp/XAMPP%20Windows/5.6.3/xampp-win32-5.6.3-0-VC11-installer.exe)
+**Current Version (WinVista+ & 2008+):** [5.5.19] (http://downloads.sourceforge.net/project/xampp/XAMPP%20Windows/5.5.19/xampp-win32-5.5.19-0-VC11-installer.exe) or [5.6.3](http://downloads.sourceforge.net/project/xampp/XAMPP%20Windows/5.6.3/xampp-win32-5.6.3-0-VC11-installer.exe)
 
 **Version Info:** The latest version numbers aren't sequential with previous releases of XAMPP. The numbering system is now based upon the PHP version included in the package.
 
