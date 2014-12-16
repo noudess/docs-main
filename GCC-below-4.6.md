@@ -1,4 +1,4 @@
-CentOS Enterprise (and perhaps other *nix distros) currently defaults to GCC 4.4.7. EQEmu makes use of nullptr which wasn't introduced until GCC 4.6. Fortunately, there is a way to install GCC 4.7.2 as either an add-on installation or as a replacement without having to cross-platform compile or make any major changes to your OS installation.
+CentOS Enterprise 6 (and perhaps other equivalent *nix distros) currently defaults to GCC 4.4.7. EQEmu makes use of nullptr which wasn't introduced until GCC 4.6. Fortunately, there is a way to install GCC 4.7.2 as either an add-on installation or as a replacement without having to cross-platform compile or make any major changes to your OS installation.
 
 ***
 
