@@ -6,4 +6,4 @@ TortoiseSVN is a version control program which will allow you to pull current ve
 
 **Current Version (x86):** [1.8.10] (http://sourceforge.net/projects/tortoisesvn/files/1.8.10/Application/TortoiseSVN-1.8.10.26129-win32-svn-1.8.11.msi/download)
 
-**Current Version (x64):** [1.8.9] (http://sourceforge.net/projects/tortoisesvn/files/1.8.10/Application/TortoiseSVN-1.8.10.26129-x64-svn-1.8.11.msi/download)
+**Current Version (x64):** [1.8.10] (http://sourceforge.net/projects/tortoisesvn/files/1.8.10/Application/TortoiseSVN-1.8.10.26129-x64-svn-1.8.11.msi/download)
