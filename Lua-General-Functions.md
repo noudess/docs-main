@@ -186,6 +186,8 @@ Bool enable_recipe(Integer recipe_id);
 Bool disable_recipe(Integer recipe_id);
 Void clear_npctype_cache(Integer npctype_id);
 Real clock();
+Void debug(String message);
+Void debug(String message, Integer level);
 ```
 
 SpawnPointOptions is a lua table that accepts the following values:
