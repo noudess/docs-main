@@ -11,7 +11,7 @@ Steps
 -----
 
 1. Open a terminal window.
-2. First make sure you have dependencies installed. On Ubuntu this is done with: `sudo apt-get install subversion mysql-server libmysqlclient-dev libboost-dev g++ git`.
+2. First make sure you have dependencies installed. On Ubuntu this is done with: `sudo apt-get install subversion mysql-server libmysqlclient-dev libboost-dev build-essential git`.
 3. Additional optional dependencies: `sudo apt-get install phpmyadmin`
 4. Clone the repository from github: `git clone git://github.com/EQEmu/Server.git eqemu` 
    OR if behind a firewall/proxy `git https://://github.com/EQEmu/Server.git eqemu`
@@ -35,13 +35,12 @@ Steps
     Copy default log.ini to eqemu root `cp utils/defaults/log.ini ./`
 22. Create the shared memory directory: `mkdir shared`.
 23. Run `Bin/shared_memory` to populate the shared directory
-24. Run `ln -s utils/patches/patch_6.2.conf patch_6.2.conf` in the eqemu root directory (EDIT: no longer there?)
-25. Run `ln -s utils/patches/patch_RoF.conf patch_RoF.conf` in the eqemu root directory
-26. Run `ln -s utils/patches/patch_SoD.conf patch_SoD.conf` in the eqemu root directory
-27. Run `ln -s utils/patches/patch_SoF.conf patch_SoF.conf` in the eqemu root directory
-28. Run `ln -s utils/patches/patch_Titanium.conf patch_Titanium.conf` in the eqemu root directory
-29. Run `ln -s utils/patches/patch_Underfoot.conf patch_UF.conf` in the eqemu root directory
-30. Run `ln -s utils/defaults/mime.types mime.types` in the eqemu root directory
+24. Run `ln -s utils/patches/patch_RoF.conf patch_RoF.conf` in the eqemu root directory
+25. Run `ln -s utils/patches/patch_SoD.conf patch_SoD.conf` in the eqemu root directory
+26. Run `ln -s utils/patches/patch_SoF.conf patch_SoF.conf` in the eqemu root directory
+27. Run `ln -s utils/patches/patch_Titanium.conf patch_Titanium.conf` in the eqemu root directory
+28. Run `ln -s utils/patches/patch_Underfoot.conf patch_UF.conf` in the eqemu root directory
+29. Run `ln -s utils/defaults/mime.types mime.types` in the eqemu root directory
 30. Run `Bin/world` and wait for it to finish initializing.
 31. Once the world server is running, open a new terminal window and run `Bin/eqlaunch zone`. If Bin/zone is not in your path, you can edit your eqemu_config.xml to include:<br />
 \<launcher><br />
