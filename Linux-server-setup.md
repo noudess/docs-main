@@ -27,7 +27,7 @@ Steps
 14. The quests archive contains a quests folder that should be copied to your eqemu directory.
 15. Inside the quest folder are two folders called `lua_modules` and `plugins`. Move these to the root of your eqemu directory.
 16. Download the maps from Google Code. From your eqemu directory: `svn checkout http://eqemumaps.googlecode.com/svn/trunk/ .`
-17. Copy the default config file: `cp utils/defaults/eqemu_config.xml.full ./eqemu_config.xml`
+17. Copy the default config file to eqemu root directory: `cp utils/defaults/eqemu_config.xml.full ./eqemu_config.xml`
 18. Create a database named `eq` and load the .sql files from the peqbeta_ archive into it. Also copy the eqtime.cfg file to the eqemu root directory
 19. Create a user with privileges on `eq` and add the credentials to `eqemu_config.xml`.
 20. Copy `eqtime.cfg` from the peqbeta_ archive into the eqemu root directory.
