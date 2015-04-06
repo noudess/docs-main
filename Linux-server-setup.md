@@ -40,11 +40,12 @@ Steps
 26. Run `ln -s utils/patches/patch_SoD.conf patch_SoD.conf` in the eqemu root directory
 27. Run `ln -s utils/patches/patch_SoF.conf patch_SoF.conf` in the eqemu root directory
 28. Run `ln -s utils/patches/patch_Titanium.conf patch_Titanium.conf` in the eqemu root directory
-29. Run `ln -s utils/patches/patch_Underfoot.conf patch_UF.conf` in the eqemu root directory
-30. Run `ln -s utils/defaults/mime.types mime.types` in the eqemu root directory
-31. Run `ln -s utils/defaults/templates/ templates` in the eqemu root directory.  This is the magic that makes the HTTP service(default port 9080) work.
-32. Run `Bin/world` and wait for it to finish initializing.
-33. Once the world server is running, open a new terminal window and run `Bin/eqlaunch zone`. If Bin/zone is not in your path, you can edit your eqemu_config.xml to include:<br />
+29. Run `ln -s utils/patches/patch_UF.conf patch_UF.conf` in the eqemu root directory
+30. Run `ln -s utils/patches/patch_RoF2.conf patch_RoF2.conf` in the eqemu root directory
+31. Run `ln -s utils/defaults/mime.types mime.types` in the eqemu root directory
+32. Run `ln -s utils/defaults/templates/ templates` in the eqemu root directory.  This is the magic that makes the HTTP service(default port 9080) work.
+33. Run `Bin/world` and wait for it to finish initializing.
+34. Once the world server is running, open a new terminal window and run `Bin/eqlaunch zone`. If Bin/zone is not in your path, you can edit your eqemu_config.xml to include:<br />
 \<launcher><br />
 \<exe>Bin/zone\</exe><br />
 \</launcher><br />
