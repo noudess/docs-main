@@ -36,7 +36,7 @@ Update the tblWorldServerRegistration table
 Add your server to the tblWorldServerRegistration table
 http://www.eqemulator.org/forums/showpost.php?p=174840&postcount=41
 ~~~
-insert into tblworldserverregistration
+insert into tblWorldServerRegistration
 (ServerID,ServerLongName,ServerTagDescription,ServerShortName,ServerListTypeID,ServerLastLoginDate,ServerLastIPAddr,ServerAdminID,Note)
 values
 ('1','LongNameFromConfig','Blah','ShortNameFromConfig','3',now(),'192.168.1.105','1','');
