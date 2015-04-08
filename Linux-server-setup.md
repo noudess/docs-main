@@ -44,9 +44,11 @@ Steps
 30. Run `ln -s utils/patches/patch_RoF2.conf patch_RoF2.conf` in the eqemu root directory
 31. Run `ln -s utils/defaults/mime.types mime.types` in the eqemu root directory
 32. Run `ln -s utils/defaults/worldui.pl worldui.pl` in the eqemu root directory
-33. Run `ln -s utils/defaults/templates/ templates` in the eqemu root directory.  This is the magic that makes the HTTP service(default port 9080) work.
-34. Run `Bin/world` and wait for it to finish initializing.
-35. Once the world server is running, open a new terminal window and run `Bin/eqlaunch zone`. If Bin/zone is not in your path, you can edit your eqemu_config.xml to include:<br />
+33. Run `ln -s utils/defaults/plugin.pl plugin.pl` in the eqemu root directory
+34. Run `ln -s utils/defaults/commands.pl commands.pl` in the eqemu root directory
+35. Run `ln -s utils/defaults/templates/ templates` in the eqemu root directory.  This is the magic that makes the HTTP service(default port 9080) work.
+36. Run `Bin/world` and wait for it to finish initializing.
+37. Once the world server is running, open a new terminal window and run `Bin/eqlaunch zone`. If Bin/zone is not in your path, you can edit your eqemu_config.xml to include:<br />
 \<launcher><br />
 \<exe>Bin/zone\</exe><br />
 \</launcher><br />
