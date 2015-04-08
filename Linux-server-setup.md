@@ -11,7 +11,7 @@ Steps
 -----
 
 1. Open a terminal window.
-2. First make sure you have dependencies installed. On Ubuntu this is done with: `sudo apt-get install subversion mysql-server libmysqlclient-dev libboost-dev build-essential git libstring-escape-perl`.
+2. First make sure you have dependencies installed. On Ubuntu this is done with: `sudo apt-get install subversion mysql-server libmysqlclient-dev libboost-dev build-essential git liburi-escape-xs-perl`.
 3. Additional optional dependencies: `sudo apt-get install phpmyadmin`
 4. Clone the repository from github: `git clone git://github.com/EQEmu/Server.git eqemu` 
    OR if behind a firewall/proxy `git https://://github.com/EQEmu/Server.git eqemu`
