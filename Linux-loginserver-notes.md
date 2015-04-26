@@ -30,17 +30,29 @@ ln -s loginserver/login_util/login_opcodes.conf login_opcodes.conf
 ln -s loginserver/login_util/login_opcodes_sod.conf login_opcodes_sod.conf
 ~~~
 
-Update the tblWorldServerRegistration table
-`mysql -u eq -p -D eq < ALTER TABLE tblWorldServerRegistration ADD ServerTrusted int(11);`
 
-Add your server to the tblWorldServerRegistration table
-http://www.eqemulator.org/forums/showpost.php?p=174840&postcount=41
+Add an admin for your server to tblServerAdminRegistration
+~~~
+insert into 
+tblServerAdminRegistration (Accountname,AccountPassword,FirstName,LastName,Email,RegistrationDate,RegistrationIPAddr)
+values ('srvadmin','DontUseThisPassword','Server','Admin','srvadmin@dev.null',now(),'127.0.0.1');
+~~~
+
+Get the ServerAdmin ID for recently added admin
+~~~
+select ServerAdminID from tblServerAdminRegistration where Accountname = 'srvadmin';
+~~~
+
+Add your server to the tblWorldServerRegistration table.  
+Set ServerAdminID equal to the value from the query above.
 ~~~
 insert into tblWorldServerRegistration
 (ServerID,ServerLongName,ServerTagDescription,ServerShortName,ServerListTypeID,ServerLastLoginDate,ServerLastIPAddr,ServerAdminID,Note,ServerTrusted)
 values
 ('1','LongNameFromConfig','Blah','ShortNameFromConfig','3',now(),'127.0.0.1','1','','1');
 ~~~
+
+The above magic was found at -> http://www.eqemulator.org/forums/showpost.php?p=174840&postcount=41
 
 And now should be able to start the loginserver via `Bin/loginserver`
 
