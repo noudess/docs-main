@@ -37,10 +37,11 @@ Add your server to the tblWorldServerRegistration table
 http://www.eqemulator.org/forums/showpost.php?p=174840&postcount=41
 ~~~
 insert into tblWorldServerRegistration
-(ServerID,ServerLongName,ServerTagDescription,ServerShortName,ServerListTypeID,ServerLastLoginDate,ServerLastIPAddr,ServerAdminID,Note)
+(ServerID,ServerLongName,ServerTagDescription,ServerShortName,ServerListTypeID,ServerLastLoginDate,ServerLastIPAddr,ServerAdminID,Note,ServerTrusted)
 values
-('1','LongNameFromConfig','Blah','ShortNameFromConfig','3',now(),'192.168.1.105','1','');
+('1','LongNameFromConfig','Blah','ShortNameFromConfig','3',now(),'127.0.0.1','1','','1');
 ~~~
 
 And now should be able to start the loginserver via `Bin/loginserver`
+
 
