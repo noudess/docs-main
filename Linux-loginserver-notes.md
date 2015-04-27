@@ -56,4 +56,9 @@ The above magic was found at -> http://www.eqemulator.org/forums/showpost.php?p=
 
 And now should be able to start the loginserver via `Bin/loginserver`
 
-
+To add a user account, you just need to add an entry to the _tblLoginServerAccounts_ table.  When the user successfully logs in for the first time, the server will take care of add them to the _accounts_ table
+~~~
+insert into tblLoginServerAccounts 
+(AccountName,AccountPassword,AccountEmail) 
+values('FirstUserID',sha('EasyToGuessPassword'),'spam.me@dev.null');
+~~~
