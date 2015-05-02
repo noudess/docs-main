@@ -28,7 +28,7 @@ Steps
 * Inside the quest folder are two folders called `lua_modules` and `plugins`. Move these to the root of your eqemu directory.
 * Download the maps from Google Code. From your eqemu directory: `svn checkout http://eqemumaps.googlecode.com/svn/trunk/ .`
 * Copy the default config file to eqemu root directory: `cp utils/defaults/eqemu_config.xml.full ./eqemu_config.xml`
-* Create a database named `eq` and load the .sql files from the peqbeta_ archive into it. Also copy the eqtime.cfg file to the eqemu root directory
+* Create a database named `eq` and load the .sql files from the peqbeta_ archive into it. 
 * Create a user with privileges on `eq` and add the credentials to `eqemu_config.xml`.
 * Copy `eqtime.cfg` from the peqbeta_ archive into the eqemu root directory.
 * Copy `spells_us.txt` from your Everquest installation into the eqemu root directory.
@@ -50,6 +50,8 @@ ln -s utils/defaults/mime.types mime.types
 ln -s utils/defaults/worldui.pl worldui.pl
 ln -s utils/defaults/plugin.pl plugin.pl
 ln -s utils/defaults/commands.pl commands.pl
+ln -s loginserver/login_util/login_opcodes.conf login_opcodes.conf
+ln -s loginserver/login_util/login_opcodes_sod.conf login_opcodes_sod.conf
 ~~~
 
 * Run `ln -s utils/defaults/templates/ templates` in the eqemu root directory.  This is the magic that makes the HTTP service(default port 9080) work.
