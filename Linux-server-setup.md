@@ -55,6 +55,15 @@ ln -s loginserver/login_util/login_opcodes_sod.conf login_opcodes_sod.conf
 ~~~
 
 * Run `ln -s utils/defaults/templates/ templates` in the eqemu root directory.  This is the magic that makes the HTTP service(default port 9080) work.
+* To log into the HTTP service, you'll need to add an entry to tblServerAdminRegistration and account
+~~~
+insert into tblServerAdminRegistration (Accountname,AccountPassword,FirstName,LastName,Email,RegistrationDate,RegistrationIPAddr)
+values ('webguiacct','RandomPassword','Web','Gui','webgui.acct@dev.null',now(),'127.0.0.1');
+
+insert into account (name,password,status,lsaccount_id,time_creation)
+values ('webguiacct','RandomPassword',250,1,now());
+~~~
+* NOTE: account.lsaccount_id equals tblServerAdminRegistration.ServerAdminID
 * Run `Bin/world` and wait for it to finish initializing.
 * Once the world server is running, open a new terminal window and run `Bin/eqlaunch zone`. If Bin/zone is not in your path, you can edit your eqemu_config.xml to include:<br />
 \<launcher><br />
