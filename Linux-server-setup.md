@@ -69,3 +69,9 @@ values ('webguiacct','RandomPassword',250,1,now());
 \<launcher><br />
 \<exe>Bin/zone\</exe><br />
 \</launcher><br />
+
+If you find your characters are unable to move, try applying utils/sql/git/required/2015_02_12_zone_gravity.sql .  It'll fix a bug with the gravity.
+~~~
+mysql -u eqdbuser -p -D eq < utils/sql/git/required/2015_02_12_zone_gravity.sql
+~~~
+Found that solution at -> http://www.eqemulator.org/forums/showthread.php?p=239737
