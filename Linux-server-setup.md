@@ -54,7 +54,11 @@ ln -s loginserver/login_util/login_opcodes.conf login_opcodes.conf
 ln -s loginserver/login_util/login_opcodes_sod.conf login_opcodes_sod.conf
 ~~~
 
-* Run `ln -s utils/defaults/templates/ templates` in the eqemu root directory.  This is the magic that makes the HTTP service(default port 9080) work.
+* Need two symlinks to get the web management interface working.  Defaults to listening on tcp port 9080
+~~~
+ln -s utils/defaults/templates/ templates
+ln -s utils/defaults/updated_templates updated_templates
+~~~
 * To log into the HTTP service, you'll need to add an entry to tblServerAdminRegistration and account
 ~~~
 insert into tblServerAdminRegistration (Accountname,AccountPassword,FirstName,LastName,Email,RegistrationDate,RegistrationIPAddr)
