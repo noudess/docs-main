@@ -332,6 +332,7 @@ Void BuffFadeBySlot(Integer slot);
 Void  BuffFadeBySlot(Integer slot, Boolean recalc_bonuses);
 Integer CanBuffStack(Integer spell_id, Integer caster_level);
 Integer CanBuffStack(Integer spell_id, Integer caster_level, Boolean fail_if_overwrite);
+Void SetPseudoRoot(Bool in);
 ```
 
 IllusionOptions is a lua table that accepts the following values:
