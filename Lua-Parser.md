@@ -409,6 +409,15 @@ Note:
 > }
 > ```
 
+* event_tick
+> Triggered on each tick from the npc
+> Passes an event table as an argument:
+> ```
+> {
+> 	NPC self;
+> }
+> ```
+
 <a name="wiki-player-events"></a>
 ### Player Events
 
