@@ -95,6 +95,7 @@ Integer GetSpellFocusDMG();
 Integer GetSpellFocusHeal();
 Real GetSlowMitigation();
 Real GetAttackSpeed();
+Integer GetAttackDelay();
 Integer GetAccuracyRating();
 Integer GetSpawnKillCount();
 Integer GetScore();
