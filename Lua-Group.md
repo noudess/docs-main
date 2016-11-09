@@ -25,6 +25,7 @@ String GetLeaderName();
 Boolean IsLeader(Mob leader);
 Integer GroupCount();
 Integer GetHighestLevel();
+Integer GetLowestLevel();
 Void TeleportGroup(Mob sender, Integer zone_id, Integer instance_id, Real x, Real y, Real z, Real h);
 Integer GetID();
 Mob GetMember(Integer index);
