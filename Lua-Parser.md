@@ -507,6 +507,7 @@ Note:
 > 	ItemInst item;
 > }
 > ```
+> Returning a non-zero value from this function will prevent the item from being looted
 
 * event_zone
 > Triggered when a client attempts to zone to a new zone.
