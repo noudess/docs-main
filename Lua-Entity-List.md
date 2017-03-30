@@ -60,7 +60,7 @@ Boolean Fighting(Mob who);
 Void RemoveFromHateLists(Mob who);
 Void RemoveFromHateLists(Mob who, Boolean set_to_one);
 Void MessageGroup(Mob who, Boolean skip_close, Integer type, String message);
-Client GetRandomClient(Real x, Real y, Real z, Real dist);
+Client GetRandomClient(Real x, Real y, Real z, Real dist); --note "dist" in this case is sqrt.  so 1,000 range needs to be 1,000,000
 Client GetRandomClient(Real x, Real y, Real z, Real dist, Client exclude);
 Mob_List GetMobList();
 Client_List GetClientList();
