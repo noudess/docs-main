@@ -305,6 +305,7 @@ Boolean SpellFinished(Integer spell_id, Mob target, Integer slot, Integer mana_u
 Boolean SpellFinished(Integer spell_id, Mob target, Integer slot, Integer mana_used, Integer inventory_slot);
 Boolean SpellFinished(Integer spell_id, Mob target, Integer slot, Integer mana_used, Integer inventory_slot, Integer resist_adjust);
 Boolean SpellFinished(Integer spell_id, Mob target, Integer slot, Integer mana_used, Integer inventory_slot, Integer resist_adjust, Boolean proc);
+Void SendBeginCast(Integer spell_id, Integer cast_time);
 Void Spin();
 Void Stun(Integer duration);
 Void TarGlobal(String varname, String value, String duration, Integer npc_id, Integer char_id, Integer zone_id);
