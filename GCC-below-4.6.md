@@ -20,3 +20,8 @@ The wonderful thing about CMake is that now you can configure only EQEmu to use 
 
 Enjoy!
 
+***
+
+UPDATE:
+
+As of 4-19-2017, you will now need to have GCC at 4.8 or above. This will require devtoolset-2 which includes GCC/G++ 4.8.2.
