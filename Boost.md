@@ -3,5 +3,3 @@ Boost is a set of C++ libraries required by Lua. Boost and Lua are required to r
 ***
 
 **Homepage:** [Boost] (http://www.boost.org)
-
-**Current Version:** [1.57.0] (http://sourceforge.net/projects/boost/files/boost/1.57.0/boost_1_57_0.zip/download)
