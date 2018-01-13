@@ -1,5 +1,6 @@
-**id**|**int(11) unsigned**|**NO**|**PRI**|**0**| 
+**Field**|**Type**|**Null**|**Key**|**Default**|**Notes**
 -----|-----|-----|-----|-----|-----
+id|int(11) unsigned|NO|PRI|0| 
 platinum|int(11) unsigned|NO| |0| 
 gold|int(11) unsigned|NO| |0| 
 silver|int(11) unsigned|NO| |0| 
