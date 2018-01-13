@@ -1,6 +1,3 @@
-
-* [[activities]]
-
 ### Adventures (LDONs)
 * [[adventure_details]]
 * [[adventure_members]]
@@ -71,6 +68,8 @@
 * [[inventory]]
 * [[inventory_snapshots]]
 * [[faction_values]]
+* [[completed_tasks]]
+* [[friends]]
 
 ### Bots
 
@@ -100,8 +99,36 @@
 * [[faction_list]]
 * [[faction_list_mod]]
 
+### Ground Spawns
+* [[ground_spawns]]
+
+### Guilds
+* [[guild_bank]]
+* [[guild_members]]
+* [[guild_ranks]]
+* [[guild_relations]]
+* [[guilds]]
+
+### Loot
+
+* [[lootdrop]]
+* [[lootdrop_entries]]
+* [[loottable]]
+* [[loottable_entries]]
+
+### Loginserver
+
+* [[loginserver_server_accounts]]
+* [[loginserver_server_admin_registration]]
+* [[loginserver_server_list_type]]
+* [[loginserver_world_server_registration]]
+
 ### Spells
 * [[blocked_spells]]
+
+### Task System
+
+* [[activities]]
 
 ### Misc
 
@@ -115,7 +142,7 @@
 * [[chatchannels]]
 * [[class_skill]]
 * [[command_settings]]
-* [[completed_tasks]]
+
 * [[cust_obj_data]]
 * [[damageshieldtypes]]
 * [[db_str]]
@@ -128,20 +155,16 @@
 * [[fear_hints]]
 * [[fishing]]
 * [[forage]]
-* [[friends]]
+
 * [[gm_ips]]
 * [[goallists]]
 * [[graveyard]]
 * [[grid]]
 * [[grid_entries]]
-* [[ground_spawns]]
+
 * [[group_id]]
 * [[group_leaders]]
-* [[guild_bank]]
-* [[guild_members]]
-* [[guild_ranks]]
-* [[guild_relations]]
-* [[guilds]]
+
 * [[hackers]]
 * [[horses]]
 * [[instance_list]]
@@ -157,15 +180,9 @@
 
 * [[level_exp_mods]]
 * [[lfguild]]
-* [[loginserver_server_accounts]]
-* [[loginserver_server_admin_registration]]
-* [[loginserver_server_list_type]]
-* [[loginserver_world_server_registration]]
+
 * [[logsys_categories]]
-* [[lootdrop]]
-* [[lootdrop_entries]]
-* [[loottable]]
-* [[loottable_entries]]
+
 * [[mail]]
 * [[merc_armorinfo]]
 * [[merc_buffs]]
