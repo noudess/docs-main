@@ -1,5 +1,6 @@
-**id**|**int(10) unsigned**|**NO**|**PRI**| |**auto\_increment**
+|Field|Type|Null|Key|Default|Extra|
 -----|-----|-----|-----|-----|-----
+id|int(10) unsigned|NO|PRI| |auto\_increment
 adventure\_id|smallint(5) unsigned|NO| | | 
 instance\_id|int(11)|NO| |-1| 
 count|smallint(5) unsigned|NO| |0| 
