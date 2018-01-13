@@ -1,3 +1,9 @@
+* List used in quest API calls such as
+
+`perl
+quest::changedeity(201); - Changes the player's deity to Bertoxxulous.
+`
+
 **Deity**|**Deity ID**|**Deity Bitmask**
 :-----:|:-----:|:-----:
 Agnostic|140|1
@@ -17,3 +23,24 @@ Solusek Ro|213|8192
 The Tribunal|214|16384
 Tunare|215|32768
 Veeshan|216|65536
+
+### Spells ID List
+
+**ID**|**Diety**
+:-----:|:-----:
+1|Bertoxxulos
+2|Brell Serilis
+3|Cazic Thule
+4|Erollisi Marr
+5|Bristlebane
+6|Innoruuk
+7|Karana
+8|Mithaniel Marr
+9|Prexus
+10|Quellious
+11|Rallos Zek
+12|Rodcet Nife
+13|Solusek Ro
+14|The Tribunal
+15|Tunare
+16|Veeshan
