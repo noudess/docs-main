@@ -26,8 +26,9 @@
 ### Alternate Currency
 * [[alternate_currency]]
 
-### Player Account
+### Character Account
 * [[banned_ips]]
+* [[gm_ips]]
 * [[account]]
 * [[account_flags]]
 * [[account_ip]]
@@ -66,6 +67,7 @@
 * [[character_spells]]
 * [[character_tasks]]
 * [[character_tribute]]
+* [[keyring]]
 * [[inventory]]
 * [[inventory_snapshots]]
 * [[faction_values]]
@@ -92,12 +94,28 @@
 * [[bot_stances]]
 * [[bot_timers]]
 
+### Books
+* [[books]]
+
 ### Database Schema
 * [[db_version]] - Tracks current database schema against source binary database version
+
+### Doors
+* [[doors]]
 
 ### Faction Data
 * [[faction_list]]
 * [[faction_list_mod]]
+
+### Fishing
+* [[fishing]]
+
+### Foraging
+* [[forage]]
+
+### Grids and Pathing
+* [[grid]]
+* [[grid_entries]]
 
 ### Ground Spawns
 * [[ground_spawns]]
@@ -113,9 +131,23 @@
 * [[guild_relations]]
 * [[guilds]]
 
+### Graveyard
+* [[graveyard]]
+
+### Horses
+* [[horses]]
+
 ### Instances
 * [[instance_list]]
 * [[instance_list_player]]
+
+### Items
+* [[item_tick]] - Potentially no longer in use
+* [[items]]
+
+### Launcher (Server .exe Launcher)
+* [[launcher]]
+* [[launcher_zones]]
 
 ### Loot
 * [[lootdrop]]
@@ -124,77 +156,60 @@
 * [[loottable_entries]]
 
 ### Loginserver
-
 * [[loginserver_server_accounts]]
 * [[loginserver_server_admin_registration]]
 * [[loginserver_server_list_type]]
 * [[loginserver_world_server_registration]]
 
+### Logging Settings
+* [[logsys_categories]]
+
+### NPCs
+* [[npc_emotes]]
+* [[npc_faction]]
+* [[npc_faction_entries]]
+* [[npc_spells]]
+* [[npc_spells_effects]]
+* [[npc_spells_effects_entries]]
+* [[npc_spells_entries]]
+* [[npc_types]]
+* [[npc_types_metadata]]
+* [[npc_types_tint]]
+
+### Spawn Data
+* [[spawn2]]
+* [[spawn_condition_values]]
+* [[spawn_conditions]]
+* [[spawn_events]]
+* [[spawnentry]]
+* [[spawngroup]]
+
 ### Spells
 * [[blocked_spells]]
+* [[spell_globals]]
+* [[spells_new]]
 
 ### Server Data
 * [[level_exp_mods]]
+* [[variables]]
+* [[hackers]]
+* [[base_data]]
+* [[eqtime]]
+* [[saylink]]
 
 ### Task System
-
 * [[activities]]
+* [[goallists]]
+* [[tasks]]
+* [[tasksets]]
+* [[proximities]]
 
 ### Univseral Chat System (UCS)
 * [[chatchannels]]
-
-### Misc
-
-* [[base_data]]
-
-* [[books]]
-
-* [[bugs]]
-* [[buyer]]
-
-
-* [[class_skill]]
-* [[command_settings]]
-
-* [[cust_obj_data]]
-* [[damageshieldtypes]]
-* [[db_str]]
-
-* [[discovered_items]]
-* [[doors]]
-* [[eqtime]]
-* [[eventlog]]
-
-* [[fear_hints]]
-* [[fishing]]
-* [[forage]]
-
-* [[gm_ips]]
-* [[goallists]]
-* [[graveyard]]
-* [[grid]]
-* [[grid_entries]]
-
-
-
-* [[hackers]]
-* [[horses]]
-
-
-* [[inventory_version]]
-* [[ip_exemptions]]
-* [[item_tick]]
-* [[items]]
-* [[keyring]]
-* [[launcher]]
-* [[launcher_zones]]
-
-
-* [[lfguild]]
-
-* [[logsys_categories]]
-
 * [[mail]]
+
+### Mercenaries
+* [[mercs]]
 * [[merc_armorinfo]]
 * [[merc_buffs]]
 * [[merc_inventory]]
@@ -211,20 +226,62 @@
 * [[merc_templates]]
 * [[merc_types]]
 * [[merc_weaponinfo]]
+
+### Merchants
 * [[merchantlist]]
 * [[merchantlist_temp]]
-* [[mercs]]
+
+### Misc
+* [[fear_hints]] - potential deprecation
+* [[inventory_version]]
+
+### Other
+
+* [[bugs]]
+* [[buyer]]
+* [[class_skill]]
+* [[command_settings]]
+* [[cust_obj_data]]
+* [[damageshieldtypes]]
+* [[db_str]]
+* [[discovered_items]]
+
+### Quest Globals
+* [[quest_globals]]
+
+### Raids
+* [[raid_details]]
+* [[raid_leaders]]
+* [[raid_members]]
+
+### Tribute
+* [[tribute_levels]]
+* [[tributes]]
+
+* [[eventlog]]
+
+
+
+
+
+
+
+* [[ip_exemptions]]
+
+
+
+
+
+
+
+
+
+
+
+
+
 * [[name_filter]]
-* [[npc_emotes]]
-* [[npc_faction]]
-* [[npc_faction_entries]]
-* [[npc_spells]]
-* [[npc_spells_effects]]
-* [[npc_spells_effects_entries]]
-* [[npc_spells_entries]]
-* [[npc_types]]
-* [[npc_types_metadata]]
-* [[npc_types_tint]]
+
 * [[object]]
 * [[object_contents]]
 * [[perl_event_export_settings]]
@@ -233,7 +290,34 @@
 * [[pets_equipmentset]]
 * [[pets_equipmentset_entries]]
 * [[player_titlesets]]
-* [[proximities]]
+
+
+* [[races]]
+
+* [[reports]]
+* [[respawn_times]]
+* [[rule_sets]]
+* [[rule_values]]
+
+* [[sharedbank]]
+* [[skill_caps]]
+
+* [[start_zones]]
+* [[starting_items]]
+
+* [[timers]]
+* [[titles]]
+* [[trader]]
+* [[trader_audit]]
+* [[tradeskill_recipe]]
+* [[tradeskill_recipe_entries]]
+* [[traps]]
+
+
+* [[veteran_reward_templates]]
+
+### Queryserv (Server)
+* [[lfguild]]
 * [[qs_merchant_transaction_record]]
 * [[qs_merchant_transaction_record_entries]]
 * [[qs_player_aa_rate_hourly]]
@@ -249,47 +333,8 @@
 * [[qs_player_speech]]
 * [[qs_player_trade_record]]
 * [[qs_player_trade_record_entries]]
-* [[quest_globals]]
-* [[races]]
-* [[raid_details]]
-* [[raid_leaders]]
-* [[raid_members]]
-* [[reports]]
-* [[respawn_times]]
-* [[rule_sets]]
-* [[rule_values]]
-* [[saylink]]
-* [[sharedbank]]
-* [[skill_caps]]
-* [[spawn2]]
-* [[spawn_condition_values]]
-* [[spawn_conditions]]
-* [[spawn_events]]
-* [[spawnentry]]
-* [[spawngroup]]
-* [[spell_globals]]
-* [[spells_new]]
-* [[spells_new_live]]
-* [[start_zones]]
-* [[starting_items]]
-* [[tasks]]
-* [[tasksets]]
-* [[timers]]
-* [[titles]]
-* [[trader]]
-* [[trader_audit]]
-* [[tradeskill_recipe]]
-* [[tradeskill_recipe_entries]]
-* [[traps]]
-* [[tribute_levels]]
-* [[tributes]]
-* [[variables]]
-* [[veteran_reward_templates]]
-* [[vw_bot_character_mobs]]
-* [[vw_bot_groups]]
-* [[vw_groups]]
-* [[vw_guild_members]]
-* [[vwmercnpctypes]]
+
+### Zone
 * [[zone]]
 * [[zone_flags]]
 * [[zone_points]]
