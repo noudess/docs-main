@@ -21,3 +21,4 @@
 * [[Zones|Zones List]]
 * [[Item Types]]
 * [[Server Rules]]
+* [[Target Types]]
