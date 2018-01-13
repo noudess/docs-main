@@ -1,5 +1,5 @@
 **Skill ID**|**Skill Name**
-:-----:|:-----:
+:-----|:-----
 0|1H Blunt
 1|1H Slashing
 2|2H Blunt
