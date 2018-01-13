@@ -11,6 +11,7 @@
 
 ---
 **Reference Lists**
+* [[Augment Restrictions]]
 * [[Augment Types]]
 * [[Deity|Diety List]]
 * [[Client Mask]]
