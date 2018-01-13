@@ -1,3 +1,5 @@
+* 115-152: All need invert_state to 1 to work correctly. If invert_state is 0, they don't move but you take damage still if you touch them (Thanks Qadar, for this information):
+
 **Open Type ID**|**Description**|**Notes**
 :-----|:-----|:-----
 0|normal 90 degree door swing backward| 
