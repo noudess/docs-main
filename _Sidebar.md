@@ -22,6 +22,7 @@
 * [[Server Rules]]
 * [[Skills]]
 * [[Zones|Zones List]]
+* [[Item Sizes|Item Sizes]]
 
 **Types**
 * [[Augment|Augment Types]]
