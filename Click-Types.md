@@ -1,4 +1,4 @@
-**Click Type ID**|**Click Type**
+**ID**|**Click Type**
 :-----|:-----
 1|Item can be cast from any slot.
 3|Item can be cast from any slot.
