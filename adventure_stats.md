@@ -1,4 +1,4 @@
-**player\_id**|**int(10) unsigned**|**NO**|**PRI**| | 
+**player\_id**|**int(10) unsigned**|**NO**|**PRI**|- | -
 -----|-----|-----|-----|-----|-----
 guk\_wins|mediumint(8) unsigned|NO| |0| 
 mir\_wins|mediumint(8) unsigned|NO| |0| 
