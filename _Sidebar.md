@@ -29,6 +29,7 @@
 * [[Bag|Bag Types]]
 * [[Bard|Bard Types]]
 * [[Body|Body Types]]
+* [[Class|Class Types]]
 * [[Click|Click Types]]
 * [[Door|Door Open Types]]
 * [[Element|Element Types]]
