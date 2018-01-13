@@ -76,7 +76,6 @@
 * [[character_alt_currency]]
 * [[character_alternate_abilities]]
 * [[character_auras]]
-* [[character_backup]]
 * [[character_bandolier]]
 * [[character_bind]]
 * [[character_buffs]]
