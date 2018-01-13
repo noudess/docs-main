@@ -2,7 +2,7 @@
 * [[Home]]
 
 **Server Installation**
-* [[Windows Server]]
-* [[Linux Server]]
+* [[Windows|Windows Server]]
+* [[Linux|Linux Server]]
 
 ---
