@@ -1,4 +1,4 @@
-**Field**|**Type**|**Null**|**Key**|**Default**|**Extra**
+**Field**|**Type**|**Null**|**Key**|**Default**|**Notes**
 -----|-----|-----|-----|-----|-----
 type|int(10)|NO|PRI| | 
 npc\_type|int(10)|NO| | | 
