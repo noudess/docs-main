@@ -19,6 +19,7 @@
 * [[Body Types]]
 * [[Deity|Diety List]]
 * [[Client Mask]]
+* [[Click Types]]
 * [[Skills]]
 * [[Client Spell ID Limitations]]
 * [[Zones|Zones List]]
