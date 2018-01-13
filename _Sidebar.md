@@ -14,3 +14,4 @@
 * [[Deity|Diety List]]
 * [[Client Mask]]
 * [[Skills]]
+* [[Client Spell ID Limitations]]
