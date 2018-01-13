@@ -1,4 +1,4 @@
-**Aug Restriction ID**|**Aug Restriction**
+**ID**|**Aug Restriction**
 :-----|:-----
 0|No Restrictions
 1|Armor Only
