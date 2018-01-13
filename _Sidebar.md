@@ -10,5 +10,5 @@
 * [[Database Schema]]
 
 ---
-** Lists **
-[[Deity|Diety List]]
+**Lists**
+* [[Deity|Diety List]]
