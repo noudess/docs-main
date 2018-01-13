@@ -1,5 +1,4 @@
 
-
 * [[activities]]
 
 ### Adventures (LDONs)
@@ -9,6 +8,8 @@
 * [[adventure_template]]
 * [[adventure_template_entry]]
 * [[adventure_template_entry_flavor]]
+* [[ldon_trap_entries]]
+* [[ldon_trap_templates]]
 
 ### Alternate Advancements
 * [[aa_ability]]
@@ -27,36 +28,14 @@
 ### Alternate Currency
 * [[alternate_currency]]
 
-### Accounts and Characters
+### Player Account
 * [[banned_ips]]
 * [[account]]
 * [[account_flags]]
 * [[account_ip]]
 * [[account_rewards]]
 
-* [[base_data]]
-* [[blocked_spells]]
-* [[books]]
-* [[bot_buffs]]
-* [[bot_command_settings]]
-* [[bot_data]]
-* [[bot_group_members]]
-* [[bot_groups]]
-* [[bot_guild_members]]
-* [[bot_heal_rotation_members]]
-* [[bot_heal_rotation_targets]]
-* [[bot_heal_rotations]]
-* [[bot_inspect_messages]]
-* [[bot_inventories]]
-* [[bot_pet_buffs]]
-* [[bot_pet_inventories]]
-* [[bot_pets]]
-* [[bot_spell_casting_chances]]
-* [[bot_spells_entries]]
-* [[bot_stances]]
-* [[bot_timers]]
-* [[bugs]]
-* [[buyer]]
+### Player Character
 * [[char_create_combinations]]
 * [[char_create_point_allocations]]
 * [[char_recipe_list]]
@@ -89,6 +68,50 @@
 * [[character_spells]]
 * [[character_tasks]]
 * [[character_tribute]]
+* [[inventory]]
+* [[inventory_snapshots]]
+* [[faction_values]]
+
+### Bots
+
+* [[bot_buffs]]
+* [[bot_command_settings]]
+* [[bot_data]]
+* [[bot_group_members]]
+* [[bot_groups]]
+* [[bot_guild_members]]
+* [[bot_heal_rotation_members]]
+* [[bot_heal_rotation_targets]]
+* [[bot_heal_rotations]]
+* [[bot_inspect_messages]]
+* [[bot_inventories]]
+* [[bot_pet_buffs]]
+* [[bot_pet_inventories]]
+* [[bot_pets]]
+* [[bot_spell_casting_chances]]
+* [[bot_spells_entries]]
+* [[bot_stances]]
+* [[bot_timers]]
+
+### Database Schema
+* [[db_version]] - Tracks current database schema against source binary database version
+
+### Faction Data
+* [[faction_list]]
+* [[faction_list_mod]]
+
+### Spells
+* [[blocked_spells]]
+
+### Misc
+
+* [[base_data]]
+
+* [[books]]
+
+* [[bugs]]
+* [[buyer]]
+
 * [[chatchannels]]
 * [[class_skill]]
 * [[command_settings]]
@@ -96,14 +119,12 @@
 * [[cust_obj_data]]
 * [[damageshieldtypes]]
 * [[db_str]]
-* [[db_version]]
+
 * [[discovered_items]]
 * [[doors]]
 * [[eqtime]]
 * [[eventlog]]
-* [[faction_list]]
-* [[faction_list_mod]]
-* [[faction_values]]
+
 * [[fear_hints]]
 * [[fishing]]
 * [[forage]]
@@ -125,8 +146,7 @@
 * [[horses]]
 * [[instance_list]]
 * [[instance_list_player]]
-* [[inventory]]
-* [[inventory_snapshots]]
+
 * [[inventory_version]]
 * [[ip_exemptions]]
 * [[item_tick]]
@@ -134,8 +154,7 @@
 * [[keyring]]
 * [[launcher]]
 * [[launcher_zones]]
-* [[ldon_trap_entries]]
-* [[ldon_trap_templates]]
+
 * [[level_exp_mods]]
 * [[lfguild]]
 * [[loginserver_server_accounts]]
