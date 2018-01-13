@@ -57,4 +57,19 @@
 54|no door showing (invisible)| 
 55|nothing| 
 56|nothing| 
-57|nothing| 
+57|nothing|
+115|spins nonstop, 4 points saw damage|
+116|spins with pause, 4 points saw damage|
+120|moves down then up, 30 points spear damage|
+125|moves left then right, 30 points spear damage|
+130|swings back and forth, 4 points pendulum damage|
+135|no movement, 4 points blade damage if touched|
+140|moves up then down, 4 points crush damage|
+142|moves up then down nonstop automatically (moves up and down 1 time only if invert_state is set to 0)|
+143|moves up then down nonstop automatically (moves up and down 1 time only if invert_state is set to 0)|
+144|moves up then down nonstop automatically (moves up and down 1 time only if invert_state is set to 0)|
+145|down then up, slow movement, 10 points crushed damage|
+146|down then up, fast movement, 50 points crushed damage|
+150|slide fast left, back slowly, 10 points crushed damage|
+151|slide slow left, back slowly, 10 points crushed damage|
+152|slide fast left, back quickly, 50 points crushed damage|
