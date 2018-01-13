@@ -1,5 +1,6 @@
-id|int(10) unsigned|NO|PRI| | 
+|Field|Type|Null|Key|Default|Extra|
 -----|-----|-----|-----|-----|-----
+id|int(10) unsigned|NO|PRI| | 
 zone|varchar(64)|NO| | | 
 zone\_version|tinyint(3) unsigned|NO| |0| 
 is\_hard|tinyint(3) unsigned|NO| |0| 
