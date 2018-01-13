@@ -1,5 +1,5 @@
 **Client**|**Value**
-:-----:|:-----:
+:-----|:-----
 Client62*|1
 Titanium|2
 SoF|4
