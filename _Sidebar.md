@@ -23,6 +23,7 @@
 * [[Door Open Types]]
 * [[Element Types]]
 * [[Resist Types]]
+* [[Numhit Types]]
 * [[Skills]]
 * [[Client Spell ID Limitations]]
 * [[Item Types]]
