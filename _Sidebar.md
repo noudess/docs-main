@@ -21,6 +21,7 @@
 * [[Click Types]]
 * [[Deity|Diety List]]
 * [[Door Open Types]]
+* [[Resist Types]]
 * [[Skills]]
 * [[Client Spell ID Limitations]]
 * [[Item Types]]
