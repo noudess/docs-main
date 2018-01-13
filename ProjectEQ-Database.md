@@ -5,3 +5,5 @@ You can see the content status of Project EQ by visiting [[Project EQ]]
 The latest ProjectEQ database dump can be found here
 
 http://edit.peqtgc.com/weekly/
+
+The documentation for the database schema can be found in [[Database Schema]]
