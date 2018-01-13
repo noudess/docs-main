@@ -1,3 +1,56 @@
+- [Adventures (LDONs)](#adventures--ldons-)
+- [Alternate Advancements](#alternate-advancements)
+- [Auras](#auras)
+- [Alternate Currency](#alternate-currency)
+- [Commands](#commands)
+- [Bots](#bots)
+- [Books](#books)
+- [Bugs](#bugs)
+- [Character Account](#character-account)
+- [Character Creation](#character-creation)
+- [Character Data](#character-data)
+- [Database Schema](#database-schema)
+- [Doors](#doors)
+- [Faction Data](#faction-data)
+- [Fishing](#fishing)
+- [Foraging](#foraging)
+- [Grids and Pathing](#grids-and-pathing)
+- [Ground Spawns](#ground-spawns)
+- [Groups](#groups)
+- [Guilds](#guilds)
+- [Graveyard](#graveyard)
+- [Horses](#horses)
+- [Instances](#instances)
+- [Items](#items)
+- [Launcher (Server .exe Launcher)](#launcher--server-exe-launcher-)
+- [Loot](#loot)
+- [Loginserver](#loginserver)
+- [Logging (Legacy)](#logging--legacy-)
+- [Logging Settings](#logging-settings)
+- [NPCs](#npcs)
+- [Spawn Data](#spawn-data)
+- [Spells](#spells)
+- [Server Data](#server-data)
+- [Task System](#task-system)
+- [Tradeskills](#tradeskills)
+- [Univseral Chat System (UCS)](#univseral-chat-system--ucs-)
+- [Mercenaries](#mercenaries)
+- [Merchants](#merchants)
+- [Misc](#misc)
+- [Objects](#objects)
+- [Petitions](#petitions)
+- [Pets](#pets)
+- [Quest Globals](#quest-globals)
+- [Raids](#raids)
+- [Tribute](#tribute)
+- [Titles (Player)](#titles--player-)
+- [Traps](#traps)
+- [Trading System (Bazaar)](#trading-system--bazaar-)
+- [Reporting (/report)](#reporting---report-)
+- [Rules](#rules)
+- [Shared Bank](#shared-bank)
+- [Queryserv (Server)](#queryserv--server-)
+- [Zone](#zone)
 
 ### Adventures (LDONs)
 * [[adventure_details]]
@@ -108,6 +161,8 @@
 * [[faction_values]]
 * [[completed_tasks]]
 * [[friends]]
+* [[timers]]
+* [[player_titlesets]]
 
 ### Database Schema
 * [[db_version]] - Tracks current database schema against source binary database version
@@ -218,6 +273,7 @@
 * [[discovered_items]]
 * [[perl_event_export_settings]]
 * [[races]]
+* [[skill_caps]]
 
 ### Task System
 * [[activities]]
@@ -261,6 +317,7 @@
 * [[fear_hints]] - potential deprecation
 * [[inventory_version]]
 * [[buyer]]
+* [[veteran_reward_templates]] - unused currently?
 
 ### Objects
 * [[object]]
@@ -287,10 +344,14 @@
 * [[tributes]]
 
 ### Titles (Player)
-* [[player_titlesets]]
+* [[titles]]
 
 ### Traps
 * [[traps]]
+
+### Trading System (Bazaar)
+* [[trader]]
+* [[trader_audit]]
 
 ### Reporting (/report)
 * [[reports]]
@@ -299,21 +360,8 @@
 * [[rule_sets]]
 * [[rule_values]]
 
+### Shared Bank
 * [[sharedbank]]
-* [[skill_caps]]
-
-
-
-
-* [[timers]]
-* [[titles]]
-* [[trader]]
-* [[trader_audit]]
-
-
-
-
-* [[veteran_reward_templates]]
 
 ### Queryserv (Server)
 * [[lfguild]]
