@@ -35,5 +35,6 @@
 * [[Element|Element Types]]
 * [[Item|Item Types]]
 * [[Numhit|Numhit Types]]
+* [[Race|Race Types]]
 * [[Resist|Resist Types]]
 * [[Target|Target Types]]
