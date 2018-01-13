@@ -13,3 +13,4 @@
 **Lists**
 * [[Deity|Diety List]]
 * [[Client Mask]]
+* [[Skills]]
