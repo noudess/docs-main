@@ -5,6 +5,9 @@
 * [[Windows|Windows Server]]
 * [[Linux|Linux Server]]
 
+**Configuration**
+* [[eqemu_config]]
+
 **Database**
 * [[ProjectEQ Database]]
 * [[Database Schema]]
