@@ -89,7 +89,6 @@
 * [[character_item_recast]]
 * [[character_languages]]
 * [[character_leadership_abilities]]
-* [[character_lookup]]
 * [[character_material]]
 * [[character_memmed_spells]]
 * [[character_pet_buffs]]
