@@ -1,5 +1,5 @@
 **Aug Restriction ID**|**Aug Restriction**
------|-----
+:-----|:-----
 0|No Restrictions
 1|Armor Only
 2|Weapons Only
