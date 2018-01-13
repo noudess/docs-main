@@ -1,11 +1,9 @@
 * List used in quest API calls such as
 
-`
-quest::changedeity(201); - Changes the player's deity to Bertoxxulous.
-`
+`quest::changedeity(201); - Changes the player's deity to Bertoxxulous.`
 
 **Deity**|**Deity ID**|**Deity Bitmask**
-:-----:|:-----:|:-----:
+:-----|:-----|:-----
 Agnostic|140|1
 Bertoxxulous|201|2
 Brell Serilis|202|4
