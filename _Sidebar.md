@@ -17,3 +17,4 @@
 * [[Client Spell ID Limitations]]
 * [[Zones|Zones List]]
 * [[Item Types]]
+* [[Server Rules]]
