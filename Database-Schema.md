@@ -26,6 +26,35 @@
 ### Alternate Currency
 * [[alternate_currency]]
 
+### Commands
+* [[command_settings]]
+
+### Bots
+* [[bot_buffs]]
+* [[bot_command_settings]]
+* [[bot_data]]
+* [[bot_group_members]]
+* [[bot_groups]]
+* [[bot_guild_members]]
+* [[bot_heal_rotation_members]]
+* [[bot_heal_rotation_targets]]
+* [[bot_heal_rotations]]
+* [[bot_inspect_messages]]
+* [[bot_inventories]]
+* [[bot_pet_buffs]]
+* [[bot_pet_inventories]]
+* [[bot_pets]]
+* [[bot_spell_casting_chances]]
+* [[bot_spells_entries]]
+* [[bot_stances]]
+* [[bot_timers]]
+
+### Books
+* [[books]]
+
+### Bugs
+* [[bugs]]
+
 ### Character Account
 * [[banned_ips]]
 * [[gm_ips]]
@@ -33,10 +62,16 @@
 * [[account_flags]]
 * [[account_ip]]
 * [[account_rewards]]
+* [[ip_exemptions]]
 
-### Character Data
+### Character Creation
+* [[name_filter]]
+* [[start_zones]]
+* [[starting_items]]
 * [[char_create_combinations]]
 * [[char_create_point_allocations]]
+
+### Character Data
 * [[char_recipe_list]]
 * [[character_activities]]
 * [[character_alt_currency]]
@@ -73,29 +108,6 @@
 * [[faction_values]]
 * [[completed_tasks]]
 * [[friends]]
-
-### Bots
-* [[bot_buffs]]
-* [[bot_command_settings]]
-* [[bot_data]]
-* [[bot_group_members]]
-* [[bot_groups]]
-* [[bot_guild_members]]
-* [[bot_heal_rotation_members]]
-* [[bot_heal_rotation_targets]]
-* [[bot_heal_rotations]]
-* [[bot_inspect_messages]]
-* [[bot_inventories]]
-* [[bot_pet_buffs]]
-* [[bot_pet_inventories]]
-* [[bot_pets]]
-* [[bot_spell_casting_chances]]
-* [[bot_spells_entries]]
-* [[bot_stances]]
-* [[bot_timers]]
-
-### Books
-* [[books]]
 
 ### Database Schema
 * [[db_version]] - Tracks current database schema against source binary database version
@@ -161,6 +173,9 @@
 * [[loginserver_server_list_type]]
 * [[loginserver_world_server_registration]]
 
+### Logging (Legacy)
+* [[eventlog]]
+
 ### Logging Settings
 * [[logsys_categories]]
 
@@ -183,6 +198,7 @@
 * [[spawn_events]]
 * [[spawnentry]]
 * [[spawngroup]]
+* [[respawn_times]]
 
 ### Spells
 * [[blocked_spells]]
@@ -196,6 +212,12 @@
 * [[base_data]]
 * [[eqtime]]
 * [[saylink]]
+* [[class_skill]]
+* [[damageshieldtypes]]
+* [[db_str]]
+* [[discovered_items]]
+* [[perl_event_export_settings]]
+* [[races]]
 
 ### Task System
 * [[activities]]
@@ -203,6 +225,10 @@
 * [[tasks]]
 * [[tasksets]]
 * [[proximities]]
+
+### Tradeskills
+* [[tradeskill_recipe]]
+* [[tradeskill_recipe_entries]]
 
 ### Univseral Chat System (UCS)
 * [[chatchannels]]
@@ -234,17 +260,19 @@
 ### Misc
 * [[fear_hints]] - potential deprecation
 * [[inventory_version]]
-
-### Other
-
-* [[bugs]]
 * [[buyer]]
-* [[class_skill]]
-* [[command_settings]]
-* [[cust_obj_data]]
-* [[damageshieldtypes]]
-* [[db_str]]
-* [[discovered_items]]
+
+### Objects
+* [[object]]
+* [[object_contents]]
+
+### Petitions
+* [[petitions]]
+
+### Pets
+* [[pets]]
+* [[pets_equipmentset]]
+* [[pets_equipmentset_entries]]
 
 ### Quest Globals
 * [[quest_globals]]
@@ -258,60 +286,31 @@
 * [[tribute_levels]]
 * [[tributes]]
 
-* [[eventlog]]
-
-
-
-
-
-
-
-* [[ip_exemptions]]
-
-
-
-
-
-
-
-
-
-
-
-
-
-* [[name_filter]]
-
-* [[object]]
-* [[object_contents]]
-* [[perl_event_export_settings]]
-* [[petitions]]
-* [[pets]]
-* [[pets_equipmentset]]
-* [[pets_equipmentset_entries]]
+### Titles (Player)
 * [[player_titlesets]]
 
+### Traps
+* [[traps]]
 
-* [[races]]
-
+### Reporting (/report)
 * [[reports]]
-* [[respawn_times]]
+
+### Rules
 * [[rule_sets]]
 * [[rule_values]]
 
 * [[sharedbank]]
 * [[skill_caps]]
 
-* [[start_zones]]
-* [[starting_items]]
+
+
 
 * [[timers]]
 * [[titles]]
 * [[trader]]
 * [[trader_audit]]
-* [[tradeskill_recipe]]
-* [[tradeskill_recipe_entries]]
-* [[traps]]
+
+
 
 
 * [[veteran_reward_templates]]
