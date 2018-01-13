@@ -107,6 +107,7 @@
 * [[friends]]
 * [[timers]]
 * [[player_titlesets]]
+* [[zone_flags]]
 
 ### Database Schema
 * [[db_version]] - Tracks current database schema against source binary database version
@@ -327,7 +328,6 @@
 
 ### Zone
 * [[zone]]
-* [[zone_flags]]
 * [[zone_points]]
 * [[zone_server]]
 * [[zone_state_dump]]
