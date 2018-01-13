@@ -1,5 +1,5 @@
 **Zone ID**|**Zone Long Name**|**Zone Short Name**
-:-----:|:-----:|:-----:
+:-----|:-----|:-----
 1|South Qeynos|qeynos
 2|North Qeynos|qeynos2
 3|The Surefall Glade|qrg
