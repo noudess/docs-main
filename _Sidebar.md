@@ -16,6 +16,7 @@
 * [[Animations]]
 * [[Bag Types]]
 * [[Bard Types]]
+* [[Body Types]]
 * [[Deity|Diety List]]
 * [[Client Mask]]
 * [[Skills]]
