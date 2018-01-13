@@ -20,6 +20,7 @@
 * [[Deity|Diety List]]
 * [[Client Mask]]
 * [[Click Types]]
+* [[Door Open Types]]
 * [[Skills]]
 * [[Client Spell ID Limitations]]
 * [[Zones|Zones List]]
