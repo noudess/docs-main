@@ -14,6 +14,7 @@
 * [[Augment Restrictions]]
 * [[Augment Types]]
 * [[Animations]]
+* [[Bag Types]]
 * [[Deity|Diety List]]
 * [[Client Mask]]
 * [[Skills]]
