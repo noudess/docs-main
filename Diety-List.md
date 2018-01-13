@@ -1,6 +1,6 @@
 * List used in quest API calls such as
 
-`perl
+`
 quest::changedeity(201); - Changes the player's deity to Bertoxxulous.
 `
 
