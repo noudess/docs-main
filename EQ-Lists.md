@@ -1,5 +1,0 @@
-* [Race List](Race-List)
-* [Class List](Class-List)
-* [Deity List](Deity-List)
-* [Skills List](Skill-List)
-* [Body Type List](BodyType-List)
