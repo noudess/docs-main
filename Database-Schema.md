@@ -10,14 +10,9 @@
 
 ### Alternate Advancements
 * [[aa_ability]]
-* [[aa_actions]]
-* [[aa_effects]]
 * [[aa_rank_effects]]
 * [[aa_rank_prereqs]]
 * [[aa_ranks]]
-* [[aa_required_level_cost]]
-* [[aa_timers]]
-* [[altadv_vars]]
 
 ### Auras
 * [[auras]]
