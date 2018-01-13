@@ -1,3 +1,4 @@
+
 ### Adventures (LDONs)
 * [[adventure_details]]
 * [[adventure_members]]
@@ -32,7 +33,7 @@
 * [[account_ip]]
 * [[account_rewards]]
 
-### Player Character
+### Character Data
 * [[char_create_combinations]]
 * [[char_create_point_allocations]]
 * [[char_recipe_list]]
@@ -72,7 +73,6 @@
 * [[friends]]
 
 ### Bots
-
 * [[bot_buffs]]
 * [[bot_command_settings]]
 * [[bot_data]]
@@ -102,6 +102,10 @@
 ### Ground Spawns
 * [[ground_spawns]]
 
+### Groups
+* [[group_id]]
+* [[group_leaders]]
+
 ### Guilds
 * [[guild_bank]]
 * [[guild_members]]
@@ -109,8 +113,11 @@
 * [[guild_relations]]
 * [[guilds]]
 
-### Loot
+### Instances
+* [[instance_list]]
+* [[instance_list_player]]
 
+### Loot
 * [[lootdrop]]
 * [[lootdrop_entries]]
 * [[loottable]]
@@ -126,9 +133,15 @@
 ### Spells
 * [[blocked_spells]]
 
+### Server Data
+* [[level_exp_mods]]
+
 ### Task System
 
 * [[activities]]
+
+### Univseral Chat System (UCS)
+* [[chatchannels]]
 
 ### Misc
 
@@ -139,7 +152,7 @@
 * [[bugs]]
 * [[buyer]]
 
-* [[chatchannels]]
+
 * [[class_skill]]
 * [[command_settings]]
 
@@ -162,13 +175,11 @@
 * [[grid]]
 * [[grid_entries]]
 
-* [[group_id]]
-* [[group_leaders]]
+
 
 * [[hackers]]
 * [[horses]]
-* [[instance_list]]
-* [[instance_list_player]]
+
 
 * [[inventory_version]]
 * [[ip_exemptions]]
@@ -178,7 +189,7 @@
 * [[launcher]]
 * [[launcher_zones]]
 
-* [[level_exp_mods]]
+
 * [[lfguild]]
 
 * [[logsys_categories]]
