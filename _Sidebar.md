@@ -10,8 +10,9 @@
 * [[Database Schema]]
 
 ---
-**Lists**
+**Reference Lists**
 * [[Deity|Diety List]]
 * [[Client Mask]]
 * [[Skills]]
 * [[Client Spell ID Limitations]]
+* [[Zones|Zones List]]
