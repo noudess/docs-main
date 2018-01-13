@@ -7,5 +7,6 @@
 
 **Database**
 * [[PEQ Database]]
+* [[Database Schema]]
 
 ---
