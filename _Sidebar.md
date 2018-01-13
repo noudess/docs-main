@@ -13,6 +13,7 @@
 **Reference Lists**
 * [[Augment Restrictions]]
 * [[Augment Types]]
+* [[Animations]]
 * [[Deity|Diety List]]
 * [[Client Mask]]
 * [[Skills]]
