@@ -8,6 +8,3 @@ For users posting links, use standard format zipped files without password prote
 * queryserv.exe
 * eqlaunch.exe
 * loginserver.exe
-
-***
-Akka's PEQ Server Repack: [http://wiki.eqemulator.org/p?Akkas_PEQ_Server_Repack&frm=Main](http://wiki.eqemulator.org/p?Akkas_PEQ_Server_Repack&frm=Main)
