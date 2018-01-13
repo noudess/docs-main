@@ -1,7 +1,7 @@
 **General**
 * [[Home]]
-* **[[Server Installation]]**
-* [[Windows]]
-* [[Linux]]
+**Server Installation**
+* [[Windows Server]]
+* [[Linux Server]]
 
 ---
