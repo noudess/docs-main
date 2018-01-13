@@ -11,6 +11,7 @@
 
 ---
 **Reference Lists**
+* [[Augment Types]]
 * [[Deity|Diety List]]
 * [[Client Mask]]
 * [[Skills]]
