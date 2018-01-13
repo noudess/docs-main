@@ -6,7 +6,7 @@
 * [[Linux|Linux Server]]
 
 **Database**
-* [[PEQ Database]]
+* [[ProjectEQ Database]]
 * [[Database Schema]]
 
 ---
