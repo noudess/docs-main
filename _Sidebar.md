@@ -15,6 +15,7 @@
 * [[Augment Types]]
 * [[Animations]]
 * [[Bag Types]]
+* [[Bard Types]]
 * [[Deity|Diety List]]
 * [[Client Mask]]
 * [[Skills]]
