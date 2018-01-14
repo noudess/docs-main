@@ -31,6 +31,7 @@
 * [[Body|Body Types]]
 * [[Class|Class Types]]
 * [[Click|Click Types]]
+* [[Chat Channel|Chat Channel Types]]
 * [[Door|Door Open Types]]
 * [[Element|Element Types]]
 * [[Item|Item Types]]
