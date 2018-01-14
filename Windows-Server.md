@@ -121,20 +121,14 @@ perl eqemu_server.pl setup_loginserver
 If firewall rules don't add you must run this script (eqemu_server.pl) as administrator
 
 [Install] Instructions
-[Install] In order to connect your server to the loginserver you must point your eqemu_config.xml to your local server similar to the following:
+[Install] In order to connect your server to the loginserver you must point your eqemu_config.json to your local server similar to the following:
 
-        <loginserver1>
-                <host>login.eqemulator.net</host>
-                <port>5998</port>
-                <account></account>
-                <password></password>
-        </loginserver1>
-        <loginserver2>
-                <host>127.0.0.1</host>
-                <port>5998</port>
-                <account></account>
-                <password></password>
-        </loginserver2>
+"loginserver2" : {
+	"account" : "",
+	"host" : "192.168.197.129",
+	"password" : "",
+	"port" : "5998"
+},
                 [Install] When done, make sure your EverQuest client points to your loginserver's IP (In this case it would be 127.0.0.1) in the eqhosts.txt file
 [Install] Press any key to continue...
 ```
