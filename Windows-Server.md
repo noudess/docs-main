@@ -1,5 +1,3 @@
-
-
 ### Compatibility:
 
 * Windows 7 - x64
@@ -34,7 +32,7 @@
     *   The server is configured to use the **EQEmu Public Loginserver**
     *   You can also install a local loginserver for **LAN play**
 
-### From-Scratch Installation Instructions
+## Server Installation
 
  1. First you will need to download the starter files that will kick off the installation process
 
@@ -93,9 +91,7 @@ At this point you can use:
 
 You are good to go!
 
- 
-
-### Loginserver Installation
+## Loginserver Installation
 
 * The windows installer already pulls down pre-compiled Loginserver binaries, but if you need to download them again for any reason, you can issue the following command:
 ```
