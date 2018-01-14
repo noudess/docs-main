@@ -1,5 +1,4 @@
 ```perl
-$mob->IsRunning() # bool
 $mob->AddFeignMemory(attacker) # void
 $mob->AddToHateList(other, hate) # void
 $mob->Attack(other, Hand) # bool
@@ -227,6 +226,7 @@ $mob->IsPet() # bool
 $mob->IsPlayerCorpse() # bool
 $mob->IsRoamer() # bool
 $mob->IsRooted() # bool
+$mob->IsRunning() # bool
 $mob->IsSilenced() # bool
 $mob->IsStunned() # bool
 $mob->IsTargetable() # bool
