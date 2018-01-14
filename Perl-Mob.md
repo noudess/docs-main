@@ -1,5 +1,5 @@
-```
-bool $mob->IsClient()
+```perl
+$mob->IsClient(); # bool
 bool $mob->IsNPC()
 bool $mob->IsMob()
 bool $mob->IsCorpse()
