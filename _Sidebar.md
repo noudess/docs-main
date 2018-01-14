@@ -23,6 +23,8 @@
 * [[Skills]]
 * [[Zones|Zones List]]
 * [[Item Sizes|Item Sizes]]
+* [[Lua|Lua API]]
+* [[Perl|Perl API]]
 
 **Types**
 * [[Augment|Augment Types]]
