@@ -52,7 +52,7 @@ $mob->DontSnareMeBefore() # uint
 $mob->DoSpecialAttackDamage(target, skill, max_damage, min_damage) # void
 $mob->DoThrowingAttackDmg(target, RangeWeapon) # void
 $mob->DoubleAggro(other) # void
-$mob->Emote(format) # void
+$mob->Emote(format, ...) # void
 $mob->EntityVariableExists(id) # bool
 $mob->FaceTarget(MobToFace) # void
 $mob->FindBuff(spellid) # bool
@@ -237,7 +237,7 @@ $mob->Kill() # void
 $mob->MakePet(int spell_id, pettype, string name) # void
 $mob->MakeTempPet(int spell_id, string name) # void
 $mob->Mesmerize() # void
-$mob->Message(type, string message) # void
+$mob->Message(type, string message, ...) # void
 $mob->Message_StringID(type, string_id, int distance) # void
 $mob->ModSkillDmgTaken(skill, value) # void
 $mob->ModVulnerability(resist, value) # void
@@ -249,7 +249,7 @@ $mob->RemoveFromFeignMemory(attacker) # void
 $mob->RemoveNimbusEffect(effectid) # void
 $mob->ResistSpell(ressit_type, int spell_id, caster) # double
 $mob->RogueAssassinate(other) # void
-$mob->Say(format) # void
+$mob->Say(format, ...) # void
 $mob->SeeHide() # bool
 $mob->SeeImprovedHide() # bool
 $mob->SeeInvisible() # uint
@@ -298,7 +298,7 @@ $mob->SetTarget(mob) # void
 $mob->SetTargetable(on) # void
 $mob->SetTargetDestSteps(target_steps) # void
 $mob->SetTexture(texture) # void
-$mob->Shout(format) # void
+$mob->Shout(format, ...) # void
 $mob->SignalClient(client, data) # void
 $mob->SpellEffect(effect, int duration, finish_delay, zone_wide, unk20, perm_effect, client) # void
 $mob->SpellFinished(int spell_id, spell_target) # void
