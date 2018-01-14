@@ -56,7 +56,7 @@ quest::ding() # void
 quest::disable_proximity_say() # void
 quest::disable_spawn2() # void
 quest::disablerecipe() # void
-quest::disabletask(int task_id1, int task_id2, int task_id10) # void
+quest::disabletask(int task_id1, int task_id2, ..., int task_id10) # void
 quest::doanim() # void
 quest::echo(int color_id, string message) # void
 quest::emote() # void
@@ -64,7 +64,7 @@ quest::enable_proximity_say() # void
 quest::enable_spawn2() # void
 quest::enabledtaskcount() # int
 quest::enablerecipe() # void
-quest::enabletask(int task_id1, int task_id2, int task_id10) # void
+quest::enabletask(int task_id1, int task_id2, ..., int task_id10) # void
 quest::enabletitle() # void
 quest::EntityList::new() # void
 quest::exp() # void
@@ -196,7 +196,7 @@ quest::surname() # void
 quest::targlobal(string key, string str_value, int duration, int npc_id, int char_id, int zone_id) # void
 quest::task_setselector() # void
 quest::taskexplorearea() # void
-quest::taskselector(int task_id1, int task_id2, int task_id%i) # void
+quest::taskselector(int task_id1, int task_id2, ..., int task_id%i) # void
 quest::tasktimeleft() # int
 quest::toggle_spawn_event(uint event_id, bool is_enabled, bool is_strict, bool reset_base) # void
 quest::toggledoorstate() # void
