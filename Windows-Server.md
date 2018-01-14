@@ -66,11 +66,11 @@
 *   **LUA Modules (lua_modules/)**
 *   **Pre-requisite .dll files (lua511.dll, zlib1.dll, libmysql.dll)**
 *   **Server Scripts**
-    *   **t\_database\_backup.bat**
-    *   **t\_server\_crash_report.pl**
-    *   **t\_start\_server.bat**
-    *   **t\_start\_server\_with\_login_server.bat**
-    *   **t\_stop\_server.bat**
+    *   t\_database\_backup.bat
+    *   t\_server\_crash_report.pl
+    *   t\_start\_server.bat
+    *   t\_start\_server\_with\_login_server.bat
+    *   t\_stop\_server.bat
 *   **PEQ Database Downloaded and automatically updated, database created as name: "peq"**
 *   **Windows Firewall rules added**
     *   **Ports 9000, 7000-7500**
