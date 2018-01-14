@@ -7,240 +7,232 @@ client.valid -- Returns true if this object is not null
 ```
 
 ### Member Functions
-```
-void Client::SendSound()
-void Client::Save( iCommitNow)
-void Client::SaveBackup()
-void Client::Connected()
-void Client::InZone()
-void Client::Kick()
-void Client::Disconnect()
-void Client::IsLD()
-void Client::WorldKick()
-void Client::GetAnon()
-void Client::Duck()
-void Client::Stand()
-void Client::SetGM( toggle)
-void Client::SetPVP( toggle)
-void Client::GetPVP()
-void Client::GetGM()
-void Client::SetBaseClass( i)
-void Client::SetBaseRace( i)
-void Client::SetBaseGender( i)
-void Client::GetBaseFace()
-void Client::GetLanguageSkill( n)
-void Client::GetLastName()
-void Client::GetLDoNPointsTheme( theme)
-void Client::GetBaseSTR()
-void Client::GetBaseSTA()
-void Client::GetBaseCHA()
-void Client::GetBaseDEX()
-void Client::GetBaseINT()
-void Client::GetBaseAGI()
-void Client::GetBaseWIS()
-void Client::GetWeight()
-void Client::GetEXP()
-void Client::GetAAExp()
-void Client::GetAAPercent()
-void Client::GetTotalSecondsPlayed()
-void Client::UpdateLDoNPoints( points,  theme)
-void Client::SetDeity( i)
-void Client::AddEXP( add_exp,  conlevel)
-void Client::SetEXP( set_exp,  set_aaxp,  resexp)
-void Client::SetBindPoint( to_zone)
-void Client::GetBindX()
-void Client::GetBindY()
-void Client::GetBindZ()
-void Client::GetBindHeading()
-void Client::GetBindZoneID()
-void Client::MovePC( zoneID, float x, float y, float z, float heading)
-void Client::MovePCInstance( zoneID,  instanceID, float x, float y, float z, float heading)
-void Client::ChangeLastName( in_lastname)
-void Client::GetFactionLevel(int char_id, int npc_id,  p_race,  p_class,  p_deity,  pFaction,  tnpc)
-void Client::SetFactionLevel(int char_id, int npc_id,  char_class,  char_race,  char_deity)
-void Client::SetFactionLevel2(int char_id,  faction_id,  char_class,  char_race,  char_deity,  value, int temp)
-void Client::GetRawItemAC()
-void Client::AccountID()
-void Client::AccountName()
-void Client::Admin()
-void Client::CharacterID()
-void Client::UpdateAdmin( iFromDB)
-void Client::UpdateWho( remove)
-void Client::GuildRank()
-void Client::GuildID()
-void Client::GetFace()
-void Client::TakeMoneyFromPP(int copper,  updateclient)
-void Client::AddMoneyToPP(int copper, int silver, int gold, int platinum,  updateclient)
-void Client::TGB()
-void Client::GetSkillPoints()
-void Client::SetSkillPoints( inp)
-void Client::IncreaseSkill( skill_id,  value)
-void Client::IncreaseLanguageSkill( skill_id,  value)
-void Client::GetSkill( skill_id)
-void Client::GetRawSkill( skill_id)
-void Client::HasSkill( skill_id)
-void Client::CanHaveSkill( skill_id)
-void Client::SetSkill( skill_num,  value)
-void Client::AddSkill( skillid,  value)
-void Client::CheckSpecializeIncrease( spell_id)
-void Client::CheckIncreaseSkill( skillid,  chancemodi)
-void Client::SetLanguageSkill( langid,  value)
-void Client::MaxSkill( skillid,  class, int level)
-void Client::GMKill()
-void Client::IsMedding()
-void Client::GetDuelTarget()
-void Client::IsDueling()
-void Client::SetDuelTarget( set_id)
-void Client::SetDueling( duel)
-void Client::ResetAA()
-void Client::MemSpell( spell_id,  slot,  update_client)
-void Client::UnmemSpell( slot,  update_client)
-void Client::UnmemSpellBySpellID( spell_id)
-void Client::UnmemSpellAll( update_client)
-void Client::ScribeSpell( spell_id,  slot,  update_client)
-void Client::UnscribeSpell( slot,  update_client)
-void Client::UnscribeSpellAll( update_client)
-void Client::TrainDiscBySpellID( spell_id)
-void Client::GetDiscSlotBySpellID( spell_id)
-void Client::UntrainDisc( slot,  update_client)
-void Client::UntrainDiscAll( update_client)
-void Client::IsSitting()
-void Client::IsBecomeNPC()
-void Client::GetBecomeNPCLevel()
-void Client::SetBecomeNPC( flag)
-void Client::SetBecomeNPCLevel(int level)
-void Client::SetFeigned( in_feigned)
-void Client::GetFeigned()
-void Client::AutoSplitEnabled()
-void Client::SetHorseId( horseid_in)
-void Client::GetHorseId()
-void Client::NukeItem( itemnum,  where_to_check)
-void Client::SetTint( slot_id, int color)
-void Client::SetMaterial( slot_id, int item_id)
-void Client::Undye()
-void Client::GetItemIDAt( slot_id)
-void Client::GetAugmentIDAt( slot_id,  augslot)
-void Client::DeleteItemInInventory( slot_id, int quantity)
-void Client::SummonItem(int item_id, int charges)
-void Client::SetStats( type,  increase_val)
-void Client::IncStats( type,  increase_val)
-void Client::DropItem( slot_id)
-void Client::BreakInvis()
-void Client::GetGroup()
-void Client::LeaveGroup()
-void Client::GetRaid()
-void Client::IsGrouped()
-void Client::IsRaidGrouped()
-void Client::Hungry()
-void Client::Thirsty()
-void Client::GetInstrumentMod( spell_id)
-void Client::DecreaseByID( type,  amt)
-void Client::SlotConvert2( slot)
-void Client::Escape()
-void Client::RemoveNoRent()
-void Client::GoFish()
-void Client::ForageItem()
-void Client::CalcPriceMod( other)
-void Client::ResetTrade()
-void Client::UseDiscipline( spell_id,  target)
-void Client::GetCharacterFactionLevel( faction_id)
-void Client::SetZoneFlag(int zone_id)
-void Client::ClearZoneFlag(int zone_id)
-void Client::HasZoneFlag(int zone_id)
-void Client::SendZoneFlagInfo( to)
-void Client::LoadZoneFlags()
-void Client::SetAATitle( txt,  save)
-void Client::GetClientVersion()
-void Client::GetClientVersionBit()
-void Client::SetTitleSuffix( txt,  save)
-void Client::SetAAPoints( points)
-void Client::GetAAPoints()
-void Client::GetSpentAA()
-void Client::AddAAPoints( number)
-void Client::RefundAA()
-void Client::GetModCharacterFactionLevel( faction_id)
-void Client::GetLDoNWins()
-void Client::GetLDoNLosses()
-void Client::GetLDoNWinsTheme( theme)
-void Client::GetLDoNLossesTheme( theme)
-void Client::GetItemAt( slot)
-void Client::GetAugmentAt( slot,  aug_slot)
-void Client::GetStartZone()
-void Client::SetStartZone( zoneid, float x, float y, float z)
-void Client::KeyRingAdd(int item_id)
-void Client::KeyRingCheck(int item_id)
-void Client::AddPVPPoints( Points)
-void Client::AddCrystals( RadiantCount,  EbonCount)
-void Client::GetPVPPoints()
-void Client::GetRadiantCrystals()
-void Client::GetEbonCrystals()
-void Client::ReadBook( Book Text,  Type)
-void Client::UpdateGroupAAs( points,  type)
-void Client::GetGroupPoints()
-void Client::GetRaidPoints()
-void Client::LearnRecipe( recipe_id)
-void Client::GetEndurance()
-void Client::GetMaxEndurance()
-void Client::GetEnduranceRatio()
-void Client::SetEndurance( Endurance)
-void Client::SendOPTranslocateConfirm( Caster,  SpellID)
-void Client::NPCSpawn( target_npc,  option,  respawntime)
-void Client::GetIP()
-void Client::AddLevelBasedExp( exp_percentage, int max_level)
-void Client::IncrementAA( aaskillid)
-void Client::GrantAlternateAdvancementAbility( aa_id,  points,  ignore_cost)
-void Client::GetAALevel( aaskillid)
-void Client::MarkCompassLoc(float x, float y, float z)
-void Client::ClearCompassMark()
-void Client::GetFreeSpellBookSlot( start_slot)
-void Client::GetSpellBookSlotBySpellID( spell_id)
-void Client::UpdateTaskActivity( TaskID,  ActivityID,  Count, bool ignore_quest_update)
-void Client::GetTaskActivityDoneCount( TaskID,  ActivityID)
-void Client::AssignTask( TaskID,  NPCID, bool enforce_level_requirement)
-void Client::FailTask( TaskID)
-void Client::IsTaskCompleted( TaskID)
-void Client::IsTaskActive( TaskID)
-void Client::IsTaskActivityActive( TaskID,  ActivityID)
-void Client::GetCorpseCount()
-void Client::GetCorpseID( corpse)
-void Client::GetCorpseItemAt( corpse_id,  slotid)
-void Client::AssignToInstance(int instance_id)
-void Client::RemoveFromInstance(int instance_id)
-void Client:Freeze()
-void Client:UnFreeze()
-void Client::GetAggroCount()
-void Client::GetCarriedMoney()
-void Client::GetAllMoney()
-void Client::GetItemInInventory( slot_id)
-void Client::SetCustomItemData( slot_id,  identifier,  value)
-void Client::GetCustomItemData( slot_id,  identifier)
-void Client::OpenLFGuildWindow()
-void Client::SignalClient( data)
-void Client::AddAlternateCurrencyValue( uint32 currency_id,  int32 amount)
-void Client::SendWebLink( website)
-void Client::GetInstanceID()
-void Client::HasSpellScribed( spell_id)
-void Client::SetAccountFlag( flag,  value)
-void Client::GetAccountFlag( flag)
-void Client::GetHunger()
-void Client::GetThirst()
-void Client::SetHunger( in_hunger)
-void Client::SetThirst( in_thirst)
-void Client::SendTargetCommand( in_entid)
-void Client::SetHunger( in_hunger,  in_thirst)
-void Client::SilentMessage( Message)
-void Client::PlayMP3( fname)
-void Client::ExpeditionMessage( ExpdID,  Message)
-void Client::SendMarqueeMessage( type, int priority, int fade_in, int fade_out, int duration,  msg)
-void Client::SendColoredText(int color, string message)
-void SendSpellAnim( uint16 spell_id,  uint32 seq)
-void Client::GetTargetRingX()
-void Client::GetTargetRingY()
-void Client::GetTargetRingZ()
-void CalcEXP( uint8 conlevel)
-void Client::QuestReward( mob, int copper, int silver, int gold, int platinum,  itemid,  exp,  faction)
-void GetMoney( type,  subtype)
-void GetAccountAge()
-void Client::SendFullPopup( Title,  Text,  PopupID,  NegativeID,  Buttons,  Duration,  ButtonName0,  ButtonName1,  SoundControls)
-
+```perl
+$client->AccountID() # uint
+$client->AccountName() # string
+$client->AddAAPoints(number) # void
+$client->AddAlternateCurrencyValue(uint32 currency_id, int32 amount) # void
+$client->AddCrystals(RadiantCount, EbonCount) # void
+$client->AddEXP(add_exp, conlevel) # void
+$client->AddLevelBasedExp(exp_percentage, int max_level) # void
+$client->AddMoneyToPP(int copper, int silver, int gold, int platinum, updateclient) # void
+$client->AddPVPPoints(Points) # void
+$client->AddSkill(skillid, int value) # void
+$client->Admin() # int
+$client->AssignTask(TaskID, NPCID, bool enforce_level_requirement) # void
+$client->AssignToInstance(int instance_id) # void
+$client->AutoSplitEnabled() # bool
+$client->BreakInvis() # void
+$client->CalcPriceMod(other) # double
+$client->CanHaveSkill(skill_id) # bool
+$client->ChangeLastName(string in_lastname) # void
+$client->CharacterID() # uint
+$client->CheckIncreaseSkill(skillid, chancemodi) # bool
+$client->CheckSpecializeIncrease(int spell_id) # void
+$client->ClearCompassMark() # void
+$client->ClearZoneFlag(int zone_id) # void
+$client->Connected() # bool
+$client->DecreaseByID(int type, amt) # bool
+$client->DeleteItemInInventory(slot_id, int quantity) # void
+$client->Disconnect() # void
+$client->DropItem(slot_id) # void
+$client->Duck() # void
+$client->Escape() # void
+$client->ExpeditionMessage(ExpdID, Message) # void
+$client->FailTask(TaskID) # void
+$client->ForageItem() # void
+$client->GetAAExp() # uint
+$client->GetAALevel(aaskillid) # uint
+$client->GetAAPercent() # uint
+$client->GetAAPoints() # uint
+$client->GetAccountFlag(flag) # string
+$client->GetAggroCount() # int
+$client->GetAllMoney() # int
+$client->GetAnon() # uint
+$client->GetAugmentAt(int slot, aug_slot) # void
+$client->GetAugmentIDAt(slot_id, augslot) # int
+$client->GetBaseAGI() # uint
+$client->GetBaseCHA() # uint
+$client->GetBaseDEX() # uint
+$client->GetBaseFace() # uint
+$client->GetBaseINT() # uint
+$client->GetBaseSTA() # uint
+$client->GetBaseSTR() # uint
+$client->GetBaseWIS() # uint
+$client->GetBecomeNPCLevel() # uint
+$client->GetBindHeading(index) # double
+$client->GetBindX(index) # double
+$client->GetBindY(index) # double
+$client->GetBindZ(index) # double
+$client->GetBindZoneID(index) # uint
+$client->GetCarriedMoney() # int
+$client->GetCharacterFactionLevel(faction_id) # int
+$client->GetClientVersion() # uint
+$client->GetClientVersionBit() # uint
+$client->GetCorpseCount() # int
+$client->GetCorpseID(corpse) # int
+$client->GetCorpseItemAt(corpse_id, slotid) # int
+$client->GetCustomItemData(slot_id, identifier) # string
+$client->GetDiscSlotBySpellID(int spell_id) # int
+$client->GetDuelTarget() # uint
+$client->GetEbonCrystals() # uint
+$client->GetEndurance() # uint
+$client->GetEnduranceRatio() # uint
+$client->GetEXP() # uint
+$client->GetFace() # uint
+$client->GetFactionLevel(int char_id, int npc_id, p_race, p_class, p_deity, pFaction, tnpc) # int
+$client->GetFeigned() # bool
+$client->GetFreeSpellBookSlot(start_slot) # int
+$client->GetGM() # bool
+$client->GetGroup() # void
+$client->GetGroupPoints() # uint
+$client->GetHorseId() # uint
+$client->GetHunger() # int
+$client->GetInstanceID() # uint
+$client->GetInstrumentMod(int spell_id) # uint
+$client->GetIP() # uint
+$client->GetItemAt(int slot) # void
+$client->GetItemIDAt(slot_id) # int
+$client->GetItemInInventory(slot_id) # void
+$client->GetLanguageSkill(n) # uint
+$client->GetLastName() # string
+$client->GetLDoNLosses() # uint
+$client->GetLDoNLossesTheme(theme) # uint
+$client->GetLDoNPointsTheme(theme) # uint
+$client->GetLDoNWins() # uint
+$client->GetLDoNWinsTheme(theme) # uint
+$client->GetMaxEndurance() # uint
+$client->GetModCharacterFactionLevel(faction_id) # int
+$client->GetPVP() # bool
+$client->GetPVPPoints() # uint
+$client->GetRadiantCrystals() # uint
+$client->GetRaid() # void
+$client->GetRaidPoints() # uint
+$client->GetRawItemAC() # int
+$client->GetRawSkill(skill_id) # uint
+$client->GetSkill(skill_id) # uint
+$client->GetSkillPoints() # uint
+$client->GetSpellBookSlotBySpellID(int spell_id) # int
+$client->GetSpentAA() # uint
+$client->GetStartZone() # uint
+$client->GetTargetRingX() # double
+$client->GetTargetRingY() # double
+$client->GetTargetRingZ() # double
+$client->GetTaskActivityDoneCount(TaskID, ActivityID) # int
+$client->GetThirst() # int
+$client->GetTotalSecondsPlayed() # uint
+$client->GetWeight() # uint
+$client->GMKill() # void
+$client->GoFish() # void
+$client->GrantAlternateAdvancementAbility(aa_id, points, ignore_cost) # bool
+$client->GuildID() # uint
+$client->GuildRank() # uint
+$client->HasSkill(skill_id) # bool
+$client->HasSpellScribed(int spell_id) # bool
+$client->HasZoneFlag(int zone_id) # bool
+$client->Hungry() # bool
+$client->IncreaseLanguageSkill(skill_id, int value) # void
+$client->IncreaseSkill(skill_id, int value) # void
+$client->IncrementAA(aaskillid) # void
+$client->IncStats(int type, increase_val) # void
+$client->InZone() # bool
+$client->IsBecomeNPC() # bool
+$client->IsDueling() # bool
+$client->IsGrouped() # bool
+$client->IsLD() # bool
+$client->IsMedding() # bool
+$client->IsRaidGrouped() # bool
+$client->IsSitting() # bool
+$client->IsTaskActive(TaskID) # bool
+$client->IsTaskActivityActive(TaskID, ActivityID) # bool
+$client->IsTaskCompleted(TaskID) # bool
+$client->KeyRingAdd(int item_id) # void
+$client->KeyRingCheck(int item_id) # bool
+$client->Kick() # void
+$client->LearnRecipe(recipe_id) # void
+$client->LeaveGroup() # void
+$client->LoadZoneFlags() # void
+$client->MarkCompassLoc(float x, float y, float z) # void
+$client->MaxSkill(skillid, class, int level) # uint
+$client->MemSpell(int spell_id, int slot, update_client) # void
+$client->MovePC(zoneID, float x, float y, float z, float heading) # void
+$client->MovePCInstance(zoneID, instanceID, float x, float y, float z, float heading) # void
+$client->NPCSpawn(target_npc, option, respawntime) # void
+$client->NukeItem(itemnum, where_to_check) # uint
+$client->OpenLFGuildWindow() # void
+$client->PlayMP3(fname) # void
+$client->QuestReward(mob, int copper, int silver, int gold, int platinum, itemid, exp, faction) # void
+$client->ReadBook(Book Text, Type) # void
+$client->RefundAA() # void
+$client->RemoveFromInstance(int instance_id) # void
+$client->RemoveNoRent() # void
+$client->ResetAA() # void
+$client->ResetTrade() # void
+$client->Save(iCommitNow) # bool
+$client->SaveBackup() # void
+$client->ScribeSpell(int spell_id, int slot, update_client) # void
+$client->SendColoredText(int color, string message) # void
+$client->SendMarqueeMessage(int type, int priority, int fade_in, int fade_out, int duration, msg) # void
+$client->SendOPTranslocateConfirm(Caster, SpellID) # void
+$client->SendSound() # void
+$client->SendTargetCommand(in_entid) # void
+$client->SendWebLink(website) # void
+$client->SendZoneFlagInfo(to) # void
+$client->SetAAPoints(points) # void
+$client->SetAATitle(txt, save) # void
+$client->SetAccountFlag(flag, int value) # void
+$client->SetBaseClass(i) # void
+$client->SetBaseGender(i) # void
+$client->SetBaseRace(i) # void
+$client->SetBecomeNPC(flag) # void
+$client->SetBecomeNPCLevel(int level) # void
+$client->SetBindPoint(to_zone) # void
+$client->SetCustomItemData(slot_id, identifier, int value) # void
+$client->SetDeity(i) # void
+$client->SetDueling(duel) # void
+$client->SetDuelTarget(set_id) # void
+$client->SetEndurance(Endurance) # void
+$client->SetEXP(set_exp, set_aaxp, resexp) # void
+$client->SetFactionLevel(int char_id, int npc_id, char_class, char_race, char_deity) # void
+$client->SetFactionLevel2(int char_id, faction_id, char_class, char_race, char_deity, int value, int temp) # void
+$client->SetFeigned(in_feigned) # void
+$client->SetGM(toggle) # void
+$client->SetHorseId(horseid_in) # void
+$client->SetHunger(in_hunger) # void
+$client->SetHunger(in_hunger, in_thirst) # void
+$client->SetLanguageSkill(langid, int value) # void
+$client->SetMaterial(slot_id, int item_id) # void
+$client->SetPVP(toggle) # void
+$client->SetSkill(skill_num, int value) # void
+$client->SetSkillPoints(inp) # void
+$client->SetStartZone(zoneid , float x, float y, float z) # void
+$client->SetStats(int type, increase_val) # void
+$client->SetThirst(in_thirst) # void
+$client->SetTint(slot_id, int color) # void
+$client->SetTitleSuffix(txt, save) # void
+$client->SetZoneFlag(int zone_id) # void
+$client->SignalClient(data) # void
+$client->SilentMessage(Message) # void
+$client->SlotConvert2(int slot) # uint
+$client->Stand() # void
+$client->SummonItem(int item_id, int charges) # void
+$client->TakeMoneyFromPP(int copper, updateclient) # bool
+$client->TGB() # bool
+$client->Thirsty() # bool
+$client->TrainDiscBySpellID(int spell_id) # void
+$client->Undye() # void
+$client->UnmemSpell(int slot, update_client) # void
+$client->UnmemSpellAll(update_client) # void
+$client->UnmemSpellBySpellID(int spell_id) # void
+$client->UnscribeSpell(int slot, update_client) # void
+$client->UnscribeSpellAll(update_client) # void
+$client->UntrainDisc(int slot, update_client) # void
+$client->UntrainDiscAll(update_client) # void
+$client->UpdateAdmin(bool iFromDB) # void
+$client->UpdateGroupAAs(points, int type) # void
+$client->UpdateLDoNPoints(points, theme) # bool
+$client->UpdateTaskActivity(TaskID, ActivityID, Count, bool ignore_quest_update) # void
+$client->UpdateWho(remove) # void
+$client->UseDiscipline(int spell_id, target) # bool
+$client->WorldKick() # void
 ```
