@@ -13,6 +13,11 @@
 * [[Database Schema]]
 
 ---
+**Scripts / Quests API**
+* [[Lua|Lua API]]
+* [[Perl|Perl API]]
+
+---
 **Reference Lists**
 * [[Animations]]
 * [[Augment Restrictions]]
@@ -23,8 +28,6 @@
 * [[Skills]]
 * [[Zones|Zones List]]
 * [[Item Sizes|Item Sizes]]
-* [[Lua|Lua API]]
-* [[Perl|Perl API]]
 
 **Types**
 * [[Augment|Augment Types]]
