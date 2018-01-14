@@ -1,4 +1,4 @@
-Retrieve a [client](client)'s account ID. An Account ID is wraps all characters together, and can be found in the database [Account](account).
+Retrieve a [client](client)'s account ID. An Account ID is wraps all characters together, and can be found in the database [account](account).
 
 ### Example
 
