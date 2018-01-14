@@ -1,6 +1,6 @@
 Perl general functions are wrapped within the quest type.
 
-```
+```perl
 void quest::Client::new()
 void quest::NPC::new()
 void quest::EntityList::new()
