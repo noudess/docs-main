@@ -13,7 +13,7 @@
 ### Runtime
 *   2-10 minute install depending on your connection
 
-### What's in the Installer
+## What's in the Installer
 
 *   **Perl 5.12.3**
     *   Perl DBI (Database Integration)
@@ -50,7 +50,7 @@
 ![image](https://user-images.githubusercontent.com/3319450/34912527-6e97d462-f8a9-11e7-981f-6a60ba0fbdea.png)
 
 
-### Installation Details
+## Installation Details
 
 *   **MariaDB installed**
     *   **User**: root (Doesn't allow remote connections)
