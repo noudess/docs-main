@@ -4,6 +4,7 @@ adds a client aa points.
 :---|:---|:---
 number|int|### Example
 
+### Example
 ```perl
 my number = 1;
 quest::say($client->AddAAPoints(number));
