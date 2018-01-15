@@ -2,7 +2,9 @@ adds a client alternate currency value.
 ### Arguments
 **Name**|**Type**|**Description**
 :---|:---|:---
-currency_id||amount||
+currency_id||
+amount||
+
 ### Example
 
 ```perl
