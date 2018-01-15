@@ -56,7 +56,7 @@ cd eqemu_test
  - server_start_dev.sh                  Starts EQEmu server with 10 dynamic zones, UCS & Queryserv, dynamic zones all verbose
  - server_stop.sh                       Stops EQEmu Server (No warning)
  - server_status.sh                     Prints the status of the EQEmu Server processes
-[Configure] eqemu_config.json 			Edit to change server settings and name
+[Configure] eqemu_config.json 		Edit to change server settings and name
 ```
 * Type **exit** out of the menu and return back to the prompt
 
