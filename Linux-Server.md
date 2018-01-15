@@ -117,7 +117,7 @@ Launcher already running... Exiting...
 root@debian:/home/eqemu/server# ./server_status.sh
 
 Akka's Linux Server Launcher
-World: UP Zones: (30/30) UCS: UP Queryserv: DOWN
+World: UP Zones: (30/30) UCS: UP Queryserv: UP
 ```
 ### Basic Server Configuration
 
