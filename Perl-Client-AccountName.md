@@ -2,6 +2,6 @@ AccountName.
 ### Example
 
 ```perl
-my val = $client->AccountName();
-quest::say(val); # Returns string
+my $val = $client->AccountName();
+quest::say($val); # Returns string
 ```
