@@ -5,6 +5,7 @@
 * [[Windows|Windows Server]]
 * [[Linux|Linux Server]]
 * [[Development Server Setup]]
+* [[Server Asset Repositories]]
 
 **Configuration**
 * [[eqemu_config]]
