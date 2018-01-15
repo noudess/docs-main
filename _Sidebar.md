@@ -4,6 +4,7 @@
 **Server Installation**
 * [[Windows|Windows Server]]
 * [[Linux|Linux Server]]
+* [[Development Server Setup]]
 
 **Configuration**
 * [[eqemu_config]]
