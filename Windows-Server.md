@@ -129,7 +129,8 @@ If firewall rules don't add you must run this script (eqemu_server.pl) as admini
 	"password" : "",
 	"port" : "5998"
 },
-                [Install] When done, make sure your EverQuest client points to your loginserver's IP (In this case it would be 127.0.0.1) in the eqhosts.txt file
+
+[Install] When done, make sure your EverQuest client points to your loginserver's IP (In this case it would be 127.0.0.1) in the eqhosts.txt file
 [Install] Press any key to continue...
 ```
 
