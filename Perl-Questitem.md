@@ -1,0 +1,7 @@
+* [[$questitem->GetName() # string|Perl-Questitem-GetName]]
+* [[$questitem->SetScale(scale factor) # void|Perl-Questitem-SetScale]]
+* [[$questitem->ItemSay(text , language) # void|Perl-Questitem-ItemSay]]
+* [[$questitem->IsType(int type) # bool|Perl-Questitem-IsType]]
+* [[$questitem->IsAttuned() # bool|Perl-Questitem-IsAttuned]]
+* [[$questitem->GetCharges() # int|Perl-Questitem-GetCharges]]
+* [[$questitem->GetAugment(augment_id) # void|Perl-Questitem-GetAugment]]

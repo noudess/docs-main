@@ -1,313 +1,315 @@
-```perl
-$mob->AddFeignMemory(attacker) # void
-$mob->AddToHateList(other, hate) # void
-$mob->Attack(other, Hand) # bool
-$mob->BehindMob(other) # bool
-$mob->BuffFadeAll() # void
-$mob->BuffFadeByEffect(effectid, skipslot) # void
-$mob->BuffFadeBySlot(slot, iRecalcBonuses) # void
-$mob->BuffFadeBySpellID(int spell_id) # void
-$mob->CalculateDistance(float x, float y, float z) # double
-$mob->CalculateHeadingToTarget(in_x, in_y) # int
-$mob->CalculateNewPosition(float x, float y, float z, speed, checkZ) # bool
-$mob->CalculateNewPosition2(float x, float y, float z, speed, checkZ) # bool
-$mob->CameraEffect(int duration, intensity, singleclient, global) # void
-$mob->CanBuffStack(spellid, caster_level, iFailIfOverwrite) # int
-$mob->CanClassEquipItem(int item_id) # bool
-$mob->CanThisClassDodge() # bool
-$mob->CanThisClassDoubleAttack() # bool
-$mob->CanThisClassDualWield() # bool
-$mob->CanThisClassParry() # bool
-$mob->CanThisClassRiposte() # bool
-$mob->CastingSpellID() # uint
-$mob->CastSpell(int spell_id, int target_id, slot) # void
-$mob->CastToClient() # void
-$mob->CastToCorpse() # void
-$mob->CastToMob() # void
-$mob->CastToNPC() # void
-$mob->changelastname->(string name) # void
-$mob->ChangeSize(in_size, bNoRestriction) # void
-$mob->Charmed() # bool
-$mob->CheckAggro(other) # bool
-$mob->CheckAggroAmount(spellid) # uint
-$mob->CheckHealAggroAmount(spellid, possible_heal_amt) # uint
-$mob->CheckLoS(mob) # bool
-$mob->CheckLoSToLoc(loc_x, loc_y, loc_z, mob_size) # bool
-$mob->ClearFeignMemory() # void
-$mob->clearlastname->() # void
-$mob->ClearSpecialAbilities() # void
-$mob->CombatRange(target) # bool
-$mob->Damage(string from, damage, int spell_id, attack_skill, avoidable) # void
-$mob->Depop(StartSpawnTimer) # void
-$mob->DivineAura() # bool
-$mob->DoAnim(animnum, type) # void
-$mob->DoArcheryAttackDmg(target, RangeWeapon) # void
-$mob->DoKnockback(caster, pushback, pushup) # void
-$mob->DoMeleeSkillAttackDmg(target, weapon_damage, skill, chance_mod, focus, CanRiposte) # void
-$mob->DontBuffMeBefore() # uint
-$mob->DontDotMeBefore() # uint
-$mob->DontHealMeBefore() # uint
-$mob->DontRootMeBefore() # uint
-$mob->DontSnareMeBefore() # uint
-$mob->DoSpecialAttackDamage(target, skill, max_damage, min_damage) # void
-$mob->DoThrowingAttackDmg(target, RangeWeapon) # void
-$mob->DoubleAggro(other) # void
-$mob->Emote(format, ...) # void
-$mob->EntityVariableExists(id) # bool
-$mob->FaceTarget(MobToFace) # void
-$mob->FindBuff(spellid) # bool
-$mob->FindGroundZ(new_x, new_y, z_offset) # double
-$mob->FindType(type, bOffensive) # bool
-$mob->Gate() # void
-$mob->GetAA(rank_id) # uint
-$mob->GetAAByAAID(aa_id) # uint
-$mob->GetAC() # uint
-$mob->GetActSpellCasttime(int spell_id, casttime) # int
-$mob->GetActSpellCost(int spell_id, cost) # int
-$mob->GetActSpellDamage(int spell_id, value) # int
-$mob->GetActSpellDuration(int spell_id, int duration) # int
-$mob->GetActSpellHealing(int spell_id, value) # int
-$mob->GetActSpellRange(int spell_id, range) # double
-$mob->GetAggroRange() # double
-$mob->GetAGI() # int
-$mob->GetAllowBeneficial() # bool
-$mob->GetAppearance() # uint
-$mob->GetArmorTint(material_slot) # int
-$mob->GetAssistRange() # double
-$mob->GetATK() # uint
-$mob->GetBaseGender() # uint
-$mob->GetBaseRace() # uint
-$mob->GetBaseSize() # double
-$mob->GetBeard() # uint
-$mob->GetBeardColor() # uint
-$mob->GetBodyType() # uint
-$mob->GetBuffSlotFromType(type) # int
-$mob->GetCasterLevel(int spell_id) # int
-$mob->GetCHA() # int
-$mob->GetClass() # uint
-$mob->GetClassLevelFactor() # uint
-$mob->GetCleanName() # string
-$mob->GetCorruption() # int
-$mob->GetCR() # int
-$mob->GetDamageAmount(tmob) # uint
-$mob->GetDeity() # uint
-$mob->GetDEX() # int
-$mob->GetDR() # int
-$mob->GetDrakkinDetails() # uint
-$mob->GetDrakkinHeritage() # uint
-$mob->GetDrakkinTattoo() # uint
-$mob->GetEntityVariable(id) # string
-$mob->GetEquipment(material_slot) # int
-$mob->GetEquipmentColor(material_slot) # int
-$mob->GetEquipmentMaterial(material_slot) # int
-$mob->GetEyeColor1() # uint
-$mob->GetEyeColor2() # uint
-$mob->GetFlurryChance() # uint
-$mob->GetFollowID() # uint
-$mob->GetFR() # int
-$mob->GetGender() # uint
-$mob->GetHairColor() # uint
-$mob->GetHairStyle() # uint
-$mob->GetHandToHandDamage() # int
-$mob->GetHandToHandDelay() # int
-$mob->GetHaste() # int
-$mob->GetHateAmount(tmob, is_dam) # uint
-$mob->GetHateDamageTop(other) # void
-$mob->GetHateList() # void
-$mob->GetHateRandom() # void
-$mob->GetHateTop() # void
-$mob->GetHeading() # double
-$mob->GetHelmTexture() # uint
-$mob->GetHerosForgeModel(material_slot) # int
-$mob->GetHP() # int
-$mob->GetHPRatio() # double
-$mob->GetID() # uint
-$mob->GetINT() # int
-$mob->GetInvul() # bool
-$mob->GetItemHPBonuses() # int
-$mob->GetItemStat(itemid, stat) # int
-$mob->GetLevel() # uint
-$mob->GetLevelCon(iOtherLevel) # uint
-$mob->GetLevelHP(tlevel) # uint
-$mob->GetLuclinFace() # uint
-$mob->GetMana() # int
-$mob->GetManaRatio() # double
-$mob->GetMaxAGI() # int
-$mob->GetMaxCHA() # int
-$mob->GetMaxDEX() # int
-$mob->GetMaxHP() # int
-$mob->GetMaxINT() # int
-$mob->GetMaxMana() # int
-$mob->GetMaxSTA() # int
-$mob->GetMaxSTR() # int
-$mob->GetMaxWIS() # int
-$mob->GetModSkillDmgTaken(skill_num) # int
-$mob->GetModVulnerability(resist) # int
-$mob->GetMR() # int
-$mob->GetName() # string
-$mob->GetNimbusEffect1() # uint
-$mob->GetNimbusEffect2() # uint
-$mob->GetNimbusEffect3() # uint
-$mob->GetNPCTypeID() # uint
-$mob->GetOwnerID() # uint
-$mob->GetPetID() # uint
-$mob->GetPetOrder() # int
-$mob->GetPetType() # uint
-$mob->GetPhR() # int
-$mob->GetPR() # int
-$mob->GetRace() # uint
-$mob->GetResist(type) # int
-$mob->GetReverseFactionCon(iOther) # int
-$mob->GetRunAnimSpeed() # uint
-$mob->GetRunspeed() # double
-$mob->GetShieldTarget() # void
-$mob->GetSize() # double
-$mob->GetSkill(skill_num) # uint
-$mob->GetSkillDmgTaken(skill_num) # uint
-$mob->GetSpecialAbility(special_ability) # int
-$mob->GetSpecialAbilityParam(special_ability, param) # int
-$mob->GetSpecializeSkillValue(int spell_id) # uint
-$mob->GetSpellHPBonuses() # int
-$mob->GetSpellIDFromSlot(slot) # int
-$mob->GetSpellStat(itemid, stat, slot) # int
-$mob->GetSTA() # int
-$mob->GetSTR() # int
-$mob->GetTarget() # void
-$mob->GetTexture() # uint
-$mob->GetWalkspeed() # double
-$mob->GetWaypointH() # double
-$mob->GetWaypointID() # uint
-$mob->GetWaypointPause() # uint
-$mob->GetWaypointX() # double
-$mob->GetWaypointY() # double
-$mob->GetWaypointZ() # double
-$mob->GetWIS() # int
-$mob->GetX() # double
-$mob->GetY() # double
-$mob->GetZ() # double
-$mob->GetZoneID() # uint
-$mob->GMMove(float x, float y, float z, float heading) # void
-$mob->GoToBind() # void
-$mob->HalveAggro(other) # void
-$mob->HasNPCSpecialAtk(parse) # bool
-$mob->HasOwner() # bool
-$mob->HasPet() # bool
-$mob->HasProcs() # bool
-$mob->HasShieldEquiped() # bool
-$mob->HasTwoHandBluntEquiped() # bool
-$mob->HasTwoHanderEquipped() # bool
-$mob->HateSummon() # bool
-$mob->Heal() # void
-$mob->HealDamage(amount, caster) # void
-$mob->InterruptSpell(spellid) # void
-$mob->IsAIControlled() # bool
-$mob->IsAmnesiad() # bool
-$mob->IsBeacon() # bool
-$mob->IsBeneficialAllowed(target) # bool
-$mob->IsBlind() # bool
-$mob->IsCasting() # bool
-$mob->IsClient() # bool
-$mob->IsCorpse() # bool
-$mob->IsDoor() # bool
-$mob->IsEliteMaterialItem(material_slot) # uint
-$mob->IsEngaged() # bool
-$mob->IsEnraged() # bool
-$mob->IsFeared() # bool
-$mob->IsImmuneToSpell(int spell_id, caster) # bool
-$mob->IsInvisible(other) # bool
-$mob->IsMeleeDisabled() # bool
-$mob->IsMezzed() # bool
-$mob->IsMob() # bool
-$mob->IsMoving() # bool
-$mob->IsNPC() # bool
-$mob->IsNPCCorpse() # bool
-$mob->IsObject() # bool
-$mob->IsPet() # bool
-$mob->IsPlayerCorpse() # bool
-$mob->IsRoamer() # bool
-$mob->IsRooted() # bool
-$mob->IsRunning() # bool
-$mob->IsSilenced() # bool
-$mob->IsStunned() # bool
-$mob->IsTargetable() # bool
-$mob->IsTargeted() # bool
-$mob->IsTrap() # bool
-$mob->IsWarriorClass() # bool
-$mob->Kill() # void
-$mob->MakePet(int spell_id, pettype, string name) # void
-$mob->MakeTempPet(int spell_id, string name) # void
-$mob->Mesmerize() # void
-$mob->Message(type, string message, ...) # void
-$mob->Message_StringID(type, string_id, int distance) # void
-$mob->ModSkillDmgTaken(skill, value) # void
-$mob->ModVulnerability(resist, value) # void
-$mob->NPCSpecialAttacks(parse, permtag, reset, remove) # void
-$mob->ProcessSpecialAbilities(str) # void
-$mob->ProjectileAnim(mob, int item_id, IsArrow, speed, angle, tilt, arc) # void
-$mob->RangedAttack(other) # void
-$mob->RemoveFromFeignMemory(attacker) # void
-$mob->RemoveNimbusEffect(effectid) # void
-$mob->ResistSpell(ressit_type, int spell_id, caster) # double
-$mob->RogueAssassinate(other) # void
-$mob->Say(format, ...) # void
-$mob->SeeHide() # bool
-$mob->SeeImprovedHide() # bool
-$mob->SeeInvisible() # uint
-$mob->SeeInvisibleUndead() # bool
-$mob->SendAppearanceEffect(parm1, parm2, parm3, parm4, parm5, singleclient) # void
-$mob->SendIllusion(race, gender, texture, helmtexture, face, hairstyle, haircolor, beard, beardcolor, drakkin_heritage, drakkin_tattoo, drakkin_details, int size) # void
-$mob->SendPosition() # void
-$mob->SendPosUpdate(iSendToSelf) # void
-$mob->SendTo(new_x, new_y, new_z) # void
-$mob->SendToFixZ(new_x, new_y, new_z) # void
-$mob->SendWearChange(material_slot) # void
-$mob->SetAA(aa_id, points, int charges) # bool
-$mob->SetAllowBeneficial(value) # void
-$mob->SetAppearance(app, iIgnoreSelf) # void
-$mob->SetBodyType(type, overwrite_orig) # void
-$mob->SetCurrentWP(waypoint) # void
-$mob->SetDeltas(delta_x, delta_y, delta_z, delta_h) # void
-$mob->SetDisableMelee(value) # void
-$mob->SetEntityVariable(id, var) # void
-$mob->SetExtraHaste(Haste) # void
-$mob->SetFlurryChance(value) # void
-$mob->SetFlyMode(0|1|2|3) # void
-$mob->SetFollowID(id) # void
-$mob->SetGender(gender) # void
-$mob->SetHate(other, hate) # void
-$mob->SetHeading(iHeading) # void
-$mob->SetHP(hp) # void
-$mob->SetInvisible(state) # void
-$mob->SetInvul(invul) # void
-$mob->SetLD(value) # void
-$mob->SetLevel(in_level, command) # void
-$mob->SetMana(amount) # void
-$mob->SetMaxHP() # void
-$mob->SetOOCRegen(newoocregen) # void
-$mob->SetOwnerID(NewOwnerID) # void
-$mob->SetPetID(NewPetID) # void
-$mob->SetPetOrder(i) # void
-$mob->SetRace(race) # void
-$mob->SetRunAnimSpeed(in) # void
-$mob->SetRunning(value) # void
-$mob->SetShieldTarget(mob) # void
-$mob->SetSlotTint(material_slot, red_tint, green_tint, blue_tint) # void
-$mob->SetSpecialAbility(ability, value) # void
-$mob->SetSpecialAbilityParam(ability, param, value) # void
-$mob->SetTarget(mob) # void
-$mob->SetTargetable(on) # void
-$mob->SetTargetDestSteps(target_steps) # void
-$mob->SetTexture(texture) # void
-$mob->Shout(format, ...) # void
-$mob->SignalClient(client, data) # void
-$mob->SpellEffect(effect, int duration, finish_delay, zone_wide, unk20, perm_effect, client) # void
-$mob->SpellFinished(int spell_id, spell_target) # void
-$mob->Spin() # void
-$mob->StartEnrage() # void
-$mob->Stun(int duration) # void
-$mob->TempName(string name) # void
-$mob->ThrowingAttack(other) # void
-$mob->TypesTempPet(typesid, string name) # void
-$mob->WearChange(material_slot, texture, int color, hero_forge_model) # void
-$mob->WipeHateList() # void
-```
+* [[$mob->IsClient() # bool|Perl-Mob-IsClient]]
+* [[$mob->IsNPC() # bool|Perl-Mob-IsNPC]]
+* [[$mob->IsMob() # bool|Perl-Mob-IsMob]]
+* [[$mob->IsCorpse() # bool|Perl-Mob-IsCorpse]]
+* [[$mob->IsPlayerCorpse() # bool|Perl-Mob-IsPlayerCorpse]]
+* [[$mob->IsNPCCorpse() # bool|Perl-Mob-IsNPCCorpse]]
+* [[$mob->IsObject() # bool|Perl-Mob-IsObject]]
+* [[$mob->IsDoor() # bool|Perl-Mob-IsDoor]]
+* [[$mob->IsTrap() # bool|Perl-Mob-IsTrap]]
+* [[$mob->IsBeacon() # bool|Perl-Mob-IsBeacon]]
+* [[$mob->CastToClient() # void|Perl-Mob-CastToClient]]
+* [[$mob->CastToNPC() # void|Perl-Mob-CastToNPC]]
+* [[$mob->CastToMob() # void|Perl-Mob-CastToMob]]
+* [[$mob->CastToCorpse() # void|Perl-Mob-CastToCorpse]]
+* [[$mob->GetID() # uint|Perl-Mob-GetID]]
+* [[$mob->GetName() # string|Perl-Mob-GetName]]
+* [[$mob->Depop(StartSpawnTimer) # void|Perl-Mob-Depop]]
+* [[$mob->RogueAssassinate(other) # void|Perl-Mob-RogueAssassinate]]
+* [[$mob->BehindMob(other) # bool|Perl-Mob-BehindMob]]
+* [[$mob->SetLevel(in_level, command) # void|Perl-Mob-SetLevel]]
+* [[$mob->GetSkill(skill_num) # uint|Perl-Mob-GetSkill]]
+* [[$mob->SendWearChange(material_slot) # void|Perl-Mob-SendWearChange]]
+* [[$mob->GetEquipment(material_slot) # int|Perl-Mob-GetEquipment]]
+* [[$mob->GetEquipmentMaterial(material_slot) # int|Perl-Mob-GetEquipmentMaterial]]
+* [[$mob->GetEquipmentColor(material_slot) # int|Perl-Mob-GetEquipmentColor]]
+* [[$mob->GetArmorTint(material_slot) # int|Perl-Mob-GetArmorTint]]
+* [[$mob->IsMoving() # bool|Perl-Mob-IsMoving]]
+* [[$mob->GoToBind() # void|Perl-Mob-GoToBind]]
+* [[$mob->Gate() # void|Perl-Mob-Gate]]
+* [[$mob->Attack(other, Hand) # bool|Perl-Mob-Attack]]
+* [[$mob->Damage(string from, damage, int spell_id, attack_skill, avoidable) # void|Perl-Mob-Damage]]
+* [[$mob->RangedAttack(other) # void|Perl-Mob-RangedAttack]]
+* [[$mob->ThrowingAttack(other) # void|Perl-Mob-ThrowingAttack]]
+* [[$mob->Heal() # void|Perl-Mob-Heal]]
+* [[$mob->HealDamage(amount, caster) # void|Perl-Mob-HealDamage]]
+* [[$mob->SetMaxHP() # void|Perl-Mob-SetMaxHP]]
+* [[$mob->GetLevelCon(iOtherLevel) # uint|Perl-Mob-GetLevelCon]]
+* [[$mob->SetHP(hp) # void|Perl-Mob-SetHP]]
+* [[$mob->DoAnim(animnum, int type) # void|Perl-Mob-DoAnim]]
+* [[$mob->ChangeSize(in_size, bNoRestriction) # void|Perl-Mob-ChangeSize]]
+* [[$mob->GMMove(float x, float y, float z, float heading) # void|Perl-Mob-GMMove]]
+* [[$mob->SendPosUpdate(int iSendToSelf) # void|Perl-Mob-SendPosUpdate]]
+* [[$mob->SendPosition() # void|Perl-Mob-SendPosition]]
+* [[$mob->HasProcs() # bool|Perl-Mob-HasProcs]]
+* [[$mob->IsInvisible(other) # bool|Perl-Mob-IsInvisible]]
+* [[$mob->SetInvisible(state) # void|Perl-Mob-SetInvisible]]
+* [[$mob->FindBuff(spellid) # bool|Perl-Mob-FindBuff]]
+* [[$mob->FindType(int type, bOffensive) # bool|Perl-Mob-FindType]]
+* [[$mob->GetBuffSlotFromType(int type) # int|Perl-Mob-GetBuffSlotFromType]]
+* [[$mob->MakePet(int spell_id, pettype, string name) # void|Perl-Mob-MakePet]]
+* [[$mob->MakeTempPet(int spell_id, string name) # void|Perl-Mob-MakeTempPet]]
+* [[$mob->TypesTempPet(typesid, string name) # void|Perl-Mob-TypesTempPet]]
+* [[$mob->GetBaseRace() # uint|Perl-Mob-GetBaseRace]]
+* [[$mob->GetBaseGender() # uint|Perl-Mob-GetBaseGender]]
+* [[$mob->GetDeity() # uint|Perl-Mob-GetDeity]]
+* [[$mob->GetRace() # uint|Perl-Mob-GetRace]]
+* [[$mob->GetGender() # uint|Perl-Mob-GetGender]]
+* [[$mob->GetTexture() # uint|Perl-Mob-GetTexture]]
+* [[$mob->GetHelmTexture() # uint|Perl-Mob-GetHelmTexture]]
+* [[$mob->GetHairColor() # uint|Perl-Mob-GetHairColor]]
+* [[$mob->GetBeardColor() # uint|Perl-Mob-GetBeardColor]]
+* [[$mob->GetEyeColor1() # uint|Perl-Mob-GetEyeColor1]]
+* [[$mob->GetEyeColor2() # uint|Perl-Mob-GetEyeColor2]]
+* [[$mob->GetHairStyle() # uint|Perl-Mob-GetHairStyle]]
+* [[$mob->GetLuclinFace() # uint|Perl-Mob-GetLuclinFace]]
+* [[$mob->GetBeard() # uint|Perl-Mob-GetBeard]]
+* [[$mob->GetDrakkinHeritage() # uint|Perl-Mob-GetDrakkinHeritage]]
+* [[$mob->GetDrakkinTattoo() # uint|Perl-Mob-GetDrakkinTattoo]]
+* [[$mob->GetDrakkinDetails() # uint|Perl-Mob-GetDrakkinDetails]]
+* [[$mob->GetClass() # uint|Perl-Mob-GetClass]]
+* [[$mob->GetLevel() # uint|Perl-Mob-GetLevel]]
+* [[$mob->GetCleanName() # string|Perl-Mob-GetCleanName]]
+* [[$mob->GetTarget() # void|Perl-Mob-GetTarget]]
+* [[$mob->SetTarget(mob) # void|Perl-Mob-SetTarget]]
+* [[$mob->GetHPRatio() # double|Perl-Mob-GetHPRatio]]
+* [[$mob->IsWarriorClass() # bool|Perl-Mob-IsWarriorClass]]
+* [[$mob->GetHP() # int|Perl-Mob-GetHP]]
+* [[$mob->GetMaxHP() # int|Perl-Mob-GetMaxHP]]
+* [[$mob->GetItemHPBonuses() # int|Perl-Mob-GetItemHPBonuses]]
+* [[$mob->GetSpellHPBonuses() # int|Perl-Mob-GetSpellHPBonuses]]
+* [[$mob->GetSpellIDFromSlot(int slot) # int|Perl-Mob-GetSpellIDFromSlot]]
+* [[$mob->GetWalkspeed() # double|Perl-Mob-GetWalkspeed]]
+* [[$mob->GetRunspeed() # double|Perl-Mob-GetRunspeed]]
+* [[$mob->GetCasterLevel(int spell_id) # int|Perl-Mob-GetCasterLevel]]
+* [[$mob->GetMaxMana() # int|Perl-Mob-GetMaxMana]]
+* [[$mob->GetMana() # int|Perl-Mob-GetMana]]
+* [[$mob->SetMana(amount) # void|Perl-Mob-SetMana]]
+* [[$mob->GetManaRatio() # double|Perl-Mob-GetManaRatio]]
+* [[$mob->GetAC() # uint|Perl-Mob-GetAC]]
+* [[$mob->GetATK() # uint|Perl-Mob-GetATK]]
+* [[$mob->GetSTR() # int|Perl-Mob-GetSTR]]
+* [[$mob->GetSTA() # int|Perl-Mob-GetSTA]]
+* [[$mob->GetDEX() # int|Perl-Mob-GetDEX]]
+* [[$mob->GetAGI() # int|Perl-Mob-GetAGI]]
+* [[$mob->GetINT() # int|Perl-Mob-GetINT]]
+* [[$mob->GetWIS() # int|Perl-Mob-GetWIS]]
+* [[$mob->GetCHA() # int|Perl-Mob-GetCHA]]
+* [[$mob->GetMR() # int|Perl-Mob-GetMR]]
+* [[$mob->GetFR() # int|Perl-Mob-GetFR]]
+* [[$mob->GetDR() # int|Perl-Mob-GetDR]]
+* [[$mob->GetPR() # int|Perl-Mob-GetPR]]
+* [[$mob->GetCR() # int|Perl-Mob-GetCR]]
+* [[$mob->GetCorruption() # int|Perl-Mob-GetCorruption]]
+* [[$mob->GetPhR() # int|Perl-Mob-GetPhR]]
+* [[$mob->GetMaxSTR() # int|Perl-Mob-GetMaxSTR]]
+* [[$mob->GetMaxSTA() # int|Perl-Mob-GetMaxSTA]]
+* [[$mob->GetMaxDEX() # int|Perl-Mob-GetMaxDEX]]
+* [[$mob->GetMaxAGI() # int|Perl-Mob-GetMaxAGI]]
+* [[$mob->GetMaxINT() # int|Perl-Mob-GetMaxINT]]
+* [[$mob->GetMaxWIS() # int|Perl-Mob-GetMaxWIS]]
+* [[$mob->GetMaxCHA() # int|Perl-Mob-GetMaxCHA]]
+* [[$mob->GetActSpellRange(int spell_id, range) # double|Perl-Mob-GetActSpellRange]]
+* [[$mob->GetActSpellDamage(int spell_id, int value) # int|Perl-Mob-GetActSpellDamage]]
+* [[$mob->GetActSpellHealing(int spell_id, int value) # int|Perl-Mob-GetActSpellHealing]]
+* [[$mob->GetActSpellCost(int spell_id, int cost) # int|Perl-Mob-GetActSpellCost]]
+* [[$mob->GetActSpellDuration(int spell_id, int duration) # int|Perl-Mob-GetActSpellDuration]]
+* [[$mob->GetActSpellCasttime(int spell_id, casttime) # int|Perl-Mob-GetActSpellCasttime]]
+* [[$mob->ResistSpell(ressit_type, int spell_id, caster) # double|Perl-Mob-ResistSpell]]
+* [[$mob->GetSpecializeSkillValue(int spell_id) # uint|Perl-Mob-GetSpecializeSkillValue]]
+* [[$mob->GetNPCTypeID() # uint|Perl-Mob-GetNPCTypeID]]
+* [[$mob->IsTargeted() # bool|Perl-Mob-IsTargeted]]
+* [[$mob->GetX() # double|Perl-Mob-GetX]]
+* [[$mob->GetY() # double|Perl-Mob-GetY]]
+* [[$mob->GetZ() # double|Perl-Mob-GetZ]]
+* [[$mob->GetHeading() # double|Perl-Mob-GetHeading]]
+* [[$mob->GetWaypointX() # double|Perl-Mob-GetWaypointX]]
+* [[$mob->GetWaypointY() # double|Perl-Mob-GetWaypointY]]
+* [[$mob->GetWaypointZ() # double|Perl-Mob-GetWaypointZ]]
+* [[$mob->GetWaypointH() # double|Perl-Mob-GetWaypointH]]
+* [[$mob->GetWaypointPause() # uint|Perl-Mob-GetWaypointPause]]
+* [[$mob->GetWaypointID() # uint|Perl-Mob-GetWaypointID]]
+* [[$mob->SetCurrentWP(waypoint) # void|Perl-Mob-SetCurrentWP]]
+* [[$mob->GetSize() # double|Perl-Mob-GetSize]]
+* [[$mob->SetFollowID(id) # void|Perl-Mob-SetFollowID]]
+* [[$mob->GetFollowID() # uint|Perl-Mob-GetFollowID]]
+* [[$mob->Message(int type, string message, ...) # void|Perl-Mob-Message]]
+* [[$mob->Message_StringID(int type, string_id, int distance) # void|Perl-Mob-Message_StringID]]
+* [[$mob->Say(string format, ...) # void|Perl-Mob-Say]]
+* [[$mob->Shout(string format, ...) # void|Perl-Mob-Shout]]
+* [[$mob->Emote(string format, ...) # void|Perl-Mob-Emote]]
+* [[$mob->InterruptSpell(spellid) # void|Perl-Mob-InterruptSpell]]
+* [[$mob->CastSpell(int spell_id, int target_id, int slot) # void|Perl-Mob-CastSpell]]
+* [[$mob->SpellFinished(int spell_id, spell_target) # void|Perl-Mob-SpellFinished]]
+* [[$mob->IsImmuneToSpell(int spell_id, caster) # bool|Perl-Mob-IsImmuneToSpell]]
+* [[$mob->BuffFadeBySpellID(int spell_id) # void|Perl-Mob-BuffFadeBySpellID]]
+* [[$mob->BuffFadeByEffect(effectid, skipslot) # void|Perl-Mob-BuffFadeByEffect]]
+* [[$mob->BuffFadeAll() # void|Perl-Mob-BuffFadeAll]]
+* [[$mob->BuffFadeBySlot(int slot, iRecalcBonuses) # void|Perl-Mob-BuffFadeBySlot]]
+* [[$mob->CanBuffStack(spellid, caster_level, iFailIfOverwrite) # int|Perl-Mob-CanBuffStack]]
+* [[$mob->IsCasting() # bool|Perl-Mob-IsCasting]]
+* [[$mob->CastingSpellID() # uint|Perl-Mob-CastingSpellID]]
+* [[$mob->SetAppearance(app, iIgnoreSelf) # void|Perl-Mob-SetAppearance]]
+* [[$mob->GetAppearance() # uint|Perl-Mob-GetAppearance]]
+* [[$mob->GetRunAnimSpeed() # uint|Perl-Mob-GetRunAnimSpeed]]
+* [[$mob->SetRunAnimSpeed(in) # void|Perl-Mob-SetRunAnimSpeed]]
+* [[$mob->SetPetID(NewPetID) # void|Perl-Mob-SetPetID]]
+* [[$mob->GetPetID() # uint|Perl-Mob-GetPetID]]
+* [[$mob->SetOwnerID(NewOwnerID) # void|Perl-Mob-SetOwnerID]]
+* [[$mob->GetOwnerID() # uint|Perl-Mob-GetOwnerID]]
+* [[$mob->GetPetType() # uint|Perl-Mob-GetPetType]]
+* [[$mob->GetBodyType() # uint|Perl-Mob-GetBodyType]]
+* [[$mob->Stun(int duration) # void|Perl-Mob-Stun]]
+* [[$mob->Spin() # void|Perl-Mob-Spin]]
+* [[$mob->Kill() # void|Perl-Mob-Kill]]
+* [[$mob->SetInvul(invul) # void|Perl-Mob-SetInvul]]
+* [[$mob->GetInvul() # bool|Perl-Mob-GetInvul]]
+* [[$mob->SetExtraHaste(Haste) # void|Perl-Mob-SetExtraHaste]]
+* [[$mob->GetHaste() # int|Perl-Mob-GetHaste]]
+* [[$mob->GetHandToHandDamage() # int|Perl-Mob-GetHandToHandDamage]]
+* [[$mob->CanThisClassDoubleAttack() # bool|Perl-Mob-CanThisClassDoubleAttack]]
+* [[$mob->CanThisClassDualWield() # bool|Perl-Mob-CanThisClassDualWield]]
+* [[$mob->CanThisClassRiposte() # bool|Perl-Mob-CanThisClassRiposte]]
+* [[$mob->CanThisClassDodge() # bool|Perl-Mob-CanThisClassDodge]]
+* [[$mob->CanThisClassParry() # bool|Perl-Mob-CanThisClassParry]]
+* [[$mob->GetHandToHandDelay() # int|Perl-Mob-GetHandToHandDelay]]
+* [[$mob->GetClassLevelFactor() # uint|Perl-Mob-GetClassLevelFactor]]
+* [[$mob->Mesmerize() # void|Perl-Mob-Mesmerize]]
+* [[$mob->IsMezzed() # bool|Perl-Mob-IsMezzed]]
+* [[$mob->IsStunned() # bool|Perl-Mob-IsStunned]]
+* [[$mob->StartEnrage() # void|Perl-Mob-StartEnrage]]
+* [[$mob->IsEnraged() # bool|Perl-Mob-IsEnraged]]
+* [[$mob->GetReverseFactionCon(iOther) # int|Perl-Mob-GetReverseFactionCon]]
+* [[$mob->IsAIControlled() # bool|Perl-Mob-IsAIControlled]]
+* [[$mob->GetAggroRange() # double|Perl-Mob-GetAggroRange]]
+* [[$mob->GetAssistRange() # double|Perl-Mob-GetAssistRange]]
+* [[$mob->SetPetOrder(i) # void|Perl-Mob-SetPetOrder]]
+* [[$mob->GetPetOrder() # int|Perl-Mob-GetPetOrder]]
+* [[$mob->IsRoamer() # bool|Perl-Mob-IsRoamer]]
+* [[$mob->IsRooted() # bool|Perl-Mob-IsRooted]]
+* [[$mob->AddToHateList(other, hate) # void|Perl-Mob-AddToHateList]]
+* [[$mob->SetHate(other, hate) # void|Perl-Mob-SetHate]]
+* [[$mob->HalveAggro(other) # void|Perl-Mob-HalveAggro]]
+* [[$mob->DoubleAggro(other) # void|Perl-Mob-DoubleAggro]]
+* [[$mob->GetHateAmount(tmob, is_dam) # uint|Perl-Mob-GetHateAmount]]
+* [[$mob->GetDamageAmount(tmob) # uint|Perl-Mob-GetDamageAmount]]
+* [[$mob->GetHateTop() # void|Perl-Mob-GetHateTop]]
+* [[$mob->GetHateDamageTop(other) # void|Perl-Mob-GetHateDamageTop]]
+* [[$mob->GetHateRandom() # void|Perl-Mob-GetHateRandom]]
+* [[$mob->IsEngaged() # bool|Perl-Mob-IsEngaged]]
+* [[$mob->HateSummon() # bool|Perl-Mob-HateSummon]]
+* [[$mob->FaceTarget(MobToFace) # void|Perl-Mob-FaceTarget]]
+* [[$mob->SetHeading(iHeading) # void|Perl-Mob-SetHeading]]
+* [[$mob->WipeHateList() # void|Perl-Mob-WipeHateList]]
+* [[$mob->CheckAggro(other) # bool|Perl-Mob-CheckAggro]]
+* [[$mob->CalculateHeadingToTarget(in_x, in_y) # int|Perl-Mob-CalculateHeadingToTarget]]
+* [[$mob->CalculateNewPosition(float x, float y, float z, speed, checkZ) # bool|Perl-Mob-CalculateNewPosition]]
+* [[$mob->CalculateNewPosition2(float x, float y, float z, speed, checkZ) # bool|Perl-Mob-CalculateNewPosition2]]
+* [[$mob->CalculateDistance(float x, float y, float z) # double|Perl-Mob-CalculateDistance]]
+* [[$mob->SendTo(new_x, new_y, new_z) # void|Perl-Mob-SendTo]]
+* [[$mob->SendToFixZ(new_x, new_y, new_z) # void|Perl-Mob-SendToFixZ]]
+* [[$mob->NPCSpecialAttacks(parse, permtag, reset, remove) # void|Perl-Mob-NPCSpecialAttacks]]
+* [[$mob->DontHealMeBefore() # uint|Perl-Mob-DontHealMeBefore]]
+* [[$mob->DontBuffMeBefore() # uint|Perl-Mob-DontBuffMeBefore]]
+* [[$mob->DontDotMeBefore() # uint|Perl-Mob-DontDotMeBefore]]
+* [[$mob->DontRootMeBefore() # uint|Perl-Mob-DontRootMeBefore]]
+* [[$mob->DontSnareMeBefore() # uint|Perl-Mob-DontSnareMeBefore]]
+* [[$mob->GetResist(int type) # int|Perl-Mob-GetResist]]
+* [[$mob->GetShieldTarget() # void|Perl-Mob-GetShieldTarget]]
+* [[$mob->SetShieldTarget(mob) # void|Perl-Mob-SetShieldTarget]]
+* [[$mob->Charmed() # bool|Perl-Mob-Charmed]]
+* [[$mob->GetLevelHP(tlevel) # uint|Perl-Mob-GetLevelHP]]
+* [[$mob->GetZoneID() # uint|Perl-Mob-GetZoneID]]
+* [[$mob->CheckAggroAmount(spellid) # uint|Perl-Mob-CheckAggroAmount]]
+* [[$mob->CheckHealAggroAmount(spellid, possible_heal_amt) # uint|Perl-Mob-CheckHealAggroAmount]]
+* [[$mob->GetAA(rank_id) # uint|Perl-Mob-GetAA]]
+* [[$mob->GetAAByAAID(aa_id) # uint|Perl-Mob-GetAAByAAID]]
+* [[$mob->SetAA(aa_id, points, int charges) # bool|Perl-Mob-SetAA]]
+* [[$mob->DivineAura() # bool|Perl-Mob-DivineAura]]
+* [[$mob->AddFeignMemory(attacker) # void|Perl-Mob-AddFeignMemory]]
+* [[$mob->RemoveFromFeignMemory(attacker) # void|Perl-Mob-RemoveFromFeignMemory]]
+* [[$mob->ClearFeignMemory() # void|Perl-Mob-ClearFeignMemory]]
+* [[$mob->SetOOCRegen(newoocregen) # void|Perl-Mob-SetOOCRegen]]
+* [[$mob->GetEntityVariable(id) # string|Perl-Mob-GetEntityVariable]]
+* [[$mob->EntityVariableExists(id) # bool|Perl-Mob-EntityVariableExists]]
+* [[$mob->SetEntityVariable(id, var) # void|Perl-Mob-SetEntityVariable]]
+* [[$mob->GetHateList() # void|Perl-Mob-GetHateList]]
+* [[$mob->SignalClient(client, data) # void|Perl-Mob-SignalClient]]
+* [[$mob->CombatRange(target) # bool|Perl-Mob-CombatRange]]
+* [[$mob->DoSpecialAttackDamage(target, skill, max_damage, min_damage) # void|Perl-Mob-DoSpecialAttackDamage]]
+* [[$mob->CheckLoS(mob) # bool|Perl-Mob-CheckLoS]]
+* [[$mob->CheckLoSToLoc(loc_x, loc_y, loc_z, mob_size) # bool|Perl-Mob-CheckLoSToLoc]]
+* [[$mob->FindGroundZ(new_x, new_y, z_offset) # double|Perl-Mob-FindGroundZ]]
+* [[$mob->ProjectileAnim(mob, int item_id, IsArrow, speed, angle, tilt, arc) # void|Perl-Mob-ProjectileAnim]]
+* [[$mob->HasNPCSpecialAtk(parse) # bool|Perl-Mob-HasNPCSpecialAtk]]
+* [[$mob->SendAppearanceEffect(parm1, parm2, parm3, parm4, parm5, singleclient) # void|Perl-Mob-SendAppearanceEffect]]
+* [[$mob->SetFlyMode(0|1|2|3) # void|Perl-Mob-SetFlyMode]]
+* [[$mob->SetTexture(texture) # void|Perl-Mob-SetTexture]]
+* [[$mob->SetRace(race) # void|Perl-Mob-SetRace]]
+* [[$mob->SetGender(gender) # void|Perl-Mob-SetGender]]
+* [[$mob->SendIllusion(race, gender, texture, helmtexture, face, hairstyle, haircolor, beard, beardcolor, drakkin_heritage, drakkin_tattoo, drakkin_details, int size) # void|Perl-Mob-SendIllusion]]
+* [[$mob->CameraEffect(int duration, intensity, singleclient, global) # void|Perl-Mob-CameraEffect]]
+* [[$mob->SpellEffect(effect, int duration, finish_delay, zone_wide, unk20, perm_effect, client) # void|Perl-Mob-SpellEffect]]
+* [[$mob->TempName(string name) # void|Perl-Mob-TempName]]
+* [[$mob->GetItemStat(itemid, stat) # int|Perl-Mob-GetItemStat]]
+* [[$mob->GetGlobal(varname) # string|Perl-Mob-GetGlobal]]
+* [[$mob->SetGlobal(varname, newvalue, int options, int duration, other) # void|Perl-Mob-SetGlobal]]
+* [[$mob->TarGlobal(varname, int value, int duration, npcid, charid, zoneid) # void|Perl-Mob-TarGlobal]]
+* [[$mob->DelGlobal(varname) # void|Perl-Mob-DelGlobal]]
+* [[$mob->SetSlotTint(material_slot, red_tint, green_tint, blue_tint) # void|Perl-Mob-SetSlotTint]]
+* [[$mob->WearChange(material_slot, texture, int color, hero_forge_model) # void|Perl-Mob-WearChange]]
+* [[$mob->DoKnockback(caster, pushback, pushup) # void|Perl-Mob-DoKnockback]]
+* [[$mob->RemoveNimbusEffect(effectid) # void|Perl-Mob-RemoveNimbusEffect]]
+* [[$mob->SetRunning(int value) # void|Perl-Mob-SetRunning]]
+* [[$mob->IsRunning() # bool|Perl-Mob-IsRunning]]
+* [[$mob->SetBodyType(int type, overwrite_orig) # void|Perl-Mob-SetBodyType]]
+* [[$mob->SetDeltas(delta_x, delta_y, delta_z, delta_h) # void|Perl-Mob-SetDeltas]]
+* [[$mob->SetLD(int value) # void|Perl-Mob-SetLD]]
+* [[$mob->SetTargetDestSteps(target_steps) # void|Perl-Mob-SetTargetDestSteps]]
+* [[$mob->SetTargetable(on) # void|Perl-Mob-SetTargetable]]
+* [[$mob->ModSkillDmgTaken(skill, int value) # void|Perl-Mob-ModSkillDmgTaken]]
+* [[$mob->GetModSkillDmgTaken(skill_num) # int|Perl-Mob-GetModSkillDmgTaken]]
+* [[$mob->GetSkillDmgTaken(skill_num) # uint|Perl-Mob-GetSkillDmgTaken]]
+* [[$mob->SetAllowBeneficial(int value) # void|Perl-Mob-SetAllowBeneficial]]
+* [[$mob->GetAllowBeneficial() # bool|Perl-Mob-GetAllowBeneficial]]
+* [[$mob->IsBeneficialAllowed(target) # bool|Perl-Mob-IsBeneficialAllowed]]
+* [[$mob->ModVulnerability(resist, int value) # void|Perl-Mob-ModVulnerability]]
+* [[$mob->GetModVulnerability(resist) # int|Perl-Mob-GetModVulnerability]]
+* [[$mob->DoMeleeSkillAttackDmg(target, weapon_damage, skill, chance_mod, focus, CanRiposte) # void|Perl-Mob-DoMeleeSkillAttackDmg]]
+* [[$mob->DoArcheryAttackDmg(target, RangeWeapon) # void|Perl-Mob-DoArcheryAttackDmg]]
+* [[$mob->DoThrowingAttackDmg(target, RangeWeapon) # void|Perl-Mob-DoThrowingAttackDmg]]
+* [[$mob->SetDisableMelee(int value) # void|Perl-Mob-SetDisableMelee]]
+* [[$mob->IsMeleeDisabled() # bool|Perl-Mob-IsMeleeDisabled]]
+* [[$mob->SetFlurryChance(int value) # void|Perl-Mob-SetFlurryChance]]
+* [[$mob->GetFlurryChance() # uint|Perl-Mob-GetFlurryChance]]
+* [[$mob->GetSpellStat(itemid, stat, int slot) # int|Perl-Mob-GetSpellStat]]
+* [[$mob->GetSpecialAbility(special_ability) # int|Perl-Mob-GetSpecialAbility]]
+* [[$mob->GetSpecialAbilityParam(special_ability, param) # int|Perl-Mob-GetSpecialAbilityParam]]
+* [[$mob->SetSpecialAbility(ability, int value) # void|Perl-Mob-SetSpecialAbility]]
+* [[$mob->SetSpecialAbilityParam(ability, param, int value) # void|Perl-Mob-SetSpecialAbilityParam]]
+* [[$mob->ClearSpecialAbilities() # void|Perl-Mob-ClearSpecialAbilities]]
+* [[$mob->ProcessSpecialAbilities(str) # void|Perl-Mob-ProcessSpecialAbilities]]
+* [[$mob->CanClassEquipItem(int item_id) # bool|Perl-Mob-CanClassEquipItem]]
+* [[$mob->IsFeared() # bool|Perl-Mob-IsFeared]]
+* [[$mob->IsBlind() # bool|Perl-Mob-IsBlind]]
+* [[$mob->SeeInvisible() # uint|Perl-Mob-SeeInvisible]]
+* [[$mob->SeeInvisibleUndead() # bool|Perl-Mob-SeeInvisibleUndead]]
+* [[$mob->SeeHide() # bool|Perl-Mob-SeeHide]]
+* [[$mob->SeeImprovedHide() # bool|Perl-Mob-SeeImprovedHide]]
+* [[$mob->GetNimbusEffect1() # uint|Perl-Mob-GetNimbusEffect1]]
+* [[$mob->GetNimbusEffect2() # uint|Perl-Mob-GetNimbusEffect2]]
+* [[$mob->GetNimbusEffect3() # uint|Perl-Mob-GetNimbusEffect3]]
+* [[$mob->IsTargetable() # bool|Perl-Mob-IsTargetable]]
+* [[$mob->HasShieldEquiped() # bool|Perl-Mob-HasShieldEquiped]]
+* [[$mob->HasTwoHandBluntEquiped() # bool|Perl-Mob-HasTwoHandBluntEquiped]]
+* [[$mob->HasTwoHanderEquipped() # bool|Perl-Mob-HasTwoHanderEquipped]]
+* [[$mob->GetHerosForgeModel(material_slot) # int|Perl-Mob-GetHerosForgeModel]]
+* [[$mob->IsEliteMaterialItem(material_slot) # uint|Perl-Mob-IsEliteMaterialItem]]
+* [[$mob->GetBaseSize() # double|Perl-Mob-GetBaseSize]]
+* [[$mob->HasOwner() # bool|Perl-Mob-HasOwner]]
+* [[$mob->IsPet() # bool|Perl-Mob-IsPet]]
+* [[$mob->HasPet() # bool|Perl-Mob-HasPet]]
+* [[$mob->IsSilenced() # bool|Perl-Mob-IsSilenced]]
+* [[$mob->IsAmnesiad() # bool|Perl-Mob-IsAmnesiad]]
+* [[$mob->changelastname->(string name) # void|Perl-Mob-ChangeLastName]]
+* [[$mob->clearlastname->() # void|Perl-Mob-ClearLastName]]

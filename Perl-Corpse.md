@@ -1,31 +1,27 @@
-```perl
-void Corpse::GetCharID()
-void Corpse::GetDecayTime()
-void Corpse::Lock()
-void Corpse::UnLock()
-void Corpse::IsLocked()
-void Corpse::ResetLooter()
-void Corpse::GetDBID()
-void Corpse::GetOwnerName()
-void Corpse::SetDecayTimer( decaytime)
-void Corpse::IsEmpty()
-void Corpse::AddItem( itemnum, int charges,  slot)
-void Corpse::GetWornItem( equipSlot)
-void Corpse::RemoveItem( lootslot)
-void Corpse::SetCash( in_copper,  in_silver,  in_gold,  in_platinum)
-void Corpse::RemoveCash()
-void Corpse::CountItems()
-void Corpse::Delete()
-void Corpse::GetCopper()
-void Corpse::GetSilver()
-void Corpse::GetGold()
-void Corpse::GetPlatinum()
-void Corpse::Summon( client,  spell)
-void Corpse::CastRezz( spellid,  Caster)
-void Corpse::CompleteRezz()
-void Corpse::CanMobLoot( charid)
-void Corpse::AllowMobLoot( them,  slot)
-void Corpse::AddLooter( who)
-void Corpse::IsRezzed()
-
-```
+* [[$corpse->GetCharID() # uint|Perl-Corpse-GetCharID]]
+* [[$corpse->GetDecayTime() # uint|Perl-Corpse-GetDecayTime]]
+* [[$corpse->Lock() # void|Perl-Corpse-Lock]]
+* [[$corpse->UnLock() # void|Perl-Corpse-UnLock]]
+* [[$corpse->IsLocked() # bool|Perl-Corpse-IsLocked]]
+* [[$corpse->ResetLooter() # void|Perl-Corpse-ResetLooter]]
+* [[$corpse->GetDBID() # uint|Perl-Corpse-GetDBID]]
+* [[$corpse->GetOwnerName() # string|Perl-Corpse-GetOwnerName]]
+* [[$corpse->SetDecayTimer(decaytime) # void|Perl-Corpse-SetDecayTimer]]
+* [[$corpse->IsEmpty() # bool|Perl-Corpse-IsEmpty]]
+* [[$corpse->AddItem(itemnum, int charges, int slot) # void|Perl-Corpse-AddItem]]
+* [[$corpse->GetWornItem(equipSlot) # uint|Perl-Corpse-GetWornItem]]
+* [[$corpse->RemoveItem(lootslot) # void|Perl-Corpse-RemoveItem]]
+* [[$corpse->SetCash(in_copper, in_silver, in_gold, in_platinum) # void|Perl-Corpse-SetCash]]
+* [[$corpse->RemoveCash() # void|Perl-Corpse-RemoveCash]]
+* [[$corpse->CountItems() # uint|Perl-Corpse-CountItems]]
+* [[$corpse->Delete() # void|Perl-Corpse-Delete]]
+* [[$corpse->GetCopper() # uint|Perl-Corpse-GetCopper]]
+* [[$corpse->GetSilver() # uint|Perl-Corpse-GetSilver]]
+* [[$corpse->GetGold() # uint|Perl-Corpse-GetGold]]
+* [[$corpse->GetPlatinum() # uint|Perl-Corpse-GetPlatinum]]
+* [[$corpse->Summon(client, spell) # void|Perl-Corpse-Summon]]
+* [[$corpse->CastRezz(spellid, Caster) # void|Perl-Corpse-CastRezz]]
+* [[$corpse->CompleteRezz() # void|Perl-Corpse-CompleteRezz]]
+* [[$corpse->CanMobLoot(charid) # bool|Perl-Corpse-CanMobLoot]]
+* [[$corpse->AllowMobLoot(them, int slot) # void|Perl-Corpse-AllowMobLoot]]
+* [[$corpse->AddLooter(who) # void|Perl-Corpse-AddLooter]]

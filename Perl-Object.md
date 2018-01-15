@@ -1,44 +1,41 @@
-```
-void Object::IsGroundSpawn()
-void Object::Close()
-void Object::Delete( reset_state)
-void Object::StartDecay()
-void Object::DeleteItem( index)
-void Object::IsObject()
-void Object::Save()
-void Object::SetID( set_id)
-void Object::ClearUser()
-void Object::GetDBID()
-void Object::GetID()
-void Object::GetX()
-void Object::GetY()
-void Object::GetZ()
-void Object::GetHeading()
-void Object::VarSave()
-void Object::GetType()
-void Object::SetType( type)
-void Object::GetIcon()
-void Object::SetIcon( icon)
-void Object::GetItemID()
-void Object::SetItemID( itemid)
-void Object::SetLocation(float x, float y, float z)
-void Object::SetX( XPos)
-void Object::SetY( YPos)
-void Object::SetZ( ZPos)
-void Object::SetHeading(float heading)
-void Object::SetModelName(string name)
-void Object::GetModelName()
-void Object::Repop()
-void Object::Depop()
-void Object::GetEntityVariable( id)
-void Object::EntityVariableExists( id)
-void Object::SetEntityVariable( id,  var)
-void Object::GetSolidType()
-void Object::SetSolidType( type)
-void Object::GetSize()
-void Object::SetSize( type)
-void Object::SetTiltX( pos)
-void Object::SetTiltY( pos)
-void Object::GetSize()
-void Object::GetSize()
-```
+* [[$object->IsGroundSpawn() # bool|Perl-Object-IsGroundSpawn]]
+* [[$object->Close() # void|Perl-Object-Close]]
+* [[$object->Delete(reset_state) # void|Perl-Object-Delete]]
+* [[$object->StartDecay() # void|Perl-Object-StartDecay]]
+* [[$object->DeleteItem(index) # void|Perl-Object-DeleteItem]]
+* [[$object->IsObject() # bool|Perl-Object-IsObject]]
+* [[$object->Save() # bool|Perl-Object-Save]]
+* [[$object->SetID(set_id) # void|Perl-Object-SetID]]
+* [[$object->ClearUser() # void|Perl-Object-ClearUser]]
+* [[$object->GetDBID() # uint|Perl-Object-GetDBID]]
+* [[$object->GetID() # uint|Perl-Object-GetID]]
+* [[$object->GetX() # double|Perl-Object-GetX]]
+* [[$object->GetY() # double|Perl-Object-GetY]]
+* [[$object->GetZ() # double|Perl-Object-GetZ]]
+* [[$object->GetHeading() # double|Perl-Object-GetHeading]]
+* [[$object->VarSave() # uint|Perl-Object-VarSave]]
+* [[$object->GetType() # uint|Perl-Object-GetType]]
+* [[$object->SetType(int type) # void|Perl-Object-SetType]]
+* [[$object->GetIcon() # uint|Perl-Object-GetIcon]]
+* [[$object->SetIcon(icon) # void|Perl-Object-SetIcon]]
+* [[$object->GetItemID() # uint|Perl-Object-GetItemID]]
+* [[$object->SetItemID(itemid) # void|Perl-Object-SetItemID]]
+* [[$object->SetLocation(float x, float y, float z) # void|Perl-Object-SetLocation]]
+* [[$object->SetX(XPos) # void|Perl-Object-SetX]]
+* [[$object->SetY(YPos) # void|Perl-Object-SetY]]
+* [[$object->SetZ(ZPos) # void|Perl-Object-SetZ]]
+* [[$object->SetHeading(float heading) # void|Perl-Object-SetHeading]]
+* [[$object->SetModelName(string name) # void|Perl-Object-SetModelName]]
+* [[$object->GetModelName() # string|Perl-Object-GetModelName]]
+* [[$object->Repop() # void|Perl-Object-Repop]]
+* [[$object->Depop() # void|Perl-Object-Depop]]
+* [[$object->GetEntityVariable(id) # string|Perl-Object-GetEntityVariable]]
+* [[$object->EntityVariableExists(id) # bool|Perl-Object-EntityVariableExists]]
+* [[$object->SetEntityVariable(id, var) # void|Perl-Object-SetEntityVariable]]
+* [[$object->GetSolidType() # uint|Perl-Object-GetSolidType]]
+* [[$object->SetSolidType(int type) # void|Perl-Object-SetSolidType]]
+* [[$object->GetSize() # double|Perl-Object-GetSize]]
+* [[$object->SetSize(int type) # void|Perl-Object-SetSize]]
+* [[$object->SetTiltX(pos) # void|Perl-Object-SetTiltX]]
+* [[$object->SetTiltY(pos) # void|Perl-Object-SetTiltY]]
+* [[$object->GetSize() # double|Perl-Object-GetSize]]

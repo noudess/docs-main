@@ -1,30 +1,17 @@
-Group is a class exported to Perl that represent the Group object from EQEmu.
-
-### Properties
-```
-group.null -- Returns true if this object is null
-group.valid -- Returns true if this object is not null
-```
-
-### Member Functions
-```
-void Group::DisbandGroup()
-void Group::IsGroupMember( client)
-void Group::CastGroupSpell( caster,  spellid)
-void Group::SplitExp( exp,  other)
-void Group::GroupMessage( sender,  language, string message)
-void Group::GetTotalGroupDamage( other)
-void Group::SplitMoney(int copper, int silver, int gold, int platinum)
-void Group::SetLeader( newleader)
-void Group::GetLeader()
-void Group::GetLeaderName()
-void Group::SendHPPacketsTo( newmember)
-void Group::SendHPPacketsFrom( newmember)
-void Group::IsLeader( leadertest)
-void Group::GroupCount()
-void Group::GetHighestLevel()
-void Group::TeleportGroup( sender,  zoneID, float x, float y, float z, float heading)
-void Group::GetID()
-void Group::GetMember( index)
-
-```
+* [[$group->DisbandGroup() # void|Perl-Group-DisbandGroup]]
+* [[$group->IsGroupMember(client) # bool|Perl-Group-IsGroupMember]]
+* [[$group->CastGroupSpell(caster, spellid) # void|Perl-Group-CastGroupSpell]]
+* [[$group->SplitExp(exp, other) # void|Perl-Group-SplitExp]]
+* [[$group->GroupMessage(sender, language, string message) # void|Perl-Group-GroupMessage]]
+* [[$group->GetTotalGroupDamage(other) # uint|Perl-Group-GetTotalGroupDamage]]
+* [[$group->SplitMoney(int copper, int silver, int gold, int platinum) # void|Perl-Group-SplitMoney]]
+* [[$group->SetLeader(newleader) # void|Perl-Group-SetLeader]]
+* [[$group->GetLeader() # void|Perl-Group-GetLeader]]
+* [[$group->GetLeaderName() # string|Perl-Group-GetLeaderName]]
+* [[$group->SendHPPacketsTo(newmember) # void|Perl-Group-SendHPPacketsTo]]
+* [[$group->SendHPPacketsFrom(newmember) # void|Perl-Group-SendHPPacketsFrom]]
+* [[$group->IsLeader(leadertest) # bool|Perl-Group-IsLeader]]
+* [[$group->GroupCount() # uint|Perl-Group-GroupCount]]
+* [[$group->GetHighestLevel() # uint|Perl-Group-GetHighestLevel]]
+* [[$group->TeleportGroup(sender, zoneID, float x, float y, float z, float heading) # void|Perl-Group-TeleportGroup]]
+* [[$group->GetID() # uint|Perl-Group-GetID]]

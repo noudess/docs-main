@@ -1,97 +1,92 @@
-```
-void NPC::SignalNPC( _signal_id)
-void NPC::CheckNPCFactionAlly( other_faction)
-void NPC::AddItem( itemid, int charges)
-void NPC::AddLootTable( loottable_id)
-void NPC::RemoveItem(int item_id, int quantity)
-void NPC::ClearItemList()
-void NPC::AddCash( in_copper,  in_silver,  in_gold,  in_platinum)
-void NPC::RemoveCash()
-void NPC::CountLoot()
-void NPC::GetLoottableID()
-void NPC::GetCopper()
-void NPC::GetSilver()
-void NPC::GetGold()
-void NPC::GetPlatinum()
-void NPC::SetCopper( amt)
-void NPC::SetSilver( amt)
-void NPC::SetGold( amt)
-void NPC::SetPlatinum( amt)
-void NPC::SetGrid( grid_)
-void NPC::SetSaveWaypoint( waypoint)
-void NPC::SetSp2( sg2)
-void NPC::GetWaypointMax()
-void NPC::GetGrid()
-void NPC::GetSp2()
-void NPC::GetNPCFactionID()
-void NPC::GetPrimaryFaction()
-void NPC::GetNPCHate( in_ent)
-void NPC::IsOnHatelist( p)
-void NPC::RemoveFromHateList( ent)
-void NPC::SetNPCFactionID( in)
-void NPC::GetMaxDMG()
-void NPC::GetMinDMG()
-void NPC::IsAnimal()
-void NPC::GetPetSpellID()
-void NPC::SetPetSpellID( amt)
-void NPC::GetMaxDamage( tlevel)
-void NPC::SetTaunting( tog)
-void NPC::PickPocket( thief)
-void NPC::StartSwarmTimer(int duration)
-void NPC::DoClassAttacks( target)
-void NPC::GetMaxWp()
-void NPC::DisplayWaypointInfo( to)
-void NPC::CalculateNewWaypoint()
-void NPC::AssignWaypoints( grid)
-void NPC::SetWaypointPause()
-void NPC::UpdateWaypoint( wp_index)
-void NPC::StopWandering()
-void NPC::ResumeWandering()
-void NPC::PauseWandering( pausetime)
-void NPC::MoveTo( mtx,  mty,  mtz,  mth, bool saveguard)
-void NPC::NextGuardPosition()
-void NPC::SaveGuardSpot( iClearGuardSpot)
-void NPC::IsGuarding()
-void NPC::AI_SetRoambox( iDist,  iMaxX,  iMinX,  iMaxY,  iMinY,  iDelay)
-void NPC::GetNPCSpellsID()
-void NPC::GetSpawnPointID()
-void NPC::GetSpawnPointX()
-void NPC::GetSpawnPointY()
-void NPC::GetSpawnPointZ()
-void NPC::GetSpawnPointH()
-void NPC::GetGuardPointX()
-void NPC::GetGuardPointY()
-void NPC::GetGuardPointZ()
-void NPC::SetPrimSkill( skill_id)
-void NPC::SetSecSkill( skill_id)
-void NPC::GetPrimSkill()
-void NPC::GetSecSkill()
-void NPC::GetSwarmOwner()
-void NPC::GetSwarmTarget()
-void NPC::SetSwarmTarget(int target_id)
-void NPC::ModifyNPCStat( identifier,  newValue)
-void NPC::AddAISpell(int priority,  spell_id,  type,  mana_cost,  recast_delay,  resist_adjust)
-void NPC::RemoveAISpell( spell_id)
-void NPC::SetSpellFocusDMG( NewSpellFocusDMG)
-void NPC::GetSpellFocusDMG()
-void NPC::SetSpellFocusHeal( NewSpellFocusHeal)
-void NPC::GetSpellFocusHeal()
-void NPC::GetSlowMitigation()
-void NPC::GetAttackSpeed()
-void NPC::GetAttackDelay()
-void NPC::GetAccuracyRating()
-void NPC::GetAvoidanceyRating()
-void NPC::GetSpawnKillCount()
-void NPC::GetScore()
-void NPC::SetMerchantProbability( Probability)
-void NPC::GetMerchantProbability()
-void NPC::AddMeleeProc( spellid,  chance)
-void NPC::AddRangedProc( spellid,  chance)
-void NPC::AddDefensiveProc( spellid,  chance)
-void NPC::RemoveMeleeProc( spellid)
-void NPC::RemoveRangedProc( spellid)
-void NPC::RemoveDefensiveProc( spellid)
-void Mob::ChangeLastName(string name)
-void Mob::ClearLastName()
-void NPC::GetCombatState()
-```
+* [[$npc->SignalNPC(_signal_id) # void|Perl-Npc-SignalNPC]]
+* [[$npc->CheckNPCFactionAlly(other_faction) # int|Perl-Npc-CheckNPCFactionAlly]]
+* [[$npc->AddItem(itemid, int charges) # void|Perl-Npc-AddItem]]
+* [[$npc->AddLootTable(loottable_id) # void|Perl-Npc-AddLootTable]]
+* [[$npc->RemoveItem(int item_id, int quantity) # void|Perl-Npc-RemoveItem]]
+* [[$npc->ClearItemList() # void|Perl-Npc-ClearItemList]]
+* [[$npc->AddCash(in_copper, in_silver, in_gold, in_platinum) # void|Perl-Npc-AddCash]]
+* [[$npc->RemoveCash() # void|Perl-Npc-RemoveCash]]
+* [[$npc->CountLoot() # uint|Perl-Npc-CountLoot]]
+* [[$npc->GetLoottableID() # uint|Perl-Npc-GetLoottableID]]
+* [[$npc->GetCopper() # uint|Perl-Npc-GetCopper]]
+* [[$npc->GetSilver() # uint|Perl-Npc-GetSilver]]
+* [[$npc->GetGold() # uint|Perl-Npc-GetGold]]
+* [[$npc->GetPlatinum() # uint|Perl-Npc-GetPlatinum]]
+* [[$npc->SetCopper(amt) # void|Perl-Npc-SetCopper]]
+* [[$npc->SetSilver(amt) # void|Perl-Npc-SetSilver]]
+* [[$npc->SetGold(amt) # void|Perl-Npc-SetGold]]
+* [[$npc->SetPlatinum(amt) # void|Perl-Npc-SetPlatinum]]
+* [[$npc->SetGrid(grid_) # void|Perl-Npc-SetGrid]]
+* [[$npc->SetSaveWaypoint(waypoint) # void|Perl-Npc-SetSaveWaypoint]]
+* [[$npc->SetSp2(sg2) # void|Perl-Npc-SetSp2]]
+* [[$npc->GetWaypointMax() # uint|Perl-Npc-GetWaypointMax]]
+* [[$npc->GetGrid() # int|Perl-Npc-GetGrid]]
+* [[$npc->GetSp2() # uint|Perl-Npc-GetSp2]]
+* [[$npc->GetNPCFactionID() # int|Perl-Npc-GetNPCFactionID]]
+* [[$npc->GetPrimaryFaction() # int|Perl-Npc-GetPrimaryFaction]]
+* [[$npc->GetNPCHate(in_ent) # int|Perl-Npc-GetNPCHate]]
+* [[$npc->IsOnHatelist(p) # bool|Perl-Npc-IsOnHatelist]]
+* [[$npc->RemoveFromHateList(ent) # void|Perl-Npc-RemoveFromHateList]]
+* [[$npc->SetNPCFactionID(in) # void|Perl-Npc-SetNPCFactionID]]
+* [[$npc->GetMaxDMG() # uint|Perl-Npc-GetMaxDMG]]
+* [[$npc->GetMinDMG() # uint|Perl-Npc-GetMinDMG]]
+* [[$npc->IsAnimal() # bool|Perl-Npc-IsAnimal]]
+* [[$npc->GetPetSpellID() # uint|Perl-Npc-GetPetSpellID]]
+* [[$npc->SetPetSpellID(amt) # void|Perl-Npc-SetPetSpellID]]
+* [[$npc->GetMaxDamage(tlevel) # uint|Perl-Npc-GetMaxDamage]]
+* [[$npc->SetTaunting(tog) # void|Perl-Npc-SetTaunting]]
+* [[$npc->PickPocket(thief) # void|Perl-Npc-PickPocket]]
+* [[$npc->StartSwarmTimer(int duration) # void|Perl-Npc-StartSwarmTimer]]
+* [[$npc->DoClassAttacks(target) # void|Perl-Npc-DoClassAttacks]]
+* [[$npc->GetMaxWp() # int|Perl-Npc-GetMaxWp]]
+* [[$npc->DisplayWaypointInfo(to) # void|Perl-Npc-DisplayWaypointInfo]]
+* [[$npc->CalculateNewWaypoint() # void|Perl-Npc-CalculateNewWaypoint]]
+* [[$npc->AssignWaypoints(grid) # void|Perl-Npc-AssignWaypoints]]
+* [[$npc->SetWaypointPause() # void|Perl-Npc-SetWaypointPause]]
+* [[$npc->UpdateWaypoint(wp_index) # void|Perl-Npc-UpdateWaypoint]]
+* [[$npc->StopWandering() # void|Perl-Npc-StopWandering]]
+* [[$npc->ResumeWandering() # void|Perl-Npc-ResumeWandering]]
+* [[$npc->PauseWandering(pausetime) # void|Perl-Npc-PauseWandering]]
+* [[$npc->MoveTo(mtx, mty, mtz, mth, bool saveguard) # void|Perl-Npc-MoveTo]]
+* [[$npc->NextGuardPosition() # void|Perl-Npc-NextGuardPosition]]
+* [[$npc->SaveGuardSpot(iClearGuardSpot) # void|Perl-Npc-SaveGuardSpot]]
+* [[$npc->IsGuarding() # bool|Perl-Npc-IsGuarding]]
+* [[$npc->AI_SetRoambox(iDist, iMaxX, iMinX, iMaxY, iMinY, iDelay) # void|Perl-Npc-AI_SetRoambox]]
+* [[$npc->GetNPCSpellsID() # uint|Perl-Npc-GetNPCSpellsID]]
+* [[$npc->GetSpawnPointID() # uint|Perl-Npc-GetSpawnPointID]]
+* [[$npc->GetSpawnPointX() # double|Perl-Npc-GetSpawnPointX]]
+* [[$npc->GetSpawnPointY() # double|Perl-Npc-GetSpawnPointY]]
+* [[$npc->GetSpawnPointZ() # double|Perl-Npc-GetSpawnPointZ]]
+* [[$npc->GetSpawnPointH() # double|Perl-Npc-GetSpawnPointH]]
+* [[$npc->GetGuardPointX() # double|Perl-Npc-GetGuardPointX]]
+* [[$npc->GetGuardPointY() # double|Perl-Npc-GetGuardPointY]]
+* [[$npc->GetGuardPointZ() # double|Perl-Npc-GetGuardPointZ]]
+* [[$npc->SetPrimSkill(skill_id) # void|Perl-Npc-SetPrimSkill]]
+* [[$npc->SetSecSkill(skill_id) # void|Perl-Npc-SetSecSkill]]
+* [[$npc->GetPrimSkill() # uint|Perl-Npc-GetPrimSkill]]
+* [[$npc->GetSecSkill() # uint|Perl-Npc-GetSecSkill]]
+* [[$npc->GetSwarmOwner() # uint|Perl-Npc-GetSwarmOwner]]
+* [[$npc->GetSwarmTarget() # uint|Perl-Npc-GetSwarmTarget]]
+* [[$npc->SetSwarmTarget(int target_id) # void|Perl-Npc-SetSwarmTarget]]
+* [[$npc->ModifyNPCStat(identifier, newValue) # void|Perl-Npc-ModifyNPCStat]]
+* [[$npc->AddAISpell(int priority, int spell_id, int type, mana_cost, recast_delay, resist_adjust) # void|Perl-Npc-AddAISpell]]
+* [[$npc->RemoveAISpell(int spell_id) # void|Perl-Npc-RemoveAISpell]]
+* [[$npc->SetSpellFocusDMG(NewSpellFocusDMG) # void|Perl-Npc-SetSpellFocusDMG]]
+* [[$npc->GetSpellFocusDMG() # uint|Perl-Npc-GetSpellFocusDMG]]
+* [[$npc->SetSpellFocusHeal(NewSpellFocusHeal) # void|Perl-Npc-SetSpellFocusHeal]]
+* [[$npc->GetSpellFocusHeal() # uint|Perl-Npc-GetSpellFocusHeal]]
+* [[$npc->GetSlowMitigation() # double|Perl-Npc-GetSlowMitigation]]
+* [[$npc->GetAttackSpeed() # double|Perl-Npc-GetAttackSpeed]]
+* [[$npc->GetAttackDelay() # double|Perl-Npc-GetAttackDelay]]
+* [[$npc->GetAccuracyRating() # uint|Perl-Npc-GetAccuracyRating]]
+* [[$npc->GetAvoidanceyRating() # uint|Perl-Npc-GetAvoidanceyRating]]
+* [[$npc->GetSpawnKillCount() # uint|Perl-Npc-GetSpawnKillCount]]
+* [[$npc->GetScore() # int|Perl-Npc-GetScore]]
+* [[$npc->SetMerchantProbability(Probability) # void|Perl-Npc-SetMerchantProbability]]
+* [[$npc->GetMerchantProbability() # uint|Perl-Npc-GetMerchantProbability]]
+* [[$npc->AddMeleeProc(spellid, chance) # void|Perl-Npc-AddMeleeProc]]
+* [[$npc->AddRangedProc(spellid, chance) # void|Perl-Npc-AddRangedProc]]
+* [[$npc->AddDefensiveProc(spellid, chance) # void|Perl-Npc-AddDefensiveProc]]
+* [[$npc->RemoveMeleeProc(spellid) # void|Perl-Npc-RemoveMeleeProc]]
+* [[$npc->RemoveRangedProc(spellid) # void|Perl-Npc-RemoveRangedProc]]
+* [[$npc->RemoveDefensiveProc(spellid) # void|Perl-Npc-RemoveDefensiveProc]]
