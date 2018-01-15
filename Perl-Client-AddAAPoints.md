@@ -1,11 +1,12 @@
-adds a client aa points.
+adds a client a a points.
 ### Arguments
 **Name**|**Type**|**Description**
 :---|:---|:---
-number|int|### Example
-
+number||
 ### Example
+
 ```perl
-my number = 1;
-quest::say($client->AddAAPoints(number));
+my $number = 1;
+
+$client->AddAAPoints($number); # Returns void
 ```
