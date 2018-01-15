@@ -13,3 +13,6 @@ my $quantity = 1;
 
 $client->DeleteItemInInventory($slot_id, $quantity); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

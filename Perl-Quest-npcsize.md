@@ -9,5 +9,8 @@ size|int|
 ```perl
 my $size = 1;
 
-quest::($size); # Returns void
+quest::npcsize($size); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

@@ -8,6 +8,9 @@ name|string|
 
 ```perl
 my $name = "test";
-my $val = $entitylist->MakeNameUnique($name);
+my $val = $entity_list->MakeNameUnique($name);
 quest::say($val); # Returns string
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

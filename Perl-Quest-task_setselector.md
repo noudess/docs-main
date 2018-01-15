@@ -9,5 +9,8 @@ task_setid||
 ```perl
 my $task_setid = 1;
 
-quest::($task_setid); # Returns void
+quest::task_setselector($task_setid); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

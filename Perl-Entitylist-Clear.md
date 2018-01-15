@@ -3,5 +3,8 @@ Clear.
 
 ```perl
 
-$entitylist->Clear(); # Returns void
+$entity_list->Clear(); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

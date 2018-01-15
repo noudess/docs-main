@@ -15,5 +15,8 @@ my $activity_id = 1;
 my $count = 1;
 my $ignore_quest_update = 1;
 
-quest::($task_id, $activity_id, $count, $ignore_quest_update); # Returns void
+quest::updatetaskactivity($task_id, $activity_id, $count, $ignore_quest_update); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

@@ -8,6 +8,9 @@ task_id|uint|
 
 ```perl
 my $task_id = 1;
-my $val = quest::($task_id);
+my $val = quest::istaskcompleted($task_id);
 quest::say($val); # Returns int
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

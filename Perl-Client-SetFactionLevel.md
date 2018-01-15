@@ -19,3 +19,6 @@ my $char_deity = 1;
 
 $client->SetFactionLevel($char_id, $npc_id, $char_class, $char_race, $char_deity); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

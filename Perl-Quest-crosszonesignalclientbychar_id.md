@@ -2,14 +2,17 @@ crosszonesignalclientbychar_id.
 ### Arguments
 **Name**|**Type**|**Description**
 :---|:---|:---
-char_id|int|
+name|string|
 int_value|int|
 
 ### Example
 
 ```perl
-my $char_id = 1;
+my $name = "test";
 my $int_value = 1;
 
-quest::($char_id, $int_value); # Returns void
+quest::crosszonesignalclientbychar_id($name, $int_value); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

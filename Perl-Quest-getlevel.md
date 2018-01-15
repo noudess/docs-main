@@ -8,6 +8,9 @@ type|int|
 
 ```perl
 my $type = 1;
-my $val = quest::($type);
+my $val = quest::getlevel($type);
 quest::say($val); # Returns uint
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

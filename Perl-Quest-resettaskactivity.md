@@ -11,5 +11,8 @@ activity_id|uint|
 my $task_id = 1;
 my $activity_id = 1;
 
-quest::($task_id, $activity_id); # Returns void
+quest::resettaskactivity($task_id, $activity_id); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

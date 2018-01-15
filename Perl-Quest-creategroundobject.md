@@ -19,5 +19,8 @@ my $z = 1;
 my $heading = 1;
 my $decay_time = 1;
 
-quest::($item_id, $x, $y, $z, $heading, $decay_time); # Returns void
+quest::creategroundobject($item_id, $x, $y, $z, $heading, $decay_time); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

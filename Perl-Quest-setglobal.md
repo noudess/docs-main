@@ -15,5 +15,8 @@ my $str_value = "test";
 my $options = 1;
 my $duration = 1;
 
-quest::($key, $str_value, $options, $duration); # Returns void
+quest::setglobal($key, $str_value, $options, $duration); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

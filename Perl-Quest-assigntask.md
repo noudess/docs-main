@@ -11,5 +11,8 @@ enforce_level_requirement|bool|
 my $task_id = 1;
 my $enforce_level_requirement = 1;
 
-quest::($task_id, $enforce_level_requirement); # Returns void
+quest::assigntask($task_id, $enforce_level_requirement); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

@@ -17,3 +17,6 @@ my $remove = 1;
 
 $mob->NPCSpecialAttacks($parse, $permtag, $reset, $remove); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

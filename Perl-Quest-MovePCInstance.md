@@ -19,5 +19,8 @@ my $y = 1;
 my $ = 1;
 my $heading = 1;
 
-quest::($zone_id, $instance_id, $x, $y, $, $heading); # Returns void
+quest::MovePCInstance($zone_id, $instance_id, $x, $y, $, $heading); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

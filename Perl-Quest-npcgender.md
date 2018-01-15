@@ -9,5 +9,8 @@ gender_id|int|
 ```perl
 my $gender_id = 1;
 
-quest::($gender_id); # Returns void
+quest::npcgender($gender_id); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

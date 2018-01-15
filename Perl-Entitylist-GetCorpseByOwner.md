@@ -9,5 +9,8 @@ client||
 ```perl
 my $client = 1;
 
-$entitylist->GetCorpseByOwner($client); # Returns void
+$entity_list->GetCorpseByOwner($client); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

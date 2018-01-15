@@ -9,5 +9,8 @@ get_id||
 ```perl
 my $get_id = 1;
 
-$entitylist->GetMobByNpcTypeID($get_id); # Returns void
+$entity_list->GetMobByNpcTypeID($get_id); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

@@ -9,5 +9,8 @@ new_sky||
 ```perl
 my $new_sky = 1;
 
-quest::($new_sky); # Returns void
+quest::setsky($new_sky); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

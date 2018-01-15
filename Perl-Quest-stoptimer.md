@@ -9,5 +9,8 @@ timer_name|string|
 ```perl
 my $timer_name = "test";
 
-quest::($timer_name); # Returns void
+quest::stoptimer($timer_name); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

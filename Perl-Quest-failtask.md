@@ -9,5 +9,8 @@ task_id|uint|
 ```perl
 my $task_id = 1;
 
-quest::($task_id); # Returns void
+quest::failtask($task_id); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

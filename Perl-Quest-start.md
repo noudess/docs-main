@@ -9,5 +9,8 @@ wp|int|
 ```perl
 my $wp = 1;
 
-quest::($wp); # Returns void
+quest::start($wp); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

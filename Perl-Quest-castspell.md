@@ -11,5 +11,8 @@ target_id|int|
 my $spell_id = 1;
 my $target_id = 1;
 
-quest::($spell_id, $target_id); # Returns void
+quest::castspell($spell_id, $target_id); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

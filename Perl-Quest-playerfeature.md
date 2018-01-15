@@ -11,5 +11,8 @@ int_value|int|
 my $str_value = "test";
 my $int_value = 1;
 
-quest::($str_value, $int_value); # Returns void
+quest::playerfeature($str_value, $int_value); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

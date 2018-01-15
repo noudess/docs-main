@@ -11,5 +11,8 @@ theme_id|int|
 my $points = 1;
 my $theme_id = 1;
 
-quest::($points, $theme_id); # Returns void
+quest::addldonpoints($points, $theme_id); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

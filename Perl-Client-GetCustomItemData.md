@@ -13,3 +13,6 @@ my $identifier = 1;
 my $val = $client->GetCustomItemData($slot_id, $identifier);
 quest::say($val); # Returns string
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

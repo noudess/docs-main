@@ -21,3 +21,6 @@ my $zoneid = 1;
 
 $mob->TarGlobal($varname, $value, $duration, $npcid, $charid, $zoneid); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

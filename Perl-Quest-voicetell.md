@@ -15,5 +15,8 @@ my $macro_id = 1;
 my $race_id = 1;
 my $gender_id = 1;
 
-quest::($client_name, $macro_id, $race_id, $gender_id); # Returns void
+quest::voicetell($client_name, $macro_id, $race_id, $gender_id); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

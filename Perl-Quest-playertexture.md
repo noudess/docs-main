@@ -9,5 +9,8 @@ texture_id|int|
 ```perl
 my $texture_id = 1;
 
-quest::($texture_id); # Returns void
+quest::playertexture($texture_id); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

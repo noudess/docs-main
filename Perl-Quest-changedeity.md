@@ -9,5 +9,8 @@ diety_id|int|
 ```perl
 my $diety_id = 1;
 
-quest::($diety_id); # Returns void
+quest::changedeity($diety_id); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

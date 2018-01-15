@@ -9,5 +9,8 @@ titleset|int|
 ```perl
 my $titleset = 1;
 
-quest::($titleset); # Returns void
+quest::removetitle($titleset); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

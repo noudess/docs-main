@@ -13,3 +13,6 @@ my $seq = 1;
 
 $client->SendSpellAnim($spell_id, $seq); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

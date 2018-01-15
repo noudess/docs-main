@@ -19,5 +19,8 @@ my $fade_out = 1;
 my $duration = 1;
 my $message = "test";
 
-quest::($color_id, $priority, $fade_in, $fade_out, $duration, $message); # Returns void
+quest::worldwidemarquee($color_id, $priority, $fade_in, $fade_out, $duration, $message); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

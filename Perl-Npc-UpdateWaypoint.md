@@ -11,3 +11,6 @@ my $wp_index = 1;
 
 $npc->UpdateWaypoint($wp_index); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

@@ -13,3 +13,6 @@ my $spell_target = 1;
 
 $mob->SpellFinished($spell_id, $spell_target); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

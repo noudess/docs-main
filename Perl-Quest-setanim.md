@@ -11,5 +11,8 @@ anim_num|int|
 my $npc_type_id = 1;
 my $anim_num = 1;
 
-quest::($npc_type_id, $anim_num); # Returns void
+quest::setanim($npc_type_id, $anim_num); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

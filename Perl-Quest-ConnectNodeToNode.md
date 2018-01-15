@@ -15,5 +15,8 @@ my $node2 = 1;
 my $teleport = 1;
 my $doorid = 1;
 
-quest::($node1, $node2, $teleport, $doorid); # Returns void
+quest::ConnectNodeToNode($node1, $node2, $teleport, $doorid); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

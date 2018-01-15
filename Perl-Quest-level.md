@@ -9,5 +9,8 @@ newlevel|int|
 ```perl
 my $newlevel = 1;
 
-quest::($newlevel); # Returns void
+quest::level($newlevel); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

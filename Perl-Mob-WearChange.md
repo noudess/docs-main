@@ -17,3 +17,6 @@ my $hero_forge_model = 1;
 
 $mob->WearChange($material_slot, $texture, $color, $hero_forge_model); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

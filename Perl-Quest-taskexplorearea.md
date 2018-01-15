@@ -9,5 +9,8 @@ explore_id|uint|
 ```perl
 my $explore_id = 1;
 
-quest::($explore_id); # Returns void
+quest::taskexplorearea($explore_id); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

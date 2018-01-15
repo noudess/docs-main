@@ -17,5 +17,8 @@ my $z = 1;
 my $heading = 1;
 my $saveguard = 1;
 
-quest::($x, $y, $z, $heading, $saveguard); # Returns void
+quest::moveto($x, $y, $z, $heading, $saveguard); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

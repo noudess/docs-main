@@ -9,5 +9,8 @@ mob||
 ```perl
 my $mob = 1;
 
-$entitylist->RemoveFromTargets($mob); # Returns void
+$entity_list->RemoveFromTargets($mob); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

@@ -9,5 +9,8 @@ name|string|
 ```perl
 my $name = "test";
 
-$mob->changelastname->($name); # Returns void
+$mob->ChangeLastName($name); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

@@ -13,3 +13,6 @@ my $RangeWeapon = 1;
 
 $mob->DoArcheryAttackDmg($target, $RangeWeapon); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

@@ -21,3 +21,6 @@ my $msg = 1;
 
 $client->SendMarqueeMessage($type, $priority, $fade_in, $fade_out, $duration, $msg); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

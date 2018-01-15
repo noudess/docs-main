@@ -8,6 +8,9 @@ delete_id||
 
 ```perl
 my $delete_id = 1;
-my $val = $entitylist->RemoveTrap($delete_id);
+my $val = $entity_list->RemoveTrap($delete_id);
 quest::say($val); # Returns bool
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

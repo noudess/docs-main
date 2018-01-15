@@ -9,5 +9,8 @@ item_id|int|
 ```perl
 my $item_id = 1;
 
-quest::($item_id); # Returns void
+quest::itemlink($item_id); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

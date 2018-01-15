@@ -13,3 +13,6 @@ my $casttime = 1;
 my $val = $mob->GetActSpellCasttime($spell_id, $casttime);
 quest::say($val); # Returns int
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

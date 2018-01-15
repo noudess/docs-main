@@ -9,5 +9,8 @@ id||
 ```perl
 my $id = 1;
 
-$entitylist->GetNPCByID($id); # Returns void
+$entity_list->GetNPCByID($id); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

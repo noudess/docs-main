@@ -9,5 +9,8 @@ npc_id|int|
 ```perl
 my $npc_id = 1;
 
-$entitylist->GetNPCByNPCTypeID($npc_id); # Returns void
+$entity_list->GetNPCByNPCTypeID($npc_id); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

@@ -13,5 +13,8 @@ my $channel_id = 1;
 my $name = "test";
 my $message = "test";
 
-quest::($channel_id, $name, $message); # Returns void
+quest::crosszonemessageplayerbyname($channel_id, $name, $message); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

@@ -19,3 +19,6 @@ my $other = 1;
 
 $mob->SetGlobal($varname, $newvalue, $options, $duration, $other); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

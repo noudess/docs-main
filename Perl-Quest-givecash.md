@@ -15,5 +15,8 @@ my $silver = 1;
 my $gold = 1;
 my $platinum = 1;
 
-quest::($copper, $silver, $gold, $platinum); # Returns void
+quest::givecash($copper, $silver, $gold, $platinum); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

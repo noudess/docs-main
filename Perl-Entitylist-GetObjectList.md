@@ -3,5 +3,8 @@ gets a entitylist object list.
 
 ```perl
 
-$entitylist->GetObjectList(); # Returns void
+$entity_list->GetObjectList(); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

@@ -3,5 +3,8 @@ RemoveAllNPCs.
 
 ```perl
 
-$entitylist->RemoveAllNPCs(); # Returns void
+$entity_list->RemoveAllNPCs(); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

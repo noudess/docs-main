@@ -9,5 +9,8 @@ id||
 ```perl
 my $id = 1;
 
-$entitylist->GetRaidByID($id); # Returns void
+$entity_list->GetRaidByID($id); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

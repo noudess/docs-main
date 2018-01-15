@@ -11,5 +11,8 @@ signal_id|int|
 my $npc_type = 1;
 my $signal_id = 1;
 
-$entitylist->SignalMobsByNPCID($npc_type, $signal_id); # Returns void
+$entity_list->SignalMobsByNPCID($npc_type, $signal_id); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

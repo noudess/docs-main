@@ -21,5 +21,8 @@ my $heading = 1;
 my $object_type = 1;
 my $size = 1;
 
-quest::($modelname, $x, $y, $z, $heading, $object_type, $size); # Returns void
+quest::createdoor($modelname, $x, $y, $z, $heading, $object_type, $size); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

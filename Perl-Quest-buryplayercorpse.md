@@ -8,6 +8,9 @@ char_id|int|
 
 ```perl
 my $char_id = 1;
-my $val = quest::($char_id);
+my $val = quest::buryplayercorpse($char_id);
 quest::say($val); # Returns uint
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

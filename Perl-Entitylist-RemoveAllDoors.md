@@ -3,5 +3,8 @@ RemoveAllDoors.
 
 ```perl
 
-$entitylist->RemoveAllDoors(); # Returns void
+$entity_list->RemoveAllDoors(); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

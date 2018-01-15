@@ -15,3 +15,6 @@ my $iFailIfOverwrite = 1;
 my $val = $mob->CanBuffStack($spellid, $caster_level, $iFailIfOverwrite);
 quest::say($val); # Returns int
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

@@ -11,5 +11,8 @@ message|string|
 my $color_id = 1;
 my $message = "test";
 
-quest::($color_id, $message); # Returns void
+quest::echo($color_id, $message); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

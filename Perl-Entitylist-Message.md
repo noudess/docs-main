@@ -13,7 +13,9 @@ message|string|
 my $to_guilddbid = 1;
 my $type = 1;
 my $message = "test";
-my $... = 1;
 
-$entitylist->Message($to_guilddbid, $type, $message, $...); # Returns void
+$entity_list->Message($to_guilddbid, $type, $message, ...); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

@@ -9,5 +9,8 @@ who||
 ```perl
 my $who = 1;
 
-$entitylist->HalveAggro($who); # Returns void
+$entity_list->HalveAggro($who); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

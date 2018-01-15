@@ -3,5 +3,8 @@ gets a entitylist client list.
 
 ```perl
 
-$entitylist->GetClientList(); # Returns void
+$entity_list->GetClientList(); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

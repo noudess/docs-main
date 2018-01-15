@@ -19,5 +19,8 @@ my $npc_id = 1;
 my $char_id = 1;
 my $zone_id = 1;
 
-quest::($key, $str_value, $duration, $npc_id, $char_id, $zone_id); # Returns void
+quest::targlobal($key, $str_value, $duration, $npc_id, $char_id, $zone_id); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

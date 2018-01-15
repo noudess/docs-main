@@ -19,5 +19,8 @@ my $ = 1;
 my $min_z = 1;
 my $max_z = 1;
 
-quest::($min_x, $max_x, $min_y, $, $min_z, $max_z); # Returns void
+quest::set_proximity($min_x, $max_x, $min_y, $, $min_z, $max_z); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

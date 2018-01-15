@@ -9,5 +9,8 @@ query||
 ```perl
 my $query = 1;
 
-quest::($query); # Returns void
+quest::qs_send_query($query); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

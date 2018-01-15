@@ -19,3 +19,6 @@ my $avoidable = 1;
 
 $mob->Damage($from, $damage, $spell_id, $attack_skill, $avoidable); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

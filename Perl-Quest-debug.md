@@ -11,5 +11,8 @@ debug_level|int|
 my $message = "test";
 my $debug_level = 1;
 
-quest::($message, $debug_level); # Returns void
+quest::debug($message, $debug_level); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

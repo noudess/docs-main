@@ -25,3 +25,6 @@ my $faction = 1;
 
 $client->QuestReward($mob, $copper, $silver, $gold, $platinum, $itemid, $exp, $faction); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

@@ -21,3 +21,6 @@ my $resist_adjust = 1;
 
 $npc->AddAISpell($priority, $spell_id, $type, $mana_cost, $recast_delay, $resist_adjust); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

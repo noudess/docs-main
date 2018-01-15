@@ -11,5 +11,8 @@ message|string|
 my $channel_id = 1;
 my $message = "test";
 
-quest::($channel_id, $message); # Returns void
+quest::we($channel_id, $message); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

@@ -11,5 +11,8 @@ milliseconds|int|
 my $timer_name = "test";
 my $milliseconds = 1;
 
-quest::($timer_name, $milliseconds); # Returns void
+quest::settimerMS($timer_name, $milliseconds); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

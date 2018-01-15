@@ -8,6 +8,9 @@ spawn2_id||
 
 ```perl
 my $spawn2_id = 1;
-my $val = quest::($spawn2_id);
+my $val = quest::spawn_from_spawn2($spawn2_id);
 quest::say($val); # Returns uint
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

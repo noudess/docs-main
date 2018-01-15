@@ -13,3 +13,6 @@ my $stat = 1;
 my $val = $mob->GetItemStat($itemid, $stat);
 quest::say($val); # Returns int
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

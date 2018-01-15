@@ -9,5 +9,8 @@ race_id|int|
 ```perl
 my $race_id = 1;
 
-quest::($race_id); # Returns void
+quest::permarace($race_id); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

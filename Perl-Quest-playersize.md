@@ -9,5 +9,8 @@ newsize|int|
 ```perl
 my $newsize = 1;
 
-quest::($newsize); # Returns void
+quest::playersize($newsize); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

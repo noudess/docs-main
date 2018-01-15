@@ -13,5 +13,8 @@ my $message = "test";
 my $color_id = 1;
 my $send_to_world = 1;
 
-quest::($message, $color_id, $send_to_world); # Returns void
+quest::gmsay($message, $color_id, $send_to_world); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

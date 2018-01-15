@@ -9,5 +9,8 @@ door_id|int|
 ```perl
 my $door_id = 1;
 
-quest::($door_id); # Returns void
+quest::toggledoorstate($door_id); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

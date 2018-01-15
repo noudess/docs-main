@@ -9,5 +9,8 @@ name|string|
 ```perl
 my $name = "test";
 
-$entitylist->GetMob($name); # Returns void
+$entity_list->GetMob($name); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

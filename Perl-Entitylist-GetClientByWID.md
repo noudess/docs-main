@@ -9,5 +9,8 @@ iWID||
 ```perl
 my $iWID = 1;
 
-$entitylist->GetClientByWID($iWID); # Returns void
+$entity_list->GetClientByWID($iWID); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

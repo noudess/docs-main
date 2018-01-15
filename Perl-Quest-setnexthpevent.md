@@ -9,5 +9,8 @@ at|int|
 ```perl
 my $at = 1;
 
-quest::($at); # Returns void
+quest::setnexthpevent($at); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

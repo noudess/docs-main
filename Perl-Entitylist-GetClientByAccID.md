@@ -9,5 +9,8 @@ accid||
 ```perl
 my $accid = 1;
 
-$entitylist->GetClientByAccID($accid); # Returns void
+$entity_list->GetClientByAccID($accid); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

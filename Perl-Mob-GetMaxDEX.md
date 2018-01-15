@@ -5,3 +5,6 @@ gets a mob max d e x.
 my $val = $mob->GetMaxDEX();
 quest::say($val); # Returns int
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

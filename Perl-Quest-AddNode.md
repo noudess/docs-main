@@ -17,5 +17,8 @@ my $z = 1;
 my $best_z = 1;
 my $requested_id = 1;
 
-quest::($x, $y, $z, $best_z, $requested_id); # Returns void
+quest::AddNode($x, $y, $z, $best_z, $requested_id); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

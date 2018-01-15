@@ -15,5 +15,8 @@ my $from = "test";
 my $subject = "test";
 my $message = "test";
 
-quest::($to, $from, $subject, $message); # Returns void
+quest::SendMail($to, $from, $subject, $message); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

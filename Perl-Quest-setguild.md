@@ -11,5 +11,8 @@ guild_rank_id|int|
 my $new_guild_id = 1;
 my $guild_rank_id = 1;
 
-quest::($new_guild_id, $guild_rank_id); # Returns void
+quest::setguild($new_guild_id, $guild_rank_id); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

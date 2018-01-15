@@ -23,3 +23,6 @@ my $tnpc = 1;
 my $val = $client->GetFactionLevel($char_id, $npc_id, $p_race, $p_class, $p_deity, $pFaction, $tnpc);
 quest::say($val); # Returns int
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

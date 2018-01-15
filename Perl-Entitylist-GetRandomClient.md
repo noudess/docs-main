@@ -17,5 +17,8 @@ my $z = 1;
 my $distance = 1;
 my $excludeclient = 1;
 
-$entitylist->GetRandomClient($x, $y, $z, $distance, $excludeclient); # Returns void
+$entity_list->GetRandomClient($x, $y, $z, $distance, $excludeclient); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

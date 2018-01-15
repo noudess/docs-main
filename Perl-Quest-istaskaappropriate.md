@@ -8,6 +8,9 @@ task|int|
 
 ```perl
 my $task = 1;
-my $val = quest::($task);
+my $val = quest::istaskaappropriate($task);
 quest::say($val); # Returns uint
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

@@ -18,6 +18,9 @@ my $level = 1;
 my $race_id = 1;
 my $class_id = 1;
 my $gender_id = 1;
-my $val = quest::($firstname, $lastname, $level, $race_id, $class_id, $gender_id);
+my $val = quest::createBot($firstname, $lastname, $level, $race_id, $class_id, $gender_id);
 quest::say($val); # Returns uint
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

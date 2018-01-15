@@ -9,7 +9,9 @@ format|string|
 
 ```perl
 my $format = "test";
-my $... = 1;
 
-$mob->Emote($format, $...); # Returns void
+$mob->Emote($format, ...); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

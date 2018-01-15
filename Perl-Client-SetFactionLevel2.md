@@ -23,3 +23,6 @@ my $temp = 1;
 
 $client->SetFactionLevel2($char_id, $faction_id, $char_class, $char_race, $char_deity, $value, $temp); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

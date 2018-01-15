@@ -23,3 +23,6 @@ my $arc = 1;
 
 $mob->ProjectileAnim($mob, $item_id, $IsArrow, $speed, $angle, $tilt, $arc); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

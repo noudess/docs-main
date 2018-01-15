@@ -9,5 +9,8 @@ class_id|int|
 ```perl
 my $class_id = 1;
 
-quest::($class_id); # Returns void
+quest::permaclass($class_id); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

@@ -35,3 +35,6 @@ my $size = 1;
 
 $mob->SendIllusion($race, $gender, $texture, $helmtexture, $face, $hairstyle, $haircolor, $beard, $beardcolor, $drakkin_heritage, $drakkin_tattoo, $drakkin_details, $size); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

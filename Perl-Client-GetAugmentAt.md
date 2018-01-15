@@ -13,3 +13,6 @@ my $aug_slot = 1;
 
 $client->GetAugmentAt($slot, $aug_slot); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

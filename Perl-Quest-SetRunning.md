@@ -9,5 +9,8 @@ val|bool|
 ```perl
 my $val = 1;
 
-quest::($val); # Returns void
+quest::SetRunning($val); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

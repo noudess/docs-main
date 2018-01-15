@@ -9,5 +9,8 @@ npc_entity_id|int|
 ```perl
 my $npc_entity_id = 1;
 
-quest::($npc_entity_id); # Returns void
+quest::attacknpc($npc_entity_id); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

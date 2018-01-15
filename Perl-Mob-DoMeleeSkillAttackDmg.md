@@ -21,3 +21,6 @@ my $CanRiposte = 1;
 
 $mob->DoMeleeSkillAttackDmg($target, $weapon_damage, $skill, $chance_mod, $focus, $CanRiposte); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

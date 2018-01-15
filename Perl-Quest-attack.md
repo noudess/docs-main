@@ -9,5 +9,8 @@ client_name|string|
 ```perl
 my $client_name = "test";
 
-quest::($client_name); # Returns void
+quest::attack($client_name); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

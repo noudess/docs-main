@@ -15,5 +15,8 @@ my $is_enabled = 1;
 my $is_strict = 1;
 my $reset_base = 1;
 
-quest::($event_id, $is_enabled, $is_strict, $reset_base); # Returns void
+quest::toggle_spawn_event($event_id, $is_enabled, $is_strict, $reset_base); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

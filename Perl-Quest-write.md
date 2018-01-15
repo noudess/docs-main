@@ -11,5 +11,8 @@ message|string|
 my $file = "test";
 my $message = "test";
 
-quest::($file, $message); # Returns void
+quest::write($file, $message); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

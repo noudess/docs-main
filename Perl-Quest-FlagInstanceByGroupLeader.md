@@ -11,5 +11,8 @@ version|int|
 my $zone = 1;
 my $version = 1;
 
-quest::($zone, $version); # Returns void
+quest::FlagInstanceByGroupLeader($zone, $version); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

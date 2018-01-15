@@ -15,3 +15,6 @@ my $value = 1;
 
 $client->SetCustomItemData($slot_id, $identifier, $value); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

@@ -9,5 +9,8 @@ spawn2_id|int|
 ```perl
 my $spawn2_id = 1;
 
-quest::($spawn2_id); # Returns void
+quest::enable_spawn2($spawn2_id); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

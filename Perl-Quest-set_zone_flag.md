@@ -9,5 +9,8 @@ zone_id|int|
 ```perl
 my $zone_id = 1;
 
-quest::($zone_id); # Returns void
+quest::set_zone_flag($zone_id); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

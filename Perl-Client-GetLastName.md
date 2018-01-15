@@ -5,3 +5,6 @@ gets a client last name.
 my $val = $client->GetLastName();
 quest::say($val); # Returns string
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

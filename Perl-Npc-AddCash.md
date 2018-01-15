@@ -17,3 +17,6 @@ my $in_platinum = 1;
 
 $npc->AddCash($in_copper, $in_silver, $in_gold, $in_platinum); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

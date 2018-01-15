@@ -8,6 +8,9 @@ door_id|int|
 
 ```perl
 my $door_id = 1;
-my $val = quest::($door_id);
+my $val = quest::isdooropen($door_id);
 quest::say($val); # Returns uint
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

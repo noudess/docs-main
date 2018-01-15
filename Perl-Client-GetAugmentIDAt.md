@@ -13,3 +13,6 @@ my $augslot = 1;
 my $val = $client->GetAugmentIDAt($slot_id, $augslot);
 quest::say($val); # Returns int
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

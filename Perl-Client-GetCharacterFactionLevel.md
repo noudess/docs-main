@@ -11,3 +11,6 @@ my $faction_id = 1;
 my $val = $client->GetCharacterFactionLevel($faction_id);
 quest::say($val); # Returns int
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

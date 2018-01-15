@@ -11,7 +11,9 @@ message|string|
 ```perl
 my $type = 1;
 my $message = "test";
-my $... = 1;
 
-$mob->Message($type, $message, $...); # Returns void
+$mob->Message($type, $message, ...); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

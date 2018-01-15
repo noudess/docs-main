@@ -15,3 +15,6 @@ my $slot = 1;
 
 $mob->CastSpell($spell_id, $target_id, $slot); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

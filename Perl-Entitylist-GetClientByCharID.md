@@ -9,5 +9,8 @@ iCharID||
 ```perl
 my $iCharID = 1;
 
-$entitylist->GetClientByCharID($iCharID); # Returns void
+$entity_list->GetClientByCharID($iCharID); # Returns void
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00

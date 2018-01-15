@@ -5,3 +5,6 @@ gets a mob run anim speed.
 my $val = $mob->GetRunAnimSpeed();
 quest::say($val); # Returns uint
 ```
+
+
+Generated On 2018-01-15T13:04:48-08:00
