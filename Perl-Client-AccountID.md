@@ -3,5 +3,5 @@ AccountID.
 
 ```perl
 my val = $client->AccountID();
-quest::say(val);
+quest::say(val); # Returns uint
 ```
