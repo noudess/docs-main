@@ -1,20 +1,17 @@
-```perl
-void Raid::IsRaidMember(string name)
-void Raid::CastGroupSpell( caster,  spellid,  gid)
-void Raid::GroupCount( gid)
-void Raid::RaidCount()
-void Raid::GetGroup(string name)
-void Raid::SplitExp( exp,  other)
-void Raid::GetTotalRaidDamage( other)
-void Raid::SplitMoney(int copper, int silver, int gold, int platinum)
-void Raid::BalanceHP( penalty,  gid)
-void Raid::IsLeader(string name)
-void Raid::IsGroupLeader( who)
-void Raid::GetHighestLevel()
-void Raid::GetLowestLevel()
-void Raid::GetClientByIndex( index)
-void Raid::TeleportGroup( sender,  zoneID, float x, float y, float z, float heading,  gid)
-void Raid::TeleportRaid( sender,  zoneID, float x, float y, float z, float heading)
-void Raid::GetID()
-void Raid::GetMember( index)
-```
+* [[$raid->IsRaidMember(string name) # bool|Perl-Raid-IsRaidMember]]
+* [[$raid->CastGroupSpell(caster, spellid, gid) # void|Perl-Raid-CastGroupSpell]]
+* [[$raid->GroupCount(gid) # uint|Perl-Raid-GroupCount]]
+* [[$raid->RaidCount() # uint|Perl-Raid-RaidCount]]
+* [[$raid->GetGroup(string name) # uint|Perl-Raid-GetGroup]]
+* [[$raid->SplitExp(exp, other) # void|Perl-Raid-SplitExp]]
+* [[$raid->GetTotalRaidDamage(other) # uint|Perl-Raid-GetTotalRaidDamage]]
+* [[$raid->SplitMoney(int copper, int silver, int gold, int platinum) # void|Perl-Raid-SplitMoney]]
+* [[$raid->BalanceHP(penalty, gid) # void|Perl-Raid-BalanceHP]]
+* [[$raid->IsLeader(string name) # bool|Perl-Raid-IsLeader]]
+* [[$raid->IsGroupLeader(who) # bool|Perl-Raid-IsGroupLeader]]
+* [[$raid->GetHighestLevel() # uint|Perl-Raid-GetHighestLevel]]
+* [[$raid->GetLowestLevel() # uint|Perl-Raid-GetLowestLevel]]
+* [[$raid->GetClientByIndex(index) # void|Perl-Raid-GetClientByIndex]]
+* [[$raid->TeleportGroup(sender, zoneID, float x, float y, float z, float heading, gid) # void|Perl-Raid-TeleportGroup]]
+* [[$raid->TeleportRaid(sender, zoneID, float x, float y, float z, float heading) # void|Perl-Raid-TeleportRaid]]
+* [[$raid->GetID() # uint|Perl-Raid-GetID]]
