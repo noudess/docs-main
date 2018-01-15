@@ -73,6 +73,7 @@ root@debian:/home/eqemu/eqemu_test# ./server_start.sh
 [Status] Loading spells...
 [Status] Loading base data...
 Server started - use server_status.sh to check server status
+
 root@debian:/home/eqemu/eqemu_test#
 Akka's Linux Server Launcher
 Zones to launch: 30
