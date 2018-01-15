@@ -2,12 +2,12 @@ adds a client alternate currency value.
 ### Arguments
 **Name**|**Type**|**Description**
 :---|:---|:---
-currency_id|uint32|
-amount|int32|
+uint32 currency_id||int32 amount||
 ### Example
 
 ```perl
-my currency_id = 1;
-my amount = 1;
-quest::say($client->AddAlternateCurrencyValue(currency_id, amount));
+my $uint32 currency_id = 1;
+my $int32 amount = 1;
+
+$client->AddAlternateCurrencyValue($uint32 currency_id, $int32 amount); # Returns void
 ```
