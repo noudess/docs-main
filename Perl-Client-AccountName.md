@@ -3,5 +3,5 @@ AccountName.
 
 ```perl
 my val = $client->AccountName();
-quest::say(val);
+quest::say(val); # Returns string
 ```
