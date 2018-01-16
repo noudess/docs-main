@@ -1,9 +1,8 @@
 
 | Legend  |
-|--|--|
+|--|
 | *Required |
-| Not required|
-
+| Not required |
 
 ### Server -> World
 
