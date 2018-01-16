@@ -117,7 +117,7 @@
 * [[$mob->GetHaste() # int|Perl-Mob-GetHaste]]
 * [[$mob->GetHateAmount(tmob, is_dam) # uint|Perl-Mob-GetHateAmount]]
 * [[$mob->GetHateDamageTop(other) # void|Perl-Mob-GetHateDamageTop]]
-* [[$mob->GetHateList() # void|Perl-Mob-GetHateList]]
+* [[$mob->GetHateList() # array|Perl-Mob-GetHateList]]
 * [[$mob->GetHateRandom() # void|Perl-Mob-GetHateRandom]]
 * [[$mob->GetHateTop() # void|Perl-Mob-GetHateTop]]
 * [[$mob->GetHeading() # double|Perl-Mob-GetHeading]]
@@ -315,4 +315,4 @@
 * [[$mob->WipeHateList() # void|Perl-Mob-WipeHateList]]
 
 
-Generated On 2018-01-15T13:04:48-08:00
+Generated On 2018-01-15T22:53:13-08:00
