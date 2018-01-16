@@ -21,98 +21,69 @@ Timers can be stopped using the quest::stopalltimers() or quest::stoptimer(timer
 ### EVENT_TIMER in use
 
 ```perl
-# this is an example of using a timer with a numeric name to cause an NPC to depop 30 minutes after it spawns
+# this is an example of using a timer with a string name to cause an NPC to depop 30 minutes after it spawns
 
-sub EVENT_SPAWN { # when the NPC spawns
+sub EVENT_SPAWN {
 
-     quest::settimer(1,1800); # the name of the timer is "1", the duration is 1,800 seconds (30 minutes)
+     # Start a timer that is named "depop", the duration is 1,800 seconds (30 minutes)
+     quest::settimer("depop",1800); 
 }
 
-sub EVENT_TIMER { # when the duration elapses and the timer triggers
+sub EVENT_TIMER {
 
-     if ($timer == 1) { # using == for numeric comparison to match timer "1"
-          quest::stoptimer(1); # stop timer "1" from looping
-          quest::depop(); # this would depop the NPC
+     # Use eq for string comparison to match timer "depop"
+     if ($timer eq "depop") {
+          # Stop timer "depop" from looping
+          quest::stoptimer("depop"); 
+          quest::depop(); 
      }
 }
 ```
 
 ```perl
-# this is an example of using a timer with a text string name to cause an NPC to depop 30 minutes after it spawns
+# This is an example of using two timers with numeric names, started by separate events
+# The NPC will depop two hours after it spawns
+# The NPC will shout every minute to taunt attackers once it has been engaged
 
-sub EVENT_SPAWN { # when the NPC spawns
+sub EVENT_SPAWN { 
 
-     quest::settimer("depop",1800); # the name of the timer is "depop", the duration is 1,800 seconds (30 minutes)
+     # Start a timer that is named "depop", the duration is 7,200 seconds (2 hours)
+     quest::settimer("depop",7200);
 }
 
-sub EVENT_TIMER { # when the duration elapses and the timer triggers
+sub EVENT_AGGRO {
 
-     if ($timer eq "depop") { # using eq for string comparison to match timer "depop"
-          quest::stoptimer("depop"); # stop timer "depop" from looping
-          quest::depop(); # this would depop the NPC
-     }
-}
-```
-
-
-```perl
-# this is an example of using a timer with a numeric name to depop an NPC if it is not engaged in combat within two minutes of spawning
-
-sub EVENT_SPAWN { # when the NPC spawns
-
-     quest::settimer(4,120); # the name of the timer is "4", the duration is 120 seconds (2 minutes)
-}
-	
-sub EVENT_COMBAT { # when the NPC is engaged in combat
-
-     quest::stoptimer(4); # stop timer "4" from looping
-}
-	
-sub EVENT_TIMER { # when the duration elapses and the timer triggers
-
-     if ($timer == 4) { # using == for numeric comparison to match timer "4"
-          quest::stoptimer(4); # stop timer "4" from looping
-          quest::depop_withtimer(); # depop using the normal spawn timer
-     }
-}
-```
-
-
-```perl
-# this is an example of using two timers with numeric names, started by separate events
-# the NPC will depop two hours after it spawns
-# the NPC will shout to taunt attackers once it has been engaged
-
-sub EVENT_SPAWN { # when the NPC spawns
-
-     quest::settimer(1,7200); # the name of the timer is "1", the duration is 7,200 seconds (2 hours)
+     # Start a timer that is named "engaged", the duration is 60 seconds (1 minute)
+     quest::settimer("engaged",60);
 }
 
-sub EVENT_AGGRO { # when the NPC is aggro'd
+sub EVENT_TIMER {
 
-     quest::settimer(2,60); # the name of the timer is "2", the duration is 60 seconds (1 minute)
-}
-
-sub EVENT_TIMER { # when the duration elapses and the timer triggers
-
-     if ($timer == 1) { # using == for numeric comparison to match timer "1"
-          quest::stoptimer(1); # stop the timer "1" from looping
-          quest::stoptimer(2); # stop the timer "2" from looping
-          quest::depop(); # this would depop the NPC
+     # Use eq for string comparison to match timer "depop"
+     if ($timer eq "depop") {
+          # Stop the timer "depop" from looping
+          quest::stoptimer("depop"); 
+          # Stop the timer "engaged" from looping
+          quest::stoptimer("engaged"); 
+          quest::depop();
      }
 
-     if ($timer == 2) { # using == for numeric comparison to match timer "2"
-          if ($npc->IsEngaged()) { # check to see if the NPC is engaged
-               quest::shout("You will never defeat me!!!"); # shout so that the whole zone hears you
+     # Use eq for string comparison to match timer "engaged"
+     if ($timer eq "engaged") {
+          # Check to see if the NPC is engaged
+          if ($npc->IsEngaged()) { 
+               quest::shout("You will never defeat me!!!");
           }
      }
 }
 
-sub EVENT_DEATH_COMPLETE { # when the NPC is killed
+sub EVENT_DEATH_COMPLETE {
 
-     quest::say("You have defeated me..."); # not so shouty now
-     quest::stoptimer(1); # stop the timer "1" from looping
-     quest::stoptimer(2); # stop the timer "2" from looping
+     quest::say("You have defeated me...");
+     # Stop the timer "depop" from looping
+     quest::stoptimer("depop"); # stop the timer "1" from looping
+     # Stop the timer "engaged" from looping
+     quest::stoptimer("engaged"); # stop the timer "2" from looping
 }
 ```
 
