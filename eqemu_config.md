@@ -7,7 +7,7 @@
 
 ### Server -> World
 
-| Variable | Default Value | Description |
+| Variable | Default | Description |
 |--|--|--|
 | *shortname |  | This is the short name of your server, this shows up in a client's .ini file eg: servername_charactername.ini |
 | *longname |  | This is the long name of your server, this shows up in a on the Loginserver |
@@ -20,7 +20,7 @@
 
 * Subsection: loginserver
 
-| Variable | Default Value | Description |
+| Variable | Default | Description |
 |--|--|--|
 | *host | login.eqemulator.net | This is the hostname of the loginserver endpoint |
 | *port | 5998 | Loginserver endpoint port |
