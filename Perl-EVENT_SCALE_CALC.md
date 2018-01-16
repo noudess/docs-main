@@ -1,5 +1,5 @@
 EVENT_SCALE_CALC
-### Arguments
+### Exports
 **Name**|**Type**|**Description**
 :-----|:-----|:-----
 itemid|int|
@@ -12,4 +12,4 @@ sub EVENT_SCALE_CALC {
 }
 ```
 
-Generated On 2018-01-15T22:01:49-08:00
+Generated On 2018-01-15T22:07:30-08:00

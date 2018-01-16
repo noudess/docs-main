@@ -1,5 +1,5 @@
 EVENT_WAYPOINT_DEPART
-### Arguments
+### Exports
 **Name**|**Type**|**Description**
 :-----|:-----|:-----
 wp|int|
@@ -10,4 +10,4 @@ sub EVENT_WAYPOINT_DEPART {
 }
 ```
 
-Generated On 2018-01-15T22:01:49-08:00
+Generated On 2018-01-15T22:07:30-08:00

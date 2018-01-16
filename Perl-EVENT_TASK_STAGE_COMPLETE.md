@@ -1,5 +1,5 @@
 EVENT_TASK_STAGE_COMPLETE
-### Arguments
+### Exports
 **Name**|**Type**|**Description**
 :-----|:-----|:-----
 task_id|int|
@@ -12,4 +12,4 @@ sub EVENT_TASK_STAGE_COMPLETE {
 }
 ```
 
-Generated On 2018-01-15T22:01:49-08:00
+Generated On 2018-01-15T22:07:30-08:00

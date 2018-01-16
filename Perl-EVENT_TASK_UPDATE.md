@@ -1,5 +1,5 @@
 EVENT_TASK_UPDATE
-### Arguments
+### Exports
 **Name**|**Type**|**Description**
 :-----|:-----|:-----
 donecount|int|
@@ -14,4 +14,4 @@ sub EVENT_TASK_UPDATE {
 }
 ```
 
-Generated On 2018-01-15T22:01:49-08:00
+Generated On 2018-01-15T22:07:30-08:00

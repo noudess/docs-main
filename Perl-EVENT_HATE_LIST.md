@@ -1,5 +1,5 @@
 EVENT_HATE_LIST
-### Arguments
+### Exports
 **Name**|**Type**|**Description**
 :-----|:-----|:-----
 hate_state|int|
@@ -10,4 +10,4 @@ sub EVENT_HATE_LIST {
 }
 ```
 
-Generated On 2018-01-15T22:01:49-08:00
+Generated On 2018-01-15T22:07:30-08:00

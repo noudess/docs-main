@@ -1,5 +1,5 @@
 EVENT_NPC_SLAY
-### Arguments
+### Exports
 **Name**|**Type**|**Description**
 :-----|:-----|:-----
 killed|int|
@@ -10,4 +10,4 @@ sub EVENT_NPC_SLAY {
 }
 ```
 
-Generated On 2018-01-15T22:01:49-08:00
+Generated On 2018-01-15T22:07:30-08:00

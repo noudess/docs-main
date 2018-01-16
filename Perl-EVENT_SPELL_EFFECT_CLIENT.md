@@ -1,5 +1,5 @@
 EVENT_SPELL_EFFECT_CLIENT
-### Arguments
+### Exports
 **Name**|**Type**|**Description**
 :-----|:-----|:-----
 caster_id|int|
@@ -10,4 +10,4 @@ sub EVENT_SPELL_EFFECT_CLIENT {
 }
 ```
 
-Generated On 2018-01-15T22:01:49-08:00
+Generated On 2018-01-15T22:07:30-08:00

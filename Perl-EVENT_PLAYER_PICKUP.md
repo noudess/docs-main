@@ -1,5 +1,5 @@
 EVENT_PLAYER_PICKUP
-### Arguments
+### Exports
 **Name**|**Type**|**Description**
 :-----|:-----|:-----
 picked_up_id|int|
@@ -12,4 +12,4 @@ sub EVENT_PLAYER_PICKUP {
 }
 ```
 
-Generated On 2018-01-15T22:01:49-08:00
+Generated On 2018-01-15T22:07:30-08:00

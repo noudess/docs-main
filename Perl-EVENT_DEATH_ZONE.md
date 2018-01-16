@@ -1,5 +1,5 @@
 EVENT_DEATH_ZONE
-### Arguments
+### Exports
 **Name**|**Type**|**Description**
 :-----|:-----|:-----
 killer_id|int|
@@ -18,4 +18,4 @@ sub EVENT_DEATH_ZONE {
 }
 ```
 
-Generated On 2018-01-15T22:01:49-08:00
+Generated On 2018-01-15T22:07:30-08:00

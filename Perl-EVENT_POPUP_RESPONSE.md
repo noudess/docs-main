@@ -1,5 +1,5 @@
 EVENT_POPUP_RESPONSE
-### Arguments
+### Exports
 **Name**|**Type**|**Description**
 :-----|:-----|:-----
 popupid|int|
@@ -10,4 +10,4 @@ sub EVENT_POPUP_RESPONSE {
 }
 ```
 
-Generated On 2018-01-15T22:01:49-08:00
+Generated On 2018-01-15T22:07:30-08:00

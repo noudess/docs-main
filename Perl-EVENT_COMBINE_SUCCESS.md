@@ -1,5 +1,5 @@
 EVENT_COMBINE_SUCCESS
-### Arguments
+### Exports
 **Name**|**Type**|**Description**
 :-----|:-----|:-----
 recipe_id|int|
@@ -12,4 +12,4 @@ sub EVENT_COMBINE_SUCCESS {
 }
 ```
 
-Generated On 2018-01-15T22:01:49-08:00
+Generated On 2018-01-15T22:07:30-08:00

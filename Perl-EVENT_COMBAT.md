@@ -1,5 +1,5 @@
 EVENT_COMBAT
-### Arguments
+### Exports
 **Name**|**Type**|**Description**
 :-----|:-----|:-----
 combat_state|int|
@@ -10,4 +10,4 @@ sub EVENT_COMBAT {
 }
 ```
 
-Generated On 2018-01-15T22:01:49-08:00
+Generated On 2018-01-15T22:07:30-08:00
