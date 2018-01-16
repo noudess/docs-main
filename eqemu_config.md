@@ -4,8 +4,9 @@
 | *Required |
 | Not required |
 
+* Config format: .json
 
-### Server -> World
+### server -> world
 
 | Variable | Default | Description |
 |--|--|--|
@@ -16,9 +17,32 @@
 | maxclients | -1 | This sets the max amount of clients that can connect to your server, -1 is unlimited
 | locked | false | This determines whether the server starts up locked or not, it takes a minimum status of 20 to get through locked state |
 
-### Server -> World -> Loginserver
 
-* Subsection: loginserver
+### server -> database
+
+* Required for a connection to the MySQL database
+
+| Variable | Default | Description |
+|--|--|--|
+| *username| eq | MySQL username |
+| *password| eq | MySQL password |
+| *host | localhost | MySQL host |
+| *port| 3306 | MySQL port |
+| *db | eq | MySQL database name|
+
+### server -> qsdatabase
+
+* Required for a connection to the query server MySQL database if you decide to use a different and external source and/or database for it (Logging purposes or otherwise)
+
+| Variable | Default | Description |
+|--|--|--|
+| *username| eq | MySQL username |
+| *password| eq | MySQL password |
+| *host | localhost | MySQL host |
+| *port| 3306 | MySQL port |
+| *db | eq | MySQL database name|
+
+### server -> world -> loginserver
 
 | Variable | Default | Description |
 |--|--|--|
