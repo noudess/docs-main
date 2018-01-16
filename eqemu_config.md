@@ -95,7 +95,7 @@
 
 * Note: Multiple Loginserver endpoints can be established by using the same configuration above, however declaring your loginserver subsections with a number, below is an example
 
-```
+```json
   "world" : {
 	   "loginserver1" : {
 			"account" : "",
