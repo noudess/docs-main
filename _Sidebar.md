@@ -10,6 +10,8 @@
 **Configuration**
 * [[eqemu_config]]
 
+---
+
 **Database**
 * [[ProjectEQ Database]]
 * [[Database Schema]]
