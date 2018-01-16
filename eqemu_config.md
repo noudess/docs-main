@@ -6,7 +6,7 @@
 
 * Config format: .json
 
-### server -> world
+## world
 
 | Variable | Default | Description |
 |--|--|--|
@@ -18,7 +18,7 @@
 | locked | false | This determines whether the server starts up locked or not, it takes a minimum status of 20 to get through locked state |
 
 
-### server -> database
+### database
 
 * Required for a connection to the MySQL database
 
@@ -30,7 +30,7 @@
 | *port| 3306 | MySQL port |
 | *db | eq | MySQL database name|
 
-### server -> qsdatabase
+## qsdatabase
 
 * Required for a connection to the query server MySQL database if you decide to use a different and external source and/or database for it (Logging purposes or otherwise)
 
@@ -42,7 +42,21 @@
 | *port| 3306 | MySQL port |
 | *db | eq | MySQL database name|
 
-### server -> world -> loginserver
+## zones
+
+* Zone level configuration
+
+| Variable | Default | Description |
+|--|--|--|
+| *defaultstatus| 0 | Default status on account creation |
+
+### ports
+| Variable | Default | Description |
+|--|--|--|
+| low| 7000 | Starting TCP/UDP port assignment for zones|
+| high| 7999 | Ending TCP/UDP port assignment for zones|
+
+## loginserver
 
 | Variable | Default | Description |
 |--|--|--|
