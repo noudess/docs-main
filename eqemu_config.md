@@ -1,5 +1,3 @@
-
-
 | Legend  |
 |--|
 | *Required |
@@ -59,7 +57,7 @@
 
 | Variable | Default | Description |
 |--|--|--|
-| *host|  | Mailserver hostname just use (0.0.0.0) |
+| *host|  | Mailserver hostname - just use (0.0.0.0) |
 | port| 7778 | Mailserver port |
 
 ## chatserver
@@ -68,7 +66,7 @@
 
 | Variable | Default | Description |
 |--|--|--|
-| *host|  | Chatserver hostname just use (0.0.0.0) |
+| *host|  | Chatserver hostname - just use (0.0.0.0) |
 | port| 7778 | Chatserver port |
 
 ## zones
@@ -114,3 +112,22 @@
 	   },
   },
 ```
+
+## directories 
+* Most of these are optional, but configurable settings for the server
+
+| Variable | Default | Description |
+|--|--|--|
+| maps| Maps/ | Maps directory |
+| quests | quests/  | Quests Directory |
+| plugins | plugins/  | Plugins Directory |
+| lua_modules | lua_modules/  | LUA Modules Directory |
+| patches | ./  | Patches Directory
+| shared_memory| shared/  | Shared Memory Directory
+| logs | logs/ | Logs Directory
+
+## Config Example
+
+* Below is a working base config example from our installer:
+* https://github.com/Akkadius/EQEmuInstall/blob/master/eqemu_config.json
+
