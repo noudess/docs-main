@@ -16,6 +16,7 @@
 | localaddress | | Not required, but recommended to set for LAN setups so other local clients can connect properly
 | maxclients | -1 | This sets the max amount of clients that can connect to your server, -1 is unlimited
 | locked | false | This determines whether the server starts up locked or not, it takes a minimum status of 20 to get through locked state |
+| key | | This key is used for encryption between your server processes - make sure this is unique and random to your server |
 
 
 ### database
