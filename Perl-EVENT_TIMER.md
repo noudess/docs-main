@@ -12,7 +12,11 @@ sub EVENT_TIMER {
 
 ### Functionality Explained
 
-EVENT_TIMER is triggered by a quest::settimer(timer_name,duration_in_seconds) or quest::settimerMS(timer_name,duration_in_milliseconds). The timer will loop until it is stopped, and EVENT_TIMER will trigger each time that the duration of the timer elapses.  Timers can be stopped using the quest::stopalltimers() or quest::stoptimer(timer_name) functions.
+EVENT_TIMER is triggered by a quest::settimer(timer_name,duration_in_seconds) or quest::settimerMS(timer_name,duration_in_milliseconds)
+
+The timer will loop until it is stopped, and EVENT_TIMER will trigger each time that the duration of the timer elapses
+
+Timers can be stopped using the quest::stopalltimers() or quest::stoptimer(timer_name) functions
 
 ### EVENT_TIMER in use
 
