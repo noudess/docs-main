@@ -81,9 +81,9 @@ sub EVENT_DEATH_COMPLETE {
 
      quest::say("You have defeated me...");
      # Stop the timer "depop" from looping
-     quest::stoptimer("depop"); # stop the timer "1" from looping
+     quest::stoptimer("depop");
      # Stop the timer "engaged" from looping
-     quest::stoptimer("engaged"); # stop the timer "2" from looping
+     quest::stoptimer("engaged");
 }
 ```
 
