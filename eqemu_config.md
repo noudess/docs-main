@@ -29,7 +29,7 @@
 | *port | 9001 | Telnet server port |
 | *enabled| false | Enables the telnet service |
 
-### database
+## database
 
 * Required for a connection to the MySQL database
 
@@ -52,6 +52,24 @@
 | *host | localhost | MySQL host |
 | *port| 3306 | MySQL port |
 | *db | eq | MySQL database name|
+
+## mailserver
+
+* Required for UCS Mailserver service
+
+| Variable | Default | Description |
+|--|--|--|
+| *host|  | Mailserver hostname just use (0.0.0.0) |
+| port| 7778 | Mailserver port |
+
+## chatserver
+
+* Required for UCS Chatserver service
+
+| Variable | Default | Description |
+|--|--|--|
+| *host|  | Chatserver hostname just use (0.0.0.0) |
+| port| 7778 | Chatserver port |
 
 ## zones
 
