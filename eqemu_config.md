@@ -1,4 +1,5 @@
 
+
 | Legend  |
 |--|
 | *Required |
@@ -18,6 +19,15 @@
 | locked | false | This determines whether the server starts up locked or not, it takes a minimum status of 20 to get through locked state |
 | key | | This key is used for encryption between your server processes - make sure this is unique and random to your server |
 
+### telnet
+
+* Subsection for world telnet sub-service
+
+| Variable | Default | Description |
+|--|--|--|
+| *ip | 127.0.0.1 | Telnet server IP (0.0.0.0 would bind all addresses) |
+| *port | 9001 | Telnet server port |
+| *enabled| false | Enables the telnet service |
 
 ### database
 
