@@ -15,7 +15,7 @@ sub EVENT_WAYPOINT_ARRIVE {
 
 * When an NPC reaches a grid waypoint entry
 
-### EVENT_WAYPOINT_ARRIVE in use
+### Example
 
 * This example would cause your NPC to speak once it reaches a particular waypoint. 
 * Don't forget to count waypoint 0 (the spawn point)
