@@ -1,4 +1,5 @@
-EVENT_SIGNAL
+When an NPC receives a signal from quest::signal, it will cause the function EVENT_SIGNAL to occur. Used to allow communication between NPCs. Works within the same zone only.
+
 ### Exports
 **Name**|**Type**|**Description**
 :-----|:-----|:-----
