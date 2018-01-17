@@ -1,4 +1,4 @@
-When an NPC receives a signal from [[quest::signal()|Perl-Quest-signal]], [[quest::signalwith()|Perl-Quest-signalwith]], or [[quest::crosszonesignalnpcbynpctypeid()|Perl-Quest-crosszonesignalnpcbynpctypeid]], it will run cause this event to fire. Using this event is not recommended for more complicated scripts, look into <link?> encounter system instead.
+When an NPC receives a signal from [[quest::signal()|Perl-Quest-signal]], [[quest::signalwith()|Perl-Quest-signalwith]], or [[quest::crosszonesignalnpcbynpctypeid()|Perl-Quest-crosszonesignalnpcbynpctypeid]], it run cause this event to trigger. Using this event is not recommended for more complicated scripts, look into <link?> encounter system instead.
 
 ### Exports
 **Name**|**Type**|**Description**
