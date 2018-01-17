@@ -9,16 +9,16 @@ sub EVENT_ZONE {
 	quest::say($target_zone_id); # returns int
 }
 ```
-### Functionality Explained
+### Triggered
 
-EVENT_ZONE is triggered when a player zones (not to be confused with perl EVENT_ENTERZONE).
+* When a player zones (not to be confused with perl EVENT_ENTERZONE).
 
-### EVENT_ZONE in use
+### Example
+
+* This example removes the compass mark (IE for adventure location) when you zone out.
 
 ```perl
 sub EVENT_ZONE {
-
-     # Once you leave the zone, remove the compass mark (IE for adventure location)
      $client->ClearCompassMark();
 }
 ```
