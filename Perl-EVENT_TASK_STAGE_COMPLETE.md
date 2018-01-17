@@ -24,7 +24,7 @@ sub EVENT_TASK_STAGE_COMPLETE {
 ```perl
 sub EVENT_TASK_STAGE_COMPLETE {
      if ($task_id == 7 && $activity_id == 4) {
-	      #::: World Emote
+	  #::: World Emote
           quest::we(15, "Finally, we have rid ourselves of the gnomes!");
      }
 } 
