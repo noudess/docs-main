@@ -14,9 +14,10 @@ sub EVENT_TASK_UPDATE {
 }
 ```
 
-### Functionality Explained
+### Triggered
 
-EVENT_TASK_UPDATE is triggered when a player's task is updated.  Most existing quests handle this with EVENT_TASK_STAGE_COMPLETE or the goalcount in the Task System (stored in the database).
+* Triggered when a player's task is updated.  
+* Most existing quests handle this with EVENT_TASK_STAGE_COMPLETE or the goalcount in the Task System (stored in the database).
 
 
 Generated On 2018-01-15T22:07:30-08:00
