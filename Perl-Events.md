@@ -1,3 +1,9 @@
+- [NPC Events](#npc-events)
+- [Player Events](#player-events)
+- [Player and NPC Triggered Events](#player-and-npc-triggered-events)
+- [Item Events](#item-events)
+- [Spell Events](#spell-events)
+- [Zone Controller Events](#zone-controller-events)
 
 ## NPC Events
 
