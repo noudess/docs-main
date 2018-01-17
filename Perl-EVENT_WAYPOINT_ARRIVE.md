@@ -1,3 +1,4 @@
+
 EVENT_WAYPOINT_ARRIVE
 ### Exports
 **Name**|**Type**|**Description**
@@ -10,19 +11,18 @@ sub EVENT_WAYPOINT_ARRIVE {
 }
 ```
 
-### Functionality Explained
+### Triggered
 
-EVENT_WAYPOINT_ARRIVE is triggered when an NPC reaches a grid waypoint entry.
+* When an NPC reaches a grid waypoint entry
 
 ### EVENT_WAYPOINT_ARRIVE in use
 
+* This example would cause your NPC to speak once it reaches a particular waypoint. 
+* Don't forget to count waypoint 0 (the spawn point)
+
 ```perl
-# This example would cause your NPC to speak once it reaches a particular waypoint. 
-# Don't forget to count waypoint 0 (the spawn point)
-
 sub EVENT_WAYPOINT_ARRIVE {
-
-     # Use == for numeric comparison to match grid waypoint entry "11" 
+     #::: When NPC arrives at waypoint 11
      if ($wp == 11) {
           quest::say("Wow, that was a long walk!");
      }
