@@ -1,3 +1,4 @@
+
 EVENT_TASK_STAGE_COMPLETE
 ### Exports
 **Name**|**Type**|**Description**
@@ -12,19 +13,18 @@ sub EVENT_TASK_STAGE_COMPLETE {
 }
 ```
 
-### Functionality Explained
+### Triggered
 
-EVENT_TASK_STAGE_COMPLETE is triggered when a task stage (either a task, or a task and activity) has been completed.  
+* When a task stage (either a task, or a task and activity) has been completed.  
 
-### EVENT_TASK_STAGE_COMPLETE in use
+### Examples
+
+* This triggers a world emote when a particular task and activity have been progressed
 
 ```perl
-# This example causes a world emote when a particular task and activity have been accomplished
-
 sub EVENT_TASK_STAGE_COMPLETE {
-
-     # Use == for numeric comparison to match task id "7" and activity id "4"
      if ($task_id == 7 && $activity_id == 4) {
+	      #::: World Emote
           quest::we(15, "Finally, we have rid ourselves of the gnomes!");
      }
 } 
