@@ -1,4 +1,4 @@
-When an NPC receives a signal from quest::signal, it will cause the function EVENT_SIGNAL to occur. Used to allow communication between NPCs. Works within the same zone only.
+When an NPC receives a signal from [[quest::signal()|Perl-Quest-signal]], [[quest::signalwith()|Perl-Quest-signalwith]], or [[quest::crosszonesignalnpcbynpctypeid()|Perl-Quest-crosszonesignalnpcbynpctypeid]], it will run cause this event to fire. Using this event is not recommended for more complicated scripts, look into <link?> encounter system instead.
 
 ### Exports
 **Name**|**Type**|**Description**
