@@ -9,6 +9,13 @@ This page explains how different assets on the server can be reloaded, what comm
 
 * In game command **#reloadstatic** - will reload doors from the [[doors]] table for the respective zone and instance
 
+
+### Factions
+
+* Factions uses shared memory
+* Factions can be hot reloaded in game using **#hotfix** - keep in mind that this uses shared memory files produced from **shared_memory** binary located in the **./shared** folder
+* New factions need a server reboot, existing factions can use **#hotfix**, you can use placeholder data to add new factions and safely reload like other shared memory data
+
 ### Ground Spawns
 
 * In game command **#reloadstatic** - will reload ground spawns from the [[ground_spawns]] table for the respective zone and instance
@@ -24,6 +31,12 @@ This page explains how different assets on the server can be reloaded, what comm
 ### Level EXP Mods
 
 * If you are using the [[level_exp_mods]] table for customizing percentage difficulty modifiers - these can be hot reloaded using in game command **#reloadlevelmods**
+
+### Loot
+
+* Loot uses shared memory
+* Loot can be hot reloaded in game using **#hotfix** - keep in mind that this uses shared memory files produced from **shared_memory** binary located in the **./shared** folder
+* Note: Loot assigned in a script/quest does not rely on the database system or to be reloaded from shared memory
 
 ### NPC Emotes
 
