@@ -5,6 +5,11 @@ This page explains how different assets on the server can be reloaded, what comm
 
 * In game command #reloadstatic - will reload alternate currency data from the [[alternate_currency]] table for just the zone the command was executed in
 
+### Base Data
+
+* Base Data uses shared memory - you most likely aren't editing this
+* Base Data is recommended to be ran from server boot-up for drastic changes, however editing existing data can be reloaded server-wide using **#hotfix**
+
 ### Doors
 
 * In game command **#reloadstatic** - will reload doors from the [[doors]] table for the respective zone and instance
@@ -59,6 +64,11 @@ This page explains how different assets on the server can be reloaded, what comm
 ### Rules
 
 * In game command **#reloadallrules** will reload rules for all running zone processes and the world process
+
+### Skill Caps
+
+* Skill Caps uses shared memory (Class skills, caps etc.)
+* Skill caps is recommended to be ran from server boot-up for drastic changes, however editing existing data can be reloaded server-wide using **#hotfix**
 
 ### Spells
 
