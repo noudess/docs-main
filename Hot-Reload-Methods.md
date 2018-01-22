@@ -77,10 +77,19 @@ This page explains how different assets on the server can be reloaded, what comm
 * Note: If you are going to build new spells on your server on the fly, I recommend creating a big bank of blank or placeholder ID's in your table that you can use in the future. You can't hot reload the server with new spells without creating issues after creating a new row entry. 
 * Existing spells can be safely edited without a server reload and using the **#hotfix** command. This takes affect for all zones immediately
 
+### Tasks
+
+* All new Task data requires **#task reloadall** to be executed to reload data from [[tasks]] and [[activities]]
+* Note: If a character has a task that you are testing/building and you add new steps, the server will remove it from your task window
+
 ### Traps
 
 * In game command **#reloadstatic** - will reload traps from the [[traps]] table for the respective zone and instance
 * In game comand **#reloadtraps** will also reload traps without reloading everything else that **#reloadstatic** does
+
+### Tradeskills
+
+* Tradeskills query the database direct and do not require reload to take affect
 
 ### Zone Points
 
