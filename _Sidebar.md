@@ -22,7 +22,7 @@
 * [[Perl|Perl API]]
 
 ---
-***Hot Reloading***
+**Hot Reloading**
 ** [[Server Hot Reloading Methods]]
 ---
 **Reference Lists**
