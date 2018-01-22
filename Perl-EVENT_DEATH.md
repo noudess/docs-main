@@ -2,6 +2,8 @@ EVENT_DEATH
 ### Exports
 **Name**|**Type**|**Description**
 :-----|:-----|:-----
+client|client|client who killed mob
+npc|npc|npc that was killed
 killer_id|int|client ID of killer. (Does not seem castable to mob)
 killer_damage|int|How much damage was dealt on killing blow
 killer_spell|int|Spell ID used to kill mob
