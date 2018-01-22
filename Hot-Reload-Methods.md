@@ -14,12 +14,15 @@ This page explains how different assets on the server can be reloaded, what comm
 
 * In game command **#reloadstatic** - will reload doors from the [[doors]] table for the respective zone and instance
 
-
 ### Factions
 
 * Factions uses shared memory
 * Factions can be hot reloaded in game using **#hotfix** - keep in mind that this uses shared memory files produced from **shared_memory** binary located in the **./shared** folder
 * New factions need a server reboot, existing factions can use **#hotfix**, you can use placeholder data to add new factions and safely reload like other shared memory data
+
+### Grids / Pathing Data
+
+* All grid data is loaded at zone boot-up and any new data is simply reloaded during a **#repop**
 
 ### Ground Spawns
 
@@ -43,6 +46,10 @@ This page explains how different assets on the server can be reloaded, what comm
 * Loot can be hot reloaded in game using **#hotfix** - keep in mind that this uses shared memory files produced from **shared_memory** binary located in the **./shared** folder
 * Note: Loot assigned in a script/quest does not rely on the database system or to be reloaded from shared memory
 
+### Logging
+
+* Server logging settings can be reloaded in game using **#logs reload_all** from the [[logsys_categories]] table - this takes affect server wide for all processes
+
 ### NPC Emotes
 
 * While emotes don't HAVE to be database driven (most custom servers will just use scripts) - there is an option to reload the database driven emotes
@@ -51,6 +58,10 @@ This page explains how different assets on the server can be reloaded, what comm
 ### Objects
 
 * In game command **#reloadstatic** - will reload objects from the [[objects]] table for the respective zone and instance
+
+### Pets
+
+* Pet data is live and usable the moment it is edited in the [[pets]] table and an [[npc_types]] entry was already created. Otherwise a **#repop** will be require to reload the npc_types data
 
 ### Perl Event Exports
 
