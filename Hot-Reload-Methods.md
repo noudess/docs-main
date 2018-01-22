@@ -41,6 +41,10 @@ This page explains how different assets on the server can be reloaded, what comm
 
 * In game command **#reloadstatic** - will reload ground spawns from the [[ground_spawns]] table for the respective zone and instance
 
+### Horses
+
+* Horse data is queried immediately from the [[horses]] table on request of creating horse from Spell cast
+
 ### Items
 
 * Items uses shared memory
