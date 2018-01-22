@@ -23,7 +23,8 @@
 
 ---
 **Hot Reloading**
-** [[Server Hot Reloading Methods]]
+* [[Server Hot Reloading Methods]]
+
 ---
 **Reference Lists**
 * [[Animations]]
