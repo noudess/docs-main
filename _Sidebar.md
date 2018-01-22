@@ -22,6 +22,9 @@
 * [[Perl|Perl API]]
 
 ---
+***Hot Reloading***
+** [[Server Hot Reloading Methods]]
+---
 **Reference Lists**
 * [[Animations]]
 * [[Augment Restrictions]]
