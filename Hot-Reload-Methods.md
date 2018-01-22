@@ -58,6 +58,11 @@ This page explains how different assets on the server can be reloaded, what comm
 
 * Server logging settings can be reloaded in game using **#logs reload_all** from the [[logsys_categories]] table - this takes affect server wide for all processes
 
+### Merchants
+
+* Merchant data is loaded and cached the first time the request is made to a merchant if it wasn't already loaded on zone bootup
+* There is no current way to hot reload this data other than to reboot the zone process
+
 ### NPC Data
 
 * NPC data is live once a **#repop** is issued after a new edit or creation
