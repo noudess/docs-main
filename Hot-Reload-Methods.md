@@ -10,6 +10,11 @@ This page explains how different assets on the server can be reloaded, what comm
 * Base Data uses shared memory - you most likely aren't editing this
 * Base Data is recommended to be ran from server boot-up for drastic changes, however editing existing data can be reloaded server-wide using **#hotfix**
 
+### Blocked Spells
+
+* Blocked spells data is loaded from the [[blocked_spells]] table on zone init
+* There is no current way to hot reload this data
+
 ### Doors
 
 * In game command **#reloadstatic** - will reload doors from the [[doors]] table for the respective zone and instance
