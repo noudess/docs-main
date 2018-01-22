@@ -11,7 +11,7 @@
 * [[eqemu_config]]
 
 **Reloading Assets**
-* [[Server Asset Reloading]]
+* [[Server Data Loading]]
 
 ---
 
