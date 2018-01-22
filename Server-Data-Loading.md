@@ -1,5 +1,5 @@
 
-This page explains how different assets on the server can be reloaded, what commands can be used etc.
+This page explains how different assets on the server are loaded and by what methods can they be refreshed and/or reloaded
 
 ### Alternate Currency Data
 
