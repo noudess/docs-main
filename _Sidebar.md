@@ -10,7 +10,7 @@
 **Configuration**
 * [[eqemu_config]]
 
-**Reloading Assets**
+**Reloading Server Data**
 * [[Server Data Loading]]
 
 ---
