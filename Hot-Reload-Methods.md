@@ -13,6 +13,18 @@ This page explains how different assets on the server can be reloaded, what comm
 
 * In game command **#reloadstatic** - will reload ground spawns from the [[ground_spawns]] table for the respective zone and instance
 
+### Items
+
+* Items uses shared memory
+* Items can be hot reloaded in game using **#hotfix** - keep in mind that this uses shared memory files produced from **shared_memory** binary located in the **./shared** folder
+* Items in earlier clients such as Titanium show the change immediately, if you have inspected an item on a later client, then issued a **#hotfix**, the client caches these results so you will need to camp or zone to see the stat changes however any affects should take affect immediately
+* Note: If you are going to build new items on your server on the fly, I recommend creating a big bank of blank or placeholder ID's in your table that you can use in the future. You can't hot reload the server with new items without creating issues after creating a new row entry
+* Existing items can be safely edited without a server reload and using the **#hotfix** command. This takes affect for all zones immediately
+
+### Level EXP Mods
+
+* If you are using the [[level_exp_mods]] table for customizing percentage difficulty modifiers - these can be hot reloaded using in game command **#reloadlevelmods**
+
 ### NPC Emotes
 
 * While emotes don't HAVE to be database driven (most custom servers will just use scripts) - there is an option to reload the database driven emotes
@@ -35,14 +47,22 @@ This page explains how different assets on the server can be reloaded, what comm
 
 * In game command **#reloadallrules** will reload rules for all running zone processes and the world process
 
+### Spells
+
+* Spells uses shared memory
+* Spells can be hot reloaded in game using **#hotfix** - keep in mind that this uses shared memory files produced from **shared_memory** binary located in the **./shared** folder
+* Note: If you are going to build new spells on your server on the fly, I recommend creating a big bank of blank or placeholder ID's in your table that you can use in the future. You can't hot reload the server with new spells without creating issues after creating a new row entry. 
+* Existing spells can be safely edited without a server reload and using the **#hotfix** command. This takes affect for all zones immediately
+
 ### Traps
 
 * In game command **#reloadstatic** - will reload traps from the [[traps]] table for the respective zone and instance
-* In game comand **#reloadtraps** will also reload traps without reloading everything else that **#reloadstatic** hits
+* In game comand **#reloadtraps** will also reload traps without reloading everything else that **#reloadstatic** does
 
 ### Zone Points
 
 * In game command **#reloadstatic** - will zone points from the [[zone_points]] table for the respective zone and instance - note this may not work for all clients
+* In game comand **#reloadzps** will also reload zone points without reloading everything else that **#reloadstatic** does
 
 ### Zone Data
 
