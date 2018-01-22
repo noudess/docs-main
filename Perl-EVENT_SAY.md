@@ -2,9 +2,38 @@ EVENT_SAY
 ### Exports
 **Name**|**Type**|**Description**
 :-----|:-----|:-----
-data|int|
-text|int|
-langid|int|
+client|client|Client who did say event
+npc|npc|Npc who is handling say event
+charid|int|character id of who did say event
+class|string|class of who did say event
+data|int|unknown? 124078
+faction|int|faction comparison of who did say and npc
+h|float|heading position of npc
+hpratio|float|hp ratio e.g. 100
+instanceid|int|instance id of zone, typically 0
+instanceversion|int|instance version of zone, typically 0
+langid|int|language id, common is 0
+mlevel|int|mob level of npc
+mname|string|mob name of npc
+mobid|int|mob entity id of npc
+name|string|name of who did say event
+race|string|race of who did say event
+status|int|account status of who did say event
+text|string|Text of who did say event
+uguild_id|int|guild id of who did say event
+uguildrank|int|guild rank of who did say event
+ulevel|int|level of who did say event
+userid|int|user id of who did say event
+x|float|x position of npc
+y|float|y position of npc
+z|float|z position of npc
+zonehour|int|hour of zone when mob died
+zoneid|int|zone id where mob died
+zoneln|string|long name of zone where mob died
+zonemin|int|minimum level to enter zone where mob died
+zonesn|string|short name of zone where mob died
+zonetime|int|time of zone where mob died
+zoneweather|int|weather of zone where mob died
 ### Example
 ```perl
 sub EVENT_SAY {
