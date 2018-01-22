@@ -58,6 +58,10 @@ This page explains how different assets on the server can be reloaded, what comm
 
 * Server logging settings can be reloaded in game using **#logs reload_all** from the [[logsys_categories]] table - this takes affect server wide for all processes
 
+### NPC Data
+
+* NPC data is live once a **#repop** is issued after a new edit or creation
+
 ### NPC Emotes
 
 * While emotes don't HAVE to be database driven (most custom servers will just use scripts) - there is an option to reload the database driven emotes
