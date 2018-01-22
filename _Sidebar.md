@@ -22,8 +22,8 @@
 * [[Perl|Perl API]]
 
 ---
-**Hot Reloading**
-* [[Server Hot Reloading Methods]]
+**Server Hot Reload**
+* [[Hot Reload Methods]]
 
 ---
 **Reference Lists**
