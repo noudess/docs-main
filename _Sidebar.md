@@ -10,6 +10,9 @@
 **Configuration**
 * [[eqemu_config]]
 
+** Reloading Assets **
+* [[Server Asset Reloading]]
+
 ---
 
 **Database**
@@ -20,10 +23,6 @@
 **Scripts / Quests API**
 * [[Lua|Lua API]]
 * [[Perl|Perl API]]
-
----
-**Server Hot Reload**
-* [[Hot Reload Methods]]
 
 ---
 **Reference Lists**
