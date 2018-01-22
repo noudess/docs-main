@@ -20,6 +20,14 @@ This page explains how different assets on the server can be reloaded, what comm
 * Factions can be hot reloaded in game using **#hotfix** - keep in mind that this uses shared memory files produced from **shared_memory** binary located in the **./shared** folder
 * New factions need a server reboot, existing factions can use **#hotfix**, you can use placeholder data to add new factions and safely reload like other shared memory data
 
+### Fishing
+
+* Fishing data is live once entered into the database, no reloading is required
+
+### Foraging
+
+* Forage data is live once entered into the database, no reloading is required
+
 ### Grids / Pathing Data
 
 * All grid data is loaded at zone boot-up and any new data is simply reloaded during a **#repop**
