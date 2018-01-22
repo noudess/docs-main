@@ -1,5 +1,6 @@
 The Perl API consists of many exported classes and some general functions.
 * [Perl General Functions](Perl-Quest)
+* [Perl Global Exports](Perl-Exports)
 * [Perl Constants](Perl-Constants)
 * [Perl Events](Perl-Events)
 * [Client](Perl-Client)
