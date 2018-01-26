@@ -51,3 +51,4 @@
 * [[Race|Race Types]]
 * [[Resist|Resist Types]]
 * [[Target|Target Types]]
+* [[Ornament|Ornament Types]]
