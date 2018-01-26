@@ -1,6 +1,5 @@
 * To preview: #heromodel id
-* To use: Create an aug of type 20, set heroforgemodel to id. Type 6 aug recommended on RoF+
-
+* To use: Create an aug of type 20, set heroforgemodel to id. Slot 6 aug recommended on RoF+
 * More info (Don't run any db edits): http://www.eqemulator.org/forums/showthread.php?t=34181&highlight=armor&page=2
 
 **ID**|**Full Name**|**Image**
