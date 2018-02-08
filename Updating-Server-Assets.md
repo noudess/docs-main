@@ -50,26 +50,26 @@ Enter a command #>
 
 | Command        | Action  |
 | ------------- |-------------|
-| perl eqemu_server.pl maps| Download latest maps |
-| perl eqemu_server.pl opcodes| Download latest opcodes (Patches for eq clients) |
-| perl eqemu_server.pl quests| Download latest quests  |
-| perl eqemu_server.pl plugins| Download latest plugins  |
-| perl eqemu_server.pl lua_modules| Download latest lua_modules  |
-| perl eqemu_server.pl utility_scripts| Download utility scripts|
-| perl eqemu_server.pl setup_loginserver | Windows Loginserver setup |
-| perl eqemu_server.pl linux_login_server_setup | Loginserver setup for Linux |
+|  maps| Download latest maps |
+|  opcodes| Download latest opcodes (Patches for eq clients) |
+|  quests| Download latest quests  |
+|  plugins| Download latest plugins  |
+|  lua_modules| Download latest lua_modules  |
+|  utility_scripts| Download utility scripts|
+|  setup_loginserver | Windows Loginserver setup |
+|  linux_login_server_setup | Loginserver setup for Linux |
 
 ### Database Maintenance Commands
 
 | Command        | Action  |
 | ------------- |-------------|
-| perl eqemu_server.pl backup_database| Back up database to backups/ |
-| perl eqemu_server.pl backup_database_compressed| Back up database (zip/tar) to backups/ |
-| perl eqemu_server.pl backup_player_tables| Backs up only player tables to backsup/ |
-| perl eqemu_server.pl check_db_updates| Checks for database updates manually (should not be needed) |
-| perl eqemu_server.pl check_bot_db_updates| Checks for bot database updates manually (should not be needed) |
-| perl eqemu_server.pl remove_duplicate_rules| Older databases used to have tons of duplicate rules - this can be ran to purge them for the new inheritance rules|
-| perl eqemu_server.pl drop_db_bots_schema| Removes bot database schema|
+|  backup_database| Back up database to backups/ |
+|  backup_database_compressed| Back up database (zip/tar) to backups/ |
+|  backup_player_tables| Backs up only player tables to backsup/ |
+|  check_db_updates| Checks for database updates manually (should not be needed) |
+|  check_bot_db_updates| Checks for bot database updates manually (should not be needed) |
+|  remove_duplicate_rules| Older databases used to have tons of duplicate rules - this can be ran to purge them for the new inheritance rules|
+|  drop_db_bots_schema| Removes bot database schema|
 
 
 * You can type 'maps' to interactively download maps in the script, or you can also just run:
