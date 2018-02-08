@@ -6,6 +6,7 @@
 * [[Linux|Linux Server]]
 * [[Development Server Setup]]
 * [[Server Asset Repositories]]
+* [[Updating Server Assets]]
 
 **Configuration**
 * [[eqemu_config]]
