@@ -31,6 +31,8 @@ Enter a command #>
 
 * The assets menu will show a variety of options depending on what OS you are running the script on (Windows or Linux)
 
+Example: perl eqemu_server.pl maps
+
 ```>>> Server Assets Menu
 
  [maps]                 Download latest maps
@@ -70,13 +72,6 @@ Enter a command #>
 |  check_bot_db_updates| Checks for bot database updates manually (should not be needed) |
 |  remove_duplicate_rules| Older databases used to have tons of duplicate rules - this can be ran to purge them for the new inheritance rules|
 |  drop_db_bots_schema| Removes bot database schema|
-
-
-* You can type 'maps' to interactively download maps in the script, or you can also just run:
-
-```perl eqemu_server.pl maps```
-
-Same thing goes for **perl eqemu_server.pl opcodes** or any other command
 
 ### Updating Windows Binaries - Stable
 
