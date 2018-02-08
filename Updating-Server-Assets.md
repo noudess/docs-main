@@ -57,9 +57,86 @@ Same thing goes for **perl eqemu_server.pl opcodes** or any other command
 
 * **perl eqemu_server.pl windows_server_download** will download EQEmu development team approved 'stable' binaries - you can check the date on the files as to when they were built
 
+Example:
+
+```perl eqemu_server.pl windows_server_download
+[Copy] folder doesn't exist, creating 'updates_staged/'
+[Update] No script update necessary...
+[Update] Fetching Latest Windows Binaries...
+[Download] Saved: (updates_staged/master_windows_build.zip) from https://raw.githubusercontent.com/Akkadius/EQEmuInstall/master/master_windows_build.zip
+[Update] Fetched Latest Windows Binaries...
+[Update] Extracting... ---
+[Unzip] Extracting...
+[Update] Installing :: common.lib
+[Update] Installing :: eqlaunch.exe
+[Update] Installing :: eqlaunch.ilk
+[Update] Installing :: eqlaunch.pdb
+[Update] Installing :: export_client_files.exe
+[Update] Installing :: export_client_files.ilk
+[Update] Installing :: export_client_files.pdb
+[Update] Installing :: import_client_files.exe
+[Update] Installing :: import_client_files.ilk
+[Update] Installing :: import_client_files.pdb
+[Update] Installing :: libeay32.dll
+[Update] Installing :: libsodium.dll
+[Update] Installing :: loginserver.exe
+[Update] Installing :: loginserver.ilk
+[Update] Installing :: loginserver.pdb
+[Update] Installing :: luabind.lib
+[Update] Installing :: queryserv.exe
+[Update] Installing :: queryserv.ilk
+[Update] Installing :: queryserv.pdb
+[Update] Installing :: shared_memory.exe
+[Update] Installing :: shared_memory.ilk
+[Update] Installing :: shared_memory.pdb
+[Update] Installing :: ucs.exe
+[Update] Installing :: ucs.ilk
+[Update] Installing :: ucs.pdb
+[Update] Installing :: world.exe
+[Update] Installing :: world.ilk
+[Update] Installing :: world.pdb
+[Update] Installing :: zone.exe
+[Update] Installing :: zone.ilk
+[Update] Installing :: zone.pdb
+[Update] Done
+```
+
 ### Updating Windows Binaries - Unstable - Latest
 
 * **perl eqemu_server.pl windows_server_latest** - will download the latest compiled binaries from our **AppVeyor CI integration**
+
+Example:
+
+```perl eqemu_server.pl windows_server_latest
+[Update] No script update necessary...
+[Update] Fetching Latest Windows Binaries (unstable) from Appveyor...
+[Download] Saved: (updates_staged/master_windows_build_pdb.zip) from https://ci.appveyor.com/api/projects/KimLS/server/artifacts/build_x86_pdb.zip
+[Download] Saved: (updates_staged/master_windows_build.zip) from https://ci.appveyor.com/api/projects/KimLS/server/artifacts/build_x86.zip
+[Update] Fetched Latest Windows Binaries (unstable) from Appveyor...
+[Update] Extracting... ---
+[Unzip] Extracting...
+[Unzip] Extracting...
+[Update] Installing :: eqlaunch.exe
+[Update] Installing :: eqlaunch.pdb
+[Update] Installing :: export_client_files.exe
+[Update] Installing :: export_client_files.pdb
+[Update] Installing :: import_client_files.exe
+[Update] Installing :: import_client_files.pdb
+[Update] Installing :: loginserver.exe
+[Update] Installing :: loginserver.pdb
+[Update] Installing :: queryserv.exe
+[Update] Installing :: queryserv.pdb
+[Update] Installing :: shared_memory.exe
+[Update] Installing :: shared_memory.pdb
+[Update] Installing :: tests.exe
+[Update] Installing :: tests.pdb
+[Update] Installing :: ucs.exe
+[Update] Installing :: ucs.pdb
+[Update] Installing :: world.exe
+[Update] Installing :: world.pdb
+[Update] Installing :: zone.exe
+[Update] Installing :: zone.pdb
+[Update] Done```
 
 ### New Server Option
 
