@@ -136,7 +136,8 @@ Example:
 [Update] Installing :: world.pdb
 [Update] Installing :: zone.exe
 [Update] Installing :: zone.pdb
-[Update] Done```
+[Update] Done
+```
 
 ### New Server Option
 
