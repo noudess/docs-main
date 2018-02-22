@@ -1,4 +1,4 @@
-EVENT_COMBINE_FAILURE is triggered when a player fails to makes a trade skill combine. You would typically use this event in your zone player.pl (or global_player.pl) files.
+EVENT_COMBINE_FAILURE is triggered when a player fails to make a trade skill combine. You would typically use this event in your zone player.pl (or global_player.pl) files.
 
 Note that this event is in addition to the typical trade skill combine messages. You can use this event to add additional flavor, trigger other events, etc.
 
