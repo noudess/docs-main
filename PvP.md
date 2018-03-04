@@ -18,7 +18,7 @@ The next rules are automatically set when a PVPSettings is used. If you want to 
 |Name|Default|RZ|TV/VZ|SZ|Description
 |:--|:--|:--|:--|:--|:--|
 |World:PVPMinLevel|0|?|?|6|minimum level pvp is enabled
-|World:PVPUseDeityBasedPVPdeity|false|false|false|true|use deity based pvp alignment (agnostic is neutral)
+|World:PVPUseDeityBasedPVP|false|false|false|true|use deity based pvp alignment (agnostic is neutral)
 |World:PVPLevelDifference|0|?|?|6|players with a difference greater than value will not be attackable
 |World:PVPLoseExperienceLevelDifference|0|?|?|5|players lose experience if killed by a player within level difference
 |World:PVPPetDamageMitigation|50|?|?|?|pet damage is mitigated by this amount
