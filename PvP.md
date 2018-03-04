@@ -25,4 +25,6 @@ The next rules are automatically set when a PVPSettings is used. If you want to 
 |World:PVPMeleeMitigation|67|?|?|?|melee is mitigated by this amount
 |World:PVPSpellMitigation|67|?|?|?|spells are mitigated by this amount
 |World:PVPRangedMitigation|80|?|?|?|ranged attacks are mitigated by this amount
+|Spells:PVPRootBreakFromSpells|75|75|75|75|Chance for root to break when cast on by a client (20% more than native root)
+|Character:PVPRespawnManaPercent|100|0|0|0|Percent of mana to respawn with
 ```
