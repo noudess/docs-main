@@ -10,6 +10,7 @@
 
 **Configuration**
 * [[eqemu_config]]
+* [[PvP]]
 
 **Reloading Server Data**
 * [[Server Data Loading]]
