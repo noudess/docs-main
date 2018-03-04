@@ -10,7 +10,7 @@ To emulate the original Everquest PVP servers, change the to the following in ru
 |2|TZ/VZ|Not yet supported|
 |4|Sullon Zek|Partial support|
 |6|Discord|Partial Support|
-|+|Above 6|Discord without the no-drop restrictions removed|
+|7+|Discord+ (Any value above 6)|Discord without the no-drop restrictions removed|
 
 
 The next rules are automatically set when a PVPSettings is used. If you want to override the default PVPSettings of each server type, here are the rules:
