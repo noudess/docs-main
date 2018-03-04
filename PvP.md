@@ -1,22 +1,28 @@
 Note: PVP Is currently a work in progress.
 
-To emulate the original Everquest PVP servers, change the World:PVPSettings to the following values:
-```
-1 = Rallos Zek RuleSet, (NOT SUPPORTED)
-2 = Tallon/Vallon Zek Ruleset,  (NOT SUPPORTED)
-4 = Sullon Zek Ruleset,  (PARTIALLY SUPPORTED)
-6 = Discord Ruleset,  (PARTIALLY SUPPORTED)
-anything above 6 is the Discord Ruleset without the no-drop restrictions removed.
-```
+To emulate the original Everquest PVP servers, change the to the following in rule_values
 
-You can customize beyond the original EQ PVP Rulesets using the following rules:
-```
-World:PVPMinLevel - default 0, minimum level to pvp
-World:PVPUseDeityBasedPVPdeity default false, is used to determine if a player can attack another.
-World:PVPLevelDifference default 0, if value is greater than 0, players with a difference greater than value will not be attackable
-World:PVPLoseExperienceLevelDifference default 0, if value is greater than 0, players lose experience if killed by a player within level difference
-World:PVPPetDamageMitigation default 50, pet damage is mitigated by this amount
-World:PVPMeleeMitigation default 67, melee is mitigated by this amount
-World:PVPSpellMitigation default 67, spells are mitigated by this amount
-World:PVPRangedMitigation default 80, ranged attacks are mitigated by this amount
+## World:PVPSettings
+
+|Value|Name|Desc|
+|:--|:--|:--|
+|1|Rallos Zek|Not yet supported|
+|2|TZ/VZ|Not yet supported|
+|4|Sullon Zek|Partial support|
+|6|Discord|Partial Support|
+|+|Above 6|Discord without the no-drop restrictions removed|
+
+
+The next rules are automatically set when a PVPSettings is used. If you want to override the default PVPSettings of each server type, here are the rules:
+
+|Name|Default|RZ|TV/VZ|SZ|Description
+|:--|:--|:--|:--|:--|:--|
+|World:PVPMinLevel|0|?|?|6|minimum level pvp is enabled
+|World:PVPUseDeityBasedPVPdeity|false|false|false|true|use deity based pvp alignment (agnostic is neutral)
+|World:PVPLevelDifference|0|?|?|6|players with a difference greater than value will not be attackable
+|World:PVPLoseExperienceLevelDifference|0|?|?|5|players lose experience if killed by a player within level difference
+|World:PVPPetDamageMitigation|50|?|?|?|pet damage is mitigated by this amount
+|World:PVPMeleeMitigation|67|?|?|?|melee is mitigated by this amount
+|World:PVPSpellMitigation|67|?|?|?|spells are mitigated by this amount
+|World:PVPRangedMitigation|80|?|?|?|ranged attacks are mitigated by this amount
 ```
