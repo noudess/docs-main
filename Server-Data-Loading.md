@@ -3,7 +3,7 @@ This page explains how different assets on the server are loaded and by what met
 
 ### Alternate Currency Data
 
-* In game command #reloadstatic - will reload alternate currency data from the [[alternate_currency]] table for just the zone the command was executed in
+* In game command **#reloadstatic** - will reload alternate currency data from the [[alternate_currency]] table for just the zone the command was executed in
 
 ### Base Data
 
@@ -70,7 +70,7 @@ This page explains how different assets on the server are loaded and by what met
 ### Merchants
 
 * Merchant data is loaded and cached the first time the request is made to a merchant if it wasn't already loaded on zone bootup
-* Merchants can be hot reloaded using #reloadmerchants
+* Merchants can be hot reloaded using **#reloadmerchants**
 
 ### NPC Data
 
