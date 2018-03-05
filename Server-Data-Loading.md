@@ -70,7 +70,7 @@ This page explains how different assets on the server are loaded and by what met
 ### Merchants
 
 * Merchant data is loaded and cached the first time the request is made to a merchant if it wasn't already loaded on zone bootup
-* There is no current way to hot reload this data other than to reboot the zone process
+* Merchants can be hot reloaded using #reloadmerchants
 
 ### NPC Data
 
