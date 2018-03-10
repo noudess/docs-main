@@ -3,7 +3,7 @@ Note that NATS is currently on an experimental branch
 PUB and SUB are from the perspective of a third party client. So, if PUB is yes, that means it is expected that a third party client will publish messages to this channel, and it is the emulator's responsibility to subscribe to the message (and reply if the channel is designed this way).
 
 **Channel**|**PUB**|**SUB**|**Proto**|**Description**
-:-----|:-----|:-----|:-----|:-----
+:---|:---|:---|:---|:-----
 daily_gain|No|Yes|DailyGain|Daily gain messages. Triggers when exp or money is lost/gain. Sent from zone/world.
 admin_message|No|Yes|ChannelMessage|Admin related communication. This is called from both zone and world, and may contain sensitive information, designed to be sent to an administrator-only channel. (hacker, zone bootup, new account creations, etc)
 world.command_message|Yes|No|CommandMessage|Request a reply of executing a command message
