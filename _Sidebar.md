@@ -37,6 +37,7 @@
 * [[Skills]]
 * [[Zones|Zones List]]
 * [[Item Sizes|Item Sizes]]
+* [[NATS Channels]]
 
 **Types**
 * [[Augment|Augment Types]]
