@@ -4,5 +4,13 @@ When a player reaches level 51, they unlock the option to dedicate experience th
 ## Legend
 AA's are grouped together by ranks. For example, Innate Runspeed has many ranks to represent the levels it can be trained. Each rank has a unique id assigned to it.
 
+## Tools 
+[[The PEQ PHP Editor|https://github.com/ProjectEQ/peqphpeditor]] is the only tool to support editing AAs without directly accessing the database.
+
 ## Commands
-You can reload AA's in Everquest using the #reloadaa command.
+* **#reloadaa** - If you change any AA data in the database, you can use this command to reload it.
+* **#resetaa** - Target a player, it will reset all their spent AA's, refunding them the used points
+* **#resetaa_timer** - Reset all AA timers for a player
+* **#setaapts [value]** - Set your or your player target's available AA points
+* **#setaaxp [value]** - Set your or your player target's AA experience
+* 
