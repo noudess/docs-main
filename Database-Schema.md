@@ -8,7 +8,7 @@
 * [[ldon_trap_entries]]
 * [[ldon_trap_templates]]
 
-### Alternate Advancements
+### Alternate Advancements ([[Guide|AA_Guide]])
 * [[aa_ability]]
 * [[aa_rank_effects]]
 * [[aa_rank_prereqs]]
