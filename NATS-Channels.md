@@ -10,16 +10,10 @@ IN and OUT are from the perspective of a eqemu. So, if IN is yes, that means it 
 * who - Who is currently online
 
 ### Zone Scoped
-
-**Channel**|**IN**|**OUT**|**Proto**|**Description**
-:---|:---|:---|:---|:-----
-world.command_message|Yes|No|CommandMessage|Request a reply of executing a command message
-world.channel_message|Yes|Yes|ChannelMessage|Send a channel message to world, which will then relay to all zones
-zone.admin_message|Yes|No|AdminMessage|Request reply of executing an admin message
-zone.channel_message|Yes|No|ChannelMessage|Send a channel message to all zones. NOTE: it is recommended to use world.channel_message instead.
 zone.ecommons.channel_message|Yes|No|ChannelMessage|Send a channel message to ecommons
 zone.ecommons.command_message|Yes|No|ChannelMessage|Send a channel message to ecommons
 zone.ecommons.entity.event_subscribe.all|Yes|No|EntityEvent|Request a reply of triggering to get events for all entities in zone. Send ID > 0 to turn on, and 0 to turn off. Note: This is costly, and should be avoided, it will turn off when the zone goes to sleep or you disable
 zone.ecommons.entity.event_subscribe.entity|Yes|No|EntityEvent|Request a reply to get publishings for entity 101 until entity dies
 zone.ecommons.entity.event.#|No|Yes|EntityEvent|Subscribe to events from entity #
-zone.ecommons.entity.list|Yes|No|Entities|Request reply of a list of all entities in a zone
+zone.ecommons.entity.list|Yes|No|Entities|Request reply of a list of all entities
+zone.ecommons.channel_message|Yes|No|ChannelMessage|Send a channel message to all provided zone
