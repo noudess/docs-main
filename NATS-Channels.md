@@ -14,8 +14,6 @@ IN and OUT are from the perspective of a eqemu. So, if IN is yes, that means it 
 * **zone.ecommons.channel_message.in** - eqproto::ChannelMessage - Send a channel message to zone
 * **zone.ecommons.channel_message.in** - eqproto::CommandMessage - Send a command message to zone
 
-* zone.ecommons.entity.event_subscribe.all|Yes|No|EntityEvent|Request a reply of triggering to get events for all entities in zone. Send ID > 0 to turn on, and 0 to turn off. Note: This is costly, and should be avoided, it will turn off when the zone goes to sleep or you disable
-* zone.ecommons.entity.event_subscribe.entity|Yes|No|EntityEvent|Request a reply to get publishings for entity 101 until entity dies
 * zone.ecommons.entity.event.#|No|Yes|EntityEvent|Subscribe to events from entity #
 * zone.ecommons.entity.list|Yes|No|Entities|Request reply of a list of all entities
 * zone.ecommons.channel_message|Yes|No|ChannelMessage|Send a channel message to all provided zone
