@@ -8,6 +8,7 @@ IN and OUT are from the perspective of a eqemu. So, if IN is yes, that means it 
 ### World Scoped
 * **world.command_message.in** - eqproto::CommandMessage - Send a command. Commands are as follows:
 * who - Who is currently online
+* **world.channel_message.out** - eqproto::ChannelMessage - Any world-wide messages are broadcasted
 
 ### Zone Scoped
 * **zone.ecommons.channel_message.in** - eqproto::ChannelMessage - Send a channel message to zone
