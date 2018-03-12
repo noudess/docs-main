@@ -7,7 +7,7 @@ PUB and SUB are from the perspective of a third party client. So, if PUB is yes,
 daily_gain|No|Yes|DailyGain|Daily gain messages. Triggers when exp or money is lost/gain. Sent from zone/world.
 admin_message|No|Yes|ChannelMessage|Admin related communication. This is called from both zone and world, and may contain sensitive information, designed to be sent to an administrator-only channel. (hacker, zone bootup, new account creations, etc)
 world.command_message|Yes|No|CommandMessage|Request a reply of executing a command message
-world.channel_message|Yes|No|ChannelMessage|Send a channel message to world, which will then relay to all zones
+world.channel_message|Yes|Yes|ChannelMessage|Send a channel message to world, which will then relay to all zones
 zone.admin_message|Yes|No|AdminMessage|Request reply of executing an admin message
 zone.channel_message|Yes|No|ChannelMessage|Send a channel message to all zones. NOTE: it is recommended to use world.channel_message instead.
 zone.ecommons.channel_message|Yes|No|ChannelMessage|Send a channel message to ecommons
