@@ -1,6 +1,6 @@
 Note that NATS is currently on an experimental branch
 
-PUB and SUB are from the perspective of a third party client. So, if PUB is yes, that means it is expected that a third party client will publish messages to this channel, and it is the emulator's responsibility to subscribe to the message (and reply if the channel is designed this way).
+IN and OUT are from the perspective of a eqemu. So, if IN is yes, that means it is expected that a third party client will request messages to this channel, If OUT is yes, that means you can subscribe as a third party and get a feed of data.
 
 ### Global Scoped
 * **global.admin_message.out** - eqproto::AdminMessage - Admin related communication. This is called from both zone and world, and may contain sensitive information, designed to be sent to an administrator-only channel. (hacker, zone bootup, new account creations, etc)
