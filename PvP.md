@@ -17,14 +17,14 @@ The next rules are automatically set when a PVPSettings is used. If you want to 
 
 |Name|Default|RZ|TV/VZ|SZ|Description
 |:--|:--|:--|:--|:--|:--|
-|World:PVPMinLevel|0|?|?|6|minimum level pvp is enabled
+|World:PVPMinLevel|0|1|?|6|minimum level pvp is enabled
 |World:PVPUseDeityBasedPVP|false|false|false|true|use deity based pvp alignment (agnostic is neutral)
-|World:PVPLevelDifference|0|?|?|6|players with a difference greater than value will not be attackable
-|World:PVPLoseExperienceLevelDifference|0|?|?|5|players lose experience if killed by a player within level difference
-|World:PVPPetDamageMitigation|50|?|?|?|pet damage is mitigated by this amount
-|World:PVPMeleeMitigation|67|?|?|?|melee is mitigated by this amount
-|World:PVPSpellMitigation|67|?|?|?|spells are mitigated by this amount
-|World:PVPRangedMitigation|80|?|?|?|ranged attacks are mitigated by this amount
+|World:PVPLevelDifference|0|4|?|6|players with a difference greater than value will not be attackable
+|World:PVPLoseExperienceLevelDifference|0|0|?|5|players lose experience if killed by a player within level difference
+|World:PVPPetDamageMitigation|50|0|?|?|pet damage is mitigated by this amount
+|World:PVPMeleeMitigation|67|100|?|?|melee is mitigated by this amount
+|World:PVPSpellMitigation|67|67|?|?|spells are mitigated by this amount
+|World:PVPRangedMitigation|80|100|?|?|ranged attacks are mitigated by this amount
 |Spells:PVPRootBreakFromSpells|75|75|75|75|Chance for root to break when cast on by a client (20% more than native root)
 |Character:PVPRespawnManaPercent|100|0|0|0|Percent of mana to respawn with
 ```
