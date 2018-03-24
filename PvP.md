@@ -27,4 +27,7 @@ The next rules are automatically set when a PVPSettings is used. If you want to 
 |World:PVPRangedMitigation|80|100|?|?|ranged attacks are mitigated by this amount
 |Spells:PVPRootBreakFromSpells|75|75|75|75|Chance for root to break when cast on by a client (20% more than native root)
 |Character:PVPRespawnManaPercent|100|0|0|0|Percent of mana to respawn with
+|Inventory:PVPCanLootNoTrade|false|false|false|false|Can players loot no trade items from player corpses?
+|Inventory:PVPCanLootContainer|false|false|false|false|Can players loot bags/containers from player corpses?
+|Inventory:PVPLootableEquipSlots|0|0|0|0|When looting a player's corpse, equipped items in slots listed here are lootable. 0 means all slots are lootable
 ```
