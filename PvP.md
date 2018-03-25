@@ -6,8 +6,9 @@ To emulate the original Everquest PVP servers, change the to the following in ru
 
 |Value|Name|Desc|
 |:--|:--|:--|
+|0|Disabled|Default, No PVP Enabled|
 |1|Rallos Zek|Not yet supported|
-|2|TZ/VZ|Not yet supported|
+|2|TZ/VZ|Partial Support|
 |4|Sullon Zek|Partial support|
 |6|Discord|Partial Support|
 |7+|Discord+ (Any value above 6)|Discord without the no-drop restrictions removed|
@@ -19,12 +20,14 @@ The next rules are automatically set when a PVPSettings is used. If you want to 
 |:--|:--|:--|:--|:--|:--|
 |World:PVPMinLevel|0|1|?|6|minimum level pvp is enabled
 |World:PVPUseDeityBasedPVP|false|false|false|true|use deity based pvp alignment (agnostic is neutral)
+|World:PVPUseTeamsBySizeBasedPVP|false|false|true|false|use racial size based pvp alignment (drakkin is human group)
 |World:PVPLevelDifference|0|4|?|6|players with a difference greater than value will not be attackable
 |World:PVPLoseExperienceLevelDifference|0|0|?|5|players lose experience if killed by a player within level difference
 |World:PVPPetDamageMitigation|50|100|?|?|pet damage is mitigated by this amount
 |World:PVPMeleeMitigation|67|100|?|?|melee is mitigated by this amount
 |World:PVPSpellMitigation|67|67|?|?|spells are mitigated by this amount
 |World:PVPRangedMitigation|80|100|?|?|ranged attacks are mitigated by this amount
+|World:PVPCanLootCoin|false|true|true|true|Can players loot coin from player corpses?
 |Spells:PVPRootBreakFromSpells|75|75|75|75|Chance for root to break when cast on by a client (20% more than native root)
 |Character:PVPRespawnManaPercent|100|0|0|0|Percent of mana to respawn with
 |Inventory:PVPCanLootNoTrade|false|false|false|false|Can players loot no trade items from player corpses?
