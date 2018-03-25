@@ -46,41 +46,42 @@ The teams are as follows:
 * **Note: The above teams may be inaccurate. If you can source a reference to correct this, please let Shin know**
 
 ## World:PVPLevelDifference
-players with a difference greater than value will not be attackable
+Players with a difference greater than value will not be attackable
+
 Default|RZ|TV/VZ|SZ
-:--|:--|:--|:--|
+:--|:--|:--|:--
 0|4|?|6
 
 ## World:PVPLoseExperienceLevelDifference
-players lose experience if killed by a player within level difference
+Players lose experience if killed by a player within level difference
 
 Default|RZ|TV/VZ|SZ
 :--|:--|:--|:--
 0|0|?|5
 
 ## World:PVPPetDamageMitigation
-pet damage is mitigated by this amount
+Pet damage is mitigated by this amount
 
 Default|RZ|TV/VZ|SZ
 :--|:--|:--|:--
 50|100|?|?
 
 ## World:PVPMeleeMitigation
-melee is mitigated by this amount
+Melee is mitigated by this amount
 
 Default|RZ|TV/VZ|SZ
 :--|:--|:--|:--
 67|100|?|?
 
 ## World:PVPSpellMitigation
-spells are mitigated by this amount
+Spells are mitigated by this amount
 
 Default|RZ|TV/VZ|SZ
 :--|:--|:--|:--
 67|67|?|?|
 
 ## World:PVPRangedMitigation
-ranged attacks are mitigated by this amount
+Ranged attacks are mitigated by this amount
 
 Default|RZ|TV/VZ|SZ
 :--|:--|:--|:--
