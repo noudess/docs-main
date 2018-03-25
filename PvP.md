@@ -26,6 +26,7 @@ Default|RZ|TV/VZ|SZ
 
 ## World:PVPUseDeityBasedPVP
 use deity based pvp alignment (agnostic is neutral)
+
 Default|RZ|TV/VZ|SZ
 :--|:--|:--|:--
 false|false|false|true
