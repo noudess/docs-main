@@ -34,11 +34,11 @@ Default|RZ|TV/VZ|SZ|Description
 false|false|true|false|use racial size based pvp alignment (drakkin is human group)
 
 The teams are as follows:
-Team 1: Human, Barbarian, Erudite, Drakkin
-Team 2: Gnome, Halfling, Dwarf, Froglok
-Team 3: High Elf, Wood Elf, Half Elf, Vahshir
-Team 4: Dark Elf, Ogre, Troll, Iksar
-* Note: The above teams may be inaccurate. If you can source a reference to correct this, please let Shin know
+* Team 1: Human, Barbarian, Erudite, Drakkin
+* Team 2: Gnome, Halfling, Dwarf, Froglok
+* Team 3: High Elf, Wood Elf, Half Elf, Vahshir
+* Team 4: Dark Elf, Ogre, Troll, Iksar
+* **Note: The above teams may be inaccurate. If you can source a reference to correct this, please let Shin know**
 
 ### World:PVPLevelDifference
 Default|RZ|TV/VZ|SZ|Description
