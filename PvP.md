@@ -1,6 +1,6 @@
 Note: PVP Is currently a work in progress.
 
-To emulate the original Everquest PVP servers, change the to the following in rule_values
+To emulate the original Everquest PVP servers, the only rule you have to adjust is the PVPSettings one.
 
 ## World:PVPSettings
 
@@ -13,8 +13,7 @@ To emulate the original Everquest PVP servers, change the to the following in ru
 |6|Discord|Partial Support|
 |7+|Discord+ (Any value above 6)|Discord without the no-drop restrictions removed|
 
-
-The next rules are automatically set when a PVPSettings is used. If you want to override the default PVPSettings of each server type, here are the rules:
+Rules from this point onward are optional, and allow you the ability to customize your PVP server beyond the classic PVP rules. If you enable PVPSettings then adjust the below, most values will override defaults. Some exceptions include PVPLootCoin (once true by above PVPSettings, it cannot be turned off without setting PVPSettings to 0).
 
 ### World:PVPMinLevel
 Default|RZ|TV/VZ|SZ|Description
