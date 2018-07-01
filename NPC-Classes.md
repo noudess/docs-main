@@ -1,4 +1,5 @@
-|--- |--- |
+|Class ID|Description|
+|-------------|-------------|
 |20|GM Warrior|
 |21|GM Cleric|
 |22|GM Paladin|
