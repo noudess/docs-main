@@ -61,7 +61,7 @@ sub EVENT_DUEL_LOSE # Triggered when a client loses a duel.
 sub EVENT_DUEL_WIN # Triggered when a client wins a duel.
 sub EVENT_ENCOUNTER_LOAD # Triggered when an encounter loads.
 sub EVENT_ENCOUNTER_UNLOAD # Triggered when an encounter unloads.
-sub EVENT_ENTER # Triggered by any client who enters a mob's proximity.
+sub EVENT_ENTER # Triggered by any client who enters a mob\'s proximity.
 sub EVENT_ENTER_AREA # Triggered when a client enters the area of a mob.
 sub EVENT_ENTERZONE # Triggered when a player enters the zone.
 sub EVENT_EQUIP_ITEM # Triggered when a player equips an item.
