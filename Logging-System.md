@@ -63,7 +63,9 @@ Detail|3|Use this for extreme detail in logging, usually in extreme debugging in
 
 ### GM-Say
 
-![](https://i.imgur.com/FaWAgAq.gif)
+<p align="center">
+<img src="/EQEmu/Server/wiki/images/FaWAgAq.gif?raw=true">
+</p>
 
 ### Windows Console of Zone
 
