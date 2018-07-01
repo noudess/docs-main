@@ -42,7 +42,8 @@ Packets being sent from client to server
 
 In this example - a client clicking a 'Krono' is unhandled by the server, at which it dumps a packet of data sent from the client
 
-![image](https://i.imgur.com/XkPDXb9.gif)
+![](https://i.imgur.com/XkPDXb9.gif)
+
 
 ### Packet Logging Levels
 
