@@ -41,6 +41,7 @@
 * [[Augment Restrictions]]
 * [[Client Mask]]
 * [[Client Spell ID Limitations]]
+* [[Emote Colors]]
 * [[Facial Features]]
 * [[Deity|Diety List]]
 * [[Server Rules]]
