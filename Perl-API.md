@@ -42,6 +42,26 @@ In order of operations, a player's script will be dictated by the first script t
 
 * quests/global/global_npc.pl
 
+### Item
+
+Item Scripts are quest scripts attached to Items.
+Items will load a script on the first event that triggers them and will load one and only one from the following location. Which ever it finds first in the following order
+
+* ./quests/zone/items/item_script.pl
+* ./quests/global/items/item_script.pl
+* ./quests/zone/items/default.pl
+* ./quests/global/items/default.pl
+
+### Spell Scripts
+
+Spell Scripts are quest scripts attached to Spells.
+Spells will load a script on the first event that triggers them and will load one and only one from the following location. Which ever it finds first in the following order:
+
+* ./quests/zone/spells/spell_id.pl
+* ./quests/global/spells/spell_id.pl
+* ./quests/zone/spells/default.pl
+* ./quests/global/spells/default.pl
+
 # Perl Sub Events
 
 * A full list can always be found in the EQEmu source [https://github.com/EQEmu/Server/blob/master/zone/embparser.cpp](https://github.com/EQEmu/Server/blob/master/zone/embparser.cpp)
