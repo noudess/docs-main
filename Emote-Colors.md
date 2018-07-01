@@ -1,3 +1,10 @@
+Example(s)
+
+```
+#emote skyplane 15 You hear thunderclouds rumbling in the distance.
+#emote Brainiacvince 15 I'm right behind you.
+```
+
 |ID|Color|
 |--- |--- |
 |0|white|
