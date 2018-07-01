@@ -1,7 +1,7 @@
 # Beginners Guide To Perl
 
 * Are you new to Perl? Perl isn't just a EQEmu scripting language, it's been around for eons and used in many systems
-* Here is a reference to basic Perl [http://www.tizag.com/beginnerT/](Beginners Guide to Perl)
+* Here is a reference to basic Perl [Beginners Guide to Perl](http://www.tizag.com/beginnerT/)
 
 # Real Use Examples
 
@@ -32,9 +32,19 @@ In order of operations, a player's script will be dictated by the first script t
 
 # Global Scripts
 
+* Global scripts were designed to run on top of the scripts mentioned above, meaning if you have a player script in a zone directory and a global player script, they will both execute and not interfere with each other
+
+### Player
+
+* quests/global/global_player.pl
+
+### NPC
+
+* quests/global/global_npc.pl
+
 # Perl Sub Events
 
-*   A full list can always be found in the EQEmu source [https://github.com/EQEmu/Server/blob/master/zone/embparser.cpp](https://github.com/EQEmu/Server/blob/master/zone/embparser.cpp)
+* A full list can always be found in the EQEmu source [https://github.com/EQEmu/Server/blob/master/zone/embparser.cpp](https://github.com/EQEmu/Server/blob/master/zone/embparser.cpp)
 
 ```
 sub EVENT_AGGRO # Triggered when a mob aggros a client.
