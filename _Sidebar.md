@@ -46,6 +46,7 @@
 * [[Emote Colors]]
 * [[Experience by Level]]
 * [[Facial Features]]
+* [[Lanuages]]
 * [[Deity|Diety List]]
 * [[Item Class]]
 * [[Server Rules]]
