@@ -1,5 +1,6 @@
-|-99|NPC|
+|ID|Category|
 |--- |--- |
+|-99|NPC|
 |-1|AA Procs|
 |1|Direct Damage [Magic]|
 |2|Direct Damage [Undead]|
@@ -181,4 +182,4 @@
 |218|Summon [Focus]|
 |219|Summon [Food/Drink]|
 |220|Summon [Armor]|
-|999|AA/Abilities|
+|999|AA / Abilities|
