@@ -1,6 +1,9 @@
 * NPC Special Attacks
 * Spells
 * Factions
+* Power Source Reference
+* Task System
+* Command Reference
 
 ### First Time Running a Server
 1. How to I make myself a GM, and what can I do once I am?
