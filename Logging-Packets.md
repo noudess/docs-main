@@ -39,13 +39,17 @@ All server packets that are sent to the client, the only packet types that aren'
 
 Packets being sent from client to server
 
-[[https://i.imgur.com/8t4tkrB.gif]]
+<p align="center">
+<img src="/EQEmu/Server/wiki/images/8t4tkrB.gif?raw=true">
+</p>
 
 ## Unhandled Packets
 
 In this example - a client clicking a 'Krono' is unhandled by the server, at which it dumps a packet of data sent from the client
 
-[[https://i.imgur.com/XkPDXb9.gif]]
+<p align="center">
+<img src="/EQEmu/Server/wiki/images/XkPDXb9.gif?raw=true">
+</p>
 
 ### Packet Logging Levels
 
@@ -59,4 +63,6 @@ In this example - a client clicking a 'Krono' is unhandled by the server, at whi
 
 Below is an example of a full packet payload being output to the client
 
-[[https://i.imgur.com/C9SnDRD.gif]]
+<p align="center">
+<img src="/EQEmu/Server/wiki/images/C9SnDRD.gif?raw=true">
+</p>
