@@ -34,8 +34,7 @@ sub EVENT_SAY {
 
 ##### **Perl Sub Events** \- These are events defined by the EQEmu Software/Source that trigger inside a Perl script
 
-$(document).on("click", ".example-link", function() { var example = $("#example-"+$(this).data("example")); if(example.is(":visible")) { example.slideUp("fast"); } else { example.slideDown("slow"); }});
-
+```perl
 sub EVENT_AGGRO # Triggered when a mob aggros a client.
 sub EVENT\_AGGRO\_SAY # Triggered when a mob is targeted, the player types something, and NPC is in combat.
 sub EVENT_ATTACK # Triggered when the NPC is attacked.
@@ -115,11 +114,13 @@ sub EVENT\_WAYPOINT\_ARRIVE # Triggered when a mob arrives at a waypoint.
 sub EVENT\_WAYPOINT\_DEPART # Triggered when a mob leaves a waypoint.
 sub EVENT\_WEAPON\_PROC # Triggered when a weapon procs.
 sub EVENT_ZONE # Triggered when a player zones.
+```
 
-#### **Text Response Example**s
+#### Text Response Example
 
-All speaking responses are included in a **$text** variable (This variable is defined by the EQEmu Software)
+All speaking responses are included in a **$text** variable
 
+```perl
 if ($text=~/hail/i) # Note the /i. This means it is case-insensitive. It is always better to include this.
 if ($text=~/Hello/) # Would match "Hello", but not "hello".
 if ($text=~/hello/) # Would match "hello", but not "Hello".
@@ -127,8 +128,9 @@ if ($text=~/hello/i) # Would match "Hello" and "hello".
 if ($text=~/me/) # Would match the "me" in "name", but not the "me" in "NAME".
 if ($text=~/\\bme\\b/) # Would not match the "me" in "name" or the "me" in "NAME". The "\\b" means there must not be text next to the match so "me" must be by itself.
 if ($text=~/^me$/i) # Would only match if "me" is the only text said. The "^" tells what must be the first thing said and the "$" tells what must be the last thing.
+```
 
-**Special Text Response Examples**
+### Special Text Response Examples
 
 These responses allow you to check for multiple strings within your text variable.
 
@@ -141,12 +143,13 @@ if ($text!~/Hail|Hi|Hello/i) # Will check if the text does not contain "Hail", "
 *   [http://aspn.activestate.com/ASPN/docs/ActivePerl/lib/Pod/perlretut.html](http://aspn.activestate.com/ASPN/docs/ActivePerl/lib/Pod/perlretut.html)
 *   [http://www.erudil.com/preqr.pdf](http://www.erudil.com/preqr.pdf)
 
-##### **Pre-Exported Variables**
+### **Pre-Exported Variables**
 
 *   A full list can always be found in the EQEmu source [https://github.com/EQEmu/Server/blob/master/zone/embparser.cpp](https://github.com/EQEmu/Server/blob/master/zone/embparser.cpp)
 *   Pre-Exported variables are variables that are pre-created by the source typically by certain events or behaviors
 *   \[\[Faction Values\]\]
 
+```perl
 $activity\_id # Returns the ID of the task stage completed (in EVENT\_TASK\_STAGE\_COMPLETE); Returns the ID of the task updated or complete (in EVENT\_TASK\_COMPLETE, EVENT\_TASK\_UPDATE)
 $charid # Returns the character ID of the client that triggered the Event or a negative value if no client was involved.
 $class # Returns the class of the user that triggered the event.
@@ -234,11 +237,13 @@ $x # The X coordinate of the NPC.
 $y # The Y coordinate of the NPC.
 $z # The Z coordinate of the NPC.
 $h # The heading of the NPC.
+```
 
-##### **Function List**
+### **Function List**
 
 *   A full list can always be found in the EQEmu source [https://github.com/EQEmu/Server/blob/master/zone/questmgr.cpp](https://github.com/EQEmu/Server/blob/master/zone/questmgr.cpp)
 
+```perl
 quest::addloot(item\_id, charges, equipitem) # Adds 'charges' charges of item 'item\_id' to the NPC's loot. If 'equipitem' is false or 0, the item will not be used or shown on the NPC.
 quest::addldonpoints(points, theme) # Adds 'points' LDoN points for 'theme' LDoN theme.
 quest::addskill(skill, value) # Increases 'skill' by 'value' for user.
@@ -398,17 +403,21 @@ quest::wearchange(slot, texture) # Allows setting visible slots to any valid tex
 quest::write(file, string) # Writes 'string' to a file named 'file'.
 quest::ze(color_id, text) # Zone-wide emote.
 quest::Zone(zone) # Sends the user to the specified zone (short name).
+```
 
-##### **Conditionals**
+### **Conditionals**
 
-**Syntax:**
+**Syntax**
 
+```perl
 if($variable1 \[operator\] $variable2) {
 	quest::commands;
 }
+```
 
 **Example:**
 
+```perl
 if($variable1 \[operator\] $variable2) {
 	quest::commands;
 }
@@ -418,6 +427,7 @@ elsif($variable1 \[someotheroperator\] $variable2) {
 else {
 	quest::commands;
 }
+```
 
 Note, special operators apply to string comparisons in Perl!
 
