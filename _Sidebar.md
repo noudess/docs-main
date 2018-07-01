@@ -42,6 +42,7 @@
 * [[Bag Sizes]]
 * [[Client Mask]]
 * [[Client Spell ID Limitations]]
+* [[Client Version List]]
 * [[Emote Colors]]
 * [[Experience by Level]]
 * [[Facial Features]]
