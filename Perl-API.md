@@ -1373,3 +1373,10 @@ $door->SetX(XPos)
 $door->SetY(YPos)
 $door->SetZ(ZPos)
 ```
+
+# Perl Debugging
+
+* Run the perl file against the perl processor for syntax errors. (e.g. perl <filename.pl>)
+* Reload the quest in game. #reloadquest or #rq
+* See any recent API errors. #questerrors
+* Peek at the zone console and see if any hints appear there. Also look at the zone logfile.
