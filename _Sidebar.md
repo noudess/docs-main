@@ -69,6 +69,7 @@
 * [[Element|Element Types]]
 * [[Food and Drink]]
 * [[Item|Item Types]]
+* [[Item Click Types]]
 * [[LDON Themes]]
 * [[Numhit|Numhit Types]]
 * [[Race|Race Types]]
