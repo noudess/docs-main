@@ -86,3 +86,4 @@
 * [[Base Value Formulas]]
 * [[Spell Groups]]
 * [[Spell Effect IDs]]
+* [[Spell Target Restrictions]]
