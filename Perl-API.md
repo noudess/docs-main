@@ -8,33 +8,33 @@
 
 ##### **Saving/Naming Quests**
 
-*   Quests go in the directory **'quests'** (not Quests).
-*   Save your quests as a .pl This can be done by going into Notepad --> Save As --> All File Types --> "npcid.pl"
-*   If the quest applies to any mob in the zone with the same name (99% of all cases), Quests should be saved in **$EQEmuDir$/quests/zonesn/NPC_NAME.pl (replacing ` with -)**
-*   If the quest applies to a specific NPC type in the zone, and there are several npc types with the same name in that zone, quests should be saved in $EQEmuDir$/quests/zonesn/NPCID.pl
-*   Server-wide default quest in: $EQEmuDir$/quests/default.pl - Be careful when editing this that you don't delete something that your server uses. Such as the plugin returnitems so npcs dont eat items.
-*   For player quests (player.pl) see: \[\[Player Quest Examples\]\]
-*   For item quests see: \[\[ItemQuests\]\]
-*   For tasks see: \[\[TaskSystemOverview\]\]
+* Quests go in the directory 'quests' (not Quests).
+* Save your quests as a .pl This can be done by going into Notepad --> Save As --> All File Types --> "npcid.pl"
+* If the quest applies to any mob in the zone with the same name (99% of all cases), Quests should be saved in $EQEmuDir$/quests/zonesn/NPC_NAME.pl (replacing ` with -)
+* If the quest applies to a specific NPC type in the zone, and there are several npc types with the same name in that zone, quests should be saved in $EQEmuDir$/quests/zonesn/NPCID.pl
+* Server-wide default quest in: $EQEmuDir$/quests/default.pl - Be careful when editing this that you don't delete something that your server uses. Such as the plugin returnitems so npcs dont eat items.
+* For player quests (player.pl) see:  Player Quest Examples
+* For item quests see:  ItemQuests
+* For tasks see:  TaskSystemOverview
 
 ##### **Comments**
 
 *   Anything after an # is a comment, and is ignored by the parser. This is useful for leaving notes if you have more than one person working on a quest.
     *   Example of a comment:
 
+```perl
 sub EVENT_SAY {
 	if ($text=~/Hail/i) { #Checks if the text is like Hail, case-insensitive.
 		plugin::Whisper("Hail!");
 	}
 }
+```
 
-##### **Events**
+# Perl Sub Events
 
 *   A full list can always be found in the EQEmu source [https://github.com/EQEmu/Server/blob/master/zone/embparser.cpp](https://github.com/EQEmu/Server/blob/master/zone/embparser.cpp)
 
-##### **Perl Sub Events** \- These are events defined by the EQEmu Software/Source that trigger inside a Perl script
-
-```perl
+```
 sub EVENT_AGGRO # Triggered when a mob aggros a client.
 sub EVENT_AGGRO_SAY # Triggered when a mob is targeted, the player types something, and NPC is in combat.
 sub EVENT_ATTACK # Triggered when the NPC is attacked.
@@ -59,9 +59,7 @@ sub EVENT_DISCOVER_ITEM # Triggered when an item is discovered.
 sub EVENT_DROP_ITEM # Triggered when a client drops an item.
 sub EVENT_DUEL_LOSE # Triggered when a client loses a duel.
 sub EVENT_DUEL_WIN # Triggered when a client wins a duel.
-sub EVENT_ENCOUNTER_LOAD # Triggered when an encounter loads.
-sub EVENT_ENCOUNTER_UNLOAD # Triggered when an encounter unloads.
-sub EVENT_ENTER # Triggered by any client who enters a mob\'s proximity.
+sub EVENT_ENTER # Triggered by any client who enters a mob's proximity.
 sub EVENT_ENTER_AREA # Triggered when a client enters the area of a mob.
 sub EVENT_ENTERZONE # Triggered when a player enters the zone.
 sub EVENT_EQUIP_ITEM # Triggered when a player equips an item.
@@ -116,7 +114,7 @@ sub EVENT_WEAPON_PROC # Triggered when a weapon procs.
 sub EVENT_ZONE # Triggered when a player zones.
 ```
 
-#### Text Response Example
+## Text Response Example
 
 All speaking responses are included in a **$text** variable
 
@@ -130,24 +128,19 @@ if ($text=~/\bme\b/) # Would not match the "me" in "name" or the "me" in "NAME".
 if ($text=~/^me$/i) # Would only match if "me" is the only text said. The "^" tells what must be the first thing said and the "$" tells what must be the last thing.
 ```
 
-### Special Text Response Examples
+## Special Text Response Examples
 
 These responses allow you to check for multiple strings within your text variable.
 
+```perl
 if ($text=~/Hail|Hi|Hello/i) # Will check if the text contains "Hail", "Hi", or "Hello".
 if ($text!~/Hail|Hi|Hello/i) # Will check if the text does not contain "Hail", "Hi", or "Hello".
+```
 
-**This uses Perl Regular Expression Matching. See one of the following sites for more info:**
+# Exported Variables
 
-*   [http://aspn.activestate.com/ASPN/docs/ActivePerl/lib/Pod/perlrequick.html](http://aspn.activestate.com/ASPN/docs/ActivePerl/lib/Pod/perlrequick.html)
-*   [http://aspn.activestate.com/ASPN/docs/ActivePerl/lib/Pod/perlretut.html](http://aspn.activestate.com/ASPN/docs/ActivePerl/lib/Pod/perlretut.html)
-*   [http://www.erudil.com/preqr.pdf](http://www.erudil.com/preqr.pdf)
-
-### **Pre-Exported Variables**
-
-*   A full list can always be found in the EQEmu source [https://github.com/EQEmu/Server/blob/master/zone/embparser.cpp](https://github.com/EQEmu/Server/blob/master/zone/embparser.cpp)
-*   Pre-Exported variables are variables that are pre-created by the source typically by certain events or behaviors
-*   \[\[Faction Values\]\]
+* A full list can always be found in the EQEmu source [https://github.com/EQEmu/Server/blob/master/zone/embparser.cpp](https://github.com/EQEmu/Server/blob/master/zone/embparser.cpp)
+* Exported variables are sometimes available globally during sub-events, some exported variables are only available in certain sub-events
 
 ```perl
 $activity_id # Returns the ID of the task stage completed (in EVENT_TASK_STAGE_COMPLETE); Returns the ID of the task updated or complete (in EVENT_TASK_COMPLETE, EVENT_TASK_UPDATE)
@@ -285,8 +278,8 @@ quest::echo(color, text) # Echoes specified 'text' to console.
 quest::emote(text) # Mob will emote 'text'.
 quest::enable_spawn2(spawn2_id) # Enables this spawn group to start spawning again once the respawn timer is up for it.
 quest::enabletitle(titleset) # Allows player to use titles from the given titleset, assuming they meet all other qualifications (race, class, AAs, item, etc).
-<span bitstream="" mono="" sans="" style="color: rgb(0, 130, 0); font-family: Consolas, " vera="">quest::enable_proximity_say() #Required for sub EVENT_PROXIMITY_SAY to work
-</span>quest::exp(amount) # Adds 'amount' of exp to user's exp amount. NOTE: This is effected by all experience multipliers. So, a global multiplier of 2.0 will double the amount of experience you specified.
+quest::enable_proximity_say() #Required for sub EVENT_PROXIMITY_SAY to work
+quest::exp(amount) # Adds 'amount' of exp to user's exp amount. NOTE: This is effected by all experience multipliers. So, a global multiplier of 2.0 will double the amount of experience you specified.
 quest::faction(faction_id, value, temp) # Give player faction 'value' with 'faction_id'. 'temp' is optional and its values are 0 = Permanent faction with a message, 1 = Temporary faction without a message, 2 = Temporary faction with a message, and 3 = Permanent faction with no message
 quest::factionvalue() # Checks factions returning more logical values than $faction (which cannot be changed due to backwards compatiblity, and the values are hardcoded into client.)
 quest::FlagInstanceByGroupLeader() # Assigns the group leader's instance to a player
