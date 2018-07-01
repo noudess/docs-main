@@ -12,6 +12,12 @@
 * [[eqemu_config]]
 * [[PvP]]
 
+** Logging **
+* [[Logging System]]
+* [[Logging Categories]]
+* [[Logging for Developers]]
+* [[Logging Packets]]
+
 **Reloading Server Data**
 * [[Server Data Loading]]
 
