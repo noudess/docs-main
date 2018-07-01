@@ -50,6 +50,7 @@
 * [[Zones|Zones List]]
 * [[Item Sizes|Item Sizes]]
 * [[NATS Channels]]
+* [[Zones]]
 
 **Types**
 * [[Augment|Augment Types]]
