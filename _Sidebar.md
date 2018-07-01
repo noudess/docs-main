@@ -65,6 +65,7 @@
 * [[Chat Channel|Chat Channel Types]]
 * [[Door|Door Open Types]]
 * [[Element|Element Types]]
+* [[Food and Drink]]
 * [[Item|Item Types]]
 * [[LDON Themes]]
 * [[Numhit|Numhit Types]]
