@@ -30,20 +30,19 @@ Below would enable client -> server direction packet logging to the client
 
 All server packets that are sent to the client, the only packet types that aren't sent to the client while in game are the message packets themselves because that would cause a loop
 
-![image](https://i.imgur.com/llm7EXY.gif)
+[[https://i.imgur.com/llm7EXY.gif]]
 
 ## Client to Server
 
 Packets being sent from client to server
 
-![image](https://i.imgur.com/8t4tkrB.gif)
+[[https://i.imgur.com/8t4tkrB.gif]]
 
 ## Unhandled Packets
 
 In this example - a client clicking a 'Krono' is unhandled by the server, at which it dumps a packet of data sent from the client
 
-![](https://i.imgur.com/XkPDXb9.gif)
-
+[[https://i.imgur.com/XkPDXb9.gif]]
 
 ### Packet Logging Levels
 
