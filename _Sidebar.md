@@ -39,6 +39,7 @@
 **Reference Lists**
 * [[Animations]]
 * [[Augment Restrictions]]
+* [[Bag Sizes]]
 * [[Client Mask]]
 * [[Client Spell ID Limitations]]
 * [[Emote Colors]]
