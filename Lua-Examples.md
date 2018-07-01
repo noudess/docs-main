@@ -1,7 +1,7 @@
 Various Lua Quest examples to give a feel for how the code works:
 
 ### NPC
-```
+```lua
 -- Nerissa_Clothspinner
 -- Makes use of the item_turnin module, string_ext module for findi and client_ext module for Client:GiveCash() and Client:Faction()
 function event_waypoint_arrive(e)
@@ -78,7 +78,7 @@ function event_say(e)
 end
 ```
 
-```
+```lua
 --An example of using PEQ's thread_manager to make scripts with lots of timers easier to write
 local ThreadManager = require("thread_manager");
 local evt;
@@ -147,7 +147,7 @@ end
 ```
 
 ### Player
-```
+```lua
 -- player.lua example of access and changing the lockpick value of a door.
 function event_click_door(e)
 	local door_id = e.door:GetDoorID();
