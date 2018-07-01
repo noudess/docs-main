@@ -72,3 +72,6 @@
 **NPC**
 * [[NPC Classes]]
 * [[Grids]]
+
+**Spells**
+* [[Base Value Formulas]]
