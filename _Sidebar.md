@@ -12,7 +12,7 @@
 * [[eqemu_config]]
 * [[PvP]]
 
-** Logging **
+**Logging**
 * [[Logging System]]
 * [[Logging Categories]]
 * [[Logging for Developers]]
