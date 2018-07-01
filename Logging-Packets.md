@@ -30,7 +30,10 @@ Below would enable client -> server direction packet logging to the client
 
 All server packets that are sent to the client, the only packet types that aren't sent to the client while in game are the message packets themselves because that would cause a loop
 
-[[https://i.imgur.com/llm7EXY.gif]]
+
+<p align="center">
+<img src="/EQEmu/Server/wiki/images/llm7EXY-opt.gif?raw=true">
+</p>
 
 ## Client to Server
 
