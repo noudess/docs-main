@@ -1,8 +1,11 @@
 Example(s)
 
 ```
+#emote [name | world | zone] color_id message
 #emote skyplane 15 You hear thunderclouds rumbling in the distance.
 #emote Brainiacvince 15 I'm right behind you.
+
+(Also applicable to quest API calls)
 ```
 
 |ID|Color|
