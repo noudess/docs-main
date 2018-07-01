@@ -64,3 +64,6 @@
 * [[Resist|Resist Types]]
 * [[Target|Target Types]]
 * [[Ornament|Ornament Types]]
+
+**NPC**
+* [[NPC Classes]]
