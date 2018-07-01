@@ -29,6 +29,7 @@
 * Creating and Editing NPCs
 * Placing Doors
 * Changing Starting Zones
+* Saylinks
 
 ### Tooling
 
