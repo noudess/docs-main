@@ -63,6 +63,7 @@
 * [[Door|Door Open Types]]
 * [[Element|Element Types]]
 * [[Item|Item Types]]
+* [[LDON Themes]]
 * [[Numhit|Numhit Types]]
 * [[Race|Race Types]]
 * [[Resist|Resist Types]]
