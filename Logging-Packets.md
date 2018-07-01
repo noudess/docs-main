@@ -56,4 +56,4 @@ In this example - a client clicking a 'Krono' is unhandled by the server, at whi
 
 Below is an example of a full packet payload being output to the client
 
-![](https://i.imgur.com/C9SnDRD.gif)
+[[https://i.imgur.com/C9SnDRD.gif]]
