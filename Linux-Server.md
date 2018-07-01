@@ -1,14 +1,26 @@
 
+## Supported Distributions
+* Debian
+* Ubuntu
+* CentOS
+* Fedora
+
 ### Starting the Linux Installer
 
 * First you will need to kick off the installer using the single line command line also referenced on the README in the EQEmu/Server repository
-
-### > Debian/Ubuntu/CentOS/Fedora
-
 * You can use curl or wget to kick off the installer (whichever your OS has)
-> curl -O https://raw.githubusercontent.com/EQEmu/Server/master/utils/scripts/linux_installer/install.sh install.sh && chmod 755 install.sh && ./install.sh
 
-> wget --no-check-certificate https://raw.githubusercontent.com/EQEmu/Server/master/utils/scripts/linux_installer/install.sh -O install.sh && chmod 755 install.sh && ./install.sh
+*curl*
+
+```bash
+curl -O https://raw.githubusercontent.com/EQEmu/Server/master/utils/scripts/linux_installer/install.sh install.sh && chmod 755 install.sh && ./install.sh
+```
+
+*wget*
+
+```bash 
+wget --no-check-certificate https://raw.githubusercontent.com/EQEmu/Server/master/utils/scripts/linux_installer/install.sh -O install.sh && chmod 755 install.sh && ./install.sh
+``` 
 
 ### Enter Environment Parameters
 
@@ -18,8 +30,14 @@
   * MySQL database name
   * MySQL new user name and password
 
+```bash
+wget --no-check-certificate https://raw.githubusercontent.com/EQEmu/Server/master/utils/scripts/linux_installer/install.sh -O install.sh && chmod 755 install.sh && ./install.sh
+```
+
 ```
 root@debian:/home/eqemu# wget --no-check-certificate https://raw.githubusercontent.com/EQEmu/Server/master/utils/scripts/linux_installer/install.sh -O install.sh && chmod 755 install.sh && ./install.sh
+
+
 --2018-01-15 11:34:02--  https://raw.githubusercontent.com/EQEmu/Server/master/utils/scripts/linux_installer/install.sh
 Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 151.101.148.133
 Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|151.101.148.133|:443... connected.
@@ -64,16 +82,19 @@ Press any key to continue...
 First, we need to set your passwords...
 Make sure that you remember these and keep them somewhere
 
+```
 
+You will be prompted for installation configuration
+
+```
 Enter new UNIX password:
 Retype new UNIX password:
-passwd: password updated successfully
-mkdir: cannot create directory ‘/home/eqemu’: File exists
 Enter MySQL root (Database) password: eqemu
 Enter Database Name (single word, no special characters, lower case):eqemu
 Enter (Database) MySQL EQEmu Server username: eqemu
 Enter (Database) MySQL EQEmu Server password: eqemu
 ```
+
 * Once complete, the installer will take off and do the rest, and you can just sit back and wait for it to complete! 
 * Note: Compiling takes a little while because of compiling happening on a single core, this is because not all servers that the installer runs on has proper memory configured for the amount of processor jobs that could be ran to speed up this process
 
@@ -121,7 +142,7 @@ World: UP Zones: (30/30) UCS: UP Queryserv: UP
 ```
 ### Basic Server Configuration
 
-* To configure your server name, shortname and other parameters, you can visit [[eqemu_config]]
+* To configure your server name, shortname and other parameters, you can visit [eqemu_config](./eqemu_config)
 * To configure additional zones to boot, those options can be set in the startup script
 
 That's it! You should be set!
