@@ -1,34 +1,36 @@
-> A complete list of Perl scripting resources...
+# Beginners Guide To Perl
 
-##### **Perl Guides**
+* Are you new to Perl? Perl isn't just a EQEmu scripting language, it's been around for eons and used in many systems
+* Here is a reference to basic Perl [http://www.tizag.com/beginnerT/](Beginners Guide to Perl)
 
-*   \[\[Entity Lists - How to Use Them\]\] - By Akkadius
-*   \[\[The Power of Entity Variables\]\] - By Akkadius
-*   \[\[How To Use Quest Globals\]\] - By Kingly Krab
+# Real Use Examples
 
-##### **Saving/Naming Quests**
+* Modifying NPC Stats (Example coming)
+* Get Item Stats (Example coming)
+* Get Spell Stats (Example coming)
 
-* Quests go in the directory 'quests' (not Quests).
-* Save your quests as a .pl This can be done by going into Notepad --> Save As --> All File Types --> "npcid.pl"
-* If the quest applies to any mob in the zone with the same name (99% of all cases), Quests should be saved in $EQEmuDir$/quests/zonesn/NPC_NAME.pl (replacing ` with -)
-* If the quest applies to a specific NPC type in the zone, and there are several npc types with the same name in that zone, quests should be saved in $EQEmuDir$/quests/zonesn/NPCID.pl
-* Server-wide default quest in: $EQEmuDir$/quests/default.pl - Be careful when editing this that you don't delete something that your server uses. Such as the plugin returnitems so npcs dont eat items.
-* For player quests (player.pl) see:  Player Quest Examples
-* For item quests see:  ItemQuests
-* For tasks see:  TaskSystemOverview
+# How Perl Quests Are Loaded
 
-##### **Comments**
+### NPC
 
-*   Anything after an # is a comment, and is ignored by the parser. This is useful for leaving notes if you have more than one person working on a quest.
-    *   Example of a comment:
+In order of operations, an npc's script will be dictated by the first script that it finds below
 
-```perl
-sub EVENT_SAY {
-	if ($text=~/Hail/i) { #Checks if the text is like Hail, case-insensitive.
-		plugin::Whisper("Hail!");
-	}
-}
-```
+* quests/zoneshortname/id.pl
+* quests/zoneshortname/npc_name.pl
+* quests/global/npcid.pl
+* quests/global/npc_name.pl
+* quests/zoneshortname/default.pl
+* quests/global/default.pl
+
+### Player
+
+In order of operations, a player's script will be dictated by the first script that it finds below
+
+* quests/zoneshortname/player_v[instance_version].pl
+* quests/zoneshortname/player.pl
+* quests/global/player.pl
+
+# Global Scripts
 
 # Perl Sub Events
 
@@ -474,8 +476,6 @@ sub EVENT_AGGRO_SAY {
 *   Nearly every function for Perl can be found in the EQEmu source[https://github.com/EQEmu/Server/blob/master/zone/perl_mob.cpp](https://github.com/EQEmu/Server/blob/master/zone/perl_mob.cpp) 
 
 # Client
-
-### Example
 
 ```perl
 $client->AccountID()
@@ -1343,13 +1343,3 @@ $door->SetX(XPos)
 $door->SetY(YPos)
 $door->SetZ(ZPos)
 ```
-
-### Use Reference
-
-#### Additional References
-
-Modifying NPC Stats: \[\[Modify NPC Stat\]\]
-
-Get Item Stats: \[\[Item Stat Identifiers\]\]
-
-Get Spell Stats: \[\[GetSpellStat\]\]
