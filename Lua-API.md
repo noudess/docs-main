@@ -1593,7 +1593,7 @@ raid:TeleportGroup(Lua_Mob sender, uint32 zone_id, uint32 instance_id, float x, 
 raid:TeleportRaid(Lua_Mob sender, uint32 zone_id, uint32 instance_id, float x, float y, float z, float h); -- void
 ```
 
-#  lua_
+#  Lua General Functions
 ```lua
 eq.active_speak_activity(int task_id); -- int
 eq.active_speak_task(); -- int
