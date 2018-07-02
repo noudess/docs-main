@@ -1,24 +1,7 @@
 [Return to the Lua Parser](Lua-Parser)
 
 The Lua API consisted of many exported classes and some general functions.
-* [Client](Lua-Client)
-* [Corpse](Lua-Corpse)
-* [Door](Lua-Door)
-* [Entity](Lua-Entity)
-* [EntityList](Lua-Entity-List)
-* [Group](Lua-Group)
 * [HateList](Lua-Hate-List)
-* [Inventory](Lua-Inventory)
-* [Item](Lua-Item)
-* [ItemInst](Lua-ItemInst)
-* [Mob](Lua-Mob)
-* [NPC](Lua-NPC)
-* [Object](Lua-Object)
-* [Packet](Lua-Packet)
-* [Raid](Lua-Raid)
-* [Spell](Lua-Spell)
-* [Spawn](Lua-Spawn)
-* [Lua General Functions](Lua-General-Functions)
 * [Lua Constants](Lua-Constants)
 
 # Packet
