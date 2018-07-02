@@ -21,6 +21,14 @@ sub EVENT_AGGRO {
 
 - When a mob is targeted, the player types something, and NPC is in combat.
 
+### Exports
+
+| Name | Type | Usage
+| --- | --- | ---
+|data | int | `quest::say($data); # returns int`
+|text | int | `quest::say($text); # returns int`
+|langid | int | `quest::say($langid); # returns int`
+
 ### Example
 
 - In this example, the NPC, if in combat, would say the names of everyone on its hate list, and include both the amount of damage the entity has done, as well as the amount of hate the entity has generated.
@@ -52,7 +60,9 @@ sub EVENT_AGGRO_SAY {
 # EVENT_ATTACK
 ### Trigger
 
-- When the NPC is attacked.  Note the subtle difference from EVENT_AGGRO, which is triggered when the NPC is aggro'd (which could occur through bad faction, for instance).
+- When the NPC is attacked.  
+
+Note the subtle difference from EVENT_AGGRO, which is triggered when the NPC is aggro'd (which could occur through bad faction, for instance).
 
 ### Example
 
@@ -68,7 +78,9 @@ sub EVENT_ATTACK {
 
 ### Trigger
 
-- When a client augments an item.  You would likely use this event in your global player.pl file.
+- When a client augments an item.  
+
+You would likely use this event in your global player.pl file.
 
 ### Example
 
@@ -85,7 +97,9 @@ sub EVENT_AUGMENT_ITEM {
 
 ### Trigger
 
-- When a client inserts an augment into an item.  You would likely use this event in your global player.pl file.
+- When a client inserts an augment into an item.  
+
+You would likely use this event in your global player.pl file.
 
 ### Example
 
@@ -121,6 +135,12 @@ sub EVENT_AUGMENT_ITEM {
 
 - When a client casts a spell.  
 
+### Exports
+
+|Name | Type | Usage
+| --- | --- | ---
+|spell_id | int	| `quest::say($spell_id); # returns int`
+
 ### Example
 
 - In this example, the player would emote upon a successful cast.  
@@ -137,6 +157,12 @@ sub EVENT_CAST {
 ### Trigger
 
 - When a client begins to cast a spell.
+
+### Exports
+
+|Name | Type | Usage
+| --- | --- | ---
+|spell_id | int	| `quest::say($spell_id); # returns int`
 
 ### Example
 
@@ -156,6 +182,12 @@ sub EVENT_CAST_BEGIN {
 ### Trigger
 
 - When a player casts a spell on a player or NPC.
+
+### Exports
+
+|Name | Type | Usage
+| --- | --- | ---
+|spell_id | int	| `quest::say($spell_id); # returns int`
 
 ### Example
 
@@ -180,7 +212,16 @@ sub EVENT_CAST_ON {
 
 ### Trigger
 
-- When the client clicks on a door object.  Note that you would likely use this event in the zone player.pl file.
+- When the client clicks on a door object.  
+
+Note that you would likely use this event in the zone player.pl file.  Since doors have open types and destination fields stored in the database, most "simple" doors do not require a separate quest script.  An example of a "simple" door would be any door that requires a single keyitem (by Item ID) to open, like the door to the basement in Befallen.
+
+### Exports
+
+|Name | Type | Usage
+| --- | --- | ---
+|doorid | int	| `quest::say($doorid); # returns int`
+|version | int	| `quest::say($version); # returns int`
 
 ### Example
 
@@ -209,7 +250,16 @@ sub EVENT_CLICKDOOR {
 
 ### Trigger
 
-- When the client clicks on an object.
+- When the client clicks on an object.  
+
+Note the similarity between this event and Perl EVENT_CLICKDOOR, since it is easy to confuse a door object (like a Plane of Knowledge Book) with Objects (IE Pottery wheels, Brew Barrels, etc.).  You would likely use this event in the zone player.pl (or global_player.pl) files.
+
+### Exports
+
+|Name | Type | Usage
+| --- | --- | ---
+|objectid | int	| `quest::say($objectid); # returns int`
+|clicker_id | int	| `quest::say($clicker_id); # returns int`
 
 ### Example
 
