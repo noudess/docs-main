@@ -55,7 +55,6 @@
 * [[Server Rules]]
 * [[Skills]]
 * [[Zones]]
-* [[Zones|Zones List]]
 
 **Types**
 * [[Augment|Augment Types]]
