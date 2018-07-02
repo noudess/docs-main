@@ -1300,14 +1300,14 @@ $item->GetCharges();
 ```
 
 ```perl
-GetAugment(slot) # Returns an item object for the augment found in the slot supplied
-GetCharges() # Returns the number of charges on an item
-GetID() # Returns the ID of the item
-GetName() # Returns the name of the item
-IsAttuned() # Returns 1 if the item is attuned (instanced no drop)
-IsType(type) # Returns 1 if the item is of the type supplied (valid types are 0=common, 1=container, 2=book)
-ItemSay(text, language) # The item says text, language is optional (currently only goes to item's owner)
-SetScale(multiplier) # Sets the scale multiplier for scaling items.  1.0 = full stats
+$quest_item->GetAugment(int16 slot_id)
+$quest_item->GetCharges()
+$quest_item->GetID()
+$quest_item->GetName()
+$quest_item->IsAttuned()
+$quest_item->IsType(type)
+$quest_item->ItemSay(string text [int language_id])
+$quest_item->SetScale(float scale_multiplier)
 ```
 
 # Object
