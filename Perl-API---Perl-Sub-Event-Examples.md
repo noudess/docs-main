@@ -326,7 +326,25 @@ sub EVENT_COMBAT {
 
 ### Trigger
 
-- by any client who enters a mob's proximity.
+- When a client enters a mob's proximity (as defined by quest::set_proximity).
+
+### Example
+
+- In this example, we first set the NPC's proximity; when a player enters the proximity, they become PVP (red).
+
+```perl
+sub EVENT_SPAWN {
+	#:: Set the proximity bounds around the NPC on spawn, 200 units across
+	$x = $npc->GetX();
+	$y = $npc->GetY();
+	quest::set_proximity($x - 100, $x + 100, $y - 100, $y + 100);
+}
+
+sub EVENT_ENTER {
+	#:: Turn pvp on
+	quest::pvp(on);
+}
+```
 
 # EVENT_ENTER_AREA
 
@@ -338,7 +356,16 @@ sub EVENT_COMBAT {
 
 ### Trigger
 
-- when a player enters the zone.
+- When a player enters the zone.  Likely you will add to the zone player.pl file.
+
+### Example
+
+```perl
+sub EVENT_ENTERZONE {
+	#:: Clear the LDON Compass mark
+	$client->ClearCompassMark();
+}
+```
 
 # EVENT_EQUIP_ITEM
 
@@ -350,7 +377,27 @@ sub EVENT_COMBAT {
 
 ### Trigger
 
-- by any client who leaves a mob's proximity.
+- by any client who leaves a mob's proximity (as defined by quest::set_proximity).
+
+### Example
+
+- In this example, we first set the NPC's proximity; when a player exits the proximity, they are no longer PVP (blue).
+
+### Example
+
+```perl
+sub EVENT_SPAWN {
+	#:: Set the proximity bounds around the NPC on spawn, 200 units across
+	$x = $npc->GetX();
+	$y = $npc->GetY();
+	quest::set_proximity($x - 100, $x + 100, $y - 100, $y + 100);
+}
+
+sub EVENT_EXIT {
+	#:: Turn pvp off
+	quest::pvp(off);
+}
+```
 
 # EVENT_FEIGN_DEATH
 
