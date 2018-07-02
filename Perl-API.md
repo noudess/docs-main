@@ -269,166 +269,215 @@ $h # The heading of the NPC.
 *   A full list can always be found in the EQEmu source [https://github.com/EQEmu/Server/blob/master/zone/questmgr.cpp](https://github.com/EQEmu/Server/blob/master/zone/questmgr.cpp)
 
 ```perl
-quest::addloot(item_id, charges, equipitem) # Adds 'charges' charges of item 'item_id' to the NPC's loot. If 'equipitem' is false or 0, the item will not be used or shown on the NPC.
-quest::addldonpoints(points, theme) # Adds 'points' LDoN points for 'theme' LDoN theme.
-quest::addskill(skill, value) # Increases 'skill' by 'value' for user.
-quest::AssignToInstance(instance_id) # Assigns a single player to an instance.
-quest::AssignGroupToInstance(instance_id) # Assigns a group to an instance.
-quest::AssignRaidToInstance(instance_id) # Assigns a raid to an instance.
-quest::attack(name) # Attacks player 'name'.
-quest::attacknpc(entity_id) # Attacks NPC with ID 'entity_id', NOT NPC type ID!
-quest::attacknpctype(npc_type_id) # Attacks the first NPC in the zone with npc type 'npc_type_id'.
-quest::buryplayercorpse(char_id) # Buries and depops a single corpse of the specified 'char_id'.
-quest::castspell(spell_id, target_id) # Casts spell on entity with the entity ID 'target_id' (This is buggy, if it does not work try $npc->CastSpell(spell_id, target_id);).
-quest::changedeity(deity_id) # Permanently changes the user's deity to 'deity_id', then kicks to character select.
-quest::checktitle(titleset) # Bool value to determine if a player has the specified titleset enabled or not.
-quest::ChooseRandom(123, 245, 789...) # Returns one of the items listed in its arguments randomly.
-quest::clear_proximity() # Removes a mob's proximity.
-quest::clear_zone_flag(zone_id) # Clears a character flag for the zone specified.
-quest::collectitems(item_id, remove) # Returns number of item_id that exist in inventory. If remove is true, items are removed as they are counted.
-quest::createdoor(modelname, x, y, z, heading, type, size) # Creates a new door.
-quest::creategroundobject(itemid, x, y, z, heading, decaytime) # Creates a ground spawn object/item. Leaving decaytime blank will disable decaying.
-quest::creategroundobjectfrommodel(model_name, x, y, z, heading, type, decaytime) # Creates a ground spawn object by model. Leaving decaytime blank will disable decaying.
-quest::createguild(guild_name, leader_name) # Creates a new guild.
-quest::CreateInstance(zone_name, version, expiration_time) # Creates an instance in the given zone using specified version and expiration time. Note: This command will export the Instance ID that it creates!
-quest::crosszonesetentityvariablebynpctypeid(npctype_id, id, m_var) # Sets entity variables world wide with specified npctype_id
-quest::crosszonesignalclientbycharid(char_id, data) # Signals character id 'char_id' with 'data'.
-quest::crosszonesignalclientbyname(name, data) # Signals player 'name' with 'data'.
-quest::crosszonesignalnpcbynpctypeid(npctype_id, data) # Signals all NPC entities world wide with specified npctype_id
-quest::crosszonemessageplayerbyname(type, name, message) # Messages player 'name' with color 'type' the message 'message'.
-quest::delglobal(varname) # Deletes a quest global.
-quest::depop(npc_type_id) # A single mob will de-spawn and not start the spawn timer.
-quest::depopall(npc_type_id) # Depops every instance of the npc in the zone (quest::depop(npc_type_id)) will only do one NPC at a time.)
-quest::depop_withtimer(npc_type_id) # A single mob will de-spawn and start the spawn timer.
-quest::depopzone(type) # Depops every NPC in the zone based on 'type', 0 disables the NPCs' spawn timers so they will not repop on their own, 1 allows them to spawn as normal once their timers are up.
-quest::DestroyInstance(instance_id) # Destroys the given instance.
-quest::ding() # Sends the ding sound to the client.
-quest::disable_spawn2(spawn2_id) # Disables this spawn group from spawning another NPC until it is enabled again. Also Depops any current NPCs using this spawn point.
-quest::disable_proximity_say() #Disables sub EVENT_PROXIMITY_SAY from triggering.
-quest::doanim(anim_num) # Mob will do animation for 'anim_num'.
-quest::echo(color, text) # Echoes specified 'text' to console.
-quest::emote(text) # Mob will emote 'text'.
-quest::enable_spawn2(spawn2_id) # Enables this spawn group to start spawning again once the respawn timer is up for it.
-quest::enabletitle(titleset) # Allows player to use titles from the given titleset, assuming they meet all other qualifications (race, class, AAs, item, etc).
-quest::enable_proximity_say() #Required for sub EVENT_PROXIMITY_SAY to work
-quest::exp(amount) # Adds 'amount' of exp to user's exp amount. NOTE: This is effected by all experience multipliers. So, a global multiplier of 2.0 will double the amount of experience you specified.
-quest::faction(faction_id, value, temp) # Give player faction 'value' with 'faction_id'. 'temp' is optional and its values are 0 = Permanent faction with a message, 1 = Temporary faction without a message, 2 = Temporary faction with a message, and 3 = Permanent faction with no message
-quest::factionvalue() # Checks factions returning more logical values than $faction (which cannot be changed due to backwards compatiblity, and the values are hardcoded into client.)
-quest::FlagInstanceByGroupLeader() # Assigns the group leader's instance to a player
-quest::FlagInstanceByRaidLeader() # Assigns the raid leader's instance to a player
-quest::FlyMode(0|1|2) # Sets flymode for player where 0 = Off, 1 = On, 2 = Levitate.
-quest::follow(entity_id, distance) # Mob starts to follow 'entity_id'. The second field, 'distance', is optional and can be used to set the distance the Mob will follow its target at.
-quest::forcedooropen(door_id) # Forces a door with id 'door_id' to open.
-quest::forcedoorclose(door_id) # Forces a door with id 'door_id' to close.
-quest::getguildnamebyid(guild_id) # Gets a guild name from the 'guild_id' provided.
-quest::GetInstanceID(zonename, version) Returns the instanceid of the given zone/verison.
-quest::getlevel(type) # Returns average level. 0 = Self, 1 = Group, 2 = Raid, 3 = Raid (if not in Raid then Group, if not in either Self), 4 = Self 2 (max level ever reached).
-quest::getplayerburriedcorpsecount(char_id) # Returns how many of the char_id's corpses are marked as being buried.
-quest::get_spawn_condition(zone_short, condition_id) # Get the value of a spawn condition
-quest::GetSpellResistType(spell_id) # Returns the resist type of 'spell_id'.
-quest::GetSpellTargetType(spell_id) # Returns the target type of 'spell_id'.
-quest::givecash(copper, silver, gold, platinum) # Gives client coin.
-quest::gmmove(x, y, z) # Moves the user that triggered the Event to the provided location.
-quest::gmsay(text, color, all_zones?, guild_id, minstatus)
-quest::has_zone_flag(zone_id) # Checks for a 'zone_id' zone flag.
-quest::incstat(statid, 0-126) # Increases a stat by value x2 (Str=0, Sta=1, Agi=2, Dex=3, Int=4, Wis=5, Cha=6)
-quest::InsertQuestGlobal(charid, npcid, zoneid, varname, value, duration) # Creates a Quest Global.
-quest::IsBeneficialSpell(spell_id) # Returns true if 'spell_id' is beneficial.
-quest::IsEffectInSpell(spell_id, effect_id) # Returns true if spell effect 'effect_id' is in 'spell_id'.
-quest::isdooropen(door_id) # Checks if 'door_id' is currently open.
-quest::isdisctome(item_id) # Checks if 'item_id' is a discipline tome.
-quest::IsRunning() # Checks if an NPC is walking (returns 0) or running (returns 1)
-quest::itemlink(item_id) # Mob sends a tell to you with a link to an item. (not to be confused with quest::varlink which can be used in a message this must have its own line)
-quest::level(newlevel) # Sets the user's level to 'newlevel'.
-quest::me(text) # Does a name-less emote.
-quest::MerchantCountItem(merchant_npc_id, item_id) # returns the number of that item in stock.
-quest::MerchantSetItem(merchant_npc_id, item_id, quantity) # Changes the number of the item that the merchant has available to sell.
-quest::modifynpcstat(identifier, value) # Changes NPC stats on the fly. Changes are not saved to DB.
-quest::movegrp(zone_id, x, y, z) # Moves the user's Group that triggered the Event to the provided zone and location.
-quest::movepc(zone_id, x, y, z, heading) # Moves the user that triggered the Event to the provided zone and location. Heading is optional.
-quest::MovePCInstance(zone_id, instance_id, x, y, z) # Moves a player to instance 'instance_id' of the zone 'zone_id' at 'x', 'y', and 'z'.
-quest::moveto(x, y, z, heading, saveguardspot) # NPC moves to the set coordinates with 'heading' and 'saveguardspot' being optional. NPC will path back unless 'saveguardspot' is set to 1.
-quest::npcfeature(feature, setting) # Temporarily changes the NPC's appearance.
-quest::npcgender(gender) # Temporarily changes the NPC's gender.
-quest::npcrace(raceid) # Temporarily changes the NPC's race.
-quest::npcsize(size) # Temporarily changes the NPC's size.
-quest::npctexture(texture) # Temporarily changes the NPC's texture.
-quest::pathto(x, y, z) # Causes the npc to use path finding to walk to 'x', 'y', and 'z'.
-quest::pause(time) # Forces the NPC to take a break for a certain time.
-quest::permaclass(class_id) # Permanently changes the user's class to 'class_id'.
-quest::permagender(gender_id) # Permanently changes the user's gender to 'gender_id'. 0 = Male, 1 = Female, 2 = Neuter.
-quest::permarace(race_id) # Permanently changes the user's race to 'race_id', then kicks to character select.
-quest::playerfeature(feature, setting) # Temporarily changes the player's appearance.
-quest::playergender(gender) # Temporarily changes the player's gender.
-quest::playerrace(raceid) # Temporarily changes the player's race.
-quest::playersize(size) # Temporaririly changes the player's size.
-quest::playertexture(texture) # Temporarily changes the player's texture.
-quest::popup(title, text, popup_id, buttons, duration) # Creates a popup window with the given text. 'popup_id', 'buttons', and 'duration' are optional. The popup will vanish after 'duration' seconds (never if 'duration' is 0). For 'buttons' 0 = Just an OK button, 1 = Yes and No Buttons. This is used in conjunction with sub EVENT_POPUPRESPONSE.
-quest::pvp(on|off) # Sets PVP on|off for user.
-quest::rain(1|0) or quest::snow(1|0) # Makes it rain or snow in zone.
-quest::rebind(zone_id, x, y, z) # Binds the user that triggered the Event to the provided zone and location.
-quest::removetitle(titleset) # Removes the specified titleset from a player.
-quest::repopzone() # Repops the zone, in the same way the command #repop does. It will also re-enable spawn timers if disabled.
-quest::respawn(npc_type, grid) # Respawn specified NPC type on grid.
-quest::resume() # Resumes a stopped pathing grid.
-quest::safemove() # Moves user to zone's safe x, y, and z coordinates.
-quest::save() # Saves player data.
-quest::say(text, language_id) # Mob will say 'text'. 'language_id' is optional, and determines what language the NPC will speak in.
-quest::saylink(phrase, silent?, linkname) # This is for creating a say link.
-quest::scribespells(maxlevel, minlevel) # Scribes all spells up to the specified level.
-quest::selfcast(spell_id) # Forces the client to cast 'spell_id' spell on themselves.
-quest::setallskill(value) # Sets all skills to 'value'.
-quest::setanim(npc_type_id, animnum) # Adds appearance changes to 'npc_type_id' for animation 'animnum'.
-quest::sethp(hp_percent) # Sets the HP of an NPC to 'hp_percent'.
-quest::setglobal(varname, value, options, duration) # Sets a quest global named 'varname' to value 'value' for 'options' for 'duration'.
-quest::setguild(guild_id, rank) # Adds player to 'guild_id' with a 'rank'.
-quest::setlanguage(skill_id, 0-100) # Sets a language to value.
-quest::setnexthpevent(hp_percent) # Set a HP threshold for EVENT_HP. If the mob's HP falls below this threshold hp_percent, an event will be generated with the percent in $hpevent.
-quest::setnextinchpevent(hp_percent) # Set a HP threshold for EVENT_HP. If the mob's HP gets healed past this threshold hp_percent, an event will be generated with the percent in $inchpevent.
-quest::SetRunning(value) # Set to 0 for walk, 1 for running.
-quest::setskill(skill_id, value) # Sets a single skill to a value.
-quest::setsky(0-255) # Changes the sky.
-quest::setstat(stat_id, 0-252) # Sets a stat to value (Str=0, Sta=1, Agi=2, Dex=3, Int=4; Wis=5, Cha=6)
-quest::settarget(type, id) # Quest mob targets 'id' by 'type' (npctype or entity).
-quest::settime(hour, minute, [update world]) # Sets zone time of day. Sky/lighting changes acordingly. Update world is invisible and defaults to true. Use of a "0" results in a disjointed zoned that functions on it's own time system for events.
-quest::settimer(timer_name, seconds) # Starts timer 'timer_name' for use with EVENT_TIMER. You can have multiple timers that trigger every 'seconds'.
-quest::settimerMS(timer_name, milliseconds) # Same as quest::settimer() except time is in milliseconds.
-quest::shout(text) # Mob will shout 'text'.
-quest::shout2(text) # Mob will shout 'text' across all zones.
-quest::spawn_condition(zone_short_name, condition_id, value) # Uses variables in the spawn_conditions table for spawning or despawning chosen NPCs in a given zone.
-quest::spawn_from_spawn2(spawn2_id) # Allows multiple spawns to be spawned from a single spawn group even while the existing NPC for that spawn group is up.
-quest::set_proximity(minx, maxx, miny, maxy, minz, maxz, bsay) # Creates a proximity, if a client moves into or out of the bounds specified, proper events are generated. A mob may only have one proximity. 'minz' and 'maxz' are optional. Set bsay = 1 to enable proximity say checks.
-quest::set_zone_flag(zone_id) # Flags a character for 'zone_id' zone.
-quest::sfollow() # Turns off follow.
-quest::showgrid(grid) # Displays an in-game path based on a waypoint 'grid'.
-quest::showpath(x, y, z) # Displays an in-game path based on path finding using coordinates 'x', 'y', and 'z'.
-quest::signal(npc_id, wait) # cause an EVENT_SIGNAL on all mobs in the zone with this NPC type, with $signalid = 0. wait is an optional time to wait in ms before sending signal.
-quest::signalwith(npc_id, signal_id, wait) # same as signal(), except it sets $signal to the supplied signal_id. wait is an optional time to wait in ms before sending signal.
-quest::spawn(npc_type_id, grid, guildwarset, x, y, z) # Spawn 'npc_type_id' on 'grid' with 'guildwarset' (use 0) at 'x', 'y', and 'z'.
-quest::spawn2(npc_type_id, grid, guildwarset, x, y, z, heading) # Spawn 'npc_type_id' on 'grid' with 'guildwarset' (use 0) at 'x', 'y', and 'z' facing 'heading'.
-quest::start(grid_id) # Assigns the grid to an NPC and starts the grid 'grid_id' on the NPC.
-quest::stop() # Stops a moving NPC.
-quest::stopalltimers() # Stops all current timers on the mob (NPC or client).
-quest::stoptimer(timer_name) # Stops the timer 'timer_name'.
-quest::summonburriedplayercorpse(char_id, x, y, z, heading) # Summons a single buried corpse of the specified 'char_id' to the specified location.
-quest::summonallplayercorpses(char_id, x, y, z, heading) # Summons all corpses belonging to the specified 'char_id' to the specified location.
-quest::summonitem(item_id, charges) # Summons 'item_id' to user that triggered Event. Charges is the number of charges, or number of items in the stack depending on the item type, it is also optional.
-quest::surname(surname) # Changes user's surname to 'surname'.
-quest::targlobal(varname, value, duration, npc_id, char_id, zone_id) # Sets a quest global.
-quest::toggle_spawn_event(event_id, enable, reset_base) # Toggle a spawn event.
-quest::traindisc(tome_id) # Trains the discipline that corresponds to the item 'tome_id'. See quest::isdisctome() to test if an item is a discipline tome.
-quest::traindiscs(maxlevel, minlevel) # Trains all disciplines up to the specified level. To train up to any level, use $ulevel as the variable.
-quest::updatespawntimer(spawn2id, milliseconds) # Sets the time left until the next respawn in the database.
-quest::unique_spawn(npc_type, grid, guildwarset, x, y, z, heading) # Just like quest::spawn() except it will not spawn it if one of that 'npc_type' is already in the zone.
-quest::unscribespells() # Unscribes all your spells.
-quest::untraindiscs() # Untrains all learned disciplines.
-quest::varlink(item_id) # This is for creating an item link to be used in a variable.
-quest::voicetell(clientname, type, race, gender) # Plays the specified audio macro on the player's client.
-quest::we(color_id, text) # Server-wide emote.
-quest::wearchange(slot, texture) # Allows setting visible slots to any valid texture/model for that slot.
-quest::write(file, string) # Writes 'string' to a file named 'file'.
-quest::ze(color_id, text) # Zone-wide emote.
-quest::Zone(zone) # Sends the user to the specified zone (short name).
+quest::AssignGroupToInstance(uint16 instance_id)
+quest::AssignRaidToInstance(uint16 instance_id)
+quest::AssignToInstance(uint16 instance_id)
+quest::ChooseRandom(option1, option2, option3, option4, option5...[no limit])
+quest::CreateInstance(string zone_name, uint16 version, uint32 duration)
+quest::DestroyInstance(int id)
+quest::FlagInstanceByGroupLeader(uint32 zone, uint16 version)
+quest::FlagInstanceByRaidLeader(uint32 zone, uint16 version)
+quest::FlyMode(uint8 mode [0-3])
+quest::GetCharactersInInstance(uint16 instance_id)
+quest::GetInstanceID(string zone_name, uint16 version)
+quest::GetInstanceTimer()
+quest::GetInstanceTimerByID(uint16 instance_id)
+quest::GetSpellResistType(uint32 spell_id)
+quest::GetSpellTargetType(uint32 spell_id)
+quest::GetTimeSeconds()
+quest::GetZoneID(string zone)
+quest::GetZoneLongName(string zone)
+quest::IsBeneficialSpell(uint32 spell_id)
+quest::IsEffectInSpell(uint32 spell_id, uint32 effect_id)
+quest::IsRunning()
+quest::LearnRecipe(int recipe_id)
+quest::MerchantCountItem(uint32 npc_id, uint32 item_id)
+quest::MerchantSetItem(uint32 npc_id, uint32 item_id, [uint32 quantity])
+quest::ModifyNPCStat(string key, string value)
+quest::MovePCInstance(int zone_id, int instance_id, float x, float y, float z, [float heading])
+quest::RemoveAllFromInstance(uint16 instance_id)
+quest::RemoveFromInstance(uint16 instance_id)
+quest::SendMail(stirng to, string from, string subject, string message)
+quest::SetRunning(bool is_running)
+quest::UpdateInstanceTimer(int16 instance_id, uint32 duration)
+quest::UpdateSpawnTimer(uint32 spawn2_id, uint32 updated_time_till_repop)
+quest::UpdateZoneHeader(string key, string value)
+quest::activespeakactivity(int task_id)
+quest::activespeaktask()
+quest::activetasksinset(int task_set)
+quest::addldonloss(int losses, int theme_id)
+quest::addldonpoints(int points, int theme_id)
+quest::addldonwin(int wins, int theme_id)
+quest::addloot(uint32 item_id, uint16 charges = 0, [bool equip_item = true])
+quest::addskill(int skill_id, int value)
+quest::assigntask(int task_id, [bool enforce_level_requirement = false])
+quest::attack(string client_name)
+quest::attacknpc(int npc_entity_id)
+quest::attacknpctype(int npc_type_id)
+quest::buryplayercorpse(int character_id)
+quest::castspell(int spell_id, int target_id)
+quest::changedeity(int deity_id)
+quest::checktitle(int title_set_id)
+quest::clear_npctype_cache(int npc_type_id)
+quest::clear_proximity()
+quest::clear_zone_flag(uint32 zone_id)
+quest::clearspawntimers()
+quest::collectitems(int item_id, [bool remove_item = true])
+quest::completedtasksinset(int task_set)
+quest::createBot(string first_name, string last_name, int level, int race_id, int class_id, int gender_id)
+quest::createdoor(string model_name, float x, float y, float z, float heading, [int object_type = 58], [int size = 100])
+quest::creategroundobject(int item_id, float x, float y, float z, float heading, [uint32 decay_time-ms = 300000])
+quest::creategroundobjectfrommodel(string model_name, float x, float y, float z, float heading, [int object_type], [uint32 decay_time-ms = 300000])
+quest::createguild(string guild_name, string leader_name)
+quest::crosszonemessageplayerbyname(int channel_id, string name, string message)
+quest::crosszonesetentityvariablebyclientname(string client_name, string key, string value)
+quest::crosszonesetentityvariablebynpctypeid(int npc_type_id, string key, string value)
+quest::crosszonesignalclientbycharid(int character_id, int value)
+quest::crosszonesignalclientbycharid(int character_id, int value)
+quest::crosszonesignalclientbycharid(string name, int value)
+quest::crosszonesignalclientbycharid(string name, int value)
+quest::crosszonesignalnpcbynpctypeid(uint32 npc_type_id, uint32 value)
+quest::debug(string message, [uint8 debug_level = 1 [1-3]])
+quest::delglobal(string key)
+quest::depop(int npc_type_id = 0)
+quest::depop_withtimer(int npc_type_id = 0)
+quest::depopall(int npc_type_id = 0)
+quest::depopzone([bool start_spawn_status = false])
+quest::ding()
+quest::disable_proximity_say()
+quest::disable_spawn2(int spawn2_id)
+quest::disablerecipe(int recipe_id)
+quest::disabletask(int task_id, 2, 3, [up to 10])
+quest::doanim(int animation_id)
+quest::echo(int emote_color_id, string message)
+quest::emote(string message)
+quest::enable_proximity_say()
+quest::enable_spawn2(int spawn2_id)
+quest::enabledtaskcount(int task_set)
+quest::enablerecipe(int recipe_id)
+quest::enabletask(int task_id, 2, 3, [up to 10])
+quest::enabletitle(int title_set_id)
+quest::exp(int amount)
+quest::faction(int faction_id, int value, [int temp = 0])
+quest::factionvalue()
+quest::failtask(int task_id)
+quest::firsttaskinset(int task_set)
+quest::follow(int entity_id, [int distance = 10])
+quest::forcedoorclose(int door_id, [bool alt_mode = 0])
+quest::forcedooropen(int door_id, [int alt_mode=0])
+quest::get_spawn_condition(string zone_short, [int instance_id], int condition_id)
+quest::getguildnamebyid(uint32 guild_id)
+quest::getlevel(int type)
+quest::getplayerburiedcorpsecount(int character_id)
+quest::gettaskactivitydonecount(int task_id, int activity_id)
+quest::givecash(int copper, int silver, int gold, int platinum)
+quest::gmmove(float x, float y, float z)
+quest::gmsay(string message, [int color_id], [bool send_to_world = 0])
+quest::has_zone_flag(uint32 zone_id)
+quest::incstat(int stat_id, int value)
+quest::isdisctome(int item_id)
+quest::isdooropen(int door_id)
+quest::istaskaappropriate(int task_id)
+quest::istaskactive(int task_id)
+quest::istaskactivityactive(int task_id, int activity_id)
+quest::istaskcompleted(int task_id)
+quest::istaskenabled(int task_id)
+quest::itemlink(int item_id)
+quest::lasttaskinset(int task_set)
+quest::level(int new_level)
+quest::me(string message)
+quest::movegrp(int zone_id, float x, float y, float z)
+quest::movepc(int zone_id, float x, float y, float z [float heading])
+quest::moveto(float x, float y, float z, [float heading], [bool save_guard_location])
+quest::nexttaskinset(int task_set, int task_id)
+quest::npcfeature(string feature [race|gender|texture|helm|haircolor|beardcolor|eyecolor1|eyecolor2|hair|face|beard|heritage|tatoo|details|size], int value)
+quest::npcgender(int gender_id)
+quest::npcrace(int race_id)
+quest::npcsize(int size)
+quest::npctexture(int texture_id)
+quest::pause(int duration-ms)
+quest::permaclass(int class_id)
+quest::permagender(int gender_id)
+quest::permarace(int race_id)
+quest::playerfeature(string feature [race|gender|texture|helm|haircolor|beardcolor|eyecolor1|eyecolor2|hair|face|beard|heritage|tatoo|details|size], int setting)
+quest::playergender(int gender_id)
+quest::playerrace(int race_id)
+quest::playersize(int newsize)
+quest::playertexture(int texture_id)
+quest::popup(string window_title, string message, int popup_id, int buttons, int duration)
+quest::pvp(string mode [on|off])
+quest::qs_player_event(int character_id, string message)
+quest::qs_send_query(string query)
+quest::rain(int weather)
+quest::rebind(int zone_id, float x, float y, float z)
+quest::removetitle(int title_set_id)
+quest::repopzone()
+quest::resettaskactivity(int task_id, int activity_id)
+quest::respawn(int npc_type_id, int grid_id)
+quest::resume()
+quest::safemove()
+quest::save()
+quest::say(string message, int language_id])
+quest::saylink(string message, [bool silent = false], [link_name = message])
+quest::scribespells(int max_level, [int min_level = 1])
+quest::selfcast(int spell_id)
+quest::set_proximity(float min_x, float max_x, float min_y, float max_y, [float min_z], [float max_z], [say])
+quest::set_zone_flag(uint32 zone_id)
+quest::setallskill(int value)
+quest::setanim(int npc_type_id, int appearance_number[0-4])
+quest::setglobal(stirng key, string value, int options, string duration)
+quest::setguild(int guild_id, int guild_rank_id)
+quest::sethp(int mob_health_percentage [0-100])
+quest::setlanguage(int skill_id, int value)
+quest::setnexthpevent(int at_mob_percentage)
+quest::setnextinchpevent(int at_mob_percentage)
+quest::setskill(int skill_id, int value)
+quest::setsky(uint8 sky)
+quest::setstat(stat_id, int_value)
+quest::settarget(string target_enum ['npc_type', 'entity'], int target_id)
+quest::settime(int new_hour, int new_min, [bool update_world = true])
+quest::settimer(string timer_name, int seconds)
+quest::settimerMS(string timer_name, int milliseconds)
+quest::sfollow()
+quest::shout(string message)
+quest::shout2(string message)
+quest::showgrid(int grid_id)
+quest::signal(int npc_id, [int wait_ms])
+quest::signalwith(int npc_id, int signal_id, [int wait_ms])
+quest::snow(int weather)
+quest::spawn(int npc_type_id, int grid_id, int int_unused, float x, float y, float z)
+quest::spawn2(int npc_type_id, int grid_id, int int_unused, float x, float y, float z, float heading)
+quest::spawn_condition(string zone_short, [int instance_id], uint16 condition_id, int16 value)
+quest::spawn_from_spawn2(int spawn2_id)
+quest::start(int waypoint)
+quest::stop()
+quest::stopalltimers()
+quest::stoptimer(string timer_name)
+quest::summonallplayercorpses(int char_id, float dest_x, float dest_y, float dest_z, float dest_heading)
+quest::summonburiedplayercorpse(uint32 char_id, float dest_x, float dest_y, float dest_z, float dest_heading)
+quest::summonitem(int item_id, [int charges])
+quest::surname(string name)
+quest::targlobal(stirng key, string value, string duration, int npc_id, int chararacter_id, int zone_id)
+quest::task_setselector(int task_set_id)
+quest::taskexplorearea(int explore_id)
+quest::taskselector(int task_id, 2, 3, 4, 5 [up to 40])
+quest::tasktimeleft(int task_id)
+quest::toggle_spawn_event(uint32 event_id, [bool is_enabled = false], [bool is_strict = false], [bool reset_base = false])
+quest::toggledoorstate(int door_id)
+quest::traindisc(int tome_item_id)
+quest::traindiscs(int max_level, [int min_level = 1])
+quest::unique_spawn(int npc_type_id, int grid_id, int int_unused, float x, float y, float z, [float heading])
+quest::unscribespells()
+quest::untraindiscs()
+quest::updatetaskactivity(int task_id, int activity_id, [int count], [bool ignore_quest_update = false])
+quest::varlink(uint32 item_id)
+quest::voicetell(string client_name, int macro_id, int ace_id, int gender_id)
+quest::we(int emote_color_id, string message)
+quest::wearchange(uint8 slot, uint16 texture_id, [uint32 hero_forge_model_id = 0], [uint32 elite_material_id = 0])
+quest::worldwidemarquee(uint32 color_id, uint32 priority, uint32 fade_in, uint32 fade_out, uint32 duration, string message)
+quest::write(string file_name, string message)
+quest::ze(int emote_color_id, string message)
+quest::zone(string zone_name)
 ```
 
 ### **Conditionals**
