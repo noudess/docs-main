@@ -149,7 +149,7 @@ sub EVENT_NPC_SLAY # Triggered when an NPC slays another NPC.
 sub EVENT_PLAYER_PICKUP # Triggered when a player picks up an object from the ground.
 sub EVENT_POPUPRESPONSE # Used with quest::popup.
 sub EVENT_PROXIMITY_SAY # Triggered if the client enters a mob's proximity and uses the appropriate text trigger supplied beneath this event. (set quest::enable_proximity_say() and param 7 in q:set_prox)
-sub EVENT_RESPAWN $npc->ChangeLastName(string name)
+sub EVENT_RESPAWN # Triggered on respawn
 sub EVENT_SAY # Triggered when a mob is targeted and the player types something.
 sub EVENT_SCALE_CALC # Triggered when an item is equipped to scale the item.
 sub EVENT_SIGNAL # Triggered by a call to quest::signal() or quest::signalwith().
