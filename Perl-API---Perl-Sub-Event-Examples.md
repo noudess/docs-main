@@ -254,7 +254,28 @@ sub EVENT_COMBAT {
 
 ### Trigger
 
-- when a combine is unsuccessful.
+- When a combine is unsuccessful.  You would likely use this event in your global / player.pl file.
+
+### Exports
+
+| Name | Type | Description
+| --- | --- | --- |
+|recipe_id | int | quest::say($recipe_id); # returns int
+|recipe_name | int | quest::say($recipe_name); # returns int
+
+### Example
+
+- In this example, we watch for a player failing the combine for a Hand Made Backpack and then tease them.
+
+```perl
+sub EVENT_COMBINE_FAILURE {
+	#:: Match Recipe 2686: "Hand Made Backpack" by ID
+	if ($recipe_id == 2686) {
+		#:: Send the client a message in color 15 (yellow)
+		$client->Message(15,"Awww...now where are you going to put all of your stuff?");
+	}
+}
+```
 
 # EVENT_COMBINE_SUCCESS
 
