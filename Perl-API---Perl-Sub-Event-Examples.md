@@ -467,19 +467,83 @@ sub EVENT_FISH_START {
 
 ### Trigger
 
-- when a mob's hate list is changed.
+- When a mob's hate list is changed.
+
+### Example
+
+In this example, some flavor text is added as a player is added and removed from the NPC's hate list.
+
+```perl
+sub EVENT_HATE_LIST {
+
+	if ($hate_state == 1) {
+		quest::say("$name is gonna die!");
+	}
+	if ($hate_state == 0) {
+		quest::say("$name is no match for my might!");
+	}
+}
+```
 
 # EVENT_HP
 
 ### Trigger
 
-- by a mob's HP dropping below a threshold.
+- When a mob's HP dropping below a threshold (as defined by quest::setnexthpevent()).
+
+### Example
+
+- In this example, we set the HP event threshold, and then depop the mob when the threshold is reached.
+
+```perl
+sub EVENT_SPAWN {
+	#:: Set the HP event threshold for 50 percent health
+	quest::setnexthpevent(50);
+}
+
+sub EVENT_HP {
+	#:: Match when the threshold is met
+	if ($hpevent == 50) {
+		quest::depop();
+	}
+}
+```
 
 # EVENT_ITEM
 
 ### Trigger
 
-- when an item or money is turned into the mob.
+- When an item or money is turned into the mob.
+
+### Example
+
+- In this example, we turn in 3250 gold, a Ring of the Ancients, and a Shadowed Rapier in exchange for our Journeyman's Boots
+
+```perl
+sub EVENT_ITEM {
+	#:: Create a scalar variable to store cash--only gold and platinum
+	my $cash = (($platinum * 10) + $gold);
+ 	#:: Match if the cash is 3250gp or more
+	if ($cash >= 3250) {
+		#:: Match turn for 12268 - Ring of the Ancients and 7100 - Shadowed Rapier
+		if (plugin::check_handin(\%itemcount, 12268 => 1, 7100 => 1)) {
+			quest::say("The time to trade has come!! I am now rich and you are now fast. Take the Journeyman Boots and run like the wind.");
+			#:: Give a 2300 - Journeyman's Boots
+			quest::summonitem(2300);
+			#:: Play the ding sound
+			quest::ding();
+			#:: Grant a small amount of experience
+			quest::exp(1250);
+      		}
+	}
+	else {
+		#:: Return unused coin
+		quest::givecash(0, 0, $gold, $platinum);
+	}
+	#:: Return unused items
+	plugin::return_items(\%itemcount);
+} 
+```
 
 # EVENT_ITEM_CLICK
 
@@ -530,13 +594,38 @@ Called when an item that would trigger EVENT_SCALE_CALC is in the inventory when
 
 ### Trigger
 
-- when an NPC slays another NPC.
+- When an NPC slays another NPC.
+
+### Example
+
+- In this example, we add some flavor text when the Exterminator kills the rats.
+
+```perl
+sub EVENT_NPC_SLAY {
+	quest::say("Another unworthy opponent. Never cross Mining Guild 628!!");
+}
+```
 
 # EVENT_PLAYER_PICKUP
 
 ### Trigger
 
-- when a player picks up an object from the ground.
+- When a player picks up an object from the ground.  You would likely use this event in your zone player.pl file.
+
+### Example
+
+-- In this example, when the player picks up a Chalice of Conquest, a signal is sent to another NPC
+
+```perl
+#:: Chalice of Conquest quest
+sub EVENT_PLAYER_PICKUP {
+	#:: Match 12274 - Chalice of Conquest, ground spawn created by #Captain_Klunga.pl
+	if ($picked_up_id == 12274) {
+		#:: Send a signal to Dagnor's Cauldron >> #Captain_Klunga (70072)
+		quest::signal(70072,1);
+	}
+}
+```
 
 # EVENT_POPUPRESPONSE
 Used with quest::popup.
@@ -545,7 +634,30 @@ Used with quest::popup.
 
 ### Trigger
 
-- if the client enters a mob's proximity and uses the appropriate text trigger supplied beneath this event. (set quest::enable_proximity_say() and param 7 in q:set_prox)
+- When the client enters a mob's proximity and uses the appropriate text trigger supplied beneath this event Note that you must set quest::enable_proximity_say() and quest::set_proximity().
+
+### Example
+
+- In this example, we establish a proximity around the NPC and enable the NPC to listen for say messages in the proximity (IE without having the mob targeted, necessarily); we then match for a "hail" message and attack anyone foolish enough to say hello.
+
+```perl
+sub EVENT_SPAWN {
+	#:: Set the proximity bounds around the NPC on spawn, 30 units across
+	$x = $npc->GetX();
+	$y = $npc->GetY();
+	quest::set_proximity($x-15,$x+15,$y-15,$y+15);
+	#:: Enable the NPC for proximity say
+	quest::enable_proximity_say();
+}
+
+sub EVENT_SAY {
+	#:: Match say message for "hail", /i for case insensitive
+	if ($text=~/hail/i) {
+		#:: Attack whoever hailed the NPC
+		quest::attack($name);
+	}
+}
+```
 
 # EVENT_RESPAWN
 
