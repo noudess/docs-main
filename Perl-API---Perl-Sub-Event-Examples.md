@@ -467,17 +467,57 @@ sub EVENT_CONNECT {
 
 - when a client loses a duel.
 
+You would use this event in the global global_player.pl file.
+
+### Example
+
+- In this example, we set a quest global to keep track of a player's dueling failures.
+
+```perl
+sub EVENT_DUEL_LOSE {
+	#:: Match if the player has a qglobal for duelslost
+	if (!defined $qglobals{"duelslost"}) {
+		#:: If no qglobal exists, set one
+		quest::setglobal("duelslost",1,5,"F");
+	}
+	else {
+		#:: If the qglobal exists, iterate the count up one
+		quest::setglobal("duelslost",$qglobals{"duelslost"}+1,5,"F");
+	}
+}
+```
+
 # EVENT_DUEL_WIN
 
 ### Trigger
 
 - when a client wins a duel.
 
+You would use this event in the global global_player.pl file.
+
+### Example
+
+- In this example, we set a quest global to keep track of a player's dueling wins.
+
+```perl
+sub EVENT_DUEL_WIN {
+	#:: Match if the player has a qglobal for duelswon
+	if (!defined $qglobals{"duelswon"}) {
+		#:: If no qglobal exists, set one
+		quest::setglobal("duelswon",1,5,"F");
+	}
+	else {
+		#:: If the qglobal exists, iterate the count up one
+		quest::setglobal("duelswon",$qglobals{"duelswon"}+1,5,"F");
+	}
+}
+```
+
 # EVENT_ENTER
 
 ### Trigger
 
-- When a client enters a mob's proximity (as defined by quest::set_proximity).
+- When a client enters a mob's proximity (as defined by quest::set_proximity(min_x, max_x, min_y, max_y, min_z, max_z)).
 
 ### Example
 
@@ -511,6 +551,8 @@ sub EVENT_ENTER {
 
 ### Example
 
+- In this example we remove the LDON compass mark.
+
 ```perl
 sub EVENT_ENTERZONE {
 	#:: Clear the LDON Compass mark
@@ -518,11 +560,25 @@ sub EVENT_ENTERZONE {
 }
 ```
 
+- In this example we create a LDON compass mark
+
+```perl
+sub EVENT_ENTERZONE {
+	#:: Create a scalar for storing the instance ID
+	$RujDInstance = quest::GetInstanceID("rujd",50);
+	#:: If the instance ID exists, it should be greater than 0--mark the player's compass if it is
+	if ($RujDInstance > 0) {
+		#:: Create a line on the compass leading the player to X,Y,Z
+		$client->MarkCompassLoc(-157.09, 19.31, 100);
+	}
+}
+```
+
 # EVENT_EQUIP_ITEM
 
 ### Trigger
 
-- when a player equips an item.
+- When a player equips an item.
 
 # EVENT_EXIT
 
@@ -554,13 +610,28 @@ sub EVENT_EXIT {
 
 ### Trigger
 
-- when a client feign death.
+- When a client feigns death.
+
+### Example
+
+```perl
+sub EVENT_FEIGN_DEATH {
+	#:: See if the player has a pet
+	if ($client->GetPetID()) {
+		#:: Identify the pet by ID and kill it
+		$PetID = $entity_list->GetMobByID($client->GetPetID());
+		$PetID->Kill();
+	}
+}
+```
 
 # EVENT_FISH_FAILURE
 
 ### Trigger
 
 - When a client fails at fishing.
+
+You would use this event in the zone player.pl file.
 
 ### Example
 
@@ -578,9 +649,11 @@ sub EVENT_FISH_FAILURE {
 
 - when a client starts fishing.
 
+You would use this event in the zone player.pl file.
+
 ### Example
 
-- In this example, a message is displayed by the client if they start fishing.
+- In this example, a message is displayed by the client if they start fishing.  
 
 ```perl
 sub EVENT_FISH_START {
@@ -594,17 +667,59 @@ sub EVENT_FISH_START {
 
 - when a client succeeds at fishing.
 
+You would use this event in the zone player.pl file.
+
 # EVENT_FORAGE_FAILURE
 
 ### Trigger
 
-- when a client fails at foraging.
+- When a client fails at foraging.
+
+You would use this event in the global global_player.pl file.
+
+### Example
+
+- In this example, we set a quest global to keep track of a player's foraging failures.
+
+```perl
+sub EVENT_FORAGE_FAILURE {
+	#:: Match if the player has a qglobal for foragefails
+	if (!defined $qglobals{"foragefails"}) {
+		#:: If no qglobal exists, set one
+		quest::setglobal("foragefails",1,5,"F");
+	}
+	else {
+		#:: If the qglobal exists, iterate the count up one
+		quest::setglobal("foragefails",$qglobals{"foragefails"}+1,5,"F");
+	}
+}
+```
 
 # EVENT_FORAGE_SUCCESS
 
 ### Trigger
 
 - when a client succeeds at foraging.
+
+You would use this event in the global global_player.pl file.
+
+### Example
+
+- In this example, we set a quest global to keep track of a player's foraging successes.
+
+```perl
+sub EVENT_FORAGE_SUCCESS {
+	#:: Match if the player has a qglobal for foragesuccess
+	if (!defined $qglobals{"foragesuccesses"}) {
+		#:: If no qglobal exists, set one
+		quest::setglobal("foragesuccesses",1,5,"F");
+	}
+	else {
+		#:: If the qglobal exists, iterate the count up one
+		quest::setglobal("foragesuccesses",$qglobals{"foragesuccesses"}+1,5,"F");
+	}
+}
+```
 
 # EVENT_GROUP_CHANGE
 
