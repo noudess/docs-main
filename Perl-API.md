@@ -129,18 +129,18 @@ A full list can always be found in the EQEmu source [https://github.com/EQEmu/S
 * [EVENT_FEIGN_DEATH](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_feign_death) # Triggered when a client feign death.
 * [EVENT_FISH_FAILURE](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_fish_failure) # Triggered when a client fails at fishing.
 * [EVENT_FISH_START](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_fish_start) # Triggered when a client starts fishing.
-* sub EVENT_FISH_SUCCESS # Triggered when a client succeeds at fishing.
+* [EVENT_FISH_SUCCESS](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_fish_success) # Triggered when a client succeeds at fishing.
 * [EVENT_FORAGE_FAILURE](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_forage_failure) # Triggered when a client fails at foraging.
 * [EVENT_FORAGE_SUCCESS](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_forage_success) # Triggered when a client succeeds at foraging.
 * sub EVENT_GROUP_CHANGE # Triggered when a group change occurs.
 * [EVENT_HATE_LIST](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_hate_list) # Triggered when a mob's hate list is changed.
 * [EVENT_HP](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_hp) # Triggered by a mob's HP dropping below a threshold.
 * [EVENT_ITEM](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_item) # Triggered when an item or money is turned into the mob.
-* sub EVENT_ITEM_CLICK # Triggered when an item is clicked.
-* sub EVENT_ITEM_CLICK_CAST # Triggered when a client casts the click effect on an item.
+* [EVENT_ITEM_CLICK](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_item_click) # Triggered when an item is clicked.
+* [EVENT_ITEM_CLICK_CAST](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_item_click_cast) # Triggered when a client casts the click effect on an item.
 * sub EVENT_ITEM_ENTER_ZONE # Called when an item that would trigger EVENT_SCALE_CALC is in the inventory when a player zones in.
 * sub EVENT_ITEM_TICK # Triggered when the click effect of an item ticks.
-* sub EVENT_KILLED_MERIT # Triggered on NPC death when a client is in a group credited with doing the most damage to said loot table NPC.
+* [EVENT_KILLED_MERIT](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_killed_merit) # Triggered on NPC death when a client is in a group credited with doing the most damage to said loot table NPC.
 * sub EVENT_LEAVE_AREA # Triggered when a client leaves a mob's area.
 * sub EVENT_LEVEL_UP # Triggered when the player gains a level.
 * sub EVENT_LOOT # Triggered when player successfully loots an item from a corpse.
@@ -149,7 +149,7 @@ A full list can always be found in the EQEmu source [https://github.com/EQEmu/S
 * sub EVENT_POPUPRESPONSE # Used with quest::popup.
 * [EVENT_PROXIMITY_SAY](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_proximity_say) # Triggered if the client enters a mob's proximity and uses the appropriate text trigger supplied beneath this event. (set quest::enable_proximity_say() and param 7 in q:set_prox)
 * sub EVENT_RESPAWN # Triggered on respawn
-* sub EVENT_SAY # Triggered when a mob is targeted and the player types something.
+* [EVENT_SAY](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_say) # Triggered when a mob is targeted and the player types something.
 * sub EVENT_SCALE_CALC # Triggered when an item is equipped to scale the item.
 * sub EVENT_SIGNAL # Triggered by a call to quest::signal() or quest::signalwith().
 * sub EVENT_SLAY # Triggered whenever an NPC kills someone.
