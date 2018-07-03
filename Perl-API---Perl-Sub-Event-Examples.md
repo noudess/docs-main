@@ -927,6 +927,30 @@ sub EVENT_KILLED_MERIT {
 
 - when player successfully loots an item from a corpse.
 
+### Exports
+
+|Name | Type | Usage
+| --- | --- | ---
+|looted_id | int | `quest::say($looted_id); # returns int`
+|looted_charges | int | `quest::say($looted_charges); # returns int`
+|corpse | int | `quest::say($corpse); # returns int`
+
+### Example
+
+- This example uses the loot event to match a particular item and corpse.
+
+Note that we use the NPC's name (Fippy_Darkpaw) and not the numeric corpse ID (IE 249) or full corpse name (IE Fippy_Darkpaw`s_corpse249).
+
+```perl
+sub EVENT_LOOT {
+	#::: Use == for numeric comparison to Item ID 60396 - Fippy's Paw
+	#::: Use eq for string comparison to Fippy_Darkpaw's corpse
+	if ($looted_id == 60396 && $corpse eq "Fippy_Darkpaw") {
+		$client->Message(15, "The bloody stump of Fippy's paw--it's a lot smaller than you thought it would be.");
+	}
+}
+```
+
 # EVENT_NPC_SLAY
 
 ### Trigger
@@ -1001,6 +1025,12 @@ sub EVENT_SAY {
 ### Trigger
 
 - on respawn
+
+### Exports
+
+|Name | Type | Usage
+|option | int | `quest::say($option); # returns int`
+|resurrect | int | `quest::say($resurrect); # returns int`
 
 # EVENT_SAY
 
@@ -1083,19 +1113,97 @@ sub EVENT_SAY {
 
 ### Trigger
 
-- by a call to quest::signal() or quest::signalwith().
+- Triggered using quest::signal(NPC_ID,wait_time) or quest::signalwith(NPC_ID,signal_ID,wait_time).
+
+Generally a way to have one NPC cause another NPC to do something.  Often used with "controller" NPCs that coordinate events.
+
+### Exports
+
+|Name | Type | Usage
+| --- | --- | ---
+|signal | int | `quest::say($signal); # returns int`
+
+### Example
+
+- This example increments a counter each time a signal with the appropriate ID is received.
+
+```perl
+my $count = 0;
+
+sub EVENT_SIGNAL {
+     #::: Signal 1 is from the clockwork spiders being killed.
+     if ($signal == 1) {
+          $count++;
+          if ($count == 1) {
+               #::: Start a three minute timer to spawn targetable Manaetic Behemoth
+               quest::settimer("wake", 180);
+          }
+     }
+     #::: Signal 2 is from the clockwork spiders reaching Manaetic Behemoth.
+     if ($signal == 2) {
+          #::: Reset the count and make them start over.
+          $count = 0;
+          quest::stoptimer("wake");
+     }
+}
+
+sub EVENT_TIMER {
+     #::: This uses eq for a string comparison to match the timer "wake".
+     #::: Check the count to make sure the clockwork spiders were killed and not just kited. 
+     if ($timer eq "wake" && $count >= 12) {
+          quest::stoptimer("wake");
+          #::: Spawn the targetable version of Manaetic Behemoth in place
+          quest::spawn2(206074,0,0,$x,$y,$z,0);
+          #::: Depop the untargetable version of Manaetic Behemoth with respawn timer active.
+          quest::depop_withtimer();
+     }
+}
+```
 
 # EVENT_SLAY
 
 ### Trigger
 
-- whenever an NPC kills someone.
+- whenever an NPC kills a player.  
+
+Often this event is used for some flavor messages, or to spawn adds. Do not confuse this event with EVENT_DEATH_COMPLETE or EVENT_DEATH, which are used when a player kills an NPC.
+
+### Example
+
+- This is a well-known example from Emperor Ssraeshza, who mocks any player that he kills
+
+```perl
+sub EVENT_SLAY {
+	quest::say("Your god has found you lacking.");
+}
+```
 
 # EVENT_SPAWN
 
 ### Trigger
 
-- when the NPC spawns.
+- When the NPC spawns.
+
+This event is often used to start timers, attack player targets, establish NPC HP events or proximities, start dialogues, and more.
+
+### Example
+
+- In this example, when the mob spawn, we make it run and attack a nearby player while it shouts a war cry.
+
+```perl
+sub EVENT_SPAWN {
+	#:: Set the NPC to run
+	quest::SetRunning(1);
+	#:: Shout out a war cray
+	quest::shout("For Jotenheimr!!!");
+	#:: Try to find a random client within 200 units of the NPC
+	my $rClient = $entity_list->GetRandomClient($x,$y,$z, 200);
+	#:: If there's a random sucker nearby, attack them
+	if ($rClient) {
+		quest::attack($rClient->GetName());
+	}
+}
+```
 
 # EVENT_SPELL_EFFECT_CLIENT
 
@@ -1145,11 +1253,15 @@ sub EVENT_SAY {
 
 - when a player accepts a task from the task selector window.
 
+Typically you would handle this functionality using the task system.
+
 # EVENT_TASK_COMPLETE
 
 ### Trigger
 
 - when a player completes a task.
+
+Typically you would handle this functionality using the task system.
 
 # EVENT_TASK_FAIL
 
@@ -1157,11 +1269,28 @@ sub EVENT_SAY {
 
 - when a player fails a task.
 
+Typically you would handle this functionality using the task system.
+
 # EVENT_TASK_STAGE_COMPLETE
 
 ### Trigger
 
-- when a task stage is completed.
+- When a task stage is completed.
+
+Typically you would handle this functionality using the task system.
+
+### Example
+
+- In this example, when a player completes a task, it triggers the event and tries to match with task ID 212; if it matches, a yellow message is displayed to the client.
+
+```perl
+sub EVENT_TASK_STAGE_COMPLETE {
+	#:: Match task id 212
+	if ($task_id == 212) {
+		$client->Message(15,"The zombie presence seems somewhat lessened, and perhaps they have been quelled...for the time being.");
+	}
+}
+```
 
 # EVENT_TASK_UPDATE
 
@@ -1173,7 +1302,34 @@ sub EVENT_SAY {
 
 ### Trigger
 
-- by a quest::settimer().
+- by a quest::settimer(timer_name,duration_in_seconds) or quest::settimerMS(timer_name,duration_in_milliseconds)
+
+The timer will loop until it is stopped, and EVENT_TIMER will trigger each time that the duration of the timer elapses.  Timers can be stopped using the quest::stopalltimers() or quest::stoptimer(timer_name) functions.
+
+### Exports
+
+|Name | Type | Usage
+|timer | int | `quest::say($timer); # returns int`
+
+### Example
+
+- This is an example of using a timer with a string name to cause an NPC to depop 30 minutes after it spawns
+
+```perl
+sub EVENT_SPAWN {
+     # Start a timer that is named "depop", the duration is 1,800 seconds (30 minutes)
+     quest::settimer("depop",1800); 
+}
+
+sub EVENT_TIMER {
+     # Use eq for string comparison to match timer "depop"
+     if ($timer eq "depop") {
+          # Stop timer "depop" from looping
+          quest::stoptimer("depop"); 
+          quest::depop(); 
+     }
+}
+```
 
 # EVENT_TRADE
 
@@ -1197,13 +1353,53 @@ sub EVENT_SAY {
 
 ### Trigger
 
-- when a mob arrives at a waypoint.
+- When an NPC arrives at a grid waypoint entry.
+
+### Exports 
+
+|Name | Type | Description
+| --- | --- | ---
+|wp | int | `quest::say($wp); # returns int`
+
+### Example
+
+- This example would cause your NPC to speak as it arrives at a particular waypoint.
+- Don't forget to count waypoint 0 (the spawn point) when using waypoint events.
+
+```perl
+sub EVENT_WAYPOINT_Arrive {
+     # If we have arrived at waypoint 10
+     if ($wp == 10) {
+          quest::say("We're finally here!");
+     }
+}
+```
 
 # EVENT_WAYPOINT_DEPART
 
 ### Trigger
 
-- when a mob leaves a waypoint.
+- When an NPC leaves its current grid waypoint entry.
+
+### Exports 
+
+|Name | Type | Description
+| --- | --- | ---
+|wp | int | `quest::say($wp); # returns int`
+
+### Example
+
+- This example would cause your NPC to speak as it departs a particular waypoint.
+- Don't forget to count waypoint 0 (the spawn point) when using waypoint events.
+
+```perl
+sub EVENT_WAYPOINT_DEPART {
+     # If we departed waypoint 0
+     if ($wp == 0) {
+          quest::say("And we're off!");
+     }
+}
+```
 
 # EVENT_WEAPON_PROC
 
@@ -1215,4 +1411,19 @@ sub EVENT_SAY {
 
 ### Trigger
 
-- when a player zones.
+- When a player leaves a zone.
+
+### Example
+
+- In this example, we blow up pets when a player with a pet zones.
+
+```perl
+sub EVENT_ZONE {
+	#:: Match if a player has a pet
+	if ($client->GetPetID()) {
+		#:: Get the pet's ID and kill it
+		$PetID = $entity_list->GetMobByID($client->GetPetID());
+		$PetID->Kill();
+	}	
+}
+```
