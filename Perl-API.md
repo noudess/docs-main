@@ -119,19 +119,19 @@ A full list can always be found in the EQEmu source [https://github.com/EQEmu/S
 * sub EVENT_DISCONNECT # Triggered when a player disconnects from the world.
 * sub EVENT_DISCOVER_ITEM # Triggered when an item is discovered.
 * sub EVENT_DROP_ITEM # Triggered when a client drops an item.
-* sub EVENT_DUEL_LOSE # Triggered when a client loses a duel.
-* sub EVENT_DUEL_WIN # Triggered when a client wins a duel.
+* [EVENT_DUEL_LOSE](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_duel_lose) # Triggered when a client loses a duel.
+* [EVENT_DUEL_WIN](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_duel_win) # Triggered when a client wins a duel.
 * [EVENT_ENTER](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_enter) # Triggered by any client who enters a mob's proximity.
 * sub EVENT_ENTER_AREA # Triggered when a client enters the area of a mob.
 * [EVENT_ENTERZONE](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_enterzone) # Triggered when a player enters the zone.
 * sub EVENT_EQUIP_ITEM # Triggered when a player equips an item.
 * [EVENT_EXIT](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_exit) # Triggered by any client who leaves a mob's proximity.
-* sub EVENT_FEIGN_DEATH # Triggered when a client feign death.
+* [EVENT_FEIGN_DEATH](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_feign_death) # Triggered when a client feign death.
 * [EVENT_FISH_FAILURE](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_fish_failure) # Triggered when a client fails at fishing.
 * [EVENT_FISH_START](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_fish_start) # Triggered when a client starts fishing.
 * sub EVENT_FISH_SUCCESS # Triggered when a client succeeds at fishing.
-* sub EVENT_FORAGE_FAILURE # Triggered when a client fails at foraging.
-* sub EVENT_FORAGE_SUCCESS # Triggered when a client succeeds at foraging.
+* [EVENT_FORAGE_FAILURE](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_forage_failure) # Triggered when a client fails at foraging.
+* [EVENT_FORAGE_SUCCESS](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_forage_success) # Triggered when a client succeeds at foraging.
 * sub EVENT_GROUP_CHANGE # Triggered when a group change occurs.
 * [EVENT_HATE_LIST](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_hate_list) # Triggered when a mob's hate list is changed.
 * [EVENT_HP](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_hp) # Triggered by a mob's HP dropping below a threshold.
