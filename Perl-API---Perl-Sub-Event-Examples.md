@@ -667,7 +667,32 @@ sub EVENT_FISH_START {
 
 - when a client succeeds at fishing.
 
-You would use this event in the zone player.pl file.
+You would use this event in the zone player.pl file or the global global_player.pl file.
+
+### Exports
+
+|Name | Type | Usage
+| --- | --- | ---
+|fished_item | int | `quest::say($fished_item); # returns int`
+
+### Example
+
+- In this example, we set a quest global to keep track of a player's fishing successes.
+- You would use this event in the global global_player.pl file.
+
+```perl
+sub EVENT_FISH_SUCCESS {
+	#:: Match if the player has a qglobal for fishsuccess
+	if (!defined $qglobals{"fishsuccesses"}) {
+		#:: If no qglobal exists, set one
+		quest::setglobal("fishsuccesses",1,5,"F");
+	}
+	else {
+		#:: If the qglobal exists, iterate the count up one
+		quest::setglobal("fishsuccesses",$qglobals{"fishsuccesses"}+1,5,"F");
+	}
+}
+```
 
 # EVENT_FORAGE_FAILURE
 
@@ -675,7 +700,7 @@ You would use this event in the zone player.pl file.
 
 - When a client fails at foraging.
 
-You would use this event in the global global_player.pl file.
+You would use this event in the zone player.pl or global global_player.pl file.
 
 ### Example
 
@@ -812,13 +837,49 @@ sub EVENT_ITEM {
 
 ### Trigger
 
-- when an item is clicked.
+- When an item is clicked.
+
+This is a useful script to put in the Global quest scripts directory, so that you can make an item click work anywhere in the world.
+
+### Exports
+
+| Name | Type | Usage
+| --- | --- | --- 
+| itemid | int | `quest::say($itemid); # returns int`
+| itemname | int | `quest::say($itemname); # returns int`
+| slotid | int | `quest::say($slotid); # returns int`
+| spell_id | int | `quest::say($spell_id); # returns int`
+
+### Example
+
+- This example is taken from the Evil Eye Costume Kit, which is part of the Halloween Costume illusion items.
+- Note that the scriptfileid field for the item is set to 30073 in the database.
+- Note that a corresponding quest file exists at global/items/script_30073.pl.
+
+```perl
+sub EVENT_ITEM_CLICK {
+	#::: Use == for numeric comparison to Item ID 54711 - Evil Eye Costume Kit
+	if ($itemid == 54711) {
+		#::: Change the player's race to 469 - Evil Eye
+		quest::playerrace(469);
+	} 
+}
+```
 
 # EVENT_ITEM_CLICK_CAST
 
 ### Trigger
 
-- when a client casts the click effect on an item.
+- When a client casts the click effect on an item.
+
+### Exports
+
+| Name | Type | Usage
+| --- | --- | --- 
+| itemid | int | `quest::say($itemid); # returns int`
+| itemname | int | `quest::say($itemname); # returns int`
+| slotid | int | `quest::say($slotid); # returns int`
+| spell_id | int | `quest::say($spell_id); # returns int`
 
 # EVENT_ITEM_ENTER_ZONE
 Called when an item that would trigger EVENT_SCALE_CALC is in the inventory when a player zones in.
@@ -833,7 +894,20 @@ Called when an item that would trigger EVENT_SCALE_CALC is in the inventory when
 
 ### Trigger
 
-- on NPC death when a client is in a group credited with doing the most damage to said loot table NPC.
+- on NPC death and applies to the group that did the most damage to the NPC (IE the group that got XP for the kill, assuming there was XP; or the group that gets loot rights to the NPC, assuming that there was loot). Although not often used, this event gives you the opportunity to assign quest globals (for character flags) or update tasks.
+
+### Example
+
+```perl
+sub EVENT_KILLED_MERIT {
+	#:: Get the name of the mob to use in the quest global
+	my $slain = $npc->GetCleanName();
+	#:: Set the quest global--this would apply to all group members
+	$client->SetGlobal($slain,1,5,"F");
+	#:: Display an emote message to each client in yellow to notify them that they received credit
+	$client->Message(15, "You have received credit for killing ".$slain.".");
+}
+```
 
 # EVENT_LEAVE_AREA
 
@@ -933,6 +1007,71 @@ sub EVENT_SAY {
 ### Trigger
 
 - when a mob is targeted and the player types something.
+
+### Exports
+
+| Name | Type | Details
+| --- | --- | ---
+| client | client | Client who did say event
+| npc | npc | Npc who is handling say event
+| charid | int | character id of who did say event
+| class | string | class of who did say event
+| data | int | unknown? 124078
+| faction | int | faction comparison of who did say and npc
+| h | float | heading position of npc
+| hpratio | float | hp ratio e.g. 100
+| instanceid | int | instance id of zone, typically 0
+| instanceversion | int | instance version of zone, typically 0
+| langid | int | language id, common is 0
+| mlevel | int | mob level of npc
+| mname | string | mob name of npc
+| mobid | int | mob entity id of npc
+| name | string | name of who did say event
+| race | string | race of who did say event
+| status | int | account status of who did say event
+| text | string | Text of who did say event
+| uguild_id | int | guild id of who did say event
+| uguildrank | int | guild rank of who did say event
+| ulevel | int | level of who did say event
+| userid | int | user id of who did say event
+| x | float | x position of npc
+| y | float | y position of npc
+| z | float | z position of npc
+| zonehour | int | hour of zone when mob died
+| zoneid | int | zone id where mob died
+| zoneln | string | long name of zone where mob died
+| zonemin | int | minimum level to enter zone where mob died
+| zonesn | string | short name of zone where mob died
+| zonetime | int | time of zone where mob died
+| zoneweather | int | weather of zone where mob died
+
+### Example
+
+- This example is a response to a "hail"
+
+```perl
+sub EVENT_SAY {
+     #::: Checks if the text is like "Hail", the "/i" is for case-insensitive.
+     if ($text=~/Hail/i) {
+          quest::say("Hello, $name!");
+     }
+}
+```
+
+- This example additionally checks the language of the "hail", and will only respond to text in that language.
+
+```perl
+sub EVENT_SAY {
+     #::: Checks to see if the language is Thieves Cant (language ID 10)
+     if ($langid == 10) {
+          #::: Checks if the text is like "Hail", the "i" is for case-insensitive.
+          if ($text=~/Hail/i) {
+               # Respond, using the same language
+               quest::say("Hello, $name!",10);
+          }
+     }
+}
+```
 
 # EVENT_SCALE_CALC
 
