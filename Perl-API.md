@@ -143,17 +143,17 @@ A full list can always be found in the EQEmu source [https://github.com/EQEmu/S
 * [EVENT_KILLED_MERIT](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_killed_merit) # Triggered on NPC death when a client is in a group credited with doing the most damage to said loot table NPC.
 * sub EVENT_LEAVE_AREA # Triggered when a client leaves a mob's area.
 * sub EVENT_LEVEL_UP # Triggered when the player gains a level.
-* sub EVENT_LOOT # Triggered when player successfully loots an item from a corpse.
+* [EVENT_LOOT](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_loot) # Triggered when player successfully loots an item from a corpse.
 * [EVENT_NPC_SLAY](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_npc_slay) # Triggered when an NPC slays another NPC.
 * [EVENT_PLAYER_PICKUP](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_player_pickup) # Triggered when a player picks up an object from the ground.
 * sub EVENT_POPUPRESPONSE # Used with quest::popup.
 * [EVENT_PROXIMITY_SAY](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_proximity_say) # Triggered if the client enters a mob's proximity and uses the appropriate text trigger supplied beneath this event. (set quest::enable_proximity_say() and param 7 in q:set_prox)
-* sub EVENT_RESPAWN # Triggered on respawn
+* [EVENT_RESPAWN](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_respawn) # Triggered on respawn
 * [EVENT_SAY](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_say) # Triggered when a mob is targeted and the player types something.
 * sub EVENT_SCALE_CALC # Triggered when an item is equipped to scale the item.
-* sub EVENT_SIGNAL # Triggered by a call to quest::signal() or quest::signalwith().
-* sub EVENT_SLAY # Triggered whenever an NPC kills someone.
-* sub EVENT_SPAWN # Triggered when the NPC spawns.
+* [EVENT_SIGNAL](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_signal) # Triggered by a call to quest::signal() or quest::signalwith().
+* [EVENT_SLAY](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_slay) # Triggered whenever an NPC kills someone.
+* [EVENT_SPAWN](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_spawn) # Triggered when the NPC spawns.
 * sub EVENT_SPELL_EFFECT_CLIENT # Triggered when the spell lands on a client.
 * sub EVENT_SPELL_EFFECT_NPC # Triggered when the spell lands on an NPC.
 * sub EVENT_SPELL_BUFF_TIC_CLIENT # Triggered when the spell ticks on a client.
@@ -164,16 +164,16 @@ A full list can always be found in the EQEmu source [https://github.com/EQEmu/S
 * sub EVENT_TASKACCEPTED # Triggered when a player accepts a task from the task selector window.
 * sub EVENT_TASK_COMPLETE # Triggered when a player completes a task.
 * sub EVENT_TASK_FAIL # Triggered when a player fails a task.
-* sub EVENT_TASK_STAGE_COMPLETE # Triggered when a task stage is completed.
+* [EVENT_TASK_STAGE_COMPLETE](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_task_stage_complete) # Triggered when a task stage is completed.
 * sub EVENT_TASK_UPDATE # Triggered when a player's task is updated.
-* sub EVENT_TIMER # Triggered by a quest::settimer().
+* [EVENT_TIMER](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_timer) # Triggered by a quest::settimer().
 * sub EVENT_TRADE # Triggered by beginning a trade.
 * sub EVENT_UNAUGMENT_ITEM # Triggered when a client removes an augment from an item.
 * sub EVENT_UNEQUIP_ITEM # Triggered when a client unequips an item.
-* sub EVENT_WAYPOINT_ARRIVE # Triggered when a mob arrives at a waypoint.
-* sub EVENT_WAYPOINT_DEPART # Triggered when a mob leaves a waypoint.
+* [EVENT_WAYPOINT_ARRIVE](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_waypoint_arrive) # Triggered when a mob arrives at a waypoint.
+* [EVENT_WAYPOINT_DEPART](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_waypoint_depart) # Triggered when a mob leaves a waypoint.
 * sub EVENT_WEAPON_PROC # Triggered when a weapon procs.
-* sub EVENT_ZONE # Triggered when a player zones.
+* [EVENT_ZONE](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_zone) # Triggered when a player zones.
 
 ## Text Response Example
 
