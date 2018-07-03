@@ -97,23 +97,23 @@ Spells will load a script on the first event that triggers them and will load on
 
 A full list can always be found in the EQEmu source [https://github.com/EQEmu/Server/blob/master/zone/embparser.cpp](https://github.com/EQEmu/Server/blob/master/zone/embparser.cpp)
 
-* sub [EVENT_AGGRO](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_aggro) # Triggered when a mob aggros a client.
-* sub [EVENT_AGGRO_SAY](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_aggro_say) # Triggered when a mob is targeted, the player types something, and NPC is in combat.
-* sub [EVENT_ATTACK](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_attack) # Triggered when the NPC is attacked.
-* sub [EVENT_AUGMENT_ITEM](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_augment_item) # Triggered when a client augments an item.
-* sub [EVENT_AUGMENT_INSERT](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_augment_insert) # Triggered when a client inserts an augment into an item.
-* sub [EVENT_AUGMENT_REMOVE](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_augment_remove) # Triggered when a client removes an augment from an item.
-* sub [EVENT_CAST](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_cast) # Triggered when a client casts a spell.
-* sub [EVENT_CAST_BEGIN](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_cast_begin) # Triggered when a client begins to cast a spell.
-* sub [EVENT_CAST_ON](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_cast_on) # Triggered when a player casts a spell on a player or NPC.
-* sub [EVENT_CLICKDOOR](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_clickdoor) # Triggered when the client clicks on a door object.
-* sub [EVENT_CLICK_OBJECT](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_click_object) # Triggered when the client clicks on an object.
-* sub [EVENT_COMBAT](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_combat) # Triggered when an NPC enters or leaves combat.
-* sub EVENT_COMBINE_FAILURE # Triggered when a combine is unsuccessful.
-* sub EVENT_COMBINE_SUCCESS # Triggered when a combine is successful.
-* sub EVENT_COMMAND # Triggered when a player says anything like a command.
-* sub EVENT_CONNECT # Triggered when a player connects to the world.
-* sub EVENT_DEATH # Triggered when the NPC dies. Fires before death finishes.
+* [EVENT_AGGRO](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_aggro) # Triggered when a mob aggros a client.
+* [EVENT_AGGRO_SAY](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_aggro_say) # Triggered when a mob is targeted, the player types something, and NPC is in combat.
+* [EVENT_ATTACK](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_attack) # Triggered when the NPC is attacked.
+* [EVENT_AUGMENT_ITEM](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_augment_item) # Triggered when a client augments an item.
+* [EVENT_AUGMENT_INSERT](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_augment_insert) # Triggered when a client inserts an augment into an item.
+* [EVENT_AUGMENT_REMOVE](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_augment_remove) # Triggered when a client removes an augment from an item.
+* [EVENT_CAST](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_cast) # Triggered when a client casts a spell.
+* [EVENT_CAST_BEGIN](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_cast_begin) # Triggered when a client begins to cast a spell.
+* [EVENT_CAST_ON](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_cast_on) # Triggered when a player casts a spell on a player or NPC.
+* [EVENT_CLICKDOOR](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_clickdoor) # Triggered when the client clicks on a door object.
+* [EVENT_CLICK_OBJECT](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_click_object) # Triggered when the client clicks on an object.
+* [EVENT_COMBAT](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_combat) # Triggered when an NPC enters or leaves combat.
+* [EVENT_COMBINE_FAILURE](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_combine_failure) # Triggered when a combine is unsuccessful.
+* [EVENT_COMBINE_SUCCESS](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_combine_success) # Triggered when a combine is successful.
+* [EVENT_COMMAND](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_command) # Triggered when a player says anything like a command.
+* [EVENT_CONNECT](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_connect) # Triggered when a player connects to the world.
+* [EVENT_DEATH](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_death) # Triggered when the NPC dies. Fires before death finishes.
 * sub EVENT_DEATH_COMPLETE # Triggered when the NPC dies.
 * sub EVENT_DESTROY_ITEM # Triggered when a client destroys an item.
 * sub EVENT_DISCONNECT # Triggered when a player disconnects from the world.
@@ -121,21 +121,21 @@ A full list can always be found in the EQEmu source [https://github.com/EQEmu/S
 * sub EVENT_DROP_ITEM # Triggered when a client drops an item.
 * sub EVENT_DUEL_LOSE # Triggered when a client loses a duel.
 * sub EVENT_DUEL_WIN # Triggered when a client wins a duel.
-* sub EVENT_ENTER # Triggered by any client who enters a mob's proximity.
+* [EVENT_ENTER](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_enter) # Triggered by any client who enters a mob's proximity.
 * sub EVENT_ENTER_AREA # Triggered when a client enters the area of a mob.
-* sub EVENT_ENTERZONE # Triggered when a player enters the zone.
+* [EVENT_ENTERZONE](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_enterzone) # Triggered when a player enters the zone.
 * sub EVENT_EQUIP_ITEM # Triggered when a player equips an item.
-* sub EVENT_EXIT # Triggered by any client who leaves a mob's proximity.
+* [EVENT_EXIT](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_exit) # Triggered by any client who leaves a mob's proximity.
 * sub EVENT_FEIGN_DEATH # Triggered when a client feign death.
-* sub EVENT_FISH_FAILURE # Triggered when a client fails at fishing.
-* sub EVENT_FISH_START # Triggered when a client starts fishing.
+* [EVENT_FISH_FAILURE](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_fish_failure) # Triggered when a client fails at fishing.
+* [EVENT_FISH_START](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_fish_start) # Triggered when a client starts fishing.
 * sub EVENT_FISH_SUCCESS # Triggered when a client succeeds at fishing.
 * sub EVENT_FORAGE_FAILURE # Triggered when a client fails at foraging.
 * sub EVENT_FORAGE_SUCCESS # Triggered when a client succeeds at foraging.
 * sub EVENT_GROUP_CHANGE # Triggered when a group change occurs.
-* sub EVENT_HATE_LIST # Triggered when a mob's hate list is changed.
-* sub EVENT_HP # Triggered by a mob's HP dropping below a threshold.
-* sub EVENT_ITEM # Triggered when an item or money is turned into the mob.
+* [EVENT_HATE_LIST](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_hate_list) # Triggered when a mob's hate list is changed.
+* [EVENT_HP](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_hp) # Triggered by a mob's HP dropping below a threshold.
+* [EVENT_ITEM](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_item) # Triggered when an item or money is turned into the mob.
 * sub EVENT_ITEM_CLICK # Triggered when an item is clicked.
 * sub EVENT_ITEM_CLICK_CAST # Triggered when a client casts the click effect on an item.
 * sub EVENT_ITEM_ENTER_ZONE # Called when an item that would trigger EVENT_SCALE_CALC is in the inventory when a player zones in.
@@ -144,10 +144,10 @@ A full list can always be found in the EQEmu source [https://github.com/EQEmu/S
 * sub EVENT_LEAVE_AREA # Triggered when a client leaves a mob's area.
 * sub EVENT_LEVEL_UP # Triggered when the player gains a level.
 * sub EVENT_LOOT # Triggered when player successfully loots an item from a corpse.
-* sub EVENT_NPC_SLAY # Triggered when an NPC slays another NPC.
-* sub EVENT_PLAYER_PICKUP # Triggered when a player picks up an object from the ground.
+* [EVENT_NPC_SLAY](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_npc_slay) # Triggered when an NPC slays another NPC.
+* [EVENT_PLAYER_PICKUP](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_player_pickup) # Triggered when a player picks up an object from the ground.
 * sub EVENT_POPUPRESPONSE # Used with quest::popup.
-* sub [EVENT_PROXIMITY_SAY](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_proximity_say) # Triggered if the client enters a mob's proximity and uses the appropriate text trigger supplied beneath this event. (set quest::enable_proximity_say() and param 7 in q:set_prox)
+* [EVENT_PROXIMITY_SAY](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_proximity_say) # Triggered if the client enters a mob's proximity and uses the appropriate text trigger supplied beneath this event. (set quest::enable_proximity_say() and param 7 in q:set_prox)
 * sub EVENT_RESPAWN # Triggered on respawn
 * sub EVENT_SAY # Triggered when a mob is targeted and the player types something.
 * sub EVENT_SCALE_CALC # Triggered when an item is equipped to scale the item.
