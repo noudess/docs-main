@@ -11,7 +11,6 @@ Often used for flavor text--just remember that every NPC_Type has an EmoteID tha
 
 ```perl
 sub EVENT_AGGRO {
-
 	quest::say("Time to die $name.");
 }
 ```
@@ -70,7 +69,6 @@ Note the subtle difference from EVENT_AGGRO, which is triggered when the NPC is 
 
 ```perl
 sub EVENT_ATTACK {
-
 	quest::say("Time to die $name.");
 }
 ```
@@ -88,7 +86,6 @@ You would likely use this event in your global player.pl file.
 
 ```perl
 sub EVENT_AUGMENT_ITEM {
-
 	$client->Message(15, "Yay, it fit!");
 }
 ```
@@ -107,7 +104,6 @@ You would likely use this event in your global player.pl file.
 
 ```perl
 sub EVENT_AUGMENT_INSERT {
-
 	$client->Message(15, "Yay, it fit!");
 }
 ```
@@ -124,7 +120,6 @@ sub EVENT_AUGMENT_INSERT {
 
 ```perl
 sub EVENT_AUGMENT_ITEM {
-
 	$client->Message(15, "Yay, you pulled it out!");
 }
 ```
@@ -147,7 +142,6 @@ sub EVENT_AUGMENT_ITEM {
 
 ```perl
 sub EVENT_CAST {
-
 	quest::me("regains his concentration and casts his spell.");
 }
 ```
@@ -308,10 +302,10 @@ sub EVENT_COMBAT {
 
 ### Exports
 
-| Name | Type | Description
+| Name | Type | Usage
 | --- | --- | --- |
-|recipe_id | int | quest::say($recipe_id); # returns int
-|recipe_name | int | quest::say($recipe_name); # returns int
+|recipe_id | int | `quest::say($recipe_id); # returns int`
+|recipe_name | int | `quest::say($recipe_name); # returns int`
 
 ### Example
 
@@ -331,13 +325,34 @@ sub EVENT_COMBINE_FAILURE {
 
 ### Trigger
 
-- when a combine is successful.
+- When a combine is successful.
+
+### Exports
+
+| Name | Type | Usage
+| --- | --- | --- |
+|recipe_id | int | `quest::say($recipe_id); # returns int`
+|recipe_name | int | `quest::say($recipe_name); # returns int`
+
+### Example
+
+- In this example, we send the client a message when they successfully combine a Hand Made Backpack
+
+```perl
+sub EVENT_COMBINE_SUCCESS {
+	#:: Match Recipe 2686: "Hand Made Backpack" by ID
+	if ($recipe_id == 2686) {
+		#:: Send the client a message in color 15 (yellow)
+		$client->Message(15,"Yay, now you have a place to put all of your stuff!");
+	}
+}
+```
 
 # EVENT_COMMAND
 
 ### Trigger
 
-- When a player says anything like a command.  Replaced/Synonymous with EVENT_SAY.
+- When a player says anything like a command.  Replaced/Synonymous with [EVENT_SAY](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_say).
 
 # EVENT_CONNECT
 
@@ -345,11 +360,76 @@ sub EVENT_COMBINE_FAILURE {
 
 - when a player connects to the world.
 
+You would likely be using this event in your global_player.pl.
+
+### Example
+
+- In this example, veteran AAs are awarded based on accumulated play time.
+
+```perl
+sub EVENT_CONNECT {
+	my %vet_aa = (481 => [31536000, 1, 1],
+	482 => [63072000, 1, 1],
+	483 => [94608000, 1, 1],
+	484 => [126144000, 1, 1],
+	485 => [157680000, 1, 1],
+	486 => [189216000, 1, 1],
+	487 => [220752000, 1, 1],
+	511 => [252288000, 1, 1],
+	2000 => [283824000, 1, 1],
+	8081 => [315360000, 1, 1],
+	8130 => [346896000, 1, 1],
+	453 => [378432000, 1, 1],
+	182 => [409968000, 1, 1],
+	600 => [441504000, 1, 1]);
+	foreach my $key (keys %vet_aa) {
+		if ($vet_aa{$key}[2] && ($vet_aa{$key}[2] || $client->GetAccountAge() >= $vet_aa{$key}[0])) {
+			$client->GrantAlternateAdvancementAbility($key, 1);
+		}
+	}
+}
+```
+
 # EVENT_DEATH
 
 ### Trigger
 
-- when the NPC dies. Fires before death finishes.
+- When the NPC dies. Fires before death finishes.
+
+### Exports
+
+| Name | Type | Details
+| --- | --- | --- 
+| client | client | client who killed mob
+| npc | npc | npc that was killed
+| killer_id | int | client ID of killer. (Does not seem castable to mob)
+| killer_damage | int | How much damage was dealt on killing blow
+| killer_spell | int | Spell ID used to kill mob
+| killer_skill | int | Skill ID used to kill mob
+| charid | int | Character ID who killed mob
+| class | string | Class Name who killed mob
+| faction | int | Faction comparison of killed mob vs killer
+| h | float | heading of mob during death
+| hpratio | float | percent health of mob after death (negative value)
+| mlevel | int | level of mob killed
+| mname | string | name of mob killed
+| mobid | int | id of mob killed
+| name | string | name of killer
+| race | string | race of killer
+| status | int | account status of killer
+| uguild_id | int | uguild of killer
+| ulevel | int | level of killer
+| userid | int | user id of killer
+| x | float | x position of killed mob
+| y | float | y position of killed mob
+| z | float | z position of killed mob
+| zonehour | int | hour of zone when mob died
+| zoneid | int | zone id where mob died
+| zoneln | string | long name of zone where mob died
+| zonemin | int | minimum level to enter zone where mob died
+| zonesn | string | short name of zone where mob died
+| zonetime | int | time of zone where mob died
+| zoneweather | int | 
 
 # EVENT_DEATH_COMPLETE
 
@@ -487,8 +567,7 @@ sub EVENT_EXIT {
 - In this example, a message is displayed by the client if fishing is unsuccessful.
 
 ```perl
-sub EVENT_FISH_FAILURE {
-	
+sub EVENT_FISH_FAILURE {	
 	$client->Message(1, "Maybe you're using the wrong bait!")
 }
 ```
@@ -505,7 +584,6 @@ sub EVENT_FISH_FAILURE {
 
 ```perl
 sub EVENT_FISH_START {
-
 	$client->Message(1, "You crack a beer and toss your line in.");
 }
 ```
@@ -546,7 +624,6 @@ In this example, some flavor text is added as a player is added and removed from
 
 ```perl
 sub EVENT_HATE_LIST {
-
 	if ($hate_state == 1) {
 		quest::say("$name is gonna die!");
 	}
