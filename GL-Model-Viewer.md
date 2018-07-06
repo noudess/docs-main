@@ -1,6 +1,6 @@
-GL Model Viewer is a tool used to view and scroll through viewable objects in a zone
+**GL Model Viewer** is a tool used to view and scroll through viewable objects in a zone
 
-[Download](https://drive.google.com/uc?id=1hwr7HYuRoznXzrUKE7d9E7-crAtpr5Ha)
+* [Download](https://drive.google.com/uc?id=1hwr7HYuRoznXzrUKE7d9E7-crAtpr5Ha)
 
 When downloaded, place it in your game folder, and you can run it as shown below
 
