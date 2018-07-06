@@ -10,7 +10,7 @@ Maps in EQEmu are used to do many things, we have different files that are respo
 ### Base Maps (.map)
 
 * Base map files are responsible for a few core critical things
-  * **Line of Sight (LOS)**
+  * **Line of Sight (LOS)** eg: Can this spell be casted if there is a wall or object between me and the target?
   * **Calculating Best Z** The server is constantly doing Z calculations to keep NPC's on level plane, to prevent from dipping into the ground which was a much larger issue in the past
 
 ### Water Maps (.wtr)
