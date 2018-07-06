@@ -88,6 +88,7 @@
 * [[Spell Effect IDs]]
 * [[Spell Target Restrictions]]
 * [[Spell Resist Types]]
+* [[Numhit Types]]
 
 ---
 
