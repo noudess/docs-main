@@ -87,3 +87,8 @@
 * [[Spell Effect IDs]]
 * [[Spell Target Restrictions]]
 * [[Spell Resist Types]]
+
+---
+
+**Tooling**
+* [[GL Model Viewer]]
