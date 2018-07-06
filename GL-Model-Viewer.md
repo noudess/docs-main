@@ -4,7 +4,7 @@
 
 When downloaded, place it in your game folder, and you can run it as shown below
 
-These same models can be spawned using [[doors]] and [[objects]]
+These same models can be spawned using [[doors]] and [[object]]
 
 **Usage**
 
