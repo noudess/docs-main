@@ -90,6 +90,9 @@
 
 ---
 
-**Model Tooling**
+**Client Tooling**
 * [[GL Model Viewer]]
 * [[List Objects Tool]]
+
+**MIDI**
+* [[XMI to MIDI Converter]]
