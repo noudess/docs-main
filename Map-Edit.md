@@ -32,9 +32,13 @@ In this case we open **Najena**
 
 From here you can view the collidable geometry of the zone in grey, the non-collidable geometry of the zone in light blue and surrounded by a red wire box that represents the bounding box of the zone.
 
-#### Quickly lets cover the options menu, navigate to File -> Options(ALT + O)
+# Options Menu
 
-![](/EQEmu/Server/wiki/images/05_options.png?raw=true)
+* Quickly lets cover the options menu, navigate to File -> Options(ALT + O)
+
+<p align="center">
+<img src="/EQEmu/Server/wiki/images/map-edit/05_options.png?raw=true">
+</p>
 
 From here you see various options:
 
@@ -63,7 +67,13 @@ This is a visual example of backface culling enabled which proves useful for bei
 <img src="/EQEmu/Server/wiki/images/map-edit/08_navigation_gen.png?raw=true">
 </p>
 
-The tools let you switch between three different modes of operation: NavMesh Generation, Connections and Testing.
+# Modes
+
+The tools let you switch between three different modes of operation
+
+* NavMesh Generation
+* Connections
+* Testing
 
 Lets generate an initial NavMesh, scroll to the bottom of NavMesh Properties window and click on Build All NavMesh Tiles.
 
@@ -114,7 +124,7 @@ What we see here is a pool of water, these are common places to find gaps in old
 
 By turning off the non-collidable mesh and using the test tool we can confirm that indeed this pool cannot be pathed into because of a gap in the navmesh.
 
-#### Now we switch to the Connections mode.
+# Connections Mode
 
 <p align="center">
 <img src="/EQEmu/Server/wiki/images/map-edit/14_connections.png?raw=true">
@@ -130,7 +140,9 @@ By turning off the non-collidable mesh and using the test tool we can confirm th
 
 We now have a connection that connects these two meshes together but if we try to retest it we find they still are not connected.  That is because connections are only made on navmesh tile creation.
 
-#### Switch back to NavMesh Generation mode and Shift+Click the area around that connection we just made.
+# Generation Mode 
+
+* Switch back to NavMesh Generation mode and Shift+Click the area around that connection we just made.
 
 <p align="center">
 <img src="/EQEmu/Server/wiki/images/map-edit/16_remove_tile.png?raw=true">
@@ -138,7 +150,9 @@ We now have a connection that connects these two meshes together but if we try t
 
 The tile for that area has just been removed from the overall mesh.
 
-#### Re-add the tile by Clicking the area around the connection.
+### Re-Adding the Tile
+
+* Re-add the tile by Clicking the area around the connection.
 
 <p align="center">
 <img src="/EQEmu/Server/wiki/images/map-edit/17_add_tile.png?raw=true">
