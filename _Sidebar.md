@@ -90,6 +90,7 @@
 * [[Spell Resist Types]]
 * [[Numhit Types]]
 * [[Damage Shield Types|damageshieldtypes]]
+* [[Type Effect Description Number]]
 
 **Maps**
 * [[Maps Introduction]]
