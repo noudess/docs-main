@@ -79,73 +79,30 @@ Lets generate an initial NavMesh, scroll to the bottom of NavMesh Properties win
 
 After a time a mesh will be generated and will show as blue overlay on the geometry.  This is a small graph of walkable polygons and works quite well in most places.
 
-#### Okay but what do these options mean?
+# Options
 
-Cell Size
+|Option|Description|
+|-|-|
+|**Cell Size**|The size of voxels on the xz plane for this nav mesh. The smaller this is the more detail and longer a map will take to generate.  Some zones do not play nicely with very large or very small values of this and you may need to play with this if you're having trouble or seeing artifacts. Smaller values generally lead to meshes with more nodes as well.| 
+|**Cell Height**|Generally recommended that this is 1/2 of Cell Size but not required otherwise the same as cell size just on the y axis.| |Height|The agent's height, the agent is used to determine what areas are walkable and remove all areas that can't be walked on.  Generally you probably wont have to change this but you might find it useful if an area you want walkable is being culled improperly.| 
+|**Radius**|The agent's radius, same basic idea as height but this is how fat the agent is.| 
+|**Max Climb**|The max height the agent will be allowed to climb in one step.  If the agent has to climb something larger than this then a gap will be generated.| 
+|**Max Slope**|The max slope the agent will be allowed to climb in one step.  If the agent has to climb something steeper than this then a gap will be generated.| 
+|**Min Region Size**|The min size a region can be to be segmented off into its own polygon.| 
+|**Merged Region Size**|The minimum size a region needs to be before the algorithm attempt to merge a region into another.| 
+|**Partitioning Type**|The algorithm used for partitioning internally. Have never found much reason to change this from default but it causes the algorithm to generate slightly different meshes.| 
+|**Max Edge Length**|Maximum length an edge can be in the basic polygon mesh output.  The bigger this is the larger polygons can be.  For flat surfaces that are very large (eg ocean bottoms) this can dramatically reduce polygon count.| 
+|**Max Edge Error**|The maximum deviation an edge can have in the basic polygon mesh output.| 
+|**Verts per Poly**|Maximum verts any poly can have.  Do not set above 6.  Setting this to something really low would probably needlessly complicate the mesh.| 
+|**Sample Distance**|When creating the detail mesh it samples from points nearby.  This is the distance to sample around a point. Generally going the smaller the number the more accurate the mesh is but also the more nodes that need to be generated.| 
+|**Max Sample Error**|Maximum error, like distance this is the maximum the error can be before the detail mesh discards a sample point. Smaller leads to more accurate but slower meshes.| 
+|**Tile Size**|The tile size of the map, the larger the tile the fewer of them that need to be generated but also the longer they need to be generated. |
 
-The size of voxels on the xz plane for this nav mesh. The smaller this is the more detail and longer a map will take to generate.  Some zones do not play nicely with very large or very small values of this and you may need to play with this if you're having trouble or seeing artifacts. Smaller values generally lead to meshes with more nodes as well.
+* Generally you wont have to change this but something to keep note of is there is a maximum amount of nodes a tile can contain and connections (covered below) can only connect a tile either to itself or to one of its potential 8 adjacent tiles.
 
-Cell Height
+* So you may need to up this if you have a large portal or decrease it if you find it having difficulty creating a tile at all.|
 
-Generally reccomended that this is 1/2 of Cell Size but not required otherwise the same as cell size just on the y axis.
-
-Height
-
-The agent's height, the agent is used to determine what areas are walkable and remove all areas that can't be walked on.  Generally you probably wont have to change this but you might find it useful if an area you want walkable is being culled improperly.
-
-Radius
-
-The agent's radius, same basic idea as height but this is how fat the agent is.
-
-Max Climb
-
-The max height the agent will be allowed to climb in one step.  If the agent has to climb something larger than this then a gap will be generated.
-
-Max Slope
-
-The max slope the agent will be allowed to climb in one step.  If the agent has to climb something steeper than this then a gap will be generated.
-
-Min Region Size
-
-The min size a region can be to be segmented off into its own polygon.
-
-Merged Region Size
-
-The minimum size a region needs to be before the algorithim attempt to merge a region into another.
-
-Partitioning Type
-
-The algorithim used for partitioning internally. Have never found much reason to change this from default but it causes the algorithim to generate slightly different meshes.
-
-Max Edge Length
-
-Maximum length an edge can be in the basic polygon mesh output.  The bigger this is the larger polygons can be.  For flat surfaces that are very large (eg ocean bottoms) this can dramatically reduce polygon count.
-
-Max Edge Error
-
-The maximum deviation an edge can have in the basic polygon mesh output.
-
-Verts per Poly
-
-Maximum verts any poly can have.  Do not set above 6.  Setting this to something really low would probably needlessly complicate the mesh.
-
-Sample Distance
-
-When creating the detail mesh it samples from points nearby.  This is the distance to sample around a point. Generally going the smaller the number the more accurate the mesh is but also the more nodes that need to be generated.
-
-Max Sample Error
-
-Maximum error, like distance this is the maximum the error can be before the detail mesh discards a sample point. Smaller leads to more accurate but slower meshes.
-
-Tile Size
-
-The tile size of the map, the larger the tile the fewer of them that need to be generated but also the longer they need to be generated. 
-
-Generally you wont have to change this but something to keep note of is there is a maximum amount of nodes a tile can contain and connections (covered below) can only connect a tile either to itself or to one of its potential 8 adjacent tiles.
-
-So you may need to up this if you have a large portal or decrease it if you find it having difficulty creating a tile at all.
-
-#### Lets go find and fix a spot where a gap in the navmesh exists.
+# Fixing Navmesh Gaps
 
 ![](/EQEmu/Server/wiki/images/11_look_at_pool.png?raw=true)
 
