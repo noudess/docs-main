@@ -17,3 +17,9 @@ xmi_to_midi <zone_short_name1> <zone_short_name2>
 * acrylia.xmi -> acrylia.midi
 * blackburrow.xmi -> blackburrow.midi
 * cobaltscar.xmi -> cobaltscar.midi
+
+### Source
+
+If you're interested in the source and want to compile it yourself, it can be found here:
+
+* [Source Download](https://drive.google.com/open?id=15dx2yk3Llcgqer7-vz1plFOjIgVjCXwC)
