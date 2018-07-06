@@ -45,9 +45,61 @@ This will load and output the following files
 ./awater nektulos tutorialb qeytoqrg
 ```
 
-* This will load and output the following files
-  * nektulos.eqg -> nektulos.wtr
-  * tutorialb.eqg -> tutorialb.wtr
-  * qeytoqrg.s3d -> qeytoqrg.wtr
+This will load and output the following files
+ * nektulos.eqg -> nektulos.wtr
+ * tutorialb.eqg -> tutorialb.wtr
+ * qeytoqrg.s3d -> qeytoqrg.wtr
 
 Each of these **.wtr** files may then be copied to the server's maps directory to be used by the server.
+
+# PFS
+
+PFS is a command line utility for manipulating pfs (S3D/EQG) files.  It works similarly to S3DSpy but from a command line.
+
+The usage is modeled loosely after 7-Zip's command line utility for familiarity:
+
+```
+pfs [<switches>...] <command> <command args>... <archive_name> [<file_names>...]
+<Switches>
+ -i=dir: Set input directory
+ -o=dir: Set output directory
+<Commands>
+ a: Add files to archive
+ d: Delete files from the archive
+ e: Extract files from the archive
+ l: List contents of the archive
+ <Command Args>
+  arg1: Only search for files with this extension, may use * as a wildcard meaning all extensions
+ u: Update files of the archive
+```
+
+# Map View
+
+Map View is a utility that will attempt to load map and **.wtr** files and then render them to a 3D view
+
+**Usage**
+
+```
+./map_view nektulos
+```
+
+This will attempt to load **nektulos.map** and **nektulos.wtr**
+
+
+### Controls
+
+You may use the mouse and WSAD for movement.
+
+Holding shift will increase the speed you move within the world drastically.
+
+* N toggles rendering of non-collidable geometry.
+* C toggles rendering of collidable geometry.
+* V toggles rendering of area volumes.
+
+### Troubleshooting
+
+If you're having trouble with getting a zone to render here are some things to check:
+
+* Your graphics card and drivers support OpenGL 3.3 or 3.0 (you need to specify within CMake for a special 3.0 build)
+* The program can see the shaders/ directory and has the shaders files within it.
+* The program can see the map and wtr files you are attempting to load.
