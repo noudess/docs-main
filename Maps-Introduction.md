@@ -5,13 +5,13 @@ Maps in EQEmu are used to do many things, we have different files that are respo
 * maps/base/zoneshortname.map
 * maps/nav/zoneshortname.nav
 * maps/water/zoneshortname.wtr
-* maps/path/zoneshortname.path (To be deprecated)
+* maps/path/zoneshortname.path (Deprecated)
 
 ### Base Maps (.map)
 
 * Base map files are responsible for a few core critical things
-  * Line of Sight (LOS)
-  * Calculating Best Z - The server is constantly doing Z calculations to keep NPC's on level plane, to prevent from dipping into the ground which was a much larger issue in the past
+  * **Line of Sight (LOS)**
+  * **Calculating Best Z** The server is constantly doing Z calculations to keep NPC's on level plane, to prevent from dipping into the ground which was a much larger issue in the past
 
 ### Water Maps (.wtr)
 
@@ -20,20 +20,7 @@ Maps in EQEmu are used to do many things, we have different files that are respo
 
 ### Navigation Mesh (.nav)
 
-* Navmesh is modern navigation mesh technology, we use it server side to determine shortest path to a target in NPC AI decision making processes, it's what the server uses to determine what NPC's can walk on and they will strictly adhere to this mesh when making pathing decisions
+* Navmesh is modern navigation mesh technology, we use it server side to determine shortest path to a target in NPC AI decision making processes, it's what the server uses to determine what NPC's can walk on and they will strictly adhere to this mesh when making pathing decisions. The end result is a very smooth path-making decisions. Not all zones are perfect with this logic but we have tooling working towards making this better
 * Example of this in game: https://www.youtube.com/watch?v=ujtqipXAP1E
+* Another explanation of Navmesh on [Stack Overflow](https://gamedev.stackexchange.com/a/15395)
 
-***
-
-Here is another explanation taken from [Stack Overflow](https://gamedev.stackexchange.com/a/15395)
-
-* It is same as waypoint pathfinding, only instead of way-points you have way-polygons and You can infer few things about navmesh from it:
-
-* way-polygons are areas where entities can safely walk
-  * other areas should probably be not considered
-  * way-points need to do leap of faith into space between them; remember NPCs stucking in walls? It was at places where two waypoints were not directly connected.
-* There is potentially less nodes (because polygons are biger)
-  * Therefore it is most likely faster
-  * Therefore it has potentially smaller memory requirements
-* It is more realistic (because polygon's area contains in theory infinite amount of points)
-  * At polygons You might do some flocking behaviour to avoid collisions between NPCs
