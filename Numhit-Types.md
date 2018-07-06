@@ -1,3 +1,5 @@
+Num Hits Type field (175) determines what behavior will tick down the numhits counter on specified buffs.
+
 **ID**|**Description**
 :-----|:-----
 1|Attempted incoming melee attacks (hit or miss) on YOU.
