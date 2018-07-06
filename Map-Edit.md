@@ -180,7 +180,7 @@ The tile has returned and if we retest it we notice that the connection now work
 <img src="/EQEmu/Server/wiki/images/map-edit/18_pool_after.png?raw=true">
 </p>
 
-#### Now lets move to another place you might find a gap.
+### Another Gap
 
 <p align="center">
 <img src="/EQEmu/Server/wiki/images/map-edit/19_lets_fix_this_spot.png?raw=true">
@@ -188,7 +188,9 @@ The tile has returned and if we retest it we notice that the connection now work
 
 We come to a spot where the floor is not solid because the player is intended to fall into this "trap" if they're inexperienced.
 
-#### Lets add a normal bi-directional connection spanning the gap so npcs at least just hop over it and don't get stuck
+# Bi-Directional Connection Spanning
+
+* Lets add a normal bi-directional connection spanning the gap so npcs at least just hop over it and don't get stuck
 
 <p align="center">
 <img src="/EQEmu/Server/wiki/images/map-edit/20_normal_connection.png?raw=true">
@@ -196,7 +198,9 @@ We come to a spot where the floor is not solid because the player is intended to
 
 This would work but a player that had a npc chasing them and fell down this hole would create a massive train through a long part of the zone.  Wouldn't it be nice if the npc could also jump down this hole instantly?
 
-#### Lets create a set of portal one-way connections from the top sides of the mesh down into the trap
+# Portal One-Way
+
+* Lets create a set of portal one-way connections from the top sides of the mesh down into the trap
 
 <p align="center">
 <img src="/EQEmu/Server/wiki/images/map-edit/21_portal_jump_down.png?raw=true">
