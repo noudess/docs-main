@@ -94,6 +94,7 @@
 
 **Maps**
 * [[Maps Introduction]]
+* [[Map Edit|Navigation Mesh]]
 
 ---
 
