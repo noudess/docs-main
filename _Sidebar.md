@@ -89,6 +89,7 @@
 * [[Spell Target Restrictions]]
 * [[Spell Resist Types]]
 * [[Numhit Types]]
+* [[Damage Shield Types|damageshieldtypes]]
 
 ---
 
