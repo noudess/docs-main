@@ -1,6 +1,22 @@
-*   Navigation files are precalculated pathing files created by the map_edit program from zone-utilities that allows for more correct pathing around a zone than without one.
-*   They like *.map files are also stored in the server's ./maps/ directory.
-*   They have an extension type of .nav eg: qeynos would load maps/qeynos.nav
+**Download**
+* [https://ci.appveyor.com/api/projects/KimLS/zone-utilities/artifacts/build_x64.zip](https://ci.appveyor.com/api/projects/KimLS/zone-utilities/artifacts/build_x64.zip)
+
+**Source** 
+* [https://github.com/EQEmu/zone-utilities](https://github.com/EQEmu/zone-utilities)
+
+### What is Navmesh?
+
+From [[Maps Introduction]]
+
+* Navmesh is modern navigation mesh technology, we use it server side to determine shortest path to a target in NPC AI decision making processes, it's what the server uses to determine what NPC's can walk on and they will strictly adhere to this mesh when making pathing decisions. The end result is a very smooth path-making decisions
+* Example of this in game: https://www.youtube.com/watch?v=ujtqipXAP1E
+* Another explanation of Navmesh on [Stack Overflow](https://gamedev.stackexchange.com/a/15395)
+
+# File Structure
+
+* maps/base/zoneshortname.map
+* **maps/nav/zoneshortname.nav**
+* maps/water/zoneshortname.wtr
 
 # Creation Example
 
