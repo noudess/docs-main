@@ -50,6 +50,7 @@
 * [[Facial Features]]
 * [[Inventory Slots]]
 * [[Item Class]]
+* [[Item Lore Groups]]
 * [[Item Sizes|Item Sizes]]
 * [[Lanuages]]
 * [[NATS Channels]]
