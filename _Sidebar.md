@@ -91,6 +91,9 @@
 * [[Numhit Types]]
 * [[Damage Shield Types|damageshieldtypes]]
 
+**Maps**
+* [[Maps Introduction]]
+
 ---
 
 **Client Tooling**
