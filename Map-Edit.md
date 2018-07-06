@@ -40,32 +40,42 @@ From here you can view the collidable geometry of the zone in grey, the non-coll
 
 From here you see various options:
 
-*   Render Collidable Mesh: A checkbox that controls whether the grey geometry is drawn.
-*   Render Non-Collidable Mesh: A checkbox that controls whether the light blue geometry is drawn.
-*   Render Bounding Box: A checkbox that controls whether the bounding box is drawn.
-*   Enable backface culling: A checkbox that controls whether polygons facing away from the camera are drawn. (See example below)
-*   Bounding Box: Six sliders that let you control the bounding box used by this zone, you can CTRL+Click on the values to be able to manually type in a value.
-*   Render Volumes: A checkbox that controls whether eqg volumes(watermaps) are rendered (s3d volumes/watermaps are never rendered).
+*   **Render Collidable Mesh** A checkbox that controls whether the grey geometry is drawn.
+*   **Render Non-Collidable Mesh** A checkbox that controls whether the light blue geometry is drawn.
+*   **Render Bounding Box** A checkbox that controls whether the bounding box is drawn.
+*   **Enable Backface Culling** A checkbox that controls whether polygons facing away from the camera are drawn. (See example below)
+*   **Bounding Box** Six sliders that let you control the bounding box used by this zone, you can CTRL+Click on the values to be able to manually type in a value.
+*   **Render Volumes** A checkbox that controls whether EQG volumes (watermaps) are rendered (s3d volumes/watermaps are never rendered).
 
-![](/EQEmu/Server/wiki/images/06_backface_culling_off.png?raw=true)
+<p align="center">
+<img src="/EQEmu/Server/wiki/images/map-edit/06_backface_culling_off.png?raw=true">
+</p>
 
 This is a visual example of backface culling enabled which proves useful for being able to see in zone detail for some indoor zones.
 
-#### Next we need to enable the Navigation module. Navigate to the Modules menu and select Navigation.
+* Next we need to enable the Navigation module. Navigate to the Modules menu and select Navigation.
 
-![](/EQEmu/Server/wiki/images/07_modules.png?raw=true)
+<p align="center">
+<img src="/EQEmu/Server/wiki/images/map-edit/07_modules.png?raw=true">
+</p>
 
-#### Now that navigation is enabled you will see Navigation and NavMesh properties windows.
+* Now that navigation is enabled you will see Navigation and NavMesh properties windows.
 
-![](/EQEmu/Server/wiki/images/08_navigation_gen.png?raw=true)
+<p align="center">
+<img src="/EQEmu/Server/wiki/images/map-edit/08_navigation_gen.png?raw=true">
+</p>
 
 The tools let you switch between three different modes of operation: NavMesh Generation, Connections and Testing.
 
-#### Lets generate an initial NavMesh, scroll to the bottom of NavMesh Properties window and click on Build All NavMesh Tiles.
+Lets generate an initial NavMesh, scroll to the bottom of NavMesh Properties window and click on Build All NavMesh Tiles.
 
-**![](/EQEmu/Server/wiki/images/09_navigation_gen.png?raw=true)**
+<p align="center">
+<img src="/EQEmu/Server/wiki/images/map-edit/09_navigation_gen.png?raw=true">
+</p>
 
-**![](/EQEmu/Server/wiki/images/10_navigation_gen_after.png?raw=true)**
+<p align="center">
+<img src="/EQEmu/Server/wiki/images/map-edit/10_navigation_gen_after.png?raw=true">
+</p>
 
 After a time a mesh will be generated and will show as blue overlay on the geometry.  This is a small graph of walkable polygons and works quite well in most places.
 
