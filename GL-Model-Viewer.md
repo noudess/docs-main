@@ -4,7 +4,7 @@
 
 When downloaded, place it in your game folder, and you can run it as shown below
 
-These same models can be spawned using [[doors]] and [[object]]
+These same models can be spawned using [[doors]] and [[object]], keep note that while below lists *BBROCK8_DMSPRITEDEF* the way you would spawn this in game would be just 'BBROCK8' without the '_DMSPRITEDEF' postfix
 
 **Usage**
 
