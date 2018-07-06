@@ -1,8 +1,10 @@
-[Return to the Lua Parser](Lua-Parser)
-
 The Lua API consisted of many exported classes and some general functions.
 * [HateList](Lua-Hate-List)
 * [Lua Constants](Lua-Constants)
+
+# Other Pages
+
+* [[Lua Parser]]
 
 # Packet
 ```lua
