@@ -1,5 +1,3 @@
-# Introduction
-
 *   Navigation files are precalculated pathing files created by the map_edit program from zone-utilities that allows for more correct pathing around a zone than without one.
 *   They like *.map files are also stored in the server's ./maps/ directory.
 *   They have an extension type of .nav eg: qeynos would load maps/qeynos.nav
@@ -104,61 +102,83 @@ After a time a mesh will be generated and will show as blue overlay on the geome
 
 # Fixing Navmesh Gaps
 
-![](/EQEmu/Server/wiki/images/11_look_at_pool.png?raw=true)
+<p align="center">
+<img src="/EQEmu/Server/wiki/images/map-edit/11_look_at_pool.png?raw=true">
+</p>
 
 What we see here is a pool of water, these are common places to find gaps in older zones.
 
-![](/EQEmu/Server/wiki/images/13_pool_test_before.png?raw=true)
+<p align="center">
+<img src="/EQEmu/Server/wiki/images/map-edit/13_pool_test_before.png?raw=true">
+</p>
 
 By turning off the non-collidable mesh and using the test tool we can confirm that indeed this pool cannot be pathed into because of a gap in the navmesh.
 
 #### Now we switch to the Connections mode.
 
-![](/EQEmu/Server/wiki/images/14_connections.png?raw=true)
+<p align="center">
+<img src="/EQEmu/Server/wiki/images/map-edit/14_connections.png?raw=true">
+</p>
 
-You'll see a few options, what we want in this case is a bi-directional connection as these can move in either direction.  We also want the area type to be "Water" as it is going into and out of a pool of water.
+* You'll see a few options, what we want in this case is a bi-directional connection as these can move in either direction.  We also want the area type to be "Water" as it is going into and out of a pool of water.
 
-#### Place the connection by clicking on the mesh once (for start pos) and again (for end pos)
+* Place the connection by clicking on the mesh once (for start pos) and again (for end pos)
 
-![](/EQEmu/Server/wiki/images/15_connection_added.png?raw=true)
+<p align="center">
+<img src="/EQEmu/Server/wiki/images/map-edit/15_connection_added.png?raw=true">
+</p>
 
 We now have a connection that connects these two meshes together but if we try to retest it we find they still are not connected.  That is because connections are only made on navmesh tile creation.
 
 #### Switch back to NavMesh Generation mode and Shift+Click the area around that connection we just made.
 
-**![](/EQEmu/Server/wiki/images/16_remove_tile.png?raw=true)**
+<p align="center">
+<img src="/EQEmu/Server/wiki/images/map-edit/16_remove_tile.png?raw=true">
+</p>
 
 The tile for that area has just been removed from the overall mesh.
 
 #### Re-add the tile by Clicking the area around the connection.
 
-![](/EQEmu/Server/wiki/images/17_add_tile.png?raw=true)
+<p align="center">
+<img src="/EQEmu/Server/wiki/images/map-edit/17_add_tile.png?raw=true">
+</p>
 
 The tile has returned and if we retest it we notice that the connection now works.
 
-![](/EQEmu/Server/wiki/images/18_pool_after.png?raw=true)
+<p align="center">
+<img src="/EQEmu/Server/wiki/images/map-edit/18_pool_after.png?raw=true">
+</p>
 
 #### Now lets move to another place you might find a gap.
 
-![](/EQEmu/Server/wiki/images/19_lets_fix_this_spot.png?raw=true)
+<p align="center">
+<img src="/EQEmu/Server/wiki/images/map-edit/19_lets_fix_this_spot.png?raw=true">
+</p>
 
 We come to a spot where the floor is not solid because the player is intended to fall into this "trap" if they're inexperienced.
 
 #### Lets add a normal bi-directional connection spanning the gap so npcs at least just hop over it and don't get stuck
 
-![](/EQEmu/Server/wiki/images/20_normal_connection.png?raw=true)
+<p align="center">
+<img src="/EQEmu/Server/wiki/images/map-edit/20_normal_connection.png?raw=true">
+</p>
 
 This would work but a player that had a npc chasing them and fell down this hole would create a massive train through a long part of the zone.  Wouldn't it be nice if the npc could also jump down this hole instantly?
 
 #### Lets create a set of portal one-way connections from the top sides of the mesh down into the trap
 
-![](/EQEmu/Server/wiki/images/21_portal_jump_down.png?raw=true)
+<p align="center">
+<img src="/EQEmu/Server/wiki/images/map-edit/21_portal_jump_down.png?raw=true">
+</p>
 
 Now that the connections are created don't forget to regenerate any nav mesh tiles that the connections have landed on.
 
-#### Lets test now that we've created those jumps.
+# Test the Created Jumps
 
-![](/EQEmu/Server/wiki/images/22_portal_jump_down_test.png?raw=true)
+<p align="center">
+<img src="/EQEmu/Server/wiki/images/map-edit/22_portal_jump_down_test.png?raw=true">
+</p>
 
 Instead of going all through the zone instead green jumps down into the trap to chase red.
 
