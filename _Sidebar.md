@@ -48,6 +48,7 @@
 * [[Emote Colors]]
 * [[Experience by Level]]
 * [[Facial Features]]
+* [[Inventory Slots]]
 * [[Item Class]]
 * [[Item Sizes|Item Sizes]]
 * [[Lanuages]]
