@@ -8,7 +8,8 @@
 # Changes in the Source
 
 * You need to increment a define in the source that dictates what database version the source SHOULD be running at
-  * Located in `common/version.h`
+
+**Location** `common/version.h`
 
 The database version will need to match the manifest entry you have added, more on that in a moment
 
@@ -63,4 +64,21 @@ If the table is missing the column, it will run the SQL file specified above `20
 
 ```sql
 ALTER TABLE `raid_members` CHANGE COLUMN `groupid` `groupid` INT(4) UNSIGNED NOT NULL DEFAULT '0' AFTER `charid`;
+```
+
+### Example - Contains
+
+```
+9055|2014_10_30_special_abilities_null.sql|SHOW COLUMNS FROM `npc_types` LIKE 'special_abilities'|contains|NO
+```
+
+This entry is looking for what the column looks like in npc_types, column 'special_abilities' to see if it contains the word 'NO' (If special_abilities is nullable), which if you look at the SQL result at the given time before this update is applied
+
+You will see the data about column regarding NULL, defined as NO. Which means the field can't be null, we want it to be able to be null because it causes issues with later MySQL versions, which is why this update was made
+
+Given the condition is true, the following runs
+
+```sql
+ALTER TABLE `merc_stats` MODIFY COLUMN `special_abilities`  text CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL;
+ALTER TABLE `npc_types` MODIFY COLUMN `special_abilities`  text CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL;
 ```
