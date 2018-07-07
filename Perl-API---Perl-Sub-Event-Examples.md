@@ -826,6 +826,12 @@ sub EVENT_FORAGE_SUCCESS {
 
 - When a mob's hate list is changed.
 
+### Exports
+
+|Name | Type | Usage
+| --- | --- | ---
+|hate_state | int | `quest::say($hate_state); # returns int`
+
 ### Example
 
 In this example, some flavor text is added as a player is added and removed from the NPC's hate list.
@@ -845,7 +851,14 @@ sub EVENT_HATE_LIST {
 
 ### Trigger
 
-- When a mob's HP dropping below a threshold (as defined by quest::setnexthpevent()).
+- When a mob's HP dropping below a threshold (as defined by quest::setnexthpevent()).  
+
+### Exports
+
+|Name | Type | Usage
+| --- | --- | ---
+|hpevent | int | `quest::say($hpevent); # returns int`
+|inchpevent | int | `quest::say($inchpevent); # returns int--incoming HP event`
 
 ### Example
 
@@ -962,7 +975,7 @@ Called when an item that would trigger EVENT_SCALE_CALC is in the inventory when
 
 ### Trigger
 
-- on NPC death and applies to the group that did the most damage to the NPC (IE the group that got XP for the kill, assuming there was XP; or the group that gets loot rights to the NPC, assuming that there was loot). Although not often used, this event gives you the opportunity to assign quest globals (for character flags) or update tasks.
+- On NPC death and applies to the group that did the most damage to the NPC (IE the group that got XP for the kill, assuming there was XP; or the group that gets loot rights to the NPC, assuming that there was loot). Although not often used, this event gives you the opportunity to assign quest globals (for character flags) or update tasks.
 
 ### Example
 
@@ -987,7 +1000,14 @@ sub EVENT_KILLED_MERIT {
 
 ### Trigger
 
-- when the player gains a level.
+- When the player gains a level.
+
+```perl
+sub EVENT_LEVEL_UP {
+	#:: Shout the level up to all zones
+	quest::shout2("$name has gained a level!  Welcome to $ulevel");
+}
+```
 
 # EVENT_LOOT
 
@@ -1025,6 +1045,12 @@ sub EVENT_LOOT {
 
 - When an NPC slays another NPC.
 
+### Exports
+
+|Name | Type | Usage
+| --- | --- | ---
+|killed | int | `quest::say($killed); # returns int NPCTypeID`
+
 ### Example
 
 - In this example, we add some flavor text when the Exterminator kills the rats.
@@ -1040,6 +1066,13 @@ sub EVENT_NPC_SLAY {
 ### Trigger
 
 - When a player picks up an object from the ground.  You would likely use this event in your zone player.pl file.
+
+### Exports
+
+|Name | Type | Usage
+| --- | --- | ---
+|picked_up_id | int | `quest::say($picked_up_id); # returns int`
+|picked_up_entity_id | int | `quest::say($picked_up_entity_id); # returns int`
 
 ### Example
 
@@ -1063,7 +1096,9 @@ Used with quest::popup.
 
 ### Trigger
 
-- When the client enters a mob's proximity and uses the appropriate text trigger supplied beneath this event Note that you must set quest::enable_proximity_say() and quest::set_proximity().
+- When the client enters a mob's proximity and uses the appropriate text trigger supplied beneath this event. 
+
+Note that you must set quest::enable_proximity_say() and quest::set_proximity().
 
 ### Example
 
@@ -1175,7 +1210,35 @@ sub EVENT_SAY {
 
 ### Trigger
 
-- when an item is equipped to scale the item.
+- When an item is equipped to scale the item--probably should zone.
+
+### Exports
+
+| Name | Type | Usage
+| --- | --- | ---
+| itemid | int | `quest::say($itemid); # returns int`
+| itemname | int | `quest::say($itemname); # returns int`
+
+### Example
+
+- In this example, we scale a charm item:  40342 - Charm of Exotic Speech.  We have a script global / items / 40342.pl
+- The item has a charmfile and charmfileID assigned
+
+```perl
+sub EVENT_SCALE_CALC {
+	#:: Used for charms that scale with number of rare languages learned
+	my $langmastered = 0;
+ 
+	#:: Check each rare language: Old Erudian through Elder Dragon
+	for (my $i = 11; $i <= 22; $i++) {
+		#:: Check if the client has mastered the language
+		if ($client->GetLanguageSkill($i) == 100) {
+			$langmastered++;
+		}
+	}
+	$itemid->SetScale($langmastered/12);
+}
+```
 
 # EVENT_SIGNAL
 
@@ -1277,25 +1340,49 @@ sub EVENT_SPAWN {
 
 ### Trigger
 
-- when the spell lands on a client.
+- When the spell lands on a client.
+
+### Exports
+
+|Name | Type | Usage
+| --- | --- | ---
+|caster_id | int | `quest::say($caster_id); # returns int`
 
 # EVENT_SPELL_EFFECT_NPC
 
 ### Trigger
 
-- when the spell lands on an NPC.
+- When the spell lands on an NPC.
+
+### Exports
+
+|Name | Type | Usage
+| --- | --- | ---
+|caster_id | int | `quest::say($caster_id); # returns int`
 
 # EVENT_SPELL_BUFF_TIC_CLIENT
 
 ### Trigger
 
-- when the spell ticks on a client.
+- When the spell ticks on a client.
+
+### Exports
+
+|Name | Type | Usage
+| --- | --- | ---
+|caster_id | int | `quest::say($caster_id); # returns int`
 
 # EVENT_SPELL_BUFF_TIC_NPC
 
 ### Trigger
 
-- when the spell ticks on an NPC.
+- When the spell ticks on an NPC.
+
+### Exports
+
+|Name | Type | Usage
+| --- | --- | ---
+|caster_id | int | `quest::say($caster_id); # returns int`
 
 # EVENT_SPELL_EFFECT_TRANSLOCATE_COMPLETE
 
