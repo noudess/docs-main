@@ -1,5 +1,3 @@
-# Dev Server Folders
-
 * As a developer - you may find the necessity to build a clean server/folder with the latest PEQ database without messing up an existing folder - today this is easy to do and applies for either Linux or Windows
 * **This assumes you have Perl / MySQL and the rest of the environment already installed**
 
