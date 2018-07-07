@@ -17,6 +17,8 @@ From [[Maps Introduction]]
 * maps/base/zoneshortname.map
 * **maps/nav/zoneshortname.nav**
 * maps/water/zoneshortname.wtr
+* maps/volume/zoneshortname.wtr
+* maps/project/zoneshortname.navprj
 
 # Creation Example
 
