@@ -29,7 +29,7 @@
 **Database**
 * [[ProjectEQ Database]]
 * [[Database Schema]]
-
+* [[Database Schema Migrations]]
 ---
 **Scripts / Quests API**
 * [[Lua|Lua API]]
