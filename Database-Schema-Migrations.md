@@ -14,6 +14,25 @@ The database version will need to match the manifest entry you have added, more 
 
 `CURRENT_BINARY_DATABASE_VERSION = 9058`
 
+# Conditions
+
+```# Upgrade conditions:
+# 	This won't be needed after this system is implemented, but it is used database that are not
+#	yet using the versioning system to figure out where the database is schema wise to determine
+#	which updates are necessary to run
+#
+# Example: Version|Filename.sql|Query_to_Check_Condition_For_Needed_Update|match type|text to match
+#	0 = Database Version
+#	1 = Filename.sql
+#	2 = Query_to_Check_Condition_For_Needed_Update
+#	3 = Match Type - If condition from match type to Value 4 is true, update will flag for needing to be ran
+#		contains = If query results contains text from 4th value
+#		match = If query results matches text from 4th value
+#		missing = If query result is missing text from 4th value
+#		empty = If the query results in no results
+#		not_empty = If the query is not empty
+#	4 = Text to match```
+
 # The Manifest
 
 * The manifest is stored always on Github and contains all the definitions and logic for determining if a database needs to update
