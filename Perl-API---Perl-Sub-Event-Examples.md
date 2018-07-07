@@ -281,6 +281,11 @@ sub EVENT_CLICK_OBJECT {
 
 - When an NPC enters or leaves combat.
 
+### Exports
+|Name | Type | Usage
+| --- | --- | ---
+|combat_state | int | `quest::say($combat_state); # returns int`
+
 ### Example
 
 - In this example, the NPC will say some flavor text when entering combat.
@@ -360,7 +365,7 @@ sub EVENT_COMBINE_SUCCESS {
 
 - when a player connects to the world.
 
-You would likely be using this event in your global_player.pl.
+You would likely be using this event in your global_player.pl.  
 
 ### Example
 
@@ -522,7 +527,7 @@ Mainly used for logging purposes.
 
 ### Trigger
 
-- when a client loses a duel.
+- When a client loses a duel.
 
 You would use this event in the global global_player.pl file.
 
@@ -641,7 +646,7 @@ sub EVENT_ENTERZONE {
 
 ### Trigger
 
-- by any client who leaves a mob's proximity (as defined by quest::set_proximity).
+- When a client leaves a mob's proximity (as defined by quest::set_proximity).
 
 ### Example
 
@@ -783,7 +788,13 @@ sub EVENT_FORAGE_FAILURE {
 
 - when a client succeeds at foraging.
 
-You would use this event in the global global_player.pl file.
+You would use this event in the zone player.pl file or the global global_player.pl file.
+
+### Exports
+
+|Name | Type | Usage
+| --- | --- | ---
+|foraged_item | int | `quest::say($foraged_item); # returns int`
 
 ### Example
 
