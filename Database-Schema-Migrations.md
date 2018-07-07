@@ -50,7 +50,7 @@ Example: Version|Filename.sql|Query_to_Check_Condition_For_Needed_Update|match t
 
 # Other Manifest Examples
 
-### Example - Missing a Column
+### Missing
 
 ```
 9056|2014_11_08_RaidMembers.sql|SHOW COLUMNS FROM `raid_members` LIKE 'groupid'|missing|unsigned
@@ -67,7 +67,7 @@ If the table is missing the column, it will run the SQL file specified above `20
 ALTER TABLE `raid_members` CHANGE COLUMN `groupid` `groupid` INT(4) UNSIGNED NOT NULL DEFAULT '0' AFTER `charid`;
 ```
 
-### Example - Contains
+### Contains
 
 ```
 9055|2014_10_30_special_abilities_null.sql|SHOW COLUMNS FROM `npc_types` LIKE 'special_abilities'|contains|NO
