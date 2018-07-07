@@ -80,7 +80,7 @@
 * [[Target|Target Types]]
 
 **NPC**
-* [[NPC Classes]]
+* [[Classes|NPC Classes]]
 * [[Grids]]
 
 **Spells**
