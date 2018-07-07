@@ -48,7 +48,7 @@ Example: Version|Filename.sql|Query_to_Check_Condition_For_Needed_Update|match t
 	4 = Text to match
 ```
 
-# Other Manifest Examples:
+# Other Manifest Examples
 
 ### Example - Missing a Column
 
