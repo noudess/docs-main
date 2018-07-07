@@ -14,25 +14,6 @@ The database version will need to match the manifest entry you have added, more 
 
 `CURRENT_BINARY_DATABASE_VERSION = 9058`
 
-# Conditions
-
-```# Upgrade conditions:
-# 	This won't be needed after this system is implemented, but it is used database that are not
-#	yet using the versioning system to figure out where the database is schema wise to determine
-#	which updates are necessary to run
-#
-# Example: Version|Filename.sql|Query_to_Check_Condition_For_Needed_Update|match type|text to match
-#	0 = Database Version
-#	1 = Filename.sql
-#	2 = Query_to_Check_Condition_For_Needed_Update
-#	3 = Match Type - If condition from match type to Value 4 is true, update will flag for needing to be ran
-#		contains = If query results contains text from 4th value
-#		match = If query results matches text from 4th value
-#		missing = If query result is missing text from 4th value
-#		empty = If the query results in no results
-#		not_empty = If the query is not empty
-#	4 = Text to match```
-
 # The Manifest
 
 * The manifest is stored always on Github and contains all the definitions and logic for determining if a database needs to update
@@ -49,10 +30,37 @@ Add a line to the bottom of the file, it is going to look similar to the followi
 
 * That's it! As far as what is needed from a developer to have the server run the migration, that is all you need to do
 
+# Manifest Conditions
+
+```
+Example: Version|Filename.sql|Query_to_Check_Condition_For_Needed_Update|match type|text to match
+	0 = Database Version
+	1 = Filename.sql
+	2 = Query_to_Check_Condition_For_Needed_Update
+	3 = Match Type - If condition from match type to Value 4 is true, update will flag for needing to be ran
+		contains = If query results contains text from 4th value
+		match = If query results matches text from 4th value
+		missing = If query result is missing text from 4th value
+		empty = If the query results in no results
+		not_empty = If the query is not empty
+	4 = Text to match
+```
+
 # Other Manifest Examples:
 
-### Example 1 (Missing):
+### Example - Missing a Column
 
 ```
 9056|2014_11_08_RaidMembers.sql|SHOW COLUMNS FROM `raid_members` LIKE 'groupid'|missing|unsigned
+```
+
+This entry is looking for what the column looks like in raid_members and to see if it is an unsigned integer
+
+The match type is `missing`, so I'm looking to see if the word 'unsigned' is missing from the table. In this case if unsigned was missing, we need to run this update because that is what the update did
+
+*If Missing*
+If the table is missing the column, it will run the SQL file specified above `2014_11_08_RaidMembers.sql`
+
+```sql
+ALTER TABLE `raid_members` CHANGE COLUMN `groupid` `groupid` INT(4) UNSIGNED NOT NULL DEFAULT '0' AFTER `charid`;
 ```
