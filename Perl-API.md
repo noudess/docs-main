@@ -142,7 +142,7 @@ A full list can always be found in the EQEmu source [https://github.com/EQEmu/S
 * sub EVENT_ITEM_TICK # Triggered when the click effect of an item ticks.
 * [EVENT_KILLED_MERIT](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_killed_merit) # Triggered on NPC death when a client is in a group credited with doing the most damage to said loot table NPC.
 * sub EVENT_LEAVE_AREA # Triggered when a client leaves a mob's area.
-* sub EVENT_LEVEL_UP # Triggered when the player gains a level.
+* [EVENT_LEVEL_UP](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_level_up) # Triggered when the player gains a level.
 * [EVENT_LOOT](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_loot) # Triggered when player successfully loots an item from a corpse.
 * [EVENT_NPC_SLAY](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_npc_slay) # Triggered when an NPC slays another NPC.
 * [EVENT_PLAYER_PICKUP](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_player_pickup) # Triggered when a player picks up an object from the ground.
@@ -150,7 +150,7 @@ A full list can always be found in the EQEmu source [https://github.com/EQEmu/S
 * [EVENT_PROXIMITY_SAY](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_proximity_say) # Triggered if the client enters a mob's proximity and uses the appropriate text trigger supplied beneath this event. (set quest::enable_proximity_say() and param 7 in q:set_prox)
 * [EVENT_RESPAWN](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_respawn) # Triggered on respawn
 * [EVENT_SAY](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_say) # Triggered when a mob is targeted and the player types something.
-* sub EVENT_SCALE_CALC # Triggered when an item is equipped to scale the item.
+* [EVENT_SCALE_CALC](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_scale_calc) # Triggered when an item is equipped to scale the item.
 * [EVENT_SIGNAL](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_signal) # Triggered by a call to quest::signal() or quest::signalwith().
 * [EVENT_SLAY](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_slay) # Triggered whenever an NPC kills someone.
 * [EVENT_SPAWN](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_spawn) # Triggered when the NPC spawns.
