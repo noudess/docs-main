@@ -435,31 +435,88 @@ sub EVENT_CONNECT {
 
 ### Trigger
 
-- when the NPC dies.
+- When the NPC dies.
+
+Often used to spawn adds or send signals upon the death of an NPC.
+
+### Exports
+
+| Name | Type | Usage
+| --- | --- | ---
+| killer_id | int | `quest::say($killer_id); # returns int `
+| killer_damage | int | `quest::say($killer_damage); # returns int`
+| killer_spell | int | `quest::say($killer_spell); # returns int`
+| killer_skill | int | `quest::say($killer_skill); # returns int`
+
+### Example
+
+- In this example, we spawn a fire beetle after the death of our NPC at the NPC's location.
+
+```perl
+sub EVENT_DEATH_COMPLETE {
+	#:: Spawn a 2024 - a_fire_beetle by NPC Type ID, grid 0, guildwarset 0, current X, Y, Z, and heading
+	quest::spawn2(2024,0,0,$x,$y,$z,$h);
+}
+```
 
 # EVENT_DESTROY_ITEM
 
 ### Trigger
 
-- when a client destroys an item.
+- When a client destroys an item.
+
+Used mainly for logging purposes.
 
 # EVENT_DISCONNECT
 
 ### Trigger
 
-- when a player disconnects from the world.
+- When a player disconnects from the world.
+
+Used mainly for logging purposes.
 
 # EVENT_DISCOVER_ITEM
 
 ### Trigger
 
-- when an item is discovered.
+- When an item is discovered.
+
+Used in conjunction with World Rule EnableDiscoveredItems.
+
+### Exports
+
+| Name | Type | Usage
+| --- | --- | ---
+| itemid | int | `quest::say($itemid); # returns int`
+
+### Example
+
+```perl
+sub EVENT_DISCOVER_ITEM {
+	#:: Create a scalar variable to store the item link
+	$discovereditem = quest::varlink($itemid);
+	#:: Shout the discovery to all zones
+	quest::shout2("$name has discovered $discovereditem!  Yay!");
+}
+```
 
 # EVENT_DROP_ITEM
 
 ### Trigger
 
-- when a client drops an item.
+- When a client drops an item.
+
+Mainly used for logging purposes.
+
+### Exports
+
+| Name | Type | Usage
+| --- | --- | ---
+| quantity | int | `quest::say($quantity); # returns int`
+| itemname | int | `quest::say($itemname); # returns int`
+| itemid | int | `quest::say($itemid); # returns int`
+| spell_id | int | `quest::say($spell_id); # returns int`
+| slotid | int | `quest::say($slotid); # returns int`
 
 # EVENT_DUEL_LOSE
 
