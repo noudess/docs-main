@@ -114,11 +114,11 @@ A full list can always be found in the EQEmu source [https://github.com/EQEmu/S
 * [EVENT_COMMAND](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_command) # Triggered when a player says anything like a command.
 * [EVENT_CONNECT](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_connect) # Triggered when a player connects to the world.
 * [EVENT_DEATH](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_death) # Triggered when the NPC dies. Fires before death finishes.
-* sub EVENT_DEATH_COMPLETE # Triggered when the NPC dies.
-* sub EVENT_DESTROY_ITEM # Triggered when a client destroys an item.
-* sub EVENT_DISCONNECT # Triggered when a player disconnects from the world.
-* sub EVENT_DISCOVER_ITEM # Triggered when an item is discovered.
-* sub EVENT_DROP_ITEM # Triggered when a client drops an item.
+* [EVENT_DEATH_COMPLETE](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_death_complete) # Triggered when the NPC dies.
+* [EVENT_DESTROY_ITEM](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_destroy_item) # Triggered when a client destroys an item.
+* [EVENT_DISCONNECT](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_disconnect) # Triggered when a player disconnects from the world.
+* [EVENT_DISCOVER_ITEM](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_discover_item) # Triggered when an item is discovered.
+* [EVENT_DROP_ITEM](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_drop_item) # Triggered when a client drops an item.
 * [EVENT_DUEL_LOSE](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_duel_lose) # Triggered when a client loses a duel.
 * [EVENT_DUEL_WIN](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_duel_win) # Triggered when a client wins a duel.
 * [EVENT_ENTER](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_enter) # Triggered by any client who enters a mob's proximity.
