@@ -3,7 +3,8 @@
 * It's extremely simple
 * When you add your .sql file, you still will add it as traditionally
     to our regular path
-  * `utils/sql/git/required` - [Github Link](https://github.com/EQEmu/Server/tree/master/utils/sql/git/required)
+
+`utils/sql/git/required` - [Github Link](https://github.com/EQEmu/Server/tree/master/utils/sql/git/required)
 
 # Changes in the Source
 
