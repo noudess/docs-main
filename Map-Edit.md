@@ -216,4 +216,46 @@ Now that the connections are created don't forget to regenerate any nav mesh til
 
 Instead of going all through the zone instead green jumps down into the trap to chase red.
 
+# Create Preferred Path
+
+* There are some cases where pathing may be too close to world objects and you would like to setup a preferred path. The process is the same as creating connectors except you will select "Bi-Directional Prefer" area type.
+
+<p align="center">
+<img src="/EQEmu/Server/wiki/images/map-edit/24_preferred_example.PNG?raw=true">
+</p>
+
+We will add the connection to force pathing around the edge of the doorway.
+
+<p align="center">
+<img src="/EQEmu/Server/wiki/images/map-edit/25_preferred_add.PNG?raw=true">
+</p>
+
+Regenerate the navmesh and the test should now yield the desired results.
+
+<p align="center">
+<img src="/EQEmu/Server/wiki/images/map-edit/26_preferred_after.PNG?raw=true">
+</p>
+
+# Create Disable Volume
+
+* If you want to disable pathing for a specific region, you can achieve this via volumes.
+
+Start by opening up the volumes menu.
+
+<p align="center">
+<img src="/EQEmu/Server/wiki/images/map-edit/27_volume_open.PNG?raw=true">
+</p>
+
+Shift left click to place a basic volume where you would like the general region to be.
+
+<p align="center">
+<img src="/EQEmu/Server/wiki/images/map-edit/28_volume_add.PNG?raw=true">
+</p>
+
+Select the area type of "Disable NavigationMesh" then use the various sliders to adjust the size and orientation of the volume.
+
+<p align="center">
+<img src="/EQEmu/Server/wiki/images/map-edit/29_volume_after.PNG?raw=true">
+</p>
+
 That is basically it, make sure to save before you exit otherwise you will lose all your work.
