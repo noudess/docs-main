@@ -6,7 +6,6 @@
 
 **Contents**
 ```
-➜ find *.exe
 awater.exe
 azone.exe
 map_edit.exe
