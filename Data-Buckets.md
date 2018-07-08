@@ -1,4 +1,4 @@
-### What are Data Buckets?
+# What are Data Buckets?
 
 * Data buckets are a replacement to the well-known `qglobals`, but they are far more performant, reliable and simpler to use
 
