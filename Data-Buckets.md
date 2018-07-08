@@ -115,7 +115,9 @@ sub EVENT_DEATH_COMPLETE {
 ```
 
 **Result**
+
 ![image](https://user-images.githubusercontent.com/3319450/42416932-0eab7a32-8241-11e8-8b64-14d76a2c596f.png)
 
 **Database**
+
 ![image](https://user-images.githubusercontent.com/3319450/42416937-21a01aee-8241-11e8-9c29-9a2e1ed4356d.png)
