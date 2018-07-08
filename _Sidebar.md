@@ -34,6 +34,7 @@
 **Scripts / Quests API**
 * [[Lua|Lua API]]
 * [[Perl|Perl API]]
+* [[Data Buckets]]
 
 ---
 **Reference Lists**
