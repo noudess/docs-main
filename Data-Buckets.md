@@ -63,7 +63,7 @@ end
 
 # Ways to Key Buckets
 
-*By Character*
+**By Character**
 
 ```
 perl
@@ -72,7 +72,7 @@ $value = 70;
 quest::set_data($key, $value);
 ```
 
-*By Door (And Zone)*
+**By Door (And Zone)**
 
 ```
 perl
