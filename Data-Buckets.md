@@ -18,6 +18,43 @@ set_data(std::string bucket_key, std::string bucket_value, uint32 expires_at_uni
 delete_data(std::string bucket_key)
 ```
 
+# Expiration Examples
+
+* Below in this LUA example we will count the number of times a player has talked to an NPC, first by checking if we've got a bucket set at all, if not we will set an expiration time on it using unix time. Each time we call set_data, it will not over-ride the original expiration time unless we pass a new time parameter
+
+```lua
+function event_say(e)
+	if (e.message:findi("hail")) then
+
+		-- Set unique key for the bucket
+		local key = e.other:GetCleanName() .. "_times_talked";
+
+		-- If the bucket is empty, we need to set it
+		-- The first time we will set an expiration on this, current time plus one day (86400 seconds)
+		if (eq.get_data(key) == "") then
+			eq.set_data(key, '1', os.time(os.date("!*t")) + 86400);
+		end
+
+		local times_talked = tonumber(eq.get_data(key));
+
+		e.self:Say("You know... You've talked to me " .. times_talked .. " time(s) today, get a life will ya!");
+
+		-- Increment times talked
+		eq.set_data(key, tostring(times_talked + 1));
+	end
+
+end
+```
+
+**Result**
+
+![image](https://user-images.githubusercontent.com/3319450/42417093-750ed16c-8245-11e8-91f2-4746d2568ddb.png)
+
+**Database**
+
+![image](https://user-images.githubusercontent.com/3319450/42417095-89907c12-8245-11e8-9d5e-0090c0c24527.png)
+
+
 # Storage
 
 * Data buckets are stored in the [[data_buckets]] table and has a very simple structure
