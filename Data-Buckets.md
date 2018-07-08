@@ -157,3 +157,11 @@ end
 **Database**
 
 ![image](https://user-images.githubusercontent.com/3319450/42417095-89907c12-8245-11e8-9d5e-0090c0c24527.png)
+
+### Perl Expiration
+
+* To set an expiration time in Perl, very similarly to the LUA example above, you would simply call your `set_data` function with an expiration flag as your 3rd parameter like so
+
+```perl
+quest::set_data("my_example_flag", "some_value", time() + 3600); # 3600 seconds = 1 hour (Expire in 1 hour)
+```
