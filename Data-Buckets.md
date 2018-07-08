@@ -63,10 +63,13 @@ end
 
 # Ways to Key Buckets
 
+* Keying is simply a way to uniquely identify a flag, if you want to make some data unique to a player, then you would need something to key uniquely to that player, such as their **character_id**. If you wanted to set a flag uniquely for a NPC for example, you could use the **npc_type_id**, for a zone you could use the **zone_id**. All of these circumstances are completely up to you and you have the entire Quest API to grab something that can make something unique!
+
+Some of the examples below should give you some ideas!
+
 **By Character**
 
-```
-perl
+```perl
 $key   = $client->CharacterID() . "-some-flag";
 $value = 70;
 quest::set_data($key, $value);
@@ -74,8 +77,7 @@ quest::set_data($key, $value);
 
 **By Door (And Zone)**
 
-```
-perl
+```perl
 
 sub EVENT_CLICKDOOR {
     quest::say($doorid);
@@ -99,3 +101,21 @@ sub EVENT_CLICKDOOR {
 **Database Result**
 
 ![image](https://user-images.githubusercontent.com/3319450/42416888-dfd7a966-823f-11e8-8fc6-1829ed0c35c3.png)
+
+**By NPC**
+
+```perl
+sub EVENT_DEATH_COMPLETE {
+    $key = $npc->GetNPCTypeID() . "-death-count";
+    quest::set_data($key, quest::get_data($key) + 1);
+
+    $death_count = quest::get_data($key);
+    quest::shout("Man! I've died (" . $death_count . ") times in my lifetime!");
+}
+```
+
+**Result**
+![image](https://user-images.githubusercontent.com/3319450/42416932-0eab7a32-8241-11e8-8b64-14d76a2c596f.png)
+
+**Database**
+![image](https://user-images.githubusercontent.com/3319450/42416937-21a01aee-8241-11e8-9c29-9a2e1ed4356d.png)
