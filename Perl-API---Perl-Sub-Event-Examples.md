@@ -1090,7 +1090,32 @@ sub EVENT_PLAYER_PICKUP {
 ```
 
 # EVENT_POPUPRESPONSE
+
+### Trigger
+
+- When a player clicks a button on a popup.
+
 Used with quest::popup.
+
+### Exports
+
+|Name | Type | Usage
+| --- | --- | ---
+|popupid | int | `quest::say($popupid); # returns int`
+
+### Example
+
+- a well-known example from the Guild Lobby portal pool.
+
+```perl
+sub EVENT_POPUPRESPONSE {
+	#:: Triggered by sub EVENT_ENTER: quest::popup('Teleport', 'Teleport to The Plane of Hate?', 666, 1, 0);
+	if ($popupid == 666) {
+		#:: Teleport the player to hateplaneb
+		quest::movepc(186,-393,656,3);
+	}
+}
+```
 
 # EVENT_PROXIMITY_SAY
 
@@ -1132,6 +1157,7 @@ sub EVENT_SAY {
 ### Exports
 
 |Name | Type | Usage
+| --- | --- | ---
 |option | int | `quest::say($option); # returns int`
 |resurrect | int | `quest::say($resurrect); # returns int`
 
@@ -1464,6 +1490,7 @@ The timer will loop until it is stopped, and EVENT_TIMER will trigger each time 
 ### Exports
 
 |Name | Type | Usage
+| --- | --- | ---
 |timer | int | `quest::say($timer); # returns int`
 
 ### Example
