@@ -8,6 +8,20 @@ Example(s)
 (Also applicable to quest API calls)
 ```
 
+### Visual Reference
+
+![image](https://user-images.githubusercontent.com/3319450/42428214-3a32a11e-82f8-11e8-9bfa-fe5175b4996f.png)
+
+```perl
+    if ($text=~/colors/i) {
+        for ($i = 0; $i < 100; $i++) {
+            $client->Message($i, "Emote Color ID (" . $i . ")");
+        }
+    }
+```
+
+### Table Reference
+
 |ID|Color|
 |--- |--- |
 |0|white|
