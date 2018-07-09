@@ -10,7 +10,14 @@ Example(s)
 
 ### Visual Reference
 
+**Lower Range**
+
 ![image](https://user-images.githubusercontent.com/3319450/42428214-3a32a11e-82f8-11e8-9bfa-fe5175b4996f.png)
+
+**Higher Range**
+
+![image](https://user-images.githubusercontent.com/3319450/42428277-96bea77a-82f8-11e8-8cd6-5d43920f5f6e.png)
+
 
 ```perl
     if ($text=~/colors/i) {
