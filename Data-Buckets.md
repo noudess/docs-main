@@ -165,3 +165,55 @@ end
 ```perl
 quest::set_data("my_example_flag", "some_value", time() + 3600); # 3600 seconds = 1 hour (Expire in 1 hour)
 ```
+
+# Benchmarks
+
+* Below are some simple benchmarks used to calculate performance. While even these numbers could be greatly optimized yet, these are plenty good for most use cases that server operators need. If you need even faster temporary data storage within the context of a zone, I would suggest using [[Entity Variables]] as they operate purely in memory
+
+![image](https://user-images.githubusercontent.com/3319450/42429025-83c1d260-82fc-11e8-804f-f7490ac23600.png)
+
+```perl
+sub EVENT_SAY {
+    use Time::HiRes;
+    my $start = [ Time::HiRes::gettimeofday() ];
+
+    if ($text =~ /random-write/i) {
+        my $iterations = 1000;
+        my $key_range = 100;
+        quest::debug("Testing random-write... Iterations: (" . plugin::commify($iterations) . ") Key Range: " . $key_range);
+        for ($i = 0; $i < $iterations; $i++) {
+            quest::set_data("key_" . int(rand($key_range)), &generate_random_string(100), time());
+        }
+    }
+
+    if ($text =~ /sequential-write/i) {
+        my $iterations = 1000;
+        quest::debug("Testing sequential-write... Iterations: (" . plugin::commify($iterations) . ")");
+        for ($i = 0; $i < $iterations; $i++) {
+            quest::set_data("key_" . $i, &generate_random_string(100), time() + 15);
+        }
+    }
+
+    if ($text =~ /sequential-read/i) {
+        my $iterations = 1000;
+        quest::debug("Testing sequential-read... Iterations: (" . plugin::commify($iterations) . ")");
+        for ($i = 0; $i < $iterations; $i++) {
+            $data = quest::get_data("key_" . $i);
+            # if ($data ne "") {
+            #     quest::say("Data for $i : $data");
+            # }
+        }
+    }
+
+    if ($text =~ /random-read/i) {
+        my $iterations = 1000;
+        quest::debug("Testing random-read... Iterations: (" . plugin::commify($iterations) . ")");
+        for ($i = 0; $i < $iterations; $i++) {
+            $data = quest::get_data("key_" . int(rand($iterations)));
+        }
+    }
+
+    my $elapsed = Time::HiRes::tv_interval($start);
+    quest::debug("Operation took: " . $elapsed);
+}
+```
