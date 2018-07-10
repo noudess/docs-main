@@ -14,7 +14,7 @@
 
 ```
 get_data(std::string bucket_key)
-set_data(std::string bucket_key, std::string bucket_value, uint32 expires_at_unix = 0)
+set_data(std::string bucket_key, std::string bucket_value, std::string expires_in)
 delete_data(std::string bucket_key)
 ```
 
