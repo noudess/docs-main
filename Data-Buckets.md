@@ -162,12 +162,14 @@ end
 
 We have the ability to use time shorthands if need-be, the following are acceptable time inputs
 
- * 15s = 15 seconds
- * s15 = 15 seconds
- * 60m = 60 minutes
- * 7d  = 7 days
- * 1y  = 1 year
- * 600 = 600 seconds
+|Input|Time Result|
+|---|---|
+| 15s | 15 seconds |
+| s15 | 15 seconds |
+| 60m | 60 minutes |
+| 7d  | 7 days |
+| 1y  | 1 year |
+| 600 | 600 seconds |
 
 ### Perl Expiration
 
