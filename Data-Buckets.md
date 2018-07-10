@@ -124,7 +124,7 @@ sub EVENT_DEATH_COMPLETE {
 
 # Expiration Examples
 
-* Below in this LUA example we will count the number of times a player has talked to an NPC, first by checking if we've got a bucket set at all, if not we will set an expiration time on it using unix time. Each time we call set_data, it will not over-ride the original expiration time unless we pass a new time parameter
+* Below in this LUA example we will count the number of times a player has talked to an NPC, first by checking if we've got a bucket set at all, if not we will set an expiration time on it. Each time we call set_data, it will not over-ride the original expiration time unless we pass a new time parameter
 
 ```lua
 function event_say(e)
@@ -134,9 +134,9 @@ function event_say(e)
 		local key = e.other:GetCleanName() .. "_times_talked";
 
 		-- If the bucket is empty, we need to set it
-		-- The first time we will set an expiration on this, current time plus one day (86400 seconds)
+		-- The first time we will set an expiration on this (86400 seconds)
 		if (eq.get_data(key) == "") then
-			eq.set_data(key, '1', os.time(os.date("!*t")) + 86400);
+			eq.set_data(key, '1', 86400);
 		end
 
 		local times_talked = tonumber(eq.get_data(key));
@@ -158,12 +158,23 @@ end
 
 ![image](https://user-images.githubusercontent.com/3319450/42417095-89907c12-8245-11e8-9d5e-0090c0c24527.png)
 
+### Acceptable Time Formats
+
+We have the ability to use time shorthands if need-be, the following are acceptable time inputs
+
+ * 15s = 15 seconds
+ * s15 = 15 seconds
+ * 60m = 60 minutes
+ * 7d  = 7 days
+ * 1y  = 1 year
+ * 600 = 600 seconds
+
 ### Perl Expiration
 
 * To set an expiration time in Perl, very similarly to the LUA example above, you would simply call your `set_data` function with an expiration flag as your 3rd parameter like so
 
 ```perl
-quest::set_data("my_example_flag", "some_value", time() + 3600); # 3600 seconds = 1 hour (Expire in 1 hour)
+quest::set_data("my_example_flag", "some_value", 3600); # 3600 seconds = 1 hour (Expire in 1 hour)
 ```
 
 # Benchmarks
@@ -182,7 +193,7 @@ sub EVENT_SAY {
         my $key_range = 100;
         quest::debug("Testing random-write... Iterations: (" . plugin::commify($iterations) . ") Key Range: " . $key_range);
         for ($i = 0; $i < $iterations; $i++) {
-            quest::set_data("key_" . int(rand($key_range)), &generate_random_string(100), time());
+            quest::set_data("key_" . int(rand($key_range)), &generate_random_string(100));
         }
     }
 
@@ -190,7 +201,7 @@ sub EVENT_SAY {
         my $iterations = 1000;
         quest::debug("Testing sequential-write... Iterations: (" . plugin::commify($iterations) . ")");
         for ($i = 0; $i < $iterations; $i++) {
-            quest::set_data("key_" . $i, &generate_random_string(100), time() + 15);
+            quest::set_data("key_" . $i, &generate_random_string(100), 15);
         }
     }
 
