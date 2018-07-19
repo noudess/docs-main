@@ -1444,11 +1444,25 @@ Typically you would handle this functionality using the task system.
 
 Typically you would handle this functionality using the task system.
 
+### Exports
+
+| Name | Type | Usage
+| --- | --- | ---
+|donecount | int | `quest::say($donecount); # returns int`
+|activity_id | int | `quest::say($activity_id); # returns int`
+|task_id | int | `quest::say($task_id); # returns int`
+
 # EVENT_TASK_FAIL
 
 ### Trigger
 
-- when a player fails a task.
+- When a player fails a task.
+
+### Exports
+
+| Name | Type | Usage
+| --- | --- | ---
+|task_id | int | `quest::say($task_id); # returns int`
 
 Typically you would handle this functionality using the task system.
 
@@ -1459,6 +1473,13 @@ Typically you would handle this functionality using the task system.
 - When a task stage is completed.
 
 Typically you would handle this functionality using the task system.
+
+### Exports
+
+| Name | Type | Usage
+| --- | --- | ---
+|activity_id | int | `quest::say($activity_id); # returns int`
+|task_id | int | `quest::say($task_id); # returns int`
 
 ### Example
 
@@ -1478,6 +1499,14 @@ sub EVENT_TASK_STAGE_COMPLETE {
 ### Trigger
 
 - when a player's task is updated.
+
+### Exports
+
+| Name | Type | Usage
+| --- | --- | ---
+|donecount | int | `quest::say($donecount); # returns int`
+|activity_id | int | `quest::say($activity_id); # returns int`
+|task_id | int | `quest::say($task_id); # returns int`
 
 # EVENT_TIMER
 
@@ -1517,19 +1546,19 @@ sub EVENT_TIMER {
 
 ### Trigger
 
-- by beginning a trade.
+- When a client begins a trade.
 
 # EVENT_UNAUGMENT_ITEM
 
 ### Trigger
 
-- when a client removes an augment from an item.
+- When a client removes an augment from an item.
 
 # EVENT_UNEQUIP_ITEM
 
 ### Trigger
 
-- when a client unequips an item.
+- When a client unequips an item.
 
 # EVENT_WAYPOINT_ARRIVE
 
@@ -1587,13 +1616,19 @@ sub EVENT_WAYPOINT_DEPART {
 
 ### Trigger
 
-- when a weapon procs.
+- When a weapon procs.
 
 # EVENT_ZONE
 
 ### Trigger
 
 - When a player leaves a zone.
+
+### Exports 
+
+|Name | Type | Description
+| --- | --- | ---
+|target_zone_id | int | `quest::say($target_zone_id); # returns int`
 
 ### Example
 
