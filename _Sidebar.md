@@ -10,6 +10,7 @@
 * [[Development Server Setup]]
 * [[Server Asset Repositories]]
 * [[Updating Server Assets]]
+* [[First Time Running A Server]]
 
 **Configuration**
 * [[eqemu_config]]
