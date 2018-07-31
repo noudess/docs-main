@@ -25,6 +25,8 @@
 >
 >4. Log in and enjoy GM commands (typing `#help` will give you a list of commands)
 
+For a list of commands you can use once you've elevated an account to GM status, see [[In Game Command Reference (Mostly GM's)]]
+
 2. How do I create custom items or modify existing ones?
 3. How do I create custom NPC's, how do I tune them, give them abilities? What about scripted encounters, where would you start for that? Vendors? Alternate currency vendors? AA vendors?
 4. How do I go about doing something like creating a hub zone, forcing all characters to start there?
