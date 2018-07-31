@@ -49,7 +49,7 @@
 |#findnpctype|[search criteria] - Search database NPC types|
 |#findspell|[searchstring] - Search for a spell|
 |#findzone|[search criteria] - Search database for zone|
-|#fixmob|[nextrace|prevrace|gender|nexttexture|prevtexture|nexthelm|prevhelm] - Manipulate appearance of your NPC target|
+|#fixmob|[nextrace&#124;prevrace&#124;gender&#124;nexttexture&#124;prevtexture&#124;nexthelm&#124;prevhelm] - Manipulate appearance of your NPC target|
 |#flag|[status] [acctname] - Refresh your admin status, or set an account's admin status if arguments provided|
 |#flagedit|Edit zone flags on your target|
 |#flags| Displays the flags of you or your target|
