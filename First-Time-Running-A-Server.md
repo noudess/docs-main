@@ -16,3 +16,4 @@ In this example, `my_db_username` is the username that you set for the mysql dat
 
 You may find the [[account]] table schema a useful reference as well.
 
+For a list of commands you can use once you've elevated an account to GM status, see [[In Game Command Reference (Mostly GM's)]].  This reference can also be found in the table of contents on the right under Reference Lists.
