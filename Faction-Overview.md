@@ -1,3 +1,5 @@
+>Note: This entry was ported over from http://wiki.eqemulator.org/p?Faction_Overview and may need to be reviewed by a dev for current accuracy.
+
 Every faction that exists on a server is listed in the `faction_list` table.  This table includes a unique id, a name, and a starting (base) faction.  This starting value is combined with any race/class/deity adjustments that apply (see `faction_list_mod` table) to create the starting faction for characters when they are born.  As characters interact with the world, they can gain/lose faction through their actions, be that killing or questing.  These values are continuously updated in the `faction_values` table.
 
 Each faction has a minimum and a maximum value, at which point no more faction can be lost or gained.  Currently this is maintained in the code.  The BASE maximum is 2000 and the BASE minimum is -2000.  The amount a character can earn is based on these constants AND the factions initial base value.  For example, a faction that starts out at 0 (base value in faction_list) is the simple case. 
