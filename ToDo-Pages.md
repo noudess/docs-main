@@ -9,14 +9,21 @@
 
 ### First Time Running a Server
 1. How to I make myself a GM, and what can I do once I am?
-Log in to your server, Log out. Go into your SQL Editor of choice (Or command line) and change account.status to 255. Log in and enjoy GM commands #help will give you a list of commands.
 
-Example in Linux:
-
-    $ mysql -u my_db_username -p
-    mysql> use eqemu;
-    mysql> UPDATE account SET status = 255 WHERE user = 'my_character_name';
-    mysql>quit;
+> Setting an Account to GM Status
+>--------------------------------
+>1. Log in to your server
+>2. Log out.
+>3. Go into your SQL Editor of choice (or command line) and change account.status to 255. 
+>
+>Example in Linux:
+>
+>    $ mysql -u my_db_username -p
+>    mysql> use eqemu;
+>    mysql> UPDATE account SET status = 255 WHERE user = 'my_character_name';
+>    mysql> quit;
+>
+>4. Log in and enjoy GM commands (typing `#help` will give you a list of commands)
 
 2. How do I create custom items or modify existing ones?
 3. How do I create custom NPC's, how do I tune them, give them abilities? What about scripted encounters, where would you start for that? Vendors? Alternate currency vendors? AA vendors?
