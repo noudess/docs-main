@@ -18,4 +18,4 @@ You may find the [[account]] table schema a useful reference as well.
 
 ## What can I do once I'm a GM?
 
-For a list of commands you can use once you've elevated an account to GM status, see [[In Game Command Reference (Mostly GM's)]].  This reference can also be found in the table of contents on the right under Reference Lists.
+For a list of commands you can use once you've elevated an account to GM status, see [[In Game Command Reference]].  This reference can also be found in the table of contents on the right under Reference Lists.
