@@ -50,6 +50,7 @@
 * [[Experience by Level]]
 * [[Facial Features]]
 * [[Inventory Slots]]
+* [[In Game Command Reference (Mostly GM's)]]
 * [[Item Class]]
 * [[Item Lore Groups]]
 * [[Item Sizes|Item Sizes]]
