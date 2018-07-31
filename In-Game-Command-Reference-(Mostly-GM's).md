@@ -130,7 +130,7 @@
 |#npctypespawn| [npctypeid] [factionid] - Spawn an NPC from the db|
 |#nukebuffs| Strip all buffs on you or your target|
 |#nukeitem| [itemid] - Remove itemid from your player target's inventory|
-|#object|List|Add|Edit|Move|Rotate|Copy|Save|Undo|Delete - Manipulate static and tradeskill objects within the zone|
+|#object|List&#124;Add&#124;Edit&#124;Move&#124;Rotate&#124;Copy&#124;Save&#124;Undo&#124;Delete - Manipulate static and tradeskill objects within the zone|
 |#oocmute| [1/0] - Mutes OOC chat|
 |#path|View and edit pathing|
 |#peekinv|[worn/cursor/inv/bank/trade/all] - Print out contents of your player target's inventory|
@@ -174,7 +174,7 @@
 |#serverrules| Read this server's rules|
 |#serversidename| Prints target's server side name|
 |#setaaexp| [amount] - Adds the amount of AA experience you specified to you or your target.|
-|#setaapoints|[AA|group|raid] [new AA points value] - Increase your AA points based on amount specified.|
+|#setaapoints|[AA&#124;group&#124;raid] [new AA points value] - Increase your AA points based on amount specified.|
 |#setaapts| [value] - Set your or your player target's available AA points|
 |#setaaxp| [value] - Set your or your player target's AA experience|
 |#setadventurepoints| Set you or your player target's available adventure points|
