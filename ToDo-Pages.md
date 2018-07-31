@@ -18,10 +18,10 @@
 >
 >Example in Linux:
 >
->    $ mysql -u my_db_username -p
->    mysql> use eqemu;
->    mysql> UPDATE account SET status = 255 WHERE user = 'my_character_name';
->    mysql> quit;
+>    $ mysql -u my_db_username -p    
+>    mysql> use eqemu;    
+>    mysql> UPDATE account SET status = 255 WHERE user = 'my_character_name';    
+>    mysql> quit;    
 >
 >4. Log in and enjoy GM commands (typing `#help` will give you a list of commands)
 
