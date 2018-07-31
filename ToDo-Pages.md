@@ -3,7 +3,7 @@
 * Factions
 * Power Source Reference
 * Task System
-* Command Reference [Completed 31 July 2018]
+* Command Reference -- Completed 31 July 2018; available at [[In Game Command Reference (Mostly GM's)]]
 * Maps
 * Bots
 
