@@ -2,7 +2,7 @@
 
 The first three tables relate to establishing game factions, and how each faction responds to player characters.
 
-## faction_list
+## [faction_list](https://github.com/EQEmu/Server/wiki/faction_list)
 
 The faction_list table contains one entry for each unique faction on the server.  The ID field identifies an in-game faction, but IS NOT directly associated with an NPC.  This list simply lists the in game factions and the starting value that all characters start at with this faction before they begin earning or losing faction.  DO NOT use these values in npc_types.  See npc_faction below for details.
 
