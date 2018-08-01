@@ -2,5 +2,5 @@ The faction system is pretty simply really, but it can also be quite confusing i
 
 * [Faction Overview](https://github.com/EQEmu/Server/wiki/Faction-Overview)
 * [Understanding the Database Tables](https://github.com/EQEmu/Server/wiki/Understanding-the-database-tables)
-* Adding new factions
+* [Adding new factions](https://github.com/EQEmu/Server/wiki/Adding-New-Factions)
 * Controlling how faction plays into NPC aggro of players and other NPCS.
