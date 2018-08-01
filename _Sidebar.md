@@ -85,6 +85,7 @@
 **NPC**
 * [[Classes|NPC Classes]]
 * [[Grids]]
+* [[Factions]]
 
 **Spells**
 * [[Base Value Formulas]]
