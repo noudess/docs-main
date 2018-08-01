@@ -22,7 +22,7 @@ The ID from this table is where an NPC gets its entire faction behavior.  The ID
 
 But more than this, it serves as a key into the npc_faction_entries table. 
 
-## npc_faction_entries
+## [npc_faction_entries](https://github.com/EQEmu/Server/wiki/npc_faction_entries)
 
 The npc_faction_entries table has two major roles.  First, entries are placed here that indicate how much faction is gained/lost with various factions if any NPC has this npc_faction_id is killed.  The second, is that you can list how these NPCS react to other NPCS of various other factions.
 
