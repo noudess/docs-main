@@ -10,7 +10,7 @@ The faction_list table contains one entry for each unique faction on the server.
 
 This table stores the static data that indicates what bonuses or penalties race, class and deity have on various factions.  For example, a character's standing may be worse with some factions due to that faction hating your deity.  Or like in the case of the Kerran race, they dislike Erudites.  These adjustments, combined with the starting value for everyone taken from faction_list, make up where you start in relation to all of the factions on Norrath.
 
-## faction_values
+## [faction_values](https://github.com/EQEmu/Server/wiki/faction_values)
 
 This table stores the ever-changing data in regards to each characters actions in the game.  A running sum of all of the hit and gains in faction for characters is stored here, one line per char/faction pair.   Lines only exist if a character has at least one hit or credit based on in game actions.
 
