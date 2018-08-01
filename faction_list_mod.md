@@ -2,5 +2,5 @@
 -----|-----|-----|-----|-----|-----
 id|int(10) unsigned|NO|PRI| |auto\_increment
 faction\_id|int(10) unsigned|NO|MUL| | 
-mod|smallint(6)|NO| | | 
-mod\_name|varchar(16)|NO| | | 
+mod|smallint(6)|NO| | | mod_value
+mod\_name|varchar(16)|NO| | | -[crd][value]
