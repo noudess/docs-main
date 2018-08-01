@@ -16,7 +16,7 @@ This table stores the ever-changing data in regards to each characters actions i
 
 These two tables are more about assigning each NPC a primary faction, while also establishing sister factions (assist worthy), enemy factions (attack worthy), and the hit taken by any PC that were to kill the PC.
 
-## npc_faction
+## [npc_faction](https://github.com/EQEmu/Server/wiki/npc_faction)
 
 The ID from this table is where an NPC gets its entire faction behavior.  The ID assigned here, ties an NPC to their primary faction (from faction_list) as well as determines whether not not they will assist their primary faction comrades in battle.
 
