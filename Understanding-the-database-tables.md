@@ -6,7 +6,7 @@ The first three tables relate to establishing game factions, and how each factio
 
 The faction_list table contains one entry for each unique faction on the server.  The ID field identifies an in-game faction, but IS NOT directly associated with an NPC.  This list simply lists the in game factions and the starting value that all characters start at with this faction before they begin earning or losing faction.  DO NOT use these values in npc_types.  See npc_faction below for details.
 
-## faction_list_mod
+## [faction_list_mod](https://github.com/EQEmu/Server/wiki/faction_list_mod)
 
 This table stores the static data that indicates what bonuses or penalties race, class and deity have on various factions.  For example, a character's standing may be worse with some factions due to that faction hating your deity.  Or like in the case of the Kerran race, they dislike Erudites.  These adjustments, combined with the starting value for everyone taken from faction_list, make up where you start in relation to all of the factions on Norrath.
 
