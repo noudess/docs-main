@@ -1,6 +1,5 @@
 * NPC Special Attacks
 * Spells
-* Factions -- Added on 31 July 2018; needs review by devs [[Faction Overview]]
 * Power Source Reference
 * Task System
 * Command Reference -- Completed 31 July 2018; available at [[In Game Command Reference]]
