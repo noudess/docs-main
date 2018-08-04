@@ -21,13 +21,13 @@ This isn't necessary if you're running from the `18.04` iso.
 *curl*
 
 ```bash
-curl -O https://raw.githubusercontent.com/EQEmu/Server/master/utils/scripts/linux_installer/install.sh install.sh && chmod 755 install.sh && ./install.sh
+curl -O https://raw.githubusercontent.com/EQEmu/Server/master/utils/scripts/linux_installer/install.sh && chmod 755 install.sh && ./install.sh
 ```
 
 *wget*
 
 ```bash 
-wget --no-check-certificate https://raw.githubusercontent.com/EQEmu/Server/master/utils/scripts/linux_installer/install.sh -O install.sh && chmod 755 install.sh && ./install.sh
+wget --no-check-certificate https://raw.githubusercontent.com/EQEmu/Server/master/utils/scripts/linux_installer/install.sh && chmod 755 install.sh && ./install.sh
 ``` 
 
 ### Enter Environment Parameters
