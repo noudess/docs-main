@@ -39,11 +39,11 @@ wget --no-check-certificate https://raw.githubusercontent.com/EQEmu/Server/maste
   * MySQL new user name and password
 
 ```bash
-wget --no-check-certificate https://raw.githubusercontent.com/EQEmu/Server/master/utils/scripts/linux_installer/install.sh -O install.sh && chmod 755 install.sh && ./install.sh
+wget --no-check-certificate https://raw.githubusercontent.com/EQEmu/Server/master/utils/scripts/linux_installer/install.sh && chmod 755 install.sh && ./install.sh
 ```
 
 ```
-root@debian:/home/eqemu# wget --no-check-certificate https://raw.githubusercontent.com/EQEmu/Server/master/utils/scripts/linux_installer/install.sh -O install.sh && chmod 755 install.sh && ./install.sh
+root@debian:/home/eqemu# wget --no-check-certificate https://raw.githubusercontent.com/EQEmu/Server/master/utils/scripts/linux_installer/install.sh && chmod 755 install.sh && ./install.sh
 
 
 --2018-01-15 11:34:02--  https://raw.githubusercontent.com/EQEmu/Server/master/utils/scripts/linux_installer/install.sh
