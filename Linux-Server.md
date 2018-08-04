@@ -5,6 +5,14 @@
 * CentOS
 * Fedora
 
+Note for Ubuntu 18.04.1:
+
+If you're using Ubuntu `18.04.1`, before Starting the Linux Installer, add the following apt repository:
+
+    sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) main universe restricted     multiverse"
+
+This isn't necessary if you're running from the `18.04` iso.
+
 ### Starting the Linux Installer
 
 * First you will need to kick off the installer using the single line command line also referenced on the README in the EQEmu/Server repository
