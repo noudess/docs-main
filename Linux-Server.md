@@ -38,25 +38,8 @@ wget --no-check-certificate https://raw.githubusercontent.com/EQEmu/Server/maste
   * MySQL database name
   * MySQL new user name and password
 
-```bash
-wget --no-check-certificate https://raw.githubusercontent.com/EQEmu/Server/master/utils/scripts/linux_installer/install.sh && chmod 755 install.sh && ./install.sh
+This is what you will see during the execution of the install.sh script
 ```
-
-```
-root@debian:/home/eqemu# wget --no-check-certificate https://raw.githubusercontent.com/EQEmu/Server/master/utils/scripts/linux_installer/install.sh && chmod 755 install.sh && ./install.sh
-
-
---2018-01-15 11:34:02--  https://raw.githubusercontent.com/EQEmu/Server/master/utils/scripts/linux_installer/install.sh
-Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 151.101.148.133
-Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|151.101.148.133|:443... connected.
-HTTP request sent, awaiting response... 200 OK
-Length: 10617 (10K) [text/plain]
-Saving to: ‘install.sh’
-
-install.sh                           100%[========================================================================>]  10.37K  --.-KB/s   in 0s
-
-2018-01-15 11:34:03 (122 MB/s) - ‘install.sh’ saved [10617/10617]
-
 #########################################################
 #::: EverQuest Emulator Modular Installer
 #::: Installer Author: Akkadius
