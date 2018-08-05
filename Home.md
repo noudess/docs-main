@@ -26,10 +26,7 @@ Get started by using the sidebar on the right!
 * [Install](https://github.com/EQEmu/Server/wiki/Windows-Server)
 
 ### > Debian/Ubuntu/CentOS/Fedora
-* You can use curl or wget to kick off the installer (whichever your OS has)
-> curl -O https://raw.githubusercontent.com/EQEmu/Server/master/utils/scripts/linux_installer/install.sh && chmod 755 install.sh && ./install.sh
-
-> wget --no-check-certificate https://raw.githubusercontent.com/EQEmu/Server/master/utils/scripts/linux_installer/install.sh && chmod 755 install.sh && ./install.sh
+* [Install](https://github.com/EQEmu/Server/wiki/Linux-Server)
 
 ## Supported Clients
 
