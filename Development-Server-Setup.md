@@ -17,11 +17,11 @@ cd eqemu_test
 * You can use curl, wget or manually create the file
 
 ```bash
-curl -O https://raw.githubusercontent.com/EQEmu/Server/master/utils/scripts/eqemu_server.pl eqemu_server.pl && chmod 755 eqemu_server.pl && ./eqemu_server.pl new_server
+curl -O https://raw.githubusercontent.com/EQEmu/Server/master/utils/scripts/eqemu_server.pl && chmod 755 eqemu_server.pl && ./eqemu_server.pl new_server
 ```
 
 ```bash
-wget --no-check-certificate --cache=no https://raw.githubusercontent.com/EQEmu/Server/master/utils/scripts/eqemu_server.pl  -O eqemu_server.pl && chmod 755 eqemu_server.pl && ./eqemu_server.pl new_server
+wget --no-check-certificate --cache=no https://raw.githubusercontent.com/EQEmu/Server/master/utils/scripts/eqemu_server.pl && chmod 755 eqemu_server.pl && ./eqemu_server.pl new_server
 ```
 
 #### Setting Environment Parameters
