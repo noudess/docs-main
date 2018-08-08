@@ -1,0 +1,1 @@
+#### This guide is intended for doing a "from the ground up" installation of a windows server. It is not the recommended or typical route, we suggest using the [[Windows]] install instead for most cases.
