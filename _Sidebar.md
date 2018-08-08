@@ -11,6 +11,8 @@
 * [[Server Asset Repositories]]
 * [[Updating Server Assets]]
 * [[First Time Running A Server]]
+* [[Ground Up Windows|Ground Up Windows Install]]
+* [[Ground Up Linux|Ground Up Linux Install]]
 
 **Configuration**
 * [[eqemu_config]]
