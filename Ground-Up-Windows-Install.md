@@ -44,7 +44,7 @@
 * You need a running instance of MySQL in order to connect your database. You have two options:
 * *Option 1* Download MySQL and install to your computer [link](https://www.mysql.com/downloads/)
 * *Option 2* Use docker-compose to dockerize your MySQL installation [link](https://gist.github.com/xackery/d93e05825b2db74425086bde617ac635). (Note: This requires Windows 10 Pro+ And [Docker](https://store.docker.com/editions/community/docker-ce-desktop-windows) installed so it may not be for every environment)
-* *If Option 2*, download and run the docker-compose.yml file in a location of your choice. Create a sub directory called db. type in the command line `docker-compose up`, and it will spin up the container for you.
+* *If Option 2*, download the docker-compose.yml file in a location of your choice. Create a sub directory called db. Go to a command line in this directory, and type `docker-compose up`, and it will spin up the container for you, exposing the ports to 127.0.0.1:3306 with credentials on the config file.
 
 ### Inject Your Database, Finalize preparation
 
