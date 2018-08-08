@@ -21,7 +21,7 @@
 ### Install Visual Studio
 
 * Visual Studio 2017 Community Edition is free [link](https://visualstudio.microsoft.com/downloads/)
-* Once installed, Open up Visual Studio and select New Project -> Visual C++ (MFC). If it lets you select this option without an optional download, you should be good to go. If it does ask you to install the C++ essential files, yes say. You can cancel out without creating a project at this time.
+* Once installed, Open up Visual Studio and select New Project -> Visual C++ (MFC). If it lets you select this option without an optional download, you should be good to go. If it does ask you to install the C++ essential files, say yes. Wait for it to download, then you can cancel out of the new project steps.
 
 ### Run Cmake & Build
 
