@@ -28,7 +28,7 @@
 * Download and Run Cmake 3.12.0 [link](https://cmake.org/download/)
 * Set the "Where is the source code" directory to the root of your eqemu\server directory.
 * Set the "Where to build the binaries" directory to eqemu\server\build, or you can customize this if preferred.
-* Press Configure. You may get warnings in the output on bottom, and the debug list may turn red, but as long as no errors are hit, you should be fine.
+* Press Configure. A dialog pops up, choose the `Visual Studio 15 2017 Win64` option. You may get warnings in the output on bottom, and the debug list may turn red, but as long as no errors are hit, you should be fine.
 * Press Generate. If the generate button is disabled, review the output log when you hit configure to figure out why.
 * Press Open Project. This should open Visual Studio.
 * Press F6 or Build -> Build Solution to begin compiling. You'll see yellow text warnings but they can be ignored. Eventually, the output window should display all successful with no fails.
