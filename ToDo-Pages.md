@@ -41,3 +41,4 @@
 ### Server
 
 * Networking
+* Dynamic versus Static zones - akk
