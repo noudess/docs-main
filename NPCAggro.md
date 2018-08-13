@@ -18,8 +18,11 @@ Lets create a new faction.  For this example, the NPCs on this faction will be K
 > |-999 -> -701 	|THREATENLY|
 > |-1000 -> BELOW 	|SCOWLS|
 
-2. Create the new [npc_faction](https://github.com/EQEmu/Server/wiki/npc_faction).
-3. Create new [faction_list_mod](https://github.com/EQEmu/Server/wiki/faction_list_mod) entries to account for the Erudite loving aspect.
+2. Create the new [npc_faction](https://github.com/EQEmu/Server/wiki/npc_faction). <br)
+    Create the new entry in npc_faction.  This will be an umbrella for NPC behavior entries.  Remember, this is different from the entry in faction_list.  faction_list only identifies a core faction.  npc_faction identifies a subset of NPCs on a faction in faction_list that have a prescribed behavior.  There can be many npc_faction entries providing different behavior for NPCs, even though all those NPCs have the same code faction_list assignment.  The key fields in npc_faction are primary_faction (which you will assign to the new faction you created in step 1) and ingnore_primary_assist which you will set to 1 or 0 depending on whether you want NPCs under this umbrella to assist other NPCs on the same faction_list allegiance.
+
+3. Create new [faction_list_mod](https://github.com/EQEmu/Server/wiki/faction_list_mod) entries to account for the Erudite loving aspect.<br>
+    So we wanted our new NPCs to like Erudites.  We do this by adding an entry to faction_list_mod.  This applies to any and all NPCs that refer back to the code faction__list entry.  So we add an entry, using the faction_list value we created in step 1, a mod_name ([rcd]#) and a value.  We want erudites to be amiable to start.  So we need to get them from -1000 up to at least 101.  Depending on where you want them in the amiable range, the mod would be something like 1101+.  So the new entry would be (id, (step 1 id), 1101, r3).  Erudites are race 3.
 4. Create how the new npc_faction reacts to other NPCS and PCs via [npc_faction_entries](https://github.com/EQEmu/Server/wiki/npc_faction_entries).
 5. Added more npc_faction_entries for the faction hits if you kill these NPCs.
 6. Assign NPCs to the new npc_faction in the npc_types table.
