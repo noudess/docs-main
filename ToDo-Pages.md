@@ -5,6 +5,7 @@
 * Command Reference -- Completed 31 July 2018; available at [[In Game Command Reference]]
 * Maps
 * Bots
+* Export and Import tools
 
 ### First Time Running a Server
 1. How to I make myself a GM, and what can I do once I am? -- Completed 31 July 2018; available at [[First Time Running A Server]]
