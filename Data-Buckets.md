@@ -82,7 +82,7 @@ quest::set_data($key, $value);
 sub EVENT_CLICKDOOR {
     quest::say($doorid);
     if ($doorid == 4) {
-        $key   = $zoneid . '-' . $client->CharacterID() . "-last-person-to-click-door";
+        $key   = $zoneid . '-last-person-to-click-door";
         $value = $client->GetCleanName();
 
         if (quest::get_data($key)) {
