@@ -1,17 +1,17 @@
-**Augment Type**|**Augment Type Value**
-:-----|:-----
-1|1
-2|2
-3|4
-4|8
-5|16
-6|32
-7|64
-8|128
-9|256
-10|512
+**Augment Type**|**Augment Type Value**|**Description**
+:-----|:-----|:-----|
+1|1|Armor
+2|2|Weapon
+3|4|1H Weapon Only
+4|8|2H Weapon Only
+5|16|1H Slash Only
+6|32|1H Blunt Only
+7|64|Piercing Only
+8|128|Hand to Hand Only
+9|256|2H Slash Only
+10|512|2H Blunt Only
 11|1024
-12|2048
+12|2048|Bows Only
 13|4096
 14|8192
 15|16384
