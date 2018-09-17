@@ -13,7 +13,7 @@ artifactflag|tinyint(3) unsigned|NO| |0| Determines whether or not an item gets 
 asta|int(11)|NO| |0| Stamina bonus. Valid values: -127 - 127
 astr|int(11)|NO| |0| Strength bonus. Valid values: -127 - 127
 attack|int(11)|NO| |0| Attack bonus.
-augrestrict|int(11)|NO| |0| [Augment Type Reference](https://github.com/EQEmu/Server/wiki/Augment-Types)
+augrestrict|int(11)|NO| |0| [Augment Restrict Reference](https://github.com/EQEmu/Server/wiki/Augment-Restrictions)
 augslot1type|tinyint(3)|NO| |0| The Type of Augment that the slot can hold. [Augment Type Reference](https://github.com/EQEmu/Server/wiki/Augment-Types)
 augslot1visible|tinyint(3)|YES| | | Whether or not the augment slot is visible. 0 - No, 1 - Yes
 augslot2type|tinyint(3)|NO| |0| The Type of Augment that the slot can hold. [Augment Type Reference](https://github.com/EQEmu/Server/wiki/Augment-Types)
