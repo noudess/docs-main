@@ -85,7 +85,7 @@ Accuracy|mediumint(9)|NO| |0|
 Avoidance|mediumint(9) unsigned|NO| |0| 
 slow\_mitigation|smallint(4)|NO| |0| 
 version|smallint(5) unsigned|NO| |0| 
-maxlevel|tinyint(3)|NO| |0| 
+maxlevel|tinyint(3)|NO| |0| 	The max level of the NPC. This makes the mob capable of spawning between levels 'level' to 'maxlevel'.  Optionally can set resists, mana regen, hp regen, mindmg and maxdmg to 0 to auto-set based on level or to a base level and use scalerate to scale these.  HP and stats are scaled-only and should not be set to 0.
 scalerate|int(11)|NO| |100| 
 private\_corpse|tinyint(3) unsigned|NO| |0| 
 unique\_spawn\_by\_name|tinyint(3) unsigned|NO| |0| 
