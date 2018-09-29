@@ -57,7 +57,7 @@
 * [[Item Class]]
 * [[Item Lore Groups]]
 * [[Item Sizes|Item Sizes]]
-* [[Lanuages]]
+* [[Languages]]
 * [[NATS Channels]]
 * [[Server Rules]]
 * [[Skills]]
