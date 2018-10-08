@@ -1,3 +1,5 @@
+(This page is out-of-date..update in progress)
+
 ### Equipped slots
 
 *   SLOT_CHARM= 0
