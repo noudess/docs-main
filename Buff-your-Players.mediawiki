@@ -1,6 +1,8 @@
 Below are some examples of quest scripts for NPCs that can buff your players.  These scripts would go in your quest scripts directory, and would be named appropriately based on the NPC that you will create to buff your players.
 
-# Discipline Trainer (PERL)
+__TOC__
+
+== Discipline Trainer (PERL) ==
 
 * File Name (example): Dave_the_Disciplinarian.pl
 * Description:  This script will train all available disciplines up to the player's current level.
@@ -44,7 +46,7 @@ sub EVENT_LEVEL_UP {
 ```
 
 
-# Spell Scriber (PERL)
+== Spell Scriber (PERL) ==
 
 * File Name (example): Skippy_the_Scribe.pl
 * Description:  This script will scribe all available spells (or songs) up to the player's current level.
@@ -92,7 +94,7 @@ sub EVENT_ITEM {
 	plugin::returnUnusedItems();
 }
 ```
-As with disciplines, if you would prefer that your players do not have to interact with an NPC, it is quite simple to add all new spells/songs each time a player levels using a perl script:
+As with disciplines, if you would prefer that your players do not have to interact with an NPC, it is quite simple to add all new spells/songs each time a player levels using a perl script:  
 
 * File Name: global/global_player.pl (add this code to the existing script file)
 * Description:  This script will scribe all new spells/songs when a player levels up.
@@ -104,7 +106,7 @@ sub EVENT_LEVEL_UP {
 }
 ```
 
-# Skill Maxer (PERL)
+== Skill Maxer (PERL) ==
 
 * File Name (example): Scotty_the_Skilled.pl
 * Description:  This script will set all available skills to maximum at the player's current level.
@@ -161,12 +163,12 @@ sub EVENT_LEVEL_UP {
 }
 ```
 
-# Player Buffer (PERL)
+== Player Buffer (PERL) ==
 
 * File Name (example): Canary_Morris.pl
 * Description:  This script will provide buffs and cures to the player and/or the player's pet, or the player's group and their pets, and will bind the player to the area.  The NPC will charge the player for the good buffs.
 
-_Credit to Maze who created the original version of this script, which has been adapted for use on this wiki._
+''Credit to Maze who created the original version of this script, which has been adapted for use on this wiki.''
 
 ```perl
 #:: Create a scalar vaiable to store the maximum level of buffs
