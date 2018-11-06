@@ -1,0 +1,31 @@
+{| class="wikitable" style="border: none; background: none;" 
+! rowspan="13"| Summon
+|-
+! colspan="3" | Settings !! Defaults
+|-
+! colspan="2" | Level 1 || Summon Target to NPC || 0
+|-
+! colspan="2" | Level 2 || Summon NPC to Target || 0
+|-
+! colspan="2" | Parameter 0 || Cooldown in ms || 6000
+|-
+! colspan="2" | Parameter 1 || HP ratio required to summon || 97
+|-
+! colspan="7" |Example
+|-
+! rowspan="5"| 1,1,2,10000,90
+| 1 
+| colspan="3" | Special Attack "Summon"
+|-
+| 1 
+| colspan="3" | Special Attack "Summon" enabled
+|-
+| 2 
+| colspan="3" | Summon npc to target enabled
+|-
+| 10000 
+| colspan="3" | 10 second cooldown
+|-
+| 90 
+| colspan="3" | Requires 90 percent or less HP
+|}
