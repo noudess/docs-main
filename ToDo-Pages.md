@@ -12,7 +12,7 @@
 2. How do I create custom items or modify existing ones?
 3. How do I create custom NPC's, how do I tune them, give them abilities? What about scripted encounters, where would you start for that? Vendors? Alternate currency vendors? AA vendors?
 4. How do I go about doing something like creating a hub zone, forcing all characters to start there?
-5. How to create buffers, teleporters, various things like that?
+5. How to create [buffers](https://github.com/EQEmu/Server/wiki/Buff-your-Players), teleporters, various things like that?
 6. How to change zone connections, or create new custom zonelines
 7. A good explanation of what changes require client file changes, and what doesn't
 8. A good walkthrough of common client files that need to be changed due to customizations, what they do, and what we can do with them (and maybe what we can't)
