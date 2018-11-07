@@ -1,4 +1,4 @@
-* NPC Special Attacks
+* [NPC Special Attacks](https://github.com/EQEmu/Server/wiki/NPC-Special-Attacks)
 * Spells
 * Power Source Reference
 * Task System
