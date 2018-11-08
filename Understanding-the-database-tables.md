@@ -24,6 +24,6 @@ But more than this, it serves as a key into the npc_faction_entries table.
 
 ## [npc_faction_entries](https://github.com/EQEmu/Server/wiki/npc_faction_entries)
 
-The npc_faction_entries table has two major roles.  First, entries are placed here that indicate how much faction is gained/lost with various factions if any NPC has this npc_faction_id is killed.  The second, is that you can list how these NPCS react to other NPCS of various other factions.
+The npc_faction_entries table has three major roles.  First, entries are placed here that indicate how much faction is gained/lost with various factions if any NPC has this npc_faction_id is killed.  The second, is that you can list how these NPCS react to other NPCS of various other factions.  The third, these entries can also indicate faction gain/loss via the task system.  The npc_faction_id is specified in the faction_reward field in the tasks table.
 
 This table collects too much data in one place, and really should be broken down.  As it stands right now, if there are 10 different mobs that yield different faction hits when killed, there needs to be 10 different npc_factions and copies of their behavior records in new npc_faction_entries records.  If we separated out the hits into a separate table, then we would only need one copy of the behavior records.  We'll mark this as potential improvement. (In my work matching live faction data, it has required a ton of redundancy).
