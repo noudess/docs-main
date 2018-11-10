@@ -1432,7 +1432,7 @@ sub EVENT_SPAWN {
 | --- | --- | ---
 |caster_id | int | `quest::say($caster_id); # returns int`
 
-# EVENT_SPELL_BUFF_TIC_CLIENT
+# EVENT_SPELL_EFFECT_BUFF_TIC_CLIENT
 
 ### Trigger
 
@@ -1444,7 +1444,7 @@ sub EVENT_SPAWN {
 | --- | --- | ---
 |caster_id | int | `quest::say($caster_id); # returns int`
 
-# EVENT_SPELL_BUFF_TIC_NPC
+# EVENT_SPELL_EFFECT_BUFF_TIC_NPC
 
 ### Trigger
 
