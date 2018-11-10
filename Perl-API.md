@@ -117,6 +117,7 @@ A full list can always be found in the EQEmu source [https://github.com/EQEmu/S
 | [EVENT_CONNECT](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_connect) | When a player connects to the world.
 | [EVENT_DEATH](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_death) | When the NPC dies. Fires before death finishes.
 | [EVENT_DEATH_COMPLETE](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_death_complete) | When the NPC dies.
+| [EVENT_DEATH_ZONE](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_death_zone) | When an NPC dies.
 | [EVENT_DESTROY_ITEM](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_destroy_item) | When a client destroys an item.
 | [EVENT_DISCONNECT](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_disconnect) | When a player disconnects from the world.
 | [EVENT_DISCOVER_ITEM](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_discover_item) | When an item is discovered.
@@ -126,6 +127,7 @@ A full list can always be found in the EQEmu source [https://github.com/EQEmu/S
 | [EVENT_ENTER](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_enter) | When a client enters a mob's proximity.
 | [EVENT_ENTER_AREA](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_enter_area) | When a client enters the area of a mob.
 | [EVENT_ENTERZONE](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_enterzone) | When a player enters the zone.
+| [EVENT_ENVIRONMENTAL_DAMAGE](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_environmental_damage) | When taking any sort of environmental damage.
 | [EVENT_EQUIP_ITEM](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_equip_item) | When a player equips an item.
 | [EVENT_EXIT](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_exit) | When a client leaves a mob's proximity.
 | [EVENT_FEIGN_DEATH](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_feign_death) | When a client feign death.
