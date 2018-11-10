@@ -464,6 +464,24 @@ sub EVENT_DEATH_COMPLETE {
 }
 ```
 
+# EVENT_DEATH_ZONE
+
+### Trigger
+
+- When the NPC dies.
+
+Used by the zone controller.
+
+### Exports
+
+| Name | Type | Usage
+| --- | --- | ---
+| killer_id | int | `quest::say($killer_id); # returns int `
+| killer_damage | int | `quest::say($killer_damage); # returns int`
+| killer_spell | int | `quest::say($killer_spell); # returns int`
+| killer_skill | int | `quest::say($killer_skill); # returns int`
+| killer_npc_id | int | `quest::say($killer_npc_id); # returns int`
+
 # EVENT_DESTROY_ITEM
 
 ### Trigger
@@ -635,6 +653,19 @@ sub EVENT_ENTERZONE {
 	}
 }
 ```
+# EVENT_ENVIRONMENTAL_DAMAGE
+
+### Trigger
+
+- When taking any sort of environmental damage.
+
+### Exports
+
+| Name | Type | Usage
+| --- | --- | ---
+| env_damage | int | `quest::say($env_damage); # returns int`
+| env_damage_type | int | `quest::say($env_damage_type); # returns int`
+| env_final_damage | int | `quest::say($env_final_damage); # returns int`
 
 # EVENT_EQUIP_ITEM
 
