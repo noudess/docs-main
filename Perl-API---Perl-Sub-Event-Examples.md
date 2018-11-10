@@ -470,7 +470,7 @@ sub EVENT_DEATH_COMPLETE {
 
 - When the NPC dies.
 
-Used by the zone controller.
+**Used by the zone controller.**
 
 ### Exports
 
@@ -1392,6 +1392,21 @@ sub EVENT_SPAWN {
 	}
 }
 ```
+
+# EVENT_SPAWN_ZONE
+
+### Trigger
+
+- When an NPC spawns.
+
+**Used by the zone controller.**
+
+### Exports
+
+| Name | Type | Usage
+| --- | --- | ---
+| spawned_entity_id | int | `quest::say($spawned_entity_id); # returns int`
+| spawned_npc_id | int | `quest::say($spawned_npc_id); # returns int`
 
 # EVENT_SPELL_EFFECT_CLIENT
 
