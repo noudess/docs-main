@@ -1619,6 +1619,19 @@ sub EVENT_TIMER {
 |skill_id | int | `quest::say($skill_id); # returns int`
 |skill_level | int | `quest::say($skill_level); # returns int`
 
+### Example
+
+This example would display a message to the client who uses kick and has a high enough skill level.
+
+```perl
+sub EVENT_USE_SKILL {
+    #:: Match if skill is Kick (30) and Skill Level is greater than or equal to 100.
+    if ($skill_id == 30 && $skill_level >= 100) {
+        $client->Message(315, "You have used Kick. Your skill level is $skill_level");
+    }
+}
+```
+
 # EVENT_WAYPOINT_ARRIVE
 
 ### Trigger
