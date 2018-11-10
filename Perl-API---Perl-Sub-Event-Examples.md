@@ -1560,6 +1560,19 @@ sub EVENT_TIMER {
 
 - When a client unequips an item.
 
+# EVENT_USE_SKILL
+
+### Trigger
+
+- When a player uses a skill
+
+### Exports 
+
+|Name | Type | Description
+| --- | --- | ---
+|skill_id | int | `quest::say($skill_id); # returns int`
+|skill_level | int | `quest::say($skill_level); # returns int`
+
 # EVENT_WAYPOINT_ARRIVE
 
 ### Trigger
