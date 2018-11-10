@@ -117,7 +117,7 @@ A full list can always be found in the EQEmu source [https://github.com/EQEmu/S
 | [EVENT_CONNECT](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_connect) | When a player connects to the world.
 | [EVENT_DEATH](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_death) | When the NPC dies. Fires before death finishes.
 | [EVENT_DEATH_COMPLETE](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_death_complete) | When the NPC dies.
-| [EVENT_DEATH_ZONE](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_death_zone) | When an NPC dies.
+| [EVENT_DEATH_ZONE](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_death_zone) | When an NPC dies (used by the zone controller).
 | [EVENT_DESTROY_ITEM](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_destroy_item) | When a client destroys an item.
 | [EVENT_DISCONNECT](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_disconnect) | When a player disconnects from the world.
 | [EVENT_DISCOVER_ITEM](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_discover_item) | When an item is discovered.
@@ -158,6 +158,7 @@ A full list can always be found in the EQEmu source [https://github.com/EQEmu/S
 | [EVENT_SIGNAL](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_signal) | When a signal is received.
 | [EVENT_SLAY](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_slay) | Whenever an NPC kills a player.
 | [EVENT_SPAWN](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_spawn) | When the NPC spawns.
+| [EVENT_SPAWN_ZONE](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_spawn_zone) | When the NPC spawns (used by the zone controller).
 | [EVENT_SPELL_EFFECT_CLIENT](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_spell_effect_client) | When the spell lands on a client.
 | [EVENT_SPELL_EFFECT_NPC](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_spell_effect_npc) | When the spell lands on an NPC.
 | [EVENT_SPELL_BUFF_TIC_CLIENT](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_spell_buff_tic_client) | When the spell ticks on a client.
