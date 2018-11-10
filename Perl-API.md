@@ -172,6 +172,7 @@ A full list can always be found in the EQEmu source [https://github.com/EQEmu/S
 | [EVENT_TRADE](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_trade) | When a client begins a trade.
 | [EVENT_UNAUGMENT_ITEM](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_unaugment_item) | When a client removes an augment from an item.
 | [EVENT_UNEQUIP_ITEM](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_unequip_item) | When a client unequips an item.
+| [EVENT_USE_SKILL](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_use_skill) | When a client uses a skill
 | [EVENT_WAYPOINT_ARRIVE](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_waypoint_arrive) | When a mob arrives at a waypoint.
 | [EVENT_WAYPOINT_DEPART](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_waypoint_depart) | When a mob leaves a waypoint.
 | [EVENT_WEAPON_PROC](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_weapon_proc) | When a weapon procs.
