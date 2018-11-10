@@ -161,8 +161,8 @@ A full list can always be found in the EQEmu source [https://github.com/EQEmu/S
 | [EVENT_SPAWN_ZONE](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_spawn_zone) | When the NPC spawns (used by the zone controller).
 | [EVENT_SPELL_EFFECT_CLIENT](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_spell_effect_client) | When the spell lands on a client.
 | [EVENT_SPELL_EFFECT_NPC](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_spell_effect_npc) | When the spell lands on an NPC.
-| [EVENT_SPELL_BUFF_TIC_CLIENT](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_spell_buff_tic_client) | When the spell ticks on a client.
-| [EVENT_SPELL_BUFF_TIC_NPC](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_spell_buff_tic_npc) | When the spell ticks on an NPC.
+| [EVENT_SPELL_EFFECT_BUFF_TIC_CLIENT](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_spell_effect_buff_tic_client) | When the spell ticks on a client.
+| [EVENT_SPELL_EFFECT_BUFF_TIC_NPC](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_spell_effect_buff_tic_npc) | When the spell ticks on an NPC.
 | [EVENT_SPELL_EFFECT_TRANSLOCATE_COMPLETE](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_spell_effect_translocate_complete) | When translocation is complete.
 | [EVENT_SPELL_FADE](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_spell_fade) | When a spell fades.
 | [EVENT_TARGET_CHANGE](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_target_change) | When a mob changes their current target or clears it.
