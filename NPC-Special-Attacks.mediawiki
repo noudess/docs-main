@@ -449,6 +449,28 @@ Unsnareable, denoted by special attack 16 or "I" (old code), makes the NPC immun
 | colspan="3" | Special Attack "Unsnareable" enabled
 |}
 
+== Unfeareable ==
+
+Unfearable, denoted by special attack 17 or "D" (old code), makes the NPC immune to fear effects.
+
+{| class="wikitable" style="border: none; background: none;" 
+! rowspan="7"| Unfearable
+|-
+! colspan="3" | Settings !! Defaults
+|-
+! colspan="2" | Bool || 1 = on, 0 = off || 0
+|-
+! colspan="7" |Example
+|-
+! rowspan="5"| 17,1
+| 17
+| colspan="3" | Special Attack "Unfearable"
+|-
+| 1 
+| colspan="3" | Special Attack "Unfearable" enabled
+|}
+
+
 == Immune to Dispell ==
 
 Immune to Dispell, denoted by special attack 18 or "K" (old code), makes the NPC immune to dispelling spells.
