@@ -305,7 +305,7 @@ if ($text!~/Hail|Hi|Hello/i) # Will check if the text does not contain "Hail", "
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parmeter:** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; uint16 instance_id
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; instance_id _(uint16)_
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:** 
 
@@ -324,7 +324,7 @@ quest::AssignGroupToInstance($Instance);
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parmeter:** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; uint16 instance_id 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; instance_id _(uint16)_
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
 
@@ -341,7 +341,7 @@ quest::AssignRaidToInstance($Instance);
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter:**
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; uint16 instance_id 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; instance_id _(uint16)_
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
 
@@ -373,7 +373,7 @@ quest::summonitem(quest::ChooseRandom(1001, 1004, 1011);
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; string zone_name, uint16 version, uint32 duration 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; zone_name _(string)_, version _(uint16)_, duration _(uint32)_
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
 
@@ -388,7 +388,7 @@ quest::CreateInstance("mirb", 50, 10800);
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; uint16 instance_id 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; instance_id _(uint16)_
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
 
@@ -403,7 +403,7 @@ quest::DestroyInstance(50);
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; uint32 zone, uint16 version 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; zone _(uint32)_, version _(uint16)_
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
 
@@ -419,7 +419,7 @@ quest::FlagInstanceByGroupLeader(237,50);
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; uint32 zone, uint16 version
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; zone _(uint32)_, version _(uint16)_
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
 
@@ -435,7 +435,7 @@ quest::FlagInstanceByRaidLeader(237,50);
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; uint8 mode [0-3]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mode [0-3] _(uint8)_
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:** 
 
@@ -451,7 +451,7 @@ quest::FlyMode(1);
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; uint16 instance_id)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; instance_id _(uint16)_
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:** 
 
@@ -467,7 +467,7 @@ quest::GetCharactersInInstance(50); #:: Returns 50,123456
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; string zone_name, uint16 version
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; zone_name _(string)_, version _(uint16)_
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:** 
 
@@ -480,7 +480,7 @@ my $Instance = quest::GetInstanceID($zonesn, $instanceversion); #:: Returns uint
 quest::AssignToInstance($Instance);
 ```
 
-### GetInstanceTimer()
+### GetInstanceTimer
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
 
@@ -495,23 +495,238 @@ quest::AssignToInstance($Instance);
 quest::GetInstanceTimer(); #:: Returns uint32
 ```
 
-(work in progress)
+### GetInstanceTimerByID
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; instance_id _(uint16)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Returns the duration timer of the specified instance.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Note: If you do not provide an instance_id in the method it defaults to instance id 0 and returns 0 for time remaining.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example**
+```perl
+#:: Create a scalar variable to store instance_id
+my $Instance = quest::GetInstanceID($zonesn, $instanceversion); #:: Returns uint16
+quest::GetInstanceTimerByID($Instance); #:: Returns timer int
+```
+
+### GetSpellResistType
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; spell_id _(uint32)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Returns the [Resist Type](https://github.com/EQEmu/Server/wiki/Resist-Types) of the specified spell.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example**
+```perl
+quest::GetSpellResistType($spell_id); #:: Returns int
+```
+
+### GetSpellTargetType
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; spell_id _(uint32)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Returns the [Target Type](https://github.com/EQEmu/Server/wiki/Target-Types) of the specified spell.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example**
+```perl
+quest::GetSpellTargetType($spell_id); #:: Returns int
+```
+
+### GetTimeSeconds
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; None.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Returns unix time in seconds.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+```perl
+quest::GetTimeSeconds(); #:: Returns int
+```
+
+### GetZoneID
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; zone _(string)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Returns the zone id.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+```perl
+quest::GetZoneID($zonesn); #:: Returns int
+```
+
+### GetZoneLongName
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; zone _(string)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Returns the long name of the zone.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+```perl
+quest::GetZoneLongName($zonesn); #:: Returns string
+```
+
+### IsBeneficialSpell
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; spell_id _(uint32)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Returns true if the specified spell is beneficial.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+```perl
+quest::IsBeneficialSpell($spell_id); #:: Returns 0 or 1
+```
+
+### IsEffectInSpell
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; spell_id _(uint32)_, effect_id _(uint32)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Returns true if the specified spell has the specified [Spell Effect](https://github.com/EQEmu/Server/wiki/Spell-Effect-IDs).
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+```perl
+#:: Check for Spell Effect 23 - Fear
+quest::IsEffectInSpell($spell_id, 23); #:: Returns 0 or 1
+```
+
+### IsRunning
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; None.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Returns the running state--0 is walking, 1 is running.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+```perl
+quest::IsRunning(); #:: Returns 0 or 1
+```
+
+### LearnRecipe
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; recipe_id _(uint32)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Makes the client learn a recipe.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+```perl
+#:: Teach recipe_id 2141 - Pickled Bixie
+quest::LearnRecipe(2141);
+```
+
+### MerchantCountItem
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; npc_id _(uint32)_, item_id _(uint32)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Returns the number of the specified item in stock at the specified merchant.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+```perl
+#:: Find out how many 12260 - Fuzzlecutter Formula 5000 are in stock at Ping_Fuzzlecutter (9133)
+quest::MerchantCountItem(9133, 12260); #:: Returns int
+```
+
+### MerchantSetItem
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; npc_id _(uint32)_, item_id _(uint32)_, quantity _(uint32)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Changes the number of the specified items in stock, at the specified quantity, at the specified merchant.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+```perl
+#:: Make sure there is plenty of 12260 - Fuzzlecutter Formula 5000 in stock at Ping_Fuzzlecutter (9133)
+quest::MerchantSetItem(9133, 12260, 1000); #:: Quantity 1000
+```
+
+### ModifyNPCStat
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; key _(string)_, value _(string)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Changes the specified [npc_types](https://github.com/EQEmu/Server/wiki/npc_types) stat of the specified NPC on the fly--changes are not saved to the npc_types in the DB.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+```perl
+#:: Adjust the runspeed to 1.25
+quest::modifynpcstat("runspeed", 1.25);
+```
+
+### MovePCInstance
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; zone_id _(uint32)_, instance_id _(uint32)_, x _(float)_, y _(float)_, z _(float)_, heading _(float)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Moves a player to the specified instance of the specified zone at the specified location and heading.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+```perl
+sub EVENT_CLICKDOOR {
+    #:: Match door id 3: Frozen Nightmare (mirb) zone in
+    if ($doorid == 3) {
+        #:: Create a scalar variable to store instance_id--GetInstanceID returns int
+        my $InstanceMirB = quest::GetInstanceID("mirb",50);
+        #:: Match if an instance exists
+        if ($InstanceMirB > 0) {
+            #:: Move the player to mirb (237), to their instance, at X - 607, Y - 1503, Z - 33, Heading - 0 (north)
+            quest::MovePCInstance(237,$InstanceMirB,607,1503,33,0);
+        }
+    }
+}
+```
+
+(Work in Progress)
 
 ```perl
-quest::GetInstanceTimerByID(uint16 instance_id)
-quest::GetSpellResistType(uint32 spell_id)
-quest::GetSpellTargetType(uint32 spell_id)
-quest::GetTimeSeconds()
-quest::GetZoneID(string zone)
-quest::GetZoneLongName(string zone)
-quest::IsBeneficialSpell(uint32 spell_id)
-quest::IsEffectInSpell(uint32 spell_id, uint32 effect_id)
-quest::IsRunning()
-quest::LearnRecipe(int recipe_id)
-quest::MerchantCountItem(uint32 npc_id, uint32 item_id)
-quest::MerchantSetItem(uint32 npc_id, uint32 item_id, [uint32 quantity])
-quest::ModifyNPCStat(string key, string value)
-quest::MovePCInstance(int zone_id, int instance_id, float x, float y, float z, [float heading])
 quest::RemoveAllFromInstance(uint16 instance_id)
 quest::RemoveFromInstance(uint16 instance_id)
 quest::SendMail(stirng to, string from, string subject, string message)
