@@ -301,19 +301,203 @@ if ($text!~/Hail|Hi|Hello/i) # Will check if the text does not contain "Hail", "
 
 *   A full list can always be found in the EQEmu source [https://github.com/EQEmu/Server/blob/master/zone/questmgr.cpp](https://github.com/EQEmu/Server/blob/master/zone/questmgr.cpp)
 
+### AssignGroupToInstance
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parmeter:** 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; uint16 instance_id
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:** 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Assigns a group to an instance. 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
 ```perl
-quest::AssignGroupToInstance(uint16 instance_id)
-quest::AssignRaidToInstance(uint16 instance_id)
-quest::AssignToInstance(uint16 instance_id)
-quest::ChooseRandom(option1, option2, option3, option4, option5...[no limit])
-quest::CreateInstance(string zone_name, uint16 version, uint32 duration)
-quest::DestroyInstance(int id)
-quest::FlagInstanceByGroupLeader(uint32 zone, uint16 version)
-quest::FlagInstanceByRaidLeader(uint32 zone, uint16 version)
-quest::FlyMode(uint8 mode [0-3])
-quest::GetCharactersInInstance(uint16 instance_id)
-quest::GetInstanceID(string zone_name, uint16 version)
-quest::GetInstanceTimer()
+#:: Create a scalar variable to store instance_id--GetInstanceID returns int
+my $Instance = quest::GetInstanceID($zonesn, $instanceversion); 
+quest::AssignGroupToInstance($Instance);
+```
+
+
+
+### AssignRaidToInstance 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parmeter:** 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; uint16 instance_id 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Assigns a raid to an instance.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+```perl
+#:: Create a scalar variable to store instance_id--GetInstanceID returns int
+my $Instance = quest::GetInstanceID($zonesn, $instanceversion); 
+quest::AssignRaidToInstance($Instance);
+```
+
+### AssignToInstance
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; uint16 instance_id 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Assigns a single player to an instance.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example**
+```perl
+#:: Create a scalar variable to store instance_id--GetInstanceID returns int
+my $Instance = quest::GetInstanceID($zonesn, $instanceversion); 
+quest::AssignToInstance($Instance);
+```
+### ChooseRandom
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; option1, option2, option3... 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Returns one of the items listed in its arguments randomly.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+```perl
+#:: Choose a random reward: 1001 - Cloth Cap, 1004 - Cloth Shirt, 1011 - Cloth Pants
+quest::summonitem(quest::ChooseRandom(1001, 1004, 1011);
+```
+
+### CreateInstance 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; string zone_name, uint16 version, uint32 duration 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Creates an instance in the given zone using specified version and duration.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+```perl
+quest::CreateInstance("mirb", 50, 10800);
+```
+
+### DestroyInstance 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; uint16 instance_id 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Destroys the given instance. 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+```perl
+quest::DestroyInstance(50);
+```
+
+### FlagInstanceByGroupLeader
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; uint32 zone, uint16 version 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Assigns the group leader's instance to a player 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+```perl
+#:: Zone 237 (mirb), instance 50
+quest::FlagInstanceByGroupLeader(237,50);
+```
+
+### FlagInstanceByRaidLeader
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; uint32 zone, uint16 version
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Assigns the raid leader's instance to a player
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+```perl
+#:: Zone 237 (mirb), instance 50
+quest::FlagInstanceByRaidLeader(237,50);
+```
+
+### FlyMode
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; uint8 mode [0-3]
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:** 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sets flymode for player where 0 = Off, 1 = On, 2 = Levitate. 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+```perl
+ #:: Turn fly mode on
+quest::FlyMode(1);
+```
+
+### GetCharactersInInstance
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; uint16 instance_id)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:** 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Returns a hash of character id and instance id
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+```perl
+#:: Instance ID 50
+quest::GetCharactersInInstance(50); #:: Returns 50,123456
+```
+
+### GetInstanceID
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; string zone_name, uint16 version
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:** 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Returns the instance id of the given zone/verison.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example**
+```perl
+#:: Create a scalar variable to store instance_id
+my $Instance = quest::GetInstanceID($zonesn, $instanceversion); #:: Returns uint16
+quest::AssignToInstance($Instance);
+```
+
+### GetInstanceTimer()
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; None.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Returns the timer for the instance.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example**
+```perl
+quest::GetInstanceTimer(); #:: Returns uint32
+```
+
+(work in progress)
+
+```perl
 quest::GetInstanceTimerByID(uint16 instance_id)
 quest::GetSpellResistType(uint32 spell_id)
 quest::GetSpellTargetType(uint32 spell_id)
