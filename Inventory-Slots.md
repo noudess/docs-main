@@ -4,60 +4,55 @@
 
 ### Equipment slots (worn)
 
-*   slotCharm = 0
-*   slotEar1 = 1
-*   slotHead = 2
-*   slotFace = 3
-*   slotEar2 = 4
-*   slotNeck = 5
-*   slotShoulders = 6
-*   slotArms = 7
-*   slotBack = 8
-*   slotWrist1 = 9
-*   slotWrist2 = 10
-*   slotRange = 11
-*   slotHands = 12
-*   slotPrimary = 13
-*   slotSecondary = 14
-*   slotFinger1 = 15
-*   slotFinger2 = 16
-*   slotChest = 17
-*   slotLegs = 18
-*   slotFeet = 19
-*   slotWaist = 20
+*   slotCharm       = 0
+*   slotEar1        = 1
+*   slotHead        = 2
+*   slotFace        = 3
+*   slotEar2        = 4
+*   slotNeck        = 5
+*   slotShoulders   = 6
+*   slotArms        = 7
+*   slotBack        = 8
+*   slotWrist1      = 9
+*   slotWrist2      = 10
+*   slotRange       = 11
+*   slotHands       = 12
+*   slotPrimary     = 13
+*   slotSecondary   = 14
+*   slotFinger1     = 15
+*   slotFinger2     = 16
+*   slotChest       = 17
+*   slotLegs        = 18
+*   slotFeet        = 19
+*   slotWaist       = 20
 *   slotPowerSource = 21
-*   slotAmmo = 22
+*   slotAmmo        = 22
 
-### Inventory Slots
+### General slots (personal)
 
-NOTE: Numbering for personal inventory goes top to bottom, then left to right
+*   slotGeneral1 = 23
+*   slotGeneral2 = 24
+*   slotGeneral3 = 25
+*   slotGeneral4 = 26
+*   slotGeneral5 = 27
+*   slotGeneral6 = 28
+*   slotGeneral7 = 29
+*   slotGeneral8 = 30
+*   slotGeneral9 = 31
+*   slotGeneral10 = 32
 
-It's the opposite for inside bags: left to right, then top to bottom
+Bag slots in general inventory are:
 
-Example:
-
-inventory:containers:
-
-*   1 51 2
-*   2 63 4
-*   3 75 6
-*   4 87 8
-*     9 10
-
-### Personal Inventory
-
-Personal inventory slots 22 through 29.
-
-Bags in personal inventory are:
-
-*   22: 251->260
-*   23: 261->270
-*   24: 271->280
-*   25: 281->290
-*   26: 291->300
-*   27: 301->310
-*   28: 311->320
-*   29: 321->330
+*   slotGeneral1  : 251 -> 260
+*   slotGeneral2  : 261 -> 270
+*   slotGeneral3  : 271 -> 280
+*   slotGeneral4  : 281 -> 290
+*   slotGeneral5  : 291 -> 300
+*   slotGeneral6  : 301 -> 310
+*   slotGeneral7  : 311 -> 320
+*   slotGeneral8  : 321 -> 330
+*   slotGeneral9  : 331 -> 340
+*   slotGeneral10 : 341 -> 350
 
 ### Cursor
 
