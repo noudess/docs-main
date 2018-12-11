@@ -30,15 +30,15 @@
 
 ### General slots (personal)
 
-*   slotGeneral1 = 23
-*   slotGeneral2 = 24
-*   slotGeneral3 = 25
-*   slotGeneral4 = 26
-*   slotGeneral5 = 27
-*   slotGeneral6 = 28
-*   slotGeneral7 = 29
-*   slotGeneral8 = 30
-*   slotGeneral9 = 31
+*   slotGeneral1  = 23
+*   slotGeneral2  = 24
+*   slotGeneral3  = 25
+*   slotGeneral4  = 26
+*   slotGeneral5  = 27
+*   slotGeneral6  = 28
+*   slotGeneral7  = 29
+*   slotGeneral8  = 30
+*   slotGeneral9  = 31
 *   slotGeneral10 = 32
 
 Bag slots in general inventory are:
@@ -54,9 +54,13 @@ Bag slots in general inventory are:
 *   slotGeneral9  : 331 -> 340
 *   slotGeneral10 : 341 -> 350
 
-### Cursor
+### Cursor slot
 
-Cursor is slot 30, and the bag slots for the cursor are 331->340.
+*   slotCursor = 33
+
+Bag slots in cursor inventory are:
+
+*   slotCursor : 351 -> 360
 
 ### Tribute
 
@@ -64,7 +68,7 @@ Tribute items are slots 400->404, these items are not visible, but are counted f
 
 ### Bank
 
-Bank slots are 2000 -> 2015
+Bank slots are 2000 -> 2023
 
 Bags in the bank are:
 
@@ -84,6 +88,14 @@ Bags in the bank are:
 *   2013: 2161->2170
 *   2014: 2171->2180
 *   2015: 2181->2190
+*   2016: 2191->2200
+*   2017: 2201->2210
+*   2018: 2211->2220
+*   2019: 2221->2230
+*   2020: 2231->2240
+*   2021: 2241->2250
+*   2022: 2251->2260
+*   2023: 2261->2270
 
 ### Shared Bank
 
@@ -93,9 +105,8 @@ Note: These are stored in the sharedbank table, not the inventory table.
 
 Bags in the shared bank are:
 
-2500: 2531->2540
-
-2501: 2541->2550
+*   2500: 2531->2540
+*   2501: 2541->2550
 
 #### SoF Slots
 
