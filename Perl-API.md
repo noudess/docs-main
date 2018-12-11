@@ -16,7 +16,7 @@
     + [**Conditionals**](#--conditionals--)
         * [**Using $npc->GetHateList();**](#--using--npc--gethatelist-----)
       - [**Function Lists**](#--function-lists--)
-      - [[**Inventory Slot Identifiers**|Perl Inventory Slot Identifiers]]
+      - [[Inventory Slot Identifiers|Perl Inventory Slot Identifiers]]
 - [Client](#client)
 - [Corpse](#corpse)
 - [EntityList](#entitylist)
