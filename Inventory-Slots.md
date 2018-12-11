@@ -62,7 +62,7 @@ Bag slots in cursor inventory are:
 
 ### Tribute
 
-Tribute items are slots 400->404, these items are not visible, but are counted for stats/effects.
+Tribute items are slots 400 -> 404, these items are not visible, but are counted for stats/effects.
 
 ### Bank
 
@@ -70,30 +70,30 @@ Bank slots are 2000 -> 2023
 
 Bags in the bank are:
 
-*   2000: 2031->2040
-*   2001: 2041->2050
-*   2002: 2051->2060
-*   2003: 2061->2070
-*   2004: 2071->2080
-*   2005: 2081->2090
-*   2006: 2091->2100
-*   2007: 2101->2110
-*   2008: 2111->2120
-*   2009: 2121->2130
-*   2010: 2131->2140
-*   2011: 2141->2150
-*   2012: 2151->2160
-*   2013: 2161->2170
-*   2014: 2171->2180
-*   2015: 2181->2190
-*   2016: 2191->2200
-*   2017: 2201->2210
-*   2018: 2211->2220
-*   2019: 2221->2230
-*   2020: 2231->2240
-*   2021: 2241->2250
-*   2022: 2251->2260
-*   2023: 2261->2270
+*   2000 : 2031 -> 2040
+*   2001 : 2041 -> 2050
+*   2002 : 2051 -> 2060
+*   2003 : 2061 -> 2070
+*   2004 : 2071 -> 2080
+*   2005 : 2081 -> 2090
+*   2006 : 2091 -> 2100
+*   2007 : 2101 -> 2110
+*   2008 : 2111 -> 2120
+*   2009 : 2121 -> 2130
+*   2010 : 2131 -> 2140
+*   2011 : 2141 -> 2150
+*   2012 : 2151 -> 2160
+*   2013 : 2161 -> 2170
+*   2014 : 2171 -> 2180
+*   2015 : 2181 -> 2190
+*   2016 : 2191 -> 2200
+*   2017 : 2201 -> 2210
+*   2018 : 2211 -> 2220
+*   2019 : 2221 -> 2230
+*   2020 : 2231 -> 2240
+*   2021 : 2241 -> 2250
+*   2022 : 2251 -> 2260
+*   2023 : 2261 -> 2270
 
 ### Shared Bank
 
@@ -103,8 +103,8 @@ Note: These are stored in the sharedbank table, not the inventory table.
 
 Bags in the shared bank are:
 
-*   2500: 2531->2540
-*   2501: 2541->2550
+*   2500 : 2531 -> 2540
+*   2501 : 2541 -> 2550
 
 #### Note: Not all clients support all of the server-recognized slots. Care should be taken when attempting to hard-code slot values over the use of server-based free slot requests.
 
