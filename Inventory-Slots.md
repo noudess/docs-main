@@ -1,5 +1,3 @@
-(This page is out-of-date..update in progress)
-
 ## Server-recognized slots
 
 ### Equipment slots (worn)
@@ -107,6 +105,14 @@ Bags in the shared bank are:
 
 *   2500: 2531->2540
 *   2501: 2541->2550
+
+#### Note: Not all clients support all of the server-recognized slots. Care should be taken when attempting to hard-code slot values over the use of server-based free slot requests.
+
+
+## Developer information on client-specific slot support
+
+(in-work)
+
 
 #### SoF Slots
 
