@@ -724,15 +724,119 @@ sub EVENT_CLICKDOOR {
 }
 ```
 
+### RemoveAllFromInstance
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; instance_id (uint16)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Removes ALL players from an instance by instance ID.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+sub EVENT_DEATH_COMPLETE {
+     #:: Instance ID is a pre-exported variable
+     quest::RemoveAllFromInstance($instanceid);
+}
+```
+
+### RemoveFromInstance
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; instance_id (uint16)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Removes the player that triggered the event from an instance by instance ID.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+sub EVENT_CLICKDOOR {
+     if ($doorid == 1) {
+          quest::RemoveFromInstance($instanceid);
+     }
+}
+```
+
+### SendMail
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; to (string), from (string), subject (string), message (string)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Used to send a mail message.
+
+### SetRunning
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; is_running (bool)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Used to toggle run/walk state.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+sub EVENT_SPAWN {
+	#:: Set the NPC to run
+	quest::SetRunning(1);
+}
+```
+
+### UpdateInstanceTimer
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; instance_id (int16), duration (uint32)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Used to update a zone instance timer by instance id by the number of seconds specified.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+sub EVENT_CLICKDOOR {
+     #:: When they open door 7...
+     if ($doorid == 7) {
+          #:: Add one hour of time to the current instance
+          quest::UpdateInstanceTimer($instanceid,3600);
+     }
+}
+```
+
+### UpdateSpawnTimer
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; spawn2_id (uint32), updated_time_till_repop (uint32)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Used to update a spawn timer by spawn2 ID and time specified in ms.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+sub EVENT_DEATH_COMPLETE {
+     #:: Fippy Darkpaw's spawn point
+     quest::updatespawntimer(10875,(int(rand(600))+3600)*1000);
+}
+```
+
 (Work in Progress)
 
 ```perl
-quest::RemoveAllFromInstance(uint16 instance_id)
-quest::RemoveFromInstance(uint16 instance_id)
-quest::SendMail(stirng to, string from, string subject, string message)
-quest::SetRunning(bool is_running)
-quest::UpdateInstanceTimer(int16 instance_id, uint32 duration)
-quest::UpdateSpawnTimer(uint32 spawn2_id, uint32 updated_time_till_repop)
+
 quest::UpdateZoneHeader(string key, string value)
 quest::activespeakactivity(int task_id)
 quest::activespeaktask()
