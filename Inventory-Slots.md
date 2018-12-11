@@ -1,5 +1,7 @@
 (This page is out-of-date..update in progress)
 
+### Server inventory slots
+
 ## Equipment slots (worn)
 
 *   slotCharm = 0
