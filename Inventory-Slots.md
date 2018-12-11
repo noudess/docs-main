@@ -108,6 +108,9 @@ Bags in the shared bank are:
 
 #### Note: Not all clients support all of the server-recognized slots. Care should be taken when attempting to hard-code slot values over the use of server-based free slot requests.
 
+### Quest use references
+*   [[Perl|Perl Inventory Slot Identifiers]]
+*   [[Lua|Lua Constants]]
 
 ## Developer information on client-specific slot support
 
