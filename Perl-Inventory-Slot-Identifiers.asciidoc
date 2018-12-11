@@ -43,8 +43,8 @@
 "generalbags.end"
 "cursorbag.begin"
 "cursorbag.end"
-~"tradeskill" (not implemented)
-~"augment" (not implemented)
+~"tradeskill" (not implemented in perl)
+~"augment" (not implemented in perl)
 "bank.begin"
 "bank.end"
 "bankbags.begin"
