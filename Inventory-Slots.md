@@ -2,7 +2,7 @@
 
 ### Equipped slots
 
-*   SLOT_CHARM= 0
+*   slotCharm= 0
 *   SLOT_EAR01= 1
 *   SLOT_HEAD= 2
 *   SLOT_FACE= 3
