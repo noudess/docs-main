@@ -1,8 +1,8 @@
 (This page is out-of-date..update in progress)
 
-### Server inventory slots
+## Server-recognized slots
 
-## Equipment slots (worn)
+### Equipment slots (worn)
 
 *   slotCharm = 0
 *   slotEar1 = 1
@@ -28,7 +28,7 @@
 *   slotPowerSource = 21
 *   slotAmmo = 22
 
-## Inventory Slots
+### Inventory Slots
 
 NOTE: Numbering for personal inventory goes top to bottom, then left to right
 
