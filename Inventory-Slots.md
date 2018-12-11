@@ -1,29 +1,30 @@
 (This page is out-of-date..update in progress)
 
-### Equipped slots
+### Equipment slots (worn)
 
-*   slotCharm= 0
-*   SLOT_EAR01= 1
-*   SLOT_HEAD= 2
-*   SLOT_FACE= 3
-*   SLOT_EAR02= 4
-*   SLOT_NECK= 5
-*   SLOT_SHOULDER= 6
-*   SLOT_ARMS= 7
-*   SLOT_BACK= 8
-*   SLOT_BRACER01= 9
-*   SLOT_BRACER02= 10
-*   SLOT_RANGE= 11
-*   SLOT_HANDS= 12
-*   SLOT_PRIMARY= 13
-*   SLOT_SECONDARY= 14
-*   SLOT_RING01= 15
-*   SLOT_RING02= 16
-*   SLOT_CHEST= 17
-*   SLOT_LEGS= 18
-*   SLOT_FEET= 19
-*   SLOT_WAIST= 20
-*   SLOT_AMMO= 21
+*   slotCharm = 0
+*   slotEar1 = 1
+*   slotHead = 2
+*   slotFace = 3
+*   slotEar2 = 4
+*   slotNeck = 5
+*   slotShoulders = 6
+*   slotArms = 7
+*   slotBack = 8
+*   slotWrist1 = 9
+*   slotWrist2 = 10
+*   slotRange = 11
+*   slotHands = 12
+*   slotPrimary = 13
+*   slotSecondary = 14
+*   slotFinger1 = 15
+*   slotFinger2 = 16
+*   slotChest = 17
+*   slotLegs = 18
+*   slotFeet = 19
+*   slotWaist = 20
+*   slotPowerSource = 21
+*   slotAmmo = 22
 
 ### Inventory Slots
 
