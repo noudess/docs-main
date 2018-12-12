@@ -2,63 +2,63 @@
 
 ### Equipment slots (worn)
 
-*   slotCharm       = 0
-*   slotEar1        = 1
-*   slotHead        = 2
-*   slotFace        = 3
-*   slotEar2        = 4
-*   slotNeck        = 5
-*   slotShoulders   = 6
-*   slotArms        = 7
-*   slotBack        = 8
-*   slotWrist1      = 9
-*   slotWrist2      = 10
-*   slotRange       = 11
-*   slotHands       = 12
-*   slotPrimary     = 13
-*   slotSecondary   = 14
-*   slotFinger1     = 15
-*   slotFinger2     = 16
-*   slotChest       = 17
-*   slotLegs        = 18
-*   slotFeet        = 19
-*   slotWaist       = 20
-*   slotPowerSource = 21
-*   slotAmmo        = 22
+*   Charm       = 0
+*   Ear1        = 1
+*   Head        = 2
+*   Face        = 3
+*   Ear2        = 4
+*   Neck        = 5
+*   Shoulders   = 6
+*   Arms        = 7
+*   Back        = 8
+*   Wrist1      = 9
+*   Wrist2      = 10
+*   Range       = 11
+*   Hands       = 12
+*   Primary     = 13
+*   Secondary   = 14
+*   Finger1     = 15
+*   Finger2     = 16
+*   Chest       = 17
+*   Legs        = 18
+*   Feet        = 19
+*   Waist       = 20
+*   PowerSource = 21
+*   Ammo        = 22
 
 ### General slots (personal)
 
-*   slotGeneral1  = 23
-*   slotGeneral2  = 24
-*   slotGeneral3  = 25
-*   slotGeneral4  = 26
-*   slotGeneral5  = 27
-*   slotGeneral6  = 28
-*   slotGeneral7  = 29
-*   slotGeneral8  = 30
-*   slotGeneral9  = 31
-*   slotGeneral10 = 32
+*   General1  = 23
+*   General2  = 24
+*   General3  = 25
+*   General4  = 26
+*   General5  = 27
+*   General6  = 28
+*   General7  = 29
+*   General8  = 30
+*   General9  = 31
+*   General10 = 32
 
 Bag slots in general inventory are:
 
-*   slotGeneral1  : 251 -> 260
-*   slotGeneral2  : 261 -> 270
-*   slotGeneral3  : 271 -> 280
-*   slotGeneral4  : 281 -> 290
-*   slotGeneral5  : 291 -> 300
-*   slotGeneral6  : 301 -> 310
-*   slotGeneral7  : 311 -> 320
-*   slotGeneral8  : 321 -> 330
-*   slotGeneral9  : 331 -> 340
-*   slotGeneral10 : 341 -> 350
+*   General1  : 251 -> 260
+*   General2  : 261 -> 270
+*   General3  : 271 -> 280
+*   General4  : 281 -> 290
+*   General5  : 291 -> 300
+*   General6  : 301 -> 310
+*   General7  : 311 -> 320
+*   General8  : 321 -> 330
+*   General9  : 331 -> 340
+*   General10 : 341 -> 350
 
 ### Cursor slot
 
-*   slotCursor = 33
+*   Cursor = 33
 
 Bag slots in cursor inventory are:
 
-*   slotCursor : 351 -> 360
+*   Cursor : 351 -> 360
 
 ### Tribute
 
