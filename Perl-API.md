@@ -829,19 +829,120 @@ sub EVENT_CLICKDOOR {
 
 ```perl
 sub EVENT_DEATH_COMPLETE {
-     #:: Fippy Darkpaw's spawn point
+     #:: Set a random timer on Fippy Darkpaw's spawn point
      quest::updatespawntimer(10875,(int(rand(600))+3600)*1000);
+}
+```
+
+### UpdateZoneHeader
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; key (string), value (string)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Allows you to manipulate zone header settings on the fly.  The [Quest Manager](https://github.com/EQEmu/Server/blob/c08993b60b7b5328398459a458648a114c3fb331/zone/questmgr.cpp#L3149) lists the following possible strings: ztype, fog_red, fog_green, fog_blue, fog_minclip, fog_maxclip, gravity, time_type, rain_chance, rain_duration, snow_chance, snow_duration, sky, safe_x, safe_y, safe_z, max_z, underworld, minclip, maxclip, fog_density, suspendbuffs.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Set the max clip plane to 500 units
+quest::UpdateZoneHeader("maxclip", 500);
+```
+
+### activespeakactivity
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; task_id (int)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Returns the Activity ID of the lowest numbered active activity to speak with an NPC in the specified task.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; If you have task id 150:  activity 0--kill three rats, activity 1--talk with NPC, activity 2--kill four fire beetles, activity 3--talk with NPC.
+
+```perl
+sub EVENT_SAY {
+     #:: Match text for hail, case independent
+     if ($text=~/hail/i) {
+          #:: Create a scalar variable to store the current speak activity for task 150
+          $speakactivity = quest::activespeakactivity(150); #:: Returns int
+          #:: Match if the player is on the first speak activity
+          if ($speakactivity == 1) {
+               quest::say("I really hate rats.");
+          }
+          #:: Match if the player is on the second speak activity
+          elsif ($speakactivity == 3) {
+               quest::say("I really hate fire beetles.");
+          }
+     }
+}
+```
+
+### activespeaktask
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; None.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Returns the Task ID of the lowest numbered task slot if the player who triggered the event has an active task with an active activity to speak to the NPC (returns 0 if not).
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; If you have task id 150:  activity 0--kill three rats, activity 1--talk with NPC, activity 2--kill four fire beetles, activity 3--talk with NPC.
+
+```perl
+sub EVENT_SAY {
+     #:: Match text for hail, case independent
+     if ($text=~/hail/i) {
+          #:: Create a scalar variable to store the current task that has a speak activity
+          $speaktask = quest::activespeaktask(); #:: Returns int
+          #:: Match if there's an active task with a speak activity
+          if ($speaktask => 1) {
+               quest::say("You have a task to speak with me and its ID is $speaktask.");
+          }
+          #:: Match if there's NO active task with a speak activity
+          else {
+               quest::say("You do not have any tasks with a speaking activity at this time.");
+          }
+     }
+}
+```
+
+### activetasksinset
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; task_set (int)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Returns the number of tasks in the given TaskSet that the player has active.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; You have a TaskSet "20", which consists of three tasks--200, 201, 202.
+
+```perl
+sub EVENT_SAY {
+     #:: Create a scalar variable to store the number of active tasks in TaskSet 20
+     $activetaskcount = quest::activetasksinset(20);  #:: returns int
+     #:: Match text for hail, case independent
+     if ($text=~/hail/i) {
+          quest::say("You have $activetaskcount tasks remaining.");
+     }
 }
 ```
 
 (Work in Progress)
 
 ```perl
-
-quest::UpdateZoneHeader(string key, string value)
-quest::activespeakactivity(int task_id)
-quest::activespeaktask()
-quest::activetasksinset(int task_set)
 quest::addldonloss(int losses, int theme_id)
 quest::addldonpoints(int points, int theme_id)
 quest::addldonwin(int wins, int theme_id)
