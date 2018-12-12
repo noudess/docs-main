@@ -2,16 +2,17 @@
 ```
 quest::getinventoryslotid("cursor")
 ```
-* returns current slotCursor definition (33)
+returns current slotCursor definition (33)
 ```
 quest::getinventoryslotid("general.begin")
 ```
-* returns current general slot beginning definition (23)
+returns current general slot beginning definition (23)
 ```
 quest::getinventoryslotid("augsocket.end")
 ```
-* returns current augment socket end definition (5)
+returns current augment socket end definition (5)
 
+#### Identifier tokens
 ```
 "charm"
 "ear1"
