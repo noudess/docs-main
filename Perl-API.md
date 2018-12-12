@@ -729,7 +729,7 @@ sub EVENT_CLICKDOOR {
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; instance_id (uint16)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; instance_id _(uint16)_
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
 
@@ -748,7 +748,7 @@ sub EVENT_DEATH_COMPLETE {
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; instance_id (uint16)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; instance_id _(uint16)_
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
 
@@ -768,7 +768,7 @@ sub EVENT_CLICKDOOR {
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; to (string), from (string), subject (string), message (string)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; to _(string)_, from _(string)_, subject _(string)_, message _(string)_
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
 
@@ -778,7 +778,7 @@ sub EVENT_CLICKDOOR {
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; is_running (bool)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; is_running _(bool)_
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
 
@@ -797,7 +797,7 @@ sub EVENT_SPAWN {
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; instance_id (int16), duration (uint32)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; instance_id _(int16)_, duration _(uint32)_
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
 
@@ -819,7 +819,7 @@ sub EVENT_CLICKDOOR {
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; spawn2_id (uint32), updated_time_till_repop (uint32)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; spawn2_id _(uint32)_, updated_time_till_repop _(uint32)_
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
 
@@ -838,7 +838,7 @@ sub EVENT_DEATH_COMPLETE {
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; key (string), value (string)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; key _(string)_, value _(string)_
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
 
@@ -855,7 +855,7 @@ quest::UpdateZoneHeader("maxclip", 500);
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; task_id (int)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; task_id _(int)_
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
 
@@ -867,7 +867,7 @@ quest::UpdateZoneHeader("maxclip", 500);
 
 ```perl
 sub EVENT_SAY {
-     #:: Match text for hail, case independent
+     #:: Match text for hail, case insensitive
      if ($text=~/hail/i) {
           #:: Create a scalar variable to store the current speak activity for task 150
           $speakactivity = quest::activespeakactivity(150); #:: Returns int
@@ -899,7 +899,7 @@ sub EVENT_SAY {
 
 ```perl
 sub EVENT_SAY {
-     #:: Match text for hail, case independent
+     #:: Match text for hail, case insensitive
      if ($text=~/hail/i) {
           #:: Create a scalar variable to store the current task that has a speak activity
           $speaktask = quest::activespeaktask(); #:: Returns int
@@ -919,7 +919,7 @@ sub EVENT_SAY {
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; task_set (int)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; task_set _(int)_
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
 
@@ -933,23 +933,172 @@ sub EVENT_SAY {
 sub EVENT_SAY {
      #:: Create a scalar variable to store the number of active tasks in TaskSet 20
      $activetaskcount = quest::activetasksinset(20);  #:: returns int
-     #:: Match text for hail, case independent
+     #:: Match text for hail, case insensitive
      if ($text=~/hail/i) {
           quest::say("You have $activetaskcount tasks remaining.");
      }
 }
 ```
 
+### addldonloss
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; losses _(int)_, theme_id _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Adds to loss count for LDON adventures by [LDON Theme](https://github.com/EQEmu/Server/wiki/LDON-Themes).
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Add a loss for Rujarkian Hills theme
+quest::addldonloss(1,4);
+```
+
+### addldonpoints
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; points _(int)_, theme_id _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Adds to points count for LDON adventures by [LDON Theme](https://github.com/EQEmu/Server/wiki/LDON-Themes).
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Add 100 points for Rujarkian Hills theme
+quest::addldonpoints(100,4);
+```
+
+### addldonwin
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wins _(int)_, theme_id _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Adds to wins count for LDON adventures by [LDON Theme](https://github.com/EQEmu/Server/wiki/LDON-Themes).
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Add a loss for Rujarkian Hills theme
+quest::addldonwin(1,4);
+```
+
+### addloot
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; item_id _(uint32)_, charges = 0 _(uint16)_, equip_item = true _(bool)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Add an item with a number of charges to an NPC's loot (does not permanently change the loot table or lootdrop entries).  If 'equipitem' is false (0), the item will not be used by (or shown in the hands of) the NPC.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Add a 5013 - Rusty Short Sword to the NPC's loot, but do not equip the item
+quest::addloot(5013,0,0);
+```
+
+### addskill
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; skill_id _(int)_, value _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sets the player's skill, by [Skill ID](https://github.com/EQEmu/Server/wiki/Skills), to the value specified.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+sub EVENT_SAY {
+     #:: Match text for train, case insensitive
+     if ($text=~/train/i) {
+          #:: Call the custom subroutine "Train"
+          Train();
+     }
+}
+
+#:: Custom subroutine
+sub Train {
+     #:: Send a message to the client in yellow (15) text
+     $client->Message( 15, "Your experiences across the realm have infused you with increased power and knowledge..." );
+     #:: Set all available skills to maximum for race/class at current level
+     foreach my $skill (0 .. 77) {
+          #:: Continue the foreach loop using the next skill ID if the client cannot use the skill ID
+          next unless $client->CanHaveSkill($skill);
+          #:: Create a scalar variable to store the maximum skill Value for the Skill ID
+          my $maxSkill = $client->MaxSkill($skill, $client->GetClass(), $ulevel);
+          #:: Continue the foreach loop using the next Skill ID if the client has a higher skill Value for the Skill ID
+          next unless $maxSkill > $client->GetRawSkill($skill);
+          #:: Set the Skill ID to the maximum Value that the client is allowed
+          $client->SetSkill($skill, $maxSkill);
+     }
+     #:: Scribe all spells for current level
+     quest::scribespells($ulevel);
+}
+```
+
+### assigntask
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; task_id _(int)_, npcid _(int)_, enforce_level_requirement = false _(bool)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Used to assign a task to a client, optionally this can include the NPC ID and whether or not to enforce the level requirement specified in the DB.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Assign Task 102
+quest::assigntask(102);
+#:: Assign Task 103 with level requirement enforced
+quest::assigntask(103, 1);
+#:: Assign Task 104 and include the NPC ID
+$client->AssignTask(104, $npc->GetID());
+#:: Assign Task 105, include the NPC ID with level requirement enforced
+$client->AssignTask(105, $npc->GetID(), 1);
+```
+
+### attack
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; client_name _(string)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Used to make the NPC attack a client, by name.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+sub EVENT_SAY {
+     #:: Match text for "mother", case insensitive
+     if ($text=~/mother/i) {
+          quest::say("How dare you talk about my mother!");
+          #:: Attack the client that triggered the event
+          quest::attack($name);
+     }
+}
+```
+
+
 (Work in Progress)
 
 ```perl
-quest::addldonloss(int losses, int theme_id)
-quest::addldonpoints(int points, int theme_id)
-quest::addldonwin(int wins, int theme_id)
-quest::addloot(uint32 item_id, uint16 charges = 0, [bool equip_item = true])
-quest::addskill(int skill_id, int value)
-quest::assigntask(int task_id, [bool enforce_level_requirement = false])
-quest::attack(string client_name)
 quest::attacknpc(int npc_entity_id)
 quest::attacknpctype(int npc_type_id)
 quest::buryplayercorpse(int character_id)
