@@ -1225,19 +1225,56 @@ quest::checktitle(2); #:: Returns bool
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; npc_type_id _(int)_
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Clears the NPC Table.
+
+### clear_proximity
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; None.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Clears an NPC's defined proximity.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+sub EVENT_SPAWN {
+     #:: Create a proximity, 50 units across
+     quest::set_proximity($x - 25, $x + 25, $y - 25, $y + 25);
+}
+
+sub EVENT_ENTER {
+     #:: Shout a message when the event is triggered
+     quest::shout("Congratulations $name, you have won the race!");
+     #:: Clear the proximity since second place is the first loser
+     quest::clear_proximity();
+}
+```
+
+### clear_zone_flag
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; zone_id _(uint32)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Used to clear the Zone Flag, by ID, of a client character.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Clear the character's Zone Flag (Sleeper's Key) for 128 - The Sleeper's Tomb (sleeper)
+quest::clear_zone_flag(128);
+```
 
 (Work in Progress)
 
 ```perl
-
-
-
-
-
-
-
-quest::clear_proximity()
-quest::clear_zone_flag(uint32 zone_id)
 quest::clearspawntimers()
 quest::collectitems(int item_id, [bool remove_item = true])
 quest::completedtasksinset(int task_set)
