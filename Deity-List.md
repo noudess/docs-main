@@ -24,7 +24,7 @@ Veeshan|216|65536
 
 ### Spells ID List
 
-**ID**|**Diety**
+**ID**|**Deity**
 :-----:|:-----:
 1|Bertoxxulos
 2|Brell Serilis
