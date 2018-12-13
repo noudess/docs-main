@@ -1095,17 +1095,147 @@ sub EVENT_SAY {
 }
 ```
 
+### attacknpc
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; npc_entity_id _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Used to make the NPC attack another NPC, by Entity ID.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Create a scalar variable to store the Entity ID of a_large_rat
+$aggromob = $entity_list->GetMobID(2011);
+#:: Get him.
+quest::attacknpc($aggromob);
+```
+
+### attacknpctype
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; npc_type_id _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Used to make the NPC attack another NPC, by NPC Type ID.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Attack a_large_rat
+quest::attacknpctype(2011);
+```
+
+### buryplayercorpse
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; character_id _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Buries and depops a single corpse by Character ID.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+sub EVENT_SAY {
+     #:: Create a scalar variable for storing corpse count
+     my $CorpseCount = 0;
+     #:: Create a scalar variable for storing the Character ID of the Client that triggered the event
+     my $charid = $client->CharacterID();
+     if ($text=~/hail/i) {
+          #:: Send the client a message in yellow (15) text
+          $client->Message(15,"I can [bury a corpse] or [destroy a corpse] that you have unburied.");
+     }
+     if ($text=~/bury a corpse/i) {
+          #:: Match if the client character has a corpse (or corpses)
+          if ($CorpseCount > 0) {
+               #:: Bury the character's corpse
+               quest::buryplayercorpse($charid);
+               $client->Message(15,"Very well, burying one of your corpses now.");
+          }
+          #:: Match if the client character does not have a corpse
+          else {
+               $client->Message(13,"You have no unburied corpses, begone.");
+          }
+     }
+}
+```
+
+### castspell
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; spell_id _(int)_, target_id _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Used to make the NPC cast a spell, by ID, on a target, by ID.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Cast spell 12 - Healing, on the user that triggered the event
+quest::castspell(12,$userid);
+```
+
+### changedeity
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; deity_id _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Used to permanently change the client character's deity, by [Deity ID](https://github.com/EQEmu/Server/wiki/Deity-List); kicks the client to character select.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Change the client character's deity to 201 - Bertoxxulous
+quest::changedeity(201);
+```
+
+### checktitle
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; title_set_id _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Used to determine if a player has the specified titleset enabled or not.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Check to see if Title Set 2 (prefix "Arbiter", suffix "Harbinger of the Old World") is enabled
+quest::checktitle(2); #:: Returns bool
+```
+
+### clear_npctype_cache
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; npc_type_id _(int)_
+
 
 (Work in Progress)
 
 ```perl
-quest::attacknpc(int npc_entity_id)
-quest::attacknpctype(int npc_type_id)
-quest::buryplayercorpse(int character_id)
-quest::castspell(int spell_id, int target_id)
-quest::changedeity(int deity_id)
-quest::checktitle(int title_set_id)
-quest::clear_npctype_cache(int npc_type_id)
+
+
+
+
+
+
+
 quest::clear_proximity()
 quest::clear_zone_flag(uint32 zone_id)
 quest::clearspawntimers()
