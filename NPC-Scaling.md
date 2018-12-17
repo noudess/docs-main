@@ -41,7 +41,7 @@ select * from npc_scale_global_base where level >= 50 and level <= 52 order by t
 
 ### Special Abilities
 
-* While most stats are loaded by looking for a `0` value from the database before applying the base values, special attacks can't trust that since there are no special attacks means that we actually want them. So in this implementation we check to see if all of the base stats are actually zero value before we consider this NPC and **Auto Scaled** npc before deciding to apply **Special Abilities** from the database scaling table
+* For special abilities we load things slightly differently, we don't just look for having "no special abilities" on the NPC before we apply the template to them. In this implementation, we check to see if all of the base stats are actually zero value before we consider this NPC an **auto scaled** npc before deciding to apply **Special Abilities** from the database table template
 
 ```cpp
 bool NpcScaleManager::IsAutoScaled(NPC *npc)
