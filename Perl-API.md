@@ -1304,7 +1304,7 @@ quest::repopzone();
 sub EVENT_SAY {
 	#:: Match text for "hail", case insensitive, and the client that triggered the event has a 1001 - Cloth Cap
 	if ($text=~/hail/i && plugin::check_hasitem($client, 1001)) {
-		quest::emote("steals your cloth cap.")
+		quest::emote("steals your cloth cap.");
 		quest::collectitems(1001, 1);
 	}
 }
@@ -1368,14 +1368,83 @@ sub EVENT_ENTERZONE {
 quest::createdoor("POKTELE500", -582.532, 2324.96, -47.8143, 120, 58, 100);
 ```
 
+## creategroundobject
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; item_id _(int)_, x _(float)_, y _(float)_, z _(float)_, heading _(float)_, decay_time _(uint32)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Creates an object on the ground with the given parameters, decay time is ms = 300000 by default.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+sub EVENT_WAYPOINT_ARRIVE {
+     #:: Create a 12274 - Chalice of Conquest at the NPC's current location
+     quest::creategroundobject(12274, $x, $y, $z, $h);
+}
+```
+
+## creategroundobjectfrommodel
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; model_name _(string)_, x _(float)_, y _(float)_, z _(float)_, heading _(float)_, object_type _(int)_, decay_time _(uint32)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Creates an object on the ground with the given parameters, decay time is ms = 300000 by default.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Create a 17330 - Bag of Supplies at the given location
+quest::creategroundobjectfrommodel("IT64_ACTORDEF", 2497, -557, -327, 58, 17330);
+```
+
+## createguild
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; guild_name _(string)_, leader_name _(string)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Creates a guild.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+sub EVENT_SAY{
+     if (quest::createguild("Akkadius Fire", $client->GetName())) {
+          $client->Message(15, "Guild has been created successfully");
+     }
+     else{
+          $client->Message(15, "Guild creation error");
+     }
+}
+```
+
+## crosszonemessageplayerbyname
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; channel_id _(int)_, name _(string)_, message _(string)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sends a message to a client character on the specified channel.  Useful for Expeditions and Shared Tasks.
+
 
 (Work in Progress)
 
 ```perl
-quest::creategroundobject(int item_id, float x, float y, float z, float heading, [uint32 decay_time-ms = 300000])
-quest::creategroundobjectfrommodel(string model_name, float x, float y, float z, float heading, [int object_type], [uint32 decay_time-ms = 300000])
-quest::createguild(string guild_name, string leader_name)
-quest::crosszonemessageplayerbyname(int channel_id, string name, string message)
+
+
+
+
 quest::crosszonesetentityvariablebyclientname(string client_name, string key, string value)
 quest::crosszonesetentityvariablebynpctypeid(int npc_type_id, string key, string value)
 quest::crosszonesignalclientbycharid(int character_id, int value)
