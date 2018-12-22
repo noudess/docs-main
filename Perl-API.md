@@ -1272,14 +1272,106 @@ sub EVENT_ENTER {
 quest::clear_zone_flag(128);
 ```
 
+### clearspawntimers
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; None.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Used to reset the spawn timers and repop a zone--similar to #repop force.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+quest::repopzone();
+```
+
+## collectitems
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; item_id _(int)_, remove_item = true _(bool)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Returns the number of items by ID that exist in inventory. If remove is true, items are removed as they are counted.  
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+sub EVENT_SAY {
+	#:: Match text for "hail", case insensitive, and the client that triggered the event has a 1001 - Cloth Cap
+	if ($text=~/hail/i && plugin::check_hasitem($client, 1001)) {
+		quest::emote("steals your cloth cap.")
+		quest::collectitems(1001, 1);
+	}
+}
+```
+
+## completedtasksinset
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; task_set _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Returns the number of tasks in the given Task Set that the player has completed.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+sub EVENT_SAY {
+     #:: Match text for "tasks", case insensitive
+     if ($text=~/tasks/i) {
+          #:: Create a scalar variable to store the count of completed tasks in task set "200"
+          my $TasksComplete = quest::completedtasksinset(200); #:: Returns int
+          quest::say("You have completed $TasksComplete tasks.");
+     }
+}
+```
+
+## createBot
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; first_name _(string)_, last_name _(string)_, level _(int)_, race_id _(int)_, class_id _(int)_, gender_id _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Used to create a bot with the given parameters.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+sub EVENT_ENTERZONE {
+     #:: Create a bot named Leroy Jenkins, who is level 50, Human, Paladin, Male
+     quest::createBot("Leroy", "Jenkins", 50, 1, 3, 0);
+}
+```
+
+## createdoor
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; model_name _(string)_, x _(float)_, y _(float)_, z _(float)_, heading _(float)_, object_type = 58 _(int)_, size = 100 _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Creates a new door, with type 58 and size 100 as the defaults.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+quest::createdoor("POKTELE500", -582.532, 2324.96, -47.8143, 120, 58, 100);
+```
+
+
 (Work in Progress)
 
 ```perl
-quest::clearspawntimers()
-quest::collectitems(int item_id, [bool remove_item = true])
-quest::completedtasksinset(int task_set)
-quest::createBot(string first_name, string last_name, int level, int race_id, int class_id, int gender_id)
-quest::createdoor(string model_name, float x, float y, float z, float heading, [int object_type = 58], [int size = 100])
 quest::creategroundobject(int item_id, float x, float y, float z, float heading, [uint32 decay_time-ms = 300000])
 quest::creategroundobjectfrommodel(string model_name, float x, float y, float z, float heading, [int object_type], [uint32 decay_time-ms = 300000])
 quest::createguild(string guild_name, string leader_name)
