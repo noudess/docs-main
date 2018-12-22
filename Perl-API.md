@@ -1285,7 +1285,7 @@ quest::clear_zone_flag(128);
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
 
 ```perl
-quest::repopzone();
+quest::clearspawntimers();
 ```
 
 ## collectitems
@@ -1518,17 +1518,110 @@ sub EVENT_ENVIRONMENTAL_DAMAGE {
 }
 ```
 
+## delglobal
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; key _(string)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Deletes a quest global.  Please consider using [Data Buckets](https://github.com/EQEmu/Server/wiki/Data-Buckets) instead of quest globals.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+quest::delglobal("strongbox");
+```
+
+## depop
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; npc_type_id _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Depops an NPC by npc_type_id, default is 0 (self).
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Depop self
+quest::depop();
+```
+
+## depop_withtimer
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; npc_type_id _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Depops an NPC by npc_type_id, default is 0 (self), and restarts the spawn point timer.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Depop self and restart spawn timer
+quest::depop_withtimer();
+```
+
+## depopall
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; npc_type_id _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Depops all NPC entities with npc_type_id in the zone.  Default is 0 (self and others like me).
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Depop all 4036 - a_giant_rat
+quest::depopall(4036);
+```
+
+## depopzone
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; start_spawn_status _(bool)_ 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Depops the zone with the specified parameter.  Default is false (don't start spawn timers).
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Depop the zone and don't start the spawn timers
+quest::depopzone();
+```
+
+## ding
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; None.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Plays the beautiful ding sound, the trumpet fanfare for your glorious deeds.  Congratulations, winner.  You did it.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Ding!
+quest::ding();
+```
 
 (Work in Progress)
 
 ```perl
-quest::delglobal(string key)
-quest::depop(int npc_type_id = 0)
-quest::depop_withtimer(int npc_type_id = 0)
-quest::depopall(int npc_type_id = 0)
-quest::depopzone([bool start_spawn_status = false])
-quest::ding()
 quest::disable_proximity_say()
 quest::disable_spawn2(int spawn2_id)
 quest::disablerecipe(int recipe_id)
