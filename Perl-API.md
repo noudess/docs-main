@@ -1437,22 +1437,92 @@ sub EVENT_SAY{
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sends a message to a client character on the specified channel.  Useful for Expeditions and Shared Tasks.
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+quest::crosszonemessageplayerbyname(15, $name, "Hi.");
+```
+
+## crosszonesetentityvariablebyclientname
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; client_name _(string)_, key _(string)_, value _(string)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sets entity variables world-wide for the provided client character.
+
+## crosszonesetentityvariablebynpctypeid
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; npc_type_id _(int)_, key _(string)_, value _(string)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sets entity variables world wide with specified npctype_id.
+
+## crosszonesignalclientbycharid
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; character_id _(int)_, value _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Signals the client by character ID world wide.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Signal the client character who triggered the event with "5000"
+quest::crosszonesignalclientbycharid($charid,5000);
+```
+
+## crosszonesignalnpcbynpctypeid
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; npc_type_id _(uint32)_, value _(uint32)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Signals all NPC entities world-wide with the specified value.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Signal all 4036 - a_giant_rat with "99"
+quest::crosszonesignalnpcbynpctypeid(4036, 99);
+```
+
+## debug
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; message _(string)_, debug_level _(uint8)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Allows you to export debug information for an event, at the specified level (1 through 3).
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+sub EVENT_ENVIRONMENTAL_DAMAGE {
+     quest::debug("EVENT_ENVIRONMENTAL_DAMAGE");
+     quest::debug("env_damage is " . $env_damage);
+     quest::debug("env_damage_type is " . $env_damage_type);
+     quest::debug("env_final_damage is " . $env_final_damage);
+}
+```
+
+
 
 (Work in Progress)
 
 ```perl
-
-
-
-
-quest::crosszonesetentityvariablebyclientname(string client_name, string key, string value)
-quest::crosszonesetentityvariablebynpctypeid(int npc_type_id, string key, string value)
-quest::crosszonesignalclientbycharid(int character_id, int value)
-quest::crosszonesignalclientbycharid(int character_id, int value)
-quest::crosszonesignalclientbycharid(string name, int value)
-quest::crosszonesignalclientbycharid(string name, int value)
-quest::crosszonesignalnpcbynpctypeid(uint32 npc_type_id, uint32 value)
-quest::debug(string message, [uint8 debug_level = 1 [1-3]])
 quest::delglobal(string key)
 quest::depop(int npc_type_id = 0)
 quest::depop_withtimer(int npc_type_id = 0)
