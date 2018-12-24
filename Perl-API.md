@@ -1619,23 +1619,323 @@ quest::depopzone();
 quest::ding();
 ```
 
+## disable_proximity_say
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; None.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Disables proximity say for the NPC.  Proximity say must be enabled with quest::set_proximity(); and quest::enable_proximity_say();.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+quest::disable_proximity_say();
+```
+
+## disable_spawn2
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; spawn2_id _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Disables the spawn point specified and depops any NPC entity from that spawn point.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Disable the spawn point for 151562 - spawngroup ID 113004 - npcIDs 15138 (Droon) and 15160 (Proon)
+quest::disable_spawn2(151562);
+```
+
+## disablerecipe
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; recipe_id _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Disables the recipe specified by Recipe ID.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Disable recipe 1 - Blessed Fishing Rod
+quest::disablerecipe(1);
+```
+
+## disabletask
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; task_id _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Disables a task so that it is not available to a client character.  Useful if you do not want someone to repeat a task.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Match if the player has an active task
+if ($task != 0) {
+     #:: Create a scalar variable to store the active speak-to activity
+     $activity = quest::activespeakactivity($task);
+     #:: Mark the activity as complete
+     quest::updatetaskactivity($task, $activity);
+     quest::say("Well done!");
+     #:: Offer the next task, if there is one
+     if (!quest::istaskactive($task)) {
+          #:: Disable the task so that it cannot be repeated
+          quest::disabletask($task);
+          #:: Match if there are tasks remaining in the Task Set
+          if ($task != quest::lasttaskinset(200)) {
+               quest::say("Well done, I have another task if you are willing.");
+               #:: Enable the next Task in the Task Set
+               quest::enabletask(quest::nexttaskinset(200, $task));
+          }
+          #:: Match if there are no tasks remaining in the task set
+          else {
+               quest::say("Thank you for cleansing Qeynos Hills!");
+          }
+     }
+}
+```
+
+## doanim
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; animation_id _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Makes the NPC perform the indicated [Animation](https://github.com/EQEmu/Server/wiki/Animations).
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Perform the Cheer animation
+quest::doanim(27);
+```
+
+quest::echo
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; emote_color_id _(int)_, message _(string)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Echoes the specified message string, in the specified color, to the client console.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Echo a message in yellow text (15)
+quest::echo(15,"Hello, world");
+```
+
+## emote
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; message _(string)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Makes the NPC emote the specified message string.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+sub EVENT_DEATH_COMPLETE {
+     quest::emote("'s corpse says 'How...did...ugh...'");
+}
+```
+
+## enable_proximity_say
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; None.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Enables proximity say for the NPC--the target would not have to have the NPC targeted to interact if the NPC has a defined proximity and proximity say is enabled.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+sub EVENT_SPAWN {
+     #:: Set the proximity bounds around the NPC on spawn, 30 units across
+     $x = $npc->GetX();
+     $y = $npc->GetY();
+     quest::set_proximity($x-15,$x+15,$y-15,$y+15);
+     quest::enable_proximity_say();
+}
+
+sub EVENT_PROXIMITY_SAY {
+     if ($text=~/Ganelorn Oast/i) {
+          quest::say("Ganelorn Oast! For he has single-handedly caught more poachers than any other ranger. He is credited for helping numerous endangered species recover from certain extinction. I suppose I am lucky he is fond of my sister, as I am soon to train under him as an apprentice. Perhaps one day I will even [" . quest::saylink("call upon the flames") . "] in the way that he does.");
+     }
+     elsif ($text=~/call upon the flames/i) {
+          quest::say("Aye, Ganelorn is renowned not only for his abilities as an archer and a master of melee combat, but also for his use of powerful magics. Never before have I seen a forester evoke a fireball of such great force. It would be any ranger's dream to become his pupil just to study that one spell. Ganelorn doesn't train just anyone, though. If you want to learn from him, I'm certain you would have to prove yourself as a forester.");
+     }
+     if ($text=~/I want to learn/i) {
+          quest::say("He is a very busy individual. I believe he is currently in the eastern part of the Karanas trying to track down a poacher. Even if you can track him down, don't get your hopes up.");
+          #:: Send a signal 2 to The Greater Faydark >> Lily_Ashwood (54086)
+          quest::signalwith(54086, 2, 3);
+     }
+}
+```
+
+## enable_spawn2
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; spawn2_id _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Enables the specified spawn point.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+sub EVENT_DEATH_COMPLETE {
+     #:: Enable the spawn timer for 151562 - spawngroup ID 113004 - npcIDs 15138 (Droon) and 15160 (Proon)
+     quest::enable_spawn2(151562);
+}
+```
+
+## enabledtaskcount
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; task_set _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Counts the enabled tasks in the specified Task Set.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Match if there are no enabled tasks in Task Set 10
+if (quest::enabledtaskcount(10) == 0) {
+     quest::enabletask(50, 51, 52);
+}
+```
+
+## enablerecipe
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; recipe_id _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Enables the recipe specified by Recipe ID.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Enable recipe 1 - Blessed Fishing Rod
+quest::enablerecipe(1);
+```
+
+## enabletask
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; task_id _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Enables a task.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Match if the player has an active task
+if ($task != 0) {
+     #:: Create a scalar variable to store the active speak-to activity
+     $activity = quest::activespeakactivity($task);
+     #:: Mark the activity as complete
+     quest::updatetaskactivity($task, $activity);
+     quest::say("Well done!");
+     #:: Offer the next task, if there is one
+     if (!quest::istaskactive($task)) {
+          #:: Disable the task so that it cannot be repeated
+          quest::disabletask($task);
+          #:: Match if there are tasks remaining in the Task Set
+          if ($task != quest::lasttaskinset(200)) {
+               quest::say("Well done, I have another task if you are willing.");
+               #:: Enable the next Task in the Task Set
+               quest::enabletask(quest::nexttaskinset(200, $task));
+          }
+          #:: Match if there are no tasks remaining in the task set
+          else {
+               quest::say("Thank you for cleansing Qeynos Hills!");
+          }
+     }
+}
+```
+
+## enabletitle
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; title_set_id _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Enables the specified Title Set.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+sub EVENT_ITEM_CLICK {
+     #:: Match if item 98471 - Mastering Tinkering Master I is clicked
+     if ($itemid == 98471) {
+          #:: Tinkering Mastery AA ID 575 Rank 1
+          $client->GrantAlternateAdvancementAbility(575,1,0);
+          #:: Send a message in Yellow (15) text
+          $client->Message(15,"You have mastered tinkering!");
+          #:: Ding!
+          quest::ding();
+          #:: Enable tinkering mastery title set
+          quest::enabletitle(10);
+     } 
+}
+```
+
+## exp
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; amount _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Gives the amount of [experience](https://github.com/EQEmu/Server/wiki/Experience-by-Level) specified to the client character.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Grant 100 experience points
+quest::exp(100);
+```
+
 (Work in Progress)
 
 ```perl
-quest::disable_proximity_say()
-quest::disable_spawn2(int spawn2_id)
-quest::disablerecipe(int recipe_id)
-quest::disabletask(int task_id, 2, 3, [up to 10])
-quest::doanim(int animation_id)
-quest::echo(int emote_color_id, string message)
-quest::emote(string message)
-quest::enable_proximity_say()
-quest::enable_spawn2(int spawn2_id)
-quest::enabledtaskcount(int task_set)
-quest::enablerecipe(int recipe_id)
-quest::enabletask(int task_id, 2, 3, [up to 10])
-quest::enabletitle(int title_set_id)
-quest::exp(int amount)
 quest::faction(int faction_id, int value, [int temp = 0])
 quest::factionvalue()
 quest::failtask(int task_id)
