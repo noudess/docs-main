@@ -4,7 +4,7 @@ The formula for the below table is:
 
 Experience = (Level - 1)^3 * (Multiplier * 1000)
 
-If you look to use `quest::giveexp(experience)` in any of your quests, this will come in handy
+If you look to use `quest::exp(amount)` in any of your quests, this will come in handy
 
 | Level      | EXP by end of Level                                 | 
 |-------|----------------------------------| 
