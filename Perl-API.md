@@ -1933,14 +1933,127 @@ sub EVENT_ITEM_CLICK {
 quest::exp(100);
 ```
 
+## faction
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; faction_id _(int)_, value _(int)_, temp _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Gives the client character the faction, specified by Faction ID, in the amount specified by value.  Temp is optional, and defaults to 0.  Temp values are:  0 (permanent, with a message), 1 (temporary, without a message), 2 (temporary, with a message), or 3 (permanent, without a message).
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Set faction
+quest::faction(192,10); 	#:: +10 League of Antonican Bards
+quest::faction(184,10); 	#:: +10 Knights of Truth
+quest::faction(135,10); 	#:: +10 Guards of Qeynos
+quest::faction(273,-30); 	#:: -30 Ring of Scale
+```
+
+## factionvalue
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; None.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Returns faction values for the client character that triggered the event.  Generally the opposite values of $faction, with 1 being "scowls" and 9 being "ally" ($faction considers 1 to be "ally", and 9 "scowls").
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+sub EVENT_SAY {
+     if ($text=~/hail/i) {     
+          #:: Create a scalar variable for storing faction
+          my $backwardfaction = quest::factionvalue();  #:: Returns int
+          quest::say("Your faction is $faction, but your faction is $backwardfaction");  #:: $faction is pre-exported and returns int
+     }
+}
+```
+
+## failtask
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; task_id _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Fails the task, by Task ID, for the client character that triggered the event.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Fail Task 216
+quest::failtask(216);
+```
+
+## firsttaskinset
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; task_set _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Returns the first task in the specified Task Set.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+sub EVENT_SAY {
+     #:: If the player hasn't completed the last task in the Task Set
+     if (!quest::istaskcompleted(quest::lasttaskinset(200))) {
+          #:: If the player has no tasks enabled for this task set, enable the first one
+          if (quest::enabledtaskcount(200) == 0) {
+               quest::say("You have not done any of my tasks before!");
+               #:: Enable the first task in Task Set 200
+               quest::enabletask(quest::firsttaskinset(200));
+          }
+     }
+}
+```
+
+## follow
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; entity_id _(int)_, distance _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Used to make an NPC follow another NPC, specified by Entity ID.  The distance determines how many units the NPC will follow behind the specified NPC, with a default value of 10; distance is optional.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+sub EVENT_SPAWN {
+     #:: Create a timer that triggers every 10 seconds
+     quest::settimer("follow",10);
+}
+
+sub EVENT_TIMER {
+     #:: Match if the timer is named "follow"
+     if ($timer eq "follow") {
+          #:: Create a scalar variable to store the NPC Type ID for mob 2161
+          my $getmobbynpctype = $entity_list->GetMobByNpcTypeID(2161);
+          #:: Create a scalar variable to store the Entity ID of the aforementioned NPC
+          my $follow_target = $getmobbynpctype->GetID();
+          #:: Follow the NPC at a default distance of 10 units
+          quest::follow($follow_target);
+          #:: Clean up and stop the timer
+          quest::stoptimer("follow");
+     }
+}
+```
+
 (Work in Progress)
 
 ```perl
-quest::faction(int faction_id, int value, [int temp = 0])
-quest::factionvalue()
-quest::failtask(int task_id)
-quest::firsttaskinset(int task_set)
-quest::follow(int entity_id, [int distance = 10])
 quest::forcedoorclose(int door_id, [bool alt_mode = 0])
 quest::forcedooropen(int door_id, [int alt_mode=0])
 quest::get_spawn_condition(string zone_short, [int instance_id], int condition_id)
