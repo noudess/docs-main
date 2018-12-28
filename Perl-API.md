@@ -2051,20 +2051,242 @@ sub EVENT_TIMER {
 }
 ```
 
+## forcedoorclose
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; door_id _(int)_, alt_mode _(bool)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Forces a door, by Door ID, to close.  Alt_Mode is default false.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Close Door ID 31 in Befallen
+quest::forcedoorclose(31);
+```
+
+## forcedooropen
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; door_id _(int)_, alt_mode _(bool)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Forces a door, by Door ID, to open.  Alt_Mode is default false.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Open Door ID 31 in Befallen
+quest::forcedooropen(31);
+```
+
+## get_spawn_condition
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; zone_short _(string)_, instance_id _(int)_, condition_id _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Returns the value of the specified spawn condition.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Get the Spawn Condition for Condition ID 1, in the default instance of Lesser Faydark
+quest::get_spawn_condition("lfaydark", 0, 1);  #:: Returns int
+```
+
+## getguildnamebyid
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; guild_id _(uint32)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Returns the name of the Guild for the specified Guild ID.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+sub EVENT_CONNECT {
+     #:: Announce the name of the client character that triggered the event in GM Say
+     quest::gmsay("$name has connected.", 18, 1);
+     #:: Announce the Account Name of the client character that triggered the event in GM Say
+     quest::gmsay(" Account Name: " . $client->AccountName() . " - Status: $status", 18, 1);
+     #:: Match if the client character has a guild
+     if ($uguild_id > 0) {
+          #:: Create a scalar variable to store the name of the client character's guild
+          my $guildname = quest::getguildnamebyid($uguild_id);
+          #:: Announce the client character's information in GM Say
+          quest::gmsay("(Character Profile: Level $ulevel $race $class) <$guildname>)", 18, 1);
+     }
+     #:: Match if the client character does not have a guild
+     else {
+          #:: Announce the client character's information in GM Say
+          quest::gmsay("(Character Profile: Level $ulevel $race $class) <No Guild>", 18, 1);
+     }
+}
+```
+
+## getinventoryslotid
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; identifier _(string)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Returns the Inventory Slot ID for the specified identifier.  Reference [Perl Inventory Slot Identifiers](https://github.com/EQEmu/Server/wiki/Perl-Inventory-Slot-Identifiers) for appropriate identifier tokens.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Create a scalar variable to store an item ID
+my $charmitem = $client->GetItemIDAt(quest::getinventoryslotid("charm"));  #:: returns int
+```
+
+## getlevel
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; type _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Returns the level for the Type specified.  Types can be 0 (self), 1 (group average), 2 (raid average), 3 (raid average, group average, or self), or 4 (self level 2--the highest level attained by self).
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Get the level of the client character
+quest::getlevel(0);  #:: Returns int
+```
+
+## getplayerburiedcorpsecount
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; character_id _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Returns the number of corpses for the specified Character ID that are buried.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Get the number of burried corpses for character ID 12345
+quest::getplayerburriedcorpsecount(12345); #:: return int
+```
+
+## gettaskactivitydonecount
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; task_id _(int)_, activity_id _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Returns the task activity done count, by Task ID and Activity ID, for the client entity.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Find out how many times the client character has killed 10 beetles in Unrest
+quest::gettaskactivitydonecount(15,3);  #:: Returns int
+```
+
+## givecash
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; copper _(int)_, silver _(int)_, gold _(int)_, platinum _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Gives the specified amount of money to the client that triggered the event.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Create a hash for storing cash - 20 to 100cp
+my %cash = plugin::RandomCash(20,100);
+#:: Grant a random cash reward
+quest::givecash($cash{copper},$cash{silver},$cash{gold},$cash{platinum});
+```
+
+## gmmove
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x _(float)_, y _(float)_, z _(float)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Moves the entity to the specified coordinates.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+sub EVENT_SPAWN {
+     #:: Create a timer that loops each second
+     quest::settimer("position",1);
+}
+
+sub EVENT_TIMER {
+     #:: Create a scalar variable to store the X position of the NPC
+     my $x = $npc->GetX();
+     #:: Create a scalar variable to store the Y position of the NPC
+     my $y = $npc->GetY();
+     #:: Match if the timer "position" has looped and the X and Y coordinates are outside the specified range
+     if ($timer eq "position" && ($x < -353 || $x > -109 || $y < -549 || $y > -310)) {
+          quest::shout("No! I must not leave the time chamber! If I do, I'll age and die!");
+          #:: Move the NPC back to the chamber
+          $npc->GMMove(-231.464005,-432.937469,202.375946,.125);
+     }
+}
+
+sub EVENT_DEATH_COMPLETE {
+     quest::stoptimer("position");
+}
+```
+
+## gmsay
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; message _(string)_, color_id _(int)_, send_to_world _(bool)_, guild_id _(uint32)_, minstatus _()_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sends a message to the client console if the parameters are met.  [Color](https://github.com/EQEmu/Server/wiki/Emote-Colors), Send to World, Guild ID, and Minimum Status are all optional, but Color defaults to 0 (white), Send to World defaults to 0 (false), and Minimum Status defaults to 80.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Send white text to all players in the current zone with an admin status of >= 80
+quest::gmsay("Text");
+#:: Send yellow (15) text to all players in the current zone with an admin status of >= 80
+quest::gmsay("Text", 15);
+#:: Send yellow (15) text to all players with an admin status of >= 80 in all zones
+quest::gmsay("Text", 15, 1);
+#:: Send yellow (15) text to all players with an admin status of >= 80 in all zones, who are in a guild with a Guild ID of 30
+quest::gmsay("Text", 15, 1, 30);
+#:: Send yellow (15) text to all players with an admin status of >= 0 in all zones, who are in a guild with a Guild ID of 30
+quest::gmsay("Text", 15, 1, 30, 0);
+```
+
+
 (Work in Progress)
 
 ```perl
-quest::forcedoorclose(int door_id, [bool alt_mode = 0])
-quest::forcedooropen(int door_id, [int alt_mode=0])
-quest::get_spawn_condition(string zone_short, [int instance_id], int condition_id)
-quest::getguildnamebyid(uint32 guild_id)
-quest::getinventoryslotid(string identifier)
-quest::getlevel(int type)
-quest::getplayerburiedcorpsecount(int character_id)
-quest::gettaskactivitydonecount(int task_id, int activity_id)
-quest::givecash(int copper, int silver, int gold, int platinum)
-quest::gmmove(float x, float y, float z)
-quest::gmsay(string message, [int color_id], [bool send_to_world = 0])
 quest::has_zone_flag(uint32 zone_id)
 quest::incstat(int stat_id, int value)
 quest::isdisctome(int item_id)
