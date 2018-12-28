@@ -2392,6 +2392,9 @@ quest::worldwidemarquee(uint32 color_id, uint32 priority, uint32 fade_in, uint32
 quest::write(string file_name, string message)
 quest::ze(int emote_color_id, string message)
 quest::zone(string zone_name)
+quest::GetInstanceIDByCharID(const char *zone, int16 version, uint32 char_id)
+quest::AssignToInstanceByCharID(uint16 instance_id, uint32 char_id)
+quest::RemoveFromInstanceByCharID(uint16 instance_id, uint32 char_id)
 ```
 
 ### **Conditionals**
