@@ -59,6 +59,7 @@
 * [[Item Sizes|Item Sizes]]
 * [[Languages]]
 * [[NATS Channels]]
+* [[Player Housing]]
 * [[Server Rules]]
 * [[Skills]]
 * [[Zones]]
