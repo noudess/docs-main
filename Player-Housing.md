@@ -23,11 +23,11 @@ This page has packet information from Live as of 12/28/2018. While it is likely 
 | Neighborhood ID                    | 4                        |                                                                          |
 | Neighborhood Name Length           | 4                        |                                                                          |
 | Neighborhood Name                  | Neighborhood Name Length | Not null terminated                                                      |
-| Guild ID                           | 4                        | May be all 0s if no guild is associated with this neighborhood           |
-| Unknown                            | 4                        | If Guild ID is not 0,0,0,0 then this is always 147,0,0,0                 |
-| Max Player Plots                   | 4                        | 71                                                                       |
+| Guild ID                           | 4                        | 0 if no guild is associated with this neighborhood, otherwise it is the Guild ID           |
+| Unknown                            | 4                        | If Guild ID is 0, this is also 0. If Guild ID is not 0, this is always 147,0,0,0                 |
+| Max Player Plots                   | 4                        | Always 71                                                                       |
 | Used Player Plots                  | 4                        |                                                                          |
-| Max Guild Plots                    | 4                        | 4                                                                        |
+| Max Guild Plots                    | 4                        | Always 4                                                                        |
 | Used Guild Plots                   | 4                        |                                                                          |
 
 Once the first neighborhood is parsed, the format repeats for the next Neighborhood ID -> Used Guild Plots. This continues until the last neighborhood is parsed.
