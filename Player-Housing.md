@@ -49,7 +49,7 @@ Once the first neighborhood is parsed, the format repeats for the next Neighborh
 | Network OpCode           | 2                        | 0x09                                                           |
 | Packet Sequence Number   | 2                        |                                                                |
 | Application OpCode       | 2                        | 0x125C (Possibly?)                                             |
-| Search Type              | 4                        | 0 when searching for a player or guild. 2 when clicking to view details of a specific neighborhood. |
+| Search Type              | 4                        | 0 when searching for a player or guild. 2 when clicking to view details of a specific neighborhood. 4 when inside a neighborhood and searching specific addresses. |
 | Neighborhood ID          | 4                        | 1 if searching for a player. The Neighborhood ID if clicking on a neighborhood entry. |
 | Unknown                  | 4                        | 0s
 | Neighborhood Search Criteria | 80                   | A neighborhood's name. 79 bytes plus 1 for the null terminator. |
