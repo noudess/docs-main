@@ -42,17 +42,20 @@ This page has packet information from Live as of 12/28/2018. While it is likely 
 
 Once the first neighborhood is parsed, the format repeats for the next Neighborhood ID -> Used Guild Plots. This continues until the last neighborhood is parsed.
 
-## Click on a neighborhood to get occupants (Client -> Server)
+## Searching for neighborhoods (or clicking on a specific one) (Client -> Server)
 
 | Name                     | Number of Bytes          | Description                                                    |
 |--------------------------|--------------------------|----------------------------------------------------------------|
 | Network OpCode           | 2                        | 0x09                                                           |
 | Packet Sequence Number   | 2                        |                                                                |
 | Application OpCode       | 2                        | 0x125C (Possibly?)                                             |
-| Unknown                  | 4                        | Always 2,0,0,0                                                 |
-| Neighborhood ID          | 4                       |                                                                |
-| Unknown                  | 212                      | 0s                                                             |
-| Unknown                  | 4                        | 1,1,191,0 ??? (Character ID?)                                  |
+| Search Type              | 4                        | 0 when searching for a player or guild. 2 when clicking to view details of a specific neighborhood. |
+| Neighborhood ID          | 4                        | 1 if searching for a player. The Neighborhood ID if clicking on a neighborhood entry. |
+| Unknown                  | 4                        | 0s
+| Neighborhood Search Criteria | 80                   | A neighborhood's name. 79 bytes plus 1 for the null terminator. |
+| Player Search Criteria   | 64                       | A player's name. 63 bytes plus 1 for the null terminator. |
+| Guild Search Criteria    | 64                       | A guild's name. 63 bytes plus 1 for the null terminator. |
+| Unknown                  | 2                        | Always 1,1                                  |
 
 ## Response to click to get neighborhood details (Server -> Client)
 
