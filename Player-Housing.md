@@ -14,8 +14,8 @@ This page has packet information from Live as of 12/28/2018. While it is likely 
 |------------------------|-----------------|-----------------------------------------|
 | Network OpCode         | 2               | 0x09                                    |
 | Packet Sequence Number | 2               |                                         |
-| Application OpCode     | 2               | 0x2254                                  |
-| Unknown                | 12              | Always 38,0,0,0,0,0,0,0,255,255,255,255 |
+| Application OpCode     | 2               | OP_ClickDoor - Live: 0x2254, RoF2: 0x3A8F |
+| Unknown                | 12              | Live: 38,0,0,0,0,0,0,0,255,255,255,255, RoF2: 77,0,0,0,0,0,0,0,255,255,255,255 |
 | Unknown                | 4               | Varies                                  |
 
 ## Neighborhood List (Server -> Client)
