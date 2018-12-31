@@ -8,6 +8,16 @@ This page has packet information from Live as of 12/28/2018. While it is likely 
 
 [TODO: Add image of neighborhood search window]
 
+## Click on door to view Neighborhood List (Client -> Server)
+
+| Name                   | Number of Bytes | Description                             |
+|------------------------|-----------------|-----------------------------------------|
+| Network OpCode         | 2               | 0x09                                    |
+| Packet Sequence Number | 2               |                                         |
+| Application OpCode     | 2               | 0x2254                                  |
+| Unknown                | 12              | Always 38,0,0,0,0,0,0,0,255,255,255,255 |
+| Unknown                | 4               | Varies                                  |
+
 ## Neighborhood List (Server -> Client)
 
 | Name                               | Number of Bytes          | Description                                                              |
@@ -15,7 +25,7 @@ This page has packet information from Live as of 12/28/2018. While it is likely 
 | Network OpCode                     | 2                        | 0x0D                                                                     |
 | Packet Sequence Number             | 2                        | Identifies order of fragments                                            |
 | Total length of combined fragments | 3                        | Total size of all fragments. This is only present in the first fragment. |
-| Application OpCode                 | 2                        | 0x125c (Possibly?)                                                       |
+| Application OpCode                 | 2                        | 0x125C (Possibly?)                                                       |
 | Unknown                            | 4                        | An id? Different across servers                                          |
 | Unknown                            | 5                        | Always 6,0,0,0,0                                                         |
 | Total # of Neighborhoods           | 2                        |                                                                          |
@@ -38,7 +48,7 @@ Once the first neighborhood is parsed, the format repeats for the next Neighborh
 |--------------------------|--------------------------|----------------------------------------------------------------|
 | Network OpCode           | 2                        | 0x09                                                           |
 | Packet Sequence Number   | 2                        |                                                                |
-| Application OpCode       | 2                        | 0x125c (Possibly?)                                             |
+| Application OpCode       | 2                        | 0x125C (Possibly?)                                             |
 | Unknown                  | 4                        | Always 2,0,0,0                                                 |
 | Neighborhood ID          | 4                       |                                                                |
 | Unknown                  | 212                      | 0s                                                             |
@@ -63,4 +73,4 @@ Once the first neighborhood is parsed, the format repeats for the next Neighborh
 
 If # of Players is greater than 0, the fields Player Name Length and Player Name repeat. The same is true for # of Guilds.
 
-TODO: Click action to display Neighborhood list, plus in-zone clicks for the spring, purchasing a property, placing items in a property, etc.
+TODO: In-zone clicks for the spring, purchasing a property, placing items in a property, identifying RoF opcodes, etc.
