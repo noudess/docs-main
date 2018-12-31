@@ -8,7 +8,7 @@ This page has packet information from Live as of 12/28/2018. While it is likely 
 
 [TODO: Add image of neighborhood search window]
 
-## Neighborhood List
+## Neighborhood List (Server -> Client)
 
 | Name                               | Number of Bytes          | Description                                                              |
 |------------------------------------|--------------------------|--------------------------------------------------------------------------|
@@ -32,4 +32,35 @@ This page has packet information from Live as of 12/28/2018. While it is likely 
 
 Once the first neighborhood is parsed, the format repeats for the next Neighborhood ID -> Used Guild Plots. This continues until the last neighborhood is parsed.
 
-TODO: Document click event that retrieves list, click to get neighborhood entry details, response to click on neighborhood entry (have it, need to write it up), plus ALL of the rest. =P
+## Click on a neighborhood to get occupants (Client -> Server)
+
+| Name                     | Number of Bytes          | Description                                                    |
+|--------------------------|--------------------------|----------------------------------------------------------------|
+| Network OpCode           | 2                        | 0x09                                                           |
+| Packet Sequence Number   | 2                        |                                                                |
+| Application OpCode       | 2                        | 0x125c (Possibly?)                                             |
+| Unknown                  | 4                        | Always 2,0,0,0                                                 |
+| Neighborhood ID          | 4                       |                                                                |
+| Unknown                  | 212                      | 0s                                                             |
+| Unknown                  | 4                        | 1,1,191,0 ??? (Character ID?)                                  |
+
+## Response to click to get neighborhood details (Server -> Client)
+
+| Name                   | Number of Bytes    | Description         |
+|------------------------|--------------------|---------------------|
+| Network OpCode         | 2                  | 0x09                |
+| Packet Sequence Number | 2                  |                     |
+| Application OpCode     | 2                  | 0x125C (Possibly?)  |
+| Unknown                | 4                  | 173,153,9,0         |
+| Unknown                | 1                  | 10                  |
+| Unknown                | 4                  | 2,0,0,0             |
+| # of Players           | 2                  |                     |
+| Player Name Length     | 4                  |                     |
+| Player Name            | Player Name Length | Not null terminated |
+| # of Guilds            | 2                  |                     |
+| Guild ID               | 4                  |                     |
+| Guild Terminator       | 4                  | 147,0,0,0           |
+
+If # of Players is greater than 0, the fields Player Name Length and Player Name repeat. The same is true for # of Guilds.
+
+TODO: Click action to display Neighborhood list, plus in-zone clicks for the spring, purchasing a property, placing items in a property, etc.
