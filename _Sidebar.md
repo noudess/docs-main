@@ -38,7 +38,7 @@
 * [[Lua|Lua API]]
 * [[Perl|Perl API]]
 * [[Data Buckets]]
-* [[Exporting Functions]]
+* [[Exporting Quest API Calls]]
 
 ---
 **Reference Lists**
