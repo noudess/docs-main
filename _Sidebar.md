@@ -38,8 +38,6 @@
 * [[Lua|Lua API]]
 * [[Perl|Perl API]]
 * [[Data Buckets]]
-* [[Exporting Quest API Calls]]
-
 ---
 **Reference Lists**
 * [[Alternate Currencies]]
