@@ -38,6 +38,7 @@
 * [[Lua|Lua API]]
 * [[Perl|Perl API]]
 * [[Data Buckets]]
+* [[Exporting Functions]]
 
 ---
 **Reference Lists**
