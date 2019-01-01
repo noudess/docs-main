@@ -2,6 +2,8 @@ Player Housing was introduced in the House of Thule expansion. It can be accesse
 
 There is a single zone for all neighborhood instances (Sunrise Hills). House zones are separate and appear to be spread across a variety of .zon files (e.g. phinterior1a1.zon) based on the type of home purchased.
 
+The Place button in the Real Estate Items window is enabled on a zone-by-zone basis (probably). It is likely part of one of the zoning packets. For example, if you have the window open and click on a placeable item, the button remains disabled in the Guild Lobby. Repeat the process in a neighborhood or inside a residence and the button becomes enabled.
+
 To my knowledge, no work has been done to add player housing to EQEMU. If it has, it hasn't been made public as no emu server has this capability as far as I am aware.
 
 This page has packet information from Live as of 12/28/2018. While it is likely that the OpCodes have changed since House of Thule was released, my hope is that the structure of each packet has remained largely unchanged.
