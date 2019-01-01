@@ -1,6 +1,6 @@
 Player Housing was introduced in the House of Thule expansion. It can be accessed from the Guild Lobby and allows for players to purchase houses and place items in their houses. Houses do require upkeep to maintain.
 
-There is a single zone for all neighborhood instances (Sunrise Hills).
+There is a single zone for all neighborhood instances (Sunrise Hills). House zones are separate and appear to be spread across a variety of .zon files (e.g. phinterior1a1.zon) based on the type of home purchased.
 
 To my knowledge, no work has been done to add player housing to EQEMU. If it has, it hasn't been made public as no emu server has this capability as far as I am aware.
 
