@@ -104,4 +104,17 @@ If # of Players is greater than 0, the fields Player Name Length and Player Name
 | Unknown                | 4               | 0                                |
 | Unknown                | 7               | 5,0,0,0,0,0,0                    |
 
+## Real Estate Items window, Click on Trophies button (Client -> Server)
+Possible new opcode: 0xA02F
+Length: 342 bytes
+
+| Name                   | Number of Bytes | Description                      |
+|------------------------|-----------------|----------------------------------|
+| Network OpCode         | 2               | 0x09                             |
+| Packet Sequence Number | 2               |                                  |
+| Application OpCode     | 2               | 0xA02F                           |
+| Unknown                | 4               | 0                    |
+| Unknown                | 4               | 1                    |
+| Unknown                | 328             | 0                    |
+
 TODO: In-zone clicks for the spring, purchasing a property, placing items in a property, identifying RoF opcodes, updating with additional vendors, fixing Z for existing vendors (some are floating), adding house interior zones (first attempt results in a client crash), etc.
