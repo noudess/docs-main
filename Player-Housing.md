@@ -15,8 +15,15 @@ This page has packet information from Live as of 12/28/2018. While it is likely 
 | Network OpCode         | 2               | 0x09                                    |
 | Packet Sequence Number | 2               |                                         |
 | Application OpCode     | 2               | OP_ClickDoor<br/>- Live: 0x2254<br/>- RoF2: 0x3A8F |
-| Unknown                | 12              | Live: 38,0,0,0,0,0,0,0,255,255,255,255<br/>RoF2: 77,0,0,0,0,0,0,0,255,255,255,255 |
-| Unknown                | 4               | Varies                                  |
+| Door Id                | 1               | 77 for the neighborhood "door" gate in Guild Lobby |
+| Unknown                | 1               | 0 |
+| Unknown                | 1               | 0 |
+| Unknown                | 1               | 0 |
+| picklockskill          | 1               | 0 |
+| Unknown5               | 3               | 0 |
+| Item Id                | 4               | 255,255,255,255 |
+| Player Id              | 2               |                                         |
+| Unknown                | 2               |                                         |
 
 ## Neighborhood List (Server -> Client)
 
@@ -76,7 +83,7 @@ Once the first neighborhood is parsed, the format repeats for the next Neighborh
 
 If # of Players is greater than 0, the fields Player Name Length and Player Name repeat. The same is true for # of Guilds.
 
-## Click on a property marker (this is not fully identified yet)
+## Click on a property marker (Server -> Client) (this is not fully identified yet)
 
 | Name                   | Number of Bytes | Description                      |
 |------------------------|-----------------|----------------------------------|
@@ -97,4 +104,4 @@ If # of Players is greater than 0, the fields Player Name Length and Player Name
 | Unknown                | 4               | 0                                |
 | Unknown                | 7               | 5,0,0,0,0,0,0                    |
 
-TODO: In-zone clicks for the spring, purchasing a property, placing items in a property, identifying RoF opcodes, etc.
+TODO: In-zone clicks for the spring, purchasing a property, placing items in a property, identifying RoF opcodes, updating with additional vendors, fixing Z for existing vendors (some are floating), adding house interior zones (first attempt results in a client crash), etc.
