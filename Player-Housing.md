@@ -76,4 +76,25 @@ Once the first neighborhood is parsed, the format repeats for the next Neighborh
 
 If # of Players is greater than 0, the fields Player Name Length and Player Name repeat. The same is true for # of Guilds.
 
+## Click on a property marker (this is not fully identified yet)
+
+| Name                   | Number of Bytes | Description                      |
+|------------------------|-----------------|----------------------------------|
+| Network OpCode         | 2               | 0x09                             |
+| Packet Sequence Number | 2               |                                  |
+| Application OpCode     | 2               | 0x2254                           |
+| Neighborhood Id        | 4               | Need to confirm                  |
+| Unknown                | 7               |                                  |
+| Unknown                | 4               | Not sure yet                     |
+| Unknown                | 4               | Not sure yet                     |
+| Unknown                | 4               | 123,0,0,0 (may not be constant)  |
+| Unknown                | 4               | 107,0,0,0                        |
+| Unknown                | 21              | 0                                |
+| Unknown                | 4               | 45,0,0,0                         |
+| Neighborhood Name      | 45              | At least 45, not null terminated |
+| Unknown                | 8               | 0                                |
+| Unknown                | 4               | 105,0,0,0                        |
+| Unknown                | 4               | 0                                |
+| Unknown                | 7               | 5,0,0,0,0,0,0                    |
+
 TODO: In-zone clicks for the spring, purchasing a property, placing items in a property, identifying RoF opcodes, etc.
