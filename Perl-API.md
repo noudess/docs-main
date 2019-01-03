@@ -2283,23 +2283,253 @@ quest::gmsay("Text", 15, 1, 30);
 quest::gmsay("Text", 15, 1, 30, 0);
 ```
 
+## has_zone_flag
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; zone_id _(uint32)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Used to verify that a client character has the required zone flag for the specified zone.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+sub EVENT_CLICKDOOR {
+     if ($doorid == 12) {
+          if (quest::has_zone_flag(200) != 1) {  #:: Returns bool
+               quest::set_zone_flag(200);
+          }
+     }
+}
+```
+
+## incstat
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; stat_id _(int)_, value _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Increases the specified stat by double the specified value.  Stat IDs: STR = 0, STA = 1, AGI = 2, DEX = 3, INT = 4, WIS = 5, CHA = 6. Note: if you're increasing stats, the client will have to zone to see the effect.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Increase STR by 20
+quest::incstat(0, 10);
+``` 
+
+## isdisctome
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; item_id _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Used to check if the specified item, by Item ID, is a discipline tome.  You likely have a plugin for this (plugin::try_tome_handins).
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+sub EVENT_ITEM {
+     quest::traindisc($item1) if (quest::isdisctome($item1));
+     quest::traindisc($item2) if (quest::isdisctome($item2));
+     quest::traindisc($item3) if (quest::isdisctome($item3));
+     quest::traindisc($item4) if (quest::isdisctome($item4));
+}
+```
+
+## isdooropen
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; door_id _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Checks to see if the specified door is open.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+sub EVENT_CLICKDOOR {
+     my $doorcheck = quest::isdooropen(41);  #:: Returns bool
+     if ($doorid == 41 && $doorcheck == 0) {
+          quest::forcedooropen(41);
+     }
+}
+```
+
+## istaskaappropriate
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; task_id _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Used to see if a task is set for the appropriate level for the client character who initiated the event.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Check if task 200 is appropriate
+quest::istaskaappropriate(200);  #:: Returns bool
+```
+
+## istaskactive
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; task_id _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Used to determine if a task is active, by Task ID.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Check if task 212 is active
+quest::istaskactive(212); #:: Returns bool
+```
+
+## istaskactivityactive
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; task_id _(int)_, activity_id _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Used to determine if a task activity is active, by Task ID and Activity ID.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Check if Activity 9 of Task 212 is active 
+quest::istaskactivityactive(212, 9); #:: Returns bool
+```
+
+## istaskcompleted
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; task_id (int)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Used to determine if a task is completed, by Task ID.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Check if task 212 is completed
+quest::istaskcompleted(212); #:: Returns bool
+```
+
+## istaskenabled
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; task_id (int)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Used to determine if a task is enabled, by Task ID.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Check if task 212 is enabled
+quest::istaskenabled(212); #:: Returns bool
+```
+
+## itemlink
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; item_id _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Used to send a link of the specified item, by Item ID.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Send an item link for a 1001 - Cloth Cap
+quest::itemlink(1001);
+```
+
+## lasttaskinset
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; task_set _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Returns the last task in the specified Task Set.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Find the Task ID of the last task in Task Set 200
+quest::lasttaskinset(200); #:: Returns int
+```
+
+## level
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; new_level _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sets the level to the specified new level for the client character that triggered the event.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+sub EVENT_SAY {
+     if ($text=~/level/i) {
+          #:: Match if user's level is 20 or under
+          if ($ulevel <= 20) {
+               #:: Give the player one more level
+               quest::level($ulevel+1);
+          }
+          elsif ($ulevel >= 21) {
+               $npc->CastSpell(808, $userid);
+               quest::say("Begone!");
+          }
+     }
+}
+```
+
+## me
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; message _(string)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sends an emote without a name.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+quest::me("This creature has no need for your money.");
+```
 
 (Work in Progress)
 
 ```perl
-quest::has_zone_flag(uint32 zone_id)
-quest::incstat(int stat_id, int value)
-quest::isdisctome(int item_id)
-quest::isdooropen(int door_id)
-quest::istaskaappropriate(int task_id)
-quest::istaskactive(int task_id)
-quest::istaskactivityactive(int task_id, int activity_id)
-quest::istaskcompleted(int task_id)
-quest::istaskenabled(int task_id)
-quest::itemlink(int item_id)
-quest::lasttaskinset(int task_set)
-quest::level(int new_level)
-quest::me(string message)
 quest::movegrp(int zone_id, float x, float y, float z)
 quest::movepc(int zone_id, float x, float y, float z [float heading])
 quest::moveto(float x, float y, float z, [float heading], [bool save_guard_location])
