@@ -2527,18 +2527,196 @@ sub EVENT_SAY {
 quest::me("This creature has no need for your money.");
 ```
 
+## movegrp
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; zone_id _(int)_, x _(float)_, y _(float)_, z _(float)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Moves the group of the client character that triggered the event to the specified Zone, by Zone ID, to the location specified.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Match text for "we are ready", case insensitive
+if ($text=~/We are ready/i) {
+     #:: Move the group to The Plane of Nightmares (ponightmare) at X=1194, Y=1121, Z=208
+     quest::movegrp(204,1194,1121,280); 
+}
+```
+
+## movepc
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; zone_id _(int)_, x _(float)_, y _(float)_, z _(float)_, heading _(float)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Moves the client character that triggered the event to the specified zone, by Zone ID, at the specified location.  Heading is optional, but will default to 0 (North).
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Match text for "travel to butcherblock", case insensitive
+if ($text=~/travel to butcherblock/i) {
+     #:: Move the character to Butcherblock Mountains (butcher), at X=3168.92, Y=851.92, Z=11.66--the Southern dock
+     quest::movepc(68,3168.92,851.92,11.66);
+}
+```
+
+## moveto
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x _(float)_, y _(float)_, z _(float)_, heading _(float)_, save_guard_location _(bool)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Used to move the NPC to the specified location.  Heading and Save Guard Location are optional.  Heading will default to 0 (North), and Save Guard Location will also default to 0, causing the NPC to path back.  Set Save Guard Location to 1 to make the NPC stay at the moveto location.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+sub EVENT_ITEM {
+     #:: Match a 12278 - Abandoned Orc Shovel
+     if (plugin::takeItems(12278 => 1)) {
+          #:: 0=Stand, 1=Sit, 2=Duck, 3=Feign Death, 4=Kneel
+          $npc->SetAppearance(0);
+          #:: Move to the specified location and guard 
+          quest::moveto(-395.87, 807.04, 70.53, 0, 1);
+     }
+     #:: Return unused items
+     plugin::returnUnusedItems();
+}
+```
+
+## nexttaskinset
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; task_set _(int)_, task_id _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Returns the next task in the specified Task Set that comes after the specified Task ID.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+sub EVENT_SAY {
+     #:: Create a scalar variable to store a task integer
+     $task = quest::activespeaktask();
+     #:: Match if there is an active task to speak to the NPC
+     if ($task != 0) {
+          #:: Match if there are no active tasks for the current speaking task
+          if (!quest::istaskactive($task)) {
+               #:: Disable the current speaking task
+               quest::disabletask($task);
+               #:: Match if the current speaking task is NOT the last task in the Task Set
+               if ($task != quest::lasttaskinset(200)) {
+                    quest::say("Well done, I have another task if you are willing.");
+                    #:: Enable the next task in Task Set 200
+                    quest::enabletask(quest::nexttaskinset(200, $task));
+               }
+               else {
+                    quest::say("Thank you for cleansing Qeynos Hills!");
+               }
+          }
+     }
+}
+```
+
+## npcfeature
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; feature _(string)_, value _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Allows you to temporarily change the specified feature on the NPC to the specified value.  Allowable features are:  race, gender, texture, helm, haircolor, beardcolor, eyecolor1, eyecolor2, hair, face, beard, heritage, tatoo, details, and size.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Change the NPC's size to 10
+quest::npcfeature("size", 10);
+```
+
+## npcgender
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; gender_id _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Used to temporarily change the gender of the NPC as specified:  0 = Male, 1 = Female, 2 = Neuter.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Change the NPC's gender to female
+quest::npcgender(1);
+```
+
+## npcrace
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; race_id _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Used to temporarily change an NPC's [Race](https://github.com/EQEmu/Server/wiki/Race-Types).
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Change the NPC's Race to Golem (17)
+quest::npcrace(17);
+```
+
+## npcsize
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Used to temporarily change the NPC's size.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Change the NPC's size to 17
+quest::npcsize(17);
+```
+
+## npctexture
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; texture_id _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Used to temporarily change the NPC's texture.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Change the NPC's texture to 2
+quest::npctexture(2);
+```
+
 (Work in Progress)
 
 ```perl
-quest::movegrp(int zone_id, float x, float y, float z)
-quest::movepc(int zone_id, float x, float y, float z [float heading])
-quest::moveto(float x, float y, float z, [float heading], [bool save_guard_location])
-quest::nexttaskinset(int task_set, int task_id)
-quest::npcfeature(string feature [race|gender|texture|helm|haircolor|beardcolor|eyecolor1|eyecolor2|hair|face|beard|heritage|tatoo|details|size], int value)
-quest::npcgender(int gender_id)
-quest::npcrace(int race_id)
-quest::npcsize(int size)
-quest::npctexture(int texture_id)
 quest::pause(int duration-ms)
 quest::permaclass(int class_id)
 quest::permagender(int gender_id)
