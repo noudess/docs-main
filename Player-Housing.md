@@ -8,6 +8,10 @@ To my knowledge, no work has been done to add player housing to EQEMU. If it has
 
 This page has packet information from Live as of 12/28/2018. While it is likely that the OpCodes have changed since House of Thule was released, my hope is that the structure of each packet has remained largely unchanged.
 
+It looks like a single opcode (0x125C) is used for multiple packet types. At first I thought this was a code that caused a specific window to appear, but I've seen the same code used for the neighborhood search window (to select a specific neighborhood) and for the street search window inside a specific neighborhood. I have yet to see this code for other neighborhood or item placement actions.
+
+Packet captures specific to trophy data is blocked at the moment. None of my characters on live have trophies, and I think that's why I'm not seeing a response from the server. There's nothing to send back. Unless I can find someone with at least one trophy (ideally a guild and a personal one), I'll have to spend some time questing to get one.
+
 [TODO: Add image of neighborhood search window]
 
 ## Click on door to view Neighborhood List (Client -> Server)
@@ -34,7 +38,7 @@ This page has packet information from Live as of 12/28/2018. While it is likely 
 | Network OpCode                     | 2                        | 0x0D                                                                     |
 | Packet Sequence Number             | 2                        | Identifies order of fragments                                            |
 | Total length of combined fragments | 3                        | Total size of all fragments. This is only present in the first fragment. |
-| Application OpCode                 | 2                        | 0x125C (Possibly?)                                                       |
+| Application OpCode                 | 2                        | 0x5C12                                                       |
 | Unknown                            | 4                        | An id? Different across servers                                          |
 | Unknown                            | 5                        | Always 6,0,0,0,0                                                         |
 | Total # of Neighborhoods           | 2                        |                                                                          |
@@ -57,7 +61,7 @@ Once the first neighborhood is parsed, the format repeats for the next Neighborh
 |--------------------------|--------------------------|----------------------------------------------------------------|
 | Network OpCode           | 2                        | 0x09                                                           |
 | Packet Sequence Number   | 2                        |                                                                |
-| Application OpCode       | 2                        | 0x125C (Possibly?)                                             |
+| Application OpCode       | 2                        | 0x5C12                                             |
 | Search Type              | 4                        | 0 when searching for a player or guild.<br/>2 when clicking to view details of a specific neighborhood.<br/>4 when inside a neighborhood and searching specific addresses. |
 | Neighborhood ID          | 4                        | 1 if searching for a player. The Neighborhood ID if clicking on a neighborhood entry. |
 | Unknown                  | 4                        | 0s
@@ -72,7 +76,7 @@ Once the first neighborhood is parsed, the format repeats for the next Neighborh
 |------------------------|--------------------|---------------------|
 | Network OpCode         | 2                  | 0x09                |
 | Packet Sequence Number | 2                  |                     |
-| Application OpCode     | 2                  | 0x125C (Possibly?)  |
+| Application OpCode     | 2                  | 0x5C12 (Possibly?)  |
 | Unknown                | 4                  | 173,153,9,0         |
 | Unknown                | 1                  | 10                  |
 | Unknown                | 4                  | 2,0,0,0             |
@@ -91,7 +95,7 @@ If # of Players is greater than 0, the fields Player Name Length and Player Name
 |------------------------|-----------------|----------------------------------|
 | Network OpCode         | 2               | 0x09                             |
 | Packet Sequence Number | 2               |                                  |
-| Application OpCode     | 2               | 0x2254                           |
+| Application OpCode     | 2               | 0x5422                           |
 | Neighborhood Id        | 4               | Need to confirm                  |
 | Unknown                | 7               |                                  |
 | Unknown                | 4               | Not sure yet                     |
@@ -118,5 +122,11 @@ Length: 342 bytes
 | Unknown                | 4               | 0                    |
 | Unknown                | 4               | 1                    |
 | Unknown                | 328             | 0                    |
+
+## OP_NewZone - Matches the RoF2 NewZone_Struct, but has a few extra bytes and slightly different data
+- May not be specific to neighborhoods, will check this evening
+- May have identified a flag that could let the UI enable item placement, but not sure yet.
+
+[Filling this in offline now - will post later today]
 
 TODO: In-zone clicks for the spring, purchasing a property, placing items in a property, identifying RoF opcodes, updating with additional vendors, fixing Z for existing vendors (some are floating), adding house interior zones (first attempt results in a client crash), etc.
