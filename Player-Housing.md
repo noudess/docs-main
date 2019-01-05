@@ -123,10 +123,112 @@ Length: 342 bytes
 | Unknown                | 4               | 1                    |
 | Unknown                | 328             | 0                    |
 
-## OP_NewZone - Matches the RoF2 NewZone_Struct, but has a few extra bytes and slightly different data
-- May not be specific to neighborhoods, will check this evening
-- May have identified a flag that could let the UI enable item placement, but not sure yet.
+## OP_NewZone - phinterior3a3 (Server -> Client)
 
-[Filling this in offline now - will post later today]
+Matches the RoF2 NewZone_Struct, but 20 bytes of new data that comes after the Blooming member variable in the RoF2 struct.
+
+| Name                   		 | Number of Bytes | Description                      |
+|--------------------------------|-----------------|----------------------------------|
+| Network OpCode         		 | 2               | 0x09                             |
+| Packet Sequence Number 		 | 2               |                                  |
+| Application OpCode     		 | 2               | RoF2: 0x1795<br/>Live: 0x2F3B       |
+| CharName				 		 | 64              | |
+| Zone Short Name		 		 | 128             | |
+| Zone Long Name	    		 | 128             | |
+| Unknown326			 		 | 174             | All 0s.|
+| ztype			 		 		 | 1               | |
+| fog_red				 		 | 4               | |
+| fog_green				 		 | 4               | |
+| fog_blue				 		 | 4               | |
+| unknown507			 		 | 1               | |
+| fox_minclip				 	 | 4               | |
+| fog_maxclip				 	 | 4               | |
+| Gravity			 		     | 4               | |
+| TimeType			  			 | 1               | |
+| rain_chance				 	 | 4               | |
+| rain_duration				 	 | 4               | |
+| snow_chance				 	 | 4               | |
+| snow_duration				 	 | 4               | |
+| ZoneTimeZone			 	 	 | 1               | |
+| Sky			 			 	 | 1               | |
+| Unknown539		 			 | 1               | See if this changes across zones. |
+| WaterMidi			 			 | 4               | |
+| DayMidi			 			 | 4               | |
+| NightMidi			 			 | 4               | |
+| zone_exp_multiplier	 		 | 4               | |
+| safe_y			 		 	 | 4               | |
+| safe_x			 		 	 | 4               | |
+| safe_z			 		 	 | 4               | |
+| min_z			 		 		 | 4               | |
+| max_z			 		 		 | 4               | |
+| underworld			 		 | 4               | |
+| minclip			 			 | 4               | |
+| maxclip			 		 	 | 4               | |
+| ForageLow			 			 | 4               | |
+| ForageMedium			 		 | 4               | |
+| ForageHigh			 		 | 4               | |
+| FishingLow			 		 | 4               | |
+| FishingMedium			 		 | 4               | |
+| FishingHigh			 		 | 4               | |
+| sky_lock			 			 | 4               | |
+| graveyard_timer			 	 | 4               | |
+| scriptIDHour			 		 | 4               | |
+| scriptIDMinute				 | 4               | |
+| scriptIDTick			 		 | 4               | |
+| scriptIDOnPlayerDeath			 | 4               | |
+| scriptIDOnNPCDeath			 | 4               | |
+| scriptIDPlayerEnteringZone	 | 4               | |
+| scriptIDOnZonePop			 	 | 4               | |
+| scriptIDNPCLoot			 	 | 4               | |
+| scriptIDAdventureFailed		 | 4               | |
+| CanExploreTasks			 	 | 4               | |
+| UnknownFlag			 		 | 4               | This is set to 1 in a house. It's 0 on emu. Going to check non-placable zones to see if this changes. |
+| scriptIDOnFishing			 	 | 4               | |
+| scriptIDOnForage			 	 | 4               | |
+| zone_short_name2[32]			 | 32              | name of the housing file (e.g. phinterior3a3) |
+| WeatherString[32]			 	 | 32              | |
+| SkyString2[32]			 	 | 32              | |
+| SkyRelated2			 		 | 4               | |
+| WeatherString2[32]			 | 32              | |
+| WeatherChangeTime			 	 | 4               | |
+| Climate			 			 | 4               | |
+| NPCAggroMaxDist			 	 | 4               | |
+| FilterID			 			 | 4               | |
+| ZoneID			 			 | 2               | 205,2 Housing instance?|
+| ZoneInstance			 		 | 2               | |
+| ScriptNPCReceivedAnItem		 | 4               | |
+| bCheck			 			 | 4               | |
+| scriptIDSomething			 	 | 4               | |
+| scriptIDSomething2			 | 4               | |
+| scriptIDSOmething3			 | 4               | |
+| SuspendBuffs			 		 | 4               | |
+| LavaDamage			 		 | 4               | |
+| MinLavaDamage			 		 | 4               | |
+| bDisallowManaStone			 | 1               | |
+| bNoBind			 			 | 1               | |
+| bNoAttack			 			 | 1               | |
+| bNoCallOfHero			 		 | 1               | |
+| bNoFlux			 			 | 1               | |
+| bNoFear			 			 | 1               | |
+| fall_damage			 		 | 1               | |
+| unknown863			 		 | 1               | 0 |
+| FastRegenHP			 		 | 4               | 180 |
+| FastRegenMana			 		 | 4               | 180 |
+| FastRegenEndurance			 | 4               | 180 |
+| CanPlaceCampsite			 	 | 4               | Seen 2 |
+| CanPlaceGuildBanner			 | 4               | Seen 2 |
+| FogDensity			 		 | 4               | Seen 0.33 |
+| bAdjustGamma			 		 | 4               | |
+| TimeStringID			 		 | 4               | |
+| bNoMercenaries			 	 | 4               | |
+| FishingRelated			 	 | 4               | Seen -1 |
+| ForageRelated			 		 | 4               | Seen -1 |
+| bNoLevitate			 		 | 4               | |
+| Blooming			 			 | 4               | Seen 1 |
+| Unk916     			 		 | 4               | Seen 0 |
+| Unk920 					 	 | 4               | Seen 100 |
+| Unk924 				 		 | 4               | Seen 0 |
+| Unk928 				 		 | 4               | Seen 1 |
+| Unk932 				 		 | 4               | Seen 1 |
 
 TODO: In-zone clicks for the spring, purchasing a property, placing items in a property, identifying RoF opcodes, updating with additional vendors, fixing Z for existing vendors (some are floating), adding house interior zones (first attempt results in a client crash), etc.
