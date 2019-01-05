@@ -1,3 +1,6 @@
+- [Getting Started](#getting-started)
+- [Dissecting more Complex Spells](#dissecting-more-complex-spells)
+
 # Getting Started
 
 So you would like to understand spells?  It's a bit of a journey, so let's get started.
@@ -60,3 +63,140 @@ In the case of our Greater Healing spell, we see that the value for Formula in S
 ## Summary
 
 It's important to understand the concept that at least one [Spell Effect](https://github.com/EQEmu/Server/wiki/Spell-Effect-IDs) is in use for each spell.  Each spell effect has a number of parameters that may behave differently from one spell effect to the next, even though they occupy the same field in the database--pay close attention to the Base Value, Limit Value, and Max Value for the Spell Effect, as they can drastically change the behavior of a spell.  
+
+# Dissecting more Complex Spells
+
+Every spell that exists can be deciphered simply by following the guidelines as laid out above.  Let's look at a couple more spells to hone our skills.
+
+## Koadic's Endless Intellect
+
+Many players will remember the endless requests for KEI--players always needed more mana.  Let's examine the spell:
+
+**Slot** | **Effect ID** | **Effect Base Value** | **Max** | **Formula** 
+----- | ----- | ----- | ----- | ----- | 
+1 | 97 | 250 | 250 | 100 
+2 | 15 | 14 | 14 | 100 
+3 | 8 | 25 | 25 | 100 
+4 | 9 | 25 | 25 | 100 
+5 | 254 | 0 | 0 | 100 
+6 | 254 | 0 | 0 | 100 
+7 | 254 | 0 | 0 | 100 
+8 | 254 | 0 | 0 | 100 
+9 | 254 | 0 | 0 | 100 
+10 | 254 | 0 | 0 | 100 
+11 | 254 | 0 | 0 | 100 
+12 | 254 | 0 | 0 | 100 
+
+We see that slots 1 through 4 have something going on, and slots 5 through 12 are not being utilized.  Let's take a look at the parameters.
+
+### Spell Effects
+
+Cross reference the [Spell Effects](https://github.com/EQEmu/Server/wiki/Spell-Effect-IDs) table.
+
+Slot 1:  97 - SE_ManaPool:  Increase/Decrease max mana pool <br />
+Slot 2:  15 - SE_CurrentMana:  Direct +/- mana, duration allows for mana over time <br />
+Slot 3:   8 - SE_INT:  +/- INT <br />
+Slot 4:   9 - SE_WIS:  +/- WIS <br />
+
+### Effect Base Value
+
+Slot 1:  SE_ManaPool - +250 <br />
+Slot 2:  SE_CurrentMana - +14 <br />
+Slot 3:  SE_INT - +25 <br />
+Slot 4:  SE_WIS - +25 <br />
+
+### Max
+
+Slot 1:  SE_ManaPool - 250 <br />
+Slot 2:  SE_CurrentMana - 14 <br />
+Slot 3:  SE_INT - 25 <br />
+Slot 4:  SE_WIS - 25 <br />
+
+### Formula
+
+All slots use Formula 100.  When we analyze the [spell_effects.cpp](https://github.com/EQEmu/Server/blob/master/zone/spell_effects.cpp) source file, we see the corresponding formula establishes that the base value (result = ubase).  
+
+Since the Spell Effect Current Mana (SE_CurrentMana) allows for duration, we see that you will receive 14 mana per tick while the spell is active.  
+
+### Summary
+
+Koadic's Endless Intellect:
+
+**Slot** | **Description** 
+----- | ----- 
+1 | Increase Mana Pool by 250
+2 | Increase Mana by 14 per tick
+3 | Increase INT by 25
+4 | Increase WIS by 25
+
+## Protection of the Glades
+
+Most players will recall being a caster class and requesting POTG along with their KEI.  Let's take a look at the spell and find out why:
+
+**Slot** | **Effect ID** | **Effect Base Value** | **Max** | **Formula** 
+----- | ----- | ----- | ----- | ----- | 
+1 | 1 | 25 | 80 | 100 
+2 | 69 | 290 | 485 | 100 
+3 | 79 | 290 | 485 | 100 
+4 | 15 | 6 | 0 | 100 
+5 | 148 | 1 | 1081 | 201 
+6 | 148 | 69 | 2486 | 202
+7 | 254 | 0 | 0 | 100 
+8 | 254 | 0 | 0 | 100 
+9 | 254 | 0 | 0 | 100 
+10 | 254 | 0 | 0 | 100 
+11 | 254 | 0 | 0 | 100 
+12 | 254 | 0 | 0 | 100 
+
+We see that slots 1 through 6 have something going on, and slots 7 through 12 are not being utilized.  Let's take a look at the parameters.
+
+### Spell Effects
+
+Cross reference the [Spell Effects](https://github.com/EQEmu/Server/wiki/Spell-Effect-IDs) table.
+
+Slot 1:    1 - SE_ArmorClass:  +/- AC <br />
+Slot 2:   69 - SE_TotalHP: Increases Max HP (standard 'HP Buffs') <br />
+Slot 3:   79 - SE_CurrentHPOnce: Direct Damage/Healing <br />
+Slot 4:   15 - SE_CurrentMana: Direct +/- mana, duration allows for mana over time <br />
+Slot 5:  148 - SE_StackingCommand_Block:  Prevents buff from taking hold if criteria met. (SLOT = 'formula - 201')  Buff Stacking <br />
+Slot 6:  148 - SE_StackingCommand_Block:  Prevents buff from taking hold if criteria met. (SLOT = 'formula - 201')  Buff Stacking <br />
+
+### Effect Base Value
+
+Slot 1:  SE_ArmorClass - +25 <br />
+Slot 2:  SE_TotalHP - +290 <br />
+Slot 3:  SE_CurrentHPOnce - +290 (heal up the new-found reservoir of hit points) <br />
+Slot 4:  SE_CurrentMana - +6 (remember duration allows for mana over time) <br />
+Slot 5:  SE_StackingCommand_Block - 1 (block spells using SE_ArmorClass) <br />
+Slot 6:  SE_StackingCommand_Block - 69 (block spells using SE_TotalHP) <br />
+
+### Max
+
+Slot 1:  SE_ArmorClass - 80 <br />
+Slot 2:  SE_TotalHP - 485 <br />
+Slot 3:  SE_CurrentHPOnce - 485 <br />
+Slot 4:  SE_CurrentMana - 0 (not used) <br />
+Slot 5:  SE_StackingCommand_Block - Less than 1081 (block spells with less than 1081 AC addition)<br />
+Slot 6:  SE_StackingCommand_Block - Less than 2486 (block spells with less than 2486 HP addition)<br />
+
+
+### Formula
+
+All slots 1 through 4 use Formula 100.  When we analyze the [spell_effects.cpp](https://github.com/EQEmu/Server/blob/master/zone/spell_effects.cpp) source file, we see the corresponding formula establishes that the base value (result = ubase).  
+
+Since the Spell Effect Current Mana (SE_CurrentMana) allows for duration, we see that you will receive 6 mana per tick while the spell is active.  
+
+Slots 5 and 6, utilizing SE_StackingCommand_Block, will apply to the slot indicated by calculating 'formula - 201'.  So slot 5 applies to slot 1 (201 - 201 = 0, remember that computers count 0, 1, 2...), and slot 6 applies to slot 2 (202 - 201 = 1, remembering that computers count 0, 1, 2...).
+
+### Summary
+
+Protection of the Glades:
+
+**Slot** | **Description** 
+----- | ----- 
+1 | Increase Armor Class by 25 - 80
+2 | Increase Hit Points by 290 - 485
+3 | Increase Hit Points when cast by 290 - 485
+4 | Increase Mana by 6 per tick
+5 | Block new spell if slot 1 has AC effect less than 1081
+6 | Block new spell if slot 2 has increase HP effect less than 2486
