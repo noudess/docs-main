@@ -182,7 +182,7 @@ Matches the RoF2 NewZone_Struct, but 20 bytes of new data that comes after the B
 | scriptIDNPCLoot			 	 | 4               | |
 | scriptIDAdventureFailed		 | 4               | |
 | CanExploreTasks			 	 | 4               | |
-| UnknownFlag			 		 | 4               | This is set to 1 in a house. It's 0 on emu. Going to check non-placable zones to see if this changes. |
+| UnknownFlag			 		 | 4               | Appears to be 1 for neighborhood related zones, but setting this to 1 and sending to RoF2 did not enable the Place button in the client. |
 | scriptIDOnFishing			 	 | 4               | |
 | scriptIDOnForage			 	 | 4               | |
 | zone_short_name2[32]			 | 32              | name of the housing file (e.g. phinterior3a3) |
