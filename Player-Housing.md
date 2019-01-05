@@ -89,26 +89,31 @@ Once the first neighborhood is parsed, the format repeats for the next Neighborh
 
 If # of Players is greater than 0, the fields Player Name Length and Player Name repeat. The same is true for # of Guilds.
 
-## Click on a property marker (Server -> Client) (this is not fully identified yet)
+## Click on a property marker (Server -> Client) (this is further along, but still has some unknowns)
 
 | Name                   | Number of Bytes | Description                      |
 |------------------------|-----------------|----------------------------------|
 | Network OpCode         | 2               | 0x09                             |
 | Packet Sequence Number | 2               |                                  |
-| Application OpCode     | 2               | 0x5422                           |
-| Neighborhood Id        | 4               | Need to confirm                  |
-| Unknown                | 7               |                                  |
-| Unknown                | 4               | Not sure yet                     |
-| Unknown                | 4               | Not sure yet                     |
+| Application OpCode     | 2               | 0x5C12                           |
+| Unknown		         | 15              | |
+| Neighborhood ID		 | 4               |                                  |
+| Unknown				 | 4               | |
+| Unknown                | 4               | |
+| Guild ID				 | 4			   | |
 | Unknown                | 4               | 123,0,0,0 (may not be constant)  |
-| Unknown                | 4               | 107,0,0,0                        |
-| Unknown                | 21              | 0                                |
-| Unknown                | 4               | 45,0,0,0                         |
-| Neighborhood Name      | 45              | At least 45, not null terminated |
-| Unknown                | 8               | 0                                |
-| Unknown                | 4               | 105,0,0,0                        |
-| Unknown                | 4               | 0                                |
-| Unknown                | 7               | 5,0,0,0,0,0,0                    |
+| Unknown                | 12              | |
+| Street Address Length  | 4               | |
+| Street Address		 | Street Address Length | Not null terminated. |
+| Unknown Name Length	 | 3               | |
+| Unknown Value			 | Unknown Name Length | |
+| Owner Name Length 	 | 4               | |
+| Owner Name			 | Owner Name Length | |
+| Capacity				 | 4               | |
+| Vault					 | 4               | |
+| Pets					 | 4			   | |
+| Unknown				 | 4			   | |
+| Unknown				 | 1			   | |
 
 ## Real Estate Items window, Click on Trophies button (Client -> Server)
 Possible new opcode: 0xA02F
