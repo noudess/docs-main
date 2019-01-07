@@ -1,5 +1,11 @@
 - [Getting Started](#getting-started)
+    + [Spell Effects](#spell-effects)
+    + [Base Values](#base-values)
+    + [Max Values](#max-values)
+    + [Formula](#formula)
 - [Dissecting more Complex Spells](#dissecting-more-complex-spells)
+- [Understanding the Remaining Fields](#understanding-the-remaining-fields)
+    + [Reagents](#reagents)
 
 # Getting Started
 
@@ -200,3 +206,45 @@ Protection of the Glades:
 4 | Increase Mana by 6 per tick
 5 | Block new spell if slot 1 has AC effect less than 1081
 6 | Block new spell if slot 2 has increase HP effect less than 2486
+
+# Understanding the Remaining Fields
+
+A dizzying array of fields exists that have not been covered above.  Many of these fields are quite self-explanatory, such as the level at which each class can use the spell, the deities allowed to use the spell, cast-on messages, etc.  This section is meant to cover the remaining fields as questions arise about their functionality.  Remember to reference the information on [spells_new](https://github.com/EQEmu/Server/wiki/spells_new) found on this wiki, and the information contained in the [spdat.h](https://github.com/EQEmu/Server/blob/master/common/spdat.h) source file.
+
+## Reagents
+
+Spells that require reagents have items (by Item ID) listed in the components fields (component1, component2...component4).   Examples of such spells would be Elemental: Earth (default Spell ID 401), which requires Item ID 10015 - Malachite, or Diamondskin (default Spell ID 394), which requires Item ID 10028 - Peridot.  Some spells require a focus item, but do not consume the item when cast, such as Flame Lick (default Spell ID 239), which requires a 10307 - Fire Beetle Eye to cast, but does not consume it.  Note the relationship between the component fields, the component count fields, and the NoexpendReagent fields, which utilize slots--just like Spell Effects discussed above:
+
+**Slot** | **Component** | **Component Count** | **No Expend Reagent**
+----- | ----- | ----- | -----
+1 | ItemID | Count of the ItemID | Used as Focus item, or "Needed But Not Used"
+2 | ItemID | Count of the ItemID | Used as Focus item, or "Needed But Not Used"
+3 | ItemID | Count of the ItemID | Used as Focus item, or "Needed But Not Used"
+4 | ItemID | Count of the ItemID | Used as Focus item, or "Needed But Not Used"
+
+### Elemental: Earth
+
+**Slot** | **Component** | **Component Count** | **No Expend Reagent** | **Notes**
+----- | ----- | ----- | ----- | -----
+1 | 10015 | 1 | 6361 | Use 10015 - Malachite x1, focus with 6361 - Shovel of Ponz
+2 | -1 | 1 | -1 | Nothing
+3 | -1 | 1 | -1 | Nothing
+4 | -1 | 1 | -1 | Nothing
+
+### Diamondskin
+
+**Slot** | **Component** | **Component Count** | **No Expend Reagent** | **Notes**
+----- | ----- | ----- | ----- | -----
+1 | 10028 | 1 | -1 | Use 10028 - Peridot x1
+2 | -1 | 1 | -1 | Nothing
+3 | -1 | 1 | -1 | Nothing
+4 | -1 | 1 | -1 | Nothing
+
+### Flame Lick
+
+**Slot** | **Component** | **Component Count** | **No Expend Reagent** | **Notes**
+----- | ----- | ----- | ----- | -----
+1 | -1 | 1 | 10307 | Require a 10307 - Fire Beetle Eye to cast
+2 | -1 | 1 | -1 | Nothing
+3 | -1 | 1 | -1 | Nothing
+4 | -1 | 1 | -1 | Nothing
