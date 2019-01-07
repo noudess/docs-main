@@ -14,7 +14,9 @@ So you would like to understand spells?  It's a bit of a journey, so let's get s
 
 There are tens of thousands of records in your [spells_new](https://github.com/EQEmu/Server/wiki/spells_new) table, and making sense of them all can be a little daunting (at least at first).  
 
-Each spell has MANY fields related to it--and you're probably wondering what all of these fields do. 
+Each spell has MANY fields related to it--and you're probably wondering what all of these fields do. You may even be up against some [Client Limitations](https://github.com/EQEmu/Server/wiki/Client-Spell-ID-Limitations), or perhaps you've just discovered that AAs are actually spells!  Don't get too worked up!!   (╯°□°）╯彡 ┻━┻     
+
+We'll explore these topics below.
 
 ## Slots
 
@@ -63,7 +65,7 @@ So we have established that the Greater Healing spell is capable of changing cur
 
 ## Formula
 
-Formula values are integers that are used in coordination with the Spell Effect to determine its outcome as well.  Each Spell Effect can use a different formula, and those are found in the [spell_effects.cpp](https://github.com/EQEmu/Server/blob/master/zone/spell_effects.cpp) source file.  
+Formula values are integers that are used in coordination with the Spell Effect to determine its outcome as well.  Each Spell Effect can use a different formula, and those are found in the [spell_effects.cpp](https://github.com/EQEmu/Server/blob/master/zone/spell_effects.cpp) source file.  A wiki page also details those [Base Value Formulas](https://github.com/EQEmu/Server/wiki/Base-Value-Formulas) if you're not comfortable looking at the code.
 
 In the case of our Greater Healing spell, we see that the value for Formula in Slot 1 is 7 (formula1 field in your database).  Referencing the source, we find that the spell calc is Base Value + User Level * Formula.  If we assume that we are a level 20 Cleric, casting the Greater Healing spell:  140 + 20 * 7 = 280.  This of course assumes that there are no focus effects being taken into consideration.  If we are instead a level 29 Druid, we would hit the spell's max value:  140 + 29 * 7 = 343--which is greater than the 300 hit point Max Value.  As a result, the Druid would only heal 300 hit points using this spell.
 
@@ -121,7 +123,7 @@ Slot 4:  SE_WIS - 25 <br />
 
 ### Formula
 
-All slots use Formula 100.  When we analyze the [spell_effects.cpp](https://github.com/EQEmu/Server/blob/master/zone/spell_effects.cpp) source file, we see the corresponding formula establishes that the base value (result = ubase).  
+All slots use Formula 100.  When we analyze the [spell_effects.cpp](https://github.com/EQEmu/Server/blob/master/zone/spell_effects.cpp) source file, we see the corresponding formula establishes that the base value is used (result = ubase).  
 
 Since the Spell Effect Current Mana (SE_CurrentMana) allows for duration, we see that you will receive 14 mana per tick while the spell is active.  
 
@@ -130,7 +132,7 @@ Since the Spell Effect Current Mana (SE_CurrentMana) allows for duration, we see
 Koadic's Endless Intellect:
 
 **Slot** | **Description** 
------ | ----- 
+----- | --------- 
 1 | Increase Mana Pool by 250
 2 | Increase Mana by 14 per tick
 3 | Increase INT by 25
@@ -189,7 +191,7 @@ Slot 6:  SE_StackingCommand_Block - Less than 2486 (block spells with less than 
 
 ### Formula
 
-All slots 1 through 4 use Formula 100.  When we analyze the [spell_effects.cpp](https://github.com/EQEmu/Server/blob/master/zone/spell_effects.cpp) source file, we see the corresponding formula establishes that the base value (result = ubase).  
+All slots 1 through 4 use Formula 100.  When we analyze the [spell_effects.cpp](https://github.com/EQEmu/Server/blob/master/zone/spell_effects.cpp) source file, we see the corresponding formula establishes that the base value is used (result = ubase).  
 
 Since the Spell Effect Current Mana (SE_CurrentMana) allows for duration, we see that you will receive 6 mana per tick while the spell is active.  
 
@@ -210,7 +212,7 @@ Protection of the Glades:
 
 # Understanding the Remaining Fields
 
-A dizzying array of fields exists that have not been covered above.  Many of these fields are quite self-explanatory, such as the level at which each class can use the spell, the deities allowed to use the spell, cast-on messages, etc.  This section is meant to cover the remaining fields as questions arise about their functionality.  Remember to reference the information on [spells_new](https://github.com/EQEmu/Server/wiki/spells_new) found on this wiki, and the information contained in the [spdat.h](https://github.com/EQEmu/Server/blob/master/common/spdat.h) source file.
+A dizzying array of fields exists that have not been covered above.  Many of these fields are quite self-explanatory, such as the level at which each class can use the spell, the deities allowed to use the spell, cast-on messages, etc.  This section is meant to cover the remaining fields as questions arise about their functionality.  Remember to reference the information on [spells_new](https://github.com/EQEmu/Server/wiki/spells_new) found on this wiki, and the information contained in the [spdat.h](https://github.com/EQEmu/Server/blob/master/common/spdat.h) source file, as well as the other helpful wiki pages for [Base Value Formulas](https://github.com/EQEmu/Server/wiki/Base-Value-Formulas), [Spell Target Restrictions](https://github.com/EQEmu/Server/wiki/Spell-Target-Restrictions), [Spell Resist Types](https://github.com/EQEmu/Server/wiki/Spell-Resist-Types), and [Damage Shield Types](https://github.com/EQEmu/Server/wiki/damageshieldtypes). 
 
 ## Reagents
 
