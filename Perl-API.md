@@ -2833,19 +2833,190 @@ quest::playergender(0);
 quest::playerrace(1);
 ```
 
+## playersize
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; newsize _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Temporarily adjusts the size of the client character that triggered the event to the specified size.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Change size to 10
+quest::playersize(10);
+```
+
+## playertexture
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; texture_id _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Temporarily changes the texture of the client character that triggered the event to the specified texture.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Change texture to 2
+quest::playertexture(2);
+```
+
+## popup
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; window_title _(string)_, message _(string)_, popup_id _(int)_, buttons _(int)_, duration _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Used to create a popup window with the specified parameters. The parameters popup_id, buttons, and duration are optional.  Button parameters are:  0=OK button, 1=Yes/No buttons.  Setting duration to 0 results in a popup that will remain until dismissed.  
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+sub EVENT_ENTER {
+     #:: Popup window entitled "Teleport", Question: "Teleport to The Plane of Hate?", popup ID 666, Yes/No buttons, remain until dismissed
+     quest::popup('Teleport', 'Teleport to The Plane of Hate?', 666, 1, 0);
+}
+
+sub EVENT_POPUPRESPONSE {
+     if ($popupid == 666) {
+          #:: Teleport the player to The Plane of Hate
+          quest::movepc(186,-393,656,3);
+     }
+}
+```
+
+## pvp
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mode _(string)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Toggles the PVP setting for the client character that triggered the event.  String can be on, or off.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Turn pvp on
+quest::pvp("on");
+#:: Turn pvp off
+quest::pvp("off");
+```
+
+## qs_player_event
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; character_id _(int)_, message _(string)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Adds a record to table `qs_player_events` with the specified parameters.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+quest::qs_player_event($charid,"Triggered an event with this API call in it.")
+```
+
+## qs_send_query
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; query _(string)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Send a raw query to the QueryServ process.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+quest::qs_send_query("SELECT * FROM `qs_player_events` WHERE `event_desc` LIKE '%level%' LIMIT 0,1000;");
+```
+
+## rain
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; weather _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Changes the rainy weather to the specified setting:  0=none, 1=rain.  See also quest::snow().
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+sub EVENT_ZONE {
+     if ($name=~/turmoiltoad/i) {
+          #:: Turn on the rain for those left behind
+          quest::rain(1);
+     }
+}
+```
+
+## rebind
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; zone_id _(int)_, x _(float)_, y _(float)_, z _(float)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Binds the client character that triggered the event to the specified zone (by Zone ID) at the specified location.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Change bind point to Rivervale, X=0, Y=0, Z=3.13
+quest::rebind(19, 0.00, 0.00, 3.13);
+```
+
+## removetitle
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; title_set_id _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Removes the specified Title Set from the client character that triggered the event.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Remove Title Set 2 (prefix "Arbiter", suffix "Harbinger of the Old World")
+quest::removetitle(2);
+```
+
+## repopzone
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; None.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Repops the zone and re-enables spawn timers.
+
+```perl
+#:: Repop the zone
+quest::repopzone();
+```
+
 (Work in Progress)
 
 ```perl
-quest::playersize(int newsize)
-quest::playertexture(int texture_id)
-quest::popup(string window_title, string message, int popup_id, int buttons, int duration)
-quest::pvp(string mode [on|off])
-quest::qs_player_event(int character_id, string message)
-quest::qs_send_query(string query)
-quest::rain(int weather)
-quest::rebind(int zone_id, float x, float y, float z)
-quest::removetitle(int title_set_id)
-quest::repopzone()
 quest::resettaskactivity(int task_id, int activity_id)
 quest::respawn(int npc_type_id, int grid_id)
 quest::resume()
