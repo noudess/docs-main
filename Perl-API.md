@@ -1,33 +1,33 @@
-- [Beginners Guide To Perl](#beginners-guide-to-perl)
-- [Real Use Examples](#real-use-examples)
-- [How Perl Quests Are Loaded](#how-perl-quests-are-loaded)
+- [**Beginners Guide To Perl**](#beginners-guide-to-perl)
+- [**Real Use Examples**](#real-use-examples)
+    + [Conditionals](#--conditionals--)
+    + [Operators](#--operators--)
+    + [Text Response Example](#text-response-example)
+    + [Special Text Response Examples](#special-text-response-examples)
+    + [Using $npc->GetHateList();](#--using--npc--gethatelist-----)
+- [**How Perl Quests Are Loaded**](#how-perl-quests-are-loaded)
     + [NPC](#npc)
     + [Player](#player)
-- [Global Scripts](#global-scripts)
+- [**Global Scripts**](#global-scripts)
     + [Player](#player-1)
     + [NPC](#npc-1)
     + [Item](#item)
     + [Spell Scripts](#spell-scripts)
-- [Perl Sub Events](#perl-sub-events)
-  * [Text Response Example](#text-response-example)
-  * [Special Text Response Examples](#special-text-response-examples)
-- [Exported Variables](#exported-variables)
-- [General Quest API](#general-quest-api)
-    + [**Conditionals**](#--conditionals--)
-        * [**Using $npc->GetHateList();**](#--using--npc--gethatelist-----)
-      - [**Function Lists**](#--function-lists--)
-      - [[Inventory Slot Identifiers|Perl Inventory Slot Identifiers]]
-- [Client](#client)
-- [Corpse](#corpse)
-- [EntityList](#entitylist)
-- [Group](#group)
-- [Raid](#raid)
-- [Mob](#mob)
-- [NPC](#npc-2)
-- [Quest Items](#quest-items)
-- [Object](#object)
-- [Door](#door)
-- [Perl Debugging](#perl-debugging)
+- [**Perl Sub Events**](#perl-sub-events)
+- [**Exported Variables**](#exported-variables)
+- [**General Quest API**](#general-quest-api)
+- [**Function Lists**](#function-lists)
+    + [Client](#client)
+    + [Corpse](#corpse)
+    + [EntityList](#entitylist)
+    + [Group](#group)
+    + [Raid](#raid)
+    + [Mob](#mob)
+    + [NPC](#npc-2)
+    + [Quest Items](#quest-items)
+    + [Object](#object)
+    + [Door](#door)
+- [**Perl Debugging**](#perl-debugging)
 
 
 # Beginners Guide To Perl
@@ -37,9 +37,98 @@
 
 # Real Use Examples
 
-* Modifying NPC Stats (Example coming)
-* Get Item Stats (Example coming)
-* Get Spell Stats (Example coming)
+## **Conditionals**
+
+**Syntax**
+
+```perl
+if ($variable1 [operator] $variable2) {
+    quest::commands;
+}
+```
+
+**Example:**
+
+```perl
+if ($variable1 [operator] $variable2) {
+    quest::commands;
+}
+elsif ($variable1 [someotheroperator] $variable2) {
+    quest::commands;
+}
+else {
+    quest::commands;
+}
+```
+
+## Operators
+
+Note, special operators apply to string comparisons in Perl!
+
+```perl
+$1 == $2 # If variable $1 is the same as variable $2, carry on.
+$1 != $2 # If variable $1 is NOT the same as variable $2, carry on.
+$1 > $2 # If variable $1 is greater than variable $2, carry on.
+$1 < $2 # If variable $1 is less than variable $2, carry on.
+$1 >= $2 # If variable $1 is greater than or equal to variable $2, carry on.
+$1 <= $2 # If variable $1 is less than or equal to variable $2, carry on.
+$1 eq $2 # If string variable $1 is the same as string variable $2, carry on.
+$1 ne $2 # If string variable $1 is NOT the same as string variable $2, carry on.
+$1 =~ $2 # If string variable $1 contains/matches the string variable $2, carry on.
+```
+
+In this example, if the user is a smaller level than the mob the mob says "I'm a higher level than you!"
+
+```perl
+if ($ulevel < $mlevel) {
+	quest::say("I'm a higher level than you!");
+}
+if ($name ne "Joe") {
+	quest::say("I will only talk to joe!");
+}
+```
+
+## Text Response Example
+
+All speaking responses are included in a **$text** variable
+
+```perl
+if ($text=~/hail/i) # Note the /i. This means it is case-insensitive. It is always better to include this.
+if ($text=~/Hello/) # Would match "Hello", but not "hello".
+if ($text=~/hello/) # Would match "hello", but not "Hello".
+if ($text=~/hello/i) # Would match "Hello" and "hello".
+if ($text=~/me/) # Would match the "me" in "name", but not the "me" in "NAME".
+if ($text=~/\bme\b/) # Would not match the "me" in "name" or the "me" in "NAME". The "\b" means there must not be text next to the match so "me" must be by itself.
+if ($text=~/^me$/i) # Would only match if "me" is the only text said. The "^" tells what must be the first thing said and the "$" tells what must be the last thing.
+```
+
+## Special Text Response Examples
+
+These responses allow you to check for multiple strings within your text variable.
+
+```perl
+if ($text=~/Hail|Hi|Hello/i) # Will check if the text contains "Hail", "Hi", or "Hello".
+if ($text!~/Hail|Hi|Hello/i) # Will check if the text does not contain "Hail", "Hi", or "Hello".
+```
+
+## **Using $npc->GetHateList();**
+
+```perl
+sub EVENT_AGGRO_SAY {
+    if($text=~/hate/i) {
+        my @hatelist = $npc->GetHateList();
+        foreach $ent (@hatelist) {
+            my $h_ent = $ent->GetEnt();  # do not forget GetEnt() or the script halts!
+            my $h_dmg = $ent->GetDamage();
+            my $h_hate = $ent->GetHate();
+            if($h_ent) {
+                my $h_ent_name = $h_ent->GetCleanName();
+                quest::say("$h_ent_name is on my hate list with $h_hate hate and $h_dmg damage.");
+            }
+        }
+    }
+}
+```
 
 # How Perl Quests Are Loaded
 
@@ -182,29 +271,6 @@ A full list can always be found in the EQEmu source [https://github.com/EQEmu/S
 | [EVENT_WEAPON_PROC](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_weapon_proc) | When a weapon procs.
 | [EVENT_ZONE](https://github.com/EQEmu/Server/wiki/Perl-API---Perl-Sub-Event-Examples#event_zone) | When a player zones.
 
-## Text Response Example
-
-All speaking responses are included in a **$text** variable
-
-```perl
-if ($text=~/hail/i) # Note the /i. This means it is case-insensitive. It is always better to include this.
-if ($text=~/Hello/) # Would match "Hello", but not "hello".
-if ($text=~/hello/) # Would match "hello", but not "Hello".
-if ($text=~/hello/i) # Would match "Hello" and "hello".
-if ($text=~/me/) # Would match the "me" in "name", but not the "me" in "NAME".
-if ($text=~/\bme\b/) # Would not match the "me" in "name" or the "me" in "NAME". The "\b" means there must not be text next to the match so "me" must be by itself.
-if ($text=~/^me$/i) # Would only match if "me" is the only text said. The "^" tells what must be the first thing said and the "$" tells what must be the last thing.
-```
-
-## Special Text Response Examples
-
-These responses allow you to check for multiple strings within your text variable.
-
-```perl
-if ($text=~/Hail|Hi|Hello/i) # Will check if the text contains "Hail", "Hi", or "Hello".
-if ($text!~/Hail|Hi|Hello/i) # Will check if the text does not contain "Hail", "Hi", or "Hello".
-```
-
 # Exported Variables
 
 * A full list can always be found in the EQEmu source [https://github.com/EQEmu/Server/blob/master/zone/embparser.cpp](https://github.com/EQEmu/Server/blob/master/zone/embparser.cpp)
@@ -313,13 +379,12 @@ if ($text!~/Hail|Hi|Hello/i) # Will check if the text does not contain "Hail", "
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Assigns a group to an instance. 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
 ```perl
 #:: Create a scalar variable to store instance_id--GetInstanceID returns int
 my $Instance = quest::GetInstanceID($zonesn, $instanceversion); 
 quest::AssignGroupToInstance($Instance);
 ```
-
-
 
 ### AssignRaidToInstance 
 
@@ -332,6 +397,7 @@ quest::AssignGroupToInstance($Instance);
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Assigns a raid to an instance.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
 ```perl
 #:: Create a scalar variable to store instance_id--GetInstanceID returns int
 my $Instance = quest::GetInstanceID($zonesn, $instanceversion); 
@@ -349,6 +415,7 @@ quest::AssignRaidToInstance($Instance);
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Assigns a single player to an instance.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example**
+
 ```perl
 #:: Create a scalar variable to store instance_id--GetInstanceID returns int
 my $Instance = quest::GetInstanceID($zonesn, $instanceversion); 
@@ -365,6 +432,7 @@ quest::AssignToInstance($Instance);
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Returns one of the items listed in its arguments randomly.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
 ```perl
 #:: Choose a random reward: 1001 - Cloth Cap, 1004 - Cloth Shirt, 1011 - Cloth Pants
 quest::summonitem(quest::ChooseRandom(1001, 1004, 1011);
@@ -381,6 +449,7 @@ quest::summonitem(quest::ChooseRandom(1001, 1004, 1011);
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Creates an instance in the given zone using specified version and duration.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
 ```perl
 quest::CreateInstance("mirb", 50, 10800);
 ```
@@ -396,6 +465,7 @@ quest::CreateInstance("mirb", 50, 10800);
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Destroys the given instance. 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
 ```perl
 quest::DestroyInstance(50);
 ```
@@ -411,6 +481,7 @@ quest::DestroyInstance(50);
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Assigns the group leader's instance to a player 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
 ```perl
 #:: Zone 237 (mirb), instance 50
 quest::FlagInstanceByGroupLeader(237,50);
@@ -427,6 +498,7 @@ quest::FlagInstanceByGroupLeader(237,50);
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Assigns the raid leader's instance to a player
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
 ```perl
 #:: Zone 237 (mirb), instance 50
 quest::FlagInstanceByRaidLeader(237,50);
@@ -443,6 +515,7 @@ quest::FlagInstanceByRaidLeader(237,50);
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sets flymode for player where 0 = Off, 1 = On, 2 = Levitate. 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
 ```perl
  #:: Turn fly mode on
 quest::FlyMode(1);
@@ -459,6 +532,7 @@ quest::FlyMode(1);
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Returns a hash of character id and instance id
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
 ```perl
 #:: Instance ID 50
 quest::GetCharactersInInstance(50); #:: Returns 50,123456
@@ -475,6 +549,7 @@ quest::GetCharactersInInstance(50); #:: Returns 50,123456
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Returns the instance id of the given zone/verison.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example**
+
 ```perl
 #:: Create a scalar variable to store instance_id
 my $Instance = quest::GetInstanceID($zonesn, $instanceversion); #:: Returns uint16
@@ -492,6 +567,7 @@ quest::AssignToInstance($Instance);
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Returns the timer for the instance.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example**
+
 ```perl
 quest::GetInstanceTimer(); #:: Returns uint32
 ```
@@ -508,6 +584,7 @@ quest::GetInstanceTimer(); #:: Returns uint32
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Note: If you do not provide an instance_id in the method it defaults to instance id 0 and returns 0 for time remaining.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example**
+
 ```perl
 #:: Create a scalar variable to store instance_id
 my $Instance = quest::GetInstanceID($zonesn, $instanceversion); #:: Returns uint16
@@ -525,6 +602,7 @@ quest::GetInstanceTimerByID($Instance); #:: Returns timer int
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Returns the [Resist Type](https://github.com/EQEmu/Server/wiki/Resist-Types) of the specified spell.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example**
+
 ```perl
 quest::GetSpellResistType($spell_id); #:: Returns int
 ```
@@ -540,6 +618,7 @@ quest::GetSpellResistType($spell_id); #:: Returns int
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Returns the [Target Type](https://github.com/EQEmu/Server/wiki/Target-Types) of the specified spell.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example**
+
 ```perl
 quest::GetSpellTargetType($spell_id); #:: Returns int
 ```
@@ -555,6 +634,7 @@ quest::GetSpellTargetType($spell_id); #:: Returns int
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Returns unix time in seconds.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
 ```perl
 quest::GetTimeSeconds(); #:: Returns int
 ```
@@ -570,6 +650,7 @@ quest::GetTimeSeconds(); #:: Returns int
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Returns the zone id.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
 ```perl
 quest::GetZoneID($zonesn); #:: Returns int
 ```
@@ -585,6 +666,7 @@ quest::GetZoneID($zonesn); #:: Returns int
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Returns the long name of the zone.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
 ```perl
 quest::GetZoneLongName($zonesn); #:: Returns string
 ```
@@ -600,6 +682,7 @@ quest::GetZoneLongName($zonesn); #:: Returns string
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Returns true if the specified spell is beneficial.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
 ```perl
 quest::IsBeneficialSpell($spell_id); #:: Returns 0 or 1
 ```
@@ -615,6 +698,7 @@ quest::IsBeneficialSpell($spell_id); #:: Returns 0 or 1
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Returns true if the specified spell has the specified [Spell Effect](https://github.com/EQEmu/Server/wiki/Spell-Effect-IDs).
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
 ```perl
 #:: Check for Spell Effect 23 - Fear
 quest::IsEffectInSpell($spell_id, 23); #:: Returns 0 or 1
@@ -631,6 +715,7 @@ quest::IsEffectInSpell($spell_id, 23); #:: Returns 0 or 1
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Returns the running state--0 is walking, 1 is running.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
 ```perl
 quest::IsRunning(); #:: Returns 0 or 1
 ```
@@ -646,6 +731,7 @@ quest::IsRunning(); #:: Returns 0 or 1
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Makes the client learn a recipe.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
 ```perl
 #:: Teach recipe_id 2141 - Pickled Bixie
 quest::LearnRecipe(2141);
@@ -662,6 +748,7 @@ quest::LearnRecipe(2141);
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Returns the number of the specified item in stock at the specified merchant.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
 ```perl
 #:: Find out how many 12260 - Fuzzlecutter Formula 5000 are in stock at Ping_Fuzzlecutter (9133)
 quest::MerchantCountItem(9133, 12260); #:: Returns int
@@ -678,6 +765,7 @@ quest::MerchantCountItem(9133, 12260); #:: Returns int
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Changes the number of the specified items in stock, at the specified quantity, at the specified merchant.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
 ```perl
 #:: Make sure there is plenty of 12260 - Fuzzlecutter Formula 5000 in stock at Ping_Fuzzlecutter (9133)
 quest::MerchantSetItem(9133, 12260, 1000); #:: Quantity 1000
@@ -694,6 +782,7 @@ quest::MerchantSetItem(9133, 12260, 1000); #:: Quantity 1000
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Changes the specified [npc_types](https://github.com/EQEmu/Server/wiki/npc_types) stat of the specified NPC on the fly--changes are not saved to the npc_types in the DB.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
 ```perl
 #:: Adjust the runspeed to 1.25
 quest::modifynpcstat("runspeed", 1.25);
@@ -710,6 +799,7 @@ quest::modifynpcstat("runspeed", 1.25);
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Moves a player to the specified instance of the specified zone at the specified location and heading.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
 ```perl
 sub EVENT_CLICKDOOR {
     #:: Match door id 3: Frozen Nightmare (mirb) zone in
@@ -3088,77 +3178,7 @@ quest::AssignToInstanceByCharID(uint16 instance_id, uint32 char_id)
 quest::RemoveFromInstanceByCharID(uint16 instance_id, uint32 char_id)
 ```
 
-### **Conditionals**
-
-**Syntax**
-
-```perl
-if($variable1 [operator] $variable2) {
-    quest::commands;
-}
-```
-
-**Example:**
-
-```perl
-if($variable1 [operator] $variable2) {
-    quest::commands;
-}
-elsif($variable1 [someotheroperator] $variable2) {
-    quest::commands;
-}
-else {
-    quest::commands;
-}
-```
-
-Note, special operators apply to string comparisons in Perl!
-
-**Operators:**
-
-```perl
-$1 == $2 # If variable $1 is the same as variable $2, carry on.
-$1 != $2 # If variable $1 is NOT the same as variable $2, carry on.
-$1 > $2 # If variable $1 is greater than variable $2, carry on.
-$1 < $2 # If variable $1 is less than variable $2, carry on.
-$1 >= $2 # If variable $1 is greater than or equal to variable $2, carry on.
-$1 <= $2 # If variable $1 is less than or equal to variable $2, carry on.
-$1 eq $2 # If string variable $1 is the same as string variable $2, carry on.
-$1 ne $2 # If string variable $1 is NOT the same as string variable $2, carry on.
-$1 =~ $2 # If string variable $1 contains/matches the string variable $2, carry on.
-```
-
-In this example, if the user is a smaller level than the mob the mob says "I'm a higher level than you!"
-
-```perl
-if($ulevel < $mlevel) {
-	quest::say("I'm a higher level than you!");
-}
-if($name ne "Joe") {
-	quest::say("I will only talk to joe!");
-}
-```
-
-##### **Using $npc->GetHateList();**
-
-```perl
-sub EVENT_AGGRO_SAY {
-    if($text=~/hate/i) {
-        my @hatelist = $npc->GetHateList();
-        foreach $ent (@hatelist) {
-            my $h_ent = $ent->GetEnt();  # do not forget GetEnt() or the script halts!
-            my $h_dmg = $ent->GetDamage();
-            my $h_hate = $ent->GetHate();
-            if($h_ent) {
-                my $h_ent_name = $h_ent->GetCleanName();
-                quest::say("$h_ent_name is on my hate list with $h_hate hate and $h_dmg damage.");
-            }
-        }
-    }
-}
-```
-
-#### **Function Lists**
+# **Function Lists**
 
 *   Nearly every function for Perl can be found in the EQEmu source[https://github.com/EQEmu/Server/blob/master/zone/perl_mob.cpp](https://github.com/EQEmu/Server/blob/master/zone/perl_mob.cpp) 
 
