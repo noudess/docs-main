@@ -1,5 +1,5 @@
 * [NPC Special Attacks](https://github.com/EQEmu/Server/wiki/NPC-Special-Attacks)
-* Spells
+* [Spells](https://github.com/EQEmu/Server/wiki/Spells)
 * Power Source Reference
 * Task System
 * Command Reference -- Completed 31 July 2018; available at [[In Game Command Reference]]
