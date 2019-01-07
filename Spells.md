@@ -6,6 +6,7 @@
 - [Dissecting more Complex Spells](#dissecting-more-complex-spells)
 - [Understanding the Remaining Fields](#understanding-the-remaining-fields)
     + [Reagents](#reagents)
+    + [Buff Duration](#buff-duration)
 
 # Getting Started
 
@@ -248,3 +249,319 @@ Spells that require reagents have items (by Item ID) listed in the components fi
 2 | -1 | 1 | -1 | Nothing
 3 | -1 | 1 | -1 | Nothing
 4 | -1 | 1 | -1 | Nothing
+
+## Buff Duration
+
+Two fields impact the duration of buffs: buffduration (in ticks) and buffduration formula.  Understanding the formula allows you to calculate the duration of the buff.  The formula can be found in the [spells.cpp](https://github.com/EQEmu/Server/blob/master/zone/spells.cpp) source file.
+
+### Buff Duration Formula 0
+
+Not a buff!  This formula is used for instant spells.  Ex. [Greater Healing](http://lucy.allakhazam.com/spell.html?id=15&source=Live)
+
+### Buff Duration Formula 1
+
+**If your level is greater than 3:**
+
+Choose the lesser integer of the two values: Level ÷ 2, or the buffduration field.
+
+Example: [Heat Blood](http://lucy.allakhazam.com/spell.html?id=360&source=Live), Spell ID 360, buffduration field = 6.
+
+_As a level 10 NEC:_ 
+```
+Level ÷ 2 = X  
+10 ÷ 2 = X  
+Is X < 6?  
+Yes, 5 is less than 6
+Smallest Answer: 5 ticks
+```
+
+_As a level 28 SHD:_
+```
+Level ÷ 2 = X
+28 ÷ 2 = X
+Is X < 6?  
+No, 14 is greater than 6
+Smallest Answer: 6 ticks
+```
+
+**If your level is less than 3:**
+
+1 tick.
+
+### Buff Duration Formula 2
+
+**If your level is greater than 3:**
+
+Choose the lesser integer of the two values: Level ÷ 2 + 5, or the buffduration field.
+
+Example: [Root](http://lucy.allakhazam.com/spell.html?id=230&source=Live), Spell ID 230, buffduration field = 8.
+
+_As a level 4 WIZ:_ 
+```
+Level ÷ 2 + 5 = X  
+4 ÷ 2 + 5 = X  
+Is X < 8?  
+Yes, 7 is less than 8.
+Smallest Answer: 7 ticks
+```
+
+_As a level 34 NEC:_ 
+```
+Level ÷ 2 + 5= X  
+34 ÷ 2 + 5 = X  
+Is X < 8?  
+No, 19 is greater than 8
+Smallest Answer: 8 ticks
+```
+
+**If your level is less than 3:**
+
+6 ticks.
+
+### Buff Duration Formula 3
+
+Choose the lesser integer of the two values: Level x 30, or the buffduration field.
+
+Example:  [Invisibility](http://lucy.allakhazam.com/spell.html?id=42&source=Live), Spell ID 42, buffduration field = 200.
+
+_As a level 4 ENC:_ 
+```
+Level x 30 = X  
+4 x 30 = X  
+Is X < 200?  
+Yes, 120 is less than 200.
+Smallest Answer: 120 ticks
+```
+
+_As a level 16 WIZ:_ 
+```
+Level x 30 = X  
+16 x 30 = X  
+Is X < 200?  
+No, 480 is greater than 200.
+Smallest Answer: 200 ticks
+```
+
+### Buff Duration Formula 4
+
+50, unless buffduration is lower.
+
+Example: [Resurrection Sickness](http://lucy.allakhazam.com/spell.html?id=757&source=Live), Spell ID 757, buffduration field = 50.
+
+```
+buffduration = X
+Is X < 50?  
+No, they are the same.
+Smallest Answer: 50 ticks
+```
+
+Example: [Song of the Deep Seas](http://lucy.allakhazam.com/spell.html?id=1973&source=Live), Spell ID 1973, buffduration field = 25.
+
+```
+buffduration = X
+Is X < 50?  
+Yes, 25 is less than 50.
+Smallest Answer: 25 ticks
+```
+
+### Buff Duration Formula 5
+
+2, unless buffduration is lower.
+
+Example: [Flash of Light](http://lucy.allakhazam.com/spell.html?id=201&source=Live), Spell ID 201, buffduration field = 2.
+
+```
+buffduration = X
+Is X < 2?  
+No, they are the same.
+Smallest Answer: 2 ticks
+```
+
+Example:  [The Unspoken Word](http://lucy.allakhazam.com/spell.html?id=1545&source=Live), Spell ID 1545, buffduration field = 1.
+
+```
+buffduration = X
+Is X < 2?  
+Yes, 1 is less than 2.
+Smallest Answer: 1 ticks
+```
+
+### Buff Duration Formula 6
+
+Choose the lesser integer of the two values: Level ÷ 2 + 2, or the buffduration field.
+
+Example: [Drowsy](http://lucy.allakhazam.com/spell.html?id=270&source=Live), Spell ID 270, buffduration field = 35.
+
+_As a level 6 SHM:_ 
+```
+Level ÷ 2 + 2 = X  
+6 ÷ 2 + 2 = X  
+Is X < 35?  
+Yes, 5 is less than 35.
+Smallest Answer: 5 ticks
+```
+
+_As a level 70 SHM:_ 
+```
+Level ÷ 2 + 2 = X  
+70 ÷ 2 + 2 = X  
+Is X < 35?  
+No, 37 is greater than 35
+Smallest Answer: 35 ticks
+```
+
+### Buff Duration Formula 7
+
+Choose the lesser integer of the two values: Level, or the buffduration field.
+
+Example:  [Fear](http://lucy.allakhazam.com/spell.html?id=229&source=Live), Spell ID 229, buffduration field = 3.
+
+_As a level 2 NEC:_ 
+```
+Level = X  
+Is X < 3?  
+Yes, 2 is less than 3.
+Smallest Answer: 2 ticks
+```
+
+_As a level 12 SHD:_ 
+```
+Level = X  
+Is X < 3?  
+No, 12 is greater than 3.
+Smallest Answer: 3 ticks
+```
+
+### Buff Duration Formula 8
+
+Choose the lesser integer of the two values: Level + 10, or the buffduration field.
+
+Example:  [Vampiric Embrace](http://lucy.allakhazam.com/spell.html?id=359&source=Live), Spell ID 359, buffduration field = 75.
+
+_As a level 7 NEC:_ 
+```
+Level + 10 = X  
+7 + 10 = X
+Is X < 75?  
+Yes, 17 is less than 75.
+Smallest Answer: 17 ticks
+```
+
+_As a level 70 SHD:_ 
+```
+Level + 10 = X 
+70 + 10 = X 
+Is X < 75?  
+No, 80 is greater than 75.
+Smallest Answer: 75 ticks
+```
+
+### Buff Duration Formula 9
+
+Choose the lesser integer of the two values: 2 x Level + 10, or the buffduration field.
+
+Example:  [Ensnare](http://lucy.allakhazam.com/spell.html?id=512&source=Live), Spell ID 512, buffduration field = 140.
+
+_As a level 26 DRU:_ 
+```
+2 x Level + 10 = X  
+2 x 26 + 10 = X
+Is X < 140?  
+Yes, 62 is less than 140.
+Smallest Answer: 62 ticks
+```
+
+_As a level 70 RNG:_ 
+```
+2 x Level + 10 = X  
+2 x 70 + 10 = X
+Is X < 140?  
+No, 150 is greater than 140.
+Smallest Answer: 140 ticks
+```
+
+### Buff Duration Formula 10
+
+Choose the lesser integer of the two values: 3 x Level + 10, or the buffduration field.
+
+Example:  [Regeneration](http://lucy.allakhazam.com/spell.html?id=144&source=Live), Spell ID 144, buffduration field = 205.
+
+_As a level 34 DRU:_ 
+```
+3 x Level + 10 = X  
+3 x 34 + 10 = X
+Is X < 205?  
+Yes, 112 is less than 205.
+Smallest Answer: 112 ticks
+```
+
+_As a level 70 DRU:_ 
+```
+3 x Level + 10 = X  
+3 x 70 + 10 = X
+Is X < 205?  
+No, 220 is greater than 205.
+Smallest Answer: 205 ticks
+```
+
+### Buff Duration Formula 11
+
+Choose the lesser integer of the two values: 30 x (Level + 3), or the buffduration field.
+
+Example:  [See Invisible](http://lucy.allakhazam.com/spell.html?id=80&source=Live), Spell ID 80, buffduration field = 270.
+
+_As a level 4 WIZ:_ 
+```
+30 x (Level + 3) = X  
+30 x (4 + 3) = X
+Is X < 270?  
+Yes, 210 is less than 270.
+Smallest Answer: 210 ticks
+```
+
+_As a level 32 RNG:_ 
+```
+30 x (Level + 3) = X  
+30 x (32 + 3) = X
+Is X < 270?  
+No, 1050 is greater than 270.
+Smallest Answer: 270 ticks
+```
+
+### Buff Duration Formula 12
+
+**If your level is greater than 7:**
+
+Choose the lesser integer of the two values: Level ÷ 4, or the buffduration field.
+
+Used by some focuses and disciplines.
+
+**If your level is less than 7:**
+
+1 tick.
+
+### Buff Duration Formula 13
+
+Choose the lesser integer of the two values: 4 x Level + 10, or the buffduration field.
+
+Used by some poisons and wards.
+
+### Buff Duration Formula 14
+
+Choose the lesser integer of the two values: 5 x (Level + 2), or the buffduration field.
+
+Used by a ridiculous secretion.
+
+### Buff Duration Formula 15
+
+Choose the lesser integer of the two values: 10 x (Level + 10), or the buffduration field.
+
+Used by some potions and powerful spells.
+
+### Buff Duration Formula 50
+
+Permanent.  Used for permanent buffs that might get stripped due to other forces (IE casting when using [Perfected Invisibility](http://lucy.allakhazam.com/spell.html?id=13219&source=Live)).
+
+### Buff Duration Formula 51
+
+Permanent.  Used for auras and the like.
