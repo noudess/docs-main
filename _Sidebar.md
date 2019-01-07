@@ -90,7 +90,7 @@
 * [[Factions]]
 * [[Scaling|NPC Scaling]]
 
-**Spells**
+**[[Spells]]**
 * [[Base Value Formulas]]
 * [[Spell Groups]]
 * [[Spell Effect IDs]]
