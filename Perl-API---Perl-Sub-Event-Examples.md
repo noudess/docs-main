@@ -1154,7 +1154,7 @@ sub EVENT_POPUPRESPONSE {
 
 - When the client enters a mob's proximity and uses the appropriate text trigger supplied beneath this event. 
 
-Note that you must set quest::enable_proximity_say() and quest::set_proximity().
+Note that you must enable quest::set_proximity().
 
 ### Example
 
@@ -1162,19 +1162,18 @@ Note that you must set quest::enable_proximity_say() and quest::set_proximity().
 
 ```perl
 sub EVENT_SPAWN {
-	#:: Set the proximity bounds around the NPC on spawn, 30 units across
-	$x = $npc->GetX();
-	$y = $npc->GetY();
-	quest::set_proximity($x-15,$x+15,$y-15,$y+15);
-	#:: Enable the NPC for proximity say
-	quest::enable_proximity_say();
+     #:: Grab the NPC's location
+     $x = $npc->GetX();
+     $y = $npc->GetY();
+     $z = $npc->GetZ();
+     #:: Enable proximity 30 units across, 30 units high, and turn on proximity say
+     quest::set_proximity($x-15, $x+15, $y-15, $y+15, $z-15, $z+15, 1);
 }
 
-sub EVENT_SAY {
+sub EVENT_PROXIMITY_SAY {
 	#:: Match say message for "hail", /i for case insensitive
 	if ($text=~/hail/i) {
-		#:: Attack whoever hailed the NPC
-		quest::attack($name);
+		quest::say("Hello, $name!");
 	}
 }
 ```
