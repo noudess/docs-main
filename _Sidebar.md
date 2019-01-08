@@ -45,7 +45,7 @@
 * [[Augment Restrictions]]
 * [[Bag Sizes]]
 * [[Client Spell ID Limitations]]
-* [[Client Version Bitmasks]]
+* [[Client Version Bitmasks|Client Mask]]
 * [[Client Version List]]
 * [[Deity|Deity List]]
 * [[Emote Colors]]
