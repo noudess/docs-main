@@ -18,3 +18,5 @@ UF and Later|4294967280
 RoF and Later|4294967264
 RoF2 and Later|4294967232
 All|4294967295
+
+``*`` Client is no longer supported. Value is kept as a placeholder.
