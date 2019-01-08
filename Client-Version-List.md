@@ -9,4 +9,4 @@
 |RoF|6|
 |RoF2|7|
 
-* Client is no longer supported. Value is kept as a placeholder.
+``*`` Client is no longer supported. Value is kept as a placeholder.
