@@ -3384,26 +3384,282 @@ F | Forever | Never expires.
 
 ```perl
 #:: Set the qglobal "Example", to a value of "1", for all NPCs and zone, and last forever
-quest::setglobal("Example", 1, 5, "F"
+quest::setglobal("Example", 1, 5, "F");
 ```
 
+## setguild
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; guild_id _(int)_, guild_rank_id _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sets the specified guild, by Guild ID, and the specified guild rank, by Rank ID, for the client character that triggered the event.  Ranks are:   0=Member, 1=Officer, 2=Leader.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Add to guild 24
+quest::setguild(24,0);
+```
+
+## sethp
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mob_health_percentage _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Used to set the percentage (0 to 100) of health for the NPC.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Restore HP to 50 percent
+quest::sethp(50);
+```
+
+## setlanguage
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; skill_id _(int)_, value _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Used to set the specified [Language](https://github.com/EQEmu/Server/wiki/Languages) to the specified skill level (0 to 100).
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+sub EVENT_ENTERZONE {
+	#:: Set common tongue to 1 for any new player that is not human
+	if ($race ne "Human") {
+		if (!defined $qglobals{"newbiecommon"}) {
+			$client->SetLanguageSkill(0, 1);
+			quest::setglobal("newbiecommon", 1, 5, "F");
+		}
+	}
+}
+```
+
+## setnexthpevent
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at_mob_percentage _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Used to set an HP event (to trigger EVENT_HP).  When the NPC's health decreases to reach this threshold, the event will be triggered.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+sub EVENT_SPAWN {
+     #:: Trigger EVENT_HP at 90 percent
+     quest::setnexthpevent(90);
+}
+
+sub EVENT_HP {
+     #:: Match if HP is 90 percent
+     if ($hpevent == 90) {
+          quest::shout("My hit points have reached 90 percent!");
+          #:: Trigger EVENT_HP at 80 percent
+          quest::setnexthpevent(80);
+     }
+     elsif ($hpevent == 80) {
+          quest::shout("My hit points have reached 80 percent!");
+     }
+}
+```
+
+## setnextinchpevent
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at_mob_percentage _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Used to set an HP event (to trigger EVENT_HP).  When the NPC's health increases to reach this threshold, the event will be triggered.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+sub EVENT_SPAWN {
+     #:: Trigger EVENT_HP at 90 percent
+     quest::setnexthpevent(90);
+}
+
+sub EVENT_HP {
+     #:: Match if hit points decrease to 90 percent
+     if ($hpevent == 90) {
+          quest::shout("My hit points have reached 90 percent--you better keep trying!");
+          #:: Trigger EVENT_HP at 91 percent
+          quest::setnextinchpevent(91);
+     }
+     #:: Match if hit points increase to 91 percent
+     if ($inchpevent == 91) {
+          quest::shout("You are no match for my power!");
+          quest::sethp(100);
+     }
+}
+```
+
+## setskill
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; skill_id _(int)_, value _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Used to set the specified [Skill](https://github.com/EQEmu/Server/wiki/Skills) to the specified value.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Set baking to 100
+quest::setskill(60, 100);
+```
+
+## setsky
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sky _(uint8)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sets the parameter for the sky (0 to 255)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Turn the sky red
+quest::setsky(250);
+```
+
+## setstat
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; stat_id _(int)_, value _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sets the specified stat to the specified value (0 to 252).  Stats are:  STR=0, STA=1, AGI=2, DEX=3, INT=4; WIS=5, CHA=6.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Set STR to 250
+quest::setstat(0, 250);
+```
+
+## settarget
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; target_enum _(string)_, target_id _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sets the target, by Target ID, for the specified target_enum (either npc_type ID or entity ID).
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+sub EVENT_SPAWN {
+     my @clist = $entity_list->GetClientList();
+     foreach my $c (@clist) {
+          #:: Tell Fippy to kill!
+          quest::settarget(2001, $c);
+     }
+}
+```
+
+## settime
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; new_hour _(int)_, new_min _(int)_, update_world _(bool)_ 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sets the time for the zone or the world to the specified hour and minute.  Update world is optional, but defaults to true--setting it to false makes the time change only apply to the current zone.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Make it 5 o'clock somewhere
+quest::settime(17,0);
+#:: No--make it 5 o'clock everywhere!
+quest::settime(17);
+```
+
+## settimer
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; timer_name _(string)_, seconds _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sets a timer (in seconds) that will loop until you stop it.  Gets caught by EVENT_TIMER.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+sub EVENT_SPAWN {
+     #:: Set a timer that loops every 300 seconds (5 min)
+     quest::settimer("despawn", 300);
+}
+
+sub EVENT_TIMER {
+     if ($timer eq "despawn") {
+          #:: Stop the timer from looping over and over
+          quest::stoptimer("despawn")
+          #:: Depop
+          quest::depop();
+     }
+}
+```
+
+## settimerMS
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; timer_name _(string)_,  milliseconds _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sets a timer (in milliseconds) that will loop until you stop it.  Gets caught by EVENT_TIMER.  Note that the Lua timer function is in milliseconds as well.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+sub EVENT_SPAWN {
+     #:: Set a timer that loops every 300000 milliseconds (5 min)
+     quest::settimerMS("despawn", 300000);
+}
+
+sub EVENT_TIMER {
+     if ($timer eq "despawn") {
+          #:: Stop the timer from looping over and over
+          quest::stoptimer("despawn")
+          #:: Depop
+          quest::depop();
+     }
+}
+```
 
 (Work in Progress)
 
 ```perl
-
-quest::setguild(int guild_id, int guild_rank_id)
-quest::sethp(int mob_health_percentage [0-100])
-quest::setlanguage(int skill_id, int value)
-quest::setnexthpevent(int at_mob_percentage)
-quest::setnextinchpevent(int at_mob_percentage)
-quest::setskill(int skill_id, int value)
-quest::setsky(uint8 sky)
-quest::setstat(stat_id, int_value)
-quest::settarget(string target_enum ['npc_type', 'entity'], int target_id)
-quest::settime(int new_hour, int new_min, [bool update_world = true])
-quest::settimer(string timer_name, int seconds)
-quest::settimerMS(string timer_name, int milliseconds)
 quest::sfollow()
 quest::shout(string message)
 quest::shout2(string message)
