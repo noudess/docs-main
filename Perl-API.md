@@ -3657,24 +3657,354 @@ sub EVENT_TIMER {
 }
 ```
 
-(Work in Progress)
+## sfollow
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; None.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Used to stop quest::follow();.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
 
 ```perl
-quest::sfollow()
-quest::shout(string message)
-quest::shout2(string message)
-quest::showgrid(int grid_id)
-quest::signal(int npc_id, [int wait_ms])
-quest::signalwith(int npc_id, int signal_id, [int wait_ms])
-quest::snow(int weather)
-quest::spawn(int npc_type_id, int grid_id, int int_unused, float x, float y, float z)
-quest::spawn2(int npc_type_id, int grid_id, int int_unused, float x, float y, float z, float heading)
-quest::spawn_condition(string zone_short, [int instance_id], uint16 condition_id, int16 value)
-quest::spawn_from_spawn2(int spawn2_id)
-quest::start(int waypoint)
-quest::stop()
-quest::stopalltimers()
-quest::stoptimer(string timer_name)
+#:: Stop following
+quest::sfollow();
+```
+
+## shout
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; message _(string)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Makes the NPC shout a message to the zone.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+quest::shout("Let it all out!");
+```
+
+## shout2
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; message _(string)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Makes the NPC shout a message to the world.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+quest::shout2("Let it all out!");
+```
+
+## showgrid
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; grid_id _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Displays the pathing grid specified by Grid ID.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Show grid 20
+quest::showgrid(20);
+```
+
+## signal
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; npc_id _(int)_, wait_ms _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sends a signal to an NPC, specified by NPC ID, after a wait period of the specified milliseconds.  Wait is optional and defaults to 0ms.  Compare to quest::signalwith().  Signals trigger EVENT_SIGNAL.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+sub EVENT_SAY {
+	#:: If faction is indifferent or better
+	if ($faction < 4) {
+		if ($text=~/hail/i) {
+			quest::say("Greetings, my friend! You may rest here if you like. There are many dangers in this land. May Tunare watch over you when you depart our camp.");
+			#:: signal 70005 - Elmion Hendrys after a 5ms pause
+			quest::signal(70005,5);
+		}
+	} 
+	else {
+		quest::say("You have some nerve to approach a loyal member of the Paladins of Tunare! Run, while you can!");
+	}
+}
+```
+
+## signalwith
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; npc_id _(int)_, signal_id _(int)_, wait_ms _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sends a signal to an NPC, specified by NPC ID, with a specified Signal ID, after a wait period of the specified milliseconds.  Wait is optional and defaults to 0ms.  Compare to quest::signalwith().  Signals trigger EVENT_SIGNAL.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+sub EVENT_WAYPOINT_ARRIVE {
+	if ($wp==12) {
+		#:: Send a signal "2" to Steamfont Mountains >> Charlotte (56108), after 1ms
+		quest::signalwith(56108,2,1);
+	}
+	if ($wp==18) {
+		#:: Send a signal "3" to Steamfont Mountains >> Charlotte (56108), after 1ms
+		quest::signalwith(56108,3,1);
+	}
+}
+```
+
+## snow
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; weather _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Changes the snowy weather to the specified setting:  0=none, 1=snow.  See also quest::rain().
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+sub EVENT_ZONE {
+     if ($name=~/turmoiltoad/i) {
+          #:: Turn on the snow for those left behind
+          quest::snow(1);
+     }
+}
+```
+
+## spawn
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; npc_type_id _(int)_, grid_id _(int)_, int_unused _(int)_, x _(float)_, y _(float)_, z _(float)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Spawns an NPC by NPC Type ID, on the specified grid, by Grid ID.  The unused int corresponds to guildwarset--use 0 for this value as it is presently unused. 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Spawn Fippy_Darkpaw (2001) on grid 103 at the specified location
+quest::spawn(2001, 103, 0, 481.20, 1210.80, 3.10);
+```
+
+## spawn2
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; npc_type_id _(int)_, grid_id _(int)_, int_unused _(int)_, x _(float)_, y _(float)_, z _(float)_, heading _(float)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Spawns an NPC by NPC Type ID, on the specified grid, by Grid ID.  The unused int corresponds to guildwarset--use 0 for this value as it is presently unused. Similar to quest::spawn(), with the addition of a heading parameter.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Spawn Fippy_Darkpaw (2001) on grid 103 at the specified location, facing East
+quest::spawn2(2001, 103, 0, 481.20, 1210.80, 3.10, 90);
+```
+
+## spawn_condition
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; zone_short _(string)_, instance_id _(int)_, condition_id _(uint16)_, value _(int16)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sets the condition and value for the zone spawn condition.  Instance ID is optional and defaults to 0.  You might use this to stop certain NPCs from spawning during a raid event.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+sub EVENT_SPAWN {
+	#:: Set the condition to 3 value 0 to stop a_doomfire_chaosfiend spawn points
+	quest::spawn_condition($zonesn, $instanceversion, 3, 0);
+}
+```
+
+## spawn_from_spawn2
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; spawn2_id _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Used to force a spawn_2 point to spawn an NPC even if disabled, or if it already has an NPC spawned.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+sub EVENT_SPAWN {
+     #:: Create a timer that loops every 10 seconds called "fippy")
+     quest::settimer("fippy", 10);
+}
+
+sub EVENT_TIMER {
+     #:: Match timer "fippy"
+     if ($timer eq "fippy") {
+          #:: Spawn ANOTHER Fippy, which will create another timer, spawn ANOTHER Fippy...chaos ensues.
+          quest::spawn_from_spawn2(10875);
+     }
+}
+```
+
+## start
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; grid_id _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Used to start an NPC on the specified pathing grid.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+sub EVENT_SIGNAL {
+	#:: Match if signal from steamfont/Jogl_Doobraugh.pl is "1"
+	if (($signal == 1) && (($x == -495) || ($x == -734)) && (($y == -154) || ($y == 114))) {
+		quest::emote("Beep.. Beep.. Beep..");
+		quest::pause(60);
+	}
+	#:: Match if signal from steamfont/Jogl_Doobraugh.pl is "2"
+	if ($signal == 2) {
+		#:: Start path grid 178
+		quest::start(178);
+	}
+	#:: Match if signal from steamfont/Jogl_Doobraugh.pl is "3"
+	if ($signal == 3) {
+		#:: Start path grid 179
+		quest::start(179);
+	}
+}
+```
+
+## stop
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; None.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Used to stop an NPC.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+sub EVENT_TIMER {
+	#:: Match "CargoTimer" every five seconds
+	if ($timer eq "CargoTimer") {
+		#:: Match if the quest was not a failure and the time is 8 AM
+		if (!defined($qglobals{CargoClockwork}) && ($zonehour == 8)) {
+			#:: Set a qglobal in case of quest failure
+			quest::setglobal("CargoClockwork",1,1,"H2");
+			#:: Start path grid 177 - path to the windmills
+			quest::start(177);
+		}
+		#:: Match if at the spawnpoint (WP 0) and if delivery was completed
+		if ($x == 700 && $y == -1783 && $delivery == 1) {
+			#:: Stop pathing on path grid 177
+			quest::stop();
+			#:: Reset the delivery state
+			$delivery = 0;
+		}
+	}
+}
+```
+
+## stopalltimers
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; None.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Stops all the timers currently running from the script.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Stop all the timers
+quest::stopalltimers();
+```
+
+## stoptimer
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; timer_name _(string)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Stops the specified timer from looping.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+sub EVENT_SPAWN {
+     #:: Set a timer "despawn" to loop every 300 seconds (5 min)
+     quest::settimer("despawn", 300);
+}
+
+sub EVENT_TIMER {
+     #:: Stop the timer "despawn"
+     quest::stoptimer("despawn");
+     #:: Depop
+     quest::depop();
+}
+
+sub EVENT_COMBAT {
+     #:: Stop the timer if we enter combat
+     if ($combat_state == 1) {
+          quest::stoptimer("despawn");
+     }
+     #:: Start the timer once combat is finished
+     else {
+          quest::settimer("despawn", 300);
+     }
+}
+
+sub EVENT_DEATH_COMPLETE {
+     #:: Stop the timer "despawn" if I die
+     quest::stoptimer("despawn");
+}
+```
+
+(**Work in Progress**)
+
+```perl
 quest::summonallplayercorpses(int char_id, float dest_x, float dest_y, float dest_z, float dest_heading)
 quest::summonburiedplayercorpse(uint32 char_id, float dest_x, float dest_y, float dest_z, float dest_heading)
 quest::summonitem(int item_id, [int charges])
