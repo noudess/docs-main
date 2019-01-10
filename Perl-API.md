@@ -3099,28 +3099,299 @@ quest::removetitle(2);
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Repops the zone and re-enables spawn timers.
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
 ```perl
 #:: Repop the zone
 quest::repopzone();
 ```
 
+## resettaskactivity
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; task_id _(int)_, activity_id _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sets the done count to 0 for the specified Task ID
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Reset the activity done count for task 202
+quest::resettaskactivity(202);
+```
+
+## respawn
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  npc_type_id _(int)_, grid_id _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Respawns the specified NPC by npc_type ID on the specified grid.  This is similar to quest::spawn2(), but without the specified x, y, z, heading parameters.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Spawn Fippy Darkpaw again
+quest::respawn(2001);
+```
+
+## resume
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; None.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Used to resume pathing on a grid that has been stopped.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Resume pathing on grid
+quest::resume();
+```
+
+## safemove
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; None.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Moves the client character that triggered the event to the safe coordinates of the current zone.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Move to safe
+quest::safemove();
+```
+
+## save
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; None.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Saves the character data for the client character that triggered the event.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Save Save Save
+quest::save();
+```
+
+## say
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; message _(string)_, language_id _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Used to make your NPC speak.  [Language](https://github.com/EQEmu/Server/wiki/Languages) ID is optional--if not specified, the NPC will speak in common tongue.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+quest::say("Hello.");
+#:: Now in Barbarian
+quest::say("Hello.", 1);
+```
+
+## saylink
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; message _(string)_, silent _(bool)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Used to create a say link.  The silent parameter bools false by default, and is optional. 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+quest::say("This is [" . quest::saylink("purple text") . "] that you can click.");
+```
+
+## scribespells
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; max_level _(int)_, min_level _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Used to add spells to the spell book of the client character that triggered the event. 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Scribe all spells up to current level
+quest::scribespells($ulevel,1);
+```
+
+## selfcast
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; spell_id _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Used to cause client characters to cast the specified spell on themselves.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Not with your hand, with MY hand!
+quest::selfcast(521);
+```
+
+## set_proximity
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; min_x _(float)_, max_x _(float)_, min_y _(float)_, max_y _(float)_, min_z _(float)_, max_z _(float)_, say _(bool)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Used to create a proximity around an NPC.  Necessary to define for both EVENT_ENTER and EVENT_PROXIMITY_SAY (bool the say parameter to true to use this event).  Z min/max and enabling proximity say are both optional.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+sub EVENT_SPAWN {
+     #:: Grab the NPC's location
+     $x = $npc->GetX();
+     $y = $npc->GetY();
+     $z = $npc->GetZ();
+     #:: Enable proximity 30 units across, 30 units high, and turn ON proximity say
+     quest::set_proximity($x-15, $x+15, $y-15, $y+15, $z-15, $z+15, 1);
+}
+
+sub EVENT_PROXIMITY_SAY {
+	#:: Match say message for "hail", /i for case insensitive
+	if ($text=~/hail/i) {
+		quest::say("Hello, $name!");
+	}
+}
+
+sub EVENT_ENTER {
+	#:: Say "hello" when someone nears
+	quest::say("Hello, $name!");
+}
+```
+
+## set_zone_flag
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; zone_id _(uint32)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Used to set a zone flag for the client character that triggered the event.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+sub EVENT_SAY {
+     if ($text=~/Darkness Beckons/i &&  defined $qglobals{pop_pon_construct} &&  defined $qglobals{pop_pon_hedge_jezith}) {
+          $client->Message(1,"Very well mortal... you shall pass into the Lair of Terris Thule");
+          $client->Message(2,"You now have access to the Lair of Terris Thule!");
+          quest::set_zone_flag(221);
+     }
+}
+```
+
+## setallskill
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; value _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sets all [Skills](https://github.com/EQEmu/Server/wiki/Skills) to the specified value.  You might want to consider a slightly more pinpoint approach like that found in the [Skill Maxer](https://github.com/EQEmu/Server/wiki/Buff-your-Players#Skill_Maxer_PERL) bot.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Set every possible skill to 300--you probably shouldn't do this.
+quest::setallskill(300);
+```
+
+## setanim
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; npc_type_id _(int)_, appearance_number _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Used to make the NPC, specified by npc_type ID, to do the specified animation.  Parameters for the appearance are:  0=Stand, 1=Sit, 2=Duck, 3=Feign Death, 4=Kneel
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Make Fippy Darkpawn FD (he's going to die anyhow)
+quest::(2001, 3);
+```
+
+## setglobal
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; key _(string)_, value _(string)_, options _(int)_, duration _(string)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Used to set a quest global.  **Consider using [Data Buckets](https://github.com/EQEmu/Server/wiki/Data-Buckets) instead.**  Note that the name of the global is case sensitive.
+
+**Option** | **NPC ID** | **Player** | **Zone**
+---------- | ---------- | ---------- | ----------
+0 | Current  | Current  | Current
+1 | All  | Current  | Current
+2 | Current  | All  | Current
+3 | All  | All  | Current
+4 | Current  | Current  | All
+5 | All  | Current  | All
+6 | Current  | All  | All
+7 | All  | All  | All
+
+**Duration** | **Type** | **Example**
+---------- | ---------- | ----------
+S | Seconds | S15 = 15 Seconds
+M | Minutes | M30 = 30 Minutes
+H | Hours   | H12 = 12 Hours
+D | Days    | D90 = 90 Days
+Y | Years   | Y5 = 5 Years
+F | Forever | Never expires.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Set the qglobal "Example", to a value of "1", for all NPCs and zone, and last forever
+quest::setglobal("Example", 1, 5, "F"
+```
+
+
 (Work in Progress)
 
 ```perl
-quest::resettaskactivity(int task_id, int activity_id)
-quest::respawn(int npc_type_id, int grid_id)
-quest::resume()
-quest::safemove()
-quest::save()
-quest::say(string message, int language_id])
-quest::saylink(string message, [bool silent = false], [link_name = message])
-quest::scribespells(int max_level, [int min_level = 1])
-quest::selfcast(int spell_id)
-quest::set_proximity(float min_x, float max_x, float min_y, float max_y, [float min_z], [float max_z], [say])
-quest::set_zone_flag(uint32 zone_id)
-quest::setallskill(int value)
-quest::setanim(int npc_type_id, int appearance_number[0-4])
-quest::setglobal(stirng key, string value, int options, string duration)
+
 quest::setguild(int guild_id, int guild_rank_id)
 quest::sethp(int mob_health_percentage [0-100])
 quest::setlanguage(int skill_id, int value)
