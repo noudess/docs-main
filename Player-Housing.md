@@ -14,6 +14,19 @@ Packet captures specific to trophy data is blocked at the moment. None of my cha
 
 [TODO: Add image of neighborhood search window]
 
+## Known / Suspected OpCodes in RoF and RoF2 client
+
+The RoF2 opcodes are suspect. It could be that they didn't change across several patches, or that the opcode dumps in showeq simply didn't update those. I could only find two that directly related to player housing in the opcode files, but I suspect there are more that didn't get logged.
+
+| Client | Name                   |  Description                                                                                                |
+|--------|------------------------|-------------------------------------------------------------------------------------------------------------|
+| RoF    | OP_HouseAddress        | 0x0D4B (11/28/2012)<br/>0x6786 (12/12/2012)<br/>0x1A58 (03/13/2013)<br/>0x48AE (04/17/2013)                 |
+|        | OP_HouseContents       | 0x7CDA (11/28/2012)<br/>0x49B7 (03/13/2013)<br/>0x6419 (04/17/2013)                                         |
+| RoF2   | OP_HouseAddress        | 0x48AE (04/17/2013) - ShowEQ updated zoneopcodes.xml 04/22/2013,06/24/2013,07/18/2013,08/30/2013,10/09/2013 |
+|        | OP_HouseContents       | 0x6419 (04/17/2013) - ShowEQ update zoneopcodes.xml 04/22/2013,06/24/2013,07/18/2013,08/30/2013,10/09/2013  |
+| CotF   | OP_HouseAddress        | 0x4F13 (11/06/13)<br/>0x7B0D (01/22/2014)                                                                   |
+|        | OP_HouseContents       | 0x0588 (11/06/13)<br/>0x41B3 (01/22/2014)                                                                   |
+
 ## Click on door to view Neighborhood List (Client -> Server)
 
 | Name                   | Number of Bytes | Description                             |
