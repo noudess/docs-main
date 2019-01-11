@@ -4002,37 +4002,489 @@ sub EVENT_DEATH_COMPLETE {
 }
 ```
 
-(**Work in Progress**)
+## summonallplayercorpses
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char_id _(int)_, dest_x _(float)_, dest_y _(float)_, dest_z _(float)_, dest_heading _(float)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Summons all character corpses, by Char ID, to the specified location.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
 
 ```perl
-quest::summonallplayercorpses(int char_id, float dest_x, float dest_y, float dest_z, float dest_heading)
-quest::summonburiedplayercorpse(uint32 char_id, float dest_x, float dest_y, float dest_z, float dest_heading)
-quest::summonitem(int item_id, [int charges])
-quest::surname(string name)
-quest::targlobal(stirng key, string value, string duration, int npc_id, int chararacter_id, int zone_id)
-quest::task_setselector(int task_set_id)
-quest::taskexplorearea(int explore_id)
-quest::taskselector(int task_id, 2, 3, 4, 5 [up to 40])
-quest::tasktimeleft(int task_id)
-quest::toggle_spawn_event(uint32 event_id, [bool is_enabled = false], [bool is_strict = false], [bool reset_base = false])
-quest::toggledoorstate(int door_id)
-quest::traindisc(int tome_item_id)
-quest::traindiscs(int max_level, [int min_level = 1])
-quest::unique_spawn(int npc_type_id, int grid_id, int int_unused, float x, float y, float z, [float heading])
-quest::unscribespells()
-quest::untraindiscs()
-quest::updatetaskactivity(int task_id, int activity_id, [int count], [bool ignore_quest_update = false])
-quest::varlink(uint32 item_id)
-quest::voicetell(string client_name, int macro_id, int ace_id, int gender_id)
-quest::we(int emote_color_id, string message)
-quest::wearchange(uint8 slot, uint16 texture_id, [uint32 hero_forge_model_id = 0], [uint32 elite_material_id = 0])
-quest::worldwidemarquee(uint32 color_id, uint32 priority, uint32 fade_in, uint32 fade_out, uint32 duration, string message)
-quest::write(string file_name, string message)
-quest::ze(int emote_color_id, string message)
-quest::zone(string zone_name)
-quest::GetInstanceIDByCharID(const char *zone, int16 version, uint32 char_id)
-quest::AssignToInstanceByCharID(uint16 instance_id, uint32 char_id)
-quest::RemoveFromInstanceByCharID(uint16 instance_id, uint32 char_id)
+sub EVENT_SAY {
+     if ($text=~/corpses/i) {
+          quest::say("Summoning all of your corpses now.");
+          #:: Summon all player corpses to the current location, facing North
+          quest::summonallplayercorpses($charid, $x, $y, $z, 0);
+     }
+}
+```
+
+## summonburiedplayercorpse
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char_id _(uint32)_, dest_x _(float)_, dest_y _(float)_, dest_z _(float)_, dest_heading _(float)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Summons all buried character corpses, by Char ID, to the specified location.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+sub EVENT_SAY {
+     $corpse = quest::getplayerburiedcorpsecount($charid);
+     if ($text=~/corpses/i && $corpse > 0) {
+          #:: Summon all buried player corpses to the current location, facing North
+          quest::summonburiedplayercorpse($charid, $x, $y, $z, 0);
+     }
+}
+```
+
+## summonitem
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  item_id _(int)_, charges _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Summons the specified item, by Item ID, with the specified number of charges, to the cursor of the client character that triggered the event.  Charges is the number of charges, or the count of the item, and is optional.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+sub EVENT_ITEM {
+	#:: Match 66gp and a 13990 - Bale of Hay
+	if (plugin::takeItemsCoin(0,0,66,0, 13990 => 1)) {
+		quest::say("'Whatsssss thisssss? You sssseek my blessssssssing? Heh heh heh... Very well... CAZIC-THULE! Take this fruit of Karana into horror'sss dark embrace. Fear and death made manifesssssst. A harvesssst of terror! Here, take your gift of blood and sssstraw. Use its dark powersssss in the name of the Fear Lord!' ");
+		#:: Give a 14320 - Sack of Cursed Hay
+		quest::summonitem(14320);
+		#:: Ding!
+		quest::ding();
+		#:: Give a small amount of experience
+		quest::exp(300);
+		#:: Set faction
+		quest::faction(18, 10);		#:: + Beta Neutral
+	}
+	#:: Return unused items
+	plugin::returnUnusedItems();
+}
+```
+
+## surname
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; name _(string)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Changes the surname of the client character that triggered the event to the provided string.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Set last name to "Toad"
+quest::surname("Toad");
+```
+
+## targlobal
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; key _(string)_, value _(string)_, duration _(string)_, npc_id _(int)_, chararacter_id _(int)_, zone_id _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sets a quest global with the given parameters to a character anywhere in the world.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Set a global "Example" with a value of "5" for 30 minutes
+quest::targlobal("Example", "5", "M30", 2001, $charid, $zoneid);
+```
+
+## task_setselector
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; task_set_id _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sets the Task Set, by provided Task Set ID.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Set task set 202
+quest::task_setselector(202);
+```
+
+## taskexplorearea
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; explore_id _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Used to mark any explore activities (type 5), which have the numeric value Explore ID in their Goal ID field, and for which the Zone ID of the activity is either 0 or this zone, as completed.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Mark Task 21 complete
+quest::taskexplorearea(21);
+```
+
+## taskselector
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; task_id _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Used to bring up the Task Selector Window with the specified tasks available for selection (from 1 to 40 task_id(s)). Note that when the task selector is brought up via this method, no check is made as to whether the character has the tasks enabled.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+sub EVENT_SAY {
+     if ($text=~/hail/i) {
+          quest::say("Heyo! Looking for an exciting [task] to fill the time?");
+     }
+     if ($text=~/task/i) {
+          #:: Select task 103
+          quest::taskselector(103);
+     }
+}
+```
+
+## tasktimeleft
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; task_id _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Returns the amount of time left, in seconds, before the specified task runs out.  -1 is returned if there is no time limit, or if the player does not have the task.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Create a scalar variable to store the amount of time left for Task ID 22
+$timeremaining = quest::tasktimeleft(22);  #:: Returns int
+if ($timeremaining => 1) {
+     quest::say("You have $timeremaining seconds left--better hurry!");
+}
+else {
+     quest::say("Sorry $name, but you're out of time!");
+}
+```
+
+## toggle_spawn_event
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; event_id _(uint32)_, is_enabled _(bool)_, is_strict _(bool)_, reset_base _(bool)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Used to toggle the enabled state of a specified [Spawn Event](https://github.com/EQEmu/Server/wiki/spawn_events), by Event ID.  The parameters for is_enabled, is_strict, and reset_base are all false by default.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+sub EVENT_DEATH_COMPLETE {
+     #:: Turn the depop spawn_event back on
+     quest::toggle_spawn_event(65, 1, 0, 0);
+}
+```
+
+## toggledoorstate
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; door_id _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Toggles the open/closed state of the specified door.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+sub EVENT_CLICKDOOR {
+     my $tds = quest::isdooropen(41);
+     my $bds = quest::isdooropen(42);
+     if (($doorid == 41 && !$tds) || ($doorid == 42 && !$bds)) {
+          quest::toggledoorstate(38);
+          quest::toggledoorstate(39);
+          quest::toggledoorstate(40);
+     }
+}
+```
+
+## traindisc
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tome_item_id _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Trains the discipline of the specified Tome ID for the client character that triggered the event.  Generally you will simply use the plugin:  plugin::try_tome_handins(\%itemcount, $class, 'Ranger');--part of the contents of which are in the example below.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+if (@tomes > 0) {
+	if ($isclass eq $expectclass) {
+		foreach my $i(@tomes) {
+			quest::traindisc($i);
+		}
+	}
+}
+```
+
+## traindiscs
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; max_level _(int)_, min_level _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Used to train all disciplines for the class up to the specified max_level, if that level is less than rule Character:MaxLevel, or the character is a GM.  The parameter for min_level defaults to 1.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Train disciplines up to level 70
+quest::traindiscs(70,1);
+```
+
+## unique_spawn
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; npc_type_id _(int)_, grid_id _(int)_, int_unused _(int)_, x _(float)_, y _(float)_, z_ (float)_, heading _(float)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Similar to the quest::spawn() command, except that it will not spawn the specified NPC if the same npc_type ID is already in the zone.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+sub EVENT_DEATH_COMPLETE {
+	my $random_result = int(rand(100));
+	if ($random_result >= 94) {
+		#:: Spawn a Steamfont Mountains >> Minotaur_Hero (56152)
+		quest::unique_spawn(56152,177,0,-1294,1360,-103);
+	}
+	elsif ($random_result >= 88 && $random_result < 94) {
+		#:: Spawn a Steamfont Mountains >> Minotaur_Lord (56161)
+		quest::unique_spawn(56161,0,0,-2179,1319,-101.2);
+	}
+	quest::say("I die soon! Meldrath, help me!");
+}
+```
+
+## unscribespells
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; None.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Unscribes all spells for the client character that triggered the event.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Unscribe all spells
+quest::unscribespells();
+```
+
+## untraindiscs
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; None.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Untrains all disciplines for the client character that triggered the event.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Untrain all disciplines
+quest::untraindiscs();
+```
+
+## updatetaskactivity
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; task_id _(int)_, activity_id _(int)_, count _(int)_, ignore_quest_update _(bool)_ 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Used to increment the done count of the specified task is active.  The parameter for ignore_quest_update is optional, and defaults to false; the parameter for count default to 1 (increase count by 1).
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Update Task ID 219 activity 9, by 1 count
+quest::updatetaskactivity(216,9);
+```
+
+## varlink
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; item_id _(uint32)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Used to create an item link that can be used in a variable.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Create a scalar variable to store an item link for a 1001 - Cloth Cap
+my $Reward = quest::varlink(1001);
+```
+
+## voicetell
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; client_name _(string)_, macro_id _(int)_, race_id _(int)_, gender_id _(int)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Plays the specified audio message on the client of the character that triggered the event.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Send voice macro "Agree" to the client
+quest::voicetell($name, 1);
+```
+
+## we
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; emote_color_id _(int)_, message _(string)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sends an emote message to the world in the specified color.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Send yellow (15) text
+quest::we(15, "Hello world!");
+```
+
+## wearchange
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; slot _(uint8)_, texture_id _(uint16)_, hero_forge_model_id _(uint32)_, elite_material_id _(uint32)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Used to change the texture/model of visible [Slots](https://github.com/EQEmu/Server/wiki/Inventory-Slots).  The parameters for hero_forge_model and elite_material_id default to 0.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Change the appearance of the character's weapon
+quest::wearchange(13, 3);
+```
+
+## worldwidemarquee
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; color_id _(uint32)_, priority _(uint32)_, fade_in _(uint32)_, fade_out _(uint32)_, duration _(uint32)_, message _(string)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Used to send a worldwide marquee message with the specified parameters.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Send a worldwide marquee message in yellow (15), 
+quest::worldwidemarquee(15, 1, 1, 1, 1000, "Hello World!");
+```
+
+## write
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; file_name _(string)_, message _(string)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Writes the specified message string to the specified file name.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+quest::write("HandIn/$npc_name$zonesn.txt","[$timestamp] : $name the $ulevel has handed in $Item1, $Item2, $Item3, $item4 into $npc_name, and gotten $RewardID.");
+```
+
+## ze
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; emote_color_id _(int)_, message _(string)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sends a zone-wide emote message in the specified color.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Send a zone-wide emote in yellow (15)
+quest::ze(15,"welcomes the world.");
+```
+
+## zone
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; zone_name _(string)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sends the client character that triggered the event to the specified zone (by zone short name).
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Send the player to the West Commonlands
+quest::zone(commons);
 ```
 
 # **Function Lists**
