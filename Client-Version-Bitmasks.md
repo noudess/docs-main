@@ -1,4 +1,4 @@
-**Client**|**Value (int)**|**Value (hex)**
+**Token**|**Value (int)**|**Value (hex)**
 :-----|:-----|:-----
 bitUnknown|0|0x00000000
 bitClient62*|1|0x00000001
