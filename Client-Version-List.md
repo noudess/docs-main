@@ -1,6 +1,6 @@
 |Client|Value|Expansion|
 |--- |--- |--- |
-|Unknown|0|[EverQuest](https://github.com/EQEmu/Server/wiki/Expansion-List#EverQuest)|
+|Unknown|0|[EverQuest](https://github.com/EQEmu/Server/wiki/Expansion-List)|
 |Client62*|1|None|
 |Titanium|2|[PoR](https://github.com/EQEmu/Server/wiki/Expansion-List)|
 |SoF|3|[SoF](https://github.com/EQEmu/Server/wiki/Expansion-List)|
