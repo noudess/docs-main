@@ -1,8 +1,224 @@
 #ProTip: hit ctrl + f (Windows) or ⌘ + f (Mac) to FIND something on this page
 
-# General Quest API
+## List of Quest API Functions ##
 
-*   A full list can always be found in the EQEmu source [https://github.com/EQEmu/Server/blob/master/zone/questmgr.cpp](https://github.com/EQEmu/Server/blob/master/zone/questmgr.cpp)
+*  A full list can always be found in the EQEmu source [https://github.com/EQEmu/Server/blob/master/zone/questmgr.cpp](https://github.com/EQEmu/Server/blob/master/zone/questmgr.cpp)
+
+*  Where multiple data types are indicated, please reference the function description below for a full explanation.
+
+**Function** | **Data Type
+------ | ---
+[quest::AssignGroupToInstance(instance_id)](#AssignGroupToInstance) | _uint16_
+[quest::AssignRaidToInstance(instance_id)](#AssignRaidToInstance) | _uint16_
+[quest::AssignToInstance(instance_id)](#AssignToInstance) | _uint16_
+[quest::ChooseRandom(option1, option2, option3, option4, option5...[no limit])](#ChooseRandom) | _multiple_
+[quest::CreateInstance(zone_name, version, duration)](#CreateInstance) | _multiple_
+[quest::DestroyInstance(id)](#DestroyInstance) | _int_
+[quest::FlagInstanceByGroupLeader(zone, version)](#FlagInstanceByGroupLeader) | _multiple_
+[quest::FlagInstanceByRaidLeader(zone, version)](#FlagInstanceByRaidLeader) | _multiple_
+[quest::FlyMode(mode)](#FlyMode) | _uint8_
+[quest::GetCharactersInInstance(instance_id)](#GetCharactersInInstance) | _uint16_
+[quest::GetInstanceID(zone_name, version)](#GetInstanceID) | _multiple_
+[quest::GetInstanceTimer()](#GetInstanceTimer) | _none_
+[quest::GetInstanceTimerByID(instance_id)](#GetInstanceTimerByID) | _uint16_
+[quest::GetSpellResistType(spell_id)](#GetSpellResistType) | _uint32_
+[quest::GetSpellTargetType(spell_id)](#GetSpellTargetType) | _uint32_
+[quest::GetTimeSeconds()](#GetTimeSeconds) | _none_
+[quest::GetZoneID(zone)](#GetZoneID) | _string_
+[quest::GetZoneLongName(zone)](#GetZoneLongName) | _string_
+[quest::IsBeneficialSpell(spell_id)](#IsBeneficialSpell) | _uint32_
+[quest::IsEffectInSpell(spell_id, effect_id)](#IsEffectInSpell) | _multiple_
+[quest::IsRunning()](#IsRunning) | _none_
+[quest::LearnRecipe(recipe_id)](#LearnRecipe) | _int_
+[quest::MerchantCountItem(npc_id, item_id)](#MerchantCountItem) | _uint32_
+[quest::MerchantSetItem(npc_id, item_id, quantity)](#MerchantSetItem) | _uint32_
+[quest::ModifyNPCStat(key, value)](#ModifyNPCStat) | _string_
+[quest::MovePCInstance(zone_id, instance_id, x, y, z, heading)](#MovePCInstance) | _multiple_
+[quest::RemoveAllFromInstance(instance_id)](#RemoveAllFromInstance) | _uint16_
+[quest::RemoveFromInstance(instance_id)](#RemoveFromInstance) | _uint16_
+[quest::SendMail(to, from, subject, message)](#SendMail) | _string_
+[quest::SetRunning(is_running)](#SetRunning) | _bool_
+[quest::UpdateInstanceTimer(instance_id, duration)](#UpdateInstanceTimer) | _multiple_
+[quest::UpdateSpawnTimer(spawn2_id, updated_time_till_repop)](#UpdateSpawnTimer) | _uint32_
+[quest::UpdateZoneHeader(key, value)](#UpdateZoneHeader) | _string_
+[quest::activespeakactivity(task_id)](#activespeakactivity) | _int_
+[quest::activespeaktask()](#activespeaktask) | _none_
+[quest::activetasksinset(task_set)](#activetasksinset) | _int_
+[quest::addldonloss(losses, theme_id)](#addldonloss) | _int_
+[quest::addldonpoints(points, theme_id)](#addldonpoints) | _int_
+[quest::addldonwin(wins, theme_id)](#addldonwin) | _int_
+[quest::addloot(item_id, charges, equip_item)](#addloot) | _multiple_
+[quest::addskill(skill_id, value)](#addskill) | _int_
+[quest::assigntask(task_id, enforce_level_requirement)](#assigntask) | _multiple_
+[quest::attack(client_name)](#attack) | _string_
+[quest::attacknpc(npc_entity_id)](#attacknpc) | _int_
+[quest::attacknpctype(npc_type_id)](#attacknpctype) | _int_
+[quest::buryplayercorpse(character_id)](#buryplayercorpse) | _int_
+[quest::castspell(spell_id, target_id)](#castspell) | _int_
+[quest::changedeity(deity_id)](#changedeity) | _int_
+[quest::checktitle(title_set_id)](#checktitle) | _int_
+[quest::clear_npctype_cache(npc_type_id)](#clear_npctype_cache) | _int_
+[quest::clear_proximity()](#clear_proximity) | _none_
+[quest::clear_zone_flag(zone_id)](#clear_zone_flag) | _uint32_
+[quest::clearspawntimers()](#clearspawntimers) | _none_
+[quest::collectitems(item_id, remove_item)](#collectitems) | _multiple_
+[quest::completedtasksinset(task_set)](#completedtasksinset) | _int_
+[quest::createBot(first_name, last_name, level, race_id, class_id, gender_id)](#createBot) | _multiple_
+[quest::createdoor(model_name, x, y, z, heading, object_type, size)](#createdoor) | _multiple_
+[quest::creategroundobject(item_id, x, y, z, heading, decay_time)](#creategroundobject) | _multiple_
+[quest::creategroundobjectfrommodel(model_name, x, y, z, heading, object_type, decay_time)](#creategroundobjectfrommodel) | _multiple_
+[quest::createguild(guild_name, leader_name)](#createguild) | _string_
+[quest::crosszonemessageplayerbyname(channel_id, name, message)](#crosszonemessageplayerbyname) | _multiple_
+[quest::crosszonesetentityvariablebyclientname(client_name, key, value)](#crosszonesetentityvariablebyclientname) | _string_
+[quest::crosszonesetentityvariablebynpctypeid(npc_type_id, key, value)](#crosszonesetentityvariablebynpctypeid) | _multiple_
+[quest::crosszonesignalclientbycharid(character_id, value)](#crosszonesignalclientbycharid) | _int_
+[quest::crosszonesignalclientbycharid(character_id, value)](#crosszonesignalclientbycharid) | _int_
+[quest::crosszonesignalclientbycharid(name, value)](#crosszonesignalclientbycharid) | _multiple_
+[quest::crosszonesignalclientbycharid(name, value)](#crosszonesignalclientbycharid) | _multiple_
+[quest::crosszonesignalnpcbynpctypeid(npc_type_id, value)](#crosszonesignalnpcbynpctypeid) | _uint32_
+[quest::debug(message, debug_level)](#debug) | _multiple_
+[quest::delglobal(key)](#delglobal) | _string_
+[quest::depop(npc_type_id)](#depop) | _int_
+[quest::depop_withtimer(npc_type_id)](#depop_withtimer) | _int_
+[quest::depopall(npc_type_id)](#depopall) | _int_
+[quest::depopzone(start_spawn_status)](#depopzone) | _bool_
+[quest::ding()](#ding) | _none_
+[quest::disable_proximity_say()](#disable_proximity_say) | _none_
+[quest::disable_spawn2(spawn2_id)](#disable_spawn2) | _int_
+[quest::disablerecipe(recipe_id)](#disablerecipe) | _int_
+[quest::disabletask(task_id)](#disabletask) | _int_
+[quest::doanim(animation_id)](#doanim) | _int_
+[quest::echo(emote_color_id, message)](#echo) | _multiple_
+[quest::emote(message)](#emote) | _string_
+[quest::enable_proximity_say()](#enable_proximity_say) | _none_
+[quest::enable_spawn2(spawn2_id)](#enable_spawn2) | _int_
+[quest::enabledtaskcount(task_set)](#enabledtaskcount) | _int_
+[quest::enablerecipe(recipe_id)](#enablerecipe) | _int_
+[quest::enabletask(task_id)](#enabletask) | _int_
+[quest::enabletitle(title_set_id)](#enabletitle) | _int_
+[quest::exp(amount)](#exp) | _int_
+[quest::faction(faction_id, value, temp)](#faction) | _int_
+[quest::factionvalue()](#factionvalue) | _none_
+[quest::failtask(task_id)](#failtask) | _int_
+[quest::firsttaskinset(task_set)](#firsttaskinset) | _int_
+[quest::follow(entity_id, distance)](#follow) | _int_
+[quest::forcedoorclose(door_id, alt_mode)](#forcedoorclose) | _multiple_
+[quest::forcedooropen(door_id, alt_mode)](#forcedooropen) | _int_
+[quest::get_spawn_condition(zone_short, instance_id, condition_id)](#get_spawn_condition) | _multiple_
+[quest::getguildnamebyid(guild_id)](#getguildnamebyid) | _uint32_
+[quest::getlevel(type)](#getlevel) | _int_
+[quest::getplayerburiedcorpsecount(character_id)](#getplayerburiedcorpsecount) | _int_
+[quest::gettaskactivitydonecount(task_id, activity_id)](#gettaskactivitydonecount) | _int_
+[quest::givecash(copper, silver, gold, platinum)](#givecash) | _int_
+[quest::gmmove(x, y, z)](#gmmove) | _float_
+[quest::gmsay(message, color_id, send_to_world)](#gmsay) | _multiple_
+[quest::has_zone_flag(zone_id)](#has_zone_flag) | _uint32_
+[quest::incstat(stat_id, value)](#incstat) | _int_
+[quest::isdisctome(item_id)](#isdisctome) | _int_
+[quest::isdooropen(door_id)](#isdooropen) | _int_
+[quest::istaskaappropriate(task_id)](#istaskaappropriate) | _int_
+[quest::istaskactive(task_id)](#istaskactive) | _int_
+[quest::istaskactivityactive(task_id, activity_id)](#istaskactivityactive) | _int_
+[quest::istaskcompleted(task_id)](#istaskcompleted) | _int_
+[quest::istaskenabled(task_id)](#istaskenabled) | _int_
+[quest::itemlink(item_id)](#itemlink) | _int_
+[quest::lasttaskinset(task_set)](#lasttaskinset) | _int_
+[quest::level(new_level)](#level) | _int_
+[quest::me(message)](#me) | _string_
+[quest::movegrp(zone_id, x, y, z)](#movegrp) | _multiple_
+[quest::movepc(zone_id, x, y, z [float heading])](#movepc) | _multiple_
+[quest::moveto(x, y, z, heading, save_guard_location)](#moveto) | _multiple_
+[quest::nexttaskinset(task_set, task_id)](#nexttaskinset) | _int_
+[quest::npcfeature(feature, value)](#npcfeature) | _multiple_
+[quest::npcgender(gender_id)](#npcgender) | _int_
+[quest::npcrace(race_id)](#npcrace) | _int_
+[quest::npcsize(size)](#npcsize) | _int_
+[quest::npctexture(texture_id)](#npctexture) | _int_
+[quest::pause(duration-ms)](#pause) | _int_
+[quest::permaclass(class_id)](#permaclass) | _int_
+[quest::permagender(gender_id)](#permagender) | _int_
+[quest::permarace(race_id)](#permarace) | _int_
+[quest::playerfeature(feature, setting)](#playerfeature) | _multiple_
+[quest::playergender(gender_id)](#playergender) | _int_
+[quest::playerrace(race_id)](#playerrace) | _int_
+[quest::playersize(newsize)](#playersize) | _int_
+[quest::playertexture(texture_id)](#playertexture) | _int_
+[quest::popup(window_title, message, popup_id, buttons, duration)](#popup) | _multiple_
+[quest::pvp(mode)](#pvp) | _string_
+[quest::qs_player_event(character_id, message)](#qs_player_event) | _multiple_
+[quest::qs_send_query(query)](#qs_send_query) | _string_
+[quest::rain(weather)](#rain) | _int_
+[quest::rebind(zone_id, x, y, z)](#rebind) | _multiple_
+[quest::removetitle(title_set_id)](#removetitle) | _int_
+[quest::repopzone()](#repopzone) | _none_
+[quest::resettaskactivity(task_id, activity_id)](#resettaskactivity) | _int_
+[quest::respawn(npc_type_id, grid_id)](#respawn) | _int_
+[quest::resume()](#resume) | _none_
+[quest::safemove()](#safemove) | _none_
+[quest::save()](#save) | _none_
+[quest::say(message, language_id)](#say) | _multiple_
+[quest::saylink(message, silent, link_name)](#saylink) | _multiple_
+[quest::scribespells(max_level, min_level)](#scribespells) | _int_
+[quest::selfcast(spell_id)](#selfcast) | _int_
+[quest::set_proximity(min_x, max_x, min_y, max_y, min_z, max_z, say)](#set_proximity) | _multiple_
+[quest::set_zone_flag(zone_id)](#set_zone_flag) | _uint32_
+[quest::setallskill(value)](#setallskill) | _int_
+[quest::setanim(npc_type_id, appearance_number)](#setanim) | _int_
+[quest::setglobal(key, value, options, duration)](#setglobal) | _multiple_
+[quest::setguild(guild_id, guild_rank_id)](#setguild) | _int_
+[quest::sethp(mob_health_percentage)](#sethp) | _int_
+[quest::setlanguage(skill_id, value)](#setlanguage) | _int_
+[quest::setnexthpevent(at_mob_percentage)](#setnexthpevent) | _int_
+[quest::setnextinchpevent(at_mob_percentage)](#setnextinchpevent) | _int_
+[quest::setskill(skill_id, value)](#setskill) | _int_
+[quest::setsky(sky)](#setsky) | _uint8_
+[quest::setstat(stat_id, int_value)](#setstat) | _int_
+[quest::settarget(target_enum, target_id)](#settarget) | _multiple_
+[quest::settime(new_hour, new_min, update_world)](#settime) | _multiple_
+[quest::settimer(timer_name, seconds)](#settimer) | _multiple_
+[quest::settimerMS(timer_name, milliseconds)](#settimerMS) | _multiple_
+[quest::sfollow()](#sfollow) | _none_
+[quest::shout(message)](#shout) | _string_
+[quest::shout2(message)](#shout2) | _string_
+[quest::showgrid(grid_id)](#showgrid) | _int_
+[quest::signal(npc_id, wait_ms)](#signal) | _int_
+[quest::signalwith(npc_id, signal_id, wait_ms)](#signalwith) | _int_
+[quest::snow(weather)](#snow) | _int_
+[quest::spawn(npc_type_id, grid_id, int_unused, x, y, z)](#spawn) | _multiple_
+[quest::spawn2(npc_type_id, grid_id, int_unused, x, y, z, heading)](#spawn2) | _multiple_
+[quest::spawn_condition(zone_short, instance_id, condition_id, value)](#spawn_condition) | _multiple_
+[quest::spawn_from_spawn2(spawn2_id)](#spawn_from_spawn2) | _int_
+[quest::start(waypoint)](#start) | _int_
+[quest::stop()](#stop) | _none_
+[quest::stopalltimers()](#stopalltimers) | _none_
+[quest::stoptimer(timer_name)](#stoptimer) | _string_
+[quest::summonallplayercorpses(char_id, dest_x, dest_y, dest_z, dest_heading)](#summonallplayercorpses) | _multiple_
+[quest::summonburiedplayercorpse(char_id, dest_x, dest_y, dest_z, dest_heading)](#summonburiedplayercorpse) | _multiple_
+[quest::summonitem(item_id, charges)](#summonitem) | _multiple_
+[quest::surname(name)](#surname) | _string_
+[quest::targlobal(key, value, duration, npc_id, chararacter_id, zone_id)](#targlobal) | _multiple_
+[quest::task_setselector(task_set_id)](#task_setselector) | _int_
+[quest::taskexplorearea(explore_id)](#taskexplorearea) | _int_
+[quest::taskselector(task_id)](#taskselector) | _int_
+[quest::tasktimeleft(task_id)](#tasktimeleft) | _int_
+[quest::toggle_spawn_event(event_id, is_enabled, is_strict, reset_base)](#toggle_spawn_event) | _multiple_
+[quest::toggledoorstate(door_id)](#toggledoorstate) | _int_
+[quest::traindisc(tome_item_id)](#traindisc) | _int_
+[quest::traindiscs(max_level, min_level)](#traindiscs) | _int_
+[quest::unique_spawn(npc_type_id,grid_id, int_unused, x, y, z, heading)](#unique_spawn) | _multiple_
+[quest::unscribespells()](#unscribespells) | _none_
+[quest::untraindiscs()](#untraindiscs) | _none_
+[quest::updatetaskactivity(task_id, activity_id, count, ignore_quest_update)](#updatetaskactivity) | _multiple_
+[quest::varlink(item_id)](#varlink) | _uint32_
+[quest::voicetell(client_name, macro_id, race_id, gender_id)](#voicetell) | _multiple_
+[quest::we(emote_color_id, message)](#we) | _multiple_
+[quest::wearchange(slot, texture_id, hero_forge_model_id, elite_material_id)](#wearchange) | _multiple_
+[quest::worldwidemarquee(color_id, priority, fade_in, fade_out, duration, message)](#worldwidemarquee) | _multiple_
+[quest::write(file_name, message)](#write) | _string_
+[quest::ze(emote_color_id, message)](#ze) | _multiple_
+[quest::zone(zone_name)](#zone) | _string_
+
+## Functions
 
 ### AssignGroupToInstance
 
