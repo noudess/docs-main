@@ -33,11 +33,23 @@
 * [[ProjectEQ Database]]
 * [[Database Schema]]
 * [[Database Schema Migrations]]
+
 ---
-**Scripts / Quests API**
-* [[Lua|Lua API]]
-* [[Perl|Perl API]]
+**[[Lua API]]**
+* [[Lua Parser]]
+* [[Lua Constants]]
+* [[Lua Hate List]]
+---
+**[[Perl API]]**
+* [[sub EVENTs|Perl-API---Sub-Events]]
+* [[Exported Variables|Perl-API---Exported-Variables]]
+* [[General Quest API|Perl-API---Quest-API]]
+* [[Functions|Perl-API---Functions]]
+---
+**Scripting**
 * [[Data Buckets]]
+* [[Example: Buffers|Buff-your-Players]]
+* [[Example: Teleporters|Teleport-your-Players]]
 ---
 **Reference Lists**
 * [[Alternate Currencies]]
