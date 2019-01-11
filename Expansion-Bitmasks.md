@@ -1,4 +1,4 @@
-Bit Values:
+Bit Values
 |ID|Token|Value (int)| Value (hex)|
 |--- |--- |--- |--- |
 |0|bitEverQuest||0x00000000|
@@ -22,7 +22,7 @@ Bit Values:
 |18|bitVoA||0x00020000|
 |19|bitRoF||0x00040000|
 
-Mask Values:
+Mask Values
 |ID|Token|Value (int)| Value (hex)|
 |--- |--- |--- |--- |
 |0|maskEverQuest||0x00000000|
