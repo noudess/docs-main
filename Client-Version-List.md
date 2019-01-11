@@ -1,6 +1,6 @@
 |Client|Value|Expansion|
 |--- |--- |--- |
-|Unknown|0|[EverQuest|Expansion List]|
+|Unknown|0|[EverQuest][Expansion List]|
 |Client62*|1|None|
 |Titanium|2|[[PoR|Expansion List]]|
 |SoF|3|[[SoF|Expansion List]]|
