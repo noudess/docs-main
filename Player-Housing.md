@@ -27,6 +27,37 @@ The RoF2 opcodes are suspect. It could be that they didn't change across several
 | CotF   | OP_HouseAddress        | 0x4F13 (11/06/13)<br/>0x7B0D (01/22/2014)                                                                   |
 |        | OP_HouseContents       | 0x0588 (11/06/13)<br/>0x41B3 (01/22/2014)                                                                   |
 
+## Player Housing Zones
+| Short Name | Long Name | Zone ID Number |
+|--------------|---------------|-----|
+| neighborhood | Sunrise Hills | 712 |
+| phinterior3a1 | House Interior | 714 |
+| phinterior1a1 | House Interior | 715 |
+| phinterior3a2 | House Interior | 716 |
+| phinterior3a3 | House Interior | 717 |
+| phinterior1a2 | House Interior | 718 |
+| phinterior1a3 | House Interior | 719 |
+| phinterior1b1 | Dragon House Interior | 720 |
+| phinterior1d1 | Dragon House Interior | 723 |
+| guildhalllrg | Grand Guild Hall | 737 |
+| guildhallsml | Greater Guild Hall | 738 |
+| plhogrinteriors1a1 | One Bedroom House Interior | 739 |
+| plhogrinteriors1a2 | One Bedroom House Interior | 740 |
+| plhogrinteriors3a1 | Three Bedroom House Interior | 741 |
+| plhogrinteriors3a2 | Three Bedroom House Interior | 742 |
+| plhogrinteriors3b1 | Three Bedroom House Interior | 743 |
+| plhogrinteriors3b2 | Three Bedroom House Interior | 744 |
+| plhdkeinteriors1a1 | One Bedroom House Interior | 745 |
+| plhdkeinteriors1a2 | One Bedroom House Interior | 746 |
+| plhdkeinteriors1a3 | One Bedroom House Interior | 747 |
+| plhdkeinteriors3a1 | Three Bedroom House Interior | 748 |
+| plhdkeinteriors3a2 | Three Bedroom House Interior | 749 |
+| plhdkeinteriors3a3 | Three Bedroom House Interior | 750 |
+| guildhall3 | Modest Guild Hall | 751 |
+| phinteriortree | Evantil's Abode | 766 |
+| plhbixieint | Bixie Hive | 774 |
+| plhpirateshipint | Pirate Ship | 786 |
+
 ## Click on door to view Neighborhood List (Client -> Server)
 
 | Name                   | Number of Bytes | Description                             |
