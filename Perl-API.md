@@ -1,3 +1,5 @@
+#ProTip: hit ctrl + f (Windows) or ⌘ + f (Mac) to FIND something on this page
+
 - [**Beginners Guide To Perl**](#beginners-guide-to-perl)
 - [**Real Use Examples**](#real-use-examples)
     + [Conditionals](#--conditionals--)
