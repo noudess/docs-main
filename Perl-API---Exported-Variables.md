@@ -1,9 +1,7 @@
 #ProTip: hit ctrl + f (Windows) or ⌘ + f (Mac) to FIND something on this page
 
-# Exported Variables
-
 * A full list can always be found in the EQEmu source [https://github.com/EQEmu/Server/blob/master/zone/embparser.cpp](https://github.com/EQEmu/Server/blob/master/zone/embparser.cpp)
-* Exported variables are sometimes available globally during sub-events, some exported variables are only available in certain sub-events
+* Exported variables are sometimes available globally during sub-events, some exported variables are only available in certain sub-events--see [[Perl API sub EVENTs|Perl-API---Sub-Events]] for a listing of each event and its exports.
 
 | Exported Variable | Usage |
 | --- | --- |
