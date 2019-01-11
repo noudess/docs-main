@@ -1,6 +1,6 @@
 |ID|Token|Name|
 |--- |--- |--- |
-|0|EverQuest|Default: No Expansions Enabled|
+|0|<a name="EverQuest"></a>EverQuest|Default: No Expansions Enabled|
 |1|RoK|The Ruins of Kunark|
 |2|SoV|The Scars of Velious|
 |3|SoL|The Shadows of Luclin|
