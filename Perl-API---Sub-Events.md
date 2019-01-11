@@ -1,10 +1,8 @@
 #ProTip: hit ctrl + f (Windows) or ⌘ + f (Mac) to FIND something on this page
 
-# Perl Sub Events
+# List of EVENTs
 
 A full list can always be found in the EQEmu source [https://github.com/EQEmu/Server/blob/master/zone/embparser.cpp](https://github.com/EQEmu/Server/blob/master/zone/embparser.cpp)
-
-# Full List
 
 | Event Name | Event Trigger |
 | --- | --- |
