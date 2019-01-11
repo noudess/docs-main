@@ -49,6 +49,8 @@
 * [[Client Version List]]
 * [[Deity|Deity List]]
 * [[Emote Colors]]
+* [[Expansion Bitmasks]]
+* [[Expansion List]]
 * [[Experience by Level]]
 * [[Facial Features]]
 * [[Inventory Slots]]
