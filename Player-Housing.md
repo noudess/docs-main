@@ -149,7 +149,7 @@ If # of Players is greater than 0, the fields Player Name Length and Player Name
 | Unknown                | 12              | |
 | Street Address Length  | 4               | |
 | Street Address		 | Street Address Length | Not null terminated. |
-| Unknown Name Length	 | 3               | |
+| Unknown Name Length	 | 4               | |
 | Unknown Value			 | Unknown Name Length | |
 | Owner Name Length 	 | 4               | |
 | Owner Name			 | Owner Name Length | |
