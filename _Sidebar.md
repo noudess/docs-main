@@ -134,4 +134,4 @@
 * [[Map Edit]]
 
 **Developer**
-* [[EQ Dictionary]]
+* [[EQDictionary]]
