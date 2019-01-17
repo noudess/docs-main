@@ -133,5 +133,5 @@
 **Navigation Mesh**
 * [[Map Edit]]
 
-**Developer**
+**[[Developer Info]]**
 * [[EQDictionary]]
