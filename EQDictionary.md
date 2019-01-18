@@ -32,6 +32,34 @@ The second case will allow clients to be added in any order..but, requires awkwa
 
 The EQDictionary (last) case does not require any special ordering of clients or manipulation of mask bits.
 
-In fact, this system makes ClientVersion bitmask use obselete.
+In fact, this system makes ClientVersion comparison and bitmask use obsolete.
 
 ### What makes up EQDictionary?
+Static and Dynamic references.
+
+Static references are design-/compile-time definitions of maximum client version-based values and are linked in 2 ways:
+* Server implementation standard accessed through `EQEmu::<system_namespace>::<property>`
+* Server-based version lookup accessed through `EQEmu::<system_namespace>::Lookup(version)-><property>`
+
+Note: invalid versions returns the default null set reference
+
+Dynamic references are run-time definitions based on expansion settings. There are 2 dynamic references based on gm flag states `<set>` and `<clear>`.
+
+Dynamic lookups are usually embedded into a system class..but, their use is not exclusive to them.
+
+The following files comprise the system:
+* [emu_constants.h](https://github.com/EQEmu/Server/blob/master/common/emu_constants.h)
+* [emu_limits.h](https://github.com/EQEmu/Server/blob/master/common/emu_limits.h)
+* [emu_limits.cpp](https://github.com/EQEmu/Server/blob/master/common/emu_limits.cpp)
+* [titanium_limits.h](https://github.com/EQEmu/Server/blob/master/common/patches/titanium_limits.h)
+* [titanium_limits.cpp](https://github.com/EQEmu/Server/blob/master/common/patches/titanium_limits.cpp)
+* [sof_limits.h](https://github.com/EQEmu/Server/blob/master/common/patches/sof_limits.h)
+* [sof_limits.cpp](https://github.com/EQEmu/Server/blob/master/common/patches/sof_limits.cpp)
+* [sod_limits.h](https://github.com/EQEmu/Server/blob/master/common/patches/sod_limits.h)
+* [sod_limits.cpp](https://github.com/EQEmu/Server/blob/master/common/patches/sod_limits.cpp)
+* [uf_limits.h](https://github.com/EQEmu/Server/blob/master/common/patches/uf_limits.h)
+* [uf_limits.cpp](https://github.com/EQEmu/Server/blob/master/common/patches/uf_limits.cpp)
+* [rof_limits.h](https://github.com/EQEmu/Server/blob/master/common/patches/rof_limits.h)
+* [rof_limits.cpp](https://github.com/EQEmu/Server/blob/master/common/patches/rof_limits.cpp)
+* [rof2_limits.h](https://github.com/EQEmu/Server/blob/master/common/patches/rof2_limits.h)
+* [rof2_limits.cpp](https://github.com/EQEmu/Server/blob/master/common/patches/rof2_limits.cpp)
