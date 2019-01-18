@@ -33,3 +33,5 @@ The second case will allow clients to be added in any order..but, requires awkwa
 The EQDictionary (last) case does not require any special ordering of clients or manipulation of mask bits.
 
 In fact, this system makes ClientVersion bitmask use obselete.
+
+### What makes up EQDictionary?
