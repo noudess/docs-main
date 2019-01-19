@@ -34,6 +34,8 @@ The EQDictionary (last) case does not require any special ordering of clients or
 
 In fact, this system makes ClientVersion comparison and bitmask use obsolete.
 
+Additionally, duplicate definitions can be avoided by having a singular location to reference.
+
 ### What makes up EQDictionary?
 Static and Dynamic references.
 
