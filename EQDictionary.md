@@ -45,10 +45,19 @@ Static references are design-/compile-time definitions of maximum client version
 
 Note: invalid versions returns the default null set reference
 
-Dynamic references are run-time definitions based on expansion settings. There are 2 dynamic references based on gm flag states `<set>` and `<clear>`.
+Dynamic references are run-time definitions based on expansion settings, and possibly, other criteria.
+
+There are 2 dynamic references based on gm flag states `<set>` and `<clear>`.
 
 Dynamic lookups are usually embedded into a system class..but, their use is not exclusive to them.
 
+Not every case of client/mob version and gm flag set/clear will receive a dynamic entry.
+
+These entries are built when the initial call to `EQEmu::<system_namespace>::InitializeDynamicLookups()` is performed.
+
+A deep, working knowledge of client behavior is required to correctly set up dynamic entries. Testing through server settings and observation is the best way to achieve this.
+
+### Where do I look for all of this?
 The following files comprise the system:
 * [emu_constants.h](https://github.com/EQEmu/Server/blob/master/common/emu_constants.h)
 * [emu_limits.h](https://github.com/EQEmu/Server/blob/master/common/emu_limits.h)
@@ -65,3 +74,6 @@ The following files comprise the system:
 * [rof_limits.cpp](https://github.com/EQEmu/Server/blob/master/common/patches/rof_limits.cpp)
 * [rof2_limits.h](https://github.com/EQEmu/Server/blob/master/common/patches/rof2_limits.h)
 * [rof2_limits.cpp](https://github.com/EQEmu/Server/blob/master/common/patches/rof2_limits.cpp)
+
+### How do I create a new lookup or add to an existing one?
+Adding properties to an existing lookup involves most of the same requirements as [[creating a new lookup system|Creating-EQDictionary-System]].
