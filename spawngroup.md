@@ -11,4 +11,4 @@ min\_y|float|NO| |0|
 delay|int(11)|NO| |45000| 
 mindelay|int(11)|NO| |15000| 
 despawn|tinyint(3)|NO| |0| 
-despawn\_timer|int(11)|NO| |100| 
+despawn\_timer|int(11)|NO| |100|seconds
