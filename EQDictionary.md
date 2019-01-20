@@ -76,4 +76,4 @@ The following files comprise the system:
 * [rof2_limits.cpp](https://github.com/EQEmu/Server/blob/master/common/patches/rof2_limits.cpp)
 
 ### How do I create a new lookup or add to an existing one?
-Adding properties to an existing lookup involves most of the same requirements as [[creating a new lookup system|Creating-EQDictionary-System]].
+Adding properties to an existing lookup involves most of the same steps as [[creating a new lookup system|Creating-EQDictionary-System]].
