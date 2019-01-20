@@ -30,9 +30,7 @@ The first case requires that clients to be added in order of release.
 
 The second case will allow clients to be added in any order..but, requires awkward manipulation of mask bits.
 
-The EQDictionary (last) case does not require any special ordering of clients or manipulation of mask bits.
-
-In fact, this system makes ClientVersion comparison and bitmask use obsolete.
+The EQDictionary (last) case does not require any special ordering of clients or manipulation of mask bits. In fact, this system makes ClientVersion comparison and bitmask use obsolete.
 
 Additionally, duplicate definitions can be avoided by having a singular location to reference.
 
@@ -43,19 +41,19 @@ Static references are design-/compile-time definitions of maximum client version
 * Server implementation standard accessed through `EQEmu::<system_namespace>::<property>`
 * Server-based version lookup accessed through `EQEmu::<system_namespace>::Lookup(version)-><property>`
 
-Note: invalid versions returns the default null set reference
+*Note: invalid versions returns the default null set reference*
 
-Dynamic references are run-time definitions based on expansion settings, and possibly, other criteria.
+Dynamic references are run-time definitions based on expansion settings, and possibly other criteria.
 
 There are 2 dynamic references based on gm flag states `<set>` and `<clear>`.
 
 Dynamic lookups are usually embedded into a system class..but, their use is not exclusive to them.
 
-Not every case of client/mob version and gm flag set/clear will receive a dynamic entry.
+Not every case of client/mob version and gm flag set/clear will receive a dynamic entry. In these cases, the static reference is returned.
 
-These entries are built when the initial call to `EQEmu::<system_namespace>::InitializeDynamicLookups()` is performed.
+These entries are built when the initial call to `EQEmu::<system_namespace>::InitializeDynamicLookups()` is performed at server start-up.
 
-A deep, working knowledge of client behavior is required to correctly set up dynamic entries. Testing through server settings and observation is the best way to achieve this.
+A deep, working knowledge of client behavior is required to correctly set up dynamic entries. Testing through server setting changes and client observation is the best way to achieve this.
 
 ### Where do I look for all of this?
 The following files comprise the system:
