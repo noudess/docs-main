@@ -47,7 +47,7 @@ Static references are design-/compile-time definitions of maximum client version
 * Server implementation standard accessed through `EQEmu::<system_namespace>::<property>`
 * Server-based version lookup accessed through `EQEmu::<system_namespace>::Lookup(version)-><property>`
 
-*Note: invalid versions returns the default, null-set reference*
+*Note: invalid versions return the default, null-set reference*
 
 Dynamic references are run-time definitions based on expansion settings, and possibly other criteria.
 
