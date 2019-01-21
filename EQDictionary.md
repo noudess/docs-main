@@ -61,12 +61,14 @@ The entries are constructed based on expansion settings when the initial call to
 
 Creating dynamic lookups and embedding them into system classes allow for criteria updates that would normally require even more state condition checks and more static variable definitions making proper support for per-expansion and gm flag states impractical.
 
+(The number of static lookups required to support non-dynamic lookups would essentially be 'the number of expansions' -> squared, then multiplied by 2 to account for gm state.)
+
 Dynamic lookups resolve the complexity of coding needed to support the myriad of conditions required support to customizable server features.
 
 A deep, working knowledge of client behavior is required to correctly set up dynamic entries. Testing through server setting changes and client observation is the best way to achieve this.
 
 ### Where do I look for all of this?
-The following files comprise the system:
+Currently, the following files comprise the system:
 * [emu_constants.h](https://github.com/EQEmu/Server/blob/master/common/emu_constants.h)
 * [emu_limits.h](https://github.com/EQEmu/Server/blob/master/common/emu_limits.h)
 * [emu_limits.cpp](https://github.com/EQEmu/Server/blob/master/common/emu_limits.cpp)
