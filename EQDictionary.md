@@ -8,23 +8,29 @@ The purpose of this system is to allow cyclic or minimum conditional evaluations
 ### What can you do with it?
 Simplifying coding methodology can change current standards from this:
 
-`if (ClientVersion() >= EQEmu::versions::ClientVersion::SoF) { bank_slot_count = 24; }`
+```
+if (ClientVersion() >= EQEmu::versions::ClientVersion::SoF) { bank_slot_count = 24; }
 
-`else { bank_slot_count = 16; }`
+else { bank_slot_count = 16; }
 
-`if (current_slot >= bank_slot_count) { return; }`
+if (current_slot >= bank_slot_count) { return; }
+```
 
 Or this:
 
-`if (m_ClientBitmask & EQEmu::versions::maskSoFAndLater) { bank_slot_count = 24; }`
+```
+if (m_ClientBitmask & EQEmu::versions::maskSoFAndLater) { bank_slot_count = 24; }
 
-`else { bank_slot_count = 16; }`
+else { bank_slot_count = 16; }
 
-`if (current_slot >= bank_slot_count) { return; }`
+if (current_slot >= bank_slot_count) { return; }
+```
 
 To this:
 
-`if (current_slot >= m_inv.GetInv().GetLookup()->InventoryTypeSize.Bank) { return; }`
+```
+if (current_slot >= m_inv.GetInv().GetLookup()->InventoryTypeSize.Bank) { return; }
+```
 
 The first case requires that clients to be added in order of release.
 
