@@ -1,7 +1,7 @@
 ### What is it?
-EQDictionary is a collection of lookup references, accessed by specific namespaces and referenced by [[client|Client-Version-List]] or [[mob|Mob-Version-List]] version.
+EQDictionary is a collection of lookup references, accessed by specific namespaces and referenced by implementation standard, or [[client|Client-Version-List]] and [[mob|Mob-Version-List]] versions.
 
-References are tied back to the originating client definition..but, are available through an indexed lookup system.
+References are usually tied back to the originating client definition and are available through an indexed lookup system. Server-based 'hybrid' definitions may also be implemented to bridge differences between client implementations and server requirements.
 
 The purpose of this system is to allow cyclic or minimum conditional evaluations in order to transform data.
 
@@ -47,7 +47,7 @@ Static references are design-/compile-time definitions of maximum client version
 * Server implementation standard accessed through `EQEmu::<system_namespace>::<property>`
 * Server-based version lookup accessed through `EQEmu::<system_namespace>::Lookup(version)-><property>`
 
-*Note: invalid versions returns the default null set reference*
+*Note: invalid versions returns the default, null-set reference*
 
 Dynamic references are run-time definitions based on expansion settings, and possibly other criteria.
 
@@ -57,7 +57,11 @@ Dynamic lookups are usually embedded into a system class..but, their use is not 
 
 Not every case of client/mob version and gm flag set/clear will receive a dynamic entry. In these cases, the static reference is returned.
 
-These entries are built when the initial call to `EQEmu::<system_namespace>::InitializeDynamicLookups()` is performed at server start-up.
+The entries are constructed based on expansion settings when the initial call to `EQEmu::<system_namespace>::InitializeDynamicLookups()` is performed at server start-up.
+
+Creating dynamic lookups and embedding them into system classes allow for criteria updates that would normally require even more state condition checks and more static variable definitions making proper support for per-expansion and gm flag states impractical.
+
+Dynamic lookups resolve the complexity of coding needed to support the myriad of conditions required support to customizable server features.
 
 A deep, working knowledge of client behavior is required to correctly set up dynamic entries. Testing through server setting changes and client observation is the best way to achieve this.
 
