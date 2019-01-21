@@ -59,7 +59,7 @@ Not every case of client/mob version and gm flag set/clear will receive a dynami
 
 The entries are constructed based on expansion settings when the initial call to `EQEmu::<system_namespace>::InitializeDynamicLookups()` is performed at server start-up.
 
-Creating dynamic lookups and embedding them into system classes allow for criteria updates that would normally require even more state condition checks and more static variable definitions making proper support for per-expansion and gm flag states impractical.
+Creating dynamic lookups and embedding them into system classes allow for criteria updates that would normally require even more state condition checks and more static variable definitions making proper support for per-expansion and gm flag states without them impractical.
 
 (The number of static lookups required to support non-dynamic lookups would essentially be 'the number of expansions' -> squared, then multiplied by 2 to account for gm state.)
 
