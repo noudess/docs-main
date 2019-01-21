@@ -72,6 +72,8 @@ Currently, the following files comprise the system:
 * [emu_constants.h](https://github.com/EQEmu/Server/blob/master/common/emu_constants.h)
 * [emu_limits.h](https://github.com/EQEmu/Server/blob/master/common/emu_limits.h)
 * [emu_limits.cpp](https://github.com/EQEmu/Server/blob/master/common/emu_limits.cpp)
+* [eq_limits.h](https://github.com/EQEmu/Server/blob/master/common/eq_limits.h)
+* [eq_limits.cpp](https://github.com/EQEmu/Server/blob/master/common/eq_limits.cpp)
 * [titanium_limits.h](https://github.com/EQEmu/Server/blob/master/common/patches/titanium_limits.h)
 * [titanium_limits.cpp](https://github.com/EQEmu/Server/blob/master/common/patches/titanium_limits.cpp)
 * [sof_limits.h](https://github.com/EQEmu/Server/blob/master/common/patches/sof_limits.h)
