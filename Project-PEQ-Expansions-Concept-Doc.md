@@ -28,6 +28,22 @@ This document describes the challenges and solutions to creating a dynamic-expan
   - zone: add expansions field
 - Quests
   - Perhaps add a feature to prefix a quest file with an expansion to enable/disable it? Especially useful for things like player.pl/player.lua.
+### Legacy Zones
+```
+[7:25 PM] Shin Noir: zone points may need expansions.. well, and zones in general.
+What I would love to do personally, is add to PEQ "legacy" versions of zones, that are entirely new/unique inserts into zones. Maybe even a new shortname.
+
+legacylavastorm
+legacyecommons
+legacywcommons
+legacynektulous
+and so on.
+give them new unique zone id's and zone id numbers. They'll be disabled by default on PEQ, but perhaps if your expansion is less than when the revamps happen, it will attempt to load you into these legacy versions, the client will error about the zone not being found, but the server can be responsible with providing their player base with the old versions.
+[7:25 PM] Shin Noir: doing the above means we can add npc_types, spawn2, and all other field data without touching the revamped ones.
+[7:26 PM] Uleat: have to be careful using old as a prefix..there are valid names like oldcommonlands
+[7:26 PM] Shin Noir: whatever we decide, it's just a generic example
+```
+
 ### Combat
   - https://github.com/mackal/EQMechanics/wiki
 ```[PM] mackal: they used to have hardcaps on mitigation
