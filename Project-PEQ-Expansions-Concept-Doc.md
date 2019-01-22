@@ -5,7 +5,7 @@ This document describes the challenges and solutions to creating a dynamic-expan
 ## Areas of Concern
 - Load data based on expansion: Add a new expansion TINYINT(4)? to many tables to allow dynamic loading.
   - aa tables: This is handled I believe with db_string? Verify
-  - account: This stores the expansion value per account, used by other tables.
+  - account: This has an expansion field however it used to limit a specific account with a lesser-version expansion. Rule should be honored for the global expansion version
   - adventure_template: Since multiple expansions add different styles of adventures, add support for this.
   - char_create_combinations: expansions_req contains this data
   - doors: Does this need expansion? I'm leaning no, zone will determine
