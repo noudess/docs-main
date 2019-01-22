@@ -104,7 +104,7 @@
 [quest::follow(entity_id, distance)](#follow) | _int_
 [quest::forcedoorclose(door_id, alt_mode)](#forcedoorclose) | _multiple_
 [quest::forcedooropen(door_id, alt_mode)](#forcedooropen) | _int_
-[quest::get_rule(rule_name)](#getrule) | _string_
+[quest::get_rule(rule_name)](#get_rule) | _string_
 [quest::get_spawn_condition(zone_short, instance_id, condition_id)](#get_spawn_condition) | _multiple_
 [quest::getguildnamebyid(guild_id)](#getguildnamebyid) | _uint32_
 [quest::getlevel(type)](#getlevel) | _int_
@@ -171,6 +171,7 @@
 [quest::setlanguage(skill_id, value)](#setlanguage) | _int_
 [quest::setnexthpevent(at_mob_percentage)](#setnexthpevent) | _int_
 [quest::setnextinchpevent(at_mob_percentage)](#setnextinchpevent) | _int_
+[quest::set_rule(rule_name, rule_value)](#set_rule) | _multiple_
 [quest::setskill(skill_id, value)](#setskill) | _int_
 [quest::setsky(sky)](#setsky) | _uint8_
 [quest::setstat(stat_id, int_value)](#setstat) | _int_
