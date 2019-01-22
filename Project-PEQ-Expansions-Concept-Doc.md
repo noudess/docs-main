@@ -9,10 +9,9 @@ This document describes the challenges and solutions to creating a dynamic-expan
   - adventure_template: Since multiple expansions add different styles of adventures, add support for this.
   - char_create_combinations: expansions_req contains this data
   - doors: Does this need expansion? I'm leaning no, zone will determine
-  - items: may need expansion to ensure merchants, global_loot are not populated with out of era items
+  - items: may need expansion to ensure merchants, global_loot, starting_items are not populated with out of era items
   - spawn2: need expansion to disable spawning of certain npcs
   - spells_new: needs a way to discern expansion for allowing certain spells.
-  - starting_items: perhaps just honor if an item is of a proper expansion or not?
   - titles: may need expansion?
   - tradeskill_recipe: needs expansion
   - zone: will not be able to zone into an area unless you are GM status or have the expansion enabled.
