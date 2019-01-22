@@ -2036,7 +2036,7 @@ quest::forcedooropen(31);
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Returns the value of the specified rule for the zone you're in.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Returns the value of the specified [Rule](https://github.com/EQEmu/Server/wiki/Server-Rules) for the zone you're in.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
 
