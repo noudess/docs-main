@@ -104,6 +104,7 @@
 [quest::follow(entity_id, distance)](#follow) | _int_
 [quest::forcedoorclose(door_id, alt_mode)](#forcedoorclose) | _multiple_
 [quest::forcedooropen(door_id, alt_mode)](#forcedooropen) | _int_
+[quest::get_rule(rule_name)](#getrule) | _string_
 [quest::get_spawn_condition(zone_short, instance_id, condition_id)](#get_spawn_condition) | _multiple_
 [quest::getguildnamebyid(guild_id)](#getguildnamebyid) | _uint32_
 [quest::getlevel(type)](#getlevel) | _int_
@@ -2027,6 +2028,25 @@ quest::forcedoorclose(31);
 quest::forcedooropen(31);
 ```
 
+## get_rule
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rule_name _(string)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Returns the value of the specified rule for the zone you're in.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Get the rule value for rule "Zone:UseZoneController"
+sub EVENT_SAY {
+	if ($text=~/Hail/i) {
+		plugin::Whisper(quest::get_rule("Zone:UseZoneController")); #:: Whispers rule value to client.
+	}
+}```
+
 ## get_spawn_condition
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
@@ -3360,6 +3380,16 @@ sub EVENT_HP {
      }
 }
 ```
+
+## set_rule
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rule_name _(string)_, rule_value _(string)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Used to set the specified [Rule](https://github.com/EQEmu/Server/wiki/Server-Rules) to the specified value.
+
 
 ## setskill
 
