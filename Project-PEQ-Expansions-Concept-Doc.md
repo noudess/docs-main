@@ -18,7 +18,7 @@ This document describes the challenges and solutions to creating a dynamic-expan
   - merchantlist: add expansions field
   - object: add expansions field
   - spawn2: add expansions field
-  - spells_new: add expansions field
+  - spells_new: due to general nature of spells, and simplicity to simply replace, no expansions field.
   - starting_items - add expansions field
   - start_zones: add expansions field
   - titles: add expansions field
