@@ -9,13 +9,23 @@ This document describes the challenges and solutions to creating a dynamic-expan
   - adventure_template: Since multiple expansions add different styles of adventures, add support for this.
   - char_create_combinations: expansions_req contains this data
   - doors: Does this need expansion? I'm leaning no, zone will determine
-  - items: may need expansion to ensure merchants, global_loot, starting_items are not populated with out of era items
-  - loottables - add expansions field
-  - spawn2: need expansion to disable spawning of certain npcs
-  - spells_new: needs a way to discern expansion for allowing certain spells.
-  - titles: may need expansion?
-  - tradeskill_recipe: needs expansion
-  - zone: will not be able to zone into an area unless you are GM status or have the expansion enabled.
+  - fishing: add expansions field
+  - forage: add expansions field
+  - global_loot: add expansions field
+  - ground_spawns: add expansions field
+  - loottable: add expansions field
+  - lootdrop: add expansions field
+  - merchantlist: add expansions field
+  - object: add expansions field
+  - spawn2: add expansions field
+  - spells_new: add expansions field
+  - starting_items - add expansions field
+  - start_zones: add expansions field
+  - titles: add expansions field
+  - tradeskill_recipe: add expansions field
+  - traps: add expansions field
+  - tributes: add expansions field
+  - zone: add expansions field
 - Quests
   - Perhaps add a feature to prefix a quest file with an expansion to enable/disable it? Especially useful for things like player.pl/player.lua.
 ### Combat
