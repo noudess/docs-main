@@ -10,6 +10,7 @@ This document describes the challenges and solutions to creating a dynamic-expan
   - char_create_combinations: expansions_req contains this data
   - doors: Does this need expansion? I'm leaning no, zone will determine
   - items: may need expansion to ensure merchants, global_loot, starting_items are not populated with out of era items
+  - loottables - add expansions field
   - spawn2: need expansion to disable spawning of certain npcs
   - spells_new: needs a way to discern expansion for allowing certain spells.
   - titles: may need expansion?
