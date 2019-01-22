@@ -2046,7 +2046,8 @@ sub EVENT_SAY {
 	if ($text=~/Hail/i) {
 		plugin::Whisper(quest::get_rule("Zone:UseZoneController")); #:: Whispers rule value to client.
 	}
-}```
+}
+```
 
 ## get_spawn_condition
 
@@ -3391,6 +3392,12 @@ sub EVENT_HP {
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Used to set the specified [Rule](https://github.com/EQEmu/Server/wiki/Server-Rules) to the specified value.
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Set Character:MaxLevel to 100 for the current zone.
+quest::set_rule("Character:MaxLevel", 100);
+```
 
 ## setskill
 
