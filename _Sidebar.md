@@ -135,3 +135,4 @@
 
 **[[Developer Info]]**
 * [[EQDictionary]]
+* [[Per-Client Inventory Slots]]
