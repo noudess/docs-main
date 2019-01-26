@@ -76,6 +76,7 @@ The RoF2 opcodes are suspect. It could be that they didn't change across several
 | Unknown                | 2               |                                         |
 
 ## Neighborhood List (Server -> Client)
+**20190126 - Verified OpCode and Packet structure in RoF**
 
 | Name                               | Number of Bytes          | Description                                                              |
 |------------------------------------|--------------------------|--------------------------------------------------------------------------|
