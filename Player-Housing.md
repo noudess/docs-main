@@ -114,6 +114,7 @@ Once the first neighborhood is parsed, the format repeats for the next Neighborh
 | Player Search Criteria   | 64                       | A player's name. 63 bytes plus 1 for the null terminator. |
 | Guild Search Criteria    | 64                       | A guild's name. 63 bytes plus 1 for the null terminator. |
 | Unknown                  | 2                        | Always 1,1                                  |
+| Unknown                  | 2                        | Always 132,0 (Seen in RoF, but not in Live)                 |
 
 ## Response to click to get neighborhood details (Server -> Client)
 
