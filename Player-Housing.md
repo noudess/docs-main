@@ -92,7 +92,7 @@ The RoF2 opcodes are suspect. It could be that they didn't change across several
 | Neighborhood Name Length           | 4                        |                                                                          |
 | Neighborhood Name                  | Neighborhood Name Length | Not null terminated                                                      |
 | Guild ID                           | 4                        | 0 if no guild is associated with this neighborhood, otherwise it is the Guild ID           |
-| Unknown                            | 4                        | If Guild ID is 0, this is also 0. If Guild ID is not 0, this is always 147,0,0,0                 |
+| Unknown                            | 4                        | Only seen on Live. If RoF, this field is not present in the packet: If Guild ID is 0, this is also 0. If Guild ID is not 0, this is always 147,0,0,0                 |
 | Max Player Plots                   | 4                        | Always 71                                                                       |
 | Used Player Plots                  | 4                        |                                                                          |
 | Max Guild Plots                    | 4                        | Always 4                                                                        |
