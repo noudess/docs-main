@@ -130,8 +130,8 @@ Once the first neighborhood is parsed, the format repeats for the next Neighborh
 | Player Name Length     | 4                  |                     |
 | Player Name            | Player Name Length | Not null terminated |
 | # of Guilds            | 2                  |                     |
-| Guild ID               | 4                  |                     |
-| Guild Terminator       | 4                  | 147,0,0,0           |
+| Guild ID               | 4                  | If no guilds, this field is not in the packet.                    |
+| Guild Terminator       | 4                  | 147,0,0,0 : If no guilds, this field is not in the packet.           |
 
 If # of Players is greater than 0, the fields Player Name Length and Player Name repeat. The same is true for # of Guilds.
 
