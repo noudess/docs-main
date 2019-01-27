@@ -83,7 +83,7 @@ The RoF2 opcodes are suspect. It could be that they didn't change across several
 | Network OpCode                     | 2                        | 0x0D                                                                     |
 | Packet Sequence Number             | 2                        | Identifies order of fragments                                            |
 | Total length of combined fragments | 3                        | Total size of all fragments. This is only present in the first fragment. |
-| Application OpCode                 | 2                        | RoF: 0x67C9<br/>Live (20181217): 0x5C12                                                       |
+| Application OpCode                 | 2                        | RoF: 0x67C9<br/>Live (20181217): 0x5C12<br/>Live (20190118): 0x1659                                                       |
 | Unknown                            | 4                        | An id? Different across servers                                          |
 | Unknown                            | 5                        | Always 6,0,0,0,0                                                         |
 | Total # of Neighborhoods           | 2                        |                                                                          |
@@ -106,7 +106,7 @@ Once the first neighborhood is parsed, the format repeats for the next Neighborh
 |--------------------------|--------------------------|----------------------------------------------------------------|
 | Network OpCode           | 2                        | 0x09                                                           |
 | Packet Sequence Number   | 2                        |                                                                |
-| Application OpCode       | 2                        | RoF: 0x67C9<br/>Live (20181217): 0x5C12                                             |
+| Application OpCode       | 2                        | RoF: 0x67C9<br/>Live (20181217): 0x5C12<br/>Live (20190118): 0x1659                                             |
 | Search Type              | 4                        | 0 when searching for a player or guild.<br/>2 when clicking to view details of a specific neighborhood.<br/>4 when inside a neighborhood and searching specific addresses. |
 | Neighborhood ID          | 4                        | 1 if searching for a player. The Neighborhood ID if clicking on a neighborhood entry. |
 | Unknown                  | 4                        | 0s
@@ -122,7 +122,7 @@ Once the first neighborhood is parsed, the format repeats for the next Neighborh
 |------------------------|--------------------|---------------------|
 | Network OpCode         | 2                  | 0x09                |
 | Packet Sequence Number | 2                  |                     |
-| Application OpCode     | 2                  | RoF: 0x67C9<br/>Live (20181217): 0x5C12  |
+| Application OpCode     | 2                  | RoF: 0x67C9<br/>Live (20181217): 0x5C12<br/>Live (20190118): 0x1659  |
 | Unknown                | 4                  | 173,153,9,0         |
 | Unknown                | 1                  | 10                  |
 | Unknown                | 4                  | 2,0,0,0             |
@@ -141,7 +141,7 @@ If # of Players is greater than 0, the fields Player Name Length and Player Name
 |------------------------|-----------------|----------------------------------|
 | Network OpCode         | 2               | 0x09                             |
 | Packet Sequence Number | 2               |                                  |
-| Application OpCode     | 2               | RoF: 0x67C9<br/>Live (20181217): 0x5C12                           |
+| Application OpCode     | 2               | RoF: 0x67C9<br/>Live (20181217): 0x5C12<br/>Live (20190118): 0x1659                           |
 | Unknown		         | 15              | |
 | Neighborhood ID		 | 4               |                                  |
 | Unknown				 | 4               | |
