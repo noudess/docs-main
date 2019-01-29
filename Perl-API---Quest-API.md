@@ -294,7 +294,7 @@ quest::AssignToInstance($Instance);
 ```perl
 #:: Create a scalar variable to store instance_id
 my $Instance = quest::GetInstanceIDByCharID($zonesn, $instanceversion, $charid); #:: Returns int
-quest::AssignToInstance($Instance);
+quest::AssignToInstanceByCharID($Instance, $charid);
 ```
 
 ### ChooseRandom
