@@ -6,12 +6,13 @@
 
 *  Where multiple data types are indicated, please reference the function description below for a full explanation.
 
-**Function** | **Data Type
+**Function** | **Data Type**
 ------ | ---
 [quest::AssignGroupToInstance(instance_id)](#AssignGroupToInstance) | _uint16_
 [quest::AssignRaidToInstance(instance_id)](#AssignRaidToInstance) | _uint16_
 [quest::AssignToInstance(instance_id)](#AssignToInstance) | _uint16_
-[quest::ChooseRandom(option1, option2, option3, option4, option5...[no limit])](#ChooseRandom) | _multiple_
+[quest::AssignToInstanceByCharID(instance_id, char_id)](#AssignToInstanceByCharID) | _multiple_
+[quest::ChooseRandom(option1, option2, option3, option4...[no limit])](#ChooseRandom) | _multiple_
 [quest::CreateInstance(zone_name, version, duration)](#CreateInstance) | _multiple_
 [quest::DestroyInstance(id)](#DestroyInstance) | _int_
 [quest::FlagInstanceByGroupLeader(zone, version)](#FlagInstanceByGroupLeader) | _multiple_
@@ -19,6 +20,7 @@
 [quest::FlyMode(mode)](#FlyMode) | _uint8_
 [quest::GetCharactersInInstance(instance_id)](#GetCharactersInInstance) | _uint16_
 [quest::GetInstanceID(zone_name, version)](#GetInstanceID) | _multiple_
+[quest::GetInstanceIDByCharID(zone, version, char_id)](#GetInstanceIDByCharID) | _multiple_
 [quest::GetInstanceTimer()](#GetInstanceTimer) | _none_
 [quest::GetInstanceTimerByID(instance_id)](#GetInstanceTimerByID) | _uint16_
 [quest::GetSpellResistType(spell_id)](#GetSpellResistType) | _uint32_
@@ -36,6 +38,7 @@
 [quest::MovePCInstance(zone_id, instance_id, x, y, z, heading)](#MovePCInstance) | _multiple_
 [quest::RemoveAllFromInstance(instance_id)](#RemoveAllFromInstance) | _uint16_
 [quest::RemoveFromInstance(instance_id)](#RemoveFromInstance) | _uint16_
+[quest::RemoveFromInstanceByCharID(instance_id, char_id)](#RemoveFromInstancByCharID) | _multiple_
 [quest::SendMail(to, from, subject, message)](#SendMail) | _string_
 [quest::SetRunning(is_running)](#SetRunning) | _bool_
 [quest::UpdateInstanceTimer(instance_id, duration)](#UpdateInstanceTimer) | _multiple_
@@ -253,8 +256,8 @@ quest::AssignGroupToInstance($Instance);
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
 
 ```perl
-#:: Create a scalar variable to store instance_id--GetInstanceID returns int
-my $Instance = quest::GetInstanceID($zonesn, $instanceversion); 
+#:: Create a scalar variable to store instance_id
+my $Instance = quest::GetInstanceID($zonesn, $instanceversion); #:: GetInstanceID returns int
 quest::AssignRaidToInstance($Instance);
 ```
 
@@ -271,10 +274,29 @@ quest::AssignRaidToInstance($Instance);
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example**
 
 ```perl
-#:: Create a scalar variable to store instance_id--GetInstanceID returns int
-my $Instance = quest::GetInstanceID($zonesn, $instanceversion); 
+#:: Create a scalar variable to store instance_id
+my $Instance = quest::GetInstanceID($zonesn, $instanceversion); #:: GetInstanceID returns int
 quest::AssignToInstance($Instance);
 ```
+
+### AssignToInstanceByCharID
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; instance_id _(uint16)_, char_id _(uint32)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Assigns a single player to an instance by character ID.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example**
+
+```perl
+#:: Create a scalar variable to store instance_id
+my $Instance = quest::GetInstanceIDByCharID($zonesn, $instanceversion, $charid); #:: Returns int
+quest::AssignToInstance($Instance);
+```
+
 ### ChooseRandom
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
@@ -409,6 +431,25 @@ quest::GetCharactersInInstance(50); #:: Returns 50,123456
 my $Instance = quest::GetInstanceID($zonesn, $instanceversion); #:: Returns uint16
 quest::AssignToInstance($Instance);
 ```
+
+### GetInstanceIDByCharID
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; zone_name _(string)_, version _(int16)_, char_id _(uint32)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:** 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Returns the instance ID of the given zone and version by character ID.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example**
+
+```perl
+#:: Create a scalar variable to store instance_id
+my $Instance = quest::GetInstanceIDByCharID($zonesn, $instanceversion, $charid); #:: Returns uint16
+quest::AssignToInstance($Instance);
+```
+
 
 ### GetInstanceTimer
 
@@ -706,6 +747,24 @@ sub EVENT_CLICKDOOR {
           quest::RemoveFromInstance($instanceid);
      }
 }
+```
+
+### RemoveFromInstanceByCharID
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Parameter(s):**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; instance_id _(uint16)_, char_id _(uint32)_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Usage:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Removes a client from an instance by character ID.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example:**
+
+```perl
+#:: Create a scalar variable to store instance_id
+my $Instance = quest::GetInstanceIDByCharID($zonesn, $instanceversion, $charid); #:: Returns int
+quest::RemoveFromInstanceByCharID($Instance, $charid);
 ```
 
 ### SendMail
