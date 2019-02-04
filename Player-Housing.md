@@ -84,8 +84,8 @@ The RoF2 opcodes are suspect. It could be that they didn't change across several
 | Packet Sequence Number             | 2                        | Identifies order of fragments                                            |
 | Total length of combined fragments | 3                        | Total size of all fragments. This is only present in the first fragment. |
 | Application OpCode                 | 2                        | RoF: 0x67C9<br/>Live (20181217): 0x5C12<br/>Live (20190118): 0x1659                                                       |
-| Unknown                            | 4                        | An id? Different across servers                                          |
-| Unknown                            | 5                        | Always 6,0,0,0,0                                                         |
+| Unknown                            | 2                        | An id? Different across servers                                          |
+| Window ID                          | 7                        | Always 1,0,6,0,0,0,0<br/>This value is used to branch code paths between the Neighborhood list and Property marker windows.                                                         |
 | Total # of Neighborhoods           | 2                        |                                                                          |
 | Unknown                            | 5                        | Always 1,1,0,0,0                                                         |
 | Neighborhood ID                    | 4                        |                                                                          |
@@ -142,8 +142,10 @@ If # of Players is greater than 0, the fields Player Name Length and Player Name
 | Network OpCode         | 2               | 0x09                             |
 | Packet Sequence Number | 2               |                                  |
 | Application OpCode     | 2               | RoF: 0x67C9<br/>Live (20181217): 0x5C12<br/>Live (20190118): 0x1659                           |
-| Unknown		         | 15              | |
-| Neighborhood ID		 | 4               |                                  |
+| Unknown                | 2               | An id? Different across servers                                          |
+| Window ID              | 7               | Always 1,0,4,3,0,0,0<br/>This value is used to branch code paths between the Neighborhood list and Property marker windows.                                                         |
+| Unknown		         | 6               | |
+| Neighborhood ID		 | 4               | |
 | Unknown				 | 4               | |
 | Unknown                | 4               | |
 | Guild ID				 | 4			   | |
