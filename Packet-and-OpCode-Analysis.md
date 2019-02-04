@@ -1,0 +1,1 @@
+TODO: Fill in details about packet capturing, analysis, and how to find opcodes in any client version.
