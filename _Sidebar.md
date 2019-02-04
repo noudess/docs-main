@@ -135,4 +135,5 @@
 
 **[[Developer Info]]**
 * [[EQDictionary]]
+* [[Packet and OpCode Analysis]]
 * [[Per-Client Inventory Slots]]
