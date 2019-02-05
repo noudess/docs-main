@@ -2,7 +2,7 @@ The multiplier is hard-coded into exp.cpp and set at 3.1 for levels 61+.
 
 The formula for the below table is:
 
-Experience = (Level - 1)^3 * (Multiplier * 1000)
+Experience = Level^3 * (Multiplier * 1000)
 
 If you look to use `quest::exp(amount)` in any of your quests, this will come in handy
 
