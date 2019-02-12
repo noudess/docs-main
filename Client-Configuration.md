@@ -45,16 +45,25 @@ The EverQuest client can be run through Wine on Mojave.  To configure your syste
 	* Search for Xcode
 	* Install Xcode
 
-2. Install Homebrew:
+2. Install Command Line Tools:
 
 	* Open Terminal (_/Applications/Utilities/Terminal.app_)
 	* Copy and paste this command and execute:
 
 ```shell
-ruby -e “$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)”
+xcode-select --install
 ```
 
-3. Create a symbolic link between X11 folders:
+3. Install Homebrew:
+
+	* Open Terminal (_/Applications/Utilities/Terminal.app_)
+	* Copy and paste this command and execute:
+
+```shell
+/usr/bin/ruby -e “$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)”
+```
+
+4. Create a symbolic link between X11 folders:
 
 	* Open Terminal (_/Applications/Utilities/Terminal.app_)
 	* Copy and paste this command and execute:
@@ -63,7 +72,7 @@ ruby -e “$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/maste
 sudo ln -s /opt/X11 /usr/X11
 ```
 
-4. Install XQuartz:
+5. Install XQuartz:
 
 	* Open Terminal (_/Applications/Utilities/Terminal.app_)
 	* Copy and paste this command and execute:
@@ -72,7 +81,7 @@ sudo ln -s /opt/X11 /usr/X11
 brew install Caskroom/cask/xquartz
 ```
 
-5. Create a symbolic link between library folders:
+6. Create a symbolic link between library folders:
 
 	* Open Terminal (_/Applications/Utilities/Terminal.app_)
 	* Copy and paste this command and execute:
@@ -81,16 +90,25 @@ brew install Caskroom/cask/xquartz
 sudo ln -s /usr/local/lib /usr/X11/lib/*
 ```
 
-6. Install Wine
+7. Install Wine
 
 	* Open Terminal (_/Applications/Utilities/Terminal.app_)
 	* Copy and paste this command and execute:
 
 ```shell
-brew install --only-dependencies --devel wine
+brew install wine
 ```
 
-7. Configure Wine fonts
+8. Install Winetricks
+
+	* Open Terminal (_/Applications/Utilities/Terminal.app_)
+	* Copy and paste this command and execute:
+
+```shell
+brew install winetricks
+```
+
+9. Configure Wine fonts
 
 	* Open Terminal (_/Applications/Utilities/Terminal.app_)
 	* Copy and paste this command and execute:
@@ -99,7 +117,7 @@ brew install --only-dependencies --devel wine
 winetricks corefonts
 ```
 
-8. Configure Font Smoothing
+10. Configure Font Smoothing
 
 	* Open Terminal (_/Applications/Utilities/Terminal.app_)
 	* Copy and paste this command and execute:
@@ -118,7 +136,7 @@ EOF
 WINE=${WINE:-wine} WINEPREFIX=${WINEPREFIX:-$HOME/.wine} $WINE regedit /tmp/fontsmoothing 2> /dev/null
 ```
 
-9. Launch EverQuest
+11. Launch EverQuest
 
 	* Open Terminal (_/Applications/Utilities/Terminal.app_)
 	* Navigate to your EverQuest directory (IE _cd Applications/EverQuest/_)
@@ -128,6 +146,22 @@ WINE=${WINE:-wine} WINEPREFIX=${WINEPREFIX:-$HOME/.wine} $WINE regedit /tmp/font
 wine eqgame.exe patchme
 ```
 
+12. Optional Launcher Script/Icon
+
+	* Open TextEdit (_/Applications/TextEdit.app_)
+	* Copy and paste the information below
+	* Replace $WINEPREFIX with the location of your Prefix
+	* Replace the path to your EverQuest folder
+	* Save the file as "EverQuest.command"
+
+```shell
+#!/bin/bash
+export WINEPREFIX="$WINEPREFIX/.wine"
+export DYLD_FALLBACK_LIBRARY_PATH=/usr/X11/lib
+export FREETYPE_PROPERTIES="truetype:interpreter-version=35"
+cd "/path/to/my/everquest/folder/"
+wine eqgame.exe patchme
+```
 
 # macOS High Sierra
 
