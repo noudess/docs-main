@@ -177,4 +177,4 @@ wine eqgame.exe patchme
 	* Open Terminal (_/Applications/Utilities/Terminal.app_)
 	* Enter the command "wine regedit"
 	* HKEY_CURRENT_USER -> Software -> Wine -> Direct3D
-	* Create a DWORD Value (REG_DWORD) and set the value to 0x0 (disable)
+	* Create a DWORD Value (REG_DWORD) named "[csmt](https://wiki.archlinux.org/index.php/wine#CSMT)" and set the value to 0x0 (disable)
