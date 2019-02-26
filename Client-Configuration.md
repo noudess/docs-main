@@ -171,3 +171,10 @@ wine eqgame.exe patchme
 
 
 # Troubleshooting
+
+1. Excessive GPU usage with MacOS Mojave
+
+	* Open Terminal (_/Applications/Utilities/Terminal.app_)
+	* Enter the command "wine regedit"
+	* HKEY_CURRENT_USER -> Software -> Wine -> Direct3D
+	* Create a DWORD Value (REG_DWORD) and set the value to 0x0 (disable)
