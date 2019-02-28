@@ -15,6 +15,9 @@ In your capture tool, select to log only UDP protocol traffic. You can further s
 Sample filtering rule for Microsoft Network Analyzer to reduce noise:
 `UDP and !TCP and !SSDP and !ICMPv6 and !DNS and !LLMNR and !WSDiscovery and !IPv6NoNxt and !IPv6 and *Destination != 10.0.0.255 and *Destination != yourmachineiphere and *Source != 192.168.2.225`
 
+Another approach:
+`UDP and (*Source in 69.174.0.0/16 or *Destination in 69.174.0.0/16)`
+
 When I’m setting up for a capture, I initially log the entire login sequence from authentication, through character select, and into the server. That captures a large amount of data that is helpful for identifying the specific patch (the last time the client was patched), the server’s entire list of guilds, character select information, etc. This approach does log your account name and password. If you plan on sharing this capture file, make sure you delete those packets, and the packets that list your character names. 
 
 To configure Message Anaylzer to properly export for the extractor, first you need to right click the header column of the preview pane, and go to Add Column... Navigate to TCP->Segment->Payload. Right click and select Add as column. Now, right click a row in the Payload section column, select Display Binary Values As -> Hex.  Now, To export the capture in Message Analyzer, go to Session -> Analysis Grid -> Export -> All, in the drop down choose Tab Delimited (*.txt)
