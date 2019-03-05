@@ -3571,7 +3571,7 @@ sub EVENT_SPAWN {
 sub EVENT_TIMER {
      if ($timer eq "despawn") {
           #:: Stop the timer from looping over and over
-          quest::stoptimer("despawn")
+          quest::stoptimer("despawn");
           #:: Depop
           quest::depop();
      }
@@ -3599,7 +3599,7 @@ sub EVENT_SPAWN {
 sub EVENT_TIMER {
      if ($timer eq "despawn") {
           #:: Stop the timer from looping over and over
-          quest::stoptimer("despawn")
+          quest::stoptimer("despawn");
           #:: Depop
           quest::depop();
      }
