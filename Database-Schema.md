@@ -113,6 +113,7 @@
 ### Faction Data
 * [[faction_list]]
 * [[faction_list_mod]]
+* [[faction_base_data]]
 
 ### Fishing
 * [[fishing]]
