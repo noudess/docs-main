@@ -1,8 +1,10 @@
 Every faction that exists on a server is listed in the `faction_list` table.  This table includes a unique id, a name, and a starting (base) faction.  This starting value is combined with any race/class/deity adjustments that apply (see `faction_list_mod` table) to create the starting faction for characters when they are born.  As characters interact with the world, they can gain/lose faction through their actions, be that killing or questing.  These values are continuously updated in the `faction_values` table.
 
-Each faction has a minimum and a maximum value, at which point no more faction can be lost or gained.  Currently this is maintained in the code.  The BASE maximum is 2000 and the BASE minimum is -2000.  The amount a character can earn is based on these constants AND the factions initial base value.  For example, a faction that starts out at 0 (base value in faction_list) is the simple case. 
+[ as of 3/6/2019 we have imported the client faction list and we now use these renumbered factions.  The client does not have a base for any of the factions, all of the offsets are realized in faction_list_mod instead.  This does not mean that the base cannot be altered for custom results. ]
 
-The character can earn up to 2000 points at which point he will max out.  Or he can lose 2000 points and bottom out.  The base value for a faction impacts this in cases where that base is non zero.  For a faction that starts out at -500 for example, the character can earn 2500 (500 to make up for initial impressions, and 2000 more to get into good graces.  If a faction starts you out at a positive value, say 300, you can only earn 1700 more, but you can lose 2300.
+Each faction has a minimum and a maximum value, at which point no more faction can be lost or gained.  This information is stored in the faction_base_data table.  The default BASE maximum is 2000 and the BASE minimum is -2000 if there is no entry.  The amount a character can earn is based on these constants AND the factions initial base value.  For example, a faction that starts out at 0 (base value in faction_list) is the simple case. 
+
+The character can earn or lose faction until his _earned _faction reaches the factions min or max.  The base value for a faction impacts this in cases where that base is non zero.  For a faction that starts out at -500 for example, the character can earn 2500 (500 to make up for initial impressions, and 2000 more to get into good graces.  If a faction starts you out at a positive value, say 300, you can only earn 1700 more, but you can lose 2300.
 
 A character's unmodified faction value at any time is calculated by the following formula:
 
@@ -24,20 +26,12 @@ Faction values for each level are as follows.  The number on the left is the TOT
 
 |Total Faction Value|Faction CON|
 |-------------------|-----------|
-|1101 -> ABOVE  |ALLY|
-|701 -> 1100 	|WARMLY|
-|401 -> 700 	|KINDLY|
-|101 -> 400 	|AMIABLE|
-|0 -> 100 	|INDIFFERENT|
+|1100 -> ABOVE  |ALLY|
+|750 -> 1099 	|WARMLY|
+|500 -> 749 	|KINDLY|
+|100 -> 499 	|AMIABLE|
+|0 -> 99 	|INDIFFERENT|
 |-100 -> -1 	|APPREHENSIVE|
-|-700 -> -101 	|DUBIOUS|
-|-999 -> -701 	|THREATENLY|
-|-1000 -> BELOW 	|SCOWLS|
-
-[ The note below is to help explain why the faction system was recently changed.  It will be deleted when it is no longer time appropriate ]
-
-It is important to note that older faction systems did not do this correctly.  In the previous system, the BASE min and max were 1500 and -1500.  In addition to the faction_base which is used in the current system, the race/class/deity adjustments were used to calculate how much faction a character could gain or lose.  So, a character with a -1000 race penalty could never lose more than 500, while a character with no penalty could lose the full 1500.  In this case, the character that was predisposed to be hated could use a race cancelling illusion to negate the -1000 and be at -500, while a character with no race penalty at all could dig themselves a much deeper hole.  This means being hated in the old system actually gave you an advantage.  On the flip side, characters could not earn as much if they had a race bonus.  So a character with a race bonus of 500 could only earn 1000.
-
-Additionally, the old system did not allow the breadth of faction range that live allows. The new system may still need some tweaks and improvements.
-
-The issues related to lost faction after the 1st cut of this system was a bug that didn't take into account the base faction when determining max earned faction values.  This caused many to lose earned faction or gain back lost faction.  These issues have been corrected.
+|-500 -> -101 	|DUBIOUS|
+|-750 -> -501 	|THREATENLY|
+|BELOW -> -751 	|SCOWLS|
