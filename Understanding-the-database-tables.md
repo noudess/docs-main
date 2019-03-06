@@ -4,7 +4,11 @@ The first three tables relate to establishing game factions, and how each factio
 
 ## [faction_list](https://github.com/EQEmu/Server/wiki/faction_list)
 
-The faction_list table contains one entry for each unique faction on the server.  The ID field identifies an in-game faction, but IS NOT directly associated with an NPC.  This list simply lists the in game factions and the starting value that all characters start at with this faction before they begin earning or losing faction.  DO NOT use these values in npc_types.  See npc_faction below for details.
+The faction_list table contains one entry for each unique faction on the server.  This list was previous our own values, but now uses values directly from the client for any non-custom factions.  The ID field identifies an in-game faction, but IS NOT directly associated with an NPC.  This list simply lists the in game factions and the starting value that all characters start at with this faction before they begin earning or losing faction.  DO NOT use these values in npc_types.  See npc_faction below for details.
+
+## [faction_base_data](https://github.com/EQEmu/Server/wiki/faction_base_data)
+
+This file was imported directly from the client.  In includes the lowest a character can go in "earned" faction and the highest amount of "earned" faction they can obtain.  The modifiers for race, class and deity are still applied on top of the personal faction to determine the final standing.
 
 ## [faction_list_mod](https://github.com/EQEmu/Server/wiki/faction_list_mod)
 
