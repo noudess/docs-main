@@ -6,17 +6,17 @@ Lets create a new faction.  For this example, the NPCs on this faction will be K
     Create a new entry in faction_list.  Since we want them to start out KOS to everyone except Erudites, set their base value to -1000.  This is barely KOS, so if you want to force more faction work to get above KOS, set is that much lower. 
  See table below:<br>
 
-> |Faction Value|Faction CON|
-> |-------------------|-----------|
-> |1101 -> ABOVE  |ALLY|
-> |701 -> 1100 	|WARMLY|
-> |401 -> 700 	|KINDLY|
-> |101 -> 400 	|AMIABLE|
-> |0 -> 100 	|INDIFFERENT|
-> |-100 -> -1 	|APPREHENSIVE|
-> |-700 -> -101 	|DUBIOUS|
-> |-999 -> -701 	|THREATENLY|
-> |-1000 -> BELOW 	|SCOWLS|
+|Faction Value|Faction CON|
+|-------------------|-----------|
+|1100 -> ABOVE  |ALLY|
+|750 -> 1099 	|WARMLY|
+|500 -> 749 	|KINDLY|
+|100 -> 400 	|AMIABLE|
+|0 -> 99 	|INDIFFERENT|
+|-100 -> -1 	|APPREHENSIVE|
+|-500 -> -101 	|DUBIOUS|
+|-750 -> -501 	|THREATENLY|
+|BELOW -> -751 	|SCOWLS|
 
 2. Create the new [npc_faction](https://github.com/EQEmu/Server/wiki/npc_faction). <br)
     Create the new entry in npc_faction.  This will be an umbrella for NPC behavior entries.  Remember, this is different from the entry in faction_list.  faction_list only identifies a core faction.  npc_faction identifies a subset of NPCs on a faction in faction_list that have a prescribed behavior.  There can be many npc_faction entries providing different behavior for NPCs, even though all those NPCs have the same code faction_list assignment.  The key fields in npc_faction are primary_faction (which you will assign to the new faction you created in step 1) and ingnore_primary_assist which you will set to 1 or 0 depending on whether you want NPCs under this umbrella to assist other NPCs on the same faction_list allegiance.
