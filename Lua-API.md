@@ -529,6 +529,7 @@ npc:GetSpellFocusHeal(); -- int
 npc:GetSwarmOwner(); -- int
 npc:GetSwarmTarget(); -- int
 npc:GetWaypointMax(); -- int
+npc:GiveCash(int copper, int silver, int gold, int platinum); -- void
 npc:IsAnimal(); -- bool
 npc:IsGuarding(); -- bool
 npc:IsOnHatelist(Lua_Mob ent); -- bool
