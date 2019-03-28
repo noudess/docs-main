@@ -10,11 +10,11 @@ _In this example I'm setting the Max Level to 100; change this value as needed._
 
 `UPDATE eqemu.rule_values SET rule_value = 100 WHERE rule_name = "Character:MaxLevel"`
 
-`UPDATE eqemu.variables SET value = 100 WHERE rule_name = "Character:MaxExpLevel"`
+`UPDATE eqemu.rule_values  SET value = 100 WHERE rule_name = "Character:MaxExpLevel"`
 
 **3)** Verify
 
-`SELECT * FROM rule_values WHERE rule_name = "Character:MaxLevel" or rule_name = "Character:MaxExpLevel"`
+`SELECT * FROM rule_values WHERE rule_name = "Character:MaxLevel" OR rule_name = "Character:MaxExpLevel"`
 
 You should have 4 records returned. If everything looks correct, proceed to step 4.
 
