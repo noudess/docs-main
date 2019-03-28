@@ -20,8 +20,6 @@ You should have 4 records returned. If everything looks correct, proceed to step
 
 **4)** Restart your server.
 
-## Have fun out there. Herokiller signing out.
-
 _Thanks to Akkadius for the clue on multiple variables._
 
 
