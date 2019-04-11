@@ -1193,7 +1193,7 @@
 |169
 |SE_CriticalHitChance
 |Modifies melee critical hit chance by percent. (+) Increase Chance (-) Decrease Chance
-|Melee Crit Chance %
+|Percent amount to increase critical hit chance. Note: this is a multiplier to critical hit chance, not an amount of percentage points to add to critical hit chance.
 | Skills  (-1=ALL)
 |none
 |-
