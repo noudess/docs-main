@@ -4,12 +4,12 @@
 2|2|CLR|Cleric
 3|4|PAL|Paladin
 4|8|RNG|Ranger
-5|16|SHM|Shadow Knight
+5|16|SHD|Shadow Knight
 6|32|DRU|Druid
 7|64|MNK|Monk
 8|128|BRD|Bard
 9|256|ROG|Rogue
-10|512|SHD|Shaman
+10|512|SHM|Shaman
 11|1024|NEC|Necromancer
 12|2048|WIZ|Wizard
 13|4096|MAG|Magician
