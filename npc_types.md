@@ -110,4 +110,4 @@ ignore\_despawn|tinyint(2)|NO| |0|
 show\_name|tinyint(2)|NO| |1| 
 untargetable|tinyint(2)|NO| |0| 
 maxlevel|tinyint(3)|NO| |0|
-maxlevel|smallint(5)|NO| |0| 	Enter a model value here to override race model on client
+model|smallint(5)|NO| |0| 	Enter a model value here to override race model on client
