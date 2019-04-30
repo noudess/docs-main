@@ -540,6 +540,7 @@ npc:MoveTo(float x, float y, float z, float h, bool save); -- void
 npc:NextGuardPosition(); -- void
 npc:PauseWandering(int pause_time); -- void
 npc:PickPocket(Lua_Client thief); -- void
+npc:RandomizeFeatures(bool sendIllusion, bool saveToInstance); -- void
 npc:RemoveAISpell(int spell_id); -- void
 npc:RemoveCash(); -- void
 npc:RemoveItem(int item_id); -- void
