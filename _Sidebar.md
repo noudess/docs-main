@@ -33,6 +33,7 @@
 * [[ProjectEQ Database]]
 * [[Database Schema]]
 * [[Database Schema Migrations]]
+* [[Database Conventions and Guidelines]]
 
 ---
 **[[Lua API]]**
