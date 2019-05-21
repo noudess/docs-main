@@ -2,7 +2,7 @@ This page serves as a reference for rules that we adhere to as a project, things
 
 This does not mean that past table creations match this specification, but that we intend to keep it consistent going forward
 
-## Table Names
+# Table Names
 
 * lowercase
 * snake_case
@@ -25,7 +25,7 @@ When defining an object or model in the code, our source is inconsistent everywh
 
 For example I have a class representing a `Door` and a table named `doors`
 
-## Column Naming
+# Column Naming
 
 Like **Table Names** columns also adhere to **lowercase** and `snake_case` appropriations. The column itself should very easily describe the purpose of the column itself without abbreviations as much as possible.
 
