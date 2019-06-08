@@ -800,7 +800,9 @@ client:IsGrouped(); -- bool
 client:IsLD(); -- bool
 client:IsMedding(); -- bool
 client:IsRaidGrouped(); -- bool
+client:IsStanding(); -- bool
 client:IsSitting(); -- bool
+client:IsCrouching(); -- bool
 client:IsTaskActive(int task); -- bool
 client:IsTaskActivityActive(int task, int activity); -- bool
 client:IsTaskCompleted(int task); -- bool
