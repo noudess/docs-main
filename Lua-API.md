@@ -1644,6 +1644,7 @@ eq.flag_instance_by_raid_leader(uint32 zone, uint32 version); -- void
 eq.fly_mode(int flymode); -- void
 eq.follow(int entity_id); -- void
 eq.follow(int entity_id, int distance); -- void
+eq.get_characters_in_instance(lua_State *L, uint16 instance_id);
 eq.get_encounter(); -- std::string
 eq.get_entity_list(); -- Lua_EntityList
 eq.get_initiator(); -- Lua_Client
@@ -1653,12 +1654,17 @@ eq.get_instance_timer_by_id(uint16 instance_id); -- uint32
 eq.get_level(int type); -- int
 eq.get_owner(); -- Lua_Mob
 eq.get_player_buried_corpse_count(uint32 char_id); -- int
+eq.get_qglobals(lua_State *L);
+eq.get_qglobals(lua_State *L, Lua_NPC npc);
+eq.get_qglobals(lua_State *L, Lua_Client client);
+eq.get_qglobals(lua_State *L, Lua_NPC npc, Lua_Client client);
 eq.get_quest_item(); -- Lua_ItemInst
 eq.get_spawn_condition(const char *zone, uint32 instance_id, int condition_id); -- int
 eq.get_task_activity_done_count(int task, int activity); -- int
 eq.get_zone_id(); -- int
 eq.get_zone_instance_id(); -- int
 eq.get_zone_instance_version(); -- int
+eq.get_zone_time(lua_State *L);
 eq.get_zone_weather(); -- int
 eq.is_disc_tome(int item_id); -- bool
 eq.is_paused_timer(const char *timer); -- bool
