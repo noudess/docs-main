@@ -54,3 +54,117 @@
 * TODO: run world or zone.
 * TODO: Optional stuff like start.bat scripts etc
 
+[*end original*]
+
+[*begin test*]
+
+* This guide provides instructions for compiling 32-bit Windows server binaries and setting up a local development server *
+
+
+*** Compile Setup ***
+
+
+* Verify Environmental Variable %PATH% *
+
+** need to develop criteria
+
+
+* Required Programs *
+
+Some of the pre-requisits for compiling binaries are the same as running a server.
+
+If you have already installed any of the following, the download and installation requirement should be omitted:
+
+- Visual Studio 2017 (Community Edition) [<a href="https://visualstudio.microsoft.com/vs/older-downloads/">select 2017 community edition</a>]
+
+- MariaDB [<a href="https://downloads.mariadb.org/interstitial/mariadb-10.4.6/winx64-packages/mariadb-10.4.6-winx64.msi/from/http%3A//mirror.nodesdirect.com/mariadb/">download</a>]
+
+- Perl [<a href="https://github.com/EQEmu/eqemu.github.com/raw/master/downloads/ActivePerl-5.12.3.1204-MSWin32-x86-294330.msi">download</a>]
+
+- CMake [<a href="https://github.com/Kitware/CMake/releases/download/v3.14.5/cmake-3.14.5-win64-x64.msi">download</a>]
+
+- Git (see notes under install) [<a href="https://git-scm.com/download/win">download</a>]
+
+- TortoiseGit (optional - see notes under install) [<a href="https://download.tortoisegit.org/tgit/2.8.0.0/TortoiseGit-2.8.0.0-64bit.msi">download</a>]
+
+
+* Install Visual Studio *
+
+During the install process, double-check the option for c++ command-line compiler. This is required by CMake to determine available compiler options. CMake file generation will fail if this option is not enabled.
+
+Microsoft allows Visual Studio use for a 30-day trial period without registration of the product. Simply create an account at [*process change*] and enter the credentials in Visual Studio when prompted. The account is free and the license is usually valid for 1-2 years.
+
+
+* Install MariaDB *
+
+** need specifics on what settings to use **
+
+At the end of the installation process, you will be prompted to install HeidiSQL. It is HIGHLY recommended that you install this program.
+
+
+* Install Perl 5.12.3 (32-bit) *
+
+This installation is self-explanatory. It is recommended that you install in the root directory ("c:\") to avoid possible issues.
+
+
+* Install CMake *
+
+This installation is self-explanatory.
+
+
+* Install Git *
+
+This installation is self-explanatory.
+
+Should you wish to download the repository code with no further chance of updating or restoration, this requirement may be omitted.
+
+
+* Install TortoiseGit (optional) *
+
+This installation is self-explanatory.
+
+If Git is not installed, this installation should be omitted.
+
+
+* Restart Computer *
+
+At this point, you will want to restart your computer to ensure that all of the %PATH% additions are loaded into memory.
+
+
+* Acquiring the Code *
+
+At this point, you will need to make a decision on how you want to manage your code.
+
+There are three options:
+
+- Option 1, Retrieve the code as a one-time download (not recommended)
+
+- Option 2, Create a local repository from the parent EQEmulator project that can be updated, managed and maintained (recommended)
+
+- Option 3, Create a local repository from a fork of the EQEmulator project that you manage (recommended only if you want to contribute back to the parent project)
+
+If you choose to create a fork of the EQEmulator repository, you will need to create a [<a href="https://github.com/">github.com</a>] account.
+
+[walk-through for option 2]
+
+
+* Download Dependencies *
+
+Library dependencies can be downloaded directly from [<a href="https://github.com/EQEmu/eqemu.github.com/raw/master/downloads/WindowsDependencies_x86.zip">here</a>].
+
+Inside of your local code directory, you will need to create a sub-directory called 'dependencies` and unzip the download's contents into it.
+
+
+* Running CMake *
+
+[walk-through]
+
+
+* Compiling Code *
+
+[walk-through]
+
+
+*** Local Server Setup ***
+
+[*end test*]
