@@ -4,7 +4,7 @@
 
 <p><strong>Read through this guide before starting to ensure an understanding of the process.</strong></p>
 
-<p><strong>Please direct any questions to our support channel in [<a href="">discord</a>].</strong></p>
+<p><strong>Please direct any questions to our support channel in [<a href="https://discord.gg/QHsm7CD">discord</a>].</strong></p>
 
 <br>
 
@@ -92,9 +92,9 @@
 	
 <li><p><h3>Install Visual Studio</h3></p></li>
 	
-<p>During the install process, double-check the option for c++ command-line compiler. This is required by CMake to determine available compiler options. CMake file generation will fail if this option is not enabled.</p>
+<p>During the install process, ensure the option for 'Desktop development with C++' is checked. This is required by CMake to determine available compiler options. CMake file generation will fail if this option is not enabled.</p>
 	
-<img src="file:///C:\Users\Uleat\Desktop\pix\Untitled.png">
+<img src="https://user-images.githubusercontent.com/3311166/60468475-b40e3b80-9c27-11e9-8b2b-462bd0f22165.png">
 	
 <br><br>
 	
