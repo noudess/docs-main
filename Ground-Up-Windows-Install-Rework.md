@@ -6,7 +6,7 @@
 
 <p><h2><strong>Compiler Setup</strong></h2></p>
 
-<ol>
+<ul>
 
 <li><p><h3>Verify Environmental Variable %PATH%</h3></p></li>
 
@@ -106,7 +106,7 @@
 
 <p>[walk-through]</p>
 
-</ol>
+</ul>
 
 </hgroup>
 
