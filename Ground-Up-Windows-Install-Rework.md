@@ -4,9 +4,11 @@
 
 <p><strong>Read through this guide before starting to ensure an understanding of the process.</strong></p>
 
-<p><strong>Please direct any questions to our support channel in [<a href="https://discord.gg/QHsm7CD">discord</a>].</strong></p>
+<p><strong>Please direct any questions to our server support channel in [<a href="https://discord.gg/QHsm7CD">discord</a>].</strong></p>
 
 <br>
+
+<hgroup>
 
 <p><h2><strong>Compiler Setup</strong></h2></p>
 
@@ -44,10 +46,10 @@
 		
 </ul>
 	
-<p>You may check the length of your %PATH% variable by copying the 'Variable value' contents and pasting them into a text editor that supports 'selection' count.</p>
+<p>You may check the length of your %Path% variable by copying the 'Variable value' contents and pasting them into a text editor that supports 'selection' count.</p>
 	
 <img src="https://user-images.githubusercontent.com/3311166/60465078-3b56b180-9c1e-11e9-89c5-0137a6ed84ba.png">
-	
+
 <br><br>
 	
 <p>Registry values are only allocated 1024 bytes of storage. However, environmental variables may contain up to 2048 bytes through the use of an alias.</p>
@@ -58,7 +60,7 @@
 	
 <li><p><h3>Required Programs</h3></p></li>
 	
-<p>Some of the pre-requisits for compiling binaries are the same as running a server.</p>
+<p>Some of the pre-requisites for compiling binaries are the same as running a server.</p>
 	
 <p>If you have already installed any of the following, the download and installation requirement should be omitted.</p>
 		
@@ -84,6 +86,8 @@
 		
 </ul>
 	
+<p>Note: TortoiseGit is a menu-driven, addon-on gui interface for Git. Though optional, this instructional provides for its use.</p>
+	
 <p>Some programs may be able to use newer versions, or even the lastest releases, without issue. But, this is not the case with Perl and (later) dependencies.</p>
 	
 <p>The above list of programs is known to work for compiling working server binaries.</p>
@@ -92,7 +96,9 @@
 	
 <li><p><h3>Install Visual Studio</h3></p></li>
 	
-<p>During the install process, ensure the option for 'Desktop development with C++' is checked. This is required by CMake to determine available compiler options. CMake file generation will fail if this option is not enabled.</p>
+<p>During the install process, ensure the option for 'Desktop development with C++' is checked.</p>
+	
+<p>This package is required to compile c/c++ code and by CMake to determine available compiler options. It will cause CMake file generation to fail if not enabled.</p>
 	
 <img src="https://user-images.githubusercontent.com/3311166/60468475-b40e3b80-9c27-11e9-8b2b-462bd0f22165.png">
 	
@@ -160,23 +166,63 @@
 		
 <ul>
 		
-<li><p>Option 1, Retrieve the code as a one-time download (not recommended)</p></li>
+<li><p>Option 1, Retrieve the code as a one-time download (unmanaged - not recommended)</p></li>
 		
 <li><p>Option 2, Create a local repository from the parent EQEmulator project that can be updated, managed and maintained (recommended)</p></li>
-	
+		
 <li><p>Option 3, Create a local repository from a fork of the EQEmulator project that you manage (recommended only if you want to contribute back to the parent project)</p></li>
 		
 </ul>
 	
 <p>Note: If you choose to create a fork of the EQEmulator repository, you will need to create a [<a href="https://github.com/">github.com</a>] account.</p>
 	
-<p>[walk-through for option 2]</p>
+<p>If you choose options 1 or 2, create a sub-directory called 'git-eqemulator' in the root directory of c: drive.</p>
+	
+<p>If you choose option 3, create a sub-directory called 'git-&lt;git-username&gt;' in the root directory of c: drive. (example: git username is 'Pavlov', directory name would be 'git-pavlov')</p>
+	
+<p>The purpose of this directory is to facilitate code management. We'll refer to this as the 'account' directory.</p>
+	
+<p>For option 1:</p>
+	
+<ul>
+		
+<li><p>Download [<a href="https://github.com/EQEmu/Server/archive/master.zip">Server-master.zip</a>]</p></li>
+		
+<li><p>Place it inside of the account directory</p></li>
+		
+<li><p>Unpack its contents</p></li>
+		
+<li><p>Rename the local code directory from 'Server-master' to 'Server'</p></li>
+		
+<li><p>Move on to <a href="Ground-Up-Windows-Install-Rework#step_dependencies">Download Dependencies</a></p></li>
+		
+</ul>
+	
+<p>For other options, go to the EQEmulator server code repository web page at <a href="https://github.com/EQEmu/Server">https://github.com/EQEmu/Server</a></p>
+	
+<p>If you chose option 3 and are creating a fork, click on the fork button to add the repository to your account. You should be redirected to your fork's main repository page.</p>
+	
+<img src="https://user-images.githubusercontent.com/3311166/60550151-0e290280-9cf5-11e9-966e-e8d1fec1c80e.png">
+	
+<br><br>
+	
+<p>Finally, click the clone button, then open in desktop button to create a local code repository on your computer. When prompted for where to create it, select the account directory created above.</p>
+	
+<img src="https://user-images.githubusercontent.com/3311166/60550164-21d46900-9cf5-11e9-882b-439dea49c8e8.png">
+	
+<br><br>
+	
+<p>You should now have a managed local code repository on your computer.</p>
+	
+<p>Note: It is helpful to create a shortcut to the account directory and place it on your desktop.</p>
 	
 <br>
 	
+<a name="step_dependencies"></a>
+	
 <li><p><h3>Download Dependencies</h3></p></li>
 	
-<p>Library dependencies can be downloaded directly from [<a href="https://github.com/EQEmu/eqemu.github.com/raw/master/downloads/WindowsDependencies_x86.zip">here</a>].</p>
+<p>Library dependencies can be downloaded from [<a href="https://github.com/EQEmu/eqemu.github.com/raw/master/downloads/WindowsDependencies_x86.zip">here</a>].</p>
 	
 <p>Inside of your local code directory, you will find a sub-directory called 'dependencies`.</p>
 	
@@ -202,9 +248,14 @@
 	
 </ul>
 
+</hgroup>
+
 <br>
+
+<hgroup>
 
 <p><h2><strong>Local Server Setup</strong></h2></p>
 
 <br>
 
+</hgroup>
