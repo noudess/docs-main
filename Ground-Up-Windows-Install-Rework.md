@@ -12,9 +12,9 @@
 
 <p><h2><strong>Compiler Setup</strong></h2></p>
 
-<p>The current c/c++ support standard of the EQEmulator server code base mandates the use of Visual Studio 2015 [check version] or later compilers.</p>
+<p>The current c/c++ support standard of the EQEmulator server code base mandates the use of Visual Studio 2013 or later compilers.</p>
 
-<p>Given this, minimum compiler requirements also mandate the use of Windows 7 or later operating systems. [find info on Windows Server minimum requirement]</p>
+<p>Given this, minimum compiler requirements restrict building code on older operating systems. <a href="https://docs.microsoft.com/en-us/visualstudio/productinfo/vs2013-sysrequirements-vs#--visual-studio-2013">Visual Studio 2013 Minimum Requirements</a></p>
 
 <p>This setup assumes an install on a 64-bit Windows operating system with 32-bit target binaries.</p>
 
