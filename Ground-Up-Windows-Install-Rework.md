@@ -14,7 +14,9 @@
 
 <p>The current c/c++ support standard of the EQEmulator server code base mandates the use of Visual Studio 2013 or later compilers.</p>
 
-<p>Given this, minimum compiler requirements restrict building code on older operating systems. <a href="https://docs.microsoft.com/en-us/visualstudio/productinfo/vs2013-sysrequirements-vs#--visual-studio-2013">Visual Studio 2013 Minimum Requirements</a></p>
+<p>Visual Studio 2017 is the current standard for binary compilation. Please ensure that your system meets the <a href="https://docs.microsoft.com/en-us/visualstudio/productinfo/vs2017-system-requirements-vs#visual-studio-2017-system-requirements">Visual Studio 2017 Minimum System Requirements</a>.</p>
+
+<p>If your system does not meet the above requirements, or you are/would like to use an older version of Visual Studio, check the minimum system requires for the version you plan to use. (It must still meet the Visual Studio 2013 or later requirement of the code base.)</p>
 
 <p>This setup assumes an install on a 64-bit Windows operating system with 32-bit target binaries.</p>
 
@@ -27,6 +29,8 @@
 <p>Sometimes an automated server installation will fail due to the %Path% variable being full. This can happen with a manual installation as well.</p>
 	
 <p>Since this guide installs more programs than are required to just operate a server, verifying the length of %Path% is critical before we start.</p>
+	
+<br>
 	
 <p>The easiest way to find it is to:</p>
 	
@@ -46,10 +50,12 @@
 		
 </ul>
 	
+<br>
+	
 <p>You may check the length of your %Path% variable by copying the 'Variable value' contents and pasting them into a text editor that supports 'selection' count.</p>
 	
 <img src="https://user-images.githubusercontent.com/3311166/60465078-3b56b180-9c1e-11e9-89c5-0137a6ed84ba.png">
-
+	
 <br><br>
 	
 <p>Registry values are only allocated 1024 bytes of storage. However, environmental variables may contain up to 2048 bytes through the use of an alias.</p>
@@ -62,7 +68,9 @@
 	
 <p>Some of the pre-requisites for compiling binaries are the same as running a server.</p>
 	
-<p>If you have already installed any of the following, the download and installation requirement should be omitted.</p>
+<br>
+	
+<p>If you have already installed any of the following, the download and installation requirement should be omitted:</p>
 		
 <ul>
 		
@@ -86,7 +94,7 @@
 		
 </ul>
 	
-<p>Note: TortoiseGit is a menu-driven, addon-on gui interface for Git. Though optional, this instructional provides for its use.</p>
+<br>
 	
 <p>Some programs may be able to use newer versions, or even the lastest releases, without issue. But, this is not the case with Perl and (later) dependencies.</p>
 	
@@ -94,11 +102,15 @@
 	
 <br>
 	
+<p>Note: TortoiseGit is a menu-driven, add-on gui interface for Git. Though optional, this instructional provides for its use.</p>
+	
+<br>
+	
 <li><p><h3>Install Visual Studio</h3></p></li>
 	
 <p>During the install process, ensure the option for 'Desktop development with C++' is checked.</p>
 	
-<p>This package is required to compile c/c++ code and by CMake to determine available compiler options. It will cause CMake file generation to fail if not enabled.</p>
+<p>This package is required to compile c/c++ code and by CMake to determine available compiler options. It will cause CMake file generation to fail, if not enabled.</p>
 	
 <img src="https://user-images.githubusercontent.com/3311166/60468475-b40e3b80-9c27-11e9-8b2b-462bd0f22165.png">
 	
@@ -122,7 +134,9 @@
 	
 <p>This installation is self-explanatory.</p>
 	
-<p>It is recommended that you install in the root directory ("c:\") to avoid possible issues.</p>
+<br>
+	
+<p>Note: It is recommended that you install in the root directory ("c:\") to avoid possible issues.</p>
 	
 <br>
 	
@@ -136,6 +150,8 @@
 	
 <p>This installation is self-explanatory.</p>
 	
+<br>
+	
 <a name="note_git"></a>
 	
 <p>Note: Should you wish to download the repository code with no further chance of updating or restoration, this requirement may be omitted. [<a href="Ground-Up-Windows-Install-Rework#back_git">back</a>]</p>
@@ -145,6 +161,8 @@
 <li><p><h3>Install TortoiseGit (optional)</h3></p></li>
 	
 <p>This installation is self-explanatory.</p>
+	
+<br>
 	
 <a name="note_tgit"></a>
 	
@@ -162,6 +180,8 @@
 	
 <p>At this point, you will need to make a decision on how you want to manage your code.</p>
 	
+<br>
+	
 <p>There are three options:</p>
 		
 <ul>
@@ -170,17 +190,23 @@
 		
 <li><p>Option 2, Create a local repository from the parent EQEmulator project that can be updated, managed and maintained (recommended)</p></li>
 		
-<li><p>Option 3, Create a local repository from a fork of the EQEmulator project that you manage (recommended only if you want to contribute back to the parent project)</p></li>
+<li><p>Option 3, Create a local repository from a fork of the EQEmulator project that you manage (optional - only if you want to contribute back to the parent project)</p></li>
 		
 </ul>
 	
+<br>
+	
 <p>Note: If you choose to create a fork of the EQEmulator repository, you will need to create a [<a href="https://github.com/">github.com</a>] account.</p>
+	
+<br>
 	
 <p>If you choose options 1 or 2, create a sub-directory called 'git-eqemulator' in the root directory of c: drive.</p>
 	
 <p>If you choose option 3, create a sub-directory called 'git-&lt;git-username&gt;' in the root directory of c: drive. (example: git username is 'Pavlov', directory name would be 'git-pavlov')</p>
 	
 <p>The purpose of this directory is to facilitate code management. We'll refer to this as the 'account' directory.</p>
+	
+<br>
 	
 <p>For option 1:</p>
 	
@@ -198,21 +224,27 @@
 		
 </ul>
 	
+<br>
+	
 <p>For other options, go to the EQEmulator server code repository web page at <a href="https://github.com/EQEmu/Server">https://github.com/EQEmu/Server</a></p>
 	
-<p>If you chose option 3 and are creating a fork, click on the fork button to add the repository to your account. You should be redirected to your fork's main repository page.</p>
+<br>
+	
+<p>If you chose option 3 and are creating a fork, click on the fork button to add the repository to your github account. You should be redirected to your fork's main repository page.</p>
 	
 <img src="https://user-images.githubusercontent.com/3311166/60550151-0e290280-9cf5-11e9-966e-e8d1fec1c80e.png">
 	
 <br><br>
 	
-<p>Finally, click the clone button, then open in desktop button to create a local code repository on your computer. When prompted for where to create it, select the account directory created above.</p>
+<p>Finally, click the 'Clone or download' button, then 'Open in Desktop' button to create a local code repository on your computer. When prompted for where to create it, select the account directory created above.</p>
 	
 <img src="https://user-images.githubusercontent.com/3311166/60550164-21d46900-9cf5-11e9-882b-439dea49c8e8.png">
 	
 <br><br>
 	
 <p>You should now have a managed local code repository on your computer.</p>
+	
+<br>
 	
 <p>Note: It is helpful to create a shortcut to the account directory and place it on your desktop.</p>
 	
