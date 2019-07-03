@@ -211,7 +211,7 @@ sub EVENT_AUGMENT_INSERT {
 - In this example, a message in yellow text is displayed to the client when the player removes an augment from an item.
 
 ```perl
-sub EVENT_AUGMENT_ITEM {
+sub EVENT_AUGMENT_REMOVE {
 	$client->Message(15, "Yay, you pulled it out!");
 }
 ```
