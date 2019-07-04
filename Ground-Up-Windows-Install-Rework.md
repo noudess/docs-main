@@ -14,9 +14,9 @@
 
 <p>The current c/c++ support standard of the EQEmulator server code base mandates the use of Visual Studio 2013 or later compilers.</p>
 
-<p>Visual Studio 2017 is the current standard for binary compilation. Please ensure that your system meets the <a href="https://docs.microsoft.com/en-us/visualstudio/productinfo/vs2017-system-requirements-vs#visual-studio-2017-system-requirements">Visual Studio 2017 Minimum System Requirements</a>.</p>
+<p>Visual Studio 2017 is the current EQEmulator standard for binary compilation. Please ensure that your system meets the <a href="https://docs.microsoft.com/en-us/visualstudio/productinfo/vs2017-system-requirements-vs#visual-studio-2017-system-requirements">Visual Studio 2017 Minimum System Requirements</a>.</p>
 
-<p>If your system does not meet the above requirements, or you are/would like to use an older version of Visual Studio, check the minimum system requires for the version you plan to use. (It must still meet the Visual Studio 2013 or later requirement of the code base.)</p>
+<p>If your system does not meet the above requirements, or you are/would like to use an older version of Visual Studio, check the minimum system requirements for the version you plan to use. (It must still meet the Visual Studio 2013 or later requirement of the code base.)</p>
 
 <p>This setup assumes an install on a 64-bit Windows operating system with 32-bit target binaries.</p>
 
@@ -28,7 +28,7 @@
 	
 <p>Sometimes an automated server installation will fail due to the %Path% variable being full. This can happen with a manual installation as well.</p>
 	
-<p>Since this guide installs more programs than are required to just operate a server, verifying the length of %Path% is critical before we start.</p>
+<p>Since this guide installs more programs than are required for server operation, verifying the length of %Path% is critical before we start.</p>
 	
 <br>
 	
@@ -74,9 +74,7 @@
 		
 <ul>
 		
-<a name="back_msvs"></a>
-		
-<li><p>Visual Studio 2017 Community Edition (see <a href="Ground-Up-Windows-Install-Rework#note_msvs">note</a> under install) [<a href="https://visualstudio.microsoft.com/vs/older-downloads/">select Visual Studio 2017 Community Edition</a>]</p></li>
+<li><p>Visual Studio 2017 Community Edition [<a href="https://visualstudio.microsoft.com/vs/older-downloads/">select Visual Studio 2017 Community Edition</a>]</p></li>
 		
 <li><p>MariaDB (64-bit) [<a href="https://downloads.mariadb.org/interstitial/mariadb-10.4.6/winx64-packages/mariadb-10.4.6-winx64.msi/from/http%3A//mirror.nodesdirect.com/mariadb/">download</a>]</p></li>
 		
@@ -96,13 +94,15 @@
 	
 <br>
 	
-<p>Some programs may be able to use newer versions, or even the lastest releases, without issue. But, this is not the case with Perl and (later) dependencies.</p>
+<p>Note: Microsoft now requires a user account to download Visual Studio. Clicking the Visual Studio link above will take you to the 'older versions' page. Clicking the download button on this page will prompt you to log in or create an account. [<a href="Ground-Up-Windows-Install-Rework#back_msvs">back</a>]</p>
 	
-<p>The above list of programs is known to work for compiling working server binaries.</p>
+<p>Note: TortoiseGit is a menu-driven, add-on gui interface for Git. Though optional, this instructional provides for its use.</p>
 	
 <br>
 	
-<p>Note: TortoiseGit is a menu-driven, add-on gui interface for Git. Though optional, this instructional provides for its use.</p>
+<p>Some programs may be able to use newer versions, or even the lastest releases, without issue. But, this is not the case with Perl and (later) dependencies.</p>
+	
+<p>The above list of programs is known to work for compiling working server binaries.</p>
 	
 <br>
 	
@@ -115,10 +115,6 @@
 <img src="https://user-images.githubusercontent.com/3311166/60468475-b40e3b80-9c27-11e9-8b2b-462bd0f22165.png">
 	
 <br><br>
-	
-<a name="note_msvs"></a>
-	
-<p>Note: Microsoft now requires a user account to download Visual Studio. Clicking the Visual Studio link above will take you to the 'older versions' page. Clicking the download button on this page will prompt you to log in or create an account. [<a href="Ground-Up-Windows-Install-Rework#back_msvs">back</a>]</p>
 	
 <br>
 	
@@ -226,7 +222,7 @@
 	
 <br>
 	
-<p>For other options, go to the EQEmulator server code repository web page at <a href="https://github.com/EQEmu/Server">https://github.com/EQEmu/Server</a></p>
+<p>For options 2 & 3, go to the EQEmulator server code repository web page at <a href="https://github.com/EQEmu/Server">https://github.com/EQEmu/Server</a></p>
 	
 <br>
 	
@@ -264,7 +260,89 @@
 	
 <li><p><h3>Running CMake</h3></p></li>
 	
-<p>[walk-through]</p>
+<p>CMake's default options are adequate to configure and generate the files needed for Visual Studio.</p>
+	
+<br>
+	
+<p>There are two directory locations that you will need to provide:</p>
+	
+<ul>
+		
+<li><p>Where is the source code:</p></li>
+		
+<li><p>Where to build the binaries:</p></li>
+		
+</ul>
+	
+<p>For the source code, type-in or navigate to your 'c:/&lt;account&gt;/Server' directory.</p>
+	
+<p>The easiest way to define the build directory is to copy the source and paste it in. Then, add '/build' to the end of the path so that you have 'c:/&lt;account&gt;/Server/build'.</p>
+	
+<br>
+	
+<p>Once CMake knows where to look, click the 'Configure' button. You will get a pop-up window stating that the 'build' directory does not exist. Click 'OK' to create it.</p>
+	
+<br>
+	
+<p>The next window will be for the compiler selection. Ensure that 'Visual Studio 15 2017' is selected.</p>
+	
+<img src="https://user-images.githubusercontent.com/3311166/60629799-3b44e600-9dc5-11e9-996a-df781b021d5c.png">
+	
+<br><br>
+	
+<p>You should now have a list of unconfigured options (in red) showing in the main window of CMake:</p>
+	
+<img src="https://user-images.githubusercontent.com/3311166/60629816-54e62d80-9dc5-11e9-89ab-8961e94c9491.png">
+	
+<br><br>
+	
+<p>The follow list contains pertinent options that most users will want to change:</p>
+	
+<ul>
+		
+<li></p>EQEMU_BUILD_CLIENT_FILES: [default: enabled] Builds binaries used to import/export client support files</p></li>
+		
+<li></p>EQEMU_BUILD_LOGIN: [default: disabled] Builds the login server (this guide makes use of the login server - change this option to enabled)</p></li>
+		
+<li></p>EQEMU_BUILD_LUA: [default: enabled] Compiles server code with Lua support</p></li>
+		
+<li></p>EQEMU_BUILD_PERL: [default:enabled] Compiles server code with Perl support</p></li>
+		
+<li></p>EQEMU_DEBUG_LEVEL: [default: 5] Determines what additional messaging and debugging code is enabled/disabled (12 is max)</p></li>
+		
+<li></p>EQEMU_ENABLE_BOTS: [default: disabled] Compiles server code with Bot support (user choice)</p></li>
+		
+</ul>
+	
+<br>
+	
+<p>Once you have set the options that you would like for your server, click 'Configure' again.</p>
+	
+<br>
+	
+<p>Since we set an option (login server) that requires additional settings, more unconfigured options have appeared. In this case, the open ssl library:</p>
+	
+<img src="https://user-images.githubusercontent.com/3311166/60629837-67606700-9dc5-11e9-8b8c-560e629eae27.png">
+	
+<br><br>
+	
+<p>Since these new options are only file path declarations, no changes need to be made. Click 'Configure' one last time.</p>
+	
+<img src="https://user-images.githubusercontent.com/3311166/60629846-76471980-9dc5-11e9-9b30-d7059103ed89.png">
+	
+<br><br>
+	
+<p>Note: Regardless of option settings, anytime that you have red (unconfigured) entries in your options list, you will need to click 'Configure' to ensure that the settings are applied to the current CMake file generation template.</p>
+	
+<br>
+	
+<p>You can now click the 'Generate' button.</p>
+	
+<p>If file generation was successful, you should see 'Generating done' at the bottom of the CMake window.</p>
+	
+<br>
+	
+<p>You are now ready to open Visual Studio and compile your code!</p>
 	
 <br>
 	
