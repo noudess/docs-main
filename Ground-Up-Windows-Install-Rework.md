@@ -148,7 +148,7 @@ This setup assumes an install on a 64-bit Windows operating system with 32-bit t
 
   * Rename the local code directory from `Server-master` to `Server`
 
-  * Move on to [[Download Dependencies](Ground-Up-Windows-Install-Rework#step-dependencies)]
+  * Move on to [[Download Dependencies](Ground-Up-Windows-Install-Rework#download-dependencies)]
 
   For options 2 & 3, go to the EQEmulator server code repository web page at [https://github.com/EQEmu/Server](https://github.com/EQEmu/Server)
 
@@ -164,7 +164,6 @@ This setup assumes an install on a 64-bit Windows operating system with 32-bit t
 
   _Note: It is helpful to create a shortcut to the_ `account` _directory and place it on your desktop._
 
-[](#step-dependencies)
 * ### Download Dependencies
 
   Library dependencies can be downloaded from [[here](https://github.com/EQEmu/eqemu.github.com/raw/master/downloads/WindowsDependencies_x86.zip)].
