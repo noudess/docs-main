@@ -5,6 +5,7 @@
 **Please direct any questions to our server support channel in 
 [[discord](https://discord.gg/QHsm7CD)].**
 
+
 ---
 
 ## Compiler Setup
@@ -61,13 +62,11 @@ This setup assumes an install on a 64-bit Windows operating system with 32-bit t
 
   * CMake (64-bit) [[download](https://github.com/Kitware/CMake/releases/download/v3.14.5/cmake-3.14.5-win64-x64.msi)] 
 
-  <a name="back_git"></a>
+  [](#back-git)
+  * Git (64-bit - see [[note](Ground-Up-Windows-Install-Rework#note-git)] under install) [[download](https://git-scm.com/download/win)]
 
-  * Git (64-bit - see [[note](Ground-Up-Windows-Install-Rework#note_git)] under install) [[download](https://git-scm.com/download/win)]
-
-  <a name="back_tgit"></a>
-
-  * TortoiseGit (64-bit - optional - see [[note](Ground-Up-Windows-Install-Rework#note_tgit)] under install) [[download](https://download.tortoisegit.org/tgit/2.8.0.0/TortoiseGit-2.8.0.0-64bit.msi)]
+  [](#back-tgit)
+  * TortoiseGit (64-bit - optional - see [[note](Ground-Up-Windows-Install-Rework#note-tgit)] under install [[download](https://download.tortoisegit.org/tgit/2.8.0.0/TortoiseGit-2.8.0.0-64bit.msi)]
 
     _Note: TortoiseGit is a menu-driven, add-on gui interface for Git. Though optional, this instructional provides for its use._
 
@@ -105,17 +104,15 @@ This setup assumes an install on a 64-bit Windows operating system with 32-bit t
 
   This installation is self-explanatory.
 
-  <a name="note_git"></a>
-
-  _Note: Should you wish to download the repository code with no further chance of updating or restoration, this requirement may be omitted._ [[back](Ground-Up-Windows-Install-Rework#back_git)]
+  [](#note-git)
+  _Note: Should you wish to download the repository code with no further chance of updating or restoration, this requirement may be omitted._ [[back](Ground-Up-Windows-Install-Rework#back-git)]
 
 * ### Install TortoiseGit (optional)
 
   This installation is self-explanatory.
 
-  <a name="note_tgit"></a>
-
-  _Note: If Git is not installed, this installation should be omitted._ [[back](Ground-Up-Windows-Install-Rework#back_tgit)]
+  [](#note-tgit)
+  _Note: If Git is not installed, this installation should be omitted._ [[back](Ground-Up-Windows-Install-Rework#back-tgit)]
 
 * ### Restart Computer
 
@@ -151,7 +148,7 @@ This setup assumes an install on a 64-bit Windows operating system with 32-bit t
 
   * Rename the local code directory from `Server-master` to `Server`
 
-  * Move on to [[Download Dependencies](Ground-Up-Windows-Install-Rework#step_dependencies)]
+  * Move on to [[Download Dependencies](Ground-Up-Windows-Install-Rework#step-dependencies)]
 
   For options 2 & 3, go to the EQEmulator server code repository web page at [https://github.com/EQEmu/Server](https://github.com/EQEmu/Server)
 
@@ -167,8 +164,7 @@ This setup assumes an install on a 64-bit Windows operating system with 32-bit t
 
   _Note: It is helpful to create a shortcut to the_ `account` _directory and place it on your desktop._
 
-<a name="step_dependencies"></a>
-
+[](#step-dependencies)
 * ### Download Dependencies
 
   Library dependencies can be downloaded from [[here](https://github.com/EQEmu/eqemu.github.com/raw/master/downloads/WindowsDependencies_x86.zip)].
