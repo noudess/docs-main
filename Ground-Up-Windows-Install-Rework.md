@@ -62,13 +62,13 @@ This setup assumes an install on a 64-bit Windows operating system with 32-bit t
 
   * CMake (64-bit) [[download](https://github.com/Kitware/CMake/releases/download/v3.14.5/cmake-3.14.5-win64-x64.msi)] 
 
-  [](#back-git)
-  * Git (64-bit - see [[note](Ground-Up-Windows-Install-Rework#note-git)] under install) [[download](https://git-scm.com/download/win)]
+  * Git (64-bit) [[download](https://git-scm.com/download/win)]
 
-  [](#back-tgit)
-  * TortoiseGit (64-bit - optional - see [[note](Ground-Up-Windows-Install-Rework#note-tgit)] under install [[download](https://download.tortoisegit.org/tgit/2.8.0.0/TortoiseGit-2.8.0.0-64bit.msi)]
+    _Note: Should you wish to download the repository code with no further chance of updating or restoration, this requirement may be omitted._
 
-    _Note: TortoiseGit is a menu-driven, add-on gui interface for Git. Though optional, this instructional provides for its use._
+  * TortoiseGit (64-bit - optional) [[download](https://download.tortoisegit.org/tgit/2.8.0.0/TortoiseGit-2.8.0.0-64bit.msi)]
+
+    _Note: TortoiseGit is a menu-driven, add-on gui interface for Git. Though optional, this instructional provides for its use. If Git is not installed, this installation should be omitted._
 
   Some programs may be able to use newer versions, or even their lastest releases, without issue. But, this is not the case with Perl and (later) dependencies.
 
@@ -104,15 +104,9 @@ This setup assumes an install on a 64-bit Windows operating system with 32-bit t
 
   This installation is self-explanatory.
 
-  [](#note-git)
-  _Note: Should you wish to download the repository code with no further chance of updating or restoration, this requirement may be omitted._ [[back](Ground-Up-Windows-Install-Rework#back-git)]
-
 * ### Install TortoiseGit (optional)
 
   This installation is self-explanatory.
-
-  [](#note-tgit)
-  _Note: If Git is not installed, this installation should be omitted._ [[back](Ground-Up-Windows-Install-Rework#back-tgit)]
 
 * ### Restart Computer
 
