@@ -255,9 +255,9 @@ To compile your server code, you have two choices:
 
 * Use the menu path by right-clicking under `Solution Explorer`. `Solution 'EQEmu'` >> `Build`
 
-_Note: Both paths result in the same action. Use whichever you are more comfortable with._
-
 ![](https://user-images.githubusercontent.com/3311166/60749565-c3fc8700-9f69-11e9-8b54-fa331602d8c3.png)
+
+_Note: Both paths result in the same action. Use whichever you are more comfortable with._
 
 The compiled code will be located in the `c:\<account>\Server\build\bin\<build_type>` directory.
 
