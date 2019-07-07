@@ -116,7 +116,7 @@ During the install process, ensure the option for `Desktop development with C++`
 
 ![](https://user-images.githubusercontent.com/3311166/60468475-b40e3b80-9c27-11e9-8b2b-462bd0f22165.png)
 
-_Note: This package is required by Visual Studio to compile c/c++ code and by CMake to determine available compiler options. It will cause CMake file generation to fail, if not enabled._
+_Note: This package is required by Visual Studio to compile c/c++ code and by CMake to determine available compiler options. It will also cause CMake file generation to fail, if not enabled._
 
 <br/>
 
@@ -180,7 +180,7 @@ There are two options:
 
 <br/>
 
-If you chose options 1, create a sub-folder called `git-eqemulator` in the root folder of c: drive.
+If you chose option 1, create a sub-folder called `git-eqemulator` in the root folder of c: drive.
 
 If you chose option 2, create a sub-folder called `git-<git-username>` in the root folder of c: drive. (example: git username is `Pavlov`, folder name would be `git-pavlov`)
 
