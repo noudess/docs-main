@@ -242,7 +242,7 @@ To install the required submodules:
 
 * Select `Submodule Init` - this should initiate the action
 
-* Click the submodule button arrow again to activate the menu
+* Click the `Submodule` button arrow again to activate the menu
 
 * Select `Submodule Update` - again, initiating action
 
