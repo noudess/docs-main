@@ -200,7 +200,7 @@ If you chose option 2 and are creating a fork, click on the fork button to add t
 
 <br/>
 
-Finally, click the `Clone or download` button, then `Open in Desktop` button to create a local code repository on your computer. When prompted for where to create it, select the `account` folder created above.
+Finally, click the `Clone or download` button, then `Open in Desktop` button to create a local code repository on your computer. Select `TortoiseGit` for the program to use. When prompted for where to create it, select the `account` folder created above.
 
 ![](https://user-images.githubusercontent.com/3311166/60550164-21d46900-9cf5-11e9-882b-439dea49c8e8.png)
 
