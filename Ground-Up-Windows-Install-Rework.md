@@ -2,6 +2,8 @@
 
 **Read through this guide before starting to ensure an understanding of the process.**
 
+**The target computer must have an active internet connection at the time of installation.**
+
 **Please direct any questions to our server support channel in [[discord](https://discord.gg/QHsm7CD)].**
 
 ---
@@ -12,21 +14,21 @@
   * [Verify System Environment Variable %Path% Length](#verify-system-environment-variable--path--length)
   * [Required Programs](#required-programs)
   * [Install Visual Studio](#install-visual-studio)
-  * [Install MariaDB](#install-mariadb)
   * [Install Perl](#install-perl)
   * [Install CMake](#install-cmake)
   * [Install Git](#install-git)
   * [Install TortoiseGit](#install-tortoisegit)
   * [Restart Computer](#restart-computer)
   * [Acquiring the Code](#acquiring-the-code)
-  * [Install Dependencies](#install-dependencies)
   * [Install Submodules](#install-submodules)
+  * [Install Dependencies](#install-dependencies)
   * [Running CMake](#running-cmake)
   * [Compiling Code](#compiling-code)
   * [Code Maintenance](#code-maintenance)
 - [Local Server Setup](#local-server-setup)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 
 ---
 
@@ -54,7 +56,7 @@ The easiest way to find it is to:
 
 * Click on your `Start` button
 
-* Type "environment variable" into your search programs and files text box
+* Type "environment variable" into your `Search programs and files` text box
 
 * Click on `Edit system environment variables`
 
@@ -90,7 +92,7 @@ If you have already installed any of the following, the download and installatio
 
   _Note: Microsoft now requires a user account to download Visual Studio. Clicking the Visual Studio link above will take you to the "older versions" page. Clicking the_ `Download` _button on that page will prompt you to log in or create an account._
 
-* MariaDB (64-bit) [[download](https://downloads.mariadb.org/interstitial/mariadb-10.4.6/winx64-packages/mariadb-10.4.6-winx64.msi/from/http%3A//mirror.nodesdirect.com/mariadb/)]
+<!-- * MariaDB (64-bit) [[download](https://downloads.mariadb.org/interstitial/mariadb-10.4.6/winx64-packages/mariadb-10.4.6-winx64.msi/from/http%3A//mirror.nodesdirect.com/mariadb/)] -->
 
 * Perl v5.12.3.1204 (32-bit) [[download](https://github.com/EQEmu/eqemu.github.com/raw/master/downloads/ActivePerl-5.12.3.1204-MSWin32-x86-294330.msi)]
 
@@ -120,11 +122,11 @@ _Note: This package is required by Visual Studio to compile c/c++ code and by CM
 
 <br/>
 
-## Install MariaDB
+<!-- ## Install MariaDB
 
 This installation is self-explanatory.
 
-_Note: You will need to keep track of your username and password. They will be needed anytime that you access the database as well as for setting up the server configuration files._
+_Note: You will need to keep track of your username and password. They will be needed anytime that you access the database as well as for setting up the server configuration files._ -->
 
 <br/>
 
@@ -210,24 +212,6 @@ _Note: It is helpful to create a shortcut to the_ `account` _folder and place it
 
 <br/>
 
-## Install Dependencies
-
-To install the required dependencies:
-
-* Download the [[dependencies](https://github.com/EQEmu/eqemu.github.com/raw/master/downloads/WindowsDependencies_x86.zip)] file
-
-* Navigate down to `c:\<account>\Server\dependencies`
-
-* Copy the downloaded file into the folder
-
-* Unpack the file
-
-<br/>
-
-Dependencies are now installed.
-
-<br/>
-
 ## Install Submodules
 
 To install the required submodules:
@@ -251,6 +235,46 @@ To install the required submodules:
 Submodules are now installed.
 
 <br/>
+
+## Install Dependencies
+
+To install the required dependencies:
+
+* Download the [[dependencies](https://github.com/EQEmu/eqemu.github.com/raw/master/downloads/WindowsDependencies_x86.zip)] file
+
+* Navigate down to `c:\<account>\Server\dependencies`
+
+* Copy the downloaded file into the folder
+
+* Unpack the file
+
+<br/>
+
+Dependencies are now installed.
+
+<br/>
+
+<!-- ## Install VCPkg
+
+To install VCPkg:
+
+* Download the [[vcpkg](https://github.com/EQEmu/Server/releases/download/v1.2/vcpkg-export-x86.zip)] file
+
+* Navigate down to `c:\<account>\Server`
+
+* Create a folder called `vcpkg`
+
+* Navigate down to `c:\<account>\Server\vcpkg`
+
+* Copy the downloaded file into the folder
+
+* Unpack the file
+
+<br/>
+
+VCPkg is now installed.
+
+<br/> -->
 
 ## Running CMake
 
