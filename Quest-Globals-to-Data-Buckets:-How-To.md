@@ -17,7 +17,7 @@ Type 7 is global, so the bucket name is just the qglobal name with no specificit
 
 # Lua/Perl Requirements
 
-* The Lua module necessary for using the Lua script (lua_modules/buckets.lua): https://pastebin.com/Rsnp301Q
+* The Lua module necessary for using the Lua script (lua_modules/buckets.lua): https://pastebin.com/pTgDqFDL
 
 * The Perl plugin necessary for using the Perl script (plugins/buckets.pl): https://pastebin.com/mhRvZC5x
 
