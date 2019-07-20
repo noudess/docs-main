@@ -252,3 +252,25 @@ SpecialAbility
 	Integer no_harm_from_client;
 }
 ```
+
+SpeakMode
+```
+{
+	Integer Raw;
+	Integer Say;
+	Integer Shout;
+	Integer EmoteAlt;
+	Integer Emote;
+	Integer Group;
+
+}
+```
+
+JournalMode
+```
+{
+	Integer None;
+	Integer Log1;
+	Integer Log2;
+}
+```
