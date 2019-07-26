@@ -22,6 +22,7 @@
   * [Acquiring the Code](#acquiring-the-code)
   * [Install Submodules](#install-submodules)
   * [Install Dependencies](#install-dependencies)
+  * [Install VCPkg](#install-vcpkg)
   * [Running CMake](#running-cmake)
   * [Compiling Code](#compiling-code)
   * [Code Maintenance](#code-maintenance)
@@ -34,11 +35,11 @@
 
 # Compiler Setup
 
-The current c/c++ support standard of the EQEmulator server code base mandates the use of Visual Studio 2013 or later compilers.
+The current c/c++ support standard of the EQEmulator server code base mandates the use of Visual Studio 2017 or later compilers.
 
 Visual Studio 2017 is the current EQEmulator standard for binary compilation. Please ensure that your system meets the [[Visual Studio 2017 Minimum System Requirements](https://docs.microsoft.com/en-us/visualstudio/productinfo/vs2017-system-requirements-vs#visual-studio-2017-system-requirements)].
 
-If your system does not meet the above requirements, or you are/would like to use an older version of Visual Studio, check the minimum system requirements for the version you plan to use. (It must still meet the Visual Studio 2013 or later requirement of the code base.)
+Visual Studio 2019 may also be used..though, less is known about the stability of this platform.
 
 This setup assumes an install on a 64-bit Windows operating system with 32-bit target binaries.
 
@@ -92,6 +93,10 @@ If you have already installed any of the following, the download and installatio
 
   _Note: Microsoft now requires a user account to download Visual Studio. Clicking the Visual Studio link above will take you to the "older versions" page. Clicking the_ `Download` _button on that page will prompt you to log in or create an account._
 
+* Visual Studio 2019 Community Edition [[alternative download](https://visualstudio.microsoft.com/vs/)]
+
+  _Note: Only install one version of Visual Studio_
+
 <!-- * MariaDB (64-bit) [[download](https://downloads.mariadb.org/interstitial/mariadb-10.4.6/winx64-packages/mariadb-10.4.6-winx64.msi/from/http%3A//mirror.nodesdirect.com/mariadb/)] -->
 
 * Perl v5.12.3.1204 (32-bit) [[download](https://github.com/EQEmu/eqemu.github.com/raw/master/downloads/ActivePerl-5.12.3.1204-MSWin32-x86-294330.msi)]
@@ -120,19 +125,21 @@ During the install process, ensure the option for `Desktop development with C++`
 
 _Note: This package is required by Visual Studio to compile c/c++ code and by CMake to determine available compiler options. It will also cause CMake file generation to fail, if not enabled._
 
+If you selected Visual Studio 2017 Community Edition, you will need to update to the most current version. (This requirement is not needed for Visual Studio 2019 installations.)
+
 <br/>
 
 <!-- ## Install MariaDB
 
 This installation is self-explanatory.
 
-_Note: You will need to keep track of your username and password. They will be needed anytime that you access the database as well as for setting up the server configuration files._ -->
+_Note: You will need to keep track of your username and password. They will be needed anytime that you access the database as well as for setting up the server configuration files._
 
 <br/>
 
 At the end of the installation process, you will be prompted to install HeidiSQL. It is **HIGHLY** recommended that you install this program.
 
-<br/>
+<br/> -->
 
 ## Install Perl
 
@@ -254,7 +261,7 @@ Dependencies are now installed.
 
 <br/>
 
-<!-- ## Install VCPkg
+## Install VCPkg
 
 To install VCPkg:
 
@@ -274,7 +281,7 @@ To install VCPkg:
 
 VCPkg is now installed.
 
-<br/> -->
+<br/>
 
 ## Running CMake
 
