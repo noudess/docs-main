@@ -6,6 +6,8 @@
 
 **Please direct any questions to our server support channel in [[discord](https://discord.gg/QHsm7CD)].**
 
+_Note: Screenshots may vary depending on options selected and program graphical user interface changes._
+
 ---
 
 # Contents
@@ -39,7 +41,7 @@ The current c/c++ support standard of the EQEmulator server code base mandates t
 
 Visual Studio 2017 is the current EQEmulator standard for binary compilation. Please ensure that your system meets the [[Visual Studio 2017 Minimum System Requirements](https://docs.microsoft.com/en-us/visualstudio/productinfo/vs2017-system-requirements-vs#visual-studio-2017-system-requirements)].
 
-Visual Studio 2019 may also be used..though, less is known about the stability of this platform.
+Visual Studio 2019 may also be used..though, less is known about the stability of this platform with the EQEmulator code base.
 
 This setup assumes an install on a 64-bit Windows operating system with 32-bit target binaries.
 
@@ -125,7 +127,9 @@ During the install process, ensure the option for `Desktop development with C++`
 
 _Note: This package is required by Visual Studio to compile c/c++ code and by CMake to determine available compiler options. It will also cause CMake file generation to fail, if not enabled._
 
-If you selected Visual Studio 2017 Community Edition, you will need to update to the most current version. (This requirement is not needed for Visual Studio 2019 installations.)
+If you selected Visual Studio 2017 Community Edition, you will need to update to the most current version.
+
+_Note: This requirement is not needed for Visual Studio 2019 installations..but, it is a good idea to have the most up-to-date compiler features._
 
 <br/>
 
@@ -307,9 +311,15 @@ Once CMake knows where to look, click the `Configure` button. You will get a pop
 
 <br/>
 
-The next window will be for compiler selection. Ensure that `Visual Studio 15 2017` is selected, then click `Finish` to proceed.
+The next window will be for compiler selection. Ensure that the version of Visual Studio that you installed is selected (`Visual Studio 15 2017` or `Visual Studio 16 2019`). Click the radio button next to `Specify toolchain file for cross-compiling`. Finally, click `Finish` to proceed.
 
-![](https://user-images.githubusercontent.com/3311166/60629799-3b44e600-9dc5-11e9-996a-df781b021d5c.png)
+![](https://user-images.githubusercontent.com/3311166/61987914-b4141800-afe8-11e9-9311-03e6b3e79365.png)
+
+<br/>
+
+CMake will need the location of the VCPkg. Navigate down to the `C:/<account>/Server/vcpkg/vcpkg-export-20180828-145854/scripts/buildsystems/vcpkg.cmake` file and click ok. CMake will begin by configuring the VCPkg dependencies.
+
+_Note: Cmake will remember this location after the first assignment._
 
 <br/>
 
@@ -375,7 +385,7 @@ To open the CMake-generated solution file:
 
 * Right-click the `EQEmu.sln` file
 
-* Select `Open with` >> `Microsoft Visual Studio 2017`
+* Select `Open with` >> (`Microsoft Visual Studio 2017` or `Microsoft Visual Studio 2019`)
 
 <br/>
 
