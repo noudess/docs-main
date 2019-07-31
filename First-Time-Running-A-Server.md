@@ -9,7 +9,7 @@ For example, in linux step three would look something like this:
 
     $ mysql -u my_db_username -p
     mysql> use eqemu;
-    mysql> UPDATE account SET status = 255 WHERE name = 'my_character_name';
+    mysql> UPDATE account SET status = 255 WHERE charname = 'my_character_name';
     mysql> quit;
 
 In this example, `my_db_username` is the username that you set for the mysql database during server installation and `my_character_name` is the name of the character you setting to GM status.
