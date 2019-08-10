@@ -184,6 +184,8 @@ _Note: The "localaddress" tag may not be present and will need to be added_
 
 ![image](https://user-images.githubusercontent.com/3319450/34912578-95aa7a86-f8aa-11e7-9354-7288b512d8d4.png)
 
+_Note: Port 5998 is required when using the supported "Titanium" and "Secrets of Faydwer" clients_
+
 Restart your server using **t\_start\_server\_with\_login_server** and you should be good to go!
 
 **Connect using your game client and you should see:**
