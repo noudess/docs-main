@@ -129,6 +129,7 @@ If firewall rules don't add you must run this script (eqemu_server.pl) as admini
 	"password" : "",
 	"port" : "5998"
 },
+"localaddress" : "192.168.197.129",
 
 [Install] When done, make sure your EverQuest client points to your loginserver's IP (In this case it would be 127.0.0.1) in the eqhosts.txt file
 [Install] Press any key to continue...
@@ -156,7 +157,9 @@ If firewall rules don't add you must run this script (eqemu_server.pl) as admini
 
 **EQEmuServer: (login.ini)**
 
-![image](https://user-images.githubusercontent.com/3319450/34912567-4100373c-f8aa-11e7-95c8-309e4da03a37.png)
+![image](https://user-images.githubusercontent.com/3311166/62815137-fad33900-bae3-11e9-9e4e-63ecaf6ef6d8.png)
+
+_Note: Leave off the last number..but, keep the dot (period)_
 
 **EQEmuServer: (eqemu_config.json)**
 ```               
@@ -166,6 +169,7 @@ If firewall rules don't add you must run this script (eqemu_server.pl) as admini
 	"password" : "",
 	"port" : "5998"
 },
+"localaddress" : "192.168.197.129",
 ```
 **Uncomment the address tag and put the local LAN IP**
 
