@@ -1,9 +1,13 @@
+<br/>
+
 ### What is it?
 EQDictionary is a collection of lookup references, accessed by specific namespaces and referenced by implementation standard, or [[client|Client-Version-List]] and [[mob|Mob-Version-List]] versions.
 
 References are usually tied back to the originating client definition and are available through an indexed lookup system. Server-based 'hybrid' definitions may also be implemented to bridge differences between client implementations and server requirements.
 
 The purpose of this system is to allow cyclic or minimum conditional evaluations in order to transform data.
+
+<br/>
 
 ### What can you do with it?
 Simplifying coding methodology can change current standards from this:
@@ -40,6 +44,8 @@ The EQDictionary (last) case does not require any special ordering of clients or
 
 Additionally, duplicate definitions can be avoided by having a singular location to reference.
 
+<br/>
+
 ### What makes up EQDictionary?
 Static and Dynamic references.
 
@@ -67,6 +73,8 @@ Dynamic lookups resolve the complexity of coding needed to support the myriad of
 
 A deep, working knowledge of client behavior is required to correctly set up dynamic entries. Testing through server setting changes and client observation is the best way to achieve this.
 
+<br/>
+
 ### Where do I look for all of this?
 Currently, the following files comprise the system:
 * [emu_constants.h](https://github.com/EQEmu/Server/blob/master/common/emu_constants.h)
@@ -87,5 +95,9 @@ Currently, the following files comprise the system:
 * [rof2_limits.h](https://github.com/EQEmu/Server/blob/master/common/patches/rof2_limits.h)
 * [rof2_limits.cpp](https://github.com/EQEmu/Server/blob/master/common/patches/rof2_limits.cpp)
 
+<br/>
+
 ### How do I create a new lookup or add to an existing one?
 Adding properties to an existing lookup involves most of the same steps as [[creating a new lookup system|Creating-EQDictionary-System]].
+
+<br/>
