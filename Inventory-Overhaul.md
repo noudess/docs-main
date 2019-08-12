@@ -66,9 +66,9 @@ CURSORBAGSLOTS | 331 | 340 | 351* | 360*
 #### Phase ?: Rework class ItemInstQueue for proper behavior [development: 0%]
   - this is the 'cursor buffer' used for server operations and does not reflect any client behavior
   - it will fix a lot of remaining cursor issues - especially RoF+ based ones
-  - separate type possessions cursor (slot 30) from type limbo slots (slots {0..35})
+  - separate type possessions cursor (slot 33) from type limbo slots (slots {0..35})
   - implement server bag slots for type limbo main slots (36 * 10 = 360 allocation requirement)
-  - should be doable without an sql update
+  - should be doable without a sql update
 
 <br/>
 
