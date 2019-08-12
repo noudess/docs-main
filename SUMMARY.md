@@ -1,5 +1,5 @@
 **General**
-* [[Home]]
+* [[Home|Home.md]]
 
 **ToDo**
 * [[ToDo Pages]]
