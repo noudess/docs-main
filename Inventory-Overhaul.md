@@ -1,6 +1,6 @@
 <br/>
 
-### Phase 1a: Re-enumerate 'typePossessions' slots [development 100%, implementation: 100%]
+#### Phase 1a: Re-enumerate 'typePossessions' slots [development 100%, implementation: 100%]
 Token | Old Value | New Value
 ----- | :-------: | :-------:
 slotCharm | 0 | 0
@@ -40,7 +40,7 @@ slotCursor | 30 | 33*
 
 <br/>
 
-### Phase 1b: Insert General9 and General10 bag slots into current General bag slot range [development: 100% complete, implementation: 100%]
+#### Phase 1b: Insert General9 and General10 bag slots into current General bag slot range [development: 100% complete, implementation: 100%]
 Token | Old Begin | Old End Value | New Begin Value | New End Value
 ----- | :-------: | :-----------: | :-------------: | :-----------:
 GENERAL1BAGSLOTS | 251 | 260 | 251 | 260
@@ -57,13 +57,13 @@ CURSORBAGSLOTS | 331 | 340 | 351* | 360*
 
 <br/>
 
-### Phase 2: Modify inventory to allow for supported client expansion changes and GM status [development: 100% complete, implementation: 100%]
+#### Phase 2: Modify inventory to allow for supported client expansion changes and GM status [development: 100% complete, implementation: 100%]
   - expansion bitmask affects the various clients differently..but, these changes in client behavior are not accounted for
   - GM flag state typically overrides expansion bitmask and these changes in client behavior also need to be accounted for
 
 <br/>
 
-### Phase ?: Rework class ItemInstQueue for proper behavior [development: 0%]
+#### Phase ?: Rework class ItemInstQueue for proper behavior [development: 0%]
   - this is the 'cursor buffer' used for server operations and does not reflect any client behavior
   - it will fix a lot of remaining cursor issues - especially RoF+ based ones
   - separate type possessions cursor (slot 30) from type limbo slots (slots {0..35})
@@ -72,7 +72,7 @@ CURSORBAGSLOTS | 331 | 340 | 351* | 360*
 
 <br/>
 
-### Phase ?: Change merchant lists to similar method as corpse's InternalLoot_Struct [development: 0%]
+#### Phase ?: Change merchant lists to similar method as corpse's InternalLoot_Struct [development: 0%]
   - merchants do not like to have their 'slot' enumerations non-contiguous
   - remove the slot identifier from database schema
   - enumerate merchant items upon loading and as players sell items to them
@@ -81,14 +81,14 @@ CURSORBAGSLOTS | 331 | 340 | 351* | 360*
 
 <br/>
 
-### Phase ?: Increase number of allowed bag slots and remap all bag slots to an unused range [development: 0%]
+#### Phase ?: Increase number of allowed bag slots and remap all bag slots to an unused range [development: 0%]
   - hard-code the max server-allowed bag slot size to 100 slots (should account for anything we would ever support)
   - remap *all* bags slots into a new range .. 10000+ should be available
   - update EQDictionary to reflect the new maximum sizes
 
 <br/>
 
-### Phase ?: Implement class ItemInstance::origin_tag [development: 100% complete, implementation: 0% complete]
+#### Phase ?: Implement class ItemInstance::origin_tag [development: 100% complete, implementation: 0% complete]
   - a 16-byte char field that represents a base64-encoded unique identifier for every item (12 bytes of int data encoded into 16 ascii bytes)
   - used in numerous systems, such as: bazaar/barter, hotkey assignments, etc...
   - does not use the same encoding hash as SocketLib https://github.com/EQEmu/Server/tree/master/common/SocketLib
@@ -96,7 +96,7 @@ CURSORBAGSLOTS | 331 | 340 | 351* | 360*
 
 <br/>
 
-### Phase ?: Rework bazaar code to make proper use of ItemInstance::origin_tag property [development: 80% complete]
+#### Phase ?: Rework bazaar code to make proper use of ItemInstance::origin_tag property [development: 80% complete]
   - this will also fix the 'broken' system for newer clients
 
 <br/>
