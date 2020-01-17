@@ -138,7 +138,7 @@
 [quest::npcrace(race_id)](#npcrace) | _int_
 [quest::npcsize(size)](#npcsize) | _int_
 [quest::npctexture(texture_id)](#npctexture) | _int_
-[quest::pause(duration-ms)](#pause) | _int_
+[quest::pause(duration-sec)](#pause) | _int_
 [quest::permaclass(class_id)](#permaclass) | _int_
 [quest::permagender(gender_id)](#permagender) | _int_
 [quest::permarace(race_id)](#permarace) | _int_
